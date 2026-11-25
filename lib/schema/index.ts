@@ -395,6 +395,7 @@ export function portfolioDetail({
     image,
     type,
     keywords,
+    dateModified,
     crumbs,
 }: {
     locale: string;
@@ -404,6 +405,8 @@ export function portfolioDetail({
     image: string;
     type: 'live' | 'demo';
     keywords?: string;
+    /** The case study's `lastModified` (`YYYY-MM-DD`), emitted zoned like every schema date. */
+    dateModified?: string;
     crumbs: { name: string; url: string }[];
 }): JsonLdObject {
     const work: JsonLdObject = {
@@ -417,6 +420,7 @@ export function portfolioDetail({
     };
     if (type === 'demo') work.applicationCategory = 'BusinessApplication';
     if (keywords) work.keywords = keywords;
+    if (dateModified) work.dateModified = schemaDateTime(dateModified);
 
     return {
         '@context': CONTEXT,

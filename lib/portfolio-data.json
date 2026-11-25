@@ -17,7 +17,7 @@
                 "image": "https://cdn.hlorenzoz.com/hlorenzoz.com/portfolio/me/tech-stack-visual.webp",
                 "badge": "Tech Stack",
                 "title": "Technologies and Procedures",
-                "description": "Astro 7. Tailwind 4. Cloudflare CDN. Vitest & Playwright: GitHub Actions for CI/CD."
+                "description": "Astro 7 and Tailwind 4, served as static files by Cloudflare Workers with images on the Cloudflare R2 CDN. Moved from Next.js 16 to Astro on November 25, 2026. Vitest, Playwright and Lighthouse CI guard every change, and every push to main deploys through Cloudflare Workers Builds."
             },
             {
                 "id": "tests",
@@ -46,18 +46,18 @@
             },
             {
                 "id": "speed",
-                "image": "https://cdn.hlorenzoz.com/hlorenzoz.com/portfolio/dental-clinic-1/dental_clinic_1_performance.webp",
+                "image": "https://cdn.hlorenzoz.com/hlorenzoz.com/portfolio/hlorenzoz/lorenzoz-agency-pagespeed-insights.webp",
                 "link": "https://pagespeed.web.dev/analysis?url=https%3A%2F%2Fhlorenzoz.com%2F",
                 "badge": "Performance",
                 "title": "Performance",
-                "description": "Test made with Google Page Speed Insight with 95%+ of performance."
+                "description": "PageSpeed Insights on mobile, November 25, 2026, after the move to Astro: 98 for Performance and 100 for Accessibility, Best Practices and SEO."
             },
             {
                 "id": "pwa",
                 "image": "https://cdn.hlorenzoz.com/hlorenzoz.com/portfolio/me/pwa-tech.webp",
                 "badge": "PWA Experience",
                 "title": "Progressive Web App",
-                "description": "Access your clinic's digital presence instantly on any device, even offline. A fast, reliable, and immersive experience that feels like an app."
+                "description": "Install the site on any device and open it instantly, even offline. A fast and reliable experience that feels like an app."
             },
             {
                 "id": "og",

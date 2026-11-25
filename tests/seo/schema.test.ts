@@ -16,6 +16,7 @@ import {
     newsArticle,
 } from '@/lib/schema';
 import type { CatalogEntry } from '@/lib/schema';
+import { assertSchemaInvariants, schemaDateTime } from '@/lib/schema/datetime';
 import type { ServiceOffer } from '@/lib/pricing';
 import { sitemap } from '@/src/pages/sitemap.xml';
 
@@ -322,6 +323,17 @@ describe('JSON-LD builders', () => {
         }) as { '@graph': Array<Record<string, unknown>> };
         expect(live['@graph'].some((n) => n['@type'] === 'WebSite')).toBe(true);
         expect(demo['@graph'].some((n) => n['@type'] === 'WebApplication')).toBe(true);
+    });
+
+    it('portfolioDetail carries the case study lastModified as a zoned dateModified', () => {
+        const graph = (portfolioDetail({
+            locale: 'en', name: 'n', description: 'd', projectUrl: 'https://x.com', image: 'i', type: 'live',
+            dateModified: '2026-11-25',
+            crumbs: [{ name: 'Home', url: 'https://hlorenzoz.com/en/' }, { name: 'n', url: 'https://hlorenzoz.com/en/portfolio/n/' }],
+        }) as { '@graph': Array<Record<string, unknown>> })['@graph'];
+        const work = graph.find((n) => n['@type'] === 'WebSite')!;
+        expect(work.dateModified).toBe(schemaDateTime('2026-11-25'));
+        expect(() => assertSchemaInvariants(graph)).not.toThrow();
     });
 
     it('profilePage references the global Person by @id', () => {
