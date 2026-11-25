@@ -1,1 +1,579 @@
-{}
+{
+    "navigation": {
+        "home": "Startseite",
+        "benefits": "Vorteile",
+        "solutions": "Lösungen",
+        "price": "Preis",
+        "portfolio": "Portfolio",
+        "news": "Neuigkeiten",
+        "contact": "Kontakt",
+        "bookConsultation": "Beratung buchen",
+        "services": "Leistungen",
+        "language": "DE",
+        "breadcrumb": "Brotkrümelnavigation",
+        "skipToContent": "Zum Hauptinhalt springen",
+        "languageMenu": "{code}, Sprachmenü öffnen",
+        "homeLabel": "Startseite von Lorenzoz Agency",
+        "openMenu": "Navigationsmenü öffnen",
+        "closeMenu": "Navigationsmenü schließen",
+        "languageMenuClose": "{code}, Sprachmenü schließen",
+        "menuTitle": "Navigation",
+        "languageTitle": "Sprache",
+        "connect": "Kontakt"
+    },
+    "cookieBanner": {
+        "text": "Wir verwenden Cookies, um Ihr Surferlebnis zu verbessern, personalisierte Werbung oder Inhalte anzuzeigen und die Nutzung unserer Website zu analysieren. Mit einem Klick auf \"Alle akzeptieren\" stimmen Sie der Verwendung von Cookies zu, die über Cloudflare Zaraz verwaltet werden.",
+        "accept": "Alle akzeptieren",
+        "reject": "Ablehnen",
+        "preferences": "Cookierichtlinie",
+        "label": "Hinweis zur Einwilligung in Cookies"
+    },
+    "home": {
+        "meta": {
+            "title": "Lorenzoz Agency | Lokales SEO für Unternehmen vor Ort",
+            "description": "Mehr Kunden aus Ihrer Region über Google und KI. Ein monatlicher Plan für lokales SEO: Inhalte mit Autorität, Brancheneinträge, Autorität bei Google und KI sowie Bewertungsmanagement.",
+            "ogImageAlt": "Lorenzoz Agency: Exzellenz in KI und Web"
+        },
+        "hero": {
+            "badge": "Lokales SEO für Unternehmen vor Ort",
+            "title": "Mehr Kunden aus Ihrer Region",
+            "titleGradient": "über Google und KI",
+            "description": "Wir verkaufen keine Einzelleistungen. Wir arbeiten auf ein einziges Ergebnis hin: Wer nach dem sucht, was Ihr Unternehmen anbietet, findet zuerst Sie.",
+            "cta": "Gespräch vereinbaren",
+            "secondaryCta": "Plan und Preise ansehen"
+        },
+        "stats": {
+            "plan": {
+                "label": "Ein Plan, alles inklusive"
+            },
+            "pillars": {
+                "label": "Leistungssäulen"
+            },
+            "markets": {
+                "label": "Betreute Märkte"
+            }
+        },
+        "markets": {
+            "eyebrow": "Globale Reichweite, lokaler Fokus",
+            "title": "Für Unternehmen weltweit",
+            "subtitle": "Mit Sitz in Spanien und online tätig in den Märkten, in denen unsere Kunden am schnellsten wachsen."
+        },
+        "standard": {
+            "title": "Ergebnisse statt Einzelleistungen",
+            "subtitle": "Eine Website, ein paar Bewertungen oder ein Profil bei Google bringen allein keine Kunden. Das schafft erst das Zusammenspiel, Monat für Monat auf ein einziges Ziel ausgerichtet.",
+            "oldWay": {
+                "title": "Leistungen einkaufen",
+                "items": [
+                    "Mehrere Dienstleister, die sich nie abstimmen",
+                    "Ergebnisse, die niemand am Umsatz misst",
+                    "Eine fertige Website, die niemand findet",
+                    "Bewertungen und Verzeichnisse, um die sich keiner kümmert"
+                ]
+            },
+            "newWay": {
+                "title": "Ein Ergebnis einkaufen",
+                "items": [
+                    "Ein Team, das für Ihre Kundengewinnung verantwortlich ist",
+                    "Die gesamte Arbeit zielt darauf, dass man Sie in Ihrer Region zuerst findet",
+                    "Inhalte, Links, Autorität und Bewertungen greifen ineinander",
+                    "Ein monatlicher Bericht in klarer Sprache über die geleistete Arbeit"
+                ]
+            }
+        },
+        "problem": {
+            "badge": "Das Problem",
+            "title": "Ihre Kunden <trad>suchen</trad><br></br>und finden jemand anderen",
+            "description": "Die Entscheidung fällt auf der ersten Seite bei Google und immer öfter in der Antwort einer KI. Ein Unternehmen, das dort fehlt, kommt gar nicht erst in die engere Wahl.",
+            "cards": [
+                {
+                    "title": "Unsichtbar bei Google",
+                    "description": "Erscheint Ihr Unternehmen nicht, wenn jemand in der Nähe nach Ihrer Leistung sucht, bekommt ein Wettbewerber den Anruf."
+                },
+                {
+                    "title": "Kaum sichtbare Reputation",
+                    "description": "Wenige, alte oder unbeantwortete Bewertungen kosten Vertrauen, genau in dem Moment, in dem sich der Kunde entscheidet."
+                },
+                {
+                    "title": "Die KI empfiehlt jemand anderen",
+                    "description": "Assistenten mit künstlicher Intelligenz nennen die Unternehmen, die sie als Referenz erkennen. Diesen Platz muss man sich erarbeiten."
+                }
+            ]
+        },
+        "solutions": {
+            "badge": "Die Lösung",
+            "title": "Ein Plan. Vier Säulen.",
+            "subtitle": "Ein monatlicher Plan, der die gesamte Arbeit bündelt, um in der lokalen Suche bei Google und in den Antworten der KI sichtbar zu werden.",
+            "cta": "Lokales SEO ansehen",
+            "items": [
+                {
+                    "title": "Inhalte mit Autorität",
+                    "description": "Die Inhalte, die Ihr Unternehmen als Referenz in seiner Branche etablieren.",
+                    "points": [
+                        "Keywordrecherche",
+                        "Themencluster",
+                        "Analyse von Inhaltslücken",
+                        "Aktualisierung bestehender Inhalte"
+                    ]
+                },
+                {
+                    "title": "Backlinks und Brancheneinträge",
+                    "description": "Präsenz in vertrauenswürdigen Verzeichnissen und auf Branchenportalen.",
+                    "points": [
+                        "Links aus vertrauenswürdigen Verzeichnissen",
+                        "Erwähnungen auf relevanten Websites",
+                        "Stärkere lokale Autoritätssignale",
+                        "Für Google und für die KI"
+                    ]
+                },
+                {
+                    "title": "Autorität bei Google und KI",
+                    "description": "Ihr Unternehmen und Ihre Website als die Referenz, die empfohlen wird.",
+                    "points": [
+                        "Optimiertes Google Business Profile",
+                        "Lokale Onpageoptimierung Ihrer Website",
+                        "Strukturierte Daten für lokale Unternehmen",
+                        "Präsenz in den Ergebnissen von Google und KI"
+                    ]
+                },
+                {
+                    "title": "Bewertungsmanagement",
+                    "description": "Ihre Reputation, gemessen und gepflegt, Monat für Monat.",
+                    "points": [
+                        "Entwicklung Ihrer Bewertungen im Zeitverlauf",
+                        "Trends bei positivem und negativem Feedback",
+                        "Kundenantworten immer im Blick",
+                        "Feedbacklinks mit Ihrer Marke"
+                    ]
+                }
+            ]
+        },
+        "benefits": {
+            "title": "Was sich für Ihr Unternehmen ändert,",
+            "titleGradient": "wenn man Sie findet",
+            "imageAlt": "Dashboard zum Unternehmenswachstum",
+            "items": [
+                {
+                    "title": "Sichtbar, wo die Entscheidung fällt",
+                    "description": "Ihr Unternehmen in der lokalen Suche und auf der Karte von Google, genau dort, wo Ihre Kunden entscheiden, wen sie anrufen."
+                },
+                {
+                    "title": "Eine Reputation, die für Sie arbeitet",
+                    "description": "Bewertungen, die stetig wachsen, und ein klarer Blick darauf, was Ihre Kunden sagen."
+                },
+                {
+                    "title": "Empfohlen von Google und KI",
+                    "description": "Inhalte und Autorität, damit Suchmaschinen und Assistenten Sie als Referenz in Ihrer Region erkennen."
+                }
+            ]
+        },
+        "process": {
+            "title": "Ein klarer Ablauf, Monat für Monat",
+            "steps": [
+                {
+                    "number": "01",
+                    "badge": "Analyse",
+                    "title": "Wir ermitteln, wo Sie stehen",
+                    "description": "Wir prüfen Ihre aktuelle Präsenz bei Google, Ihre Website, Ihre Bewertungen und wer heute in Ihrer Region empfohlen wird."
+                },
+                {
+                    "number": "02",
+                    "badge": "Aufbau",
+                    "title": "Wir bearbeiten die vier Säulen",
+                    "description": "Inhalte, Brancheneinträge, Autorität und Bewertungen laufen parallel, nach einem Plan, den Sie vorab kennen."
+                },
+                {
+                    "number": "03",
+                    "badge": "Optimierung",
+                    "title": "Wir messen und steuern nach",
+                    "description": "Jeden Monat erhalten Sie einen Bericht in klarer Sprache, und wir passen die Arbeit an das an, was sich verändert hat."
+                }
+            ]
+        },
+        "pricing": {
+            "badge": "Ein Plan, alles inklusive",
+            "title": "Einfache, transparente Preise",
+            "description": "Ein monatlicher Plan mit allen vier Säulen. Zusatzleistungen erhalten Sie mit {discount}% Rabatt, wenn Sie sie zusammen mit lokalem SEO buchen.",
+            "vat": "Alle Preise verstehen sich zzgl. MwSt. Für Kunden mit Sitz in der EU fallen +21% MwSt. an.",
+            "paymentTerms": "Bei Vertragsabschluss werden {upfront}% im Voraus gezahlt (der erste Monat). Damit sind die Kosten für die Tools und Dienste gedeckt, die die Arbeit möglich machen.",
+            "perMonth": "/ Monat",
+            "oneOff": "einmalige Zahlung",
+            "from": "ab",
+            "learnMore": "Mehr erfahren",
+            "listLabel": "Listenpreis",
+            "bundleLabel": "Mit lokalem SEO",
+            "core": {
+                "popular": "Das Kernangebot",
+                "title": "Lokales SEO",
+                "subtitle": "Alle vier Säulen inklusive",
+                "goal": "Ziel: Platz eins bei Google für Suchanfragen in Ihrer Region",
+                "cta": "Gespräch vereinbaren",
+                "groups": [
+                    {
+                        "label": "Inhalte mit Autorität",
+                        "items": [
+                            "Keywordrecherche",
+                            "Themencluster",
+                            "Analyse von Inhaltslücken"
+                        ]
+                    },
+                    {
+                        "label": "Backlinks und Brancheneinträge",
+                        "items": [
+                            "Links aus vertrauenswürdigen Verzeichnissen",
+                            "Erwähnungen auf relevanten Websites",
+                            "Stärkere lokale Autoritätssignale"
+                        ]
+                    },
+                    {
+                        "label": "Autorität bei Google und KI",
+                        "items": [
+                            "Optimiertes Google Business Profile",
+                            "Lokale Onpageoptimierung Ihrer Website",
+                            "Strukturierte Daten für lokale Unternehmen"
+                        ]
+                    },
+                    {
+                        "label": "Bewertungsmanagement",
+                        "items": [
+                            "Entwicklung Ihrer Bewertungen im Zeitverlauf",
+                            "Trends bei positivem und negativem Feedback",
+                            "Kundenantworten immer im Blick"
+                        ]
+                    }
+                ]
+            },
+            "addOnsTitle": "Zusatzleistungen",
+            "addOnsSubtitle": "{discount}% Rabatt auf den Listenpreis bei Buchung zusammen mit lokalem SEO.",
+            "addOns": {
+                "websiteDevelopment": {
+                    "title": "Webentwicklung",
+                    "subtitle": "Websites, die Besucher zu Kunden machen",
+                    "features": [
+                        "Landingpage oder komplette Website mit mehreren Seiten",
+                        "Konsequent für Mobilgeräte gestaltet, Core Web Vitals vom ersten Tag an",
+                        "Open Graph und strukturierte Daten schon zum Start"
+                    ],
+                    "cta": "Jetzt starten"
+                },
+                "aiVoiceReceptionist": {
+                    "title": "Telefonassistent mit KI",
+                    "subtitle": "Kein Anruf bleibt unbeantwortet",
+                    "features": [
+                        "Termine landen direkt in Ihrem Kalender",
+                        "Stimme und Gesprächsleitfaden passend zu Ihrer Marke",
+                        "Optimiert für Englisch und Spanisch"
+                    ],
+                    "cta": "Jetzt starten"
+                },
+                "softwareDevelopment": {
+                    "title": "Softwareentwicklung",
+                    "subtitle": "Individuell und auf Wachstum ausgelegt",
+                    "features": [
+                        "Eine Codebasis für iOS, Android, Web und Desktop",
+                        "Automatisierte Tests und eine Pipeline für CI/CD",
+                        "Volle Rechte am Quellcode bei Übergabe"
+                    ],
+                    "cta": "Angebot anfordern"
+                }
+            }
+        },
+        "testimonials": {
+            "title": "Erfolgsgeschichten",
+            "subtitle": "Schließen Sie sich Hunderten von Unternehmen an, die ihre Abläufe mit unseren Lösungen auf Basis von KI verändert haben.",
+            "items": [
+                {
+                    "quote": "Lorenzoz Agency hat unsere Reaktionszeit um 80% verkürzt. Seit drei Monaten haben wir keine einzige Anfrage mehr verpasst.",
+                    "author": "David Chen",
+                    "position": "CEO, TechFlow Solutions"
+                },
+                {
+                    "quote": "Der Telefonassistent mit KI klingt unglaublich menschlich. Unsere Kunden sprechen tatsächlich gern mit ihm.",
+                    "author": "Sarah Jenkins",
+                    "position": "Leiterin Betrieb, Bloom Retail"
+                },
+                {
+                    "quote": "Unseren Support zu skalieren war früher unser größtes Problem. Heute übernimmt die KI mühelos 90% des Aufkommens.",
+                    "author": "Marcus Thorne",
+                    "position": "Gründer, Thorne & Co."
+                }
+            ]
+        },
+        "contact": {
+            "badge": "Kontakt",
+            "title": "Sprechen wir über Ihr Unternehmen.",
+            "subtitle": "Buchen Sie ein Gespräch von 15 Minuten."
+        },
+        "faq": {
+            "title": "Häufige Fragen",
+            "items": [
+                {
+                    "question": "Garantieren Sie Platz eins bei Google?",
+                    "answer": "Nein, und seien Sie vorsichtig bei jedem, der das tut: Niemand kontrolliert das Ranking von Google. Platz eins ist das Ziel, auf das wir jeden Monat hinarbeiten, und ein Bericht in klarer Sprache zeigt Ihnen, was getan wurde und wie sich Ihre Sichtbarkeit entwickelt."
+                },
+                {
+                    "question": "Was genau ist im Plan enthalten?",
+                    "answer": "Alle vier Säulen für {price} pro Monat {tax}: Inhalte mit Autorität, Backlinks und Brancheneinträge, Autorität bei Google und KI sowie Bewertungsmanagement. Nichts wird separat berechnet."
+                },
+                {
+                    "question": "Wie lange dauert es, bis ich Ergebnisse im lokalen Ranking sehe?",
+                    "answer": "Die meisten Kunden sehen innerhalb von 30 bis 60 Tagen spürbare Bewegung im lokalen Kartenbereich von Google (Local Pack), in umkämpften Märkten kann es länger dauern."
+                },
+                {
+                    "question": "Warum wird ein Teil im Voraus bezahlt?",
+                    "answer": "Bei Vertragsabschluss werden {upfront}% im Voraus gezahlt. Damit decken wir die Tools und Dienste, die wir vom ersten Tag an für die Arbeit beauftragen."
+                },
+                {
+                    "question": "Brauche ich schon eine Website oder ein Profil bei Google?",
+                    "answer": "Nein. Wenn Sie noch kein Google Business Profile haben, erstellen und verifizieren wir es auf Ihren Namen, und eine Website lässt sich als Zusatzleistung mit {discount}% Rabatt ergänzen."
+                },
+                {
+                    "question": "Wie funktioniert der Rabatt auf Zusatzleistungen?",
+                    "answer": "Webentwicklung, Telefonassistent mit KI und Softwareentwicklung erhalten {discount}% Rabatt auf den Listenpreis, wenn Sie sie zusammen mit lokalem SEO buchen. Einzeln gebucht gilt der Listenpreis."
+                }
+            ]
+        }
+    },
+    "footer": {
+        "description": "Der Wachstumspartner für lokale Unternehmen. Wir kümmern uns um die Kundengewinnung, damit Sie sich ganz auf Ihre Kunden konzentrieren können.",
+        "copyright": "© 2026 Lorenzoz Agency. Alle Rechte vorbehalten.",
+        "agency": {
+            "title": "Agentur",
+            "items": [
+                {
+                    "label": "Leistungen",
+                    "href": "/services"
+                },
+                {
+                    "label": "Portfolio",
+                    "href": "/portfolio"
+                },
+                {
+                    "label": "Neuigkeiten",
+                    "href": "/news"
+                },
+                {
+                    "label": "Preise",
+                    "href": "#pricing"
+                },
+                {
+                    "label": "Kontakt",
+                    "href": "#contact"
+                },
+                {
+                    "label": "Héctors Visitenkarte",
+                    "href": "/card/hector"
+                },
+                {
+                    "label": "Sitemap",
+                    "href": "/sitemap"
+                }
+            ]
+        },
+        "services": {
+            "title": "Leistungen",
+            "items": [
+                {
+                    "label": "Lokales SEO",
+                    "href": "/services/local-seo"
+                },
+                {
+                    "label": "Webentwicklung",
+                    "href": "/services/website-development"
+                },
+                {
+                    "label": "Telefonassistent mit KI",
+                    "href": "/services/ai-voice-receptionist"
+                },
+                {
+                    "label": "Softwareentwicklung",
+                    "href": "/services/software-development"
+                }
+            ]
+        },
+        "legal": {
+            "title": "Rechtliches",
+            "items": [
+                {
+                    "label": "Datenschutzerklärung",
+                    "href": "/privacy-policy"
+                },
+                {
+                    "label": "Nutzungsbedingungen",
+                    "href": "/terms-conditions"
+                },
+                {
+                    "label": "Cookierichtlinie",
+                    "href": "/cookie-policy"
+                }
+            ]
+        }
+    },
+    "news": {
+        "home": {
+            "eyebrow": "NEUIGKEITEN",
+            "title": "Aktuelle Neuigkeiten",
+            "subtitle": "Neue Fallstudien und Ankündigungen der Agentur.",
+            "viewAll": "Alle Neuigkeiten ansehen"
+        }
+    },
+    "numbers": {
+        "badge": "Die Zahlen",
+        "title": "Was es kostet, und was es kostet, darauf zu verzichten",
+        "subtitle": "Zwei einfache Rechnungen: was diese Arbeit kosten würde, wenn man sie Stück für Stück einkauft, und was jeder Kunde, der nicht kommt, ein Unternehmen kostet.",
+        "perMonth": "/ Monat",
+        "separate": {
+            "title": "Einzeln eingekauft",
+            "items": [
+                "Lokales SEO",
+                "Bewertungsmanagement",
+                "Inhalte mit Autorität",
+                "Backlinks und Brancheneinträge"
+            ],
+            "unpriced": "zusätzlich",
+            "totalLabel": "Nur zwei der vier",
+            "note": "Listenpreise, zu denen wir diese beiden Leistungen einzeln angeboten haben. Inhalte und Backlinks wurden separat kalkuliert."
+        },
+        "plan": {
+            "title": "In einem einzigen Plan",
+            "includedLabel": "Alle vier Säulen inklusive",
+            "saving": "{saving}% weniger als zwei der Säulen im Einzelkauf, und die anderen beiden sind schon enthalten."
+        },
+        "missed": {
+            "title": "Was ein Kunde kostet, der nie kommt",
+            "description": "Der Plan kostet {annual} {tax} im Jahr. Vergleichen Sie das mit dem, was Ihrem Unternehmen für jeden Kunden entgeht, der sich für einen Wettbewerber entscheidet.",
+            "columns": {
+                "value": "Wenn ein Neukunde pro Jahr einbringt",
+                "cover": "Der Plan rechnet sich ab",
+                "missed": "Ein Kunde weniger pro Monat kostet Sie pro Jahr"
+            },
+            "coverClients": "{count} Kunden pro Monat",
+            "coverOne": "1 Kunde pro Monat",
+            "coverMonths": "1 Kunde alle {months} Monate",
+            "footnote": "Beispielrechnung mit angenommenen Kundenwerten: Rechnen Sie mit Ihren eigenen Zahlen. Dies ist keine Prognose von Ergebnissen."
+        }
+    },
+    "tax": {
+        "suffix": "zzgl. MwSt."
+    },
+    "offer": {
+        "from": "Einstiegspreis: Das endgültige Angebot hängt von den funktionalen Anforderungen ab.",
+        "bundleDiscount": "{discount}% Rabatt auf den Listenpreis bei Buchung zusammen mit {name}.",
+        "upfront": "{upfront}% werden im Voraus gezahlt.",
+        "beforeTax": "Der Preis versteht sich zzgl. MwSt."
+    },
+    "articles": {
+        "eyebrow": "VON LINKEDIN",
+        "title": "Aktuelle Artikel auf LinkedIn",
+        "subtitle": "Fundierte Beiträge zu Architektur, Skalierung und moderner Webentwicklung, direkt von meinem Profil auf LinkedIn.",
+        "cta": "Auf LinkedIn lesen",
+        "readTime": "{min} Min. Lesezeit",
+        "prevSlide": "Vorheriger Artikel",
+        "nextSlide": "Nächster Artikel",
+        "goToSlide": "Zu Artikel {index}"
+    },
+    "payment": {
+        "cta": "Sicher online bezahlen"
+    },
+    "portfolio": {
+        "portfolioCarousel": {
+            "title": "Mit Anspruch gebaut",
+            "subtitle": "Entdecken Sie unser hochwertiges Portfolio aus leistungsstarken Websites und Projekten im Livebetrieb.",
+            "cta": "Ganzes Portfolio ansehen",
+            "explore": "Details ansehen",
+            "liveDemo": "Livedemo",
+            "viewLive": "Website live ansehen",
+            "goToSlide": "Zu Folie {index}",
+            "prevSlide": "Vorherige Folie",
+            "nextSlide": "Nächste Folie",
+            "prevImage": "Vorheriges Bild",
+            "nextImage": "Nächstes Bild",
+            "goToImage": "Zu Bild {index}",
+            "close": "Schließen",
+            "screenshotAlt": "{alt} Screenshot, Ansicht {index}",
+            "imageCount": "Bild {index} von {total}",
+            "viewFullDetail": "Alle Details ansehen",
+            "slideAlt": "{alt}, Folie {index}",
+            "viewFull": "Vollansicht",
+            "fullScreen": "Vollbild",
+            "prevFeature": "Vorherige Funktion",
+            "nextFeature": "Nächste Funktion",
+            "selectSection": "Bereich auswählen: {name}",
+            "interactHint": "Per Klick oder mit den Pfeiltasten ← → bedienen"
+        },
+        "type": {
+            "live": "Website online",
+            "demo": "Konzeptdemo"
+        },
+        "detail": {
+            "liveDemoAria": "{label} für {title}",
+            "contactForQuote": "Angebot anfragen",
+            "visitLivePlatform": "Plattform live ansehen: {title}",
+            "visitLiveDemo": "Livedemo ansehen",
+            "showcaseAlt": "Präsentation von {title}",
+            "openShowcase": "Präsentation von {title} öffnen",
+            "fullScreenshotAlt": "Vollständiger Screenshot von {title}",
+            "exploreLivePlatform": "Plattform live erkunden"
+        }
+    },
+    "services": {
+        "localSeo": {
+            "name": "Lokales SEO",
+            "meta": {
+                "description": "Ein monatlicher Plan für lokales SEO: Inhalte mit Autorität, Backlinks und Brancheneinträge, Autorität bei Google und KI sowie Bewertungsmanagement, damit Kunden in der Nähe zuerst Sie finden."
+            }
+        },
+        "websiteDevelopment": {
+            "name": "Webentwicklung",
+            "meta": {
+                "description": "Individuelle, schnelle Websites, die Besucher zu Kunden machen. Für SEO optimiert, auf jedem Mobilgerät gut lesbar und nach modernen Leistungsstandards gebaut."
+            }
+        },
+        "aiVoiceReceptionist": {
+            "name": "Telefonassistent mit KI",
+            "meta": {
+                "description": "Telefonassistenten mit KI, rund um die Uhr: Sie beantworten häufige Fragen, buchen Termine und erfassen jede Anfrage, damit kein Anruf unbeantwortet bleibt."
+            }
+        },
+        "softwareDevelopment": {
+            "name": "Softwareentwicklung",
+            "meta": {
+                "description": "Komplette Produkte über den gesamten Stack, für Web und Mobilgeräte, auf jedem Gerät und jeder Bildschirmgröße, vom ersten Prototyp bis zum Livegang."
+            }
+        }
+    },
+    "assistant": {
+        "expand": "Assistent vergrößern",
+        "shrink": "Widget verkleinern",
+        "avatarAlt": "Hector Lorenzoz",
+        "prompt": "Wobei kann ich Ihnen helfen?",
+        "connecting": "Verbindung wird hergestellt...",
+        "speaking": "Ich spreche...",
+        "listening": "Ich höre zu...",
+        "placeholder": "Oder schreiben Sie eine Nachricht",
+        "send": "Nachricht senden",
+        "startCall": "Anruf starten",
+        "endCall": "Anruf beenden",
+        "micError": "Der Zugriff auf das Mikrofon wurde verweigert oder es ist ein Fehler aufgetreten.",
+        "chatError": "Der Chat konnte nicht gestartet werden. Bitte versuchen Sie es erneut."
+    },
+    "media": {
+        "calBooking": "Terminbuchung über Cal.com"
+    },
+    "card": {
+        "hector": {
+            "email": "Mail",
+            "phone": "Telefon",
+            "meta": {
+                "title": "Héctor Luis Lorenzo Zaldivar | Digitale Visitenkarte",
+                "description": "Gründer und Architekt für KI bei Lorenzoz Agency. Kontaktieren Sie mich für Automatisierung mit KI und hochwertige Webentwicklung.",
+                "ogImageAlt": "Héctor Luis Lorenzo Zaldivar, Gründer und Architekt für KI"
+            }
+        }
+    },
+    "notFound": {
+        "metaTitle": "Seite nicht gefunden | Lorenzoz Agency",
+        "title": "Seite nicht gefunden",
+        "text": "Die gesuchte Seite existiert nicht oder wurde verschoben.",
+        "back": "Zurück zur Startseite"
+    }
+}

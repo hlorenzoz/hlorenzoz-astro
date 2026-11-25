@@ -18,6 +18,7 @@ import { JSDOM } from 'jsdom';
 import { assertSchemaInvariants } from '@/lib/schema/datetime';
 import { BASE_URL, LOCALES } from '@/lib/site-config';
 import { sitemap } from '@/src/pages/sitemap.xml';
+import { routeAlternates } from '@/lib/routes';
 
 const ROOT = process.cwd();
 const DIST = join(ROOT, 'dist');
@@ -54,24 +55,22 @@ describe.skipIf(!fresh)(`dist/: every built page ships a complete head (${fresh 
         const { document } = new JSDOM(readFileSync(join(DIST, page), 'utf8')).window;
         const head = document.head;
         const url = `${BASE_URL}/${page.replace(/index\.html$/, '')}`;
-        const rest = page.replace(/^[a-z]{2}\//, '').replace(/index\.html$/, '');
+        // Longest codes first so "en-gb/" is not read as "en".
+        const prefix = new RegExp(`^(${[...LOCALES].sort((a, b) => b.length - a.length).join('|')})/`);
+        const rest = page.replace(prefix, '').replace(/index\.html$/, '');
 
         // One canonical, and it is this page.
         const canonicals = [...head.querySelectorAll('link[rel="canonical"]')].map((l) => l.getAttribute('href'));
         expect(canonicals).toEqual([url]);
 
-        // hreflang: both locales and x-default (the default locale).
+        // hreflang: exactly the locales where this page is built, plus x-default (the default locale).
         const alternates = Object.fromEntries(
             [...head.querySelectorAll('link[rel="alternate"][hreflang]')].map((l) => [
                 l.getAttribute('hreflang'),
                 l.getAttribute('href'),
             ])
         );
-        expect(alternates).toEqual({
-            en: `${BASE_URL}/en/${rest}`,
-            es: `${BASE_URL}/es/${rest}`,
-            'x-default': `${BASE_URL}/en/${rest}`,
-        });
+        expect(alternates).toEqual(routeAlternates(rest.replace(/\/$/, '')));
 
         // og:url must not inherit the layout's URL (the shallow-merge bug).
         expect(head.querySelector('meta[property="og:url"]')?.getAttribute('content')).toBe(url);

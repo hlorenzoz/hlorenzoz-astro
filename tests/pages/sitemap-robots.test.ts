@@ -3,7 +3,7 @@ import { GET as sitemapGET, localeSitemapXml, sitemap, sitemapLocales } from '@/
 import { GET as localeSitemapGET, getStaticPaths } from '@/src/pages/sitemap-[locale].xml';
 import { GET as robotsGET } from '@/src/pages/robots.txt';
 import { ALL_ROUTES, routeAlternates } from '@/lib/routes';
-import { absoluteUrl } from '@/lib/site-config';
+import { absoluteUrl, LOCALES } from '@/lib/site-config';
 import { schemaDateTime } from '@/lib/schema/datetime';
 
 // The index and robots endpoints ignore their context argument.
@@ -23,16 +23,18 @@ describe('/sitemap.xml (index)', () => {
         expect(xml.startsWith('<?xml version="1.0" encoding="UTF-8"?>\n<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n')).toBe(true);
         expect(xml.endsWith('</sitemap>\n</sitemapindex>\n')).toBe(true);
         const locs = [...xml.matchAll(/<loc>([^<]+)<\/loc>/g)].map((m) => m[1]);
-        // While the seven new message files are empty, only en and es have pages.
-        expect(sitemapLocales()).toEqual(['en', 'es']);
-        expect(locs).toEqual(['https://hlorenzoz.com/sitemap-en.xml', 'https://hlorenzoz.com/sitemap-es.xml']);
+        // Only locales with at least one built page get a sitemap (the rollout is page by page).
+        const withPages = LOCALES.filter((locale) => ALL_ROUTES.some((route) => route.locales.includes(locale)));
+        expect(sitemapLocales()).toEqual(withPages);
+        expect(locs).toEqual(withPages.map((locale) => `https://hlorenzoz.com/sitemap-${locale}.xml`));
     });
 
     it('dates each sitemap with its newest page, as a zoned W3C datetime', async () => {
         const xml = await (await sitemapGET(ctx)).text();
         const values = [...xml.matchAll(/<lastmod>([^<]+)<\/lastmod>/g)].map((m) => m[1]);
-        const newest = ALL_ROUTES.map((r) => r.lastModified).sort().at(-1)!;
-        expect(values).toEqual([schemaDateTime(newest), schemaDateTime(newest)]);
+        const newestIn = (locale: string) =>
+            ALL_ROUTES.filter((r) => r.locales.includes(locale as never)).map((r) => r.lastModified).sort().at(-1)!;
+        expect(values).toEqual(sitemapLocales().map((locale) => schemaDateTime(newestIn(locale))));
     });
 
     it('builds a per-locale file for exactly the indexed locales', () => {
@@ -59,10 +61,13 @@ describe('/sitemap-{locale}.xml', () => {
         expect([...xml.matchAll(/<url>/g)]).toHaveLength(ALL_ROUTES.length);
     });
 
-    it('gives every URL the en, es and x-default alternates and nothing else while only they exist', () => {
+    it('gives each URL exactly the alternates of the locales where that page exists, plus x-default', () => {
         const xml = localeSitemapXml('en');
-        const langs = new Set([...xml.matchAll(/hreflang="([^"]+)"/g)].map((m) => m[1]));
-        expect([...langs].sort()).toEqual(['en', 'es', 'x-default']);
+        for (const route of ALL_ROUTES) {
+            const block = xml.split('<url>').find((b) => b.includes(`<loc>${absoluteUrl('en', route.path)}</loc>`))!;
+            const langs = [...block.matchAll(/hreflang="([^"]+)"/g)].map((m) => m[1]);
+            expect(langs, route.path || '(home)').toEqual(Object.keys(routeAlternates(route.path)));
+        }
     });
 
     it('writes lastmod as a W3C datetime with its zone, the same instant the JSON-LD dateModified states', () => {
@@ -78,7 +83,9 @@ describe('/sitemap-{locale}.xml', () => {
     });
 
     it('lists a locale only where the page exists', () => {
-        expect(sitemap('gl')).toEqual([]);
+        for (const locale of LOCALES) {
+            expect(sitemap(locale), locale).toHaveLength(ALL_ROUTES.filter((r) => r.locales.includes(locale)).length);
+        }
         expect(sitemap()).toHaveLength(ALL_ROUTES.reduce((n, r) => n + r.locales.length, 0));
     });
 });

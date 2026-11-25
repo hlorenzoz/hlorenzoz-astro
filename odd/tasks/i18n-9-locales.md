@@ -18,9 +18,9 @@ Objective: translate hlorenzoz.com from en/es to 9 locales, page by page, with p
 | ID | Specs | Task | Route | Status | Evidence |
 | :--- | :--- | :--- | :--- | :--- | :--- |
 | T1 | S3-S5 | Infrastructure: locale config (hreflang, og:locale, html lang, Intl), per-page locale availability, English fallback for untranslated keys, language switcher with 9 languages, hardcoded strings to messages, sitemap index + per-locale sitemaps with hreflang alternates | delegated (writer) | done | f7e42a3 (en/es 60 pages identical; new locales 0 pages; 1365 tests) |
-| T2a | S1, S7 | Move every hardcoded alt/title/aria-label/caption/OG alt and UI label into messages; docs, commands and agents for 9 locales and translated image metadata | delegated (writer) | in progress | |
-| T2 | S1, S6 | Shell copy (navigation, footer, cookie banner, shared labels) in 7 locales | 7 agents, one per locale | pending | |
-| T3 | S1, S2 | Home page | 7 agents | pending | |
+| T2a | S1, S7 | Move every hardcoded alt/title/aria-label/caption/OG alt and UI label into messages; docs, commands and agents for 9 locales and translated image metadata | delegated (writer) | done | 85247be (33 literal strings moved; ~45 es slide alts fixed) |
+| T2 | S1, S6 | Shell copy (navigation, footer, cookie banner, shared labels) in 7 locales | 7 agents, one per locale | done | with T3 |
+| T3 | S1, S2 | Home page | 7 agents | done | home in 9 locales; hreflang 10; Lighthouse de/gl 94/100/100/100 |
 | T4.. | S1, S2 | Then one page at a time: services hub, each service page, portfolio index, each portfolio item, news index, each post, legal pages, card, HTML sitemap, 404 | 7 agents per page | pending | |
 
 ## Log

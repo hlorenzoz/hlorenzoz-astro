@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest';
-import { absoluteUrl, languageAlternates, metaDescription, SCHEMA_IDS } from '@/lib/site-config';
+import { absoluteUrl, languageAlternates, LOCALES, metaDescription, SCHEMA_IDS } from '@/lib/site-config';
 import {
     organizationGraph,
     organizationOffers,
@@ -74,7 +74,7 @@ describe('sitemap ↔ canonical parity (regression)', () => {
 
     it('every URL carries the locale prefix and a trailing slash', () => {
         for (const url of urls) {
-            expect(url).toMatch(/^https:\/\/hlorenzoz\.com\/(en|es)\//);
+            expect(url).toMatch(new RegExp(`^https://hlorenzoz\\.com/(${LOCALES.join('|')})/`));
             expect(url.endsWith('/')).toBe(true);
         }
     });

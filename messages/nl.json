@@ -1,1 +1,579 @@
-{}
+{
+    "navigation": {
+        "home": "Home",
+        "benefits": "Voordelen",
+        "solutions": "Oplossingen",
+        "price": "Prijs",
+        "portfolio": "Portfolio",
+        "news": "Nieuws",
+        "contact": "Contact",
+        "bookConsultation": "Consult boeken",
+        "services": "Diensten",
+        "language": "NL",
+        "breadcrumb": "Kruimelpad",
+        "skipToContent": "Direct naar de inhoud",
+        "languageMenu": "{code}, taalmenu openen",
+        "homeLabel": "Startpagina van Lorenzoz Agency",
+        "openMenu": "Navigatiemenu openen",
+        "closeMenu": "Navigatiemenu sluiten",
+        "languageMenuClose": "{code}, taalmenu sluiten",
+        "menuTitle": "Navigatie",
+        "languageTitle": "Taal",
+        "connect": "Volg ons"
+    },
+    "home": {
+        "meta": {
+            "title": "Lorenzoz Agency | Lokale SEO voor lokale bedrijven",
+            "description": "Meer klanten uit je regio via Google en AI. Eén maandelijks plan voor lokale SEO: autoriteitscontent, vermeldingen, autoriteit in Google en AI, en reviewbeheer.",
+            "ogImageAlt": "Lorenzoz Agency: uitmuntend in AI en web"
+        },
+        "hero": {
+            "badge": "Lokale SEO voor lokale bedrijven",
+            "title": "Meer klanten uit je regio",
+            "titleGradient": "via Google en AI",
+            "description": "Wij verkopen geen losse diensten. Wij werken naar één resultaat toe: wie zoekt wat jouw bedrijf aanbiedt, vindt jou als eerste.",
+            "cta": "Plan een gesprek",
+            "secondaryCta": "Bekijk het plan en de prijzen"
+        },
+        "stats": {
+            "plan": {
+                "label": "Eén plan, alles inbegrepen"
+            },
+            "pillars": {
+                "label": "Pijlers van ons werk"
+            },
+            "markets": {
+                "label": "Markten die we bedienen"
+            }
+        },
+        "markets": {
+            "eyebrow": "Wereldwijd bereik, lokale focus",
+            "title": "Voor bedrijven over de hele wereld",
+            "subtitle": "Gevestigd in Spanje, online actief in de markten waar onze klanten het snelst groeien."
+        },
+        "standard": {
+            "title": "Resultaat, geen losse diensten",
+            "subtitle": "Een website, een paar reviews of een profiel op Google leveren op zichzelf geen klanten op. Het geheel doet dat, als je er elke maand aan werkt met één doel voor ogen.",
+            "oldWay": {
+                "title": "Diensten inkopen",
+                "items": [
+                    "Meerdere leveranciers die nooit met elkaar afstemmen",
+                    "Opleveringen die niemand naast de omzet legt",
+                    "Een website die online staat maar die niemand vindt",
+                    "Reviews en bedrijvengidsen waar niemand naar omkijkt"
+                ]
+            },
+            "newWay": {
+                "title": "Een resultaat inkopen",
+                "items": [
+                    "Eén team dat verantwoordelijk is voor je klantenwerving",
+                    "Al het werk is erop gericht dat je als eerste verschijnt in je regio",
+                    "Content, links, autoriteit en reviews gaan hand in hand",
+                    "Elke maand een rapport in gewone taal over wat er is gedaan"
+                ]
+            }
+        },
+        "problem": {
+            "badge": "Het probleem",
+            "title": "Je klanten <trad>zoeken</trad><br></br>en vinden je concurrent",
+            "description": "De keuze valt op het eerste scherm van Google en steeds vaker in het antwoord dat AI geeft. Een bedrijf dat daar niet staat, komt niet eens in aanmerking.",
+            "cards": [
+                {
+                    "title": "Onvindbaar op Google",
+                    "description": "Verschijnt je bedrijf niet als iemand in de buurt naar jouw dienst zoekt, dan gaat dat telefoontje naar een concurrent."
+                },
+                {
+                    "title": "Weinig zichtbare reputatie",
+                    "description": "Weinig reviews, oude reviews of reviews zonder reactie ondermijnen het vertrouwen precies op het moment dat de klant beslist."
+                },
+                {
+                    "title": "AI raadt een ander aan",
+                    "description": "Assistenten met AI noemen de bedrijven die zij als toonaangevend herkennen. Die plek moet je verdienen."
+                }
+            ]
+        },
+        "solutions": {
+            "badge": "De oplossing",
+            "title": "Eén plan. Vier pijlers.",
+            "subtitle": "Eén maandelijks plan dat al het werk bundelt om zichtbaar te worden in lokale zoekopdrachten op Google en in de antwoorden van AI.",
+            "cta": "Bekijk Lokale SEO",
+            "items": [
+                {
+                    "title": "Autoriteitscontent",
+                    "description": "Content die je bedrijf neerzet als dé referentie in je vakgebied.",
+                    "points": [
+                        "Zoekwoordonderzoek",
+                        "Contentclusters",
+                        "Analyse van ontbrekende content",
+                        "Updates van bestaande content"
+                    ]
+                },
+                {
+                    "title": "Backlinks en vermeldingen",
+                    "description": "Aanwezigheid in betrouwbare bedrijvengidsen en op websites die bedrijven vermelden.",
+                    "points": [
+                        "Links uit betrouwbare bedrijvengidsen",
+                        "Vermeldingen op relevante websites",
+                        "Sterkere lokale autoriteitssignalen",
+                        "Voor Google en voor AI"
+                    ]
+                },
+                {
+                    "title": "Autoriteit in Google en AI",
+                    "description": "Je bedrijf en je website als de referentie die wordt aanbevolen.",
+                    "points": [
+                        "Geoptimaliseerd Google Business Profile",
+                        "Lokale onpage SEO voor je website",
+                        "Gestructureerde gegevens voor lokale bedrijven",
+                        "Zichtbaar in de resultaten van Google en AI"
+                    ]
+                },
+                {
+                    "title": "Reviewbeheer",
+                    "description": "Je reputatie, maand na maand gemeten en verbeterd.",
+                    "points": [
+                        "Groei van je reviews door de tijd gevolgd",
+                        "Trends in positieve en negatieve feedback",
+                        "Reacties van klanten gemonitord",
+                        "Feedbacklinks in je eigen huisstijl"
+                    ]
+                }
+            ]
+        },
+        "benefits": {
+            "title": "Wat er verandert in je bedrijf",
+            "titleGradient": "als je gevonden wordt",
+            "imageAlt": "Dashboard met de groei van een bedrijf",
+            "items": [
+                {
+                    "title": "Zichtbaar waar de keuze valt",
+                    "description": "Je bedrijf in de lokale zoekresultaten van Google en op de kaart, precies waar je klanten kiezen wie ze bellen."
+                },
+                {
+                    "title": "Een reputatie die voor je werkt",
+                    "description": "Reviews die gestaag groeien, en helder inzicht in wat je klanten over je zeggen."
+                },
+                {
+                    "title": "Aanbevolen door Google en AI",
+                    "description": "Content en autoriteit, zodat zoekmachines en assistenten jou herkennen als dé referentie in je regio."
+                }
+            ]
+        },
+        "process": {
+            "title": "Een helder proces, maand na maand",
+            "steps": [
+                {
+                    "number": "01",
+                    "badge": "Audit",
+                    "title": "We brengen in kaart waar je staat",
+                    "description": "We bekijken je huidige aanwezigheid op Google, je website, je reviews en wie er vandaag in jouw regio wordt aanbevolen."
+                },
+                {
+                    "number": "02",
+                    "badge": "Opbouw",
+                    "title": "We werken aan de vier pijlers",
+                    "description": "Content, vermeldingen, autoriteit en reviews lopen tegelijk, volgens een plan dat je vooraf kent."
+                },
+                {
+                    "number": "03",
+                    "badge": "Bijsturen",
+                    "title": "We meten en sturen bij",
+                    "description": "Elke maand krijg je een rapport in gewone taal en passen we het werk aan op wat er is veranderd."
+                }
+            ]
+        },
+        "pricing": {
+            "badge": "Eén plan, alles inbegrepen",
+            "title": "Eenvoudige, transparante prijzen",
+            "description": "Eén maandelijks plan met alle vier de pijlers. Aanvullende diensten krijgen {discount}% korting als je ze samen met Lokale SEO afneemt.",
+            "vat": "Alle prijzen zijn exclusief btw. Voor inwoners van de EU komt daar 21% btw bij.",
+            "paymentTerms": "Bij ondertekening betaal je {upfront}% vooraf (de eerste maand). Daarmee dekken we de kosten van de tools en diensten die het werk mogelijk maken.",
+            "perMonth": "/ mnd",
+            "oneOff": "eenmalige betaling",
+            "from": "vanaf",
+            "learnMore": "Meer informatie",
+            "listLabel": "Standaardprijs",
+            "bundleLabel": "Met Lokale SEO",
+            "core": {
+                "popular": "Ons kernaanbod",
+                "title": "Lokale SEO",
+                "subtitle": "Alle vier de pijlers inbegrepen",
+                "goal": "Doel: de eerste positie op Google voor zoekopdrachten in je regio",
+                "cta": "Plan een gesprek",
+                "groups": [
+                    {
+                        "label": "Autoriteitscontent",
+                        "items": [
+                            "Zoekwoordonderzoek",
+                            "Contentclusters",
+                            "Analyse van ontbrekende content"
+                        ]
+                    },
+                    {
+                        "label": "Backlinks en vermeldingen",
+                        "items": [
+                            "Links uit betrouwbare bedrijvengidsen",
+                            "Vermeldingen op relevante websites",
+                            "Sterkere lokale autoriteitssignalen"
+                        ]
+                    },
+                    {
+                        "label": "Autoriteit in Google en AI",
+                        "items": [
+                            "Geoptimaliseerd Google Business Profile",
+                            "Lokale onpage SEO voor je website",
+                            "Gestructureerde gegevens voor lokale bedrijven"
+                        ]
+                    },
+                    {
+                        "label": "Reviewbeheer",
+                        "items": [
+                            "Groei van je reviews door de tijd gevolgd",
+                            "Trends in positieve en negatieve feedback",
+                            "Reacties van klanten gemonitord"
+                        ]
+                    }
+                ]
+            },
+            "addOnsTitle": "Aanvullende diensten",
+            "addOnsSubtitle": "{discount}% korting op de standaardprijs als je ze samen met Lokale SEO afneemt.",
+            "addOns": {
+                "websiteDevelopment": {
+                    "title": "Websiteontwikkeling",
+                    "subtitle": "Websites die bezoekers omzetten in klanten",
+                    "features": [
+                        "Landingspagina of complete website met meerdere pagina's",
+                        "Ontworpen voor mobiel, met sterke Core Web Vitals vanaf dag één",
+                        "Open Graph en gestructureerde gegevens vanaf de lancering"
+                    ],
+                    "cta": "Aan de slag"
+                },
+                "aiVoiceReceptionist": {
+                    "title": "Telefoonreceptionist met AI",
+                    "subtitle": "Geen enkel telefoontje blijft onbeantwoord",
+                    "features": [
+                        "Afspraken direct in je agenda ingepland",
+                        "Stem en belscript afgestemd op je merk",
+                        "Geoptimaliseerd voor Engels en Spaans"
+                    ],
+                    "cta": "Aan de slag"
+                },
+                "softwareDevelopment": {
+                    "title": "Softwareontwikkeling",
+                    "subtitle": "Op maat, gebouwd om mee te groeien",
+                    "features": [
+                        "Eén codebase voor iOS, Android, web en desktop",
+                        "Geautomatiseerde tests en een pipeline voor CI/CD",
+                        "Volledig eigendom van de broncode bij oplevering"
+                    ],
+                    "cta": "Offerte aanvragen"
+                }
+            }
+        },
+        "testimonials": {
+            "title": "Succesverhalen",
+            "subtitle": "Sluit je aan bij honderden bedrijven die hun werkwijze hebben veranderd met onze oplossingen op basis van AI.",
+            "items": [
+                {
+                    "quote": "Lorenzoz Agency heeft onze reactietijd met 80% verkort. In drie maanden hebben we geen enkele lead gemist.",
+                    "author": "David Chen",
+                    "position": "CEO, TechFlow Solutions"
+                },
+                {
+                    "quote": "De telefoonreceptionist met AI klinkt ongelooflijk menselijk. Onze klanten praten er echt graag mee.",
+                    "author": "Sarah Jenkins",
+                    "position": "Operationeel manager, Bloom Retail"
+                },
+                {
+                    "quote": "Onze support opschalen was vroeger onze grootste hoofdpijn. Nu handelt de AI moeiteloos 90% van alle vragen af.",
+                    "author": "Marcus Thorne",
+                    "position": "Oprichter, Thorne & Co."
+                }
+            ]
+        },
+        "contact": {
+            "badge": "Contact",
+            "title": "Laten we het over je bedrijf hebben.",
+            "subtitle": "Plan een gesprek van 15 minuten."
+        },
+        "faq": {
+            "title": "Veelgestelde vragen",
+            "items": [
+                {
+                    "question": "Garanderen jullie de eerste positie op Google?",
+                    "answer": "Nee, en wees op je hoede voor wie dat wel doet: niemand heeft de rangschikking van Google in de hand. De eerste positie is het doel waar we elke maand naartoe werken, en een rapport in gewone taal laat je zien wat er is gedaan en hoe je zichtbaarheid zich ontwikkelt."
+                },
+                {
+                    "question": "Wat zit er precies in het plan?",
+                    "answer": "Alle vier de pijlers voor {price} per maand {tax}: autoriteitscontent, backlinks en vermeldingen, autoriteit in Google en AI, en reviewbeheer. Er wordt niets apart gefactureerd."
+                },
+                {
+                    "question": "Hoe lang duurt het voordat ik resultaat zie in de lokale zoekresultaten?",
+                    "answer": "De meeste klanten zien binnen 30 tot 60 dagen duidelijke beweging in de lokale kaartresultaten van Google, al kan het in concurrerende markten langer duren."
+                },
+                {
+                    "question": "Waarom betaal ik een deel vooraf?",
+                    "answer": "Bij ondertekening betaal je {upfront}% vooraf. Daarmee dekken we de tools en diensten die we vanaf de eerste dag inzetten voor het werk."
+                },
+                {
+                    "question": "Heb ik al een website of een bedrijfsprofiel op Google nodig?",
+                    "answer": "Nee. Heb je nog geen Google Business Profile, dan maken we het aan en verifiëren we het op jouw naam. Een website kun je als aanvullende dienst toevoegen met {discount}% korting."
+                },
+                {
+                    "question": "Hoe werkt de korting op aanvullende diensten?",
+                    "answer": "Websiteontwikkeling, Telefoonreceptionist met AI en Softwareontwikkeling krijgen {discount}% korting op de standaardprijs als je ze samen met Lokale SEO afneemt. Los afgenomen betaal je de standaardprijs."
+                }
+            ]
+        }
+    },
+    "services": {
+        "websiteDevelopment": {
+            "name": "Websiteontwikkeling",
+            "meta": {
+                "description": "Snelle websites op maat die bezoekers omzetten in klanten. Geoptimaliseerd voor SEO en mobiel, gebouwd volgens moderne prestatienormen."
+            }
+        },
+        "aiVoiceReceptionist": {
+            "name": "Telefoonreceptionist met AI",
+            "meta": {
+                "description": "Telefoonreceptionisten met AI die 24/7 veelgestelde vragen beantwoorden, afspraken inplannen en elke lead vastleggen, zodat geen telefoontje onbeantwoord blijft."
+            }
+        },
+        "localSeo": {
+            "name": "Lokale SEO",
+            "meta": {
+                "description": "Eén maandelijks plan voor lokale SEO: autoriteitscontent, backlinks en vermeldingen, autoriteit in Google en AI, en reviewbeheer, zodat klanten in de buurt jou als eerste vinden."
+            }
+        },
+        "softwareDevelopment": {
+            "name": "Softwareontwikkeling",
+            "meta": {
+                "description": "Complete producten voor web en mobiel, gebouwd voor elk apparaat en elk schermformaat, van eerste prototype tot lancering in productie."
+            }
+        }
+    },
+    "offer": {
+        "from": "Vanafprijs: de uiteindelijke offerte hangt af van de functionele eisen.",
+        "bundleDiscount": "{discount}% korting op de standaardprijs als je het samen met {name} afneemt.",
+        "upfront": "{upfront}% betaal je vooraf.",
+        "beforeTax": "De prijs is exclusief btw."
+    },
+    "tax": {
+        "suffix": "excl. btw"
+    },
+    "numbers": {
+        "badge": "De cijfers",
+        "title": "Wat het kost, en wat het kost als je niets doet",
+        "subtitle": "Twee eenvoudige sommen: wat dit werk zou kosten als je het los inkoopt, en wat elke klant die niet komt een bedrijf kost.",
+        "perMonth": "/ maand",
+        "separate": {
+            "title": "Los ingekocht",
+            "items": [
+                "Lokale SEO",
+                "Reviewbeheer",
+                "Autoriteitscontent",
+                "Backlinks en vermeldingen"
+            ],
+            "unpriced": "extra",
+            "totalLabel": "Slechts twee van de vier",
+            "note": "Standaardprijzen waarvoor we deze twee diensten los aanboden. Content en backlinks werden apart geoffreerd."
+        },
+        "plan": {
+            "title": "In één plan",
+            "includedLabel": "Alle vier de pijlers inbegrepen",
+            "saving": "{saving}% minder dan twee van de pijlers los ingekocht, terwijl de andere twee al zijn inbegrepen."
+        },
+        "missed": {
+            "title": "Wat een klant kost die nooit komt",
+            "description": "Het plan kost {annual} {tax} per jaar. Zet dat af tegen wat je bedrijf misloopt voor elke klant die voor een concurrent kiest.",
+            "columns": {
+                "value": "Als een nieuwe klant per jaar oplevert",
+                "cover": "Het plan is terugverdiend met",
+                "missed": "Eén klant minder per maand kost je per jaar"
+            },
+            "coverClients": "{count} klanten per maand",
+            "coverOne": "1 klant per maand",
+            "coverMonths": "1 klant om de {months} maanden",
+            "footnote": "Illustratief voorbeeld met aangenomen klantwaarden: maak de som met je eigen cijfers. Dit is geen voorspelling van resultaten."
+        }
+    },
+    "payment": {
+        "cta": "Veilig online betalen"
+    },
+    "articles": {
+        "eyebrow": "VAN LINKEDIN",
+        "title": "Nieuwste artikelen op LinkedIn",
+        "subtitle": "Diepgaande artikelen over architectuur, schaalbaarheid en moderne webontwikkeling, rechtstreeks van mijn LinkedIn.",
+        "cta": "Lees op LinkedIn",
+        "readTime": "{min} min. leestijd",
+        "prevSlide": "Vorig artikel",
+        "nextSlide": "Volgend artikel",
+        "goToSlide": "Ga naar artikel {index}"
+    },
+    "footer": {
+        "description": "De groeipartner voor lokale bedrijven. Wij nemen de klantenwerving uit handen, zodat jij je volledig kunt richten op je klanten.",
+        "services": {
+            "title": "Diensten",
+            "items": [
+                {
+                    "label": "Lokale SEO",
+                    "href": "/services/local-seo"
+                },
+                {
+                    "label": "Websiteontwikkeling",
+                    "href": "/services/website-development"
+                },
+                {
+                    "label": "Telefoonreceptionist met AI",
+                    "href": "/services/ai-voice-receptionist"
+                },
+                {
+                    "label": "Softwareontwikkeling",
+                    "href": "/services/software-development"
+                }
+            ]
+        },
+        "agency": {
+            "title": "Bureau",
+            "items": [
+                {
+                    "label": "Diensten",
+                    "href": "/services"
+                },
+                {
+                    "label": "Portfolio",
+                    "href": "/portfolio"
+                },
+                {
+                    "label": "Nieuws",
+                    "href": "/news"
+                },
+                {
+                    "label": "Prijzen",
+                    "href": "#pricing"
+                },
+                {
+                    "label": "Contact",
+                    "href": "#contact"
+                },
+                {
+                    "label": "Visitekaartje van Héctor",
+                    "href": "/card/hector"
+                },
+                {
+                    "label": "Sitemap",
+                    "href": "/sitemap"
+                }
+            ]
+        },
+        "legal": {
+            "title": "Juridisch",
+            "items": [
+                {
+                    "label": "Privacybeleid",
+                    "href": "/privacy-policy"
+                },
+                {
+                    "label": "Algemene voorwaarden",
+                    "href": "/terms-conditions"
+                },
+                {
+                    "label": "Cookiebeleid",
+                    "href": "/cookie-policy"
+                }
+            ]
+        },
+        "copyright": "© 2026 Lorenzoz Agency. Alle rechten voorbehouden."
+    },
+    "card": {
+        "hector": {
+            "email": "Mail",
+            "phone": "Telefoon",
+            "meta": {
+                "title": "Héctor Luis Lorenzo Zaldivar | Digitaal visitekaartje",
+                "description": "Founder & AI Architect bij Lorenzoz Agency. Neem contact met me op voor automatisering met AI en websiteontwikkeling van topkwaliteit.",
+                "ogImageAlt": "Héctor Luis Lorenzo Zaldivar, Founder & AI Architect"
+            }
+        }
+    },
+    "cookieBanner": {
+        "text": "We gebruiken cookies om je surfervaring te verbeteren, gepersonaliseerde advertenties of content te tonen en ons verkeer te analyseren. Door op \"Alles accepteren\" te klikken, ga je akkoord met ons gebruik van cookies, beheerd via Cloudflare Zaraz.",
+        "accept": "Alles accepteren",
+        "reject": "Weigeren",
+        "preferences": "Cookiebeleid",
+        "label": "Melding over cookietoestemming"
+    },
+    "portfolio": {
+        "type": {
+            "live": "Live site",
+            "demo": "Conceptdemo"
+        },
+        "portfolioCarousel": {
+            "title": "Gebouwd om uit te blinken",
+            "subtitle": "Bekijk ons portfolio met snelle websites en projecten die live in productie draaien.",
+            "cta": "Bekijk het volledige portfolio",
+            "explore": "Details bekijken",
+            "liveDemo": "Live demo",
+            "viewLive": "Live site bekijken",
+            "goToSlide": "Ga naar dia {index}",
+            "prevSlide": "Vorige dia",
+            "nextSlide": "Volgende dia",
+            "prevImage": "Vorige afbeelding",
+            "nextImage": "Volgende afbeelding",
+            "goToImage": "Ga naar afbeelding {index}",
+            "close": "Sluiten",
+            "screenshotAlt": "Screenshot van {alt}, weergave {index}",
+            "imageCount": "Afbeelding {index} van {total}",
+            "viewFullDetail": "Alle details bekijken",
+            "slideAlt": "{alt}, dia {index}",
+            "viewFull": "Volledig bekijken",
+            "fullScreen": "Volledig scherm",
+            "prevFeature": "Vorige functie",
+            "nextFeature": "Volgende functie",
+            "selectSection": "Sectie kiezen: {name}",
+            "interactHint": "Klik of gebruik de pijltjestoetsen ← →"
+        },
+        "detail": {
+            "liveDemoAria": "{label} voor {title}",
+            "contactForQuote": "Offerte aanvragen",
+            "visitLivePlatform": "Live platform bezoeken: {title}",
+            "visitLiveDemo": "Live demo bekijken",
+            "showcaseAlt": "Showcase van {title}",
+            "openShowcase": "Showcase van {title} openen",
+            "fullScreenshotAlt": "Volledige schermafbeelding van {title}",
+            "exploreLivePlatform": "Live platform verkennen"
+        }
+    },
+    "news": {
+        "home": {
+            "eyebrow": "NIEUWS",
+            "title": "Laatste nieuws",
+            "subtitle": "Nieuwe case studies en aankondigingen van het bureau.",
+            "viewAll": "Bekijk al het nieuws"
+        }
+    },
+    "assistant": {
+        "expand": "Assistent vergroten",
+        "shrink": "Widget verkleinen",
+        "avatarAlt": "Hector Lorenzoz",
+        "prompt": "Waarmee kan ik je helpen?",
+        "connecting": "Verbinden...",
+        "speaking": "Ik ben aan het woord...",
+        "listening": "Ik luister...",
+        "placeholder": "Of stuur een bericht",
+        "send": "Bericht versturen",
+        "startCall": "Gesprek starten",
+        "endCall": "Gesprek beëindigen",
+        "micError": "Geen toegang tot de microfoon of er is een fout opgetreden.",
+        "chatError": "De chat kon niet worden gestart. Probeer het opnieuw."
+    },
+    "media": {
+        "calBooking": "Afspraak boeken via Cal.com"
+    },
+    "notFound": {
+        "metaTitle": "Pagina niet gevonden | Lorenzoz Agency",
+        "title": "Pagina niet gevonden",
+        "text": "De pagina die je zoekt bestaat niet of is verplaatst.",
+        "back": "Terug naar de startpagina"
+    }
+}

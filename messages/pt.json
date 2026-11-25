@@ -1,1 +1,579 @@
-{}
+{
+  "navigation": {
+    "home": "Início",
+    "benefits": "Benefícios",
+    "solutions": "Soluções",
+    "price": "Preço",
+    "portfolio": "Portfolio",
+    "news": "Notícias",
+    "contact": "Contacto",
+    "bookConsultation": "Marcar consulta",
+    "services": "Serviços",
+    "language": "PT",
+    "breadcrumb": "Trilho de navegação",
+    "skipToContent": "Saltar para o conteúdo principal",
+    "languageMenu": "{code}, abrir o menu de idioma",
+    "homeLabel": "Lorenzoz Agency, página inicial",
+    "openMenu": "Abrir o menu de navegação",
+    "closeMenu": "Fechar o menu de navegação",
+    "languageMenuClose": "{code}, fechar o menu de idioma",
+    "menuTitle": "Navegação",
+    "languageTitle": "Idioma",
+    "connect": "Contacto"
+  },
+  "cookieBanner": {
+    "text": "Utilizamos cookies para melhorar a sua experiência de navegação, apresentar anúncios ou conteúdos personalizados e analisar o nosso tráfego. Ao clicar em \"Aceitar tudo\", consente a utilização de cookies, gerida através do Cloudflare Zaraz.",
+    "accept": "Aceitar tudo",
+    "reject": "Rejeitar",
+    "preferences": "Política de cookies",
+    "label": "Aviso de consentimento de cookies"
+  },
+  "footer": {
+    "description": "O parceiro de crescimento dos negócios locais. Tratamos da angariação de clientes para que se possa dedicar a servir bem os seus.",
+    "copyright": "© 2026 Lorenzoz Agency. Todos os direitos reservados.",
+    "agency": {
+      "title": "Agência",
+      "items": [
+        {
+          "label": "Serviços",
+          "href": "/services"
+        },
+        {
+          "label": "Portfolio",
+          "href": "/portfolio"
+        },
+        {
+          "label": "Notícias",
+          "href": "/news"
+        },
+        {
+          "label": "Preços",
+          "href": "#pricing"
+        },
+        {
+          "label": "Contacto",
+          "href": "#contact"
+        },
+        {
+          "label": "Cartão do Héctor",
+          "href": "/card/hector"
+        },
+        {
+          "label": "Mapa do site",
+          "href": "/sitemap"
+        }
+      ]
+    },
+    "services": {
+      "title": "Serviços",
+      "items": [
+        {
+          "label": "SEO local",
+          "href": "/services/local-seo"
+        },
+        {
+          "label": "Desenvolvimento web",
+          "href": "/services/website-development"
+        },
+        {
+          "label": "Rececionista de voz com IA",
+          "href": "/services/ai-voice-receptionist"
+        },
+        {
+          "label": "Desenvolvimento de software",
+          "href": "/services/software-development"
+        }
+      ]
+    },
+    "legal": {
+      "title": "Informação legal",
+      "items": [
+        {
+          "label": "Política de privacidade",
+          "href": "/privacy-policy"
+        },
+        {
+          "label": "Termos e condições",
+          "href": "/terms-conditions"
+        },
+        {
+          "label": "Política de cookies",
+          "href": "/cookie-policy"
+        }
+      ]
+    }
+  },
+  "home": {
+    "meta": {
+      "title": "Lorenzoz Agency | SEO local para negócios locais",
+      "description": "Mais clientes locais vindos do Google e da IA. Um único plano mensal de SEO local: conteúdo de autoridade, citações, autoridade no Google e na IA e gestão de avaliações.",
+      "ogImageAlt": "Lorenzoz Agency: excelência em IA e web"
+    },
+    "hero": {
+      "badge": "SEO local para negócios locais",
+      "title": "Mais clientes locais",
+      "titleGradient": "vindos do Google e da IA",
+      "description": "Não vendemos serviços avulsos. Trabalhamos para um único resultado: quando alguém procura o que o seu negócio oferece, é a si que encontra primeiro.",
+      "cta": "Marcar uma chamada",
+      "secondaryCta": "Ver o plano e os preços"
+    },
+    "stats": {
+      "plan": {
+        "label": "Um plano, tudo incluído"
+      },
+      "pillars": {
+        "label": "Pilares de trabalho"
+      },
+      "markets": {
+        "label": "Mercados onde atuamos"
+      }
+    },
+    "markets": {
+      "eyebrow": "Alcance global, foco local",
+      "title": "Ao serviço de negócios em todo o mundo",
+      "subtitle": "Sediados em Espanha, trabalhamos online nos mercados onde os nossos clientes crescem mais depressa."
+    },
+    "standard": {
+      "title": "Resultados, não serviços avulsos",
+      "subtitle": "Um site, meia dúzia de avaliações ou um perfil no Google não trazem clientes por si só. O conjunto é que traz, trabalhado todos os meses com um único objetivo.",
+      "oldWay": {
+        "title": "Comprar serviços",
+        "items": [
+          "Vários fornecedores que nunca se coordenam",
+          "Entregas que ninguém compara com as vendas",
+          "Um site publicado que ninguém encontra",
+          "Avaliações e diretórios ao abandono"
+        ]
+      },
+      "newWay": {
+        "title": "Comprar um resultado",
+        "items": [
+          "Uma única equipa responsável pela angariação dos seus clientes",
+          "Todo o trabalho aponta para aparecer em primeiro lugar na sua zona",
+          "Conteúdo, links, autoridade e avaliações avançam em conjunto",
+          "Um relatório mensal, em linguagem clara, do que foi feito"
+        ]
+      }
+    },
+    "problem": {
+      "badge": "O problema",
+      "title": "Os seus clientes <trad>procuram</trad><br></br>e encontram a concorrência",
+      "description": "A decisão é tomada no primeiro ecrã do Google e, cada vez mais, na resposta de um assistente de IA. Um negócio que não está lá nunca entra na comparação.",
+      "cards": [
+        {
+          "title": "Invisível no Google",
+          "description": "Se o seu negócio não aparece quando alguém procura o seu serviço perto de si, é um concorrente que recebe essa chamada."
+        },
+        {
+          "title": "Pouca reputação visível",
+          "description": "Poucas avaliações, avaliações antigas ou sem resposta minam a confiança mesmo antes de o cliente decidir."
+        },
+        {
+          "title": "A IA recomenda outra empresa",
+          "description": "Os assistentes de IA respondem com os negócios que reconhecem como referência. Esse lugar tem de ser conquistado."
+        }
+      ]
+    },
+    "solutions": {
+      "badge": "A solução",
+      "title": "Um plano. Quatro pilares.",
+      "subtitle": "Um plano mensal que reúne o trabalho necessário para ganhar visibilidade nas pesquisas locais do Google e nas respostas dos motores de IA.",
+      "cta": "Ver SEO local",
+      "items": [
+        {
+          "title": "Conteúdo de autoridade",
+          "description": "O conteúdo que afirma o seu negócio como referência no seu setor.",
+          "points": [
+            "Estudo de keywords",
+            "Clusters de conteúdo",
+            "Análise de lacunas de conteúdo",
+            "Atualização do conteúdo existente"
+          ]
+        },
+        {
+          "title": "Backlinks e citações",
+          "description": "Presença em diretórios e sites de citações de confiança.",
+          "points": [
+            "Links de diretórios de confiança",
+            "Citações em sites relevantes",
+            "Sinais de autoridade local mais fortes",
+            "Para o Google e para os motores de IA"
+          ]
+        },
+        {
+          "title": "Autoridade no Google e na IA",
+          "description": "O seu negócio e o seu site como a referência que é recomendada.",
+          "points": [
+            "Google Business Profile otimizado",
+            "SEO local on page para o seu site",
+            "Dados estruturados de negócio local",
+            "Presença nos resultados do Google e da IA"
+          ]
+        },
+        {
+          "title": "Gestão de avaliações",
+          "description": "A sua reputação, medida e trabalhada mês após mês.",
+          "points": [
+            "Evolução das avaliações acompanhada ao longo do tempo",
+            "Tendências das opiniões positivas e negativas",
+            "Respostas aos clientes monitorizadas",
+            "Links de avaliação com a sua marca"
+          ]
+        }
+      ]
+    },
+    "benefits": {
+      "title": "O que muda no seu negócio",
+      "titleGradient": "quando passa a ser encontrado",
+      "imageAlt": "Painel de crescimento do negócio",
+      "items": [
+        {
+          "title": "Visibilidade onde se decide",
+          "description": "O seu negócio presente nas pesquisas locais do Google e no mapa, onde os seus clientes escolhem a quem ligar."
+        },
+        {
+          "title": "Uma reputação que trabalha por si",
+          "description": "Avaliações que crescem de forma constante e uma visão clara do que os seus clientes dizem."
+        },
+        {
+          "title": "Recomendado pelo Google e pela IA",
+          "description": "Conteúdo e autoridade para que os motores de pesquisa e os assistentes o reconheçam como a referência na sua zona."
+        }
+      ]
+    },
+    "process": {
+      "title": "Um processo claro, mês após mês",
+      "steps": [
+        {
+          "number": "01",
+          "badge": "Auditoria",
+          "title": "Percebemos em que ponto está",
+          "description": "Analisamos a sua presença atual no Google, o seu site, as suas avaliações e quem é recomendado hoje na sua zona."
+        },
+        {
+          "number": "02",
+          "badge": "Construção",
+          "title": "Trabalhamos os quatro pilares",
+          "description": "Conteúdo, citações, autoridade e avaliações avançam em paralelo, segundo um plano que conhece de antemão."
+        },
+        {
+          "number": "03",
+          "badge": "Iteração",
+          "title": "Medimos e ajustamos",
+          "description": "Todos os meses recebe um relatório em linguagem clara e ajustamos o trabalho ao que mudou."
+        }
+      ]
+    },
+    "pricing": {
+      "badge": "Um plano, tudo incluído",
+      "title": "Preços simples e transparentes",
+      "description": "Um plano mensal com os quatro pilares. Os serviços opcionais têm {discount}% de desconto quando contratados em conjunto com o SEO local.",
+      "vat": "Nenhum preço inclui IVA. Os residentes na UE estão sujeitos a +21% de IVA.",
+      "paymentTerms": "Ao assinar, {upfront}% é pago antecipadamente (o primeiro mês). Cobre o custo das ferramentas e dos serviços que tornam o trabalho possível.",
+      "perMonth": "/ mês",
+      "oneOff": "pagamento único",
+      "from": "desde",
+      "learnMore": "Saber mais",
+      "listLabel": "Preço de tabela",
+      "bundleLabel": "Com SEO local",
+      "core": {
+        "popular": "A oferta principal",
+        "title": "SEO local",
+        "subtitle": "Os quatro pilares incluídos",
+        "goal": "Objetivo: a primeira posição no Google nas pesquisas da sua zona",
+        "cta": "Marcar uma chamada",
+        "groups": [
+          {
+            "label": "Conteúdo de autoridade",
+            "items": [
+              "Estudo de keywords",
+              "Clusters de conteúdo",
+              "Análise de lacunas de conteúdo"
+            ]
+          },
+          {
+            "label": "Backlinks e citações",
+            "items": [
+              "Links de diretórios de confiança",
+              "Citações em sites relevantes",
+              "Sinais de autoridade local mais fortes"
+            ]
+          },
+          {
+            "label": "Autoridade no Google e na IA",
+            "items": [
+              "Google Business Profile otimizado",
+              "SEO local on page para o seu site",
+              "Dados estruturados de negócio local"
+            ]
+          },
+          {
+            "label": "Gestão de avaliações",
+            "items": [
+              "Evolução das avaliações acompanhada ao longo do tempo",
+              "Tendências das opiniões positivas e negativas",
+              "Respostas aos clientes monitorizadas"
+            ]
+          }
+        ]
+      },
+      "addOnsTitle": "Serviços opcionais",
+      "addOnsSubtitle": "{discount}% de desconto sobre o preço de tabela quando contratados com o SEO local.",
+      "addOns": {
+        "websiteDevelopment": {
+          "title": "Desenvolvimento web",
+          "subtitle": "Sites pensados para converter",
+          "features": [
+            "Página de destino ou site completo com várias páginas",
+            "Design pensado primeiro para telemóvel e Core Web Vitals desde o primeiro dia",
+            "Open Graph e dados estruturados incluídos no lançamento"
+          ],
+          "cta": "Começar"
+        },
+        "aiVoiceReceptionist": {
+          "title": "Rececionista de voz com IA",
+          "subtitle": "Nenhuma chamada fica sem resposta",
+          "features": [
+            "Marcações feitas diretamente na sua agenda",
+            "Voz e guião personalizados à medida da sua marca",
+            "Otimizado para inglês e espanhol"
+          ],
+          "cta": "Começar"
+        },
+        "softwareDevelopment": {
+          "title": "Desenvolvimento de software",
+          "subtitle": "À medida, preparado para crescer",
+          "features": [
+            "Uma única base de código para iOS, Android, web e desktop",
+            "Testes automatizados e pipeline de CI/CD",
+            "Propriedade total do código fonte na entrega"
+          ],
+          "cta": "Pedir orçamento"
+        }
+      }
+    },
+    "testimonials": {
+      "title": "Casos de sucesso",
+      "subtitle": "Faça como centenas de empresas que transformaram as suas operações com as nossas soluções de IA.",
+      "items": [
+        {
+          "quote": "A Lorenzoz Agency reduziu o nosso tempo de resposta em 80%. Há três meses que não perdemos um único contacto.",
+          "author": "David Chen",
+          "position": "CEO, TechFlow Solutions"
+        },
+        {
+          "quote": "A rececionista de voz com IA soa incrivelmente humana. Os nossos clientes até gostam de falar com ela.",
+          "author": "Sarah Jenkins",
+          "position": "Diretora de Operações, Bloom Retail"
+        },
+        {
+          "quote": "Escalar o apoio ao cliente era a nossa maior dor de cabeça. Agora a IA trata de 90% do volume sem esforço.",
+          "author": "Marcus Thorne",
+          "position": "Fundador, Thorne & Co."
+        }
+      ]
+    },
+    "contact": {
+      "badge": "Contacto",
+      "title": "Vamos falar sobre o seu negócio.",
+      "subtitle": "Marque uma chamada de 15 minutos."
+    },
+    "faq": {
+      "title": "Perguntas frequentes",
+      "items": [
+        {
+          "question": "Garantem a primeira posição no Google?",
+          "answer": "Não, e desconfie de quem garanta: ninguém controla o ranking do Google. A primeira posição é o objetivo para o qual trabalhamos todos os meses, e um relatório em linguagem clara mostra o que foi feito e como está a evoluir a sua visibilidade."
+        },
+        {
+          "question": "O que inclui exatamente o plano?",
+          "answer": "Os quatro pilares por {price} por mês {tax}: conteúdo de autoridade, backlinks e citações, autoridade no Google e na IA e gestão de avaliações. Nada é faturado à parte."
+        },
+        {
+          "question": "Quanto tempo até ver resultados nas pesquisas locais?",
+          "answer": "A maioria dos clientes vê uma evolução significativa nos resultados do mapa do Google em 30 a 60 dias, embora os mercados mais competitivos possam demorar mais."
+        },
+        {
+          "question": "Porque é que uma parte é paga antecipadamente?",
+          "answer": "Ao assinar, {upfront}% é pago antecipadamente. Cobre as ferramentas e os serviços que contratamos para fazer o trabalho desde o primeiro dia."
+        },
+        {
+          "question": "Preciso de já ter um site ou um perfil no Google?",
+          "answer": "Não. Se não tiver Google Business Profile, nós criamos e verificamos o perfil em seu nome, e pode juntar um site como serviço opcional com {discount}% de desconto."
+        },
+        {
+          "question": "Como funciona o desconto nos serviços opcionais?",
+          "answer": "Desenvolvimento web, Rececionista de voz com IA e Desenvolvimento de software têm {discount}% de desconto sobre o preço de tabela quando contratados com o SEO local. Comprados à parte, custam o preço de tabela."
+        }
+      ]
+    }
+  },
+  "news": {
+    "home": {
+      "eyebrow": "NOTÍCIAS",
+      "title": "Últimas notícias",
+      "subtitle": "Novos casos de estudo e novidades da agência.",
+      "viewAll": "Ver todas as notícias"
+    }
+  },
+  "numbers": {
+    "badge": "Os números",
+    "title": "Quanto custa, e quanto custa não o fazer",
+    "subtitle": "Duas contas simples: quanto custaria este trabalho comprado peça a peça, e quanto custa a um negócio cada cliente que não chega.",
+    "perMonth": "/ mês",
+    "separate": {
+      "title": "Comprado em separado",
+      "items": [
+        "SEO local",
+        "Gestão de avaliações",
+        "Conteúdo de autoridade",
+        "Backlinks e citações"
+      ],
+      "unpriced": "extra",
+      "totalLabel": "Só dois dos quatro",
+      "note": "Preços de tabela a que oferecíamos estes dois serviços em separado. O conteúdo e os backlinks eram orçamentados à parte."
+    },
+    "plan": {
+      "title": "Num único plano",
+      "includedLabel": "Os quatro pilares incluídos",
+      "saving": "Menos {saving}% do que dois dos pilares comprados em separado, com os outros dois já incluídos."
+    },
+    "missed": {
+      "title": "Quanto custa um cliente que nunca chega",
+      "description": "O plano custa {annual} {tax} por ano. Compare com o que o seu negócio deixa de faturar por cada cliente que escolhe um concorrente.",
+      "columns": {
+        "value": "Se um novo cliente lhe rende, por ano",
+        "cover": "O plano fica pago com",
+        "missed": "Um cliente a menos por mês representa, por ano"
+      },
+      "coverClients": "{count} clientes por mês",
+      "coverOne": "1 cliente por mês",
+      "coverMonths": "1 cliente a cada {months} meses",
+      "footnote": "Exemplo ilustrativo com valores de cliente assumidos: faça a conta com os seus. Não é uma previsão de resultados."
+    }
+  },
+  "tax": {
+    "suffix": "+ IVA"
+  },
+  "offer": {
+    "from": "Preço inicial: o orçamento final depende dos requisitos funcionais.",
+    "bundleDiscount": "{discount}% de desconto sobre o preço de tabela quando contratado com {name}.",
+    "upfront": "{upfront}% é pago antecipadamente.",
+    "beforeTax": "O preço não inclui IVA."
+  },
+  "articles": {
+    "eyebrow": "DO LINKEDIN",
+    "title": "Últimos artigos no LinkedIn",
+    "subtitle": "Análises aprofundadas sobre arquitetura, escalabilidade e desenvolvimento web moderno, diretamente do meu LinkedIn.",
+    "cta": "Ler no LinkedIn",
+    "readTime": "{min} min de leitura",
+    "prevSlide": "Artigo anterior",
+    "nextSlide": "Artigo seguinte",
+    "goToSlide": "Ir para o artigo {index}"
+  },
+  "payment": {
+    "cta": "Pagar online em segurança"
+  },
+  "portfolio": {
+    "portfolioCarousel": {
+      "title": "Feito para a excelência",
+      "subtitle": "Explore o nosso portfolio de sites de alto desempenho e projetos em produção.",
+      "cta": "Ver o portfolio completo",
+      "explore": "Ver detalhes",
+      "liveDemo": "Demonstração",
+      "viewLive": "Ver o site publicado",
+      "goToSlide": "Ir para o diapositivo {index}",
+      "prevSlide": "Diapositivo anterior",
+      "nextSlide": "Diapositivo seguinte",
+      "prevImage": "Imagem anterior",
+      "nextImage": "Imagem seguinte",
+      "goToImage": "Ir para a imagem {index}",
+      "close": "Fechar",
+      "screenshotAlt": "Captura de ecrã de {alt}, vista {index}",
+      "imageCount": "Imagem {index} de {total}",
+      "viewFullDetail": "Ver todos os detalhes",
+      "slideAlt": "{alt}, diapositivo {index}",
+      "viewFull": "Ver completo",
+      "fullScreen": "Ecrã inteiro",
+      "prevFeature": "Funcionalidade anterior",
+      "nextFeature": "Funcionalidade seguinte",
+      "selectSection": "Selecionar secção: {name}",
+      "interactHint": "Interaja com cliques ou com as setas ← →"
+    },
+    "type": {
+      "live": "Site publicado",
+      "demo": "Demonstração conceptual"
+    },
+    "detail": {
+      "liveDemoAria": "{label} de {title}",
+      "contactForQuote": "Pedir orçamento",
+      "visitLivePlatform": "Visitar a plataforma online: {title}",
+      "visitLiveDemo": "Ver a demo online",
+      "showcaseAlt": "Apresentação de {title}",
+      "openShowcase": "Abrir a apresentação de {title}",
+      "fullScreenshotAlt": "Captura de ecrã completa de {title}",
+      "exploreLivePlatform": "Explorar a plataforma online"
+    }
+  },
+  "services": {
+    "localSeo": {
+      "name": "SEO local",
+      "meta": {
+        "description": "Um plano mensal de SEO local: conteúdo de autoridade, backlinks e citações, autoridade no Google e na IA e gestão de avaliações, para que os clientes da sua zona o encontrem primeiro."
+      }
+    },
+    "websiteDevelopment": {
+      "name": "Desenvolvimento web",
+      "meta": {
+        "description": "Sites rápidos e à medida, pensados para transformar visitantes em clientes. Otimizados para SEO e adaptados a telemóvel, construídos segundo os padrões atuais de desempenho."
+      }
+    },
+    "aiVoiceReceptionist": {
+      "name": "Rececionista de voz com IA",
+      "meta": {
+        "description": "Rececionistas de voz com IA, 24/7, que respondem a perguntas frequentes, marcam consultas e captam cada contacto, para que nenhuma chamada fique sem resposta."
+      }
+    },
+    "softwareDevelopment": {
+      "name": "Desenvolvimento de software",
+      "meta": {
+        "description": "Produtos full stack, web e mobile, feitos para funcionar em qualquer dispositivo e tamanho de ecrã, do primeiro protótipo ao lançamento em produção."
+      }
+    }
+  },
+  "assistant": {
+    "expand": "Abrir o assistente",
+    "shrink": "Minimizar o assistente",
+    "avatarAlt": "Hector Lorenzoz",
+    "prompt": "Em que posso ajudar?",
+    "connecting": "A ligar...",
+    "speaking": "Estou a falar...",
+    "listening": "Estou a ouvir...",
+    "placeholder": "Ou envie uma mensagem",
+    "send": "Enviar mensagem",
+    "startCall": "Iniciar uma chamada",
+    "endCall": "Terminar chamada",
+    "micError": "Não foi possível aceder ao microfone ou ocorreu um erro.",
+    "chatError": "Não foi possível iniciar o chat. Tente novamente."
+  },
+  "media": {
+    "calBooking": "Marcação no Cal.com"
+  },
+  "card": {
+    "hector": {
+      "email": "Email",
+      "phone": "Telefone",
+      "meta": {
+        "title": "Héctor Luis Lorenzo Zaldivar | Cartão de visita digital",
+        "description": "Fundador e Arquiteto de IA na Lorenzoz Agency. Fale comigo sobre automação com IA e desenvolvimento web de gama alta.",
+        "ogImageAlt": "Héctor Luis Lorenzo Zaldivar, Fundador e Arquiteto de IA"
+      }
+    }
+  },
+  "notFound": {
+    "metaTitle": "Página não encontrada | Lorenzoz Agency",
+    "title": "Página não encontrada",
+    "text": "A página que procura não existe ou foi movida.",
+    "back": "Voltar ao início"
+  }
+}

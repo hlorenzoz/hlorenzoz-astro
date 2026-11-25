@@ -102,10 +102,18 @@ describe('localesWithKeys (page availability rule)', () => {
 });
 
 describe('live availability', () => {
-    it('builds every page in en and es and nowhere else while the new locale files are empty', () => {
-        expect(pageLocales('home')).toEqual(['en', 'es']);
+    it('builds every page in en and es (the fully written locales)', () => {
         for (const route of ALL_ROUTES) {
-            expect(routeLocales(route.path), route.path || '(home)').toEqual(['en', 'es']);
+            expect(routeLocales(route.path).slice(0, 2), route.path || '(home)').toEqual(['en', 'es']);
+        }
+    });
+
+    it('builds a page in a new locale only when that locale holds all of its copy', () => {
+        // The rollout is page by page: which pages exist depends on what is translated, not on a list.
+        for (const route of ALL_ROUTES) {
+            for (const locale of routeLocales(route.path)) {
+                expect(pageLocales(...(route.copyKeys ?? [])), `${route.path || '(home)'} in ${locale}`).toContain(locale);
+            }
         }
     });
 

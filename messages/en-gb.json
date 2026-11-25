@@ -1,1 +1,579 @@
-{}
+{
+  "navigation": {
+    "home": "Home",
+    "benefits": "Benefits",
+    "solutions": "Solutions",
+    "price": "Price",
+    "portfolio": "Portfolio",
+    "news": "News",
+    "contact": "Contact",
+    "bookConsultation": "Book a consultation",
+    "services": "Services",
+    "language": "EN",
+    "breadcrumb": "Breadcrumb",
+    "skipToContent": "Skip to main content",
+    "languageMenu": "{code}, open language menu",
+    "homeLabel": "Lorenzoz Agency Home",
+    "openMenu": "Open navigation menu",
+    "languageMenuClose": "{code}, close language menu",
+    "menuTitle": "Navigation",
+    "closeMenu": "Close navigation menu",
+    "languageTitle": "Language",
+    "connect": "Connect"
+  },
+  "cookieBanner": {
+    "text": "We use cookies to improve your browsing experience, show personalised ads or content, and analyse our traffic. By clicking \"Accept all\", you consent to our use of cookies as managed by Cloudflare Zaraz.",
+    "accept": "Accept all",
+    "reject": "Reject",
+    "preferences": "Cookie Policy",
+    "label": "Cookie consent banner"
+  },
+  "home": {
+    "meta": {
+      "title": "Lorenzoz Agency | Local SEO for Local Businesses",
+      "description": "More local customers from Google and AI. One monthly Local SEO plan: authority content, citations, authority on Google and AI, and review management.",
+      "ogImageAlt": "Lorenzoz Agency: AI & Web Excellence"
+    },
+    "hero": {
+      "badge": "Local SEO for local businesses",
+      "title": "More local customers",
+      "titleGradient": "from Google and AI",
+      "description": "We don't sell services piecemeal. We work towards one result: when someone searches for what your business offers, they find you first.",
+      "cta": "Book a call",
+      "secondaryCta": "See the plan and pricing"
+    },
+    "stats": {
+      "plan": {
+        "label": "One plan, everything included"
+      },
+      "pillars": {
+        "label": "Pillars of work"
+      },
+      "markets": {
+        "label": "Markets served"
+      }
+    },
+    "markets": {
+      "eyebrow": "Global reach, local focus",
+      "title": "Working with businesses worldwide",
+      "subtitle": "Based in Spain, delivering online across the markets where our clients grow fastest."
+    },
+    "standard": {
+      "title": "Results, not piecemeal services",
+      "subtitle": "A website, a handful of reviews or a Google profile won't bring in customers on their own. The whole package does, worked on every month towards a single goal.",
+      "oldWay": {
+        "title": "Buying services",
+        "items": [
+          "Several suppliers who never talk to each other",
+          "Deliverables nobody measures against sales",
+          "A website that's live but nobody finds",
+          "Reviews and directory listings left to gather dust"
+        ]
+      },
+      "newWay": {
+        "title": "Buying a result",
+        "items": [
+          "One team accountable for winning you customers",
+          "Every piece of work aimed at showing up first in your area",
+          "Content, links, authority and reviews moving together",
+          "A monthly report in plain English on what was done"
+        ]
+      }
+    },
+    "problem": {
+      "badge": "The problem",
+      "title": "Your customers <trad>search</trad><br></br>and find someone else",
+      "description": "The decision is made on the first screen of Google and, increasingly, in an AI assistant's answer. A business that isn't there never makes the shortlist.",
+      "cards": [
+        {
+          "title": "Invisible on Google",
+          "description": "If your business doesn't show up when someone searches for your service nearby, a competitor gets that call."
+        },
+        {
+          "title": "A reputation nobody can see",
+          "description": "Few reviews, old ones or ones left unanswered chip away at trust just before the customer decides."
+        },
+        {
+          "title": "AI recommends someone else",
+          "description": "AI assistants answer with the businesses they recognise as the go to name. That place has to be earned."
+        }
+      ]
+    },
+    "solutions": {
+      "badge": "The solution",
+      "title": "One plan. Four pillars.",
+      "subtitle": "One monthly plan that brings together all the work needed to become visible in local Google searches and in the answers AI engines give.",
+      "cta": "See Local SEO",
+      "items": [
+        {
+          "title": "Authority content",
+          "description": "The content that establishes your business as a reference in its field.",
+          "points": [
+            "Keyword research",
+            "Content clusters",
+            "Content gap analysis",
+            "Updates to existing content"
+          ]
+        },
+        {
+          "title": "Backlinks and citations",
+          "description": "A presence on trusted directories and citation websites.",
+          "points": [
+            "Links from trusted directories",
+            "Citations on relevant websites",
+            "Stronger local authority signals",
+            "For Google and for AI engines"
+          ]
+        },
+        {
+          "title": "Authority on Google and AI",
+          "description": "Your business and your website as the name that gets recommended.",
+          "points": [
+            "Optimised Google Business Profile",
+            "On page local SEO for your website",
+            "Local business structured data",
+            "Presence in Google and AI results"
+          ]
+        },
+        {
+          "title": "Review management",
+          "description": "Your reputation, measured and worked on month after month.",
+          "points": [
+            "Review growth tracked over time",
+            "Positive and negative feedback trends",
+            "Customer responses monitored",
+            "Branded feedback links"
+          ]
+        }
+      ]
+    },
+    "benefits": {
+      "title": "What changes for your business",
+      "titleGradient": "when people can find you",
+      "imageAlt": "Business growth dashboard",
+      "items": [
+        {
+          "title": "Visible where the decision is made",
+          "description": "Your business showing up in local Google searches and on the map, where your customers choose who to ring."
+        },
+        {
+          "title": "A reputation that works for you",
+          "description": "Reviews that grow steadily, and a clear picture of what your customers are saying."
+        },
+        {
+          "title": "Recommended by Google and AI",
+          "description": "Content and authority so that search engines and assistants recognise you as the go to name in your area."
+        }
+      ]
+    },
+    "process": {
+      "title": "A clear process, month after month",
+      "steps": [
+        {
+          "number": "01",
+          "badge": "Audit",
+          "title": "We find out where you stand",
+          "description": "We review your current presence on Google, your website, your reviews and who gets recommended in your area today."
+        },
+        {
+          "number": "02",
+          "badge": "Build",
+          "title": "We work on the four pillars",
+          "description": "Content, citations, authority and reviews move in parallel, to a plan you see in advance."
+        },
+        {
+          "number": "03",
+          "badge": "Iterate",
+          "title": "We measure and adjust",
+          "description": "Every month you get a report in plain English and we adjust the work to whatever has changed."
+        }
+      ]
+    },
+    "pricing": {
+      "badge": "One plan, everything included",
+      "title": "Simple, transparent pricing",
+      "description": "One monthly plan covering all four pillars. Optional services are {discount}% off when taken alongside Local SEO.",
+      "vat": "All prices exclude VAT. EU residents are charged VAT at 21%.",
+      "paymentTerms": "On signing, {upfront}% is paid up front (the first month). It covers the cost of the tools and services that make the work possible.",
+      "perMonth": "/ month",
+      "oneOff": "single payment",
+      "from": "from",
+      "learnMore": "Find out more",
+      "listLabel": "List price",
+      "bundleLabel": "With Local SEO",
+      "core": {
+        "popular": "The core offer",
+        "title": "Local SEO",
+        "subtitle": "All four pillars included",
+        "goal": "Goal: the first position on Google for searches in your area",
+        "cta": "Book a call",
+        "groups": [
+          {
+            "label": "Authority content",
+            "items": [
+              "Keyword research",
+              "Content clusters",
+              "Content gap analysis"
+            ]
+          },
+          {
+            "label": "Backlinks and citations",
+            "items": [
+              "Links from trusted directories",
+              "Citations on relevant websites",
+              "Stronger local authority signals"
+            ]
+          },
+          {
+            "label": "Authority on Google and AI",
+            "items": [
+              "Optimised Google Business Profile",
+              "On page local SEO for your website",
+              "Local business structured data"
+            ]
+          },
+          {
+            "label": "Review management",
+            "items": [
+              "Review growth tracked over time",
+              "Positive and negative feedback trends",
+              "Customer responses monitored"
+            ]
+          }
+        ]
+      },
+      "addOnsTitle": "Optional services",
+      "addOnsSubtitle": "{discount}% off the list price when taken alongside Local SEO.",
+      "addOns": {
+        "websiteDevelopment": {
+          "title": "Website Development",
+          "subtitle": "Websites built to convert",
+          "features": [
+            "Landing page or full multipage website",
+            "Mobile first design and Core Web Vitals from day one",
+            "Open Graph and structured data in place at launch"
+          ],
+          "cta": "Get started"
+        },
+        "aiVoiceReceptionist": {
+          "title": "AI Voice Receptionist",
+          "subtitle": "No call goes unanswered",
+          "features": [
+            "Appointments booked straight into your diary",
+            "Bespoke voice and script to match your brand",
+            "Optimised for English and Spanish"
+          ],
+          "cta": "Get started"
+        },
+        "softwareDevelopment": {
+          "title": "Software Development",
+          "subtitle": "Bespoke, built to scale",
+          "features": [
+            "One codebase for iOS, Android, web and desktop",
+            "Automated tests and a CI/CD pipeline",
+            "Full ownership of the source code on delivery"
+          ],
+          "cta": "Request a quote"
+        }
+      }
+    },
+    "testimonials": {
+      "title": "Success stories",
+      "subtitle": "Join hundreds of businesses that have transformed their operations with our AI solutions.",
+      "items": [
+        {
+          "quote": "Lorenzoz Agency reduced our response time by 80%. We haven't missed a single lead in three months.",
+          "author": "David Chen",
+          "position": "CEO, TechFlow Solutions"
+        },
+        {
+          "quote": "The AI voice receptionist sounds incredibly human. Our customers actually enjoy talking to it.",
+          "author": "Sarah Jenkins",
+          "position": "Operations Manager, Bloom Retail"
+        },
+        {
+          "quote": "Scaling our support used to be our biggest headache. Now the AI handles 90% of the volume effortlessly.",
+          "author": "Marcus Thorne",
+          "position": "Founder, Thorne & Co."
+        }
+      ]
+    },
+    "contact": {
+      "badge": "Contact",
+      "title": "Let's talk about your business.",
+      "subtitle": "Book a 15 minute call."
+    },
+    "faq": {
+      "title": "Frequently asked questions",
+      "items": [
+        {
+          "question": "Do you guarantee the first position on Google?",
+          "answer": "No, and be wary of anyone who does: nobody controls Google's rankings. The first position is the goal we work towards every month, and a plain English report shows you what was done and how your visibility is moving."
+        },
+        {
+          "question": "What exactly does the plan include?",
+          "answer": "All four pillars for {price} a month {tax}: authority content, backlinks and citations, authority on Google and AI, and review management. Nothing is billed separately."
+        },
+        {
+          "question": "How long before I see results in local search rankings?",
+          "answer": "Most clients see meaningful movement in the local map pack within 30 to 60 days, though competitive markets can take longer."
+        },
+        {
+          "question": "Why is part of it paid up front?",
+          "answer": "On signing, {upfront}% is paid up front. It covers the tools and services we take on to do the work from day one."
+        },
+        {
+          "question": "Do I need a website or a Google profile already?",
+          "answer": "No. If you don't have a Google Business Profile we set it up and verify it in your name, and a website can be added as an optional service at {discount}% off."
+        },
+        {
+          "question": "How does the discount on optional services work?",
+          "answer": "Website Development, AI Voice Receptionist and Software Development are {discount}% off their list price when taken alongside Local SEO. Bought on their own, they cost the list price."
+        }
+      ]
+    }
+  },
+  "footer": {
+    "description": "The growth partner for local businesses. We look after winning new customers, so you can focus on serving the ones you have.",
+    "copyright": "© 2026 Lorenzoz Agency. All rights reserved.",
+    "agency": {
+      "title": "Agency",
+      "items": [
+        {
+          "label": "Services",
+          "href": "/services"
+        },
+        {
+          "label": "Portfolio",
+          "href": "/portfolio"
+        },
+        {
+          "label": "News",
+          "href": "/news"
+        },
+        {
+          "label": "Pricing",
+          "href": "#pricing"
+        },
+        {
+          "label": "Contact",
+          "href": "#contact"
+        },
+        {
+          "label": "Héctor's Card",
+          "href": "/card/hector"
+        },
+        {
+          "label": "Sitemap",
+          "href": "/sitemap"
+        }
+      ]
+    },
+    "services": {
+      "title": "Services",
+      "items": [
+        {
+          "label": "Local SEO",
+          "href": "/services/local-seo"
+        },
+        {
+          "label": "Website Development",
+          "href": "/services/website-development"
+        },
+        {
+          "label": "AI Voice Receptionist",
+          "href": "/services/ai-voice-receptionist"
+        },
+        {
+          "label": "Software Development",
+          "href": "/services/software-development"
+        }
+      ]
+    },
+    "legal": {
+      "title": "Legal",
+      "items": [
+        {
+          "label": "Privacy Policy",
+          "href": "/privacy-policy"
+        },
+        {
+          "label": "Terms of Service",
+          "href": "/terms-conditions"
+        },
+        {
+          "label": "Cookie Policy",
+          "href": "/cookie-policy"
+        }
+      ]
+    }
+  },
+  "news": {
+    "home": {
+      "eyebrow": "NEWS",
+      "title": "Latest news",
+      "subtitle": "New case studies and announcements from the agency.",
+      "viewAll": "See all news"
+    }
+  },
+  "numbers": {
+    "badge": "The numbers",
+    "title": "What it costs, and what it costs not to",
+    "subtitle": "Two simple sums: what this work would cost bought piece by piece, and what every customer who doesn't come through the door costs a business.",
+    "perMonth": "/ month",
+    "separate": {
+      "title": "Bought separately",
+      "items": [
+        "Local SEO",
+        "Review management",
+        "Authority content",
+        "Backlinks and citations"
+      ],
+      "unpriced": "extra",
+      "totalLabel": "Just two of the four",
+      "note": "List prices at which we offered these two services on their own. Content and backlinks were quoted separately."
+    },
+    "plan": {
+      "title": "In a single plan",
+      "includedLabel": "All four pillars included",
+      "saving": "{saving}% less than two of the pillars bought separately, with the other two already included."
+    },
+    "missed": {
+      "title": "What a customer who never arrives costs you",
+      "description": "The plan costs {annual} {tax} a year. Compare that with what your business misses out on for every customer who picks a competitor.",
+      "columns": {
+        "value": "If a new customer brings in, per year",
+        "cover": "The plan pays for itself with",
+        "missed": "One customer fewer a month costs you, per year"
+      },
+      "coverClients": "{count} customers a month",
+      "coverOne": "1 customer a month",
+      "coverMonths": "1 customer every {months} months",
+      "footnote": "Illustrative example using assumed customer values: do the sums with your own figures. It is not a forecast of results."
+    }
+  },
+  "tax": {
+    "suffix": "+ VAT"
+  },
+  "offer": {
+    "from": "Starting price: the final quote depends on the functional requirements.",
+    "bundleDiscount": "{discount}% off the list price when taken alongside {name}.",
+    "upfront": "{upfront}% is paid up front.",
+    "beforeTax": "Price excludes VAT."
+  },
+  "articles": {
+    "eyebrow": "FROM LINKEDIN",
+    "title": "Latest LinkedIn articles",
+    "subtitle": "Deep dives into architecture, scaling and modern web development, straight from my LinkedIn.",
+    "cta": "Read on LinkedIn",
+    "readTime": "{min} min read",
+    "prevSlide": "Previous article",
+    "nextSlide": "Next article",
+    "goToSlide": "Go to article {index}"
+  },
+  "payment": {
+    "cta": "Pay securely online"
+  },
+  "portfolio": {
+    "portfolioCarousel": {
+      "title": "Built for excellence",
+      "subtitle": "Explore our premium portfolio of high performance websites and live production projects.",
+      "cta": "View full portfolio",
+      "explore": "Explore details",
+      "liveDemo": "Live demo",
+      "viewLive": "View live site",
+      "goToSlide": "Go to slide {index}",
+      "prevSlide": "Previous slide",
+      "nextSlide": "Next slide",
+      "prevImage": "Previous image",
+      "nextImage": "Next image",
+      "goToImage": "Go to image {index}",
+      "close": "Close",
+      "slideAlt": "{alt}, slide {index}",
+      "imageCount": "Image {index} of {total}",
+      "screenshotAlt": "{alt} screenshot, view {index}",
+      "viewFullDetail": "View full details",
+      "viewFull": "View in full",
+      "selectSection": "Select section: {name}",
+      "interactHint": "Click or use the ← → arrow keys to explore",
+      "fullScreen": "Full screen",
+      "prevFeature": "Previous feature",
+      "nextFeature": "Next feature"
+    },
+    "type": {
+      "live": "Live site",
+      "demo": "Concept demo"
+    },
+    "detail": {
+      "liveDemoAria": "{label} for {title}",
+      "contactForQuote": "Contact us for a quote",
+      "visitLivePlatform": "Visit live platform: {title}",
+      "visitLiveDemo": "Visit live demo",
+      "showcaseAlt": "{title} showcase",
+      "openShowcase": "Open showcase for {title}",
+      "fullScreenshotAlt": "{title} full page screenshot",
+      "exploreLivePlatform": "Explore the live platform"
+    }
+  },
+  "services": {
+    "localSeo": {
+      "name": "Local SEO",
+      "meta": {
+        "description": "One monthly Local SEO plan: authority content, backlinks and citations, authority on Google and AI, and review management, so nearby customers find you first."
+      }
+    },
+    "websiteDevelopment": {
+      "name": "Website Development",
+      "meta": {
+        "description": "Bespoke, fast websites designed to turn visitors into clients. SEO optimised and mobile responsive, built to modern performance standards."
+      }
+    },
+    "aiVoiceReceptionist": {
+      "name": "AI Voice Receptionist",
+      "meta": {
+        "description": "24/7 AI voice receptionists that answer FAQs, book appointments and capture every lead, so no call goes unanswered."
+      }
+    },
+    "softwareDevelopment": {
+      "name": "Software Development",
+      "meta": {
+        "description": "Full stack products, web and mobile, built to run on every device and screen size, from first prototype to production launch."
+      }
+    }
+  },
+  "assistant": {
+    "expand": "Expand assistant",
+    "shrink": "Minimise widget",
+    "avatarAlt": "Hector Lorenzoz",
+    "prompt": "How can I help you?",
+    "connecting": "Connecting...",
+    "speaking": "I am speaking...",
+    "listening": "I am listening...",
+    "placeholder": "Or send a message",
+    "send": "Send message",
+    "startCall": "Start a call",
+    "endCall": "End call",
+    "micError": "Microphone access was denied or an error occurred.",
+    "chatError": "We couldn't start the chat. Please try again."
+  },
+  "media": {
+    "calBooking": "Cal.com booking"
+  },
+  "card": {
+    "hector": {
+      "email": "Email",
+      "phone": "Phone",
+      "meta": {
+        "title": "Héctor Luis Lorenzo Zaldivar | Digital Business Card",
+        "description": "Founder & AI Architect at Lorenzoz Agency. Get in touch for AI automation and premium web development.",
+        "ogImageAlt": "Héctor Luis Lorenzo Zaldivar, Founder & AI Architect"
+      }
+    }
+  },
+  "notFound": {
+    "metaTitle": "Page not found | Lorenzoz Agency",
+    "title": "Page not found",
+    "text": "The page you are looking for does not exist or has moved.",
+    "back": "Back to home"
+  }
+}
