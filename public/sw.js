@@ -5,8 +5,10 @@ const STATIC_CACHE = 'ai-agency-static-v2';
 const DYNAMIC_CACHE = 'ai-agency-dynamic-v2';
 
 // Files to cache immediately
+// The locale home, not '/': '/' is a redirect, and a cached redirect cannot
+// answer a navigation offline.
 const STATIC_ASSETS = [
-    '/',
+    '/en/',
     '/manifest.json',
     '/icons/icon.svg',
 ];
@@ -77,7 +79,7 @@ self.addEventListener('fetch', (event) => {
 
                     // Return offline HTML page ONLY if the request is for a visual document (navigation)
                     if (request.mode === 'navigate' || request.destination === 'document') {
-                        return caches.match('/');
+                        return caches.match('/en/');
                     }
 
                     // For third-party scripts, images, or APIs that fail to load (e.g., ad blockers, offline),

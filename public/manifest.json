@@ -2,7 +2,8 @@
     "name": "Lorenzoz Agency - Next-Gen AI Automation",
     "short_name": "Lorenzoz",
     "description": "Scale your business with next-gen AI automation, website building, and digital business cards.",
-    "start_url": "/en",
+    "id": "/en",
+    "start_url": "/en/",
     "display": "standalone",
     "background_color": "#ffffff",
     "theme_color": "#000000",
@@ -29,7 +30,7 @@
     "shortcuts": [
         {
             "name": "Home",
-            "url": "/en",
+            "url": "/en/",
             "description": "Lorenzoz Agency Home"
         }
     ]
