@@ -19,10 +19,13 @@ let container: AstroContainer | undefined;
 export async function renderAstro(
     Component: AstroComponent,
     props: Record<string, unknown> = {},
-    slots: Record<string, string> = {}
+    slots: Record<string, string> = {},
+    /** `url` sets `Astro.url` (Navbar/Footer read it); `params` sets `Astro.params` for pages. */
+    { url, params }: { url?: string; params?: Record<string, string> } = {}
 ) {
     container ??= await AstroContainer.create({ renderers: await loadRenderers([reactRenderer()]) });
-    const html = await container.renderToString(Component, { props, slots });
+    const request = url ? new Request(new URL(url, 'https://hlorenzoz.com')) : undefined;
+    const html = await container.renderToString(Component, { props, slots, request, params });
     const { document } = new JSDOM(`<!doctype html><body>${html}</body>`).window;
     return { html, document, body: document.body, ...within(document.body) };
 }
