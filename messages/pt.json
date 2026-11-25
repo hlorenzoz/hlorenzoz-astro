@@ -651,7 +651,108 @@
     "websiteDevelopment": {
       "name": "Desenvolvimento web",
       "meta": {
-        "description": "Sites rápidos e à medida, pensados para transformar visitantes em clientes. Otimizados para SEO e adaptados a telemóvel, construídos segundo os padrões atuais de desempenho."
+        "description": "Sites rápidos e à medida, pensados para transformar visitantes em clientes. Otimizados para SEO e adaptados a telemóvel, construídos segundo os padrões atuais de desempenho.",
+        "title": "Criação de sites para empresas e negócios"
+      },
+      "hero": {
+        "eyebrow": "Desenvolvimento web",
+        "title": "Sites feitos para converter",
+        "subtitle": "Sites rápidos e à medida, pensados para transformar visitantes em clientes. Otimizados para SEO e adaptados a telemóvel.",
+        "price": "{price} {tax}, pagamento único. {bundlePrice} em conjunto com o SEO local ({discount}% de desconto). Alojamento e manutenção opcionais: {monthly}/mês.",
+        "cta": "Marcar consulta gratuita de 15 minutos"
+      },
+      "benefits": {
+        "title": "O que recebe",
+        "items": [
+          {
+            "title": "Pensado primeiro para o telemóvel",
+            "description": "Cada página é construída e testada primeiro no telemóvel, para que o seu site tenha bom aspeto e carregue depressa em qualquer ecrã."
+          },
+          {
+            "title": "Cumprimento das Core Web Vitals",
+            "description": "Os sites são desenvolvidos para cumprir os critérios de desempenho do Google, protegendo o seu posicionamento nas pesquisas e a experiência de quem o visita."
+          },
+          {
+            "title": "SEO e dados estruturados",
+            "description": "As etiquetas Open Graph e os dados estruturados estão presentes desde o primeiro dia, para que os motores de pesquisa percebam o seu site logo no lançamento."
+          }
+        ]
+      },
+      "deliverables": {
+        "title": "O pacote completo",
+        "groups": [
+          {
+            "label": "Desempenho e segurança",
+            "items": [
+              "Página de destino ou site completo com várias páginas",
+              "Design pensado primeiro para o telemóvel, testado em todos os tamanhos de ecrã",
+              "Cumprimento das Core Web Vitals desde o primeiro dia",
+              "PWA instalável, com páginas que funcionam sem ligação à internet",
+              "Segurança de nível empresarial em cada publicação"
+            ]
+          },
+          {
+            "label": "SEO e infraestrutura",
+            "items": [
+              "Open Graph e dados estruturados prontos no lançamento",
+              "Preparado para a navegação de agentes de IA e rastreadores",
+              "Certificados SSL e CDN incluídos",
+              "Alojamento e infraestrutura geridos por nós",
+              "Etiquetagem do lado do servidor, opcional"
+            ]
+          },
+          {
+            "label": "Qualidade e entrega",
+            "items": [
+              "Testes automáticos em cada compilação",
+              "Controlo de qualidade antes de cada lançamento",
+              "Pipeline de CI/CD (DevOpsSec)",
+              "Online em 7 a 14 dias"
+            ]
+          }
+        ]
+      },
+      "process": {
+        "title": "Como construímos o seu site",
+        "steps": [
+          {
+            "number": "01",
+            "title": "Marcar",
+            "description": "Marque uma consulta gratuita para falarmos dos seus objetivos."
+          },
+          {
+            "number": "02",
+            "title": "Reunir",
+            "description": "Analisamos as suas necessidades e definimos a estratégia em conjunto."
+          },
+          {
+            "number": "03",
+            "title": "Desenvolver",
+            "description": "Construímos o seu site à medida, de acordo com a sua marca."
+          },
+          {
+            "number": "04",
+            "title": "Entregar",
+            "description": "Lançamos o seu site e entregamos toda a documentação, normalmente em 7 a 14 dias."
+          }
+        ]
+      },
+      "faq": {
+        "title": "Perguntas frequentes",
+        "items": [
+          {
+            "question": "O SEO está incluído no pacote de desenvolvimento web ou é pago à parte?",
+            "answer": "Está incluído. Todos os pacotes de desenvolvimento web trazem SEO técnico de base desde o primeiro dia, incluindo dados estruturados otimizados e etiquetas Open Graph, para que os motores de pesquisa compreendam bem o seu site."
+          },
+          {
+            "question": "Quem fica com a propriedade do site depois de concluído o projeto?",
+            "answer": "Os nossos clientes ficam com 100% da propriedade de tudo o que é produzido, incluindo o código fonte do site, o design e a documentação, assim que o projeto estiver oficialmente concluído e pago."
+          },
+          {
+            "question": "Que apoio existe se tiver um problema técnico depois do lançamento?",
+            "answer": "Prestamos apoio técnico dedicado em horário de expediente (de segunda a sexta). Todos os problemas são tratados com rapidez para que os seus sistemas continuem a funcionar."
+          }
+        ]
       }
     },
     "aiVoiceReceptionist": {

@@ -645,7 +645,108 @@
     "websiteDevelopment": {
       "name": "Website Development",
       "meta": {
-        "description": "Bespoke, fast websites designed to turn visitors into clients. SEO optimised and mobile responsive, built to modern performance standards."
+        "description": "Bespoke, fast websites designed to turn visitors into clients. SEO optimised and mobile responsive, built to modern performance standards.",
+        "title": "Business Website Design and Development"
+      },
+      "hero": {
+        "eyebrow": "Website Development",
+        "title": "Websites Built to Convert",
+        "subtitle": "Bespoke, fast websites designed to turn visitors into clients. SEO optimised and mobile responsive.",
+        "price": "{price} {tax}, one off payment. {bundlePrice} alongside Local SEO ({discount}% off). Optional hosting: {monthly} a month.",
+        "cta": "Book a free 15 minute consultation"
+      },
+      "benefits": {
+        "title": "What You Get",
+        "items": [
+          {
+            "title": "Mobile First Design",
+            "description": "Every layout is built and tested for phones first, so your site looks sharp and loads quickly on any screen."
+          },
+          {
+            "title": "Core Web Vitals Compliance",
+            "description": "Sites are engineered to pass Google's performance benchmarks, protecting your search visibility and the experience of every visitor."
+          },
+          {
+            "title": "SEO & Structured Data",
+            "description": "Open Graph tags and structured data ship from day one, so search engines understand your site from launch."
+          }
+        ]
+      },
+      "deliverables": {
+        "title": "The Complete Package",
+        "groups": [
+          {
+            "label": "Performance & Security",
+            "items": [
+              "Landing page or full multipage website",
+              "Mobile first design tested on every screen size",
+              "Core Web Vitals compliance built in from day one",
+              "Installable PWA with pages that work offline",
+              "Enterprise grade security on every deployment"
+            ]
+          },
+          {
+            "label": "SEO & Infrastructure",
+            "items": [
+              "Open Graph and structured data in place at launch",
+              "Agentic browsing support for AI agents and crawlers",
+              "SSL certificates and CDN included",
+              "Hosting and infrastructure managed for you",
+              "Optional server side tagging"
+            ]
+          },
+          {
+            "label": "Quality & Delivery",
+            "items": [
+              "Automated tests on every build",
+              "Standard QA before every launch",
+              "CI/CD pipeline (DevOpsSec)",
+              "Live in 7 to 14 days"
+            ]
+          }
+        ]
+      },
+      "process": {
+        "title": "How We Build Your Site",
+        "steps": [
+          {
+            "number": "01",
+            "title": "Book",
+            "description": "Arrange a free consultation to talk through your goals."
+          },
+          {
+            "number": "02",
+            "title": "Meet",
+            "description": "We assess your needs and agree on the strategy."
+          },
+          {
+            "number": "03",
+            "title": "Develop",
+            "description": "We build your website from scratch, tailored to your brand."
+          },
+          {
+            "number": "04",
+            "title": "Deliver",
+            "description": "We launch your site and hand over full documentation, usually within 7 to 14 days."
+          }
+        ]
+      },
+      "faq": {
+        "title": "Frequently Asked Questions",
+        "items": [
+          {
+            "question": "Is SEO included in the Website Development package, or does it cost extra?",
+            "answer": "It is included. Every Website Development package comes with foundational technical SEO from day one, including optimised Structured Data and Open Graph tags so search engines can read and understand your site properly."
+          },
+          {
+            "question": "Who owns the website once the project is completed?",
+            "answer": "Our clients own every artefact, including the website source code, designs and documentation, 100% once the project is officially completed and paid for."
+          },
+          {
+            "question": "What support is available if I run into a technical issue after launch?",
+            "answer": "We provide dedicated technical support during standard working hours (Monday to Friday). Every issue is dealt with promptly to keep your systems up and running."
+          }
+        ]
       }
     },
     "aiVoiceReceptionist": {

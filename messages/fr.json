@@ -651,7 +651,108 @@
     "websiteDevelopment": {
       "name": "Création de sites web",
       "meta": {
-        "description": "Des sites web sur mesure et rapides, conçus pour transformer les visiteurs en clients. Optimisés pour le SEO, adaptés au mobile et conformes aux standards de performance actuels."
+        "description": "Des sites web sur mesure et rapides, conçus pour transformer les visiteurs en clients. Optimisés pour le SEO, adaptés au mobile et conformes aux standards de performance actuels.",
+        "title": "Création de site internet pour entreprise"
+      },
+      "hero": {
+        "eyebrow": "Création de sites web",
+        "title": "Des sites web conçus pour convertir",
+        "subtitle": "Des sites web sur mesure et rapides, conçus pour transformer les visiteurs en clients. Optimisés pour le SEO et adaptés au mobile.",
+        "price": "{price} {tax}, paiement unique. {bundlePrice} avec le SEO local ({discount} % de remise). Hébergement et maintenance en option : {monthly} par mois.",
+        "cta": "Réserver une consultation gratuite de 15 minutes"
+      },
+      "benefits": {
+        "title": "Ce que vous obtenez",
+        "items": [
+          {
+            "title": "Pensé d'abord pour le mobile",
+            "description": "Chaque mise en page est construite et testée d'abord sur téléphone, pour que votre site soit net et rapide sur tous les écrans."
+          },
+          {
+            "title": "Conformité aux Core Web Vitals",
+            "description": "Nos sites sont conçus pour passer les seuils de performance de Google, ce qui protège votre référencement et l'expérience de vos visiteurs."
+          },
+          {
+            "title": "SEO et données structurées",
+            "description": "Les balises Open Graph et les données structurées sont en place dès le premier jour, pour que les moteurs de recherche comprennent votre site dès sa mise en ligne."
+          }
+        ]
+      },
+      "deliverables": {
+        "title": "L'offre complète",
+        "groups": [
+          {
+            "label": "Performance et sécurité",
+            "items": [
+              "Landing page ou site web complet multipage",
+              "Conception pensée d'abord pour le mobile, testée sur toutes les tailles d'écran",
+              "Conformité aux Core Web Vitals intégrée dès le premier jour",
+              "PWA installable, avec des pages consultables hors ligne",
+              "Sécurité de niveau entreprise à chaque déploiement"
+            ]
+          },
+          {
+            "label": "SEO et infrastructure",
+            "items": [
+              "Open Graph et données structurées en place dès la mise en ligne",
+              "Compatibilité avec la navigation agentique des agents IA et des robots d'exploration",
+              "Certificats SSL et CDN inclus",
+              "Hébergement et infrastructure gérés pour vous",
+              "Tagging côté serveur en option"
+            ]
+          },
+          {
+            "label": "Qualité et livraison",
+            "items": [
+              "Tests automatisés à chaque build",
+              "Contrôle qualité standard avant chaque mise en ligne",
+              "Pipeline CI/CD (DevOpsSec)",
+              "En ligne en 7 à 14 jours"
+            ]
+          }
+        ]
+      },
+      "process": {
+        "title": "Comment nous construisons votre site",
+        "steps": [
+          {
+            "number": "01",
+            "title": "Réservation",
+            "description": "Planifiez une consultation gratuite pour parler de vos objectifs."
+          },
+          {
+            "number": "02",
+            "title": "Rencontre",
+            "description": "Nous analysons vos besoins et validons ensemble la stratégie."
+          },
+          {
+            "number": "03",
+            "title": "Développement",
+            "description": "Nous développons votre site sur mesure, à l'image de votre marque."
+          },
+          {
+            "number": "04",
+            "title": "Livraison",
+            "description": "Nous mettons votre site en ligne et vous remettons toute la documentation, généralement sous 7 à 14 jours."
+          }
+        ]
+      },
+      "faq": {
+        "title": "Questions fréquentes",
+        "items": [
+          {
+            "question": "Le SEO est inclus dans la création du site, ou c'est un coût en plus ?",
+            "answer": "Il est inclus. Chaque projet de création de site web comprend dès le premier jour les bases du SEO technique, dont des données structurées et des balises Open Graph optimisées, pour que votre site plaise aux moteurs de recherche."
+          },
+          {
+            "question": "À qui appartient le site une fois le projet terminé ?",
+            "answer": "Nos clients sont propriétaires à 100 % de tout ce qui a été produit, y compris le code source du site, les maquettes et la documentation, dès que le projet est officiellement terminé et payé."
+          },
+          {
+            "question": "Quel support est prévu si je rencontre un problème technique après la mise en ligne ?",
+            "answer": "Nous assurons un support technique dédié pendant les heures ouvrées (du lundi au vendredi). Chaque problème est traité rapidement pour que vos systèmes restent opérationnels."
+          }
+        ]
       }
     },
     "aiVoiceReceptionist": {

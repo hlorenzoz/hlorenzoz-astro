@@ -336,7 +336,108 @@
         "websiteDevelopment": {
             "name": "Websiteontwikkeling",
             "meta": {
-                "description": "Snelle websites op maat die bezoekers omzetten in klanten. Geoptimaliseerd voor SEO en mobiel, gebouwd volgens moderne prestatienormen."
+                "description": "Snelle websites op maat die bezoekers omzetten in klanten. Geoptimaliseerd voor SEO en mobiel, gebouwd volgens moderne prestatienormen.",
+                "title": "Website laten maken voor je bedrijf"
+            },
+            "hero": {
+                "eyebrow": "Websiteontwikkeling",
+                "title": "Websites die bezoekers omzetten in klanten",
+                "subtitle": "Snelle websites op maat die bezoekers omzetten in klanten. Geoptimaliseerd voor SEO en voor mobiel.",
+                "price": "{price} {tax}, eenmalig. {bundlePrice} samen met Lokale SEO ({discount}% korting). Hosting en onderhoud optioneel: {monthly} per maand.",
+                "cta": "Plan een gratis kennismaking van 15 minuten"
+            },
+            "benefits": {
+                "title": "Wat je krijgt",
+                "items": [
+                    {
+                        "title": "Ontworpen voor mobiel",
+                        "description": "Elke layout bouwen en testen we eerst op de telefoon, zodat je site er op elk scherm strak uitziet en snel laadt."
+                    },
+                    {
+                        "title": "Voldoet aan de Core Web Vitals",
+                        "description": "We bouwen je site zo dat hij de prestatienormen van Google haalt. Dat beschermt je posities in Google en de ervaring van je bezoekers."
+                    },
+                    {
+                        "title": "SEO en gestructureerde data",
+                        "description": "Open Graph tags en gestructureerde data zitten er vanaf dag één in, zodat zoekmachines je site begrijpen zodra hij live staat."
+                    }
+                ]
+            },
+            "deliverables": {
+                "title": "Het complete pakket",
+                "groups": [
+                    {
+                        "label": "Prestaties en beveiliging",
+                        "items": [
+                            "Een landingspagina of een complete website met meerdere pagina's",
+                            "Ontworpen voor mobiel en getest op elk schermformaat",
+                            "Vanaf dag één gebouwd volgens de Core Web Vitals",
+                            "Installeerbare PWA met pagina's die ook offline werken",
+                            "Beveiliging op zakelijk niveau bij elke release"
+                        ]
+                    },
+                    {
+                        "label": "SEO en infrastructuur",
+                        "items": [
+                            "Open Graph en gestructureerde data vanaf de lancering",
+                            "Geschikt voor AI agents en crawlers die zelfstandig browsen",
+                            "Beveiligde verbinding (SSL) en CDN inbegrepen",
+                            "Hosting en infrastructuur beheren wij voor je",
+                            "Optioneel: tagging aan de serverkant"
+                        ]
+                    },
+                    {
+                        "label": "Kwaliteit en oplevering",
+                        "items": [
+                            "Automatische tests bij elke build",
+                            "Standaard kwaliteitscontrole voor elke lancering",
+                            "CI/CD pipeline (DevOpsSec)",
+                            "Binnen 7 tot 14 dagen live"
+                        ]
+                    }
+                ]
+            },
+            "process": {
+                "title": "Zo bouwen we je website",
+                "steps": [
+                    {
+                        "number": "01",
+                        "title": "Plannen",
+                        "description": "Plan een gratis kennismaking om je doelen te bespreken."
+                    },
+                    {
+                        "number": "02",
+                        "title": "Kennismaken",
+                        "description": "We brengen in kaart wat je nodig hebt en stemmen de aanpak samen af."
+                    },
+                    {
+                        "number": "03",
+                        "title": "Bouwen",
+                        "description": "We bouwen je website op maat, helemaal in de stijl van je merk."
+                    },
+                    {
+                        "number": "04",
+                        "title": "Opleveren",
+                        "description": "We zetten je site live en dragen de volledige documentatie aan je over, meestal binnen 7 tot 14 dagen."
+                    }
+                ]
+            },
+            "faq": {
+                "title": "Veelgestelde vragen",
+                "items": [
+                    {
+                        "question": "Zit SEO bij het pakket voor websiteontwikkeling inbegrepen, of betaal ik daar extra voor?",
+                        "answer": "Het zit erbij. Elk pakket voor websiteontwikkeling bevat vanaf dag één de technische basis voor SEO, waaronder geoptimaliseerde gestructureerde data en Open Graph tags, zodat zoekmachines je site goed kunnen lezen."
+                    },
+                    {
+                        "question": "Van wie is de website als het project klaar is?",
+                        "answer": "Zodra het project officieel is afgerond en betaald, is alles 100% van jou: de broncode van de website, de ontwerpen en de documentatie."
+                    },
+                    {
+                        "question": "Welke ondersteuning krijg ik als er na de lancering een technisch probleem is?",
+                        "answer": "We bieden technische ondersteuning tijdens kantooruren (maandag tot en met vrijdag). Elk probleem pakken we snel op, zodat je systemen blijven draaien."
+                    }
+                ]
             }
         },
         "aiVoiceReceptionist": {

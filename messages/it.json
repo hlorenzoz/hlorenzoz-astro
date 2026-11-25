@@ -336,7 +336,108 @@
     "websiteDevelopment": {
       "name": "Sviluppo web",
       "meta": {
+        "title": "Realizzazione siti web per la tua attività",
         "description": "Siti web su misura e veloci, pensati per trasformare i visitatori in clienti. Ottimizzati per la SEO, responsive su mobile e realizzati secondo i moderni standard di prestazioni."
+      },
+      "hero": {
+        "eyebrow": "Sviluppo web",
+        "title": "Siti web pensati per convertire",
+        "subtitle": "Siti web su misura e veloci, pensati per trasformare i visitatori in clienti. Ottimizzati per la SEO e responsive su mobile.",
+        "price": "{price} {tax}, pagamento unico. {bundlePrice} se abbinato alla SEO locale (sconto del {discount}%). Hosting facoltativo: {monthly}/mese.",
+        "cta": "Prenota una consulenza gratuita di 15 minuti"
+      },
+      "benefits": {
+        "title": "Cosa ottieni",
+        "items": [
+          {
+            "title": "Design mobile first",
+            "description": "Ogni layout è progettato e testato prima di tutto per lo smartphone, così il tuo sito si vede bene e si carica in fretta su qualsiasi schermo."
+          },
+          {
+            "title": "Conformità ai Core Web Vitals",
+            "description": "I siti sono progettati per superare i parametri di prestazione di Google, a tutela del tuo posizionamento nelle ricerche e dell'esperienza dei tuoi utenti."
+          },
+          {
+            "title": "SEO e dati strutturati",
+            "description": "Tag Open Graph e dati strutturati sono presenti fin dal primo giorno, così i motori di ricerca capiscono il tuo sito già al lancio."
+          }
+        ]
+      },
+      "deliverables": {
+        "title": "Il pacchetto completo",
+        "groups": [
+          {
+            "label": "Prestazioni e sicurezza",
+            "items": [
+              "Landing page o sito web completo con più pagine",
+              "Design mobile first testato su ogni dimensione di schermo",
+              "Conformità ai Core Web Vitals integrata fin dal primo giorno",
+              "PWA installabile con pagine che funzionano anche offline",
+              "Sicurezza di livello enterprise a ogni rilascio"
+            ]
+          },
+          {
+            "label": "SEO e infrastruttura",
+            "items": [
+              "Open Graph e dati strutturati attivi già al lancio",
+              "Supporto alla navigazione agentica per agenti IA e crawler",
+              "Certificati SSL e CDN inclusi",
+              "Hosting e infrastruttura gestiti da noi",
+              "Tagging lato server facoltativo"
+            ]
+          },
+          {
+            "label": "Qualità e consegna",
+            "items": [
+              "Test automatici a ogni build",
+              "Controllo qualità standard prima di ogni lancio",
+              "Pipeline CI/CD (DevOpsSec)",
+              "Online tra i 7 e i 14 giorni"
+            ]
+          }
+        ]
+      },
+      "process": {
+        "title": "Come realizziamo il tuo sito",
+        "steps": [
+          {
+            "number": "01",
+            "title": "Prenotazione",
+            "description": "Fissa una consulenza gratuita per parlare dei tuoi obiettivi."
+          },
+          {
+            "number": "02",
+            "title": "Incontro",
+            "description": "Analizziamo le tue esigenze e definiamo insieme la strategia."
+          },
+          {
+            "number": "03",
+            "title": "Sviluppo",
+            "description": "Realizziamo su misura il tuo sito web, in linea con il tuo brand."
+          },
+          {
+            "number": "04",
+            "title": "Consegna",
+            "description": "Mettiamo online il tuo sito e ti consegniamo la documentazione completa, di solito tra i 7 e i 14 giorni."
+          }
+        ]
+      },
+      "faq": {
+        "title": "Domande frequenti",
+        "items": [
+          {
+            "question": "La SEO è inclusa nel pacchetto Sviluppo web o è un costo aggiuntivo?",
+            "answer": "È inclusa. Ogni pacchetto Sviluppo web comprende fin dal primo giorno la SEO tecnica di base, con dati strutturati e tag Open Graph ottimizzati perché i motori di ricerca capiscano e apprezzino il tuo sito."
+          },
+          {
+            "question": "Di chi è il sito una volta concluso il progetto?",
+            "answer": "Tuo, al 100%. Una volta concluso e saldato il progetto, i nostri clienti sono proprietari di ogni elemento realizzato, compresi il codice sorgente del sito, i design e la documentazione."
+          },
+          {
+            "question": "Che tipo di assistenza è disponibile se ho un problema tecnico dopo il lancio?",
+            "answer": "Offriamo assistenza tecnica dedicata durante il normale orario di lavoro (dal lunedì al venerdì). Ogni problema viene gestito tempestivamente, così i tuoi sistemi restano operativi."
+          }
+        ]
       }
     },
     "aiVoiceReceptionist": {

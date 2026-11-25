@@ -651,7 +651,108 @@
         "websiteDevelopment": {
             "name": "Webentwicklung",
             "meta": {
-                "description": "Individuelle, schnelle Websites, die Besucher zu Kunden machen. Für SEO optimiert, auf jedem Mobilgerät gut lesbar und nach modernen Leistungsstandards gebaut."
+                "description": "Individuelle, schnelle Websites, die Besucher zu Kunden machen. Für SEO optimiert, auf jedem Mobilgerät gut lesbar und nach modernen Leistungsstandards gebaut.",
+                "title": "Unternehmenswebsite erstellen lassen"
+            },
+            "hero": {
+                "eyebrow": "Webentwicklung",
+                "title": "Websites, die Besucher zu Kunden machen",
+                "subtitle": "Individuelle, schnelle Websites, die Besucher zu Kunden machen. Für SEO optimiert und auf jedem Mobilgerät gut lesbar.",
+                "price": "Einmalig {price} {tax}. Zusammen mit dem Plan für lokales SEO {bundlePrice} ({discount}% Rabatt). Optionales Hosting: {monthly} pro Monat.",
+                "cta": "Kostenlose Beratung von 15 Minuten buchen"
+            },
+            "benefits": {
+                "title": "Was Sie bekommen",
+                "items": [
+                    {
+                        "title": "Zuerst für das Smartphone gestaltet",
+                        "description": "Jedes Layout wird zuerst für Smartphones gebaut und getestet, damit Ihre Website auf jedem Bildschirm scharf aussieht und schnell lädt."
+                    },
+                    {
+                        "title": "Core Web Vitals erfüllt",
+                        "description": "Unsere Websites sind darauf ausgelegt, die Leistungswerte von Google zu bestehen. Das schützt Ihre Sichtbarkeit in der Suche und das Erlebnis Ihrer Besucher."
+                    },
+                    {
+                        "title": "SEO & strukturierte Daten",
+                        "description": "Tags für Open Graph und strukturierte Daten sind vom ersten Tag an dabei, damit Suchmaschinen Ihre Website schon zum Start verstehen."
+                    }
+                ]
+            },
+            "deliverables": {
+                "title": "Das Komplettpaket",
+                "groups": [
+                    {
+                        "label": "Leistung & Sicherheit",
+                        "items": [
+                            "Landingpage oder vollständige Website mit mehreren Seiten",
+                            "Zuerst für das Smartphone gestaltet und auf jeder Bildschirmgröße getestet",
+                            "Core Web Vitals vom ersten Tag an berücksichtigt",
+                            "Installierbare PWA mit Seiten, die auch offline funktionieren",
+                            "Sicherheit auf Unternehmensniveau bei jeder Veröffentlichung"
+                        ]
+                    },
+                    {
+                        "label": "SEO & Infrastruktur",
+                        "items": [
+                            "Open Graph und strukturierte Daten schon zum Start",
+                            "Unterstützung für Agentic Browsing durch KI Agenten und Crawler",
+                            "Zertifikate für SSL und CDN inklusive",
+                            "Hosting und Infrastruktur werden für Sie verwaltet",
+                            "Optionales serverseitiges Tagging"
+                        ]
+                    },
+                    {
+                        "label": "Qualität & Auslieferung",
+                        "items": [
+                            "Automatisierte Tests bei jedem Build",
+                            "Standardmäßige Qualitätssicherung vor jedem Livegang",
+                            "Pipeline für CI/CD (DevOpsSec)",
+                            "Online in 7 bis 14 Tagen"
+                        ]
+                    }
+                ]
+            },
+            "process": {
+                "title": "So entsteht Ihre Website",
+                "steps": [
+                    {
+                        "number": "01",
+                        "title": "Termin buchen",
+                        "description": "Vereinbaren Sie eine kostenlose Beratung, um über Ihre Ziele zu sprechen."
+                    },
+                    {
+                        "number": "02",
+                        "title": "Gespräch",
+                        "description": "Wir analysieren Ihren Bedarf und stimmen die Strategie mit Ihnen ab."
+                    },
+                    {
+                        "number": "03",
+                        "title": "Entwicklung",
+                        "description": "Wir entwickeln Ihre Website individuell und passend zu Ihrer Marke."
+                    },
+                    {
+                        "number": "04",
+                        "title": "Übergabe",
+                        "description": "Wir bringen Ihre Website online und übergeben Ihnen die vollständige Dokumentation, in der Regel innerhalb von 7 bis 14 Tagen."
+                    }
+                ]
+            },
+            "faq": {
+                "title": "Häufige Fragen",
+                "items": [
+                    {
+                        "question": "Ist SEO im Paket für Webentwicklung enthalten, oder kostet es extra?",
+                        "answer": "Es ist enthalten. Jedes Paket für Webentwicklung umfasst vom ersten Tag an die technischen Grundlagen für SEO, darunter optimierte strukturierte Daten und Tags für Open Graph, damit Suchmaschinen Ihre Website gut verstehen."
+                    },
+                    {
+                        "question": "Wem gehört die Website, wenn das Projekt abgeschlossen ist?",
+                        "answer": "Unseren Kunden gehören alle Ergebnisse zu 100%, einschließlich Quellcode der Website, Designs und Dokumentation, sobald das Projekt offiziell abgeschlossen und bezahlt ist."
+                    },
+                    {
+                        "question": "Welche Unterstützung bekomme ich, wenn nach dem Start ein technisches Problem auftritt?",
+                        "answer": "Wir bieten technischen Support zu den üblichen Geschäftszeiten (Montag bis Freitag). Alle Probleme werden zügig bearbeitet, damit Ihre Systeme einsatzbereit bleiben."
+                    }
+                ]
             }
         },
         "aiVoiceReceptionist": {

@@ -645,7 +645,108 @@
     "websiteDevelopment": {
       "name": "Desenvolvemento web",
       "meta": {
-        "description": "Webs a medida e rápidas, pensadas para converter visitas en clientes. Optimizadas para SEO, adaptadas ao móbil e feitas cos estándares de rendemento actuais."
+        "description": "Webs a medida e rápidas, pensadas para converter visitas en clientes. Optimizadas para SEO, adaptadas ao móbil e feitas cos estándares de rendemento actuais.",
+        "title": "Deseño web para negocios en Galicia"
+      },
+      "hero": {
+        "eyebrow": "Desenvolvemento web",
+        "title": "Webs feitas para gañar clientes",
+        "subtitle": "Webs a medida e rápidas, pensadas para converter visitas en clientes. Optimizadas para SEO e adaptadas ao móbil.",
+        "price": "{price} {tax}, pago único. {bundlePrice} xunto co SEO local ({discount}% de desconto). Aloxamento e mantemento opcionais: {monthly}/mes.",
+        "cta": "Reservar unha consulta gratuíta de 15 minutos"
+      },
+      "benefits": {
+        "title": "Que inclúe",
+        "items": [
+          {
+            "title": "Deseño pensado para o móbil",
+            "description": "Cada deseño constrúese e próbase primeiro no móbil, para que a túa web se vexa ben e cargue rápido en calquera pantalla."
+          },
+          {
+            "title": "Cumprimento de Core Web Vitals",
+            "description": "As webs están feitas para superar os indicadores de rendemento de Google, o que protexe o teu posicionamento e a experiencia de quen as visita."
+          },
+          {
+            "title": "SEO e datos estruturados",
+            "description": "As etiquetas Open Graph e os datos estruturados van incluídos desde o primeiro día, para que os buscadores entendan a túa web desde o lanzamento."
+          }
+        ]
+      },
+      "deliverables": {
+        "title": "O paquete completo",
+        "groups": [
+          {
+            "label": "Rendemento e seguridade",
+            "items": [
+              "Páxina de aterraxe ou web completa de varias páxinas",
+              "Deseño pensado primeiro para o móbil e probado en todos os tamaños de pantalla",
+              "Cumprimento de Core Web Vitals desde o primeiro día",
+              "PWA instalable con páxinas que funcionan sen conexión",
+              "Seguridade de nivel empresarial en cada despregamento"
+            ]
+          },
+          {
+            "label": "SEO e infraestrutura",
+            "items": [
+              "Open Graph e datos estruturados desde o lanzamento",
+              "Compatibilidade coa navegación de axentes de IA e rastrexadores",
+              "Certificados SSL e CDN incluídos",
+              "Aloxamento e infraestrutura xestionados por nós",
+              "Etiquetado no servidor opcional"
+            ]
+          },
+          {
+            "label": "Calidade e entrega",
+            "items": [
+              "Probas automatizadas en cada compilación",
+              "Control de calidade estándar antes de cada lanzamento",
+              "Pipeline de CI/CD (DevOpsSec)",
+              "A túa web en liña en 7 a 14 días"
+            ]
+          }
+        ]
+      },
+      "process": {
+        "title": "Como facemos a túa web",
+        "steps": [
+          {
+            "number": "01",
+            "title": "Reserva",
+            "description": "Reserva unha consulta gratuíta para falar dos teus obxectivos."
+          },
+          {
+            "number": "02",
+            "title": "Reunión",
+            "description": "Analizamos as túas necesidades e acordamos a estratexia."
+          },
+          {
+            "number": "03",
+            "title": "Desenvolvemento",
+            "description": "Construímos a túa web a medida, adaptada á túa marca."
+          },
+          {
+            "number": "04",
+            "title": "Entrega",
+            "description": "Publicamos a túa web e entregámosche toda a documentación, normalmente nun prazo de 7 a 14 días."
+          }
+        ]
+      },
+      "faq": {
+        "title": "Preguntas frecuentes",
+        "items": [
+          {
+            "question": "O SEO está incluído no paquete de Desenvolvemento web ou págase á parte?",
+            "answer": "Está incluído. Todos os paquetes de Desenvolvemento web levan SEO técnico de base desde o primeiro día, con datos estruturados optimizados e etiquetas Open Graph para que os buscadores entendan e valoren a túa web."
+          },
+          {
+            "question": "De quen é a web unha vez rematado o proxecto?",
+            "answer": "É túa. Os nosos clientes son donos do 100% de todo o material do proxecto, incluídos o código fonte da web, os deseños e a documentación, unha vez que o proxecto está rematado e pagado."
+          },
+          {
+            "question": "Que soporte técnico tes se xorde un problema despois do lanzamento?",
+            "answer": "Ofrecemos soporte técnico dedicado en horario laboral (de luns a venres). Atendemos cada incidencia con rapidez para que os teus sistemas sigan funcionando."
+          }
+        ]
       }
     },
     "aiVoiceReceptionist": {
