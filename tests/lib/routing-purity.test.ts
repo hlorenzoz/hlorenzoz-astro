@@ -6,12 +6,16 @@
  * cannot prove safe to drop, so anything importing ANY symbol from that module
  * pulls the entire JSON along.
  *
- * That shipped: `components/Navbar.tsx` is a client component present on every
- * route, it imported `localeHref` from the registry, and the built bundle for
- * /en/privacy-policy/ - a page with no portfolio content whatsoever - carried
- * the full portfolio payload including `fullScreenshot` and `slides`. The fix
- * was to move the pure helpers into `lib/routing.ts`. This test keeps them
- * there.
+ * That shipped under Next.js: `components/Navbar.tsx` was a client component
+ * present on every route, it imported `localeHref` from the registry, and the
+ * built bundle for /en/privacy-policy/ - a page with no portfolio content
+ * whatsoever - carried the full portfolio payload including `fullScreenshot`
+ * and `slides`. The fix was to move the pure helpers into `lib/routing.ts`.
+ * This test keeps them there.
+ *
+ * Under Astro, component frontmatter runs only at build time, so the client
+ * code is every bundled `<script>` block in the .astro files under `src/` plus every module
+ * under `src/islands/`. Those are the entry points checked below.
  *
  * Static analysis of the source, deliberately: an assertion against the built
  * artifact would only run after a full build, and this needs to fail fast.
@@ -26,18 +30,18 @@ function readSource(rel: string): string {
     return readFileSync(join(ROOT, rel), 'utf8');
 }
 
-/** Every .ts/.tsx file under the given directories, excluding tests. */
-function sourceFiles(dirs: string[]): string[] {
+/** Every file matching `pattern` under the given directories. */
+function sourceFiles(dirs: string[], pattern = /\.tsx?$/): string[] {
     const out: string[] = [];
     const walk = (dir: string) => {
         for (const entry of readdirSync(dir)) {
             const full = join(dir, entry);
             if (statSync(full).isDirectory()) {
-                if (entry === 'node_modules' || entry === '.next') continue;
+                if (entry === 'node_modules' || entry === '.astro' || entry === 'dist') continue;
                 walk(full);
                 continue;
             }
-            if (/\.tsx?$/.test(entry)) out.push(relative(ROOT, full));
+            if (pattern.test(entry)) out.push(relative(ROOT, full));
         }
     };
     for (const dir of dirs) walk(join(ROOT, dir));
@@ -94,8 +98,8 @@ function extractSpecifiers(src: string): string[] {
     ];
 }
 
-function localImports(file: string): string[] {
-    return extractSpecifiers(readSource(file))
+function localImports(file: string, source = readSource(file)): string[] {
+    return extractSpecifiers(source)
         .filter((spec) => spec.startsWith('@/') || spec.startsWith('.'))
         .map((spec) =>
             spec.startsWith('@/')
@@ -128,9 +132,15 @@ function resolveSource(modulePath: string): string | null {
  * what closes two escapes the first version of this guard had: a relative
  * specifier (`'../lib/routes'`) and a transitive import through a helper.
  */
-function reachableModules(entry: string): Set<string> {
-    const seen = new Set<string>();
-    const queue = [entry];
+function reachableModules(entry: string, entrySource?: string): Set<string> {
+    const seen = new Set<string>([entry]);
+    const queue: string[] = [];
+    // An entry can be a virtual module (an .astro `<script>` block): its
+    // imports resolve relative to the .astro file it sits in.
+    for (const dep of localImports(entry, entrySource ?? readSource(entry))) {
+        const resolved = resolveSource(dep);
+        if (resolved) queue.push(resolved);
+    }
     while (queue.length > 0) {
         const current = queue.pop();
         if (!current || seen.has(current)) continue;
@@ -170,37 +180,69 @@ describe('the import extractor sees every form that bundles a module', () => {
     });
 });
 
-describe('no client component can reach the route registry', () => {
-    const clientFiles = sourceFiles(['components', 'app']).filter((file) =>
-        /^\s*['"]use client['"]/m.test(readSource(file))
-    );
+/**
+ * The bundled `<script>` blocks of an .astro file. `is:inline` scripts are not
+ * bundled (and JSON-LD is data), so they cannot import a module.
+ */
+function clientScripts(file: string): string[] {
+    return [...readSource(file).matchAll(/<script(\s[^>]*)?>([\s\S]*?)<\/script>/g)]
+        .filter((m) => !/\bis:inline\b|type=/.test(m[1] ?? ''))
+        .map((m) => m[2]);
+}
 
-    it('finds the client components to check', () => {
+describe('no client code can reach the route registry', () => {
+    const entries: { name: string; file: string; source: string }[] = [
+        ...sourceFiles(['src'], /\.astro$/).flatMap((file) =>
+            clientScripts(file).map((source, i) => ({ name: `${file} <script> #${i + 1}`, file, source }))
+        ),
+        ...sourceFiles(['src/islands']).map((file) => ({ name: file, file, source: readSource(file) })),
+    ];
+
+    it('finds the client entry points to check', () => {
         // Guards the guard: a broken walk would make every assertion vacuous.
-        expect(clientFiles.length).toBeGreaterThan(3);
+        expect(entries.filter((e) => e.file.endsWith('.astro')).length).toBeGreaterThan(3);
+        expect(entries.filter((e) => e.file.startsWith('src/islands/')).length).toBeGreaterThan(0);
     });
 
-    it.each(clientFiles)('%s cannot reach lib/routes, directly or transitively', (file) => {
-        const reachable = reachableModules(file);
+    it.each(entries.map((e) => [e.name, e] as const))('%s cannot reach lib/routes, directly or transitively', (_name, entry) => {
+        const reachable = reachableModules(entry.file, entry.source);
         expect(
             [...reachable].filter((m) => m === 'lib/routes.ts'),
-            `${file} reaches the route registry, which pulls portfolio-data.json ` +
+            `${entry.name} reaches the route registry, which pulls portfolio-data.json ` +
             `into the client bundle. Import primitives from @/lib/routing instead. ` +
             `Path: ${[...reachable].join(' -> ')}`
         ).toEqual([]);
     });
 
-    it('specifically keeps the sitewide Navbar off the registry', () => {
+    it('follows a script block into the islands it loads', () => {
+        // ElevenLabsLoader's script dynamically imports the React island with a
+        // relative specifier; the walk must reach it, or the islands escape.
+        const [script] = clientScripts('src/components/ElevenLabsLoader.astro');
+        const graph = reachableModules('src/components/ElevenLabsLoader.astro', script);
+        expect([...graph]).toContain('src/islands/mount-elevenlabs.tsx');
+        expect([...graph]).toContain('src/islands/ElevenLabsWidget.tsx');
+    });
+
+    it('specifically keeps the sitewide Navbar on the pure primitives', () => {
         // The Navbar renders on every route, so it is the worst possible place
         // to leak a data module from. This is where the regression happened.
-        expect([...reachableModules('components/Navbar.tsx')]).not.toContain('lib/routes.ts');
-        expect(readSource('components/Navbar.tsx')).toMatch(/from\s+'@\/lib\/routing'/);
+        for (const script of clientScripts('src/components/Navbar.astro')) {
+            expect([...reachableModules('src/components/Navbar.astro', script)]).not.toContain('lib/routes.ts');
+        }
+        expect(readSource('src/components/Navbar.astro')).toMatch(/from\s+'@\/lib\/routing'/);
+    });
+
+    it('detects a registry import reached through the graph', () => {
+        // The sitemap endpoint does import the registry (server-only): if the
+        // walk could not see that, every assertion above would pass vacuously.
+        const graph = reachableModules('src/pages/sitemap.xml.ts');
+        expect([...graph]).toContain('lib/routes.ts');
     });
 
     it('detects a registry import written with a relative specifier', () => {
         // The literal-string version of this guard matched only '@/lib/routes',
         // so '../lib/routes' walked straight past it.
-        const graph = reachableModules('app/sitemap.ts');
+        const graph = reachableModules('src/components/Fake.astro', "import { ALL_ROUTES } from '../../lib/routes';");
         expect([...graph]).toContain('lib/routes.ts');
     });
 });

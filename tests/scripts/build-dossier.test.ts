@@ -201,7 +201,7 @@ describe('BOOKING_URL', () => {
     // The booking link is hardcoded in the site's Cal.com embed. This keeps the
     // dossier pointing at the same calendar instead of a second, typed-in copy.
     it('is the calendar the site embeds', () => {
-        const source = readFileSync(join(ROOT, 'components/services/CalBooking.tsx'), 'utf8');
+        const source = readFileSync(join(ROOT, 'src/components/services/CalBooking.astro'), 'utf8');
         expect(source).toContain(BOOKING_URL);
     });
 });

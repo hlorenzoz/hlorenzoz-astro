@@ -115,7 +115,7 @@ describe('public/_redirects', () => {
         // Reads the value out of the component so the rule and the payload
         // cannot drift: changing one without the other silently breaks every
         // tag written from that moment on.
-        const source = read('app/[locale]/card/hector/HectorCardClient.tsx');
+        const source = read('src/components/HectorCard.astro');
         const encoded = /const cardUrl = `\$\{BASE_URL\}([^`]*)`/.exec(source)?.[1];
         expect(encoded, 'cardUrl is no longer built from BASE_URL plus a literal path').toBeDefined();
         expect(RULES.some((r) => r.from === encoded),
@@ -141,7 +141,7 @@ describe('public/_redirects', () => {
  */
 describe('no source file hardcodes a non-canonical host', () => {
     const FILES = [
-        'app/[locale]/card/hector/HectorCardClient.tsx',
+        'src/components/HectorCard.astro',
         'lib/portfolio-data.json',
         'lib/site-config.ts',
         'public/_redirects',

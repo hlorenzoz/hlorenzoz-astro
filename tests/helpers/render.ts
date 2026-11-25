@@ -11,6 +11,7 @@ import { getContainerRenderer as reactRenderer } from '@astrojs/react';
 import { loadRenderers } from 'astro:container';
 import { within } from '@testing-library/dom';
 import { JSDOM } from 'jsdom';
+import config from '../../astro.config.mjs';
 
 type AstroComponent = Parameters<AstroContainer['renderToString']>[0];
 
@@ -23,7 +24,11 @@ export async function renderAstro(
     /** `url` sets `Astro.url` (Navbar/Footer read it); `params` sets `Astro.params` for pages. */
     { url, params }: { url?: string; params?: Record<string, string> } = {}
 ) {
-    container ??= await AstroContainer.create({ renderers: await loadRenderers([reactRenderer()]) });
+    // `site` feeds `Astro.site`, which Head.astro resolves relative og:image URLs against.
+    container ??= await AstroContainer.create({
+        astroConfig: { site: config.site, trailingSlash: config.trailingSlash },
+        renderers: await loadRenderers([reactRenderer()]),
+    });
     const request = url ? new Request(new URL(url, 'https://hlorenzoz.com')) : undefined;
     const html = await container.renderToString(Component, { props, slots, request, params });
     const { document } = new JSDOM(`<!doctype html><body>${html}</body>`).window;

@@ -40,7 +40,7 @@ const OUT_DIR = join(DOSSIER_DIR, 'dist');
 const LOCALES = ['es', 'en'];
 
 /**
- * The calendar the site embeds in `components/services/CalBooking.tsx`, minus
+ * The calendar the site embeds in `src/components/services/CalBooking.astro`, minus
  * the `?embed=true` query. A test asserts the component still contains it.
  */
 export const BOOKING_URL = 'https://cal.com/hlorenzoz.com/15min';

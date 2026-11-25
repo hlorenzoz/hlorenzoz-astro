@@ -7,7 +7,7 @@
  * /sitemap.xml listed it correctly.
  */
 import { describe, it, expect } from 'vitest';
-import sitemap from '@/app/sitemap';
+import { sitemap } from '@/src/pages/sitemap.xml';
 import { ALL_ROUTES, ROUTE_GROUPS } from '@/lib/routes';
 import { SECTION_TIERS, localeHref, type RouteTier } from '@/lib/routing';
 import { getPortfolioItems } from '@/lib/portfolio';
@@ -54,7 +54,7 @@ describe('HTML sitemap covers everything the XML sitemap does', () => {
 
 describe('HTML sitemap links use the canonical URL form', () => {
     it('appends the trailing slash the site canonicalizes on', () => {
-        // next.config.ts sets trailingSlash: true, so /en/portfolio is a
+        // astro.config.mjs sets trailingSlash: always, so /en/portfolio is a
         // non-canonical form of a page whose rel=canonical is /en/portfolio/.
         expect(localeHref('en', 'portfolio')).toBe('/en/portfolio/');
         expect(localeHref('es', 'local-seo/gbp')).toBe('/es/local-seo/gbp/');

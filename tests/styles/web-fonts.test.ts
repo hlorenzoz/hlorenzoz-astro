@@ -1,21 +1,26 @@
 /**
- * Every family the root layout loads through `next/font/google` is preloaded
+ * Every family the site loads through the Astro Fonts API (`fonts` in
+ * `astro.config.mjs`, emitted by `<Font preload>` in BaseLayout) is preloaded
  * (`<link rel="preload" as="font">`, High priority) on EVERY page, before the
- * LCP element can paint. Noto Serif and Manrope were loaded this way while no
- * component used them: about 60 KiB of font on the critical path of each page
- * for nothing. Load a family only when the stylesheet actually uses it.
+ * LCP element can paint. Noto Serif and Manrope were once loaded this way while
+ * no component used them: about 60 KiB of font on the critical path of each
+ * page for nothing. Load a family only when the stylesheet actually uses it.
  */
 import { describe, it, expect } from 'vitest';
 import { readFileSync } from 'node:fs';
 import path from 'node:path';
+import config from '@/astro.config.mjs';
 
-const layout = readFileSync(path.join(process.cwd(), 'app/[locale]/layout.tsx'), 'utf8');
+const layout = readFileSync(path.join(process.cwd(), 'src/layouts/BaseLayout.astro'), 'utf8');
+const fonts = (config.fonts ?? []) as { name: string; cssVariable: string }[];
 
-describe('web fonts loaded by the root layout', () => {
-    it('loads only Inter from next/font/google', () => {
-        const imported = layout.match(/import\s*\{([^}]*)\}\s*from\s*'next\/font\/google'/);
+describe('web fonts loaded by the base layout', () => {
+    it('configures only Inter', () => {
+        expect(fonts.map((font) => font.name)).toEqual(['Inter']);
+    });
 
-        expect(imported).not.toBeNull();
-        expect(imported?.[1].split(',').map((name) => name.trim()).filter(Boolean)).toEqual(['Inter']);
+    it('renders a <Font> only for configured families', () => {
+        const rendered = [...layout.matchAll(/<Font\s[^>]*cssVariable="([^"]+)"/g)].map((m) => m[1]);
+        expect(rendered).toEqual(fonts.map((font) => font.cssVariable));
     });
 });

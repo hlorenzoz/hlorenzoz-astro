@@ -5,10 +5,11 @@
  * it up without throwing, register the right kind/tier, and produce the
  * schema/breadcrumb shape the spec requires.
  *
- * Each page module is expected to export `contentPages: Record<'en'|'es',
- * ContentPage>`, built at module scope (validated once at import time for
- * each locale), alongside the reserved Next.js exports (`default`,
- * `generateMetadata`, `dynamic`). Two locale instances, not one, because
+ * The pages read their `Record<'en'|'es', ContentPage>` from
+ * `src/pages/[locale]/services/_service-content.ts` (`hubContentPages` for the
+ * hub, `serviceContentPagesByKey.<key>` for each service), built at module
+ * scope and so validated once at import time for each locale. The `_` prefix
+ * keeps Astro from routing the module. Two locale instances, not one, because
  * `defineContentPage`'s `title`/`description` are plain strings: a single
  * instance cannot carry both the English and Spanish copy the messages files
  * author for every service, and this repo is bilingual by requirement.
@@ -17,17 +18,20 @@ import { describe, it, expect } from 'vitest';
 import { defineContentPage, MAX_AUTHORED_TITLE, type ContentPage } from '@/lib/service-page';
 import { absoluteUrl } from '@/lib/site-config';
 
-import * as hub from '@/app/[locale]/services/page';
-import * as localSeo from '@/app/[locale]/services/local-seo/page';
-import * as websiteDevelopment from '@/app/[locale]/services/website-development/page';
-import * as aiVoiceReceptionist from '@/app/[locale]/services/ai-voice-receptionist/page';
-import * as softwareDevelopment from '@/app/[locale]/services/software-development/page';
+import { hubContentPages, serviceContentPagesByKey } from '@/src/pages/[locale]/services/_service-content';
+import { serviceKeyFromSlug } from '@/lib/pricing';
+
+const hub = { contentPages: hubContentPages };
+const pagesFor = (slug: string) => ({ contentPages: serviceContentPagesByKey[serviceKeyFromSlug(slug)] });
+const localSeo = pagesFor('local-seo');
+const websiteDevelopment = pagesFor('website-development');
+const aiVoiceReceptionist = pagesFor('ai-voice-receptionist');
+const softwareDevelopment = pagesFor('software-development');
 
 /**
  * The live services, in presentation order: the core offer first, then the
- * optional ones. The paused Digital Business Card page is deliberately NOT
- * imported: it sits in a private folder and its module would throw on import,
- * because its route is commented out.
+ * optional ones. The paused Digital Business Card has no entry: its page sits
+ * in a private folder and its route is commented out.
  */
 const SERVICE_SLUGS = ['local-seo', 'website-development', 'ai-voice-receptionist', 'software-development'] as const;
 

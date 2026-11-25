@@ -17,7 +17,7 @@ import { describe, it, expect } from 'vitest';
 import { readFileSync } from 'node:fs';
 import { join } from 'node:path';
 
-const css = readFileSync(join(process.cwd(), 'app/globals.css'), 'utf8');
+const css = readFileSync(join(process.cwd(), 'src/styles/global.css'), 'utf8');
 
 /**
  * Returns the name of the `@layer` block containing `index`, or null when the

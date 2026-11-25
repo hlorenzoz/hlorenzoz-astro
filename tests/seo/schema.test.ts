@@ -17,7 +17,7 @@ import {
 } from '@/lib/schema';
 import type { CatalogEntry } from '@/lib/schema';
 import type { ServiceOffer } from '@/lib/pricing';
-import sitemap from '@/app/sitemap';
+import { sitemap } from '@/src/pages/sitemap.xml';
 
 describe('absoluteUrl (canonical URL builder)', () => {
     it('emits locale prefix + trailing slash for the home path', () => {

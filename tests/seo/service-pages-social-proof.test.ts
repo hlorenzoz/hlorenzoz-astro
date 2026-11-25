@@ -21,7 +21,7 @@ import enMessages from '@/messages/en.json';
  * supply. These tests hold BOTH halves in place: no dead call, and no quote
  * borrowed across services.
  */
-const SERVICE_PAGES_DIR = path.resolve(__dirname, '../../app/[locale]/services');
+const SERVICE_PAGES_DIR = path.resolve(__dirname, '../../src/pages/[locale]/services');
 
 const SLUGS_WITHOUT_TESTIMONIALS = [
     'local-seo',
@@ -33,14 +33,14 @@ const SLUGS_WITHOUT_TESTIMONIALS = [
 ] as const;
 
 function readPage(slug: string): string {
-    return readFileSync(path.join(SERVICE_PAGES_DIR, slug, 'page.tsx'), 'utf-8');
+    return readFileSync(path.join(SERVICE_PAGES_DIR, slug, 'index.astro'), 'utf-8');
 }
 
 describe('service pages: social proof', () => {
     it('ai-voice-receptionist reuses the real home.testimonials quotes', () => {
         const source = readPage('ai-voice-receptionist');
         expect(source).toMatch(/testimonials\.items/);
-        expect(source).not.toMatch(/<SocialProofStrip items=\{\[\]\}/);
+        expect(source).not.toMatch(/<SocialProofStrip[^>]*items=\{\[\]\}/);
     });
 
     it.each(SLUGS_WITHOUT_TESTIMONIALS)(
@@ -68,11 +68,14 @@ describe('service pages: social proof', () => {
         // The conversion framework's scroll order is promise -> trust ->
         // offer: the trust signal has to arrive before the objections it
         // exists to pre-empt, not after the whole offer and process.
-        const source = readPage('ai-voice-receptionist');
-        const heroAt = source.indexOf('<ServiceHero');
-        const proofAt = source.indexOf('<SocialProofStrip');
-        const benefitsAt = source.indexOf('<BenefitsList');
-        const deliverablesAt = source.indexOf('<ServiceDeliverables');
+        // The shared layout owns the order; the page fills its `after-hero` slot.
+        expect(readPage('ai-voice-receptionist')).toMatch(/<SocialProofStrip[^>]*slot="after-hero"/);
+
+        const layout = readFileSync(path.join(SERVICE_PAGES_DIR, '_ServicePage.astro'), 'utf-8');
+        const heroAt = layout.indexOf('<ServiceHero');
+        const proofAt = layout.indexOf('<slot name="after-hero"');
+        const benefitsAt = layout.indexOf('<BenefitsList');
+        const deliverablesAt = layout.indexOf('<ServiceDeliverables');
 
         expect(heroAt).toBeGreaterThanOrEqual(0);
         expect(proofAt).toBeGreaterThan(heroAt);

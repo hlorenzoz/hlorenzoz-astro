@@ -123,7 +123,7 @@ describe('_headers: plain-text artifacts declare their charset', () => {
  *
  * The freshness gate is what makes the guard usable. Comparing unconditionally
  * turned the ordinary edit-then-commit flow into a failure: pre-commit runs
- * `bun run test` and never builds, so editing `public/llms.txt` left `out/`
+ * `bun run test` and never builds, so editing `public/llms.txt` left `dist/`
  * behind and blocked the commit until a full static export had been run. A
  * stale build is not a defect, it is an absence of evidence, so it is skipped
  * rather than reported as drift.
@@ -131,25 +131,28 @@ describe('_headers: plain-text artifacts declare their charset', () => {
 const BUILT_ARTIFACTS = ['_headers', 'llms.txt'];
 
 const isBuiltFresh = (file: string): boolean => {
-    const built = repoPath(`out/${file}`);
+    const built = repoPath(`dist/${file}`);
     const source = repoPath(`public/${file}`);
     if (!existsSync(built) || !existsSync(source)) return false;
-    return statSync(built).mtimeMs >= statSync(source).mtimeMs;
+    // Astro copies public/ into dist/ keeping the source mtime, truncated to
+    // whole milliseconds, so compare at that precision: an edit after the build
+    // still makes the source strictly newer.
+    return Math.floor(statSync(built).mtimeMs) >= Math.floor(statSync(source).mtimeMs);
 };
 
 const hasFreshBuild = BUILT_ARTIFACTS.every(isBuiltFresh);
 
-describe.skipIf(!hasFreshBuild)('out/: the build ships what public/ declares', () => { // guardrail: allow-skip needs a fresh build in out/
-    it.each(BUILT_ARTIFACTS)('out/%s is byte-identical to its public/ source', (file) => {
+describe.skipIf(!hasFreshBuild)('dist/: the build ships what public/ declares', () => { // guardrail: allow-skip needs a fresh build in dist/
+    it.each(BUILT_ARTIFACTS)('dist/%s is byte-identical to its public/ source', (file) => {
         expect(
-            readRepoFile(`out/${file}`),
-            `out/${file} drifted from public/${file}; the deployed artifact is not what the tests above validated`
+            readRepoFile(`dist/${file}`),
+            `dist/${file} drifted from public/${file}; the deployed artifact is not what the tests above validated`
         ).toBe(readRepoFile(`public/${file}`));
     });
 
     it.each(PLAIN_TEXT_ARTIFACTS)('built _headers still pins charset for %s', (routePath) => {
-        const block = headerBlockIn(readRepoFile('out/_headers'), routePath);
-        expect(block, `out/_headers has no block for ${routePath}`).not.toBe('');
+        const block = headerBlockIn(readRepoFile('dist/_headers'), routePath);
+        expect(block, `dist/_headers has no block for ${routePath}`).not.toBe('');
         expect(block).toMatch(/Content-Type:\s*text\/plain;\s*charset=utf-8/i);
     });
 });

@@ -26,14 +26,14 @@ const read = (rel: string) => readFileSync(join(ROOT, rel), 'utf8');
 /** Absolute read, for the globally installed pipeline docs. */
 const readDoc = (abs: string) => readFileSync(abs, 'utf8');
 
-/** Concatenated source of every .ts/.tsx under the given directories. */
+/** Concatenated source of every .ts/.tsx/.astro under the given directories. */
 function sourceTexts(dirs: string[]): string {
     const out: string[] = [];
     const walk = (dir: string) => {
         for (const entry of readdirSync(dir)) {
             const full = join(dir, entry);
             if (statSync(full).isDirectory()) walk(full);
-            else if (/\.tsx?$/.test(entry)) out.push(readFileSync(full, 'utf8'));
+            else if (/\.(tsx?|astro)$/.test(entry)) out.push(readFileSync(full, 'utf8'));
         }
     };
     for (const dir of dirs) walk(join(ROOT, dir));
@@ -161,10 +161,10 @@ describe.skipIf(!DOCS_INSTALLED)('pipeline docs match this codebase', () => { //
         // went unchecked, which is exactly the drift this exists to catch.
         //
         // Now: every backticked multi-word identifier in the docs must appear
-        // somewhere under lib/, components/ or app/. Multi-word (camelCase or
+        // somewhere under lib/ or src/. Multi-word (camelCase or
         // PascalCase) is the filter that keeps prose words like `tier` out
         // while catching `contentPageMetadata` after a rename.
-        const sources = sourceTexts(['lib', 'components', 'app']);
+        const sources = sourceTexts(['lib', 'src']);
         const identifiers = new Set(
             PIPELINE_DOCS.flatMap((file) =>
                 [...readDoc(file).matchAll(/`([a-z][a-zA-Z0-9]*[A-Z][a-zA-Z0-9]*|[A-Z][a-z]+[A-Z][a-zA-Z0-9]*)`/g)]

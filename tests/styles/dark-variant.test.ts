@@ -18,7 +18,7 @@ import { describe, it, expect } from 'vitest';
 import { readFileSync } from 'node:fs';
 import path from 'node:path';
 
-const source = readFileSync(path.join(process.cwd(), 'app/globals.css'), 'utf8');
+const source = readFileSync(path.join(process.cwd(), 'src/styles/global.css'), 'utf8');
 
 // Assertions are about rules, not prose. The block comment above the variant
 // declaration quotes `prefers-color-scheme: dark` while explaining why the

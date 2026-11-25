@@ -16,7 +16,7 @@
     "stripe:sync-payment-links": "node scripts/create-payment-links.mjs",
     "lint": "eslint .",
     "lint:fix": "bun eslint . --fix",
-    "type-check": "astro check && tsc --noEmit",
+    "type-check": "astro check",
     "test": "sh tests/log.sh vitest vitest run --reporter=verbose",
     "test:watch": "vitest",
     "test:coverage": "sh tests/log.sh vitest_coverage vitest run --reporter=verbose --coverage",

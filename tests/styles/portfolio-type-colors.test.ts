@@ -110,8 +110,8 @@ describe('portfolio type colours', () => {
      * the token changes, so no render-based assertion can see it coming.
      */
     describe('no component hardcodes a type colour', () => {
-        const SURFACES = ['components/PortfolioTypeFilter.tsx', 'components/PortfolioCarousel.tsx',
-            'app/[locale]/portfolio/page.tsx'];
+        const SURFACES = ['src/components/PortfolioTypeFilter.astro', 'src/components/PortfolioCarousel.astro',
+            'src/pages/[locale]/portfolio/index.astro'];
 
         // Matches the colour family regardless of shade or opacity suffix, so
         // reverting to `emerald-950` is caught just as `emerald-700` would be.
