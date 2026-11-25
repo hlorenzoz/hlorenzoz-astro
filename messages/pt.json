@@ -861,10 +861,109 @@
       }
     },
     "softwareDevelopment": {
-      "name": "Desenvolvimento de software",
       "meta": {
+        "title": "Desenvolvimento de software à medida",
         "description": "Produtos full stack, web e mobile, feitos para funcionar em qualquer dispositivo e tamanho de ecrã, do primeiro protótipo ao lançamento em produção."
-      }
+      },
+      "hero": {
+        "eyebrow": "Desenvolvimento de software",
+        "title": "Software à medida, pronto para crescer",
+        "subtitle": "Produtos full stack com frontend em Flutter e um backend robusto, feitos para funcionar em qualquer dispositivo e tamanho de ecrã.",
+        "price": "A partir de {price} {tax}. A partir de {bundlePrice} em conjunto com o SEO local ({discount}% de desconto).",
+        "cta": "Marcar consulta gratuita de 15 minutos"
+      },
+      "benefits": {
+        "title": "O que recebe",
+        "items": [
+          {
+            "title": "Em todas as plataformas desde o primeiro dia",
+            "description": "Uma única base de código em Flutter chega a iOS, Android, web, macOS, Windows e Linux, para estar presente em todos os dispositivos sem triplicar o orçamento."
+          },
+          {
+            "title": "Backend preparado para produção",
+            "description": "Um backend feito para tráfego real, com testes automáticos e CI/CD, e não um protótipo frágil a fingir que é um produto."
+          },
+          {
+            "title": "Todo o sistema é seu",
+            "description": "O código fonte, a infraestrutura e a documentação passam a ser integralmente seus quando o projeto é entregue."
+          }
+        ]
+      },
+      "deliverables": {
+        "title": "O pacote completo",
+        "groups": [
+          {
+            "label": "Uma base de código, todas as plataformas",
+            "items": [
+              "Frontend em Flutter para iOS, Android, web, macOS, Windows e Linux",
+              "Interface consistente em todos os dispositivos",
+              "Desempenho nativo a partir de uma única base de código",
+              "Layouts adaptáveis a qualquer tamanho de ecrã"
+            ]
+          },
+          {
+            "label": "Feito para produção, não um protótipo",
+            "items": [
+              "Arquitetura de backend à medida do seu produto",
+              "Testes automáticos desde o primeiro dia",
+              "Pipeline de CI/CD para lançamentos seguros",
+              "Infraestrutura e alojamento preparados para crescer"
+            ]
+          },
+          {
+            "label": "Tudo é seu",
+            "items": [
+              "Propriedade total do código fonte na entrega",
+              "Documentação técnica completa",
+              "Passagem da infraestrutura e da implementação",
+              "Orçamento por projeto, a partir de um preço inicial publicado"
+            ]
+          }
+        ]
+      },
+      "process": {
+        "title": "Como funciona",
+        "steps": [
+          {
+            "number": "01",
+            "title": "Marcar",
+            "description": "Marque uma consulta gratuita para falarmos do que está a construir."
+          },
+          {
+            "number": "02",
+            "title": "Reunir",
+            "description": "Analisamos os seus requisitos e definimos em conjunto a abordagem técnica."
+          },
+          {
+            "number": "03",
+            "title": "Desenvolver",
+            "description": "Construímos à medida o frontend e o backend do seu produto."
+          },
+          {
+            "number": "04",
+            "title": "Entregar",
+            "description": "O seu produto é lançado, com prazos definidos em cada projeto consoante o âmbito."
+          }
+        ]
+      },
+      "faq": {
+        "title": "Perguntas frequentes",
+        "items": [
+          {
+            "question": "Para que plataformas podem desenvolver?",
+            "answer": "iOS, Android, web, macOS, Windows e Linux a partir de uma única base de código em Flutter, com um backend feito especificamente para as necessidades do seu produto."
+          },
+          {
+            "question": "Como é calculado o preço de um projeto de software à medida?",
+            "answer": "Cada projeto é orçamentado individualmente, consoante as funcionalidades e a complexidade. O valor publicado é um preço de partida: o orçamento final surge depois de uma consulta inicial, não é um pacote fechado."
+          },
+          {
+            "question": "O código fonte é meu quando o projeto termina?",
+            "answer": "Sim. O código fonte completo, a configuração da infraestrutura e a documentação passam a ser seus quando o projeto é entregue e pago na totalidade."
+          }
+        ]
+      },
+      "name": "Desenvolvimento de software"
     }
   },
   "assistant": {

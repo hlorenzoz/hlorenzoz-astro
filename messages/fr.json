@@ -863,7 +863,106 @@
     "softwareDevelopment": {
       "name": "Développement logiciel",
       "meta": {
-        "description": "Des produits complets, web et mobile, conçus pour fonctionner sur tous les appareils et toutes les tailles d'écran, du premier prototype à la mise en production."
+        "description": "Des produits complets, web et mobile, conçus pour fonctionner sur tous les appareils et toutes les tailles d'écran, du premier prototype à la mise en production.",
+        "title": "Développement logiciel sur mesure"
+      },
+      "hero": {
+        "eyebrow": "Développement logiciel",
+        "title": "Un logiciel sur mesure, prêt à grandir",
+        "subtitle": "Des produits complets, avec une interface Flutter et un backend robuste, conçus pour fonctionner sur tous les appareils et toutes les tailles d'écran.",
+        "price": "À partir de {price} {tax}. À partir de {bundlePrice} avec le SEO local ({discount} % de remise).",
+        "cta": "Réserver une consultation gratuite de 15 minutes"
+      },
+      "benefits": {
+        "title": "Ce que vous obtenez",
+        "items": [
+          {
+            "title": "Sur toutes les plateformes dès le premier jour",
+            "description": "Une seule base de code Flutter pour iOS, Android, le web, macOS, Windows et Linux : vous touchez tous les appareils sans tripler le budget."
+          },
+          {
+            "title": "Un backend prêt pour la production",
+            "description": "Un backend conçu pour un trafic réel, avec tests automatisés et CI/CD, et non un prototype fragile qui se fait passer pour un produit."
+          },
+          {
+            "title": "Toute la pile vous appartient",
+            "description": "Le code source, l'infrastructure et la documentation sont entièrement à vous dès la livraison du projet."
+          }
+        ]
+      },
+      "deliverables": {
+        "title": "L'offre complète",
+        "groups": [
+          {
+            "label": "Une seule base de code, toutes les plateformes",
+            "items": [
+              "Interface Flutter pour iOS, Android, le web, macOS, Windows et Linux",
+              "Une interface cohérente sur tous les appareils",
+              "Des performances natives avec une seule base de code",
+              "Une mise en page adaptée à chaque taille d'écran"
+            ]
+          },
+          {
+            "label": "Conçu pour la production, pas comme un prototype",
+            "items": [
+              "Architecture backend sur mesure pour votre produit",
+              "Tests automatisés dès le premier jour",
+              "Pipeline CI/CD pour des mises en ligne sûres",
+              "Infrastructure et hébergement évolutifs"
+            ]
+          },
+          {
+            "label": "Tout vous appartient",
+            "items": [
+              "Propriété complète du code source à la livraison",
+              "Documentation technique complète",
+              "Transmission de l'infrastructure et du déploiement",
+              "Devis par projet, à partir d'un prix de départ publié"
+            ]
+          }
+        ]
+      },
+      "process": {
+        "title": "Comment ça marche",
+        "steps": [
+          {
+            "number": "01",
+            "title": "Réservation",
+            "description": "Planifiez une consultation gratuite pour parler de ce que vous voulez construire."
+          },
+          {
+            "number": "02",
+            "title": "Rencontre",
+            "description": "Nous analysons vos besoins et validons ensemble l'approche technique."
+          },
+          {
+            "number": "03",
+            "title": "Développement",
+            "description": "Nous développons sur mesure l'interface et le backend de votre produit."
+          },
+          {
+            "number": "04",
+            "title": "Livraison",
+            "description": "Votre produit est mis en ligne, avec un calendrier fixé pour chaque projet selon son périmètre."
+          }
+        ]
+      },
+      "faq": {
+        "title": "Questions fréquentes",
+        "items": [
+          {
+            "question": "Quelles plateformes sont prises en charge ?",
+            "answer": "iOS, Android, le web, macOS, Windows et Linux, à partir d'une seule base de code Flutter, avec un backend développé spécialement pour les besoins de votre produit."
+          },
+          {
+            "question": "Comment se calcule le prix d'un logiciel sur mesure ?",
+            "answer": "Chaque projet est chiffré individuellement selon ses fonctionnalités et sa complexité. Le montant publié est un prix de départ : le devis final suit une première consultation, il ne s'agit pas d'une offre forfaitaire."
+          },
+          {
+            "question": "Qui possède le code source une fois le projet terminé ?",
+            "answer": "Vous. Le code source complet, la configuration de l'infrastructure et la documentation vous appartiennent une fois le projet livré et entièrement payé."
+          }
+        ]
       }
     }
   },

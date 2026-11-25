@@ -863,7 +863,106 @@
         "softwareDevelopment": {
             "name": "Softwareentwicklung",
             "meta": {
-                "description": "Komplette Produkte über den gesamten Stack, für Web und Mobilgeräte, auf jedem Gerät und jeder Bildschirmgröße, vom ersten Prototyp bis zum Livegang."
+                "description": "Komplette Produkte über den gesamten Stack, für Web und Mobilgeräte, auf jedem Gerät und jeder Bildschirmgröße, vom ersten Prototyp bis zum Livegang.",
+                "title": "Individuelle Softwareentwicklung"
+            },
+            "hero": {
+                "eyebrow": "Softwareentwicklung",
+                "title": "Individuelle Software, die mit Ihnen wächst",
+                "subtitle": "Komplette Produkte mit einem Frontend in Flutter und einem robusten Backend, gebaut für jedes Gerät und jede Bildschirmgröße.",
+                "price": "Ab {price} {tax}. Zusammen mit dem Plan für lokales SEO ab {bundlePrice} ({discount}% Rabatt).",
+                "cta": "Kostenlose Beratung von 15 Minuten buchen"
+            },
+            "benefits": {
+                "title": "Was Sie bekommen",
+                "items": [
+                    {
+                        "title": "Vom ersten Tag an auf jeder Plattform",
+                        "description": "Eine einzige Codebasis in Flutter läuft auf iOS, Android, im Web, auf macOS, Windows und Linux. So erreichen Sie jedes Gerät, ohne das Budget zu verdreifachen."
+                    },
+                    {
+                        "title": "Ein Backend für den Echtbetrieb",
+                        "description": "Ein Backend für echten Datenverkehr, mit automatisierten Tests und CI/CD, statt eines wackeligen Prototyps, der sich als Produkt ausgibt."
+                    },
+                    {
+                        "title": "Der gesamte Stack gehört Ihnen",
+                        "description": "Quellcode, Infrastruktur und Dokumentation gehören nach der Übergabe des Projekts vollständig Ihnen."
+                    }
+                ]
+            },
+            "deliverables": {
+                "title": "Das Komplettpaket",
+                "groups": [
+                    {
+                        "label": "Eine Codebasis, jede Plattform",
+                        "items": [
+                            "Frontend in Flutter für iOS, Android, Web, macOS, Windows und Linux",
+                            "Einheitliche Oberfläche auf allen Geräten",
+                            "Native Leistung aus einer einzigen Codebasis",
+                            "Responsive Layouts für jede Bildschirmgröße"
+                        ]
+                    },
+                    {
+                        "label": "Gebaut für den Echtbetrieb, nicht als Prototyp",
+                        "items": [
+                            "Individuelle Backendarchitektur für Ihr Produkt",
+                            "Automatisierte Tests vom ersten Tag an",
+                            "Automatisierte Pipeline (CI/CD) für sichere Releases",
+                            "Skalierbare Infrastruktur und Einrichtung des Hostings"
+                        ]
+                    },
+                    {
+                        "label": "Alles gehört Ihnen",
+                        "items": [
+                            "Volle Rechte am Quellcode bei der Übergabe",
+                            "Komplette technische Dokumentation",
+                            "Übergabe von Infrastruktur und Deployment",
+                            "Angebot pro Projekt, ausgehend von einem veröffentlichten Einstiegspreis"
+                        ]
+                    }
+                ]
+            },
+            "process": {
+                "title": "So entsteht Ihre Software",
+                "steps": [
+                    {
+                        "number": "01",
+                        "title": "Termin buchen",
+                        "description": "Vereinbaren Sie eine kostenlose Beratung, um über Ihr Vorhaben zu sprechen."
+                    },
+                    {
+                        "number": "02",
+                        "title": "Gespräch",
+                        "description": "Wir analysieren Ihre Anforderungen und stimmen den technischen Ansatz mit Ihnen ab."
+                    },
+                    {
+                        "number": "03",
+                        "title": "Entwicklung",
+                        "description": "Wir entwickeln Frontend und Backend Ihres Produkts individuell für Sie."
+                    },
+                    {
+                        "number": "04",
+                        "title": "Übergabe",
+                        "description": "Ihr Produkt geht live. Den Zeitplan legen wir für jedes Projekt je nach Umfang fest."
+                    }
+                ]
+            },
+            "faq": {
+                "title": "Häufige Fragen",
+                "items": [
+                    {
+                        "question": "Für welche Plattformen entwickeln Sie?",
+                        "answer": "Für iOS, Android, das Web, macOS, Windows und Linux, aus einer einzigen Codebasis in Flutter. Dahinter steht ein individuelles Backend, das genau auf die Anforderungen Ihres Produkts zugeschnitten ist."
+                    },
+                    {
+                        "question": "Wie wird ein individuelles Softwareprojekt berechnet?",
+                        "answer": "Jedes Projekt wird einzeln nach Funktionen und Komplexität geplant. Der veröffentlichte Betrag ist ein Einstiegspreis: Das endgültige Angebot folgt nach einem ersten Beratungsgespräch, es gibt kein festes Paket."
+                    },
+                    {
+                        "question": "Gehört mir der Quellcode, wenn das Projekt abgeschlossen ist?",
+                        "answer": "Ja. Ihnen gehören der vollständige Quellcode, die Einrichtung der Infrastruktur und die Dokumentation, sobald das Projekt übergeben und vollständig bezahlt ist."
+                    }
+                ]
             }
         }
     },

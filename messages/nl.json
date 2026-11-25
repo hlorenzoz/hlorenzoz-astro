@@ -674,7 +674,106 @@
         "softwareDevelopment": {
             "name": "Softwareontwikkeling",
             "meta": {
-                "description": "Complete producten voor web en mobiel, gebouwd voor elk apparaat en elk schermformaat, van eerste prototype tot lancering in productie."
+                "description": "Complete producten voor web en mobiel, gebouwd voor elk apparaat en elk schermformaat, van eerste prototype tot lancering in productie.",
+                "title": "Softwareontwikkeling op maat"
+            },
+            "hero": {
+                "eyebrow": "Softwareontwikkeling",
+                "title": "Software op maat, klaar om te groeien",
+                "subtitle": "Complete fullstack producten met een Flutter frontend en een robuuste backend, gebouwd voor elk apparaat en elk schermformaat.",
+                "price": "Vanaf {price} {tax}. Vanaf {bundlePrice} samen met Lokale SEO ({discount}% korting).",
+                "cta": "Plan een gratis kennismaking van 15 minuten"
+            },
+            "benefits": {
+                "title": "Wat je krijgt",
+                "items": [
+                    {
+                        "title": "Vanaf dag één op elk platform",
+                        "description": "Eén Flutter codebase draait op iOS, Android, het web, macOS, Windows en Linux. Zo bereik je elk apparaat zonder je budget te verdrievoudigen."
+                    },
+                    {
+                        "title": "Een backend klaar voor productie",
+                        "description": "Een backend gebouwd voor echt verkeer, met automatische tests en CI/CD, geen kwetsbaar prototype dat zich voordoet als product."
+                    },
+                    {
+                        "title": "De volledige stack is van jou",
+                        "description": "Broncode, infrastructuur en documentatie zijn volledig van jou zodra het project is opgeleverd."
+                    }
+                ]
+            },
+            "deliverables": {
+                "title": "Het complete pakket",
+                "groups": [
+                    {
+                        "label": "Eén codebase, elk platform",
+                        "items": [
+                            "Flutter frontend voor iOS, Android, het web, macOS, Windows en Linux",
+                            "Een consistente interface op elk apparaat",
+                            "Native prestaties vanuit één codebase",
+                            "Responsieve layouts voor elk schermformaat"
+                        ]
+                    },
+                    {
+                        "label": "Gebouwd voor productie, niet als prototype",
+                        "items": [
+                            "Backendarchitectuur op maat van je product",
+                            "Automatische tests vanaf dag één",
+                            "CI/CD pipeline voor veilige releases",
+                            "Schaalbare infrastructuur en hosting ingericht"
+                        ]
+                    },
+                    {
+                        "label": "Alles is van jou",
+                        "items": [
+                            "Volledig eigendom van de broncode bij oplevering",
+                            "Complete technische documentatie",
+                            "Overdracht van infrastructuur en deployment",
+                            "Offerte per project, vanaf een gepubliceerde startprijs"
+                        ]
+                    }
+                ]
+            },
+            "process": {
+                "title": "Zo werkt het",
+                "steps": [
+                    {
+                        "number": "01",
+                        "title": "Plannen",
+                        "description": "Plan een gratis kennismaking om te bespreken wat je wilt bouwen."
+                    },
+                    {
+                        "number": "02",
+                        "title": "Kennismaken",
+                        "description": "We brengen je eisen in kaart en stemmen samen de technische aanpak af."
+                    },
+                    {
+                        "number": "03",
+                        "title": "Ontwikkelen",
+                        "description": "We bouwen de frontend en backend van je product op maat."
+                    },
+                    {
+                        "number": "04",
+                        "title": "Opleveren",
+                        "description": "Je product gaat live, met een planning die per project wordt bepaald op basis van de omvang."
+                    }
+                ]
+            },
+            "faq": {
+                "title": "Veelgestelde vragen",
+                "items": [
+                    {
+                        "question": "Voor welke platforms kunnen jullie bouwen?",
+                        "answer": "iOS, Android, het web, macOS, Windows en Linux, vanuit één Flutter codebase, met daarachter een backend die speciaal voor de behoeften van je product wordt gebouwd."
+                    },
+                    {
+                        "question": "Hoe wordt de prijs van een softwareproject op maat bepaald?",
+                        "answer": "Elk project wordt apart afgebakend op basis van functies en complexiteit. Het gepubliceerde bedrag is een startprijs: de definitieve offerte volgt na een eerste kennismaking, het is geen vast pakket."
+                    },
+                    {
+                        "question": "Is de broncode van mij als het project klaar is?",
+                        "answer": "Ja. De volledige broncode, de inrichting van de infrastructuur en de documentatie zijn van jou zodra het project is opgeleverd en volledig betaald."
+                    }
+                ]
             }
         }
     },

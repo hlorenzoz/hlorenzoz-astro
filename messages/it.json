@@ -674,7 +674,106 @@
     "softwareDevelopment": {
       "name": "Sviluppo software",
       "meta": {
+        "title": "Sviluppo software su misura",
         "description": "Prodotti full stack, web e mobile, pensati per funzionare su ogni dispositivo e dimensione di schermo, dal primo prototipo al lancio in produzione."
+      },
+      "hero": {
+        "eyebrow": "Sviluppo software",
+        "title": "Software su misura, pensato per crescere",
+        "subtitle": "Prodotti full stack con frontend in Flutter e un backend solido, pensati per funzionare su ogni dispositivo e dimensione di schermo.",
+        "price": "A partire da {price} {tax}. A partire da {bundlePrice} se abbinato alla SEO locale (sconto del {discount}%).",
+        "cta": "Prenota una consulenza gratuita di 15 minuti"
+      },
+      "benefits": {
+        "title": "Cosa ottieni",
+        "items": [
+          {
+            "title": "Su ogni piattaforma fin dal primo giorno",
+            "description": "Un'unica base di codice Flutter arriva su iOS, Android, web, macOS, Windows e Linux, così raggiungi ogni dispositivo senza triplicare il budget."
+          },
+          {
+            "title": "Un backend pronto per la produzione",
+            "description": "Un backend costruito per il traffico reale, con test automatici e CI/CD, non un prototipo fragile spacciato per prodotto."
+          },
+          {
+            "title": "L'intero stack è tuo",
+            "description": "Codice sorgente, infrastruttura e documentazione diventano interamente tuoi alla consegna del progetto."
+          }
+        ]
+      },
+      "deliverables": {
+        "title": "Il pacchetto completo",
+        "groups": [
+          {
+            "label": "Un'unica base di codice, ogni piattaforma",
+            "items": [
+              "Frontend Flutter per iOS, Android, web, macOS, Windows e Linux",
+              "Interfaccia coerente su ogni dispositivo",
+              "Prestazioni native da un'unica base di codice",
+              "Layout responsive per ogni dimensione di schermo"
+            ]
+          },
+          {
+            "label": "Pronto per la produzione, non un prototipo",
+            "items": [
+              "Architettura backend su misura per il tuo prodotto",
+              "Test automatici fin dal primo giorno",
+              "Pipeline CI/CD per rilasci sicuri",
+              "Configurazione di infrastruttura e hosting scalabili"
+            ]
+          },
+          {
+            "label": "Tutto è tuo",
+            "items": [
+              "Proprietà completa del codice sorgente alla consegna",
+              "Documentazione tecnica completa",
+              "Passaggio di consegne di infrastruttura e deployment",
+              "Preventivo per ogni progetto, con un prezzo di partenza pubblicato"
+            ]
+          }
+        ]
+      },
+      "process": {
+        "title": "Come funziona",
+        "steps": [
+          {
+            "number": "01",
+            "title": "Prenotazione",
+            "description": "Fissa una consulenza gratuita per parlare di ciò che vuoi realizzare."
+          },
+          {
+            "number": "02",
+            "title": "Incontro",
+            "description": "Analizziamo i tuoi requisiti e concordiamo l'approccio tecnico."
+          },
+          {
+            "number": "03",
+            "title": "Sviluppo",
+            "description": "Sviluppiamo su misura il frontend e il backend del tuo prodotto."
+          },
+          {
+            "number": "04",
+            "title": "Consegna",
+            "description": "Il tuo prodotto va online, con tempi definiti per ogni progetto in base alla sua portata."
+          }
+        ]
+      },
+      "faq": {
+        "title": "Domande frequenti",
+        "items": [
+          {
+            "question": "Per quali piattaforme potete sviluppare?",
+            "answer": "iOS, Android, web, macOS, Windows e Linux da un'unica base di codice Flutter, affiancata da un backend su misura costruito per le esigenze specifiche del tuo prodotto."
+          },
+          {
+            "question": "Come si definisce il prezzo di un progetto software su misura?",
+            "answer": "Ogni progetto viene valutato singolarmente in base a funzionalità e complessità. La cifra pubblicata è un prezzo di partenza: il preventivo finale arriva dopo una prima consulenza, non da un pacchetto fisso."
+          },
+          {
+            "question": "Il codice sorgente diventa mio a progetto concluso?",
+            "answer": "Sì. Il codice sorgente completo, la configurazione dell'infrastruttura e la documentazione sono tuoi una volta che il progetto è stato consegnato e saldato per intero."
+          }
+        ]
       }
     }
   },

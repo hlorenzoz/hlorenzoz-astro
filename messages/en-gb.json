@@ -857,7 +857,106 @@
     "softwareDevelopment": {
       "name": "Software Development",
       "meta": {
-        "description": "Full stack products, web and mobile, built to run on every device and screen size, from first prototype to production launch."
+        "description": "Full stack products, web and mobile, built to run on every device and screen size, from first prototype to production launch.",
+        "title": "Bespoke Software Development"
+      },
+      "hero": {
+        "eyebrow": "Software Development",
+        "title": "Bespoke Software, Built to Scale",
+        "subtitle": "Full stack products with a Flutter frontend and a robust backend, built to run on every device and screen size.",
+        "price": "From {price} {tax}. From {bundlePrice} alongside Local SEO ({discount}% off).",
+        "cta": "Book a free 15 minute consultation"
+      },
+      "benefits": {
+        "title": "What You Get",
+        "items": [
+          {
+            "title": "On Every Platform From Day One",
+            "description": "One Flutter codebase runs on iOS, Android, the web, macOS, Windows and Linux, so you reach every device without tripling the budget."
+          },
+          {
+            "title": "Production Grade Backend",
+            "description": "A backend built for real traffic, with automated tests and CI/CD, not a fragile prototype dressed up as a product."
+          },
+          {
+            "title": "You Own the Full Stack",
+            "description": "Source code, infrastructure and documentation are entirely yours once the project is delivered."
+          }
+        ]
+      },
+      "deliverables": {
+        "title": "The Complete Package",
+        "groups": [
+          {
+            "label": "One Codebase, Every Platform",
+            "items": [
+              "Flutter frontend for iOS, Android, the web, macOS, Windows and Linux",
+              "Consistent interface across every device",
+              "Native performance from a single codebase",
+              "Responsive layouts for every screen size"
+            ]
+          },
+          {
+            "label": "Built for Production, Not as a Prototype",
+            "items": [
+              "Bespoke backend architecture for your product",
+              "Automated tests from day one",
+              "CI/CD pipeline for safe releases",
+              "Scalable infrastructure and hosting set up"
+            ]
+          },
+          {
+            "label": "You Own Everything",
+            "items": [
+              "Full ownership of the source code on delivery",
+              "Complete technical documentation",
+              "Infrastructure and deployment handover",
+              "Quoted per project, from a published starting price"
+            ]
+          }
+        ]
+      },
+      "process": {
+        "title": "How It Works",
+        "steps": [
+          {
+            "number": "01",
+            "title": "Book",
+            "description": "Arrange a free consultation to talk through what you are building."
+          },
+          {
+            "number": "02",
+            "title": "Meet",
+            "description": "We assess your requirements and agree on the technical approach."
+          },
+          {
+            "number": "03",
+            "title": "Develop",
+            "description": "We build your product's frontend and backend from scratch."
+          },
+          {
+            "number": "04",
+            "title": "Deliver",
+            "description": "Your product goes live, with timescales set per project according to its scope."
+          }
+        ]
+      },
+      "faq": {
+        "title": "Frequently Asked Questions",
+        "items": [
+          {
+            "question": "Which platforms can you build for?",
+            "answer": "iOS, Android, the web, macOS, Windows and Linux from a single Flutter codebase, backed by a bespoke backend built specifically for your product's needs."
+          },
+          {
+            "question": "How is a bespoke software project priced?",
+            "answer": "Every project is scoped individually according to its features and complexity. The published figure is a starting price: the final quote follows an initial consultation, not a fixed package."
+          },
+          {
+            "question": "Do I own the source code once the project is finished?",
+            "answer": "Yes. You own the complete source code, infrastructure set up and documentation once the project has been delivered and paid in full."
+          }
+        ]
       }
     },
     "hub": {
