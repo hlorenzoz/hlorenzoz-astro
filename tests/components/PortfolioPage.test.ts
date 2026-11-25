@@ -35,6 +35,18 @@ describe('Portfolio Pages', () => {
         expect(screen.getByRole('heading', { level: 2, name: en.portfolio['dental-clinic-1'].title })).toBeInTheDocument();
     });
 
+    it('makes every card title a link to its detail page', async () => {
+        const { document } = await renderPage(PortfolioPage, { locale: 'en' });
+        const titles = [...document.querySelectorAll('#portfolio-grid h2')];
+        expect(titles.length).toBeGreaterThan(0);
+        for (const h2 of titles) {
+            expect(h2.querySelector('a')?.getAttribute('href')).toMatch(/^\/en\/portfolio\/[a-z0-9-]+\/$/);
+        }
+        const title = en.portfolio['dental-clinic-1'].title;
+        const link = titles.find((h) => h.textContent?.trim() === title)?.querySelector('a');
+        expect(link?.getAttribute('href')).toBe('/en/portfolio/dental-clinic-1/');
+    });
+
     it('renders one card per portfolio entry, each linking to its detail page', async () => {
         const { document } = await renderPage(PortfolioPage, { locale: 'en' });
         const cards = document.querySelectorAll('#portfolio-grid [data-portfolio-type]');

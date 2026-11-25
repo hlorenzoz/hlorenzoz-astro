@@ -38,6 +38,15 @@ describe('PortfolioCarousel', () => {
         ]);
     });
 
+    it('makes every project title a link to its detail page', async () => {
+        const screen = await renderCarousel();
+        const titles = [...screen.body.querySelectorAll('#portfolio h3')];
+        expect(titles.length).toBeGreaterThan(0);
+        for (const h3 of titles) {
+            expect(h3.querySelector('a')?.getAttribute('href')).toMatch(/^\/en\/portfolio\/[a-z0-9-]+\/$/);
+        }
+    });
+
     it('displays the scroll container and respects snap points', async () => {
         const { body } = await renderCarousel();
         expect(body.querySelector('.snap-x')).not.toBeNull();
