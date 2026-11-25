@@ -409,11 +409,723 @@
     }
   },
   "news": {
+    "list": {
+      "title": "Novas",
+      "subtitle": "Novidades de Lorenzoz Agency: os novos traballos que incorporamos ao portfolio e o obxectivo co que se construíu cada proxecto.",
+      "cta": "Ler a nova",
+      "published": "Publicado"
+    },
     "home": {
       "eyebrow": "NOVAS",
       "title": "Últimas novas",
       "subtitle": "Novos casos de estudo e novidades da axencia.",
       "viewAll": "Ver todas as novas"
+    },
+    "post": {
+      "published": "Publicado",
+      "readCaseStudy": "Ler o caso de estudo",
+      "visitSite": "Visitar o sitio en liña"
+    },
+    "items": {
+      "masajes-orisha-added-to-portfolio": {
+        "title": "Masajes Orisha incorpórase ao portfolio",
+        "description": "O sitio web de Masajes Orisha, un estudo de masaxe terapéutica en San Rafael de Heredia (Costa Rica), xa ten o seu propio caso de estudo no noso portfolio.",
+        "paragraphs": [
+          "Masajes Orisha, a web que creamos para un estudo de masaxe terapéutica en San Rafael de Heredia (Costa Rica), xa conta co seu propio caso de estudo no portfolio. O sitio xa está en liña en masajesorisha.com.",
+          "É a versión en produción do concepto de estudo de masaxe que tamén aparece no portfolio como demo: bilingüe en español e inglés de principio a fin, cun tema claro e outro escuro que conservan o mesmo carácter sereno e editorial.",
+          "Quen entra escolle entre un menú curto de catro tratamentos de autor, que se filtra cun toque e mostra en cada tarxeta a duración e o enfoque. A solicitude de reserva complétase en catro pasos (tratamento, duración, día e hora) e vai calculando unha estimación antes de enviala. Non fai falta crear unha conta nin pagar en liña: o terapeuta confirma cada solicitude por correo electrónico.",
+          "O sitio inclúe ademais un diario con artigos extensos sobre terapia manual, a fisioloxía do descanso e a recuperación muscular, publicados nos dous idiomas.",
+          "No caso de estudo percorremos o deseño, o menú de tratamentos, o fluxo de reserva e o diario, con capturas de cada sección."
+        ]
+      },
+      "gerp-dj-added-to-portfolio": {
+        "title": "GERP DJ incorpórase ao portfolio",
+        "description": "A web de GERP DJ, DJ para festas, vodas e eventos con base en Ourense (Galicia), xa ten o seu propio caso de estudo no noso portfolio.",
+        "paragraphs": [
+          "GERP DJ, DJ para festas, vodas e eventos con base en Ourense e dispoñible en toda Galicia, xa conta co seu propio caso de estudo no portfolio. A web que desenvolvemos xa está en liña e leva a nosa sinatura no pé de páxina.",
+          "Está publicada en español e en galego, cun selector de idioma na cabeceira, e ofrece tema claro e escuro. A portada ábrese cun vídeo de fondo que se pode pausar e continúa cos catro servizos: festas e verbenas de aldea, vodas, festas privadas e eventos de empresa.",
+          "Pedir data require tres datos: o día, a localidade e o tipo de evento. Despois, o formulario abre WhatsApp coa solicitude xa redactada e lista para enviar, sen ningún formulario de servidor polo medio. A páxina de contratación ofrece unha versión máis completa desa solicitude xunto a unhas preguntas frecuentes.",
+          "Unha galería de dez vídeos con descrición, gravados nas súas actuacións e co seu propio equipo, ensina como é unha festa con GERP DJ, e a páxina de contratación ofrece un dossier de prensa para descargar en PDF, en español e en galego. A política de cookies indica que o sitio non usa cookies de analítica nin de publicidade.",
+          "Medida con PageSpeed Insights en móbil o 24 de novembro de 2026, a portada obtivo 99 en Rendemento e 100 en Accesibilidade, Boas prácticas e SEO. Ese mesmo día, a proba de resultados enriquecidos de Google detectou na portada datos estruturados válidos de Breadcrumbs, Local business e Organisation, cos que pode optar a resultados enriquecidos na Busca de Google. O caso de estudo mostra os dous informes e percorre o deseño, a solicitude de data, a galería e a biografía, con capturas de cada sección."
+        ]
+      },
+      "lorenzoz-agency-case-study": {
+        "title": "A nosa web, reconstruída en Astro para unha visita máis rápida e accesible",
+        "description": "Reconstruímos hlorenzoz.com en Astro 7 cos mesmos URL e o mesmo deseño: 0 ms de bloqueo, moito menos JavaScript e accesibilidade 100. Antes e despois, medido.",
+        "paragraphs": [
+          "O 25 de novembro de 2026 pasamos hlorenzoz.com, a web de Lorenzoz Agency, de Next.js 16 a Astro 7. Quen nos visita conserva os mesmos enderezos, o mesmo deseño e o mesmo contido en inglés e en español. O que cambiou é canto traballo lle pide cada páxina ao seu teléfono: agora as páxinas cargan uns poucos kilobytes de JavaScript en lugar de máis de medio megabyte, e responden ao primeiro toque sen esperas.",
+          "Este artigo conta que reconstruímos, como comprobamos que non se rompeu nada visible e que supón o cambio para quen visita o sitio cun teléfono corrente. Cada cifra vén dunha proba que fixemos, coa súa data e as súas condicións, e a comparación entre o antes e o despois está recollida nunha táboa."
+        ],
+        "sections": [
+          {
+            "heading": "De onde partía o sitio",
+            "paragraphs": [
+              "O sitio estreouse en abril de 2026 sobre Next.js 16, exportado como ficheiros estáticos, con Tailwind CSS 4, Cloudflare por diante e probas en Vitest e Playwright. Noutro artigo contamos a historia desa primeira versión.",
+              "Funcionaba, pero cada páxina levaba un runtime de React para facer interactiva unha páxina que non cambia despois da compilación. Nun sitio que sobre todo presenta textos, imaxes e un botón de reserva, ese JavaScript é un custo que o visitante paga en cada visita sen recibir nada a cambio. Despois de construír a web de GERP DJ en Astro e ver como rendía, aplicámoslle o mesmo tratamento ao noso propio sitio."
+            ],
+            "image": "https://cdn.hlorenzoz.com/hlorenzoz.com/portfolio/me/tech-stack-visual.webp",
+            "imageAlt": "Ilustración das tecnoloxías coas que se estreou o sitio en abril de 2026: Next.js 16, Tailwind CSS 4, Cloudflare, GitHub Actions, Vitest e Playwright"
+          },
+          {
+            "heading": "Unha soa regra: só cambia o framework",
+            "paragraphs": [
+              "A migración seguiu unha única regra: os mesmos URL, as mesmas etiquetas head, o mesmo deseño e os mesmos comandos, axentes e scripts. Un visitante cun marcador gardado, un buscador coa páxina no seu índice e unha ligazón compartida hai meses tiñan que chegar á mesma páxina e ver o mesmo. Só podía cambiar o framework que hai por debaixo.",
+              "Para cumprila, comparamos a nova versión coa anterior antes do cambio. As etiquetas head e os datos estruturados JSON-LD saíron idénticos nas 48 páxinas, nos dous idiomas. As capturas de cada ruta a 390 e 1440 píxeles de ancho, o ancho dun teléfono e o dun ordenador, diferían nun 0,25 % dos píxeles ou menos, coas mesmas alturas de páxina. O sitemap e o ficheiro robots saíron idénticos byte a byte."
+            ],
+            "image": "https://cdn.hlorenzoz.com/hlorenzoz.com/portfolio/me/multiple-screens.webp",
+            "imageAlt": "A páxina de inicio de Lorenzoz Agency vista en varios tamaños de pantalla de teléfono e nunha tableta"
+          },
+          {
+            "heading": "Que reconstruímos",
+            "paragraphs": [
+              "Cada compoñente do sitio pasou a ser un compoñente nativo de Astro. Astro convérteos en HTML simple no momento da compilación, un ficheiro por páxina, sen código de servidor en execución cando alguén visita o sitio. As partes que reaccionan ao visitante, como o menú móbil, os carruseis e as preguntas frecuentes, recibiron cada unha un pequeno script en JavaScript simple que fai só esa tarefa.",
+              "React queda nun único lugar: o widget de voz de ElevenLabs, que permite falar co noso asistente de IA. Como é a peza máis pesada do sitio, queda fóra da primeira carga e só se monta cando o visitante se despraza máis alá da metade da pantalla.",
+              "As probas tamén se trasladaron, e medraron. Ao final da migración, Vitest executaba 1096 probas superadas, que renderizan os compoñentes coa Container API de Astro e revisan o HTML compilado de cada páxina, e Playwright executaba 37 probas de extremo a extremo superadas nun navegador real. Unha nova proba revisa cada ligazón interna, enderezo de imaxe, áncora, redirección e entrada da caché sen conexión do sitio compilado, e falla se algunha non leva a ningures. Lighthouse CI audita 14 URL clave en cada execución.",
+              "Tamén eliminamos un resto da versión anterior: en 46 das 48 páxinas pedíalle ao navegador que descargase cedo unha pequena icona do pé de páxina, en competencia co contido que importa primeiro. E o service worker que mantén a páxina de inicio dispoñible sen conexión recibiu novos nomes de caché, de modo que as copias gardadas do sitio antigo se descartan no cambio en vez de mostrar páxinas desactualizadas."
+            ]
+          },
+          {
+            "heading": "Antes e despois, medido",
+            "paragraphs": [
+              "Antes do cambio, servimos as dúas versións en local e medimos as mesmas páxinas con Lighthouse no seu perfil móbil, que simula un teléfono modesto cunha conexión móbil lenta. Cada cifra é a mediana de varias execucións, medida o 25 de novembro de 2026. As puntuacións de laboratorio varían uns poucos puntos dunha execución a outra, así que as medianas contan máis ca calquera número illado.",
+              "Dúas filas explican o resto. O Total Blocking Time é o tempo que o teléfono pasa demasiado ocupado executando scripts para reaccionar a un toque ou a un desprazamento, e baixou a cero. O JavaScript que carga cada páxina reduciuse máis dun 98 %, de máis de medio megabyte a uns poucos kilobytes. As dúas últimas filas proban que a velocidade non veu de quitar nada: o mesmo head, os mesmos datos estruturados, a mesma imaxe en pantalla.",
+              "As filas de laboratorio e a puntuación en directo de PageSpeed Insights miden a mesma páxina en dúas configuracións distintas, e por iso a páxina de inicio marca 89 nunha e 98 na outra. No laboratorio, as dúas versións servíronse desde un servidor estático local sen compresión, así que cada ficheiro viaxaba a tamaño completo pola conexión lenta simulada; iso penaliza por igual as dúas versións e mantén xusta a comparación entre elas. En produción, Cloudflare comprime cada ficheiro con Brotli e sérveo desde o seu edge, así que a mesma páxina de Astro chega ao teléfono máis lixeira e antes. Non gardamos ningún informe de PageSpeed Insights do sitio en Next.js en produción, polo que a súa puntuación en directo non figura na táboa."
+            ],
+            "table": {
+              "caption": "Versión en Next.js 16 e versión en Astro 7 de hlorenzoz.com, servidas en local e medidas o 25 de novembro de 2026 (Lighthouse móbil, mediana de varias execucións)",
+              "headers": [
+                "Medida",
+                "Next.js 16",
+                "Astro 7"
+              ],
+              "rows": [
+                [
+                  "Rendemento, páxina de inicio en inglés (laboratorio local)",
+                  "77",
+                  "89"
+                ],
+                [
+                  "Rendemento, páxina do servizo de SEO local (laboratorio local)",
+                  "89",
+                  "94"
+                ],
+                [
+                  "Rendemento, caso de estudo de GERP DJ (laboratorio local)",
+                  "72",
+                  "86"
+                ],
+                [
+                  "Rendemento, páxina de inicio en inglés (en directo, PageSpeed Insights, 25 de novembro de 2026)",
+                  "Non medido",
+                  "98"
+                ],
+                [
+                  "Total Blocking Time",
+                  "66 a 83 ms",
+                  "0 ms"
+                ],
+                [
+                  "JavaScript cargado por páxina",
+                  "534 a 645 KB",
+                  "2,6 a 8,9 KB"
+                ],
+                [
+                  "Etiquetas head e JSON-LD en 48 páxinas",
+                  "Referencia",
+                  "Idénticos"
+                ],
+                [
+                  "Diferenza nas capturas a 390 e 1440 px",
+                  "Referencia",
+                  "0,25 % dos píxeles ou menos"
+                ]
+              ]
+            }
+          },
+          {
+            "heading": "Aparece antes e responde máis rápido",
+            "paragraphs": [
+              "Para o visitante, menos JavaScript significa que a páxina está lista antes. Un navegador ten que descargar, ler e executar cada script que recibe, e coa versión anterior iso era máis de medio megabyte en cada páxina. Agora o HTML chega listo para ler e os scripts que veñen detrás pesan uns poucos kilobytes; por iso a puntuación de Rendemento subiu nas tres páxinas que comparamos.",
+              "A resposta importa tanto como a aparencia. Con 66 a 83 ms de bloqueo, un toque durante a carga podía ter que agardar a que terminasen os scripts antes de que pasase nada. Con 0 ms, o menú ábrese, o acordeón desprégase e o botón de reserva reacciona no momento en que se toca.",
+              "A mellora é maior onde máis falta lles fai aos visitantes. O perfil de laboratorio detrás destas cifras imita un teléfono modesto cunha conexión lenta, que é a situación de moita xente que busca un negocio local fóra da casa, con datos móbiles ou cunha wifi irregular. Unha páxina que pesa pouco e lle pide pouco ao procesador segue sendo usable nesas condicións, e gasta menos datos e menos batería do visitante."
+            ]
+          },
+          {
+            "heading": "Unha páxina que non se move mentres carga",
+            "paragraphs": [
+              "Poucas cousas molestan tanto como unha páxina que salta mentres a les ou cando vas premer un botón. O sitio está feito para que iso non ocorra. As imaxes declaran o seu tamaño de antemán, así que o navegador resérvalles o espazo antes de que cheguen. A tipografía Inter está aloxada no noso propio servidor e cárgase como un único ficheiro, e mentres se descarga o texto móstrase nunha fonte alternativa axustada ao mesmo tamaño, para que as liñas non se recoloquen cando aparece a fonte real.",
+              "O aviso de cookies e as respostas das preguntas frecuentes forman parte da páxina desde o principio, agochados ata que se necesitan, en vez de engadilos despois cun script. O aviso aparece uns segundos despois de cargar a páxina e flota sobre a parte inferior da pantalla en lugar de empurrar o contido cara abaixo.",
+              "A comparación de capturas confirmouno desde outro ángulo: cada ruta mantivo exactamente a mesma altura de páxina que no sitio antigo, así que o cambio de framework non moveu nada en pantalla."
+            ]
+          },
+          {
+            "heading": "Usable co teclado ou cun lector de pantalla",
+            "paragraphs": [
+              "Despois do cambio pasamos a auditoría de accesibilidade de Lighthouse en cada ruta e corriximos cada problema que sinalou, ata que as 48 páxinas obtiveron 100 en móbil. A maioría deses problemas eran anteriores á migración; a reconstrución foi o momento de resolvelos.",
+              "As correccións son concretas. Dous textos en gris claro sen contraste suficiente son agora máis escuros. Os botóns de anterior, seguinte e de punto de dous carruseis de imaxes teñen nomes que un lector de pantalla anuncia en inglés e en español, e os puntos están separados para que cada un sexa un obxectivo que se poida tocar co dedo. Os títulos do pé de páxina, as tarxetas do portfolio e o directorio de servizos xa non saltan do encabezado principal directamente ao terceiro nivel, polo que quen usa un lector de pantalla pode percorrer cada páxina polos seus encabezados. A etiqueta do selector de idioma comeza agora polo código de idioma que se ve en pantalla, para que quen usa o control por voz poida dicir o que ve.",
+              "Algúns comportamentos cambiaron a propósito. O selector de idioma está feito agora de ligazóns normais, que funcionan co teclado e que os buscadores poden seguir. A tecla Escape pecha o menú móbil. No carrusel de funcionalidades só a cabeceira de cada elemento actúa como botón, así que as ligazóns do seu interior volven comportarse como ligazóns."
+            ]
+          },
+          {
+            "heading": "Ligazóns que funcionan, acceso sen conexión e privacidade",
+            "paragraphs": [
+              "Despois auditamos cada páxina, axuste e ligazón. Un navegador automatizado abriu as 48 rutas, o enderezo raíz e a páxina 404, en tamaño de escritorio e nun Pixel 5 emulado, tanto no servidor de desenvolvemento como nunha copia local do Worker de produción. Todas as páxinas responderon correctamente, sen erros na consola nin peticións fallidas ao propio sitio.",
+              "A auditoría detectou pequenos fallos que pagaba a pena corrixir. As ligazóns do menú e do pé de páxina a seccións da páxina de inicio dependían dunha redirección e agora apuntan directamente ao enderezo canónico. O manifesto de instalación e a caché sen conexión apuntan agora á páxina de inicio en inglés en vez de á redirección da raíz. A icona de WhatsApp da tarxeta de visita dixital, rota desde antes da migración, volveuse debuxar.",
+              "A privacidade chegou sen esforzo adicional. A tipografía sérvese desde o noso propio dominio, así que ler o sitio non envía ningunha petición a un servizo de fontes externo. As cookies opcionais permanecen desactivadas ata que o visitante decide, mediante un aviso que ofrece aceptar e rexeitar co mesmo peso, xunto a unha ligazón á política de cookies. O asistente de voz, que se conecta a ElevenLabs, só se carga despois de que o visitante comece a desprazarse, así que quen só bota unha ollada á primeira pantalla nunca o carga."
+            ]
+          },
+          {
+            "heading": "O sitio en directo en PageSpeed Insights",
+            "paragraphs": [
+              "En canto produción serviu a versión en Astro, probamos a páxina de inicio en inglés en directo con Google PageSpeed Insights en móbil. O informe do 25 de novembro de 2026 ás 15:20 dá 98 en Rendemento e 100 en Accesibilidade, Boas prácticas e SEO.",
+              "PageSpeed Insights executa Lighthouse desde servidores de Google, así que mide a páxina tal como a recibe un teléfono a través de internet, pasando pola rede de Cloudflare que está diante do sitio. A súa configuración é distinta da das nosas probas de laboratorio en local, polo que a súa puntuación non é comparable coa mediana local de 89, e cada cifra se presenta coa súa propia data e as súas condicións.",
+              "O panel de datos de usuarios reais aínda non mostra datos. Resume o que viviron os usuarios de Chrome durante os 28 días anteriores, e Google só o publica cando un sitio ten tráfico abondo dese tipo."
+            ],
+            "image": "https://cdn.hlorenzoz.com/hlorenzoz.com/portfolio/hlorenzoz/lorenzoz-agency-pagespeed-insights.webp",
+            "imageAlt": "Informe de PageSpeed Insights de hlorenzoz.com en móbil, 25 de novembro de 2026 ás 15:20: 98 en Rendemento e 100 en Accesibilidade, Boas prácticas e SEO"
+          },
+          {
+            "heading": "Que supón isto para un negocio local",
+            "paragraphs": [
+              "Todo o que se conta aquí é o estándar que aplicamos ás webs dos nosos clientes. Moita xente busca un negocio local desde o teléfono, a miúdo en movemento, e unha páxina que aparece ao momento e reacciona ao primeiro toque forma parte do servizo que reciben antes mesmo de chamar. Unha páxina que poden usar quen navega co teclado ou cun lector de pantalla está aberta a máis clientes.",
+              "Tamén mostra como xestionamos un cambio así: unha regra escrita antes de comezar, medicións antes e despois, e comprobacións que demostran que o sitio visible non se moveu. Nada disto garante unha posición en Google, e nunca prometemos ningunha. O que fai é eliminar as razóns técnicas polas que un bo negocio queda á marxe.",
+              "O caso de estudo deste sitio mostra o informe de PageSpeed e o resto das probas, e o sitio en directo está a un clic, para que o poidas xulgar ti mesmo."
+            ]
+          }
+        ]
+      },
+      "malaga-event-gear-case-study": {
+        "title": "Como reconstruímos Malaga Event Gear, de WordPress a un sitio rápido en SvelteKit",
+        "description": "Caso de estudo da reconstrución de Malaga Event Gear: de WordPress a SvelteKit, con packs a prezo fixo, un formulario para pedir data, datos estruturados completos e páxinas rápidas.",
+        "paragraphs": [
+          "Malaga Event Gear (MEG) aluga equipos audiovisuais para eventos en Málaga e na Costa do Sol, e a súa web xa ten o seu propio caso de estudo no noso portfolio. Migramos o sitio desde WordPress e reconstruímolo como unha plataforma nova, que MEG anunciou no seu propio blog o 15 de xuño de 2026. O sitio leva a nosa sinatura no pé de páxina.",
+          "Este artigo explica que necesitaba o negocio, como está construído o novo sitio, os resultados que obtivo no lanzamento e o que atopamos ao revisalo de novo o 25 de novembro de 2026."
+        ],
+        "sections": [
+          {
+            "heading": "O negocio",
+            "paragraphs": [
+              "MEG aluga sistemas de son, iluminación, proxectores e pantallas, micrófonos e unha máquina de fume, xunto cos técnicos que os manexan, para vodas, eventos de empresa e congresos, e festas privadas. A empresa indica que traballa no sector audiovisual desde 1996 e como actividade independente desde 2010, e as páxinas dos seus packs citan as marcas coas que traballa, como HK Audio, Audix e Midas.",
+              "O seu modelo define a web. Non hai tenda física nin recollida polo cliente: o equipo sempre viaxa ata o lugar do evento, e a entrega, a montaxe e a recollida están incluídas en cada pack. Os packs Wedding e MICE inclúen un técnico. A atención ao cliente é en inglés e en español, para un público que mestura clientes locais, parellas que casan na costa e empresas que celebran alí as súas reunións."
+            ],
+            "image": "https://cdn.hlorenzoz.com/hlorenzoz.com/portfolio/meg/malagaeventgear-7.webp",
+            "imageAlt": "Catálogo de equipos de Malaga Event Gear con sistemas de son, iluminación, proxectores e pantallas, e efectos especiais"
+          },
+          {
+            "heading": "Por que deixar WordPress",
+            "paragraphs": [
+              "O propio anuncio de lanzamento de MEG resume a prioridade: a empresa que se ocupa da parte técnica dun evento non debería ter unha web lenta. A reconstrución tiña catro obxectivos: velocidade, seguridade, novas funcionalidades e unha experiencia mellor para quen organiza un evento. Tamén tiña que manter os prezos fixos publicados en liña, porque mostrar o custo antes da primeira mensaxe é fundamental na forma de vender de MEG.",
+              "Unha migración é tamén o momento no que un sitio pode perder o que gañou nas buscas, así que a estrutura tratouse como parte do traballo. O novo sitio publica un índice de sitemaps no formato que usan os plugins de SEO de WordPress, con sitemaps separados para artigos, páxinas, categorías e autores en cada idioma; o blog ten a súa propia sección con enderezos descritivos, e as antigas rutas de administración e de acceso de WordPress xa non existen no dominio."
+            ],
+            "image": "https://cdn.hlorenzoz.com/hlorenzoz.com/portfolio/meg/malagaeventgear-13.webp",
+            "imageAlt": "Mapa do sitio en HTML de Malaga Event Gear coas páxinas principais e todos os packs de eventos agrupados por idioma"
+          },
+          {
+            "heading": "A tecnoloxía: SvelteKit, Cloudflare e cabeceiras estritas",
+            "paragraphs": [
+              "O novo MEG é unha aplicación SvelteKit servida a través de Cloudflare. As páxinas chegan ao navegador como HTML completo, co seu contido e os seus datos estruturados xa no seu sitio, e despois o framework encárgase da navegación e precarga a seguinte páxina en canto o punteiro se detén sobre unha ligazón. As dúas tipografías, Playfair Display e Plus Jakarta Sans, están aloxadas no propio servidor e precárganse. A imaxe principal sérvese en WebP en varios anchos e pídese con prioridade alta, as imaxes máis abaixo na páxina cargan de forma diferida e as fotografías do blog veñen do subdominio de imaxes da propia empresa, tamén en WebP con tamaños adaptables.",
+              "A seguridade foi unha das razóns da reconstrución, e nótase nas cabeceiras de resposta: HTTP Strict Transport Security con preload, protección contra a detección do tipo de contido e contra a inserción do sitio en marcos doutros sitios, unha política de referente estrita e unha política de permisos que bloquea o acceso á xeolocalización, á cámara e ao micrófono.",
+              "O sitio tamén se pode instalar. Un manifesto de aplicación web e un service worker feito con Workbox permiten engadilo á pantalla de inicio dun teléfono como se fose unha aplicación."
+            ],
+            "image": "https://cdn.hlorenzoz.com/hlorenzoz.com/portfolio/meg/malagaeventgear-3.webp",
+            "imageAlt": "Sección de prezos transparentes en modo escuro cos packs Eco, Wedding, Product Presentation e Basic MICE"
+          },
+          {
+            "heading": "Prezos fixos e un formulario que só pide a data",
+            "paragraphs": [
+              "Os prezos son o centro do sitio. Hai cinco packs publicados cun prezo fixo por evento, máis o 21 % de IVE, segundo figuraban o 25 de novembro de 2026: Eco Pack a 290 euros, Basic MICE Pack a 295, Product Presentation Pack a 310, MICE Pack a 490 e Wedding Pack a 650. Cada pack ten a súa propia páxina con todo o que inclúe, a capacidade de convidados e os extras opcionais, para que o cliente coñeza o custo antes de preguntar.",
+              "A páxina de packs filtra por tipo de evento (festas, vodas, eventos de empresa, presentacións e reunións), e cada páxina de pack remata cun formulario curto para reservar a data: nome, correo electrónico, teléfono cun selector de prefixo de país, data do evento e comentarios. O formulario indica que non se necesita tarxeta de crédito para consultar a dispoñibilidade.",
+              "Detrás do formulario, un campo trampa oculto (honeypot) filtra o spam automatizado sen pedirlles aos visitantes reais que resolvan ningún quebracabezas. E se falla o correo de confirmación, o sitio avisa ao visitante de que a solicitude quedou gardada e ofrécelle unha vía directa para contactar co equipo, de modo que ningunha consulta se perde en silencio. Un botón de WhatsApp e o número de teléfono seguen visibles en todas as páxinas para quen prefire falar."
+            ],
+            "image": "https://cdn.hlorenzoz.com/hlorenzoz.com/portfolio/meg/malagaeventgear-9.webp",
+            "imageAlt": "Páxina de packs con filtros por tipo de evento e a tarxeta do Wedding Pack co seu prezo e a súa capacidade"
+          },
+          {
+            "heading": "Contido para as persoas, para as buscas e para os asistentes de IA",
+            "paragraphs": [
+              "MEG publica un blog técnico con guías de planificación e novas de eventos reais. O 25 de novembro de 2026, o sitemap de artigos recollía 89 URL, entre elas crónicas de eventos en Málaga e Torremolinos e guías prácticas como os requisitos audiovisuais dun relator principal ou a diferenza entre o servizo audiovisual propio dun hotel e un provedor independente.",
+              "Para os asistentes de IA, o sitio publica un ficheiro llms.txt que resume o negocio, enlaza as páxinas principais e enumera cada pack co seu prezo, o que inclúe e os seus extras. O ficheiro robots.txt explica por que ese ficheiro queda deliberadamente fóra dos sitemaps XML: os sitemaps declaran as páxinas que deben posicionar, e llms.txt é unha guía para máquinas.",
+              "O 25 de novembro de 2026, as páxinas declaraban trece versións de idioma mediante hreflang: o inglés como idioma predeterminado, máis francés, italiano, alemán, neerlandés, portugués de Portugal e de Brasil, sueco, dinamarqués, noruegués, e chinés en escritura simplificada e nas escrituras tradicionais de Taiwán e Hong Kong. Cada versión ten o seu propio URL e o seu propio atributo de idioma HTML, algo que encaixa cunha costa que recibe organizadores de eventos de toda Europa e de máis lonxe."
+            ],
+            "image": "https://cdn.hlorenzoz.com/hlorenzoz.com/portfolio/meg/malagaeventgear-11.webp",
+            "imageAlt": "Páxina principal do blog técnico de Malaga Event Gear cos seus artigos máis recentes"
+          },
+          {
+            "heading": "Datos estruturados para resultados enriquecidos",
+            "paragraphs": [
+              "A proba de resultados enriquecidos de Google, sobre un rastrexo do 18 de xuño de 2026, atopou tres elementos válidos na páxina de inicio: Breadcrumbs, Local businesses e Organisation, cos que pode optar a resultados enriquecidos na Busca de Google. Poder optar significa que Google pode mostralos, non que o vaia facer.",
+              "Lendo o JSON-LD en directo o 25 de novembro de 2026, a páxina de inicio describe MEG como un ProfessionalService co seu enderezo en Málaga, coordenadas, horario, idiomas, ano de fundación e un rango de prezos de 290 a 650 euros. Enumera as 23 zonas nas que traballa, desde Málaga, Marbella e a Costa do Sol ata Sevilla e Granada, e enlaza as súas fichas de Google Maps e Bing Maps e os seus perfís de Medium e Pinterest. A páxina de inicio inclúe tamén WebSite, BreadcrumbList e un FAQPage con cinco preguntas. Cada pack descríbese como un Service vinculado ao negocio, co seu propio FAQPage, e as novas usan NewsArticle."
+            ],
+            "image": "https://cdn.hlorenzoz.com/hlorenzoz.com/portfolio/meg/malagaeventgear-structured-data.webp",
+            "imageAlt": "Proba de resultados enriquecidos de Google con tres elementos válidos para malagaeventgear.com: Breadcrumbs, Local businesses e Organisation"
+          },
+          {
+            "heading": "Rendemento no lanzamento e hoxe",
+            "paragraphs": [
+              "PageSpeed Insights mediu a páxina de inicio en móbil o 19 de xuño de 2026: 93 en Rendemento e 100 en Accesibilidade, Boas prácticas e SEO. Como explica o caso de estudo, a puntuación de Rendemento víase limitada polos scripts de seguridade que inxecta Cloudflare, non polo código do propio sitio.",
+              "Volvemos comprobalo con Lighthouse o 25 de novembro de 2026, en móbil, en condicións de laboratorio e nunha soa execución: Rendemento 89, Accesibilidade 100, Boas prácticas 81 e SEO 100, cun Largest Contentful Paint de 2,4 s, un Cumulative Layout Shift de 0,001, un Total Blocking Time de 280 ms e un peso total da páxina de 198 KiB. As penalizacións en Boas prácticas viñan de avisos de funcións obsoletas que xera o script de protección contra bots de Cloudflare, e Lighthouse indicou que esta execución podería estar incompleta.",
+              "Os resultados de laboratorio varían dunha execución a outra e segundo o que publique o sitio entrementres, así que os dous informes son instantáneas coa súa data, non promesas. O que mostran de forma constante é unha páxina lixeira que presenta axiña o seu contido principal e que non salta mentres carga."
+            ],
+            "image": "https://cdn.hlorenzoz.com/hlorenzoz.com/portfolio/meg/malagaeventgear-pagespeed-insights.webp",
+            "imageAlt": "Informe de PageSpeed Insights en móbil para malagaeventgear.com: 93 en Rendemento e 100 en Accesibilidade, Boas prácticas e SEO"
+          },
+          {
+            "heading": "Que supón para unha empresa de aluguer audiovisual",
+            "paragraphs": [
+              "Para unha empresa de aluguer audiovisual, a web é a primeira proba técnica que ve un cliente. Os prezos fixos e as páxinas de packs detalladas aforran o ir e vir dun orzamento manual para os eventos habituais. Un formulario que só necesita unha data converte unha visita nunha solicitude de dispoñibilidade. A galería de eventos, o blog e as opinións de Google que se mostran no sitio poñen traballo real diante do cliente. E unha plataforma rápida e segura, sen unha morea de plugins que manter actualizados, supón menos risco de mantemento para un equipo pequeno.",
+              "Nada disto garante unha posición en Google, e non prometemos ningunha. O que fai é darlles aos buscadores, aos asistentes de IA e aos clientes información completa, coherente e verificable sobre o negocio."
+            ],
+            "image": "https://cdn.hlorenzoz.com/hlorenzoz.com/portfolio/meg/malagaeventgear-2.webp",
+            "imageAlt": "Galería Our events in action con vodas, congresos e eventos de empresa equipados por MEG"
+          },
+          {
+            "heading": "Onde velo",
+            "paragraphs": [
+              "O caso de estudo de Malaga Event Gear no noso portfolio mostra a experiencia de reserva, o catálogo de equipos, os packs, o blog e a páxina de contacto, xunto cos informes de PageSpeed Insights e de resultados enriquecidos. O sitio en directo está a un clic desta páxina."
+            ],
+            "image": "https://cdn.hlorenzoz.com/hlorenzoz.com/portfolio/meg/malagaeventgear-12.webp",
+            "imageAlt": "Páxina de contacto de Malaga Event Gear cos datos de contacto e o formulario Request a Quote"
+          }
+        ]
+      },
+      "vicron-lopez-case-study": {
+        "title": "Como creamos a web de Vicron Lopez para o aluguer de coches de luxo en Ourense",
+        "description": "Caso de estudo da web de Vicron Lopez: un sitio bilingüe en SvelteKit para o aluguer de coches de luxo en Ourense, con frota filtrable, páxinas por vehículo e SEO local.",
+        "paragraphs": [
+          "Vicron Lopez aluga coches de luxo e deportivos en Ourense, Galicia, en alugueres de curta e longa duración, e a súa web xa ten o seu propio caso de estudo no noso portfolio. O sitio que desenvolvemos está en liña en español e en inglés e leva a nosa sinatura no pé de páxina. Este artigo explica como se construíu, que decisións o definiron e que din as medicións sobre el.",
+          "Un aluguer de prezo elevado decídese pola confianza. Antes de reservar un día nun Porsche, a xente quere ver o coche, saber exactamente que inclúe o prezo e confirmar que detrás hai un negocio real e con licenza na súa propia cidade. Cada parte do sitio deseñouse arredor desas tres preguntas."
+        ],
+        "sections": [
+          {
+            "heading": "O negocio e o encargo",
+            "paragraphs": [
+              "Vicron Lopez traballa desde Ourense e atende clientes en toda Galicia. Os alugueres poden ser de curta ou longa duración, os prezos preséntanse sen cargos ocultos e o coche pódese entregar no domicilio do cliente e recollerse alí despois. Todos os alugueres están asegurados, con modalidades que van desde a cobertura básica ata a completa, e o mantemento e as revisións fanse na propia empresa.",
+              "O encargo era un concesionario na web: un sitio onde o visitante pode percorrer a frota, entender cada vehículo e enviar unha solicitude de reserva sen necesidade de chamar antes, en español para os clientes locais e en inglés para os visitantes. Ao mesmo tempo, tiña que incluír os sinais locais que necesita unha empresa de aluguer para que a atopen e confíen nela na súa propia cidade."
+            ],
+            "image": "https://cdn.hlorenzoz.com/hlorenzoz.com/portfolio/vicronlopez/vicronlopez-header.webp",
+            "imageAlt": "Páxina de inicio de Vicron Lopez en modo escuro cun deportivo laranxa xunto ao titular Redefining Mobility"
+          },
+          {
+            "heading": "A tecnoloxía: SvelteKit servido a través de Cloudflare",
+            "paragraphs": [
+              "O sitio está feito con SvelteKit, o framework de aplicacións de Svelte, e sérvese a través da rede de Cloudflare. Cada páxina chega ao navegador como HTML completo, cos seus textos, ligazóns e datos estruturados xa no seu sitio, así que os buscadores e os rastrexadores de IA len o mesmo contido que ve un visitante sen esperar a que se execute o JavaScript. Despois, a navegación entre páxinas corre a cargo do framework, que precarga a seguinte páxina en canto o punteiro se detén sobre unha ligazón.",
+              "Os ficheiros estáticos publícanse con nomes que inclúen un hash do seu contido e unha caché inmutable dun ano, así que o navegador de quen volve non os descarga de novo. As fotos dos vehículos sérvense mediante un elemento picture que ofrece AVIF, WebP e JPEG en varios anchos, o que permite que cada navegador colla o formato máis lixeiro que admita ao tamaño que realmente necesita, e a imaxe principal da páxina pídese con prioridade alta. As dúas tipografías, Inter e Space Grotesk, sérvense desde o propio sitio e precárganse en vez de pedirse a un servizo de fontes externo.",
+              "O sitio inclúe tamén un manifesto de aplicación web e un service worker, así que se pode instalar nun teléfono como unha aplicación, coa súa propia icona e a súa cor de tema."
+            ]
+          },
+          {
+            "heading": "Deseño: unha marca en claro e en escuro",
+            "paragraphs": [
+              "A páxina de inicio ábrese cunha gran fotografía dun coche, un buscador cun botón de filtros e unha promesa breve: redefinir a mobilidade. Continúa coas razóns para escoller Vicron Lopez, a frota destacada coa tarifa diaria en cada tarxeta, os catro servizos (aluguer, entrega, mantemento e seguro), opinións de clientes, os medios de pagamento aceptados e unha invitación final a contactar co equipo.",
+              "Un interruptor na cabeceira cambia entre un tema claro e un escuro, e os dous conservan a mesma sensación premium: superficies de azul mariño profundo no modo escuro, un acento azul intenso e unha fotografía que fai o traballo de venda. O selector de idioma e o número de teléfono seguen na cabeceira en todas as páxinas, así que chamar ou cambiar de idioma está sempre a un toque no teléfono."
+            ],
+            "image": "https://cdn.hlorenzoz.com/hlorenzoz.com/portfolio/vicronlopez/vicronlopez-home-light.webp",
+            "imageAlt": "Páxina de inicio de Vicron Lopez en modo claro co buscador de vehículos e o coche destacado"
+          },
+          {
+            "heading": "Unha frota na que buscar e páxinas de vehículo que o responden todo",
+            "paragraphs": [
+              "A páxina de inventario mostra cada vehículo co seu ano, marca, modelo e tarifa diaria, xunto cunha busca en tempo real e filtros rápidos por tipo, prezo e categoría. O 25 de novembro de 2026, a frota incluía tres coches: un Porsche 992 GT3 de 2024 e un Mercedes AMG GTS de 2015 a 900 euros ao día, e un Fiat 500 descapotable de 1969 a 150 euros ao día. O catálogo medra co negocio sen tocar o deseño.",
+              "Cada vehículo ten a súa propia páxina, pensada para responder todas as preguntas antes da reserva: o prezo diario, as especificacións clave (aceleración, tracción, prazas e combustible), o que inclúe e as condicións. A páxina do Porsche, por exemplo, indica que o prezo inclúe o IVE, fixa un límite de 200 km ao día, inclúe seguro a todo risco e unha limpeza profesional despois do aluguer, e explica o servizo de reposición de combustible, no que o cliente paga só o combustible que falte a prezo de mercado. Tamén mostra os medios de pagamento aceptados: Visa, Mastercard, transferencia SEPA e efectivo.",
+              "A páxina remata cun selector de datas de recollida e devolución e dúas formas de reservar: por correo electrónico ou por WhatsApp. O botón de WhatsApp abre unha conversa coa mensaxe xa redactada, co vehículo, o seu prezo diario, as datas escollidas e o enderezo da páxina, así que o negocio recibe unha solicitude completa e o cliente non ten que escribila."
+            ],
+            "image": "https://cdn.hlorenzoz.com/hlorenzoz.com/portfolio/vicronlopez/vicronlopez-vehicle-detail.webp",
+            "imageAlt": "Páxina do vehículo Porsche 992 GT3 co prezo diario, as especificacións, o que inclúe e as opcións de reserva"
+          },
+          {
+            "heading": "Presenza local: a proba de que o negocio está onde di",
+            "paragraphs": [
+              "Para un negocio local, a web tamén ten que demostrar que a empresa existe onde di que existe. Todas as páxinas rematan co mesmo bloque: unha oficina en Ourense, o número de teléfono, o horario de luns a sábado, de 9:00 a 19:00, e unha nota que indica que o negocio conta con licenza do Concello de Ourense. A páxina de contacto engade un formulario, o enderezo de correo electrónico e un mapa con indicacións para chegar.",
+              "A páxina sobre nós conta a historia da empresa, a súa misión, os seus valores (excelencia, transparencia e o cliente primeiro), unha liña do tempo e as persoas que dirixen o negocio. Nun aluguer no que o cliente marcha cun coche de alto valor, ese contexto forma parte da decisión."
+            ],
+            "image": "https://cdn.hlorenzoz.com/hlorenzoz.com/portfolio/vicronlopez/vicronlopez-contact.webp",
+            "imageAlt": "Páxina de contacto de Vicron Lopez co enderezo, o teléfono, o horario, un formulario de contacto e un mapa de Ourense"
+          },
+          {
+            "heading": "SEO bilingüe e datos estruturados",
+            "paragraphs": [
+              "O español e o inglés non son dúas copias baixo o mesmo enderezo. Cada páxina ten o seu propio URL en cada idioma, tamén traducido (vehiculos e vehicles, contacto e contact), e cada unha declara o seu enderezo canónico e a súa parella no outro idioma mediante hreflang, co inglés como idioma predeterminado para calquera outro. A raíz do dominio leva os visitantes á versión en español. O sitemap XML recolle os 23 URL dos dous idiomas coas súas alternativas, e un mapa do sitio en HTML ofrece aos visitantes e aos rastrexadores un camiño a todas as páxinas.",
+              "Lemos os datos estruturados das páxinas en directo o 25 de novembro de 2026. A páxina de inicio declara o negocio como un AutoRental co seu enderezo en Ourense, coordenadas, horario, teléfono, correo electrónico, moeda aceptada e un punto de contacto que fala español e inglés, xunto cunha entidade WebSite. Cada páxina de vehículo describe o coche como un Car con marca, modelo e ano do modelo, e unha Offer co seu prezo en euros ao día. As páxinas de inventario, sobre nós e contacto están tipadas como CollectionPage, AboutPage e ContactPage, e todas as páxinas interiores levan un BreadcrumbList.",
+              "As etiquetas Open Graph e de Twitter card dan a cada ligazón compartida un título, unha descrición e unha imaxe de 1200 por 630, algo importante cando a ligazón a un coche se envía por un chat antes de que ninguén decida."
+            ],
+            "image": "https://cdn.hlorenzoz.com/hlorenzoz.com/portfolio/vicronlopez/vicronlopez-sitemap.webp",
+            "imageAlt": "Mapa do sitio en HTML de Vicron Lopez coas páxinas principais, os vehículos e as páxinas legais"
+          },
+          {
+            "heading": "Privacidade e consentimento",
+            "paragraphs": [
+              "O panel de cookies permite que cada visitante acepte ou rexeite por separado as cookies de analítica e as de marketing, mentres que as cookies esenciais seguen activas porque o sitio as necesita para funcionar, e un único botón rexeita todo o que non é esencial. A política de privacidade e as condicións do servizo están ao seu carón no pé de todas as páxinas.",
+              "No HTML que recibe quen visita o sitio por primeira vez, que revisamos o 25 de novembro de 2026, non se carga ningún script de analítica. O consentimento é unha elección real, non un aviso cuxa única opción é aceptar."
+            ],
+            "image": "https://cdn.hlorenzoz.com/hlorenzoz.com/portfolio/vicronlopez/vicronlopez-cookies.webp",
+            "imageAlt": "Páxina de configuración de cookies con interruptores separados para as cookies esenciais, de analítica e de marketing"
+          },
+          {
+            "heading": "Rendemento, medido e explicado",
+            "paragraphs": [
+              "Medimos a páxina de inicio con Lighthouse o 25 de novembro de 2026, en móbil, en condicións de laboratorio e nunha soa execución sobre o enderezo raíz do dominio. Obtivo 64 en Rendemento, 97 en Accesibilidade, 81 en Boas prácticas e 100 en SEO. O Largest Contentful Paint foi de 5,1 s, o Cumulative Layout Shift de 0,002 e o Total Blocking Time de 0 ms.",
+              "Lidas con honestidade, esas cifras din dúas cousas. Unha vez que a páxina comeza a mostrarse, é estable e responde: case ningún desprazamento do deseño e ningún tempo bloqueado no fío principal. O custo está na primeira visualización. Lighthouse estima uns 780 ms perdidos na redirección desde a raíz do dominio á páxina de inicio en español, sinala a folla de estilos principal como bloqueante da visualización e apunta ao tempo de resposta do documento. As penalizacións en Boas prácticas veñen de avisos de funcións obsoletas que xera o script de protección contra bots que inxecta Cloudflare, non o código do propio sitio, e a auditoría de accesibilidade sinalou o contraste de cor dalgúns textos.",
+              "Son cifras de laboratorio en condicións móbiles simuladas, e varían dunha execución a outra. Son unha instantánea dun día, non unha promesa, e mostran con claridade onde están as próximas melloras, que é precisamente a razón para medir."
+            ]
+          },
+          {
+            "heading": "Que supón para unha empresa de aluguer",
+            "paragraphs": [
+              "Para un negocio que aluga vehículos de alto valor, cada unha destas decisións elimina un motivo para dubidar. O prezo, as condicións e os medios de pagamento vense antes da primeira mensaxe, así que as solicitudes que chegan veñen mellor informadas. Reservar por WhatsApp ou por correo electrónico aproveita canles que o cliente xa ten, sen ningunha conta que crear. O enderezo, o horario e a licenza municipal responden á pregunta de quen está detrás das chaves. E a estrutura bilingüe permite que a mesma frota chegue aos residentes en español e aos visitantes en inglés, con cada idioma no seu propio URL indexable.",
+              "Nada disto garante unha posición en Google, e non prometemos ningunha. O que fai é darlles aos buscadores e aos visitantes información completa, coherente e verificable sobre un negocio local, que é a base sobre a que se constrúe todo o demais."
+            ],
+            "image": "https://cdn.hlorenzoz.com/hlorenzoz.com/portfolio/vicronlopez/vicronlopez-inventory-light.webp",
+            "imageAlt": "Páxina de inventario de Vicron Lopez con busca, filtros e tres tarxetas de vehículos coas súas tarifas diarias"
+          },
+          {
+            "heading": "Onde velo",
+            "paragraphs": [
+              "O caso de estudo de Vicron Lopez no noso portfolio percorre o deseño en claro e en escuro, a frota, a páxina de vehículo, a presenza local, a historia da empresa, as páxinas legais e o sitemap bilingüe, cunha captura de cada parte. O sitio en directo está a un clic desta páxina."
+            ]
+          }
+        ]
+      },
+      "masajes-orisha-case-study": {
+        "title": "Como creamos a web de Masajes Orisha: SvelteKit, dous idiomas e reserva en catro pasos",
+        "description": "Caso de estudo da web de Masajes Orisha en Costa Rica: SvelteKit en Cloudflare, español e inglés, un menú de tratamentos, reserva en catro pasos e un diario.",
+        "paragraphs": [
+          "Onte incorporamos Masajes Orisha ao noso portfolio. Hoxe contamos a historia completa: como creamos a web dun estudo de masaxe terapéutica en San Rafael de Heredia, Costa Rica, que decisións a definiron, que tecnoloxía a sostén e que resultados dá nas medicións.",
+          "A versión curta: un sitio bilingüe en español e inglés, feito con SvelteKit e servido a través de Cloudflare, onde o visitante le sobre o estudo e o seu terapeuta, escolle un tratamento nun menú curto, ve canto custa e pide unha hora en catro pasos, sen chamar por teléfono e sen crear ningunha conta.",
+          "A continuación percorremos o negocio, o deseño, o menú de tratamentos, o fluxo de reserva, o diario, a tecnoloxía, as medicións e as prácticas que hai detrás, sección por sección."
+        ],
+        "sections": [
+          {
+            "heading": "O estudo: unha axenda que depende da confianza",
+            "paragraphs": [
+              "Masajes Orisha é un estudo de masaxe terapéutica dirixido polo seu fundador e terapeuta, Sergio Zaldívar Guillén. Ofrece masaxe relaxante, de tecido profundo, con pedras quentes e con aromaterapia, en sesións de 60 a 90 minutos que combinan a técnica manual con aceites naturais, cun só cliente cada vez, nun estudo privado. Abre de luns a sábado, de 10:00 a 21:00. O nome inspírase nos Orishas iorubás, entendidos como unha filosofía de respecto polo corpo.",
+              "Para un estudo coma este, a axenda é o negocio, e cada reserva comeza cunha persoa descoñecida que decide confiar nun terapeuta ao que nunca viu. O sitio tiña que responder as preguntas que esa persoa faría doutro xeito por teléfono: quen é o terapeuta, en que consiste cada tratamento, canto dura, canto custa e cando hai unha hora libre."
+            ]
+          },
+          {
+            "heading": "Deseño: calma editorial, escuro por defecto",
+            "paragraphs": [
+              "Queriamos que o sitio se percibise como un estudo privado con personalidade propia, non como outro modelo de spa. Os títulos con serifa, unha paleta de tons area cálidos e os espazos amplos marcan un ritmo sen présa, e a páxina de inicio conta o método coas palabras do propio terapeuta antes de mostrar un só prezo: sen protocolos ríxidos, cunha presión e un ritmo adaptados a cada persoa, e co descanso entendido como algo que se adestra.",
+              "O sitio ábrese nun tema escuro, o que mellor encaixa coa atmosfera do estudo, e ofrece un tema claro para quen o prefira. A elección queda gardada no navegador e aplícase antes do primeiro pintado, así que a páxina nunca pasa dun tema ao outro cun escintileo mentres carga. As fotos do estudo e un retrato do terapeuta danlle ao visitante unha cara e un lugar antes da primeira mensaxe."
+            ],
+            "image": "https://cdn.hlorenzoz.com/hlorenzoz.com/portfolio/masajesorisha/0-hero-light.webp",
+            "imageAlt": "Sección principal de Masajes Orisha no tema claro, con títulos con serifa e unha paleta de tons area cálidos"
+          },
+          {
+            "heading": "Dous idiomas, e o español tal como se fala en Costa Rica",
+            "paragraphs": [
+              "O estudo recibe clientes locais e visitantes do estranxeiro, así que todo o sitio existe en español e en inglés: a páxina de inicio, os tratamentos, a páxina de cada tratamento, o diario, a páxina de reserva e as páxinas legais. Un selector na cabeceira cambia de idioma, e o enderezo raíz le o idioma do navegador e leva cada visitante á versión que lle corresponde, co español como idioma predeterminado. A páxina de inicio declara as dúas versións aos buscadores con anotacións hreflang.",
+              "A páxina de reserva en español fala co voseo de Costa Rica, como se dirixiría a un cliente un terapeuta local. É un detalle pequeno, pero un cliente local nótao ao momento: o sitio soa ao estudo, non a unha tradución."
+            ]
+          },
+          {
+            "heading": "Un menú curto de tratamentos, filtrado cun toque",
+            "paragraphs": [
+              "O menú reúne catro tratamentos de autor, repartidos en dúas familias: Calma e benestar, e Terapéutico e recuperación. Unha fila de filtros mostra todos eles ou só unha familia cun toque, e cada tarxeta indica o seu enfoque, a súa duración e o seu prezo de partida. A lista é curta a propósito: menos opcións fan que a decisión sexa máis rápida.",
+              "Cada tratamento ten a súa propia páxina, que describe o ritual da sesión en catro momentos, desde a consulta inicial sobre tensións e preferencias de presión ata un peche tranquilo cunha infusión, cun botón que abre a reserva xa configurada para ese tratamento."
+            ],
+            "image": "https://cdn.hlorenzoz.com/hlorenzoz.com/portfolio/masajesorisha/1-treatments-light.webp",
+            "imageAlt": "Menú de tratamentos de Masajes Orisha con filtros e catro tarxetas co enfoque, a duración e o prezo de partida"
+          },
+          {
+            "heading": "Unha solicitude de reserva que calcula o seu prezo",
+            "paragraphs": [
+              "A páxina de reserva funciona en catro pasos numerados: escoller o tratamento, a duración, o día e a hora. Cada duración mostra o seu prezo, os días e as horas aparecen como botóns e unha estimación da sesión actualízase segundo escolle o cliente. Un nome, un correo electrónico e unha nota opcional sobre preferencias ou zonas que traballar completan a solicitude.",
+              "Non hai conta nin pasarela de pagamento. A solicitude chega ao estudo e o terapeuta confirma a dispoñibilidade por correo electrónico. O formulario é un formulario estándar procesado no servidor e protexido contra bots con Cloudflare Turnstile, así que o estudo recibe solicitudes reais en vez de spam. A política de privacidade detalla exactamente que datos recolle o estudo para xestionar unha reserva e por que."
+            ],
+            "image": "https://cdn.hlorenzoz.com/hlorenzoz.com/portfolio/masajesorisha/3-contact-light.webp",
+            "imageAlt": "Páxina de reserva de Masajes Orisha cos catro pasos (tratamento, duración, día e hora) e a estimación que se vai actualizando"
+          },
+          {
+            "heading": "Un diario para as preguntas que a xente busca",
+            "paragraphs": [
+              "O sitio inclúe un diario con artigos sobre terapia manual, a fisioloxía do descanso e a recuperación muscular, publicados nos dous idiomas coa súa data e o seu tempo de lectura: por que o descanso é algo que se adestra, como actúa a terapia manual profunda sobre a dor de pescozo e de ombreiros do traballo de oficina, e que achega a calor das pedras volcánicas á recuperación muscular.",
+              "Son as preguntas que os posibles clientes escriben nun buscador antes de buscar un terapeuta. Respondelas coa voz propia do estudo demostra coñecemento e dálle ao sitio un contido que trata de verdade sobre o seu tema."
+            ],
+            "image": "https://cdn.hlorenzoz.com/hlorenzoz.com/portfolio/masajesorisha/2-journal-light.webp",
+            "imageAlt": "Páxina do diario de Masajes Orisha con artigos sobre terapia manual, descanso e recuperación muscular"
+          },
+          {
+            "heading": "Por que SvelteKit en Cloudflare",
+            "paragraphs": [
+              "O sitio está feito con SvelteKit, como mostran os seus recursos compilados e as súas cabeceiras de resposta, e sérvese a través da rede de Cloudflare. SvelteKit envía cada páxina como HTML completo, así que o contido pódese ler antes de que se execute ningún script, e despois engade as partes interactivas: os filtros de tratamentos, o cambio de tema e os pasos da reserva coa súa estimación en tempo real.",
+              "Executarse no servidor onde fai falta cobre tamén as dúas tarefas que un sitio puramente estático non pode facer por si só: escoller o idioma segundo a preferencia do navegador na primeira visita e recibir a solicitude de reserva. A folla de estilos ten un nome de ficheiro versionado e os navegadores gárdana na caché durante un ano, así que quen volve non a descarga de novo."
+            ]
+          },
+          {
+            "heading": "Imaxes que se adaptan a cada pantalla",
+            "paragraphs": [
+              "Un estudo de masaxe vende un lugar e unha sensación, así que o sitio apóiase na fotografía: o estudo, o terapeuta e cada tratamento. Cada foto ofrécese en AVIF e WebP, en anchos de 320 a 1024 píxeles, con indicacións de tamaño que permiten que o navegador escolla a versión máis lixeira que encaixa na pantalla. Cada imaxe declara o seu ancho e o seu alto, así que a páxina non salta mentres chegan as fotos.",
+              "A imaxe principal da páxina de inicio carga primeiro e con prioridade alta; as outras quince fotos cargan de forma diferida, a medida que o visitante se despraza cara a elas, e aparecen suavemente en canto están listas."
+            ]
+          },
+          {
+            "heading": "Resultados medidos",
+            "paragraphs": [
+              "Medimos a páxina de inicio con Lighthouse (móbil, laboratorio) o 25 de novembro de 2026. Obtivo 82 en Rendemento e 100 en Accesibilidade, 100 en Boas prácticas e 100 en SEO. A mesma execución rexistrou un Largest Contentful Paint de 3,5 s, un First Contentful Paint de 2,3 s, un Total Blocking Time de 50 ms e un Cumulative Layout Shift de 0,0003, con 258 KiB transferidos en total.",
+              "As cifras mostran onde é máis forte o sitio: unha páxina lixeira, case ningún script bloqueante e un deseño que non se move mentres carga. A visualización principal é a parte con máis marxe de mellora, e o mesmo informe sinala a redirección de idioma da primeira visita como un dos pasos previos a ela."
+            ],
+            "image": "https://cdn.hlorenzoz.com/hlorenzoz.com/portfolio/masajesorisha/0-home-light.webp",
+            "imageAlt": "Páxina de inicio completa de Masajes Orisha no tema claro, desde a sección principal ata o pé de páxina"
+          },
+          {
+            "heading": "Datos estruturados para un estudo local",
+            "paragraphs": [
+              "A páxina de inicio leva marcado JSON-LD en cada idioma. Tal como o lemos o 25 de novembro de 2026, describe o negocio como un DaySpa, un tipo de negocio local de schema.org, co seu nome, unha descrición no idioma da páxina, o seu teléfono, a súa localización en San Rafael de Heredia, na provincia de Heredia, Costa Rica, e o seu horario de luns a sábado, de 10:00 a 21:00.",
+              "Este marcado dálles aos buscadores datos explícitos sobre quen é o negocio, onde está e cando abre, os mesmos detalles que busca un cliente antes de reservar. Axuda aos buscadores a entender o negocio; non garante ningún resultado concreto."
+            ]
+          },
+          {
+            "heading": "Accesibilidade e privacidade",
+            "paragraphs": [
+              "O 100 en Accesibilidade desa mesma execución de Lighthouse vén de detalles como o texto descritivo das fotos, incluído o retrato do terapeuta, a declaración correcta do idioma en cada páxina e uns nomes claros nos controis.",
+              "En canto á privacidade, as páxinas que revisamos non cargan ningún script de analítica nin de publicidade. A preferencia de tema queda no propio navegador do visitante, e os únicos datos persoais que pide o sitio son os necesarios para responder a unha reserva, como explica a política de privacidade."
+            ]
+          },
+          {
+            "heading": "Que supón isto para un estudo ou unha clínica",
+            "paragraphs": [
+              "Para un terapeuta que traballa só, cada chamada durante unha sesión é unha chamada que queda sen resposta. Un sitio que responde as preguntas habituais, mostra os prezos e recolle a solicitude co tratamento, a duración, o día e a hora xa escollidos permítelle ao terapeuta responder cando remata a sesión, por correo electrónico, con todos os detalles diante.",
+              "Os dous idiomas abren a porta a clientes do estranxeiro, o diario dálle ao sitio un contido que a xente busca de verdade, e o deseño sereno fai parte do traballo de xerar confianza antes da primeira visita."
+            ]
+          },
+          {
+            "heading": "Ver o caso de estudo e o sitio en directo",
+            "paragraphs": [
+              "O caso de estudo de Masajes Orisha no noso portfolio percorre o deseño nos dous temas, o menú de tratamentos, o fluxo de reserva e o diario, con capturas de cada sección. O sitio en directo leva a nosa sinatura no pé de páxina. Ambos están enlazados a continuación."
+            ]
+          }
+        ]
+      },
+      "gerp-dj-case-study": {
+        "title": "Como creamos a web de GERP DJ: Astro, dous idiomas e reservas por WhatsApp",
+        "description": "Caso de estudo da web de GERP DJ en Ourense: Astro en Cloudflare, español e galego, solicitudes de data por WhatsApp, 99 en PageSpeed e datos estruturados válidos.",
+        "paragraphs": [
+          "Onte incorporamos GERP DJ ao noso portfolio. Hoxe levantamos o capó: esta é a historia completa de como creamos a web dun DJ para festas, vodas e eventos con base en Ourense, que escollemos, por que o escollemos e que din as medicións.",
+          "A versión curta: un sitio escrito en español e galego, feito con Astro e servido a través de Cloudflare, que responde as tres preguntas que fai calquera cliente antes de contratar un DJ (está libre a data, como é unha noite, quen está detrás da mesa de mesturas) e converte a primeira nunha mensaxe de WhatsApp lista para enviar. O 24 de novembro de 2026, PageSpeed Insights en móbil deulle á súa páxina de inicio 99 en Rendemento e 100 en Accesibilidade, Boas prácticas e SEO, e a proba de resultados enriquecidos de Google atopou nela datos estruturados válidos.",
+          "A continuación percorremos o negocio, o deseño, o fluxo de reserva, a tecnoloxía, os resultados e as prácticas que hai detrás, sección por sección."
+        ],
+        "sections": [
+          {
+            "heading": "O negocio: unha pregunta coa que empeza cada reserva",
+            "paragraphs": [
+              "GERP DJ toca en festas de aldea, vodas, festas privadas e eventos de empresa en toda Galicia, desde a súa base en Ourense. Segundo a biografía do propio sitio, pincha desde 2023 e leva máis de 15 actuacións, sempre co seu propio equipo: unha cabina co nome GERP DJ, un equipo de son completo, iluminación LED e efectos de luz, un micrófono para dedicatorias e avisos, e un controlador Denon DJ.",
+              "As reservas fanse por WhatsApp Business, de luns a venres de 10:00 a 19:00, con resposta en 48 horas laborables. Ese dato definiu todo o proxecto. Un DJ non necesita unha tenda nin unha conta de cliente; necesita que o visitante pregunte \"tes libre esa data?\" con detalle abondo para poder responder ao momento. Cada páxina do sitio deseñouse para levar a esa mensaxe."
+            ]
+          },
+          {
+            "heading": "Español e galego desde a primeira liña de código",
+            "paragraphs": [
+              "O público vive en Galicia, así que o sitio fala as súas dúas linguas. O español sérvese na raíz e o galego no seu propio cartafol, cun selector de idioma na cabeceira e todas as páxinas dispoñibles nos dous: inicio, contratación, galería, biografía, privacidade e cookies. Cada páxina declara o seu idioma no HTML e enlaza coa súa equivalente mediante anotacións hreflang, e o sitemap recolle os doce enderezos coas súas alternativas, para que os buscadores lle poidan mostrar a cada visitante a versión no seu idioma.",
+              "A tradución foi máis alá do texto visible. Os títulos das páxinas, as metadescricións, as etiquetas para compartir en redes sociais (co español como idioma principal e o galego como alternativo) e o dossier de prensa existen nos dous idiomas."
+            ]
+          },
+          {
+            "heading": "Deseño: primeiro o vídeo, en claro ou en escuro",
+            "paragraphs": [
+              "Un DJ vende un ambiente, e un ambiente é máis doado de amosar que de describir. Por iso a páxina de inicio ábrese cun vídeo de fondo sen son dunha actuación real, cun botón visible para pausalo. Debaixo veñen os catro servizos, cada un co seu propio atallo para pedir orzamento, unha sección con clips do DJ en acción e unha lista do equipo que chega a noite do evento.",
+              "O sitio ofrece un tema claro e un escuro mediante un interruptor na cabeceira. A linguaxe visual usa paneis de vidro translúcidos sobre as imaxes, para que as fotos e os vídeos das actuacións sigan sendo os protagonistas."
+            ],
+            "image": "https://cdn.hlorenzoz.com/hlorenzoz.com/portfolio/gerp-dj/cover.webp",
+            "imageAlt": "Páxina de inicio de GERP DJ co vídeo de fondo dunha actuación e o panel para pedir data"
+          },
+          {
+            "heading": "Unha solicitude de data que chega a WhatsApp",
+            "paragraphs": [
+              "Xusto debaixo do titular da páxina de inicio hai un panel curto encabezado coa pregunta clave: tes unha data? Pide tres datos (a data, a localidade e o tipo de evento, a escoller entre festa, voda, festa privada, empresa ou outro) e, ao envialo, abre WhatsApp coa solicitude xa redactada. O visitante só ten que premer enviar.",
+              "A páxina de contratación ofrece unha versión máis completa da mesma solicitude, que engade o nome, o lugar e unha mensaxe libre, xunto a seis preguntas frecuentes: como reservar, canto adoita custar unha actuación, onde toca o DJ, en que eventos, se o equipo está incluído e cando contactar. Responder abertamente á pregunta do prezo, cun rango habitual, aforra un intercambio de mensaxes ás dúas partes.",
+              "Non hai ningún formulario de servidor polo medio, nin unha base de datos que garde as solicitudes, nin unha conta que crear. Esa elección mantén o fluxo o máis curto posible: a solicitude viaxa na propia mensaxe de WhatsApp do visitante, e a política de privacidade do sitio explica que datos se tratan cando alguén escribe por esa vía."
+            ],
+            "image": "https://cdn.hlorenzoz.com/hlorenzoz.com/portfolio/gerp-dj/screencapture-home.webp",
+            "imageAlt": "Páxina de inicio completa de GERP DJ cos servizos, o equipo e a solicitude de data por WhatsApp"
+          },
+          {
+            "heading": "Unha galería de actuacións reais",
+            "paragraphs": [
+              "A galería reúne dez vídeos curtos con descrición, gravados nas súas actuacións e co seu propio equipo: terrazas, pubs, salóns, festas de aldea e a montaxe de son e luz. Para unha parella que prepara a súa voda ou unha comisión que organiza a festa da aldea, ver a cabina iluminada nunha praza convence máis que calquera descrición.",
+              "Os vídeos sérvense desde o aloxamento propio do negocio, non desde un reprodutor externo, o que significa que non hai cookies de terceiros nin marcas alleas arredor dos clips."
+            ],
+            "image": "https://cdn.hlorenzoz.com/hlorenzoz.com/portfolio/gerp-dj/screencapture-gallery.webp",
+            "imageAlt": "Páxina da galería de GERP DJ cunha grella de vídeos curtos con descrición de actuacións e montaxes"
+          },
+          {
+            "heading": "Unha biografía co seu dossier de prensa",
+            "paragraphs": [
+              "A páxina de biografía conta quen está detrás da mesa de mesturas, con fotos e o esencial: base, equipo e zona que cobre. Tamén ofrece un dossier de prensa para descargar en PDF (A4, seis páxinas, con biografía, servizos, equipo e contacto), nunha edición en español e outra en galego, ademais de fotos en alta resolución para comisións de festas e medios locais.",
+              "Un dossier listo para descargar responde ás peticións que adoitan chegar de organizadores e xornalistas antes de que teñan que facelas."
+            ],
+            "image": "https://cdn.hlorenzoz.com/hlorenzoz.com/portfolio/gerp-dj/screencapture-bio-v2.webp",
+            "imageAlt": "Páxina de biografía de GERP DJ con fotos do DJ e o botón para descargar o dossier de prensa"
+          },
+          {
+            "heading": "Por que Astro e Cloudflare",
+            "paragraphs": [
+              "O sitio está feito con Astro, como mostran os seus recursos compilados. Astro converte cada páxina en HTML rematado de antemán e só envía JavaScript onde algo da páxina o necesita, o que encaixa cun sitio coma este: sobre todo contido, máis unhas poucas pezas interactivas pequenas, como o interruptor de tema, os controis de vídeo, o menú móbil e os formularios de solicitude.",
+              "A entrega funciona sobre a rede de Cloudflare. Cando revisamos a páxina de inicio o 25 de novembro de 2026, o seu HTML respondíase desde a caché de Cloudflare, así que un visitante en Ourense ou en calquera outro lugar recibe a páxina desde un punto próximo en vez de esperar a que un servidor afastado a xere."
+            ]
+          },
+          {
+            "heading": "Imaxes e vídeo sen o peso",
+            "paragraphs": [
+              "As fotos e os vídeos son a parte máis pesada de calquera web de eventos, así que foron os que recibiron máis atención. Cada foto publícase en AVIF e WebP, en varios anchos de 320 a 1024 píxeles, dentro dun elemento picture que permite que o navegador escolla a versión máis lixeira que encaixa na pantalla. Unha imaxe pídese con prioridade alta, e as cinco imaxes situadas máis abaixo na páxina cargan de forma diferida, só cando o visitante se despraza cara a elas.",
+              "O segundo vídeo da páxina de inicio e os dez clips da galería non se descargan por adiantado: cada un mostra unha imaxe fixa ata que se necesita. Os ficheiros multimedia sérvense desde un subdominio propio do negocio, separado das propias páxinas."
+            ]
+          },
+          {
+            "heading": "Resultados de rendemento",
+            "paragraphs": [
+              "Medida con PageSpeed Insights en móbil o 24 de novembro de 2026, a páxina de inicio obtivo 99 en Rendemento e 100 en Accesibilidade, 100 en Boas prácticas e 100 en SEO. O caso de estudo do portfolio mostra a captura dese informe, e calquera pode repetir a proba desde alí.",
+              "Aquí a velocidade non é unha cifra para presumir. Un visitante que chega desde unha busca ou desde unha ligazón de WhatsApp e ve que a páxina responde ao momento ten máis probabilidades de quedar, e o visitante que queda é o que pide unha data."
+            ],
+            "image": "https://cdn.hlorenzoz.com/hlorenzoz.com/portfolio/gerp-dj/gerp-dj-pagespeed-insights.webp",
+            "imageAlt": "Informe de PageSpeed Insights en móbil da páxina de inicio de GERP DJ con 99 en Rendemento e 100 en Accesibilidade, Boas prácticas e SEO"
+          },
+          {
+            "heading": "Datos estruturados que Google pode ler",
+            "paragraphs": [
+              "O 24 de novembro de 2026, a proba de resultados enriquecidos de Google atopou tres elementos válidos na páxina de inicio: Breadcrumbs, Local business e Organisation, cos que a páxina pode optar a resultados enriquecidos na Busca de Google. Poder optar non garante que Google os mostre, pero elimina un obstáculo técnico.",
+              "O JSON-LD da páxina de inicio en directo, tal como o lemos o 25 de novembro de 2026, describe o negocio como un EntertainmentBusiness co seu enderezo na provincia de Ourense, o seu teléfono, as zonas nas que traballa (Ourense e Galicia), un punto de contacto para reservas co horario de WhatsApp, as súas ligazóns a YouTube, TikTok e á súa canle de WhatsApp, e un catálogo dos catro servizos. Cada páxina interior engade o seu propio tipo: ContactPage e FAQPage na páxina de contratación, CollectionPage na galería e AboutPage na biografía, sempre con migas de pan."
+            ],
+            "image": "https://cdn.hlorenzoz.com/hlorenzoz.com/portfolio/gerp-dj/gerp-dj-structured-data-v2.webp",
+            "imageAlt": "Proba de resultados enriquecidos de Google da páxina de inicio de GERP DJ con tres elementos válidos: Breadcrumbs, Local business e Organisation"
+          },
+          {
+            "heading": "Accesibilidade integrada nos detalles",
+            "paragraphs": [
+              "O 100 en Accesibilidade vén de pequenas decisións. O vídeo de fondo reprodúcese sen son e ten o seu propio botón de pausa, etiquetado para lectores de pantalla. O interruptor de tema anúnciase como un interruptor co seu estado actual. Unha ligazón para saltar ao contido permite que quen usa o teclado vaia directamente ao contido, os botóns con icona miden polo menos 44 píxeles para que sexa doado tocalos, e as fotos levan un texto que describe o que mostran."
+            ]
+          },
+          {
+            "heading": "Sen seguimento e sen aviso de cookies",
+            "paragraphs": [
+              "A política de cookies indica que o sitio non usa cookies propias de analítica, publicidade nin personalización e que non carga ningunha ferramenta de seguimento, e por iso non mostra ningún aviso de consentimento. As únicas cookies que menciona son as técnicas que Cloudflare pode establecer para distinguir as visitas reais do tráfico automatizado. Os visitantes teñen unha primeira vista máis limpa, e o negocio ten menos datos persoais que custodiar."
+            ]
+          },
+          {
+            "heading": "Preparado para buscadores e asistentes de IA",
+            "paragraphs": [
+              "Ademais do sitemap, o sitio publica un robots.txt que dá a benvida de forma explícita aos rastrexadores dos principais buscadores e asistentes de IA, deixando fóra do rastrexo un par de rutas internas, e un ficheiro llms.txt: un resumo sinxelo do negocio, os seus servizos, o seu horario de contacto e as súas páxinas nos dous idiomas, escrito para que os asistentes de IA poidan describir GERP DJ con precisión cando alguén pregunta por un DJ en Ourense. Cada páxina leva tamén o seu enderezo canónico e etiquetas para compartir cunha imaxe preparada para redes sociais e aplicacións de mensaxería, coa súa propia descrición."
+            ]
+          },
+          {
+            "heading": "Que supón isto para un negocio de eventos",
+            "paragraphs": [
+              "Para un DJ, unha orquestra ou calquera servizo de eventos, a web ten unha única tarefa: converter un visitante curioso nunha solicitude concreta. Aquí, a solicitude leva tres campos e un toque, chega pola canle que o negocio xa atende todos os días e vén coa data, o lugar e o tipo de celebración xa escritos.",
+              "O resto do sitio apoia ese momento: vídeos que mostran o ambiente, unha biografía e un dossier que xeran confianza, respostas ás preguntas habituais, dous idiomas para a rexión na que traballa o negocio e unha páxina rápida con datos estruturados que axudan aos buscadores a entender que fai o negocio e onde."
+            ]
+          },
+          {
+            "heading": "Ver o caso de estudo e o sitio en directo",
+            "paragraphs": [
+              "O caso de estudo de GERP DJ no noso portfolio mostra o deseño nos dous temas, a solicitude de data, a galería e a biografía, xunto co informe de PageSpeed Insights e a proba de resultados enriquecidos. O sitio en directo leva a nosa sinatura no pé de páxina. Ambos están enlazados a continuación."
+            ]
+          }
+        ]
+      },
+      "lorenzoz-agency-launch": {
+        "title": "Lorenzoz Agency estrea a súa web en Next.js 16",
+        "description": "Como creamos e lanzamos hlorenzoz.com en abril de 2026: un sitio estático bilingüe en Next.js 16 e Tailwind CSS 4, probado en cada push e servido por Cloudflare.",
+        "paragraphs": [
+          "Lorenzoz Agency xa ten a súa propia casa na web. Este é o sitio onde unha persoa que leva un negocio nos coñece por primeira vez, ve o que ofrecemos e reserva unha consulta gratuíta de 15 minutos, así que o construímos co estándar que lles prometemos aos nosos clientes: rápido no teléfono, escrito en dous idiomas, lexible para os buscadores e revisado por probas automáticas antes de cada publicación.",
+          "Este artigo explica como se construíu e se lanzou o sitio na primeira semana de abril de 2026: o framework, o deseño, a forma de publicalo, as probas que o protexen e o que puidemos comprobar no lanzamento. Cada resultado citado a continuación vén dun informe ou dunha execución de probas desa semana, coa súa data."
+        ],
+        "sections": [
+          {
+            "heading": "Que ofrece o sitio no lanzamento",
+            "paragraphs": [
+              "A versión de lanzamento comeza polo noso servizo de voz con IA. O titular da páxina de inicio promete facer crecer un negocio cunha IA que soa humana, e o texto de debaixo explica o beneficio en termos claros: o negocio está dispoñible as 24 horas, os 7 días da semana, incluso fóra de horario e as fins de semana, e os seus clientes reciben resposta ao momento. Unha única chamada á acción invita o visitante a reservar unha consulta gratuíta de 15 minutos, e a navegación inclúe solucións, beneficios, prezos, o portfolio e contacto.",
+              "O servizo tamén está na propia páxina. Un asistente de voz feito con ElevenLabs sitúase na esquina de cada páxina, onde o visitante pode escribir unha pregunta ou iniciar unha chamada e falar con el. É a demostración máis directa que podiamos dar do produto que vendemos: antes de reservar nada, o visitante pode escoitar como responde unha recepcionista con IA.",
+              "Arredor da páxina de inicio, o lanzamento inclúe un portfolio con proxectos conceptuais para unha clínica dental, unha inmobiliaria de luxo e un estudo de fitness, cada un coa súa propia páxina de detalle en inglés e en español, unha tarxeta de visita dixital e a política de privacidade, a política de cookies e os termos e condicións. A imaxe da parte superior deste artigo é a páxina de inicio tal como se vía no lanzamento."
+            ]
+          },
+          {
+            "heading": "Feito con Next.js 16 e Tailwind CSS 4",
+            "paragraphs": [
+              "O sitio é un proxecto de Next.js 16, o framework de React, con estilos de Tailwind CSS 4. Bun instala as dependencias e executa todos os scripts, desde o linter ata as probas, o que mantén o traballo local e o pipeline automatizado cos mesmos comandos.",
+              "Next.js compila todo o sitio de antemán como unha exportación estática. Cada páxina convértese nun ficheiro HTML rematado nun cartafol de saída, e non hai que xerar nada nun servidor cando chega un visitante. Un sitio comercial só cambia cando publicamos, non cando alguén o abre, así que non hai motivo para ter un servidor en marcha para cada petición: os ficheiros xa están listos e a rede só ten que entregalos.",
+              "A ilustración resume as tecnoloxías do lanzamento: Next.js 16 e Tailwind CSS 4 para o sitio, Cloudflare como a rede perimetral que o aloxa, GitHub Actions para a integración continua, Vitest para as probas unitarias e Playwright para as probas de extremo a extremo en navegadores reais."
+            ],
+            "image": "https://cdn.hlorenzoz.com/hlorenzoz.com/portfolio/me/tech-stack-visual.webp",
+            "imageAlt": "Ilustración das tecnoloxías do lanzamento: Next.js 16, Tailwind CSS 4, Cloudflare, GitHub Actions, Vitest e Playwright"
+          },
+          {
+            "heading": "Un deseño de vidro que se mantén en todas as pantallas",
+            "paragraphs": [
+              "A identidade visual é un deseño glassmorphism: unha cabeceira principal escura, unha barra de navegación de vidro esmerilado que flota sobre o contido, tarxetas translúcidas e un azul de marca intenso para as accións que importan. Os mesmos tokens rexen todas as páxinas, así que o portfolio, as páxinas legais e a tarxeta de visita percíbense como un único sitio.",
+              "A maioría das visitas a un negocio local chegan desde un teléfono, así que os deseños comprobáronse no navegador nos tamaños dun iPhone 14 Pro (393 por 852 píxeles), un Pixel 7 Pro (480 por 1040), un iPhone 14 Pro Max (430 por 932) e un iPad Air 5 (820 por 1180). A captura mostra a mesma cabeceira principal nos catro: o titular, o texto e o botón de reserva axústanse ao ancho da pantalla sen cortarse nin superpoñerse.",
+              "Nas pantallas pequenas, o menú recóllese detrás dun único botón, mentres que o logotipo e o selector de idioma seguen visibles na parte superior, así que cambiar entre inglés e español nunca leva máis dun toque."
+            ],
+            "image": "https://cdn.hlorenzoz.com/hlorenzoz.com/portfolio/me/multiple-screens.webp",
+            "imageAlt": "A páxina de inicio de Lorenzoz Agency no lanzamento nun iPhone 14 Pro, un Pixel 7 Pro, un iPhone 14 Pro Max e un iPad Air 5"
+          },
+          {
+            "heading": "Dous idiomas desde o primeiro día",
+            "paragraphs": [
+              "Cada páxina existe en inglés e en español no seu propio enderezo, co idioma como primeira parte da ruta. As traducións están nun ficheiro de mensaxes por idioma e cárgaas unha biblioteca de tradución feita para Next.js, así que unha páxina escríbese unha vez e énchese co texto do idioma que escolleu o visitante.",
+              "As dúas versións están escritas de forma nativa, sen pasar por un tradutor. As probas automáticas abren as versións en inglés e en español da páxina de inicio e das páxinas de detalle do portfolio, e comproban que o selector de idioma leva o visitante á mesma páxina no outro idioma."
+            ]
+          },
+          {
+            "heading": "Publicado como ficheiros estáticos en Cloudflare",
+            "paragraphs": [
+              "Como a compilación é un cartafol de ficheiros simples, publicar é copiar: o último paso do pipeline sobe a exportación estática a Cloudflare, que a serve desde a súa rede preto de cada visitante. As imaxes entréganse a través da CDN de Cloudflare e non desde a compilación do sitio.",
+              "Esta configuración ten moi pouco que se poida romper. Non hai ningún proceso de servidor que manter actualizado, nin unha base de datos que encher ou perder, nin código que se execute en cada visita, así que un pico repentino de tráfico só significa entregar máis ficheiros desde unha caché. Polo mesmo motivo, os custos de aloxamento seguen sendo baixos."
+            ]
+          },
+          {
+            "heading": "Cada push pasa por un pipeline",
+            "paragraphs": [
+              "O repositorio executa un pipeline de GitHub Actions en cada push e en cada pull request. Ten catro tarefas nunha orde fixa, e cada unha espera a que a anterior se supere: comprobacións de calidade e probas unitarias, a compilación da exportación estática, a verificación con probas de extremo a extremo e Lighthouse, e o despregamento en Cloudflare. Un cambio que falla en calquera paso nunca chega ao sitio en directo.",
+              "A tarefa de calidade executa ESLint, unha comprobación de tipos de TypeScript e as probas unitarias en Vitest 4.1.0. Na execución que se mostra superáronse 10 ficheiros de probas e 73 probas en arredor de 11 segundos. Cobren as funcións auxiliares de seguridade e validación de entradas, os datos do portfolio e compoñentes como os carruseis, a imaxe que aparece suavemente ao cargar e os botóns.",
+              "Antes de que o código chegue sequera ao pipeline, uns hooks previos ao commit execútanse con Bun na máquina de quen desenvolve, así que a maioría dos erros detéctanse en local en segundos en vez de minutos máis tarde no pipeline."
+            ],
+            "image": "https://cdn.hlorenzoz.com/hlorenzoz.com/portfolio/me/tests-quality-unit.webp",
+            "imageAlt": "Rexistro de GitHub Actions da tarefa de calidade: lint, comprobación de tipos e 73 probas de Vitest superadas en 10 ficheiros"
+          },
+          {
+            "heading": "Probas de extremo a extremo en cinco navegadores",
+            "paragraphs": [
+              "A tarefa de verificación proba a propia exportación estática, os mesmos ficheiros que están a piques de despregarse. Playwright abre o sitio en cinco perfís de navegador: Chromium, Firefox e WebKit en escritorio, máis Mobile Chrome e Mobile Safari.",
+              "Cada perfil executa os mesmos nove escenarios. Na páxina de inicio, as probas comproban que carga, que a navegación funciona, que se mostran as funcionalidades e as estatísticas, que o deseño se adapta ao tamaño da pantalla e que as dúas versións de idioma son accesibles. No caso de estudo da clínica dental comproban as páxinas de detalle en inglés e en español e o cambio entre elas. Na execución do 6 de abril de 2026 superáronse as 45 probas en 1,9 minutos."
+            ],
+            "image": "https://cdn.hlorenzoz.com/hlorenzoz.com/portfolio/me/tests-e2e.webp",
+            "imageAlt": "Rexistro de Playwright en GitHub Actions con 45 probas de extremo a extremo superadas en Chromium, Firefox, WebKit, Mobile Chrome e Mobile Safari"
+          },
+          {
+            "heading": "Auditorías de Lighthouse na mesma execución",
+            "paragraphs": [
+              "Na mesma tarefa, Lighthouse CI serve a exportación estática nun servidor local e audita sete páxinas: a páxina de inicio en inglés, o portfolio, o caso de estudo da clínica dental, a tarxeta de visita dixital e as tres páxinas legais. Os resultados contrástanse coas asercións definidas para o proxecto, e a tarefa só se supera se se cumpren.",
+              "A execución da captura superouse e subiu os seus informes o 6 de abril de 2026. Aquí non citamos puntuacións dela, porque o rexistro mostra as auditorías superadas e non as cifras individuais. O que mostra é o hábito que importa: o rendemento, a accesibilidade e o SEO compróbanse en cada cambio, non unha soa vez antes do lanzamento."
+            ],
+            "image": "https://cdn.hlorenzoz.com/hlorenzoz.com/portfolio/me/tests-lighthouse.webp",
+            "imageAlt": "Rexistro de Lighthouse CI en GitHub Actions auditando sete páxinas da exportación estática, executado o 6 de abril de 2026"
+          },
+          {
+            "heading": "Datos estruturados recoñecidos por Google",
+            "paragraphs": [
+              "Os buscadores e os asistentes de IA len unha páxina con máis fiabilidade cando esta se describe a si mesma con datos estruturados. A páxina de inicio leva JSON-LD que presenta a axencia como unha organización e un negocio local e publica as súas preguntas frecuentes nun formato que Google pode ler.",
+              "O 6 de abril de 2026 ás 20:23, a proba de resultados enriquecidos de Google rastrexou a páxina de inicio e atopou tres elementos válidos: FAQ, Local businesses e Organisation. Os elementos válidos permiten que a páxina opte a resultados enriquecidos na Busca de Google. A captura é ese informe."
+            ],
+            "image": "https://cdn.hlorenzoz.com/hlorenzoz.com/portfolio/me/structured-data.webp",
+            "imageAlt": "Informe da proba de resultados enriquecidos de Google do 6 de abril de 2026 con tres elementos válidos: FAQ, Local businesses e Organisation"
+          },
+          {
+            "heading": "O que pode aproveitar un negocio local",
+            "paragraphs": [
+              "Todo o anterior é o estándar que lles ofrecemos aos clientes. Un sitio estático servido desde a rede perimetral carga axiña nas conexións móbiles que usa a maioría dos clientes locais, custa pouco de aloxar e ten moi pouco que se poida caer. Dúas versións nativas, unha por idioma, chegan aos dous públicos. Os datos estruturados dinlle a Google quen é o negocio e que ofrece sen que teña que adiviñalo, e un pipeline de probas significa que unha páxina rota se detecta antes de que a vexa un cliente.",
+              "Nada disto garante unha posición en Google, e nunca prometemos ningunha. O que fai é eliminar as razóns técnicas polas que un bo negocio queda á marxe: páxinas lentas, datos ilexibles e deseños que se rompen nun teléfono."
+            ]
+          },
+          {
+            "heading": "O que veu despois",
+            "paragraphs": [
+              "En novembro de 2026 reconstruímos o sitio en Astro, mantendo os mesmos enderezos, o mesmo deseño e o mesmo contido, pero enviando moito menos JavaScript ao navegador. Noutra nova contamos esa migración e os seus resultados medidos."
+            ]
+          }
+        ]
+      }
+    },
+    "related": {
+      "title": "Novas sobre este proxecto"
     }
   },
   "numbers": {
@@ -1558,5 +2270,12 @@
     "title": "Páxina non atopada",
     "text": "A páxina que buscas non existe ou cambiou de enderezo.",
     "back": "Volver ao inicio"
+  },
+  "sitemap": {
+    "byline": {
+      "by": "Escrito por",
+      "updated": "Actualizado",
+      "readTime": "{min} min de lectura"
+    }
   }
 }

@@ -1528,11 +1528,723 @@
         }
     },
     "news": {
+        "list": {
+            "title": "Nieuws",
+            "subtitle": "Aankondigingen van Lorenzoz Agency: nieuw werk in het portfolio, en waarvoor elk project is gebouwd.",
+            "cta": "Lees het bericht",
+            "published": "Gepubliceerd"
+        },
         "home": {
             "eyebrow": "NIEUWS",
             "title": "Laatste nieuws",
             "subtitle": "Nieuwe case studies en aankondigingen van het bureau.",
             "viewAll": "Bekijk al het nieuws"
+        },
+        "post": {
+            "published": "Gepubliceerd",
+            "readCaseStudy": "Lees de case study",
+            "visitSite": "Bezoek de live site"
+        },
+        "items": {
+            "masajes-orisha-added-to-portfolio": {
+                "title": "Masajes Orisha staat nu in ons portfolio",
+                "description": "De website van Masajes Orisha, een studio voor therapeutische massage in San Rafael de Heredia, Costa Rica, heeft nu een eigen case study in ons portfolio.",
+                "paragraphs": [
+                    "Masajes Orisha, de website die we bouwden voor een studio voor therapeutische massage in San Rafael de Heredia, Costa Rica, heeft nu een eigen case study in ons portfolio. De site staat al live op masajesorisha.com.",
+                    "Het is de productieversie van het concept voor een massagestudio dat ook als demo in het portfolio staat: volledig tweetalig in het Spaans en het Engels, met een licht en een donker thema die hetzelfde rustige, redactionele karakter houden.",
+                    "Bezoekers kiezen uit een korte kaart van vier kenmerkende behandelingen, met één tik te filteren, en elke kaart toont de duur en de focus. Een boekingsaanvraag gaat in vier stappen (behandeling, duur, dag en tijd) en laat een lopende prijsindicatie zien voordat je hem verstuurt. Er is geen account en geen betaalomgeving: de therapeut bevestigt elke aanvraag per mail.",
+                    "De site heeft ook een journal met uitgebreide artikelen over manuele therapie, de fysiologie van rust en spierherstel, gepubliceerd in beide talen.",
+                    "De case study loopt het ontwerp, de behandelkaart, de boekingsflow en het journal door, met schermafbeeldingen van elk onderdeel."
+                ]
+            },
+            "gerp-dj-added-to-portfolio": {
+                "title": "GERP DJ staat nu in ons portfolio",
+                "description": "De website van GERP DJ, een DJ voor feesten, bruiloften en evenementen uit Ourense, Galicië, heeft nu een eigen case study in ons portfolio.",
+                "paragraphs": [
+                    "GERP DJ, een DJ voor feesten, bruiloften en evenementen met als thuisbasis Ourense en beschikbaar in heel Galicië, heeft nu een eigen case study in ons portfolio. De site die we ontwikkelden staat al live en vermeldt ons in de footer.",
+                    "De site is gepubliceerd in het Spaans en het Galicisch, met een taalkeuze in de header, en biedt een licht en een donker thema. De homepage opent met een achtergrondvideo die bezoekers kunnen pauzeren, gevolgd door de vier diensten: dorpsfeesten, bruiloften, privéfeesten en bedrijfsevenementen.",
+                    "Een datum aanvragen vraagt drie gegevens: de dag, de plaats en het soort evenement. Het formulier opent daarna WhatsApp met de aanvraag al uitgeschreven en klaar om te verzenden, zonder serverformulier ertussen. De boekingspagina biedt een uitgebreidere versie van die aanvraag, naast een reeks veelgestelde vragen.",
+                    "Een galerij met tien video's met onderschrift, opgenomen tijdens hun optredens en met hun eigen apparatuur, laat zien hoe een feest met GERP DJ eruitziet, en op de boekingspagina kun je een persmap als PDF downloaden, in het Spaans en in het Galicisch. Het cookiebeleid vermeldt dat de site geen analytische of advertentiecookies gebruikt.",
+                    "Gemeten met PageSpeed Insights op mobiel op 24 november 2026 scoorde de homepage 99 voor Prestaties en 100 voor Toegankelijkheid, Praktische tips en SEO. Dezelfde dag vond de test voor rich results van Google geldige gestructureerde data voor Breadcrumbs, Local business en Organisation op de homepage, waardoor die in aanmerking komt voor rich results in Google Zoeken. De case study toont beide rapporten en loopt het ontwerp, de datumaanvraag, de galerij en de bio door, met schermafbeeldingen van elk onderdeel."
+                ]
+            },
+            "lorenzoz-agency-case-study": {
+                "title": "Onze website opnieuw gebouwd op Astro, voor een sneller en toegankelijker bezoek",
+                "description": "We bouwden hlorenzoz.com opnieuw op Astro 7 met dezelfde URL's en hetzelfde ontwerp: 0 ms blokkeertijd, veel minder JavaScript en toegankelijkheid 100. Voor en na, gemeten.",
+                "paragraphs": [
+                    "Op 25 november 2026 zetten we hlorenzoz.com, de website van Lorenzoz Agency, over van Next.js 16 naar Astro 7. Bezoekers hielden dezelfde adressen, hetzelfde ontwerp en dezelfde inhoud in het Engels en het Spaans. Wat veranderde, is hoeveel werk elke pagina van hun telefoon vraagt: de pagina's laden nu een paar kilobyte JavaScript in plaats van meer dan een halve megabyte, en ze reageren op de eerste tik zonder te wachten.",
+                    "Dit artikel beschrijft wat we opnieuw bouwden, hoe we controleerden dat er niets zichtbaars brak, en wat de verandering betekent voor iemand die de site op een gewone telefoon bezoekt. Elk cijfer komt uit een test die we uitvoerden, met datum en omstandigheden, en de vergelijking tussen voor en na staat in één tabel."
+                ],
+                "sections": [
+                    {
+                        "heading": "Waar de site begon",
+                        "paragraphs": [
+                            "De site ging in april 2026 live op Next.js 16, geëxporteerd als statische bestanden, met Tailwind CSS 4, Cloudflare ervoor en tests in Vitest en Playwright. Een apart artikel vertelt het verhaal van die eerste bouw.",
+                            "Het werkte, maar elke pagina sleepte een React runtime mee om een pagina interactief te maken die na de build nooit meer verandert. Op een site die vooral tekst, beelden en een boekingsknop toont, is dat JavaScript een kostenpost die de bezoeker bij elk bezoek betaalt zonder er iets voor terug te krijgen. Nadat we de site van GERP DJ op Astro hadden gebouwd en zagen hoe die presteerde, gaven we onze eigen site dezelfde behandeling."
+                        ],
+                        "image": "https://cdn.hlorenzoz.com/hlorenzoz.com/portfolio/me/tech-stack-visual.webp",
+                        "imageAlt": "Illustratie van de stack waarmee de site in april 2026 live ging: Next.js 16, Tailwind CSS 4, Cloudflare, GitHub Actions, Vitest en Playwright"
+                    },
+                    {
+                        "heading": "Eén regel: alleen het framework verandert",
+                        "paragraphs": [
+                            "De migratie volgde één regel: dezelfde URL's, dezelfde head tags, hetzelfde ontwerp, dezelfde commando's, agents en scripts. Een bezoeker met een bladwijzer, een zoekmachine met de pagina in haar index en een link die maanden geleden werd gedeeld, moesten allemaal op dezelfde pagina uitkomen en hetzelfde zien. Alleen het framework eronder mocht veranderen.",
+                            "Om ons daaraan te houden, vergeleken we de nieuwe build met de oude voordat we overstapten. De head tags en de gestructureerde data in JSON-LD kwamen identiek uit op alle 48 pagina's, in beide talen. Schermafbeeldingen van elke route op 390 en 1440 pixels breed, de breedte van een telefoon en van een desktop, verschilden hooguit 0,25% van de pixels, met identieke paginahoogtes. De sitemap en het robotsbestand kwamen byte voor byte hetzelfde uit."
+                        ],
+                        "image": "https://cdn.hlorenzoz.com/hlorenzoz.com/portfolio/me/multiple-screens.webp",
+                        "imageAlt": "De homepage van Lorenzoz Agency weergegeven op telefoonschermen van verschillende formaten en op een tablet"
+                    },
+                    {
+                        "heading": "Wat we opnieuw bouwden",
+                        "paragraphs": [
+                            "Elk onderdeel van de site werd een native Astro component. Astro zet die tijdens de build om in gewone HTML, één bestand per pagina, zonder servercode die draait als iemand de site bezoekt. De delen die op de bezoeker reageren, zoals het mobiele menu, de carrousels en de veelgestelde vragen, kregen elk een klein script in gewoon JavaScript dat precies die ene taak doet.",
+                            "React blijft op precies één plek: de spraakwidget van ElevenLabs, waarmee een bezoeker met onze AI assistent kan praten. Als zwaarste onderdeel van de site wordt die buiten de eerste lading gehouden en pas geladen zodra de bezoeker voorbij de helft van het scherm scrollt.",
+                            "De tests verhuisden mee en groeiden. Aan het eind van de migratie draaide Vitest 1.096 geslaagde tests, die componenten weergeven via de Container API van Astro en de gebouwde HTML van elke pagina controleren, en Playwright draaide 37 geslaagde end to end tests in een echte browser. Een nieuwe test controleert elke interne link, elk beeldadres, elk anker, elke redirect en elk item in de offline cache van de gebouwde site, en faalt als er één nergens naartoe wijst. Lighthouse CI controleert bij elke run 14 belangrijke URL's.",
+                            "We schrapten ook een overblijfsel van de oude build: op 46 van de 48 pagina's vroeg die de browser om een klein icoon uit de footer vroeg op te halen, in concurrentie met de inhoud die eerst telt. En de service worker die de homepage offline beschikbaar houdt, kreeg nieuwe cachenamen, zodat kopieën van de oude site bij de overstap worden weggegooid in plaats van verouderde pagina's te tonen."
+                        ]
+                    },
+                    {
+                        "heading": "Voor en na, gemeten",
+                        "paragraphs": [
+                            "Voor de overstap serveerden we beide builds lokaal en maten we dezelfde pagina's met Lighthouse in het mobiele profiel, dat een bescheiden telefoon op een trage mobiele verbinding simuleert. Elk cijfer is de mediaan van meerdere runs, gemeten op 25 november 2026. Labscores schuiven per run een paar punten op, dus de medianen zeggen meer dan een los getal.",
+                            "Twee rijen verklaren de rest. Total Blocking Time is hoe lang de telefoon te druk is met scripts om op een tik of een scroll te reageren, en die zakte naar nul. Het JavaScript dat elke pagina laadt, daalde met meer dan 98%, van meer dan een halve megabyte naar een paar kilobyte. De laatste twee rijen bewijzen dat de snelheid niet kwam van iets weglaten: dezelfde head, dezelfde gestructureerde data, hetzelfde beeld op het scherm.",
+                            "De labrijen en de live score van PageSpeed Insights meten dezelfde pagina in twee verschillende opstellingen, en daarom staat de homepage in de ene op 89 en in de andere op 98. In het lab werden beide builds geserveerd vanaf een lokale statische server zonder compressie, zodat elk bestand op volle grootte door de gesimuleerde trage verbinding ging; dat benadeelt beide builds evenveel en houdt de vergelijking tussen beide eerlijk. In productie comprimeert Cloudflare elk bestand met Brotli en serveert het vanaf de edge, zodat dezelfde Astro pagina kleiner en eerder op de telefoon aankomt. We bewaarden geen rapport van PageSpeed Insights van de live site op Next.js, dus de live score daarvan staat niet in de tabel."
+                        ],
+                        "table": {
+                            "caption": "Build op Next.js 16 en build op Astro 7 van hlorenzoz.com, lokaal geserveerd en gemeten op 25 november 2026 (Lighthouse mobiel, mediaan van meerdere runs)",
+                            "headers": [
+                                "Meting",
+                                "Next.js 16",
+                                "Astro 7"
+                            ],
+                            "rows": [
+                                [
+                                    "Prestaties, Engelse homepage (lokaal lab)",
+                                    "77",
+                                    "89"
+                                ],
+                                [
+                                    "Prestaties, dienstpagina Lokale SEO (lokaal lab)",
+                                    "89",
+                                    "94"
+                                ],
+                                [
+                                    "Prestaties, case study GERP DJ (lokaal lab)",
+                                    "72",
+                                    "86"
+                                ],
+                                [
+                                    "Prestaties, Engelse homepage (live, PageSpeed Insights, 25 november 2026)",
+                                    "Niet gemeten",
+                                    "98"
+                                ],
+                                [
+                                    "Total Blocking Time",
+                                    "66 tot 83 ms",
+                                    "0 ms"
+                                ],
+                                [
+                                    "JavaScript geladen per pagina",
+                                    "534 tot 645 KB",
+                                    "2,6 tot 8,9 KB"
+                                ],
+                                [
+                                    "Head tags en JSON-LD op 48 pagina's",
+                                    "Referentie",
+                                    "Identiek"
+                                ],
+                                [
+                                    "Verschil in schermafbeeldingen op 390 en 1440 px",
+                                    "Referentie",
+                                    "Hooguit 0,25% van de pixels"
+                                ]
+                            ]
+                        }
+                    },
+                    {
+                        "heading": "Sneller in beeld, sneller in reactie",
+                        "paragraphs": [
+                            "Voor de bezoeker betekent minder JavaScript dat de pagina eerder klaar is. Een browser moet elk script dat hij ontvangt downloaden, lezen en uitvoeren, en met de oude build was dat meer dan een halve megabyte op elke pagina. Nu komt de HTML leesklaar binnen en wegen de scripts die volgen een paar kilobyte, en daarom steeg de prestatiescore op alle drie de pagina's die we vergeleken.",
+                            "Reactie telt net zo zwaar als weergave. Met 66 tot 83 ms blokkeertijd kon een tik tijdens het laden moeten wachten tot scripts klaar waren voordat er iets gebeurde. Bij 0 ms gaat het menu open, klapt de accordeon uit en reageert de boekingsknop op het moment dat je hem aanraakt.",
+                            "De winst is het grootst waar bezoekers die het hardst nodig hebben. Het labprofiel achter deze cijfers bootst een bescheiden telefoon op een trage verbinding na, en dat is de situatie van veel mensen die onderweg een lokaal bedrijf opzoeken, op mobiele data of haperende wifi. Een pagina die weinig weegt en weinig van de processor vraagt, blijft daar bruikbaar, en verbruikt minder van de data en de batterij van de bezoeker."
+                        ]
+                    },
+                    {
+                        "heading": "Een pagina die stil blijft staan tijdens het laden",
+                        "paragraphs": [
+                            "Weinig dingen zijn zo vervelend als een pagina die verspringt terwijl je leest of naar een knop grijpt. De site is zo gebouwd dat dat niet gebeurt. Beelden geven hun afmetingen vooraf op, zodat de browser de ruimte reserveert voordat ze binnenkomen. Het lettertype Inter wordt vanaf onze eigen server geladen als één bestand, en terwijl het downloadt, staat de tekst in een reservelettertype dat op dezelfde grootte is afgesteld, zodat regels niet opnieuw afbreken als het echte lettertype verschijnt.",
+                            "De cookiebanner en de antwoorden op de veelgestelde vragen horen vanaf het begin bij de pagina, verborgen tot ze nodig zijn, in plaats van later door een script te worden toegevoegd. De banner verschijnt een paar seconden nadat de pagina geladen is en zweeft over de onderkant van het scherm in plaats van de inhoud omlaag te duwen.",
+                            "De vergelijking van schermafbeeldingen bevestigde het vanuit een andere hoek: elke route hield precies dezelfde paginahoogte als op de oude site, dus de wissel van framework verschoof niets op het scherm."
+                        ]
+                    },
+                    {
+                        "heading": "Bruikbaar met toetsenbord of schermlezer",
+                        "paragraphs": [
+                            "Na de overstap draaiden we de toegankelijkheidsaudit van Lighthouse op elke route en losten we elk gemeld probleem op, tot alle 48 pagina's 100 scoorden op mobiel. De meeste van die problemen bestonden al voor de migratie; de herbouw was het moment om ze op te lossen.",
+                            "De verbeteringen zijn concreet. Twee stukken lichtgrijze tekst met te weinig contrast zijn nu donkerder. De knoppen voor vorige, volgende en de stippen van twee beeldcarrousels hebben namen die een schermlezer in het Engels en het Spaans voorleest, en de stippen staan zo ver uit elkaar dat elke stip een doel is dat een vinger kan raken. Titels in de footer, kaarten in het portfolio en het overzicht van diensten springen niet meer van de hoofdkop direct naar het derde niveau, zodat gebruikers van een schermlezer via de koppen door elke pagina kunnen navigeren. Het label van de taalkeuze begint nu met de taalcode die op het scherm staat, zodat gebruikers van spraakbediening kunnen zeggen wat ze zien.",
+                            "Een paar dingen werken bewust anders. De taalkeuze bestaat nu uit gewone links, die met een toetsenbord werken en door zoekmachines gevolgd kunnen worden. De Escapetoets sluit het mobiele menu. In de carrousel met functies werkt alleen de kop van elk item als knop, zodat de links erin zich weer als links gedragen."
+                        ]
+                    },
+                    {
+                        "heading": "Links die werken, offline toegang en privacy",
+                        "paragraphs": [
+                            "Daarna controleerden we elke pagina, instelling en link. Een geautomatiseerde browser opende alle 48 routes, het rootadres en de 404 pagina, op desktopformaat en op een geëmuleerde Pixel 5, zowel op de ontwikkelserver als op een lokale kopie van de Worker in productie. Elke pagina antwoordde correct, zonder fouten in de console en zonder mislukte verzoeken naar de site zelf.",
+                            "De audit ving kleine fouten die het verhelpen waard waren. Links vanuit het menu en de footer naar onderdelen van de homepage leunden op een redirect en wijzen nu direct naar het canonieke adres. Het installatiemanifest en de offline cache wijzen nu naar de Engelse homepage in plaats van naar de redirect op de root. Het WhatsApp icoon op het digitale visitekaartje, dat al voor de migratie stuk was, werd opnieuw getekend.",
+                            "Privacy kwam zonder extra moeite mee. Het lettertype wordt vanaf ons eigen domein geserveerd, dus het lezen van de site stuurt geen verzoek naar een externe letterdienst. Optionele cookies blijven uit tot de bezoeker beslist, via een banner die accepteren en weigeren even zwaar aanbiedt, naast een link naar het cookiebeleid. De spraakassistent, die verbinding maakt met ElevenLabs, laadt pas als de bezoeker begint te scrollen, dus wie alleen naar het eerste scherm kijkt, laadt hem nooit."
+                        ]
+                    },
+                    {
+                        "heading": "De live site in PageSpeed Insights",
+                        "paragraphs": [
+                            "Zodra productie de build op Astro serveerde, testten we de live Engelse homepage met Google PageSpeed Insights op mobiel. Het rapport van 25 november 2026 om 15.20 uur geeft 98 voor Prestaties en 100 voor Toegankelijkheid, Praktische tips en SEO.",
+                            "PageSpeed Insights draait Lighthouse vanaf servers van Google, dus het meet de pagina zoals een telefoon die via het internet ontvangt, door het netwerk van Cloudflare dat voor de site staat. De opstelling verschilt van onze lokale labruns, dus de score is niet vergelijkbaar met de lokale mediaan van 89, en elk cijfer wordt vermeld met zijn eigen datum en omstandigheden.",
+                            "Het paneel voor gegevens van echte gebruikers toont nog geen gegevens. Het vat samen wat gebruikers van Chrome de afgelopen 28 dagen ervoeren, en Google publiceert het pas zodra een site genoeg van dat verkeer heeft."
+                        ],
+                        "image": "https://cdn.hlorenzoz.com/hlorenzoz.com/portfolio/hlorenzoz/lorenzoz-agency-pagespeed-insights.webp",
+                        "imageAlt": "Rapport van PageSpeed Insights voor hlorenzoz.com op mobiel, 25 november 2026 om 15.20 uur: 98 voor Prestaties en 100 voor Toegankelijkheid, Praktische tips en SEO"
+                    },
+                    {
+                        "heading": "Wat dit betekent voor een lokaal bedrijf",
+                        "paragraphs": [
+                            "Alles hier is de standaard die we toepassen op sites van klanten. Veel mensen zoeken een lokaal bedrijf op hun telefoon, vaak onderweg, en een pagina die meteen verschijnt en op de eerste tik reageert, hoort bij de service die ze krijgen nog voordat ze bellen. Een pagina die gebruikers van toetsenbord en schermlezer kunnen gebruiken, staat open voor meer klanten.",
+                            "Het laat ook zien hoe we zo'n verandering aanpakken: één regel op papier voordat we beginnen, metingen ervoor en erna, en controles die bewijzen dat de zichtbare site niet verschoof. Niets hiervan garandeert een positie in Google, en die beloven we ook nooit. Het neemt wel de technische redenen weg waardoor een goed bedrijf over het hoofd wordt gezien.",
+                            "De case study van deze site toont het rapport van PageSpeed en de rest van het bewijs, en de live site is één klik verwijderd, dus je kunt zelf oordelen."
+                        ]
+                    }
+                ]
+            },
+            "malaga-event-gear-case-study": {
+                "title": "Hoe we Malaga Event Gear opnieuw bouwden, van WordPress naar een snelle site in SvelteKit",
+                "description": "Case study van de herbouw van Malaga Event Gear: van WordPress naar SvelteKit, met pakketten tegen vaste prijzen, een formulier voor datumaanvragen, rijke gestructureerde data en snelle pagina's.",
+                "paragraphs": [
+                    "Malaga Event Gear (MEG) verhuurt audiovisuele apparatuur voor evenementen in Málaga en aan de Costa del Sol, en de website heeft nu een eigen case study in ons portfolio. We migreerden de site van WordPress en bouwden hem opnieuw als een nieuw platform, dat MEG op 15 juni 2026 op zijn eigen blog aankondigde. De site vermeldt ons in de footer.",
+                    "Dit artikel legt uit wat het bedrijf nodig had, hoe de nieuwe site is gebouwd, welke resultaten hij bij de lancering behaalde en wat we zagen toen we hem op 25 november 2026 opnieuw controleerden."
+                ],
+                "sections": [
+                    {
+                        "heading": "Het bedrijf",
+                        "paragraphs": [
+                            "MEG verhuurt geluidssystemen, verlichting, projectoren en schermen, microfoons en een rookmachine, samen met de technici die ze bedienen, voor bruiloften, zakelijke evenementen en congressen, en privéfeesten. Het bedrijf geeft aan dat het sinds 1996 in de audiovisuele sector werkt en sinds 2010 als zelfstandig bedrijf, en op de pakketpagina's staan de merken waarmee het werkt, zoals HK Audio, Audix en Midas.",
+                            "Het model bepaalt de website. Er is geen winkel en je haalt niets zelf op: de apparatuur gaat altijd naar de locatie, en levering, opbouw en ophalen zitten in elk pakket. De pakketten Wedding en MICE bevatten een technicus. De klantenservice is in het Engels en het Spaans, voor een publiek dat bestaat uit lokale klanten, stellen die aan de kust trouwen en bedrijven die er hun bijeenkomsten houden."
+                        ],
+                        "image": "https://cdn.hlorenzoz.com/hlorenzoz.com/portfolio/meg/malagaeventgear-7.webp",
+                        "imageAlt": "Apparatuurcatalogus van Malaga Event Gear met geluidssystemen, verlichting, projectoren en schermen, en speciale effecten"
+                    },
+                    {
+                        "heading": "Waarom weg van WordPress",
+                        "paragraphs": [
+                            "De eigen lanceringsaankondiging van MEG vat de prioriteit samen: het bedrijf dat de technische kant van een evenement verzorgt, hoort geen trage website te hebben. De herbouw had vier doelen: snelheid, veiligheid, nieuwe functies en een betere ervaring voor wie een evenement plant. Daarnaast moesten de vaste prijzen online gepubliceerd blijven, want de kosten tonen voor het eerste bericht staat centraal in hoe MEG verkoopt.",
+                            "Een migratie is ook het moment waarop een site kan verliezen wat hij in zoekmachines heeft opgebouwd, dus de structuur hoorde bij de opdracht. De nieuwe site publiceert een sitemapindex in het formaat dat SEO plugins voor WordPress gebruiken, met aparte sitemaps voor berichten, pagina's, categorieën en auteurs in elke taal, de blog heeft een eigen sectie met beschrijvende adressen, en de oude paden voor de beheeromgeving en het inloggen van WordPress bestaan niet meer op het domein."
+                        ],
+                        "image": "https://cdn.hlorenzoz.com/hlorenzoz.com/portfolio/meg/malagaeventgear-13.webp",
+                        "imageAlt": "HTML sitemap van Malaga Event Gear met de hoofdpagina's en elk evenementenpakket, gegroepeerd per taal"
+                    },
+                    {
+                        "heading": "De technologie: SvelteKit, Cloudflare en strikte headers",
+                        "paragraphs": [
+                            "De nieuwe MEG is een applicatie in SvelteKit die via Cloudflare wordt geserveerd. Pagina's komen bij de browser aan als complete HTML met hun inhoud en gestructureerde data al op hun plek, waarna het framework de navigatie overneemt en de volgende pagina vooraf laadt zodra de aanwijzer op een link rust. De twee lettertypen, Playfair Display en Plus Jakarta Sans, worden vanaf de eigen server geladen en vooraf opgehaald. De hoofdafbeelding wordt geleverd in WebP in meerdere breedtes en met hoge prioriteit opgevraagd, de afbeeldingen verderop op de pagina laden pas wanneer nodig, en de blogfoto's komen van het eigen subdomein voor afbeeldingen van het bedrijf, ook in WebP met responsieve formaten.",
+                            "Veiligheid was een van de redenen voor de herbouw, en dat zie je in de responseheaders: HTTP Strict Transport Security met preload, bescherming tegen content type sniffing en tegen inbedding door andere sites, een strikt referrerbeleid en een permissiebeleid dat toegang tot locatie, camera en microfoon blokkeert.",
+                            "De site is ook installeerbaar. Een web app manifest en een service worker gebouwd met Workbox maken het mogelijk hem als een app aan het startscherm van een telefoon toe te voegen."
+                        ],
+                        "image": "https://cdn.hlorenzoz.com/hlorenzoz.com/portfolio/meg/malagaeventgear-3.webp",
+                        "imageAlt": "Sectie met transparante prijzen in donkere modus, met de pakketten Eco, Wedding, Product Presentation en Basic MICE"
+                    },
+                    {
+                        "heading": "Vaste prijzen en een formulier dat alleen om de datum vraagt",
+                        "paragraphs": [
+                            "De prijzen vormen de kern van de site. Er zijn vijf pakketten gepubliceerd met een vaste prijs per evenement, plus 21% btw, zoals vermeld op 25 november 2026: Eco Pack voor 290 euro, Basic MICE Pack voor 295, Product Presentation Pack voor 310, MICE Pack voor 490 en Wedding Pack voor 650. Elk pakket heeft een eigen pagina met alles wat erbij zit, het aantal gasten en de optionele extra's, zodat de klant de kosten kent voordat hij iets vraagt.",
+                            "De pakkettenpagina filtert op soort evenement (feesten, bruiloften, zakelijke evenementen, presentaties en vergaderingen), en elke pakketpagina eindigt met een kort formulier om de datum vast te leggen: naam, mailadres, telefoon met een keuzelijst voor de landcode, datum van het evenement en opmerkingen. Het formulier vermeldt dat er geen creditcard nodig is om de beschikbaarheid te controleren.",
+                            "Achter het formulier filtert een verborgen honeypotveld geautomatiseerde spam zonder dat echte bezoekers een puzzel hoeven op te lossen. En als de bevestigingsmail mislukt, laat de site de bezoeker weten dat de aanvraag is opgeslagen en biedt hij een directe manier om het team te bereiken, zodat een aanvraag nooit in stilte verloren gaat. Een WhatsApp knop en het telefoonnummer blijven op elke pagina zichtbaar voor wie liever praat."
+                        ],
+                        "image": "https://cdn.hlorenzoz.com/hlorenzoz.com/portfolio/meg/malagaeventgear-9.webp",
+                        "imageAlt": "Pakkettenpagina met filters op soort evenement en de kaart van het Wedding Pack met prijs en capaciteit"
+                    },
+                    {
+                        "heading": "Inhoud voor mensen, voor zoekmachines en voor AI assistenten",
+                        "paragraphs": [
+                            "MEG publiceert een technische blog met planningsgidsen en nieuws van echte evenementen. Op 25 november 2026 telde de sitemap van de berichten 89 URL's, waaronder verslagen van evenementen in Málaga en Torremolinos en praktische gidsen, zoals de audiovisuele eisen van een keynotespreker of het verschil tussen de eigen AV van een hotel en een onafhankelijke leverancier.",
+                            "Voor AI assistenten publiceert de site een llms.txt bestand dat het bedrijf samenvat, naar de hoofdpagina's linkt en elk pakket opsomt met prijs, inhoud en extra's. Het robots.txt bestand legt uit waarom dat bestand bewust buiten de XML sitemaps blijft: de sitemaps geven de pagina's op die moeten ranken, en llms.txt is een leidraad voor machines.",
+                            "Op 25 november 2026 gaven de pagina's via hreflang dertien taalversies op: Engels als standaard, plus Frans, Italiaans, Duits, Nederlands, Portugees voor Portugal en voor Brazilië, Zweeds, Deens, Noors, en Chinees in vereenvoudigd schrift en in de traditionele schriften van Taiwan en Hongkong. Elke versie heeft een eigen URL en een eigen taalattribuut in de HTML, wat past bij een kust die evenementplanners uit heel Europa en daarbuiten ontvangt."
+                        ],
+                        "image": "https://cdn.hlorenzoz.com/hlorenzoz.com/portfolio/meg/malagaeventgear-11.webp",
+                        "imageAlt": "De startpagina van de Technical Blog van Malaga Event Gear met de nieuwste artikelen"
+                    },
+                    {
+                        "heading": "Gestructureerde data voor rich results",
+                        "paragraphs": [
+                            "De test voor rich results van Google vond bij een crawl van 18 juni 2026 drie geldige items op de homepage: Breadcrumbs, Local businesses en Organisation, waardoor die in aanmerking komt voor rich results in Google Zoeken. In aanmerking komen betekent dat Google ze kan tonen, niet dat het dat ook doet.",
+                            "Bij het lezen van de live JSON-LD op 25 november 2026 beschrijft de homepage MEG als een ProfessionalService met een adres in Málaga, coördinaten, openingstijden, talen, oprichtingsjaar en een prijsklasse van 290 tot 650 euro. Hij noemt de 23 gebieden die het bedrijf bedient, van Málaga, Marbella en de Costa del Sol tot Sevilla en Granada, en linkt naar de vermeldingen in Google Maps en Bing Maps en de profielen op Medium en Pinterest. De homepage bevat ook WebSite, BreadcrumbList en een FAQPage met vijf vragen. Elk pakket wordt beschreven als een Service die aan het bedrijf is gekoppeld, met een eigen FAQPage, en nieuwsberichten gebruiken NewsArticle."
+                        ],
+                        "image": "https://cdn.hlorenzoz.com/hlorenzoz.com/portfolio/meg/malagaeventgear-structured-data.webp",
+                        "imageAlt": "Test voor rich results van Google met drie geldige items voor malagaeventgear.com: Breadcrumbs, Local businesses en Organisation"
+                    },
+                    {
+                        "heading": "Prestaties bij de lancering en vandaag",
+                        "paragraphs": [
+                            "PageSpeed Insights mat de homepage op mobiel op 19 juni 2026: 93 voor Prestaties en 100 voor Toegankelijkheid, Praktische tips en SEO. Zoals de case study uitlegt, werd de prestatiescore gedrukt door de beveiligingsscripts die Cloudflare toevoegt, niet door de eigen code van de site.",
+                            "We controleerden opnieuw met Lighthouse op 25 november 2026, op mobiel, in labomstandigheden en in één run: Prestaties 89, Toegankelijkheid 100, Praktische tips 81 en SEO 100, met een Largest Contentful Paint van 2,4 s, een Cumulative Layout Shift van 0,001, een Total Blocking Time van 280 ms en een totaal paginagewicht van 198 KiB. De aftrek bij Praktische tips kwam van waarschuwingen over verouderde functies, veroorzaakt door het script voor botbescherming van Cloudflare, en Lighthouse gaf aan dat deze run mogelijk onvolledig is.",
+                            "Labresultaten verschillen per run en met wat de site intussen publiceert, dus beide rapporten zijn momentopnamen met hun datum, geen beloften. Wat ze steeds laten zien, is een lichte pagina die de hoofdinhoud snel weergeeft en niet verspringt tijdens het laden."
+                        ],
+                        "image": "https://cdn.hlorenzoz.com/hlorenzoz.com/portfolio/meg/malagaeventgear-pagespeed-insights.webp",
+                        "imageAlt": "Mobiel rapport van PageSpeed Insights voor malagaeventgear.com: 93 voor Prestaties en 100 voor Toegankelijkheid, Praktische tips en SEO"
+                    },
+                    {
+                        "heading": "Wat het betekent voor een verhuurder van AV apparatuur",
+                        "paragraphs": [
+                            "Voor een verhuurder van audiovisuele apparatuur is de website de eerste technische test die een klant ziet. Vaste prijzen en gedetailleerde pakketpagina's halen het heen en weer van een handmatige offerte weg bij standaardevenementen. Een formulier dat alleen een datum nodig heeft, maakt van een bezoek een beschikbaarheidsaanvraag. De galerij van evenementen, de blog en de Google reviews op de site zetten echt werk voor de klant neer. En een snel, veilig platform zonder een stapel plugins om bij te werken betekent minder onderhoudsrisico voor een klein team.",
+                            "Niets hiervan garandeert een positie in Google, en die beloven we ook niet. Wat het wel doet, is zoekmachines, AI assistenten en klanten volledige, consistente en controleerbare informatie over het bedrijf geven."
+                        ],
+                        "image": "https://cdn.hlorenzoz.com/hlorenzoz.com/portfolio/meg/malagaeventgear-2.webp",
+                        "imageAlt": "Galerij Our events in action met bruiloften, congressen en zakelijke evenementen, uitgerust door MEG"
+                    },
+                    {
+                        "heading": "Waar je het kunt zien",
+                        "paragraphs": [
+                            "De case study van Malaga Event Gear in ons portfolio toont de boekingservaring, de apparatuurcatalogus, de pakketten, de blog en de contactpagina, samen met de rapporten van PageSpeed Insights en Rich Results. De live site is één klik verwijderd van deze pagina."
+                        ],
+                        "image": "https://cdn.hlorenzoz.com/hlorenzoz.com/portfolio/meg/malagaeventgear-12.webp",
+                        "imageAlt": "Contactpagina van Malaga Event Gear met contactgegevens en het formulier Request a Quote"
+                    }
+                ]
+            },
+            "vicron-lopez-case-study": {
+                "title": "Hoe we de website van Vicron Lopez bouwden, voor de verhuur van luxe auto's in Ourense",
+                "description": "Case study van de website van Vicron Lopez: een tweetalige site in SvelteKit voor de verhuur van luxe auto's in Ourense, met een filterbaar wagenpark, voertuigpagina's en lokale SEO.",
+                "paragraphs": [
+                    "Vicron Lopez verhuurt luxe auto's en sportwagens in Ourense, Galicië, voor korte en lange huurperiodes, en de website heeft nu een eigen case study in ons portfolio. De site die we ontwikkelden staat live in het Spaans en het Engels en vermeldt ons in de footer. Dit artikel legt uit hoe hij is gebouwd, welke keuzes hem vormden en wat de metingen erover zeggen.",
+                    "Een dure huurauto kies je op vertrouwen. Voordat iemand een dag in een Porsche boekt, wil die de auto zien, precies weten wat de prijs omvat en zeker weten dat er een echt bedrijf met vergunning in de eigen stad achter zit. Elk onderdeel van de site is rond die drie vragen ontworpen."
+                ],
+                "sections": [
+                    {
+                        "heading": "Het bedrijf en de opdracht",
+                        "paragraphs": [
+                            "Vicron Lopez werkt vanuit Ourense en bedient klanten in heel Galicië. Huren kan voor korte of lange tijd, de prijzen worden zonder verborgen kosten gepresenteerd, en de auto kan bij de klant thuis worden afgeleverd en daar achteraf worden opgehaald. Elke huur is verzekerd, met dekkingen van basis tot volledig, en onderhoud en service worden in eigen huis gedaan.",
+                            "De opdracht was een showroom op het web: een site waar een bezoeker door het wagenpark kan bladeren, elk voertuig kan begrijpen en een boekingsaanvraag kan sturen zonder eerst te bellen, in het Spaans voor lokale klanten en in het Engels voor bezoekers. Tegelijk moest hij de lokale signalen dragen die een verhuurbedrijf nodig heeft om in de eigen stad gevonden en vertrouwd te worden."
+                        ],
+                        "image": "https://cdn.hlorenzoz.com/hlorenzoz.com/portfolio/vicronlopez/vicronlopez-header.webp",
+                        "imageAlt": "Homepage van Vicron Lopez in donkere modus met een oranje sportwagen naast de kop Redefining Mobility"
+                    },
+                    {
+                        "heading": "De technologie: SvelteKit, geserveerd via Cloudflare",
+                        "paragraphs": [
+                            "De site is gebouwd met SvelteKit, het applicatieframework voor Svelte, en wordt geserveerd via het netwerk van Cloudflare. Elke pagina komt bij de browser aan als complete HTML, met tekst, links en gestructureerde data al op hun plek, zodat zoekmachines en AI crawlers dezelfde inhoud lezen als een bezoeker, zonder te wachten tot JavaScript draait. De navigatie tussen pagina's neemt het framework daarna over, en het laadt de volgende pagina vooraf zodra de aanwijzer op een link rust.",
+                            "Statische bestanden worden gepubliceerd met namen die een hash van hun inhoud bevatten en een onveranderlijke cache van een jaar, zodat de browser van een terugkerende bezoeker ze niet opnieuw downloadt. Foto's van voertuigen worden geleverd via een picture element dat AVIF, WebP en JPEG in meerdere breedtes aanbiedt, zodat elke browser het lichtste formaat neemt dat hij ondersteunt, op het formaat dat hij echt nodig heeft, en de hoofdafbeelding van de pagina wordt met hoge prioriteit opgevraagd. De twee lettertypen, Inter en Space Grotesk, komen van de site zelf en worden vooraf geladen in plaats van bij een externe letterdienst te worden opgehaald.",
+                            "De site levert ook een web app manifest en een service worker mee, zodat hij als een app op een telefoon kan worden geïnstalleerd, met een eigen icoon en themakleur."
+                        ]
+                    },
+                    {
+                        "heading": "Ontwerp: één merk, licht en donker",
+                        "paragraphs": [
+                            "De homepage opent met een grote foto van een auto, een zoekvak met een filterknop en een korte belofte: mobiliteit opnieuw gedefinieerd. Daarna volgen de redenen om voor Vicron Lopez te kiezen, het uitgelichte wagenpark met de dagprijs op elke kaart, de vier diensten (verhuur, bezorging, onderhoud en verzekering), reviews van klanten, de geaccepteerde betaalmethoden en een afsluitende uitnodiging om contact op te nemen met het team.",
+                            "Een schakelaar in de header wisselt tussen een licht en een donker thema, en beide houden hetzelfde premium gevoel: diepe marineblauwe vlakken in donkere modus, een krachtig blauw accent en fotografie die het verkoopwerk doet. De taalkeuze en het telefoonnummer blijven op elke pagina in de header staan, zodat bellen of van taal wisselen op een telefoon altijd één tik verwijderd is."
+                        ],
+                        "image": "https://cdn.hlorenzoz.com/hlorenzoz.com/portfolio/vicronlopez/vicronlopez-home-light.webp",
+                        "imageAlt": "Homepage van Vicron Lopez in lichte modus met het zoekvak voor voertuigen en de uitgelichte auto"
+                    },
+                    {
+                        "heading": "Een doorzoekbaar wagenpark en voertuigpagina's die alles beantwoorden",
+                        "paragraphs": [
+                            "De voorraadpagina toont elk voertuig met bouwjaar, merk, model en dagprijs, samen met een live zoekfunctie en snelle filters op type, prijs en categorie. Op 25 november 2026 telde het wagenpark drie auto's: een Porsche 992 GT3 uit 2024 en een Mercedes AMG GTS uit 2015 voor 900 euro per dag, en een Fiat 500 cabrio uit 1969 voor 150 euro per dag. De catalogus groeit mee met het bedrijf zonder dat de opmaak verandert.",
+                            "Elk voertuig heeft een eigen pagina die elke vraag voor de boeking beantwoordt: de dagprijs, de belangrijkste specificaties (acceleratie, aandrijving, zitplaatsen en brandstof), wat inbegrepen is en de voorwaarden. De pagina van de Porsche vermeldt bijvoorbeeld dat de prijs inclusief btw is, stelt een limiet van 200 km per dag, bevat een allriskverzekering en een professionele schoonmaak na de huur, en legt de tankservice uit, waarbij de klant alleen de ontbrekende brandstof tegen marktprijs betaalt. Ook staan de geaccepteerde betaalmethoden erop: Visa, Mastercard, overboeking via SEPA en contant.",
+                            "De pagina sluit af met een datumkiezer voor ophalen en terugbrengen en twee manieren om te boeken: per mail of via WhatsApp. De WhatsApp knop opent een gesprek met het bericht al uitgeschreven, inclusief het voertuig, de dagprijs, de gekozen data en het adres van de pagina, zodat het bedrijf een volledige aanvraag ontvangt en de klant die niet hoeft te typen."
+                        ],
+                        "image": "https://cdn.hlorenzoz.com/hlorenzoz.com/portfolio/vicronlopez/vicronlopez-vehicle-detail.webp",
+                        "imageAlt": "Voertuigpagina van de Porsche 992 GT3 met de dagprijs, specificaties, wat inbegrepen is en de boekingsopties"
+                    },
+                    {
+                        "heading": "Lokale aanwezigheid: bewijs dat het bedrijf is waar het zegt",
+                        "paragraphs": [
+                            "Voor een lokaal bedrijf moet de website ook bewijzen dat het bedrijf bestaat waar het zegt te bestaan. Elke pagina eindigt met hetzelfde blok: een kantoor in Ourense, het telefoonnummer, openingstijden van maandag tot en met zaterdag, van 9.00 tot 19.00 uur, en een vermelding dat het bedrijf een vergunning heeft van de gemeente Ourense. De contactpagina voegt een contactformulier, het mailadres en een kaart met routebeschrijving toe.",
+                            "De pagina over het bedrijf vertelt het verhaal, de missie, de waarden (uitmuntendheid, transparantie en de klant op de eerste plaats), een tijdlijn en de mensen die het bedrijf leiden. Bij een huur waarbij de klant wegrijdt in een dure auto, hoort die context bij de beslissing."
+                        ],
+                        "image": "https://cdn.hlorenzoz.com/hlorenzoz.com/portfolio/vicronlopez/vicronlopez-contact.webp",
+                        "imageAlt": "Contactpagina van Vicron Lopez met adres, telefoon, openingstijden, een contactformulier en een kaart van Ourense"
+                    },
+                    {
+                        "heading": "Tweetalige SEO en gestructureerde data",
+                        "paragraphs": [
+                            "Spaans en Engels zijn geen twee kopieën onder hetzelfde adres. Elke pagina heeft in elke taal een eigen URL, ook vertaald (vehiculos en vehicles, contacto en contact), en elke pagina geeft haar canonieke adres en haar tegenhanger in de andere taal op via hreflang, met Engels als standaard voor elke andere taal. De root van het domein stuurt bezoekers naar de Spaanse versie. De XML sitemap noemt de 23 URL's van beide talen met hun alternatieven, en een HTML sitemap geeft bezoekers en crawlers een pad naar elke pagina.",
+                            "We lazen de gestructureerde data op de live pagina's op 25 november 2026. De homepage beschrijft het bedrijf als een AutoRental met een adres in Ourense, coördinaten, openingstijden, telefoon, mailadres, geaccepteerde valuta en een contactpunt dat Spaans en Engels spreekt, samen met een entiteit WebSite. Elke voertuigpagina beschrijft de auto als een Car met merk, model en modeljaar, en een Offer met de prijs in euro per dag. De pagina's voor de voorraad, over het bedrijf en voor contact zijn getypeerd als CollectionPage, AboutPage en ContactPage, en elke onderliggende pagina bevat een BreadcrumbList.",
+                            "Tags voor Open Graph en Twitter cards geven elke gedeelde link een titel, een beschrijving en een afbeelding van 1200 bij 630, en dat telt wanneer de link naar een auto in een chat wordt gestuurd voordat iemand beslist."
+                        ],
+                        "image": "https://cdn.hlorenzoz.com/hlorenzoz.com/portfolio/vicronlopez/vicronlopez-sitemap.webp",
+                        "imageAlt": "HTML sitemap van Vicron Lopez met de hoofdpagina's, de voertuigen en de juridische pagina's"
+                    },
+                    {
+                        "heading": "Privacy en toestemming",
+                        "paragraphs": [
+                            "Met het cookiepaneel kan elke bezoeker analytische en marketingcookies apart accepteren of weigeren, terwijl essentiële cookies aan blijven omdat de site ze nodig heeft om te werken, en één knop weigert alles wat niet essentieel is. Het privacybeleid en de servicevoorwaarden staan ernaast in de footer van elke pagina.",
+                            "In de HTML die een nieuwe bezoeker ontvangt, die we op 25 november 2026 controleerden, wordt geen analysescript geladen. Toestemming is een echte keuze, geen banner waarvan accepteren de enige optie is."
+                        ],
+                        "image": "https://cdn.hlorenzoz.com/hlorenzoz.com/portfolio/vicronlopez/vicronlopez-cookies.webp",
+                        "imageAlt": "Pagina met instellingen voor cookies en aparte schakelaars voor essentiële, analytische en marketingcookies"
+                    },
+                    {
+                        "heading": "Prestaties, gemeten en uitgelegd",
+                        "paragraphs": [
+                            "We maten de homepage met Lighthouse op 25 november 2026, op mobiel, in labomstandigheden en in één run op het rootadres van het domein. Hij scoorde 64 voor Prestaties, 97 voor Toegankelijkheid, 81 voor Praktische tips en 100 voor SEO. Largest Contentful Paint was 5,1 s, Cumulative Layout Shift 0,002 en Total Blocking Time 0 ms.",
+                            "Eerlijk gelezen zeggen die cijfers twee dingen. Zodra de pagina begint te renderen, is hij stabiel en reageert hij snel: vrijwel geen verschuiving in de opmaak en geen geblokkeerde tijd op de main thread. De kosten zitten in de eerste weergave. Lighthouse schat dat ongeveer 780 ms verloren gaat aan de redirect van de root van het domein naar de Spaanse homepage, markeert de hoofdstylesheet als blokkerend voor de weergave en wijst op de responstijd van het document. De aftrek bij Praktische tips komt van waarschuwingen over verouderde functies, veroorzaakt door het script voor botbescherming dat Cloudflare toevoegt, niet door de eigen code van de site, en de toegankelijkheidsaudit markeerde het kleurcontrast van een deel van de tekst.",
+                            "Dit zijn labcijfers onder gesimuleerde mobiele omstandigheden, en ze verschillen per run. Ze zijn een momentopname van één dag, geen belofte, en ze laten duidelijk zien waar de volgende winst zit, en dat is precies de reden om te meten."
+                        ]
+                    },
+                    {
+                        "heading": "Wat het betekent voor een verhuurbedrijf",
+                        "paragraphs": [
+                            "Voor een bedrijf dat dure voertuigen verhuurt, neemt elk van deze keuzes één reden tot aarzelen weg. De prijs, de voorwaarden en de betaalmethoden zijn zichtbaar voor het eerste bericht, dus de aanvragen die binnenkomen zijn beter geïnformeerd. Boeken via WhatsApp of mail gebruikt kanalen die de klant al heeft, zonder account aan te maken. Het adres, de openingstijden en de gemeentelijke vergunning beantwoorden de vraag wie er achter de sleutels zit. En dankzij de tweetalige structuur bereikt hetzelfde wagenpark inwoners in het Spaans en bezoekers in het Engels, met elke taal op een eigen indexeerbare URL.",
+                            "Niets hiervan garandeert een positie in Google, en die beloven we ook niet. Wat het wel doet, is zoekmachines en bezoekers volledige, consistente en controleerbare informatie over een lokaal bedrijf geven, en daarop wordt al het andere gebouwd."
+                        ],
+                        "image": "https://cdn.hlorenzoz.com/hlorenzoz.com/portfolio/vicronlopez/vicronlopez-inventory-light.webp",
+                        "imageAlt": "Voorraadpagina van Vicron Lopez met zoekfunctie, filters en drie voertuigkaarten met hun dagprijzen"
+                    },
+                    {
+                        "heading": "Waar je het kunt zien",
+                        "paragraphs": [
+                            "De case study van Vicron Lopez in ons portfolio loopt het ontwerp in licht en donker door, het wagenpark, de voertuigpagina, de lokale aanwezigheid, het verhaal van het bedrijf, de juridische pagina's en de tweetalige sitemap, met een schermafbeelding van elk onderdeel. De live site is één klik verwijderd van deze pagina."
+                        ]
+                    }
+                ]
+            },
+            "masajes-orisha-case-study": {
+                "title": "Hoe we de website van Masajes Orisha bouwden: SvelteKit, twee talen en boeken in vier stappen",
+                "description": "Case study van de website van Masajes Orisha in Costa Rica: SvelteKit op Cloudflare, Spaans en Engels, een behandelkaart, boeken in vier stappen en een journal.",
+                "paragraphs": [
+                    "Gisteren voegden we Masajes Orisha toe aan ons portfolio. Vandaag vertellen we het hele verhaal: hoe we de website bouwden van een studio voor therapeutische massage in San Rafael de Heredia, Costa Rica, welke keuzes hem vormden, welke technologie hem draagt en hoe hij scoort.",
+                    "De korte versie: een tweetalige site in het Spaans en het Engels, gebouwd met SvelteKit en geserveerd via Cloudflare, waar een bezoeker leest over de studio en de therapeut, een behandeling kiest uit een korte kaart, ziet wat die kost en in vier stappen een tijdslot aanvraagt, zonder te bellen en zonder een account aan te maken.",
+                    "Hieronder lopen we het bedrijf, het ontwerp, de behandelkaart, de boekingsflow, het journal, de technologie, de metingen en de werkwijze erachter door, onderdeel voor onderdeel."
+                ],
+                "sections": [
+                    {
+                        "heading": "De studio: een agenda die op vertrouwen draait",
+                        "paragraphs": [
+                            "Masajes Orisha is een studio voor therapeutische massage onder leiding van de oprichter en therapeut, Sergio Zaldívar Guillén. De studio biedt ontspanningsmassage, diepe weefselmassage, hotstonemassage en aromatherapiemassage, in sessies van 60 tot 90 minuten die manuele techniek combineren met natuurlijke oliën, één cliënt tegelijk, in een privéstudio. De studio is open van maandag tot en met zaterdag, van 10.00 tot 21.00 uur. De naam is geïnspireerd op de Orisha's van de Yoruba, opgevat als een filosofie van respect voor het lichaam.",
+                            "Voor een studio als deze is de agenda het bedrijf, en elke boeking begint met een onbekende die besluit een therapeut te vertrouwen die hij nooit heeft ontmoet. De site moest de vragen beantwoorden die die persoon anders telefonisch zou stellen: wie de therapeut is, wat elke behandeling inhoudt, hoe lang die duurt, wat die kost en wanneer er een tijdslot vrij is."
+                        ]
+                    },
+                    {
+                        "heading": "Ontwerp: redactionele rust, standaard donker",
+                        "paragraphs": [
+                            "We wilden dat de site leest als een privéstudio met een eigen visie, niet als zoveelste spatemplate. Koppen met schreef, een warm zandkleurig palet en ruime witruimte zetten een rustig ritme neer, en de homepage vertelt de methode in de eigen woorden van de therapeut voordat er ook maar één prijs verschijnt: geen starre protocollen, druk en tempo afgestemd op elke persoon, en rust als iets waarvoor je traint.",
+                            "De site opent in een donker thema, het thema dat het best past bij de sfeer van de studio, en biedt een licht thema voor wie dat liever heeft. De keuze wordt in de browser onthouden en toegepast voordat de pagina voor het eerst getekend wordt, zodat de pagina tijdens het laden nooit van het ene thema naar het andere flitst. Foto's van de studio en een portret van de therapeut geven de bezoeker een gezicht en een plek voor het eerste bericht."
+                        ],
+                        "image": "https://cdn.hlorenzoz.com/hlorenzoz.com/portfolio/masajesorisha/0-hero-light.webp",
+                        "imageAlt": "Herosectie van Masajes Orisha in het lichte thema, met koppen met schreef en een warm zandkleurig palet"
+                    },
+                    {
+                        "heading": "Twee talen, en Spaans zoals Costa Rica het spreekt",
+                        "paragraphs": [
+                            "De studio ontvangt lokale cliënten en bezoekers uit het buitenland, dus de hele site bestaat in het Spaans en in het Engels: homepage, behandelingen, elke behandelpagina, het journal, de boekingspagina en de juridische pagina's. Een schakelaar in de header wisselt tussen de talen, en het rootadres leest de taal van de browser en stuurt elke bezoeker naar de versie die bij hem past, met Spaans als standaard. De homepage geeft beide versies aan zoekmachines op met hreflang annotaties.",
+                            "De Spaanse boekingspagina spreekt in het voseo van Costa Rica, zoals een lokale therapeut een cliënt zou aanspreken. Het is een klein detail, maar een lokale cliënt merkt het meteen: de site klinkt als de studio, niet als een vertaling."
+                        ]
+                    },
+                    {
+                        "heading": "Een korte behandelkaart, met één tik gefilterd",
+                        "paragraphs": [
+                            "De kaart bevat vier kenmerkende behandelingen, verdeeld over twee families: Calm & Wellness en Therapeutic & Recovery. Een rij filters toont ze allemaal of één familie met één tik, en elke kaart vermeldt de focus, de duur en de vanafprijs. De lijst is bewust kort: minder keuze maakt een snellere beslissing.",
+                            "Elke behandeling heeft een eigen pagina die het ritueel van de sessie in vier momenten beschrijft, van het eerste gesprek over spanningen en voorkeuren voor druk tot een rustige afsluiting met kruidenthee, met een knop die de boeking opent met die behandeling al ingesteld."
+                        ],
+                        "image": "https://cdn.hlorenzoz.com/hlorenzoz.com/portfolio/masajesorisha/1-treatments-light.webp",
+                        "imageAlt": "Behandelkaart van Masajes Orisha met filters en vier kaarten met focus, duur en vanafprijs"
+                    },
+                    {
+                        "heading": "Een boekingsaanvraag die zelf de prijs berekent",
+                        "paragraphs": [
+                            "De boekingspagina werkt in vier genummerde stappen: kies de behandeling, de duur, de dag en de tijd. Elke duur toont de prijs, de dagen en tijden verschijnen als knoppen, en een indicatie van de sessie wordt bijgewerkt terwijl de cliënt kiest. Een naam, een mailadres en een optionele notitie over voorkeuren of te behandelen zones maken de aanvraag compleet.",
+                            "Er is geen account en geen betaalomgeving. De aanvraag komt bij de studio binnen, en de therapeut bevestigt de beschikbaarheid per mail. Het formulier is een standaardformulier dat op de server wordt verwerkt en tegen bots is beschermd met Cloudflare Turnstile, zodat de studio echte aanvragen ontvangt in plaats van spam. Het privacybeleid vermeldt precies welke gegevens de studio verzamelt om een boeking af te handelen en waarom."
+                        ],
+                        "image": "https://cdn.hlorenzoz.com/hlorenzoz.com/portfolio/masajesorisha/3-contact-light.webp",
+                        "imageAlt": "Boekingspagina van Masajes Orisha met de vier stappen: behandeling, duur, dag en tijd, en de lopende prijsindicatie"
+                    },
+                    {
+                        "heading": "Een journal voor de vragen waarop mensen zoeken",
+                        "paragraphs": [
+                            "De site heeft een journal met artikelen over manuele therapie, de fysiologie van rust en spierherstel, gepubliceerd in beide talen met datum en leestijd: waarom rust iets is waarvoor je traint, hoe diepe manuele therapie werkt op de pijn in nek en schouders van kantoorwerk, en wat de warmte van vulkanische stenen doet voor spierherstel.",
+                            "Dat zijn de vragen die potentiële cliënten in een zoekmachine typen voordat ze een therapeut zoeken. Ze beantwoorden met de eigen stem van de studio laat expertise zien en geeft de site inhoud die echt over het onderwerp gaat."
+                        ],
+                        "image": "https://cdn.hlorenzoz.com/hlorenzoz.com/portfolio/masajesorisha/2-journal-light.webp",
+                        "imageAlt": "Journalpagina van Masajes Orisha met artikelen over manuele therapie, rust en spierherstel"
+                    },
+                    {
+                        "heading": "Waarom SvelteKit op Cloudflare",
+                        "paragraphs": [
+                            "De site is gebouwd met SvelteKit, zoals de gecompileerde bestanden en de responseheaders laten zien, en wordt geserveerd via het netwerk van Cloudflare. SvelteKit stuurt elke pagina als complete HTML, zodat de inhoud leesbaar is voordat er een script draait, en voegt daarna de interactieve delen toe: de behandelfilters, de themaschakelaar en de boekingsstappen met hun live prijsindicatie.",
+                            "Draaien op de server waar dat ertoe doet, dekt ook de twee taken die een puur statische site niet alleen kan: de taal kiezen op basis van de voorkeur van de browser bij het eerste bezoek, en de boekingsaanvraag ontvangen. De stylesheet heeft een bestandsnaam met versie en wordt een jaar door browsers bewaard, zodat terugkerende bezoekers hem niet opnieuw downloaden."
+                        ]
+                    },
+                    {
+                        "heading": "Beelden die zich aan elk scherm aanpassen",
+                        "paragraphs": [
+                            "Een massagestudio verkoopt een plek en een gevoel, dus de site leunt op fotografie: de studio, de therapeut en elke behandeling. Elke foto wordt aangeboden in AVIF en WebP, in breedtes van 320 tot 1024 pixels, met formaathints waarmee de browser de lichtste versie kiest die op het scherm past. Elke afbeelding geeft haar breedte en hoogte op, zodat de pagina niet verspringt terwijl de foto's binnenkomen.",
+                            "De hoofdafbeelding van de homepage laadt als eerste en met hoge prioriteit; de andere vijftien foto's laden pas als de bezoeker ernaartoe scrollt, en vervagen zachtjes in beeld zodra ze klaar zijn."
+                        ]
+                    },
+                    {
+                        "heading": "Gemeten resultaten",
+                        "paragraphs": [
+                            "We maten de homepage met Lighthouse (mobiel, lab) op 25 november 2026. Hij scoorde 82 voor Prestaties en 100 voor Toegankelijkheid, 100 voor Praktische tips en 100 voor SEO. Dezelfde run registreerde een Largest Contentful Paint van 3,5 s, een First Contentful Paint van 2,3 s, een Total Blocking Time van 50 ms en een Cumulative Layout Shift van 0,0003, met in totaal 258 KiB overgedragen.",
+                            "De cijfers laten zien waar de site het sterkst is: een lichte pagina, bijna geen blokkerend script en een opmaak die stil blijft staan tijdens het laden. De hoofdweergave heeft de meeste ruimte voor verbetering, en hetzelfde rapport wijst de taalredirect bij het eerste bezoek aan als een van de stappen die eraan voorafgaan."
+                        ],
+                        "image": "https://cdn.hlorenzoz.com/hlorenzoz.com/portfolio/masajesorisha/0-home-light.webp",
+                        "imageAlt": "Volledige homepage van Masajes Orisha in het lichte thema, van de herosectie tot de footer"
+                    },
+                    {
+                        "heading": "Gestructureerde data voor een lokale studio",
+                        "paragraphs": [
+                            "De homepage bevat markup in JSON-LD in elke taal. Zoals we die op 25 november 2026 lazen, beschrijft die het bedrijf als een DaySpa, een type lokaal bedrijf van schema.org, met de naam, een beschrijving in de taal van de pagina, het telefoonnummer, de locatie in San Rafael de Heredia, in de provincie Heredia, Costa Rica, en de openingstijden van maandag tot en met zaterdag, van 10.00 tot 21.00 uur.",
+                            "Deze markup geeft zoekmachines expliciete feiten over wie het bedrijf is, waar het zit en wanneer het open is, dezelfde gegevens die een cliënt zoekt voordat hij boekt. Het helpt zoekmachines het bedrijf te begrijpen; het garandeert geen bepaald resultaat."
+                        ]
+                    },
+                    {
+                        "heading": "Toegankelijkheid en privacy",
+                        "paragraphs": [
+                            "De 100 voor Toegankelijkheid in diezelfde run van Lighthouse komt van details zoals beschrijvende tekst bij de foto's, ook bij het portret van de therapeut, een correcte taaldeclaratie op elke pagina en duidelijke namen op de bedieningselementen.",
+                            "Wat privacy betreft, laden de pagina's die we bekeken geen scripts voor analyse of advertenties. De themavoorkeur blijft in de eigen browser van de bezoeker, en de enige persoonsgegevens die de site vraagt, zijn de gegevens die nodig zijn om op een boeking te reageren, zoals het privacybeleid uitlegt."
+                        ]
+                    },
+                    {
+                        "heading": "Wat dit betekent voor een studio of een praktijk",
+                        "paragraphs": [
+                            "Voor een therapeut die alleen werkt, is elk telefoontje tijdens een sessie een telefoontje dat onbeantwoord blijft. Een site die de gebruikelijke vragen beantwoordt, de prijzen toont en de aanvraag verzamelt met behandeling, duur, dag en tijd al gekozen, laat de therapeut na de sessie antwoorden, per mail, met alle details bij de hand.",
+                            "Twee talen openen de deur voor cliënten uit het buitenland, het journal geeft de site inhoud waar mensen echt op zoeken, en het rustige ontwerp doet een deel van het werk om vertrouwen op te bouwen voor het eerste bezoek."
+                        ]
+                    },
+                    {
+                        "heading": "Bekijk de case study en de live site",
+                        "paragraphs": [
+                            "De case study van Masajes Orisha in ons portfolio loopt het ontwerp in beide thema's door, de behandelkaart, de boekingsflow en het journal, met schermafbeeldingen van elk onderdeel. De live site vermeldt ons in de footer. Beide staan hieronder gelinkt."
+                        ]
+                    }
+                ]
+            },
+            "gerp-dj-case-study": {
+                "title": "Hoe we de website van GERP DJ bouwden: Astro, twee talen en boekingen via WhatsApp",
+                "description": "Case study van de website van GERP DJ in Ourense: Astro op Cloudflare, Spaans en Galicisch, datumaanvragen via WhatsApp, 99 op PageSpeed en geldige gestructureerde data.",
+                "paragraphs": [
+                    "Gisteren voegden we GERP DJ toe aan ons portfolio. Vandaag kijken we onder de motorkap: dit is het volledige verhaal van hoe we de website bouwden van een DJ voor feesten, bruiloften en evenementen uit Ourense, wat we kozen, waarom we dat kozen en wat de metingen zeggen.",
+                    "De korte versie: een site in het Spaans en het Galicisch, gebouwd met Astro en geleverd via Cloudflare, die de drie vragen beantwoordt die elke klant stelt voordat hij een DJ boekt (is de datum vrij, hoe ziet een avond eruit, wie staat er achter de draaitafels) en de eerste vraag omzet in een WhatsApp bericht dat klaar is om te verzenden. Op 24 november 2026 gaf PageSpeed Insights op mobiel de homepage 99 voor Prestaties en 100 voor Toegankelijkheid, Praktische tips en SEO, en de test voor rich results van Google vond er geldige gestructureerde data op.",
+                    "Hieronder lopen we het bedrijf, het ontwerp, de boekingsflow, de technologie, de resultaten en de werkwijze erachter door, onderdeel voor onderdeel."
+                ],
+                "sections": [
+                    {
+                        "heading": "Het bedrijf: één vraag waarmee elke boeking begint",
+                        "paragraphs": [
+                            "GERP DJ draait op dorpsfeesten, bruiloften, privéfeesten en bedrijfsevenementen in heel Galicië, vanuit een thuisbasis in Ourense. Volgens de eigen bio op de site draait GERP DJ sinds 2023 en telt de DJ meer dan 15 optredens, altijd met eigen apparatuur: een DJ booth met de naam GERP DJ, een volledige geluidsinstallatie, ledverlichting en lichteffecten, een microfoon voor opdrachten en aankondigingen, en een controller van Denon DJ.",
+                            "Boekingen lopen via WhatsApp Business, van maandag tot en met vrijdag van 10.00 tot 19.00 uur, met een antwoord binnen 48 werkuren. Dat gegeven bepaalde het hele project. Een DJ heeft geen winkel of klantaccount nodig; hij heeft een bezoeker nodig die vraagt \"ben je op die datum vrij?\" met genoeg details om meteen te antwoorden. Elke pagina van de site is ontworpen om naar dat bericht te leiden."
+                        ]
+                    },
+                    {
+                        "heading": "Spaans en Galicisch vanaf de eerste regel code",
+                        "paragraphs": [
+                            "Het publiek woont in Galicië, dus de site spreekt beide talen van de regio. Spaans wordt op de root geserveerd en Galicisch onder een eigen map, met een taalkeuze in de header en elke pagina in beide talen beschikbaar: homepage, boeking, galerij, bio, privacy en cookies. Elke pagina geeft haar taal op in de HTML en linkt naar haar tegenhanger met hreflang annotaties, en de sitemap noemt alle twaalf adressen met hun alternatieven, zodat zoekmachines elke bezoeker de versie in zijn taal kunnen tonen.",
+                            "De vertaling ging verder dan de zichtbare tekst. De paginatitels, de metabeschrijvingen, de tags voor delen op sociale media (met Spaans als hoofdtaal en Galicisch als alternatief) en de persmap bestaan allemaal in beide talen."
+                        ]
+                    },
+                    {
+                        "heading": "Ontwerp: video voorop, in licht of donker",
+                        "paragraphs": [
+                            "Een DJ verkoopt een sfeer, en een sfeer laat je makkelijker zien dan dat je hem beschrijft. De homepage opent daarom met een achtergrondvideo zonder geluid van een echt optreden, met een zichtbare knop om hem te pauzeren. Daaronder volgen de vier diensten, elk met een eigen snelkoppeling om een offerte aan te vragen, een sectie met fragmenten van de DJ in actie, en een lijst van de apparatuur die op de avond meekomt.",
+                            "De site biedt een licht en een donker thema via een schakelaar in de header. De beeldtaal gebruikt doorschijnende glazen panelen over de beelden, zodat de foto's en video's van de optredens de hoofdrol houden."
+                        ],
+                        "image": "https://cdn.hlorenzoz.com/hlorenzoz.com/portfolio/gerp-dj/cover.webp",
+                        "imageAlt": "Homepage van GERP DJ met de achtergrondvideo van een optreden en het paneel voor datumaanvragen"
+                    },
+                    {
+                        "heading": "Een datumaanvraag die in WhatsApp belandt",
+                        "paragraphs": [
+                            "Direct onder de kop op de homepage staat een kort paneel met de kernvraag als titel: heb je een datum? Het vraagt drie gegevens (de datum, de plaats en het soort evenement, te kiezen uit feest, bruiloft, privéfeest, bedrijf of anders) en opent bij verzenden WhatsApp met de aanvraag al uitgeschreven. De bezoeker hoeft alleen nog op verzenden te drukken.",
+                            "De boekingspagina biedt een uitgebreidere versie van dezelfde aanvraag, met daarbij een naam, de locatie en een vrij bericht, naast zes veelgestelde vragen: hoe je boekt, wat een optreden gewoonlijk kost, waar de DJ draait, welke evenementen, of de apparatuur inbegrepen is en wanneer je contact opneemt. Door de prijsvraag open te beantwoorden, met een gebruikelijke bandbreedte, bespaar je beide kanten een uitwisseling van berichten.",
+                            "Er zit geen serverformulier tussen, geen database die aanvragen opslaat en geen account om aan te maken. Die keuze houdt de flow zo kort mogelijk: de aanvraag reist in het eigen WhatsApp bericht van de bezoeker, en het privacybeleid van de site legt uit welke gegevens worden verwerkt als iemand op die manier schrijft."
+                        ],
+                        "image": "https://cdn.hlorenzoz.com/hlorenzoz.com/portfolio/gerp-dj/screencapture-home.webp",
+                        "imageAlt": "Volledige homepage van GERP DJ met de diensten, de apparatuur en de datumaanvraag via WhatsApp"
+                    },
+                    {
+                        "heading": "Een galerij met echte optredens",
+                        "paragraphs": [
+                            "De galerij bevat tien video's met onderschrift, opgenomen tijdens hun optredens en met hun eigen apparatuur: terrassen, kroegen, zalen, dorpsfeesten en de opbouw van geluid en licht. Voor een stel dat een bruiloft plant of een comité dat een dorpsfeest organiseert, overtuigt de verlichte DJ booth op een plein meer dan welke beschrijving ook.",
+                            "De video's worden vanaf de eigen hosting van het bedrijf geserveerd, niet via een externe speler, en dat betekent geen cookies van derden en geen vreemde branding rond de fragmenten."
+                        ],
+                        "image": "https://cdn.hlorenzoz.com/hlorenzoz.com/portfolio/gerp-dj/screencapture-gallery.webp",
+                        "imageAlt": "Galerijpagina van GERP DJ met een raster van video's met onderschrift van optredens en opbouw"
+                    },
+                    {
+                        "heading": "Een bio met persmap",
+                        "paragraphs": [
+                            "De biopagina vertelt wie er achter de draaitafels staat, met foto's en de kern: thuisbasis, apparatuur en het werkgebied. Er staat ook een persmap om als PDF te downloaden (A4, zes pagina's, met bio, diensten, apparatuur en contact), in een Spaanse en een Galicische editie, plus foto's in hoge resolutie voor feestcomités en lokale media.",
+                            "Een persmap die klaarstaat om te downloaden, beantwoordt de verzoeken die organisatoren en journalisten meestal sturen, nog voordat ze die hoeven te doen."
+                        ],
+                        "image": "https://cdn.hlorenzoz.com/hlorenzoz.com/portfolio/gerp-dj/screencapture-bio-v2.webp",
+                        "imageAlt": "Biopagina van GERP DJ met foto's van de DJ en de knop om de persmap te downloaden"
+                    },
+                    {
+                        "heading": "Waarom Astro en Cloudflare",
+                        "paragraphs": [
+                            "De site is gebouwd met Astro, zoals de gecompileerde bestanden laten zien. Astro zet elke pagina vooraf om in afgewerkte HTML en stuurt alleen JavaScript waar iets op de pagina het nodig heeft, en dat past bij een site als deze: vooral inhoud, plus een paar kleine interactieve onderdelen zoals de themaschakelaar, de videobediening, het mobiele menu en de aanvraagformulieren.",
+                            "De levering loopt via het netwerk van Cloudflare. Toen we de homepage op 25 november 2026 controleerden, werd de HTML vanuit de cache van Cloudflare beantwoord, zodat een bezoeker in Ourense of waar dan ook de pagina van een locatie in de buurt ontvangt, in plaats van te wachten tot een verre server hem opbouwt."
+                        ]
+                    },
+                    {
+                        "heading": "Beelden en video zonder het gewicht",
+                        "paragraphs": [
+                            "Foto's en video's zijn het zwaarste deel van elke website voor evenementen, dus die kregen de meeste aandacht. Elke foto wordt gepubliceerd in AVIF en WebP, in meerdere breedtes van 320 tot 1024 pixels, binnen een picture element waarmee de browser de lichtste versie kiest die op het scherm past. Eén afbeelding wordt met hoge prioriteit opgevraagd, en de vijf afbeeldingen verderop op de pagina laden pas als de bezoeker ernaartoe scrollt.",
+                            "De tweede video op de homepage en de tien fragmenten in de galerij worden niet vooraf gedownload: elk toont een stilstaand beeld tot het nodig is. Mediabestanden worden geserveerd vanaf een apart subdomein van het bedrijf, los van de pagina's zelf."
+                        ]
+                    },
+                    {
+                        "heading": "Prestatieresultaten",
+                        "paragraphs": [
+                            "Gemeten met PageSpeed Insights op mobiel op 24 november 2026 scoorde de homepage 99 voor Prestaties en 100 voor Toegankelijkheid, 100 voor Praktische tips en 100 voor SEO. De case study in het portfolio toont de schermafbeelding van dat rapport, en iedereen kan de test van daaruit opnieuw draaien.",
+                            "Snelheid is hier geen ijdel getal. Een bezoeker die via een zoekopdracht of een WhatsApp link binnenkomt en de pagina meteen ziet reageren, blijft eerder, en de bezoeker die blijft, is degene die om een datum vraagt."
+                        ],
+                        "image": "https://cdn.hlorenzoz.com/hlorenzoz.com/portfolio/gerp-dj/gerp-dj-pagespeed-insights.webp",
+                        "imageAlt": "Mobiel rapport van PageSpeed Insights voor de homepage van GERP DJ met 99 voor Prestaties en 100 voor Toegankelijkheid, Praktische tips en SEO"
+                    },
+                    {
+                        "heading": "Gestructureerde data die Google kan lezen",
+                        "paragraphs": [
+                            "Op 24 november 2026 vond de test voor rich results van Google drie geldige items op de homepage: Breadcrumbs, Local business en Organisation, waardoor de pagina in aanmerking komt voor rich results in Google Zoeken. In aanmerking komen is geen garantie dat Google ze toont, maar het neemt een technisch obstakel weg.",
+                            "De JSON-LD op de live homepage, zoals we die op 25 november 2026 lazen, beschrijft het bedrijf als een EntertainmentBusiness met een adres in de provincie Ourense, het telefoonnummer, de gebieden die het bedient (Ourense en Galicië), een contactpunt voor reserveringen met de WhatsApp tijden, de links naar YouTube, TikTok en het WhatsApp kanaal, en een catalogus van de vier diensten. Elke onderliggende pagina voegt daar een eigen type aan toe: ContactPage en FAQPage op de boekingspagina, CollectionPage op de galerij, AboutPage op de bio, altijd met breadcrumbs."
+                        ],
+                        "image": "https://cdn.hlorenzoz.com/hlorenzoz.com/portfolio/gerp-dj/gerp-dj-structured-data-v2.webp",
+                        "imageAlt": "Test voor rich results van Google voor de homepage van GERP DJ met drie geldige items: Breadcrumbs, Local business en Organisation"
+                    },
+                    {
+                        "heading": "Toegankelijkheid tot in de details",
+                        "paragraphs": [
+                            "De 100 voor Toegankelijkheid komt van kleine beslissingen. De achtergrondvideo speelt zonder geluid en heeft een eigen pauzeknop, met een label voor schermlezers. De themaschakelaar wordt aangekondigd als schakelaar met zijn huidige stand. Met een skiplink springen toetsenbordgebruikers direct naar de inhoud, de icoonknoppen zijn minstens 44 pixels breed zodat ze makkelijk aan te tikken zijn, en de foto's hebben tekst die beschrijft wat ze tonen."
+                        ]
+                    },
+                    {
+                        "heading": "Geen tracking, geen cookiebanner",
+                        "paragraphs": [
+                            "Het cookiebeleid vermeldt dat de site geen eigen cookies voor analyse, advertenties of personalisatie gebruikt en geen trackingtools laadt, en daarom toont hij geen toestemmingsbanner. De enige cookies die het noemt, zijn de technische die Cloudflare kan plaatsen om echte bezoeken van geautomatiseerd verkeer te onderscheiden. Bezoekers krijgen een schoner eerste beeld, en het bedrijf heeft minder persoonsgegevens om op te passen."
+                        ]
+                    },
+                    {
+                        "heading": "Klaar voor zoekmachines en AI assistenten",
+                        "paragraphs": [
+                            "Naast de sitemap publiceert de site een robots.txt die de crawlers van de belangrijkste zoekmachines en AI assistenten expliciet welkom heet en een paar interne paden buiten de crawl houdt, en een llms.txt bestand: een eenvoudige samenvatting van het bedrijf, de diensten, de contacttijden en de pagina's in beide talen, zo geschreven dat AI assistenten GERP DJ correct kunnen beschrijven als iemand naar een DJ in Ourense vraagt. Elke pagina heeft ook een canoniek adres en tags voor delen met een afbeelding die is voorbereid voor sociale netwerken en berichtenapps, met een eigen beschrijving."
+                        ]
+                    },
+                    {
+                        "heading": "Wat dit betekent voor een bedrijf in evenementen",
+                        "paragraphs": [
+                            "Voor een DJ, een band of elke andere dienst voor evenementen heeft de website één taak: een nieuwsgierige bezoeker omzetten in een concrete aanvraag. Hier kost de aanvraag drie velden en één tik, komt hij binnen via het kanaal dat het bedrijf al elke dag beantwoordt, en staan de datum, de plaats en het soort feest er al in.",
+                            "De rest van de site ondersteunt dat moment: video's die de sfeer laten zien, een bio en een persmap die vertrouwen opbouwen, antwoorden op de gebruikelijke vragen, twee talen voor de regio die het bedrijf bedient, en een snelle pagina met gestructureerde data die zoekmachines helpt begrijpen wat het bedrijf doet en waar."
+                        ]
+                    },
+                    {
+                        "heading": "Bekijk de case study en de live site",
+                        "paragraphs": [
+                            "De case study van GERP DJ in ons portfolio toont het ontwerp in beide thema's, de datumaanvraag, de galerij en de bio, samen met het rapport van PageSpeed Insights en de test voor rich results. De live site vermeldt ons in de footer. Beide staan hieronder gelinkt."
+                        ]
+                    }
+                ]
+            },
+            "lorenzoz-agency-launch": {
+                "title": "Lorenzoz Agency lanceert zijn website op Next.js 16",
+                "description": "Hoe we hlorenzoz.com in april 2026 bouwden en lanceerden: een tweetalige statische site op Next.js 16 en Tailwind CSS 4, getest bij elke push en geserveerd door Cloudflare.",
+                "paragraphs": [
+                    "Lorenzoz Agency heeft nu een eigen thuis op het web. Dit is de site waar een ondernemer ons voor het eerst ontmoet, ziet wat we bieden en een gratis consult van 15 minuten boekt, dus we bouwden hem volgens de standaard die we onze klanten beloven: snel op een telefoon, geschreven in twee talen, leesbaar voor zoekmachines en voor elke release gecontroleerd door geautomatiseerde tests.",
+                    "Dit artikel legt uit hoe de site in de eerste week van april 2026 werd gebouwd en gelanceerd: het framework, het ontwerp, de manier van publiceren, de tests die hem bewaken en wat we bij de lancering konden controleren. Elk resultaat hieronder komt uit een rapport of een testrun van die week, met de datum erbij."
+                ],
+                "sections": [
+                    {
+                        "heading": "Wat de site bij de lancering biedt",
+                        "paragraphs": [
+                            "De lanceringsversie zet onze dienst met spraak en AI voorop. De kop op de homepage belooft een bedrijf te laten groeien met AI die menselijk klinkt, en de tekst eronder legt het voordeel in gewone woorden uit: het bedrijf is 24/7 bereikbaar, ook buiten kantooruren en in het weekend, en de klanten krijgen meteen antwoord. Eén call to action nodigt de bezoeker uit een gratis consult van 15 minuten te boeken, en de navigatie omvat oplossingen, voordelen, prijzen, het portfolio en contact.",
+                            "De dienst staat ook op de pagina zelf. Een spraakassistent gebouwd met ElevenLabs zit in de hoek van elke pagina, waar een bezoeker een vraag kan typen of een gesprek kan starten en ermee kan praten. Het is de meest directe demonstratie die we konden geven van het product dat we verkopen: voordat een bezoeker iets boekt, hoort hij hoe een AI receptionist antwoordt.",
+                            "Rond de homepage bevat de lancering een portfolio met conceptprojecten voor een tandartspraktijk, een makelaar in luxevastgoed en een fitnessstudio, elk met een eigen detailpagina in het Engels en het Spaans, een digitaal visitekaartje, en het privacybeleid, het cookiebeleid en de algemene voorwaarden. De afbeelding bovenaan dit artikel is de homepage zoals die er bij de lancering uitzag."
+                        ]
+                    },
+                    {
+                        "heading": "Gebouwd op Next.js 16 en Tailwind CSS 4",
+                        "paragraphs": [
+                            "De site is een project in Next.js 16, het React framework, opgemaakt met Tailwind CSS 4. Bun installeert de afhankelijkheden en draait elk script, van de linter tot de tests, waardoor lokaal werk en de geautomatiseerde pipeline dezelfde commando's gebruiken.",
+                            "Next.js bouwt de hele site vooraf als statische export. Elke pagina wordt een afgewerkt HTML bestand in een uitvoermap, en er hoeft niets op een server te worden gegenereerd als een bezoeker binnenkomt. Een marketingsite verandert alleen als wij publiceren, niet als iemand hem opent, dus er is geen reden om voor elk verzoek een server te laten draaien: de bestanden liggen klaar, en het netwerk hoeft ze alleen af te leveren.",
+                            "De illustratie vat de stack bij de lancering samen: Next.js 16 en Tailwind CSS 4 voor de site, Cloudflare als het edgenetwerk dat hem host, GitHub Actions voor continue integratie, Vitest voor unittests en Playwright voor end to end tests in echte browsers."
+                        ],
+                        "image": "https://cdn.hlorenzoz.com/hlorenzoz.com/portfolio/me/tech-stack-visual.webp",
+                        "imageAlt": "Illustratie van de stack bij de lancering: Next.js 16, Tailwind CSS 4, Cloudflare, GitHub Actions, Vitest en Playwright"
+                    },
+                    {
+                        "heading": "Een glazen ontwerp dat op elk scherm overeind blijft",
+                        "paragraphs": [
+                            "De visuele identiteit is een ontwerp in glassmorphism: een donkere hero, een navigatiebalk van mat glas die boven de inhoud zweeft, doorschijnende kaarten en een fel merkblauw voor de acties die ertoe doen. Dezelfde tokens sturen elke pagina, zodat het portfolio, de juridische pagina's en het visitekaartje allemaal als één site lezen.",
+                            "De meeste bezoekers van een lokaal bedrijf komen binnen via een telefoon, dus de opmaak werd in de browser gecontroleerd op de formaten van een iPhone 14 Pro (393 bij 852 pixels), een Pixel 7 Pro (480 bij 1040), een iPhone 14 Pro Max (430 bij 932) en een iPad Air 5 (820 bij 1180). De schermafbeelding toont dezelfde hero op alle vier: de kop, de tekst en de boekingsknop passen zich aan de breedte van het scherm aan zonder te worden afgesneden of elkaar te overlappen.",
+                            "Op kleine schermen klapt het menu weg achter één knop, terwijl het logo en de taalkeuze bovenaan zichtbaar blijven, zodat wisselen tussen Engels en Spaans nooit meer dan één tik kost."
+                        ],
+                        "image": "https://cdn.hlorenzoz.com/hlorenzoz.com/portfolio/me/multiple-screens.webp",
+                        "imageAlt": "De homepage van Lorenzoz Agency bij de lancering op een iPhone 14 Pro, een Pixel 7 Pro, een iPhone 14 Pro Max en een iPad Air 5"
+                    },
+                    {
+                        "heading": "Twee talen vanaf dag één",
+                        "paragraphs": [
+                            "Elke pagina bestaat in het Engels en in het Spaans onder een eigen adres, met de taal als eerste deel van het pad. Vertalingen staan in één berichtenbestand per taal en worden geladen door een vertaalbibliotheek die voor Next.js is gemaakt, zodat een pagina één keer wordt geschreven en wordt gevuld met de tekst van de taal die de bezoeker koos.",
+                            "Beide versies zijn in de taal zelf geschreven, niet door een vertaalmachine gehaald. De geautomatiseerde tests openen de Engelse en de Spaanse versie van de homepage en van de detailpagina's van het portfolio, en controleren dat de taalkeuze de bezoeker naar dezelfde pagina in de andere taal brengt."
+                        ]
+                    },
+                    {
+                        "heading": "Gepubliceerd als statische bestanden op Cloudflare",
+                        "paragraphs": [
+                            "Omdat de build een map met gewone bestanden is, is publiceren een kopie: de laatste stap van de pipeline uploadt de statische export naar Cloudflare, dat hem serveert vanaf een netwerk dicht bij elke bezoeker. Afbeeldingen worden geleverd via het CDN van Cloudflare in plaats van vanuit de build van de site.",
+                            "In deze opzet kan weinig stukgaan. Er is geen serverproces om bij te houden, geen database om te vullen of kwijt te raken en geen code die bij elk bezoek draait, dus een plotselinge piek in het verkeer betekent alleen meer bestanden die uit een cache worden geleverd. Om dezelfde reden blijven de hostingkosten laag."
+                        ]
+                    },
+                    {
+                        "heading": "Elke push gaat door een pipeline",
+                        "paragraphs": [
+                            "De repository draait een pipeline in GitHub Actions bij elke push en pull request. Die heeft vier jobs in een vaste volgorde, en elke job wacht tot de vorige geslaagd is: kwaliteitscontroles en unittests, de build van de statische export, verificatie met end to end tests en Lighthouse, en de deploy naar Cloudflare. Een wijziging die bij een van de stappen faalt, bereikt de live site nooit.",
+                            "De kwaliteitsjob draait ESLint, een typecontrole van TypeScript en de unittests in Vitest 4.1.0. In de getoonde run slaagden 10 testbestanden en 73 tests in ongeveer 11 seconden. Ze dekken de hulpfuncties voor beveiliging en invoervalidatie, de portfoliodata en componenten zoals de carrousels, de afbeelding die bij het laden geleidelijk verschijnt en de knoppen.",
+                            "Nog voordat code de pipeline bereikt, draaien pre commit hooks met Bun op de machine van de ontwikkelaar, zodat de meeste fouten lokaal binnen seconden worden opgevangen in plaats van minuten later in de pipeline."
+                        ],
+                        "image": "https://cdn.hlorenzoz.com/hlorenzoz.com/portfolio/me/tests-quality-unit.webp",
+                        "imageAlt": "Log van GitHub Actions van de kwaliteitsjob: lint, typecontrole en 73 tests in Vitest die slagen in 10 bestanden"
+                    },
+                    {
+                        "heading": "End to end tests in vijf browsers",
+                        "paragraphs": [
+                            "De verificatiejob test de statische export zelf, dezelfde bestanden die op het punt staan te worden uitgerold. Playwright opent de site in vijf browserprofielen: Chromium, Firefox en WebKit op desktop, plus Mobile Chrome en Mobile Safari.",
+                            "Elk profiel draait dezelfde negen scenario's. Op de homepage controleren de tests dat hij laadt, dat de navigatie werkt, dat de functies en de statistieken worden getoond, dat de opmaak op het schermformaat reageert en dat beide taalversies bereikbaar zijn. Op de case study van de tandartspraktijk controleren ze de Engelse en de Spaanse detailpagina en de wissel daartussen. In de run van 6 april 2026 slaagden alle 45 tests in 1,9 minuten."
+                        ],
+                        "image": "https://cdn.hlorenzoz.com/hlorenzoz.com/portfolio/me/tests-e2e.webp",
+                        "imageAlt": "Log van Playwright in GitHub Actions met 45 end to end tests die slagen in Chromium, Firefox, WebKit, Mobile Chrome en Mobile Safari"
+                    },
+                    {
+                        "heading": "Audits van Lighthouse in dezelfde run",
+                        "paragraphs": [
+                            "In dezelfde job serveert Lighthouse CI de statische export op een lokale server en controleert het zeven pagina's: de Engelse homepage, het portfolio, de case study van de tandartspraktijk, het digitale visitekaartje en de drie juridische pagina's. De resultaten worden getoetst aan de assertions die voor het project zijn ingesteld, en de job slaagt alleen als die kloppen.",
+                            "De run in de schermafbeelding slaagde en uploadde zijn rapporten op 6 april 2026. We noemen hier geen scores uit die run, omdat het log de audits laat slagen in plaats van de afzonderlijke cijfers te tonen. Wat het wel laat zien, is de gewoonte die ertoe doet: prestaties, toegankelijkheid en SEO worden bij elke wijziging gecontroleerd, niet één keer voor de lancering."
+                        ],
+                        "image": "https://cdn.hlorenzoz.com/hlorenzoz.com/portfolio/me/tests-lighthouse.webp",
+                        "imageAlt": "Log van Lighthouse CI in GitHub Actions dat zeven pagina's van de statische export controleert, run van 6 april 2026"
+                    },
+                    {
+                        "heading": "Gestructureerde data die Google herkent",
+                        "paragraphs": [
+                            "Zoekmachines en AI assistenten lezen een pagina betrouwbaarder als die zichzelf beschrijft in gestructureerde data. De homepage bevat JSON-LD die het bureau presenteert als organisatie en als lokaal bedrijf, en die de veelgestelde vragen publiceert in een vorm die Google kan lezen.",
+                            "Op 6 april 2026 om 20.23 uur crawlde de test voor rich results van Google de homepage en vond drie geldige items: FAQ, Local businesses en Organisation. Geldige items maken de pagina geschikt voor rich results in Google Zoeken. De schermafbeelding is dat rapport."
+                        ],
+                        "image": "https://cdn.hlorenzoz.com/hlorenzoz.com/portfolio/me/structured-data.webp",
+                        "imageAlt": "Rapport van de test voor rich results van Google van 6 april 2026 met drie geldige items: FAQ, Local businesses en Organisation"
+                    },
+                    {
+                        "heading": "Wat een lokaal bedrijf eruit kan halen",
+                        "paragraphs": [
+                            "Alles hierboven is de standaard die we klanten bieden. Een statische site die vanaf de edge wordt geserveerd, laadt snel op de mobiele verbindingen die de meeste lokale klanten gebruiken, kost weinig aan hosting en heeft weinig dat kan uitvallen. Twee taalversies in de eigen taal bereiken beide doelgroepen. Gestructureerde data vertelt Google wie het bedrijf is en wat het biedt, zonder te gissen, en een pipeline met tests betekent dat een kapotte pagina wordt opgemerkt voordat een klant hem ziet.",
+                            "Niets hiervan garandeert een positie in Google, en die beloven we ook nooit. Wat het wel doet, is de technische redenen wegnemen waardoor een goed bedrijf over het hoofd wordt gezien: trage pagina's, onleesbare data en opmaak die op een telefoon breekt."
+                        ]
+                    },
+                    {
+                        "heading": "Wat daarna kwam",
+                        "paragraphs": [
+                            "In november 2026 bouwden we de site opnieuw op Astro, met dezelfde adressen, hetzelfde ontwerp en dezelfde inhoud, maar met veel minder JavaScript naar de browser. Een apart bericht beschrijft die migratie en de gemeten resultaten."
+                        ]
+                    }
+                ]
+            }
+        },
+        "related": {
+            "title": "Nieuws over dit project"
         }
     },
     "assistant": {
@@ -1558,5 +2270,12 @@
         "title": "Pagina niet gevonden",
         "text": "De pagina die je zoekt bestaat niet of is verplaatst.",
         "back": "Terug naar de startpagina"
+    },
+    "sitemap": {
+        "byline": {
+            "by": "Geschreven door",
+            "updated": "Bijgewerkt",
+            "readTime": "{min} min leestijd"
+        }
     }
 }

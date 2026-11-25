@@ -1,6 +1,7 @@
 import { describe, it, expect } from 'vitest';
 import { readFileSync } from 'fs';
 import path from 'path';
+import { LOCALES } from '@/lib/routing';
 
 /**
  * AGENTS.md "No hyphens in site copy either": visible text never joins words
@@ -11,7 +12,11 @@ const repoPath = (relative: string) => path.resolve(__dirname, '../..', relative
 const readJson = (relative: string) => JSON.parse(readFileSync(repoPath(relative), 'utf-8'));
 
 // Proper and technical names whose hyphen is part of the name. Never add a compound here.
-const ALLOWED = new Set(['json-ld', 'wi-fi']);
+const ALLOWED = new Set([
+    'json-ld', 'wi-fi',
+    // Country names that are hyphenated in their own language.
+    'nouvelle-zélande', 'royaume-uni', 'états-unis', 'nieuw-zeeland',
+]);
 
 // Keys whose values are identifiers, paths or dates, not prose.
 const NON_COPY_KEYS = new Set([
@@ -69,7 +74,7 @@ describe('hyphenViolations', () => {
 });
 
 describe('site copy has no hyphens', () => {
-    it.each(['messages/en.json', 'messages/es.json'])('%s', (file) => {
+    it.each(LOCALES.map((l) => `messages/${l}.json`))('%s', (file) => {
         expect(report(copyStrings(readJson(file), '', []))).toEqual([]);
     });
 

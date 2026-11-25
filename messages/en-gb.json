@@ -409,11 +409,723 @@
     }
   },
   "news": {
+    "list": {
+      "title": "News",
+      "subtitle": "Announcements from Lorenzoz Agency: new work added to the portfolio, and what each project was built to do.",
+      "cta": "Read the post",
+      "published": "Published"
+    },
     "home": {
       "eyebrow": "NEWS",
       "title": "Latest news",
       "subtitle": "New case studies and announcements from the agency.",
       "viewAll": "See all news"
+    },
+    "post": {
+      "published": "Published",
+      "readCaseStudy": "Read the case study",
+      "visitSite": "Visit the live site"
+    },
+    "items": {
+      "masajes-orisha-added-to-portfolio": {
+        "title": "Masajes Orisha joins the portfolio",
+        "description": "The website of Masajes Orisha, a therapeutic massage studio in San Rafael de Heredia, Costa Rica, now has its own case study in our portfolio.",
+        "paragraphs": [
+          "Masajes Orisha, the website we built for a therapeutic massage studio in San Rafael de Heredia, Costa Rica, now has its own case study in our portfolio. The site is already up and running at masajesorisha.com.",
+          "It is the production build of the massage studio concept that also appears in the portfolio as a demo: bilingual in Spanish and English throughout, with a light and a dark theme that keep the same calm, editorial character.",
+          "Visitors choose from a short menu of four signature treatments, filtered in one tap, each card showing its duration and its focus. The booking request takes four steps (treatment, duration, day and time) and shows a running estimate before it is sent. There is no account and no payment gateway: the therapist confirms each request by email.",
+          "The site also carries a journal of long form pieces on manual therapy, the physiology of rest and muscle recovery, published in both languages.",
+          "The case study walks through the design, the treatment menu, the booking flow and the journal, with screenshots of each section."
+        ]
+      },
+      "gerp-dj-added-to-portfolio": {
+        "title": "GERP DJ joins the portfolio",
+        "description": "The website of GERP DJ, a party, wedding and event DJ based in Ourense, Galicia, now has its own case study in our portfolio.",
+        "paragraphs": [
+          "GERP DJ, a DJ for parties, weddings and events based in Ourense and available across Galicia, now has its own case study in our portfolio. The site we developed is already live and carries our credit in its footer.",
+          "It is published in Spanish and Galician, with a language switch in the header, and offers a light and a dark theme. The home page opens on a background video that visitors can pause, followed by the four services: village festivals, weddings, private parties and company events.",
+          "Asking for a date takes three details: the day, the town and the type of event. The form then opens WhatsApp with the request already written and ready to send, with no server form in between. The booking page offers a fuller version of that request next to a set of frequently asked questions.",
+          "A gallery of ten captioned video clips, recorded at their performances and with their own equipment, shows what a celebration with GERP DJ looks like, and the booking page offers a press dossier to download as a PDF in Spanish and in Galician. The cookie policy states that the site uses no analytics or advertising cookies.",
+          "Measured with PageSpeed Insights on mobile on 24 November 2026, the home page scored 99 for Performance and 100 for Accessibility, Best Practices and SEO. The same day, Google's Rich Results Test found valid Breadcrumbs, Local business and Organisation structured data on the home page, which makes it eligible for rich results in Google Search. The case study shows both reports and walks through the design, the date request, the gallery and the bio, with screenshots of each."
+        ]
+      },
+      "lorenzoz-agency-case-study": {
+        "title": "Our website, rebuilt on Astro for a faster and more accessible visit",
+        "description": "We rebuilt hlorenzoz.com on Astro 7 with the same URLs and design: 0 ms blocking time, far less JavaScript and accessibility 100. Before and after, measured.",
+        "paragraphs": [
+          "On 25 November 2026 we moved hlorenzoz.com, the website of Lorenzoz Agency, from Next.js 16 to Astro 7. Visitors kept the same addresses, the same design and the same content in English and Spanish. What changed is how much work each page asks of their phone: the pages now load a few kilobytes of JavaScript instead of more than half a megabyte, and they respond to the first tap without waiting.",
+          "This article covers what we rebuilt, how we checked that nothing visible broke, and what the change means for someone visiting the site on an ordinary phone. Every figure comes from a test we ran, with its date and conditions, and the before and after comparison sits in one table."
+        ],
+        "sections": [
+          {
+            "heading": "Where the site started",
+            "paragraphs": [
+              "The site launched in April 2026 on Next.js 16, exported as static files, with Tailwind CSS 4, Cloudflare in front of it and tests in Vitest and Playwright. A separate article tells the story of that first build.",
+              "It worked, but every page carried a React runtime to make interactive a page that never changes after the build. On a site that mostly presents text, images and a booking button, that JavaScript is a cost the visitor pays on every visit and gets nothing back for. After building the GERP DJ site on Astro and seeing how it performed, we gave our own site the same treatment."
+            ],
+            "image": "https://cdn.hlorenzoz.com/hlorenzoz.com/portfolio/me/tech-stack-visual.webp",
+            "imageAlt": "Illustration of the stack the site launched with in April 2026: Next.js 16, Tailwind CSS 4, Cloudflare, GitHub Actions, Vitest and Playwright"
+          },
+          {
+            "heading": "One rule: only the framework changes",
+            "paragraphs": [
+              "The migration followed a single rule: same URLs, same head tags, same design, same commands, agents and scripts. A visitor with a bookmark, a search engine with the page in its index and a link shared months ago all had to land on the same page and see the same thing. Only the framework underneath was allowed to change.",
+              "To hold ourselves to it, we compared the new build with the old one before switching. The head tags and the JSON-LD structured data came out identical on all 48 pages, in both languages. Screenshots of every route at 390 and 1440 pixels wide, a phone width and a desktop width, differed by 0.25% of pixels or less, with identical page heights. The sitemap and the robots file came out byte for byte the same."
+            ],
+            "image": "https://cdn.hlorenzoz.com/hlorenzoz.com/portfolio/me/multiple-screens.webp",
+            "imageAlt": "The Lorenzoz Agency home page rendered on several phone screen sizes and a tablet"
+          },
+          {
+            "heading": "What we rebuilt",
+            "paragraphs": [
+              "Every component of the site became a native Astro component. Astro turns them into plain HTML at build time, one file per page, with no server code running when someone visits. The parts that react to the visitor, such as the mobile menu, the carousels and the frequently asked questions, each got a small script in plain JavaScript that does that one job.",
+              "React stays in exactly one place: the ElevenLabs voice widget, which lets a visitor talk to our AI assistant. As the heaviest piece of the site, it is left out of the first load and mounts only once the visitor scrolls past half the screen.",
+              "The tests moved too, and grew. At the end of the migration Vitest ran 1,096 passing tests, rendering components through Astro's Container API and checking the built HTML of every page, and Playwright ran 37 passing end to end tests in a real browser. A new test checks every internal link, image address, anchor, redirect and offline cache entry in the built site, and fails if any of them points nowhere. Lighthouse CI audits 14 key URLs on every run.",
+              "We also dropped a leftover of the old build: on 46 of the 48 pages it told the browser to fetch a small footer icon early, competing with the content that matters first. And the service worker that keeps the home page available offline got new cache names, so copies stored from the old site are discarded at the switch instead of showing stale pages."
+            ]
+          },
+          {
+            "heading": "Before and after, measured",
+            "paragraphs": [
+              "Before switching, we served both builds locally and measured the same pages with Lighthouse in its mobile profile, which simulates a modest phone on a slow mobile connection. Each figure is the median of several runs, measured on 25 November 2026. Lab scores move by a few points between runs, so the medians matter more than any single number.",
+              "Two rows explain the rest. Total Blocking Time is how long the phone is too busy running scripts to react to a tap or a scroll, and it fell to zero. The JavaScript each page loads fell by more than 98%, from over half a megabyte to a few kilobytes. The last two rows are the proof that the speed did not come from removing anything: same head, same structured data, same picture on screen.",
+              "The lab rows and the live PageSpeed Insights score measure the same page in two different setups, which is why the home page reads 89 in one and 98 in the other. In the lab, both builds were served from a local static server with no compression, so every file travelled at full size through the simulated slow connection; that penalises both builds equally and keeps the comparison between them fair. In production, Cloudflare compresses every file with Brotli and serves it from its edge, so the same Astro page reaches the phone smaller and sooner. We kept no PageSpeed Insights report of the live Next.js site, so its live score is not in the table."
+            ],
+            "table": {
+              "caption": "Next.js 16 build and Astro 7 build of hlorenzoz.com, served locally and measured on 25 November 2026 (Lighthouse mobile, median of several runs)",
+              "headers": [
+                "Measure",
+                "Next.js 16",
+                "Astro 7"
+              ],
+              "rows": [
+                [
+                  "Performance, English home page (local lab)",
+                  "77",
+                  "89"
+                ],
+                [
+                  "Performance, Local SEO service page (local lab)",
+                  "89",
+                  "94"
+                ],
+                [
+                  "Performance, GERP DJ case study (local lab)",
+                  "72",
+                  "86"
+                ],
+                [
+                  "Performance, English home page (live, PageSpeed Insights, 25 November 2026)",
+                  "Not measured",
+                  "98"
+                ],
+                [
+                  "Total Blocking Time",
+                  "66 to 83 ms",
+                  "0 ms"
+                ],
+                [
+                  "JavaScript loaded per page",
+                  "534 to 645 KB",
+                  "2.6 to 8.9 KB"
+                ],
+                [
+                  "Head tags and JSON-LD on 48 pages",
+                  "Reference",
+                  "Identical"
+                ],
+                [
+                  "Screenshot difference at 390 and 1440 px",
+                  "Reference",
+                  "0.25% of pixels or less"
+                ]
+              ]
+            }
+          },
+          {
+            "heading": "Faster to show, quicker to respond",
+            "paragraphs": [
+              "For the visitor, less JavaScript means the page is ready sooner. A browser has to download, read and run every script it receives, and with the old build that was more than half a megabyte on every page. Now the HTML arrives ready to read and the scripts that follow weigh a few kilobytes, which is why the Performance score rose on all three pages we compared.",
+              "Response matters as much as appearance. With 66 to 83 ms of blocking time, a tap during the load could wait for scripts to finish before anything happened. At 0 ms, the menu opens, the accordion unfolds and the booking button reacts the moment it is touched.",
+              "The gain is largest where visitors need it most. The lab profile behind these numbers imitates a modest phone on a slow connection, which is the situation of many people who look up a local business while out, on mobile data or patchy Wi-Fi. A page that weighs little and asks little of the processor stays usable there, and it uses less of the visitor's data and battery."
+            ]
+          },
+          {
+            "heading": "A page that stays still while it loads",
+            "paragraphs": [
+              "Few things are as irritating as a page that jumps while you read it or reach for a button. The site is built so that does not happen. Images declare their size in advance, so the browser reserves their space before they arrive. The Inter typeface is self hosted and loaded as a single file, and while it downloads the text is shown in a fallback font adjusted to the same size, so lines do not rewrap when the real font appears.",
+              "The cookie banner and the answers to the frequently asked questions are part of the page from the start, hidden until they are needed, instead of being added later by a script. The banner appears a few seconds after the page loads and floats over the bottom of the screen rather than pushing the content down.",
+              "The screenshot comparison confirmed it from another angle: every route kept exactly the same page height as on the old site, so the change of framework moved nothing on screen."
+            ]
+          },
+          {
+            "heading": "Usable with a keyboard or a screen reader",
+            "paragraphs": [
+              "After the switch we ran the Lighthouse accessibility audit on every route and fixed each issue it raised, until all 48 pages scored 100 on mobile. Most of those issues predated the migration; the rebuild was the moment to close them.",
+              "The fixes are concrete. Two pieces of light grey text without enough contrast are now darker. The previous, next and dot buttons of two image carousels have names a screen reader announces in English and Spanish, and the dots are spaced so each one is a target a finger can hit. Footer titles, portfolio cards and the services directory no longer jump from the main heading straight to the third level, so screen reader users can move through each page by its headings. The label of the language switcher now starts with the language code shown on screen, so voice control users can say what they see.",
+              "A few behaviours changed on purpose. The language switcher is now made of ordinary links, which work with a keyboard and can be followed by search engines. The Escape key closes the mobile menu. In the feature carousel only the header of each item acts as a button, so the links inside it behave like links again."
+            ]
+          },
+          {
+            "heading": "Links that work, offline access and privacy",
+            "paragraphs": [
+              "We then audited every page, setting and link. An automated browser opened all 48 routes, the root address and the 404 page, at desktop size and on an emulated Pixel 5, both on the development server and on a local copy of the production Worker. Every page answered correctly, with no console errors and no failed requests to the site itself.",
+              "The audit caught small faults worth fixing. Links from the menu and footer to sections of the home page relied on a redirect and now point straight at the canonical address. The install manifest and the offline cache now point at the English home page instead of the root redirect. The WhatsApp icon on the digital business card, broken since before the migration, was redrawn.",
+              "Privacy came along without extra effort. The typeface is served from our own domain, so reading the site sends no request to an external font service. Optional cookies stay off until the visitor decides, through a banner that offers accept and reject with equal weight next to a link to the cookie policy. The voice assistant, which connects to ElevenLabs, loads only after the visitor starts scrolling, so someone who only glances at the first screen never loads it."
+            ]
+          },
+          {
+            "heading": "The live site in PageSpeed Insights",
+            "paragraphs": [
+              "Once production served the Astro build, we tested the live English home page with Google PageSpeed Insights on mobile. The report from 25 November 2026 at 3.20pm gives 98 for Performance and 100 for Accessibility, Best Practices and SEO.",
+              "PageSpeed Insights runs Lighthouse from Google servers, so it measures the page as a phone receives it over the internet, through the Cloudflare network in front of the site. Its setup differs from our local lab runs, so its score is not comparable with the local median of 89, and each figure is reported with its own date and conditions.",
+              "The panel for real user data shows no data yet. It summarises what Chrome users experienced over the previous 28 days, and Google publishes it only once a site has enough of that traffic."
+            ],
+            "image": "https://cdn.hlorenzoz.com/hlorenzoz.com/portfolio/hlorenzoz/lorenzoz-agency-pagespeed-insights.webp",
+            "imageAlt": "PageSpeed Insights report for hlorenzoz.com on mobile, 25 November 2026 at 3.20pm: 98 Performance and 100 Accessibility, Best Practices and SEO"
+          },
+          {
+            "heading": "What this means for a local business",
+            "paragraphs": [
+              "Everything here is the standard we apply to client sites. Many people look for a local business on a phone, often on the move, and a page that appears at once and reacts to the first tap is part of the service they receive before they ever call. A page that keyboard and screen reader users can use is open to more customers.",
+              "It also shows how we handle a change like this: one rule written down before starting, measurements before and after, and checks that prove the visible site did not move. None of this guarantees a position in Google, and we never promise one. It removes the technical reasons a good business gets passed over.",
+              "The case study for this site shows the PageSpeed report and the rest of the evidence, and the live site is one click away, so you can judge it for yourself."
+            ]
+          }
+        ]
+      },
+      "malaga-event-gear-case-study": {
+        "title": "How we rebuilt Malaga Event Gear, from WordPress to a fast SvelteKit site",
+        "description": "Case study of the Malaga Event Gear rebuild: from WordPress to SvelteKit, with fixed price packages, a date request form, rich structured data and fast pages.",
+        "paragraphs": [
+          "Malaga Event Gear (MEG) hires out audiovisual equipment for events in Málaga and on the Costa del Sol, and its website now has its own case study in our portfolio. We migrated the site from WordPress and rebuilt it as a new platform, which MEG announced on its own blog on 15 June 2026. The site carries our credit in its footer.",
+          "This article explains what the business needed, how the new site is built, the results it scored at launch and what we found when we checked it again on 25 November 2026."
+        ],
+        "sections": [
+          {
+            "heading": "The business",
+            "paragraphs": [
+              "MEG hires out sound systems, lighting, projectors and screens, microphones and a smoke machine, together with the technicians who run them, for weddings, corporate events and conferences, and private parties. The company states that it has worked in the audiovisual industry since 1996 and as an independent operation since 2010, and its package pages name the brands it works with, such as HK Audio, Audix and Midas.",
+              "Its model shapes the website. There is no showroom and nothing for the customer to collect: the gear always travels to the venue, and delivery, setup and collection are included in every package. The Wedding and MICE packs include a technician. Customer service is in English and Spanish, for an audience that mixes local clients, couples who marry on the coast and companies that hold their meetings there."
+            ],
+            "image": "https://cdn.hlorenzoz.com/hlorenzoz.com/portfolio/meg/malagaeventgear-7.webp",
+            "imageAlt": "Malaga Event Gear equipment catalogue with sound systems, lighting, projectors and screens, and special effects"
+          },
+          {
+            "heading": "Why leave WordPress",
+            "paragraphs": [
+              "MEG's own launch announcement sums up the priority: the company that handles the technical side of an event should not run a slow website. The rebuild had four goals: speed, security, new features and a better experience for the person planning an event. It also had to keep fixed prices published online, because showing the cost before the first message is central to how MEG sells.",
+              "A migration is also the moment a site can lose what it has earned in search, so the structure was treated as part of the job. The new site publishes a sitemap index in the format WordPress SEO plugins use, with separate sitemaps for posts, pages, categories and authors in each language, the blog has its own section with descriptive addresses, and the old WordPress admin and login paths no longer exist on the domain."
+            ],
+            "image": "https://cdn.hlorenzoz.com/hlorenzoz.com/portfolio/meg/malagaeventgear-13.webp",
+            "imageAlt": "Malaga Event Gear HTML sitemap with the main pages and every event package grouped by language"
+          },
+          {
+            "heading": "The technology: SvelteKit, Cloudflare and strict headers",
+            "paragraphs": [
+              "The new MEG is a SvelteKit application served through Cloudflare. Pages reach the browser as complete HTML with their content and structured data already in place, and the framework then takes over navigation and preloads the next page as soon as the pointer rests on a link. The two typefaces, Playfair Display and Plus Jakarta Sans, are self hosted and preloaded. The hero image is delivered in WebP at several widths and requested with high priority, the images further down the page load lazily, and the blog photography comes from the company's own image subdomain, also in WebP with responsive sizes.",
+              "Security was one of the reasons for the rebuild, and it shows in the response headers: HTTP Strict Transport Security with preload, protection against content type sniffing and against framing by other sites, a strict referrer policy and a permissions policy that blocks access to geolocation, camera and microphone.",
+              "The site is also installable. A web app manifest and a service worker built with Workbox let it be added to a phone's home screen like an app."
+            ],
+            "image": "https://cdn.hlorenzoz.com/hlorenzoz.com/portfolio/meg/malagaeventgear-3.webp",
+            "imageAlt": "Transparent pricing section in dark mode with the Eco, Wedding, Product Presentation and Basic MICE packs"
+          },
+          {
+            "heading": "Fixed prices and a form that only asks for the date",
+            "paragraphs": [
+              "Pricing is the core of the site. Five packages are published with a fixed price per event, plus 21% VAT, as listed on 25 November 2026: Eco Pack at 290 euros, Basic MICE Pack at 295, Product Presentation Pack at 310, MICE Pack at 490 and Wedding Pack at 650. Each package has its own page with every item included, the guest capacity and the optional extras, so the client knows the cost before asking.",
+              "The packages page filters by event type (parties, weddings, corporate events, presentations and meetings), and every package page ends with a short form to secure the date: name, email, phone with a country code selector, event date and comments. The form states that no credit card is needed to check availability.",
+              "Behind the form, a hidden honeypot field filters automated spam without asking real visitors to solve a puzzle. And if the confirmation email fails, the site tells the visitor that the request was saved and offers a direct way to reach the team, so an enquiry is never lost in silence. A WhatsApp button and the phone number stay visible on every page for those who prefer to talk."
+            ],
+            "image": "https://cdn.hlorenzoz.com/hlorenzoz.com/portfolio/meg/malagaeventgear-9.webp",
+            "imageAlt": "Packages page with event type filters and the Wedding Pack card showing its price and capacity"
+          },
+          {
+            "heading": "Content for people, for search and for AI assistants",
+            "paragraphs": [
+              "MEG publishes a technical blog with planning guides and news from real events. On 25 November 2026 its post sitemap listed 89 URLs, including coverage of events in Málaga and Torremolinos and practical guides such as the audiovisual requirements of a keynote speaker or the difference between a hotel's in house AV and an independent supplier.",
+              "For AI assistants, the site publishes an llms.txt file that summarises the business, links to the main pages and lists every package with its price, inclusions and extras. The robots.txt file explains why that file is deliberately left out of the XML sitemaps: the sitemaps declare the pages meant to rank, and llms.txt is guidance for machines.",
+              "On 25 November 2026 the pages declared thirteen language versions through hreflang: English as the default, plus French, Italian, German, Dutch, Portuguese for Portugal and for Brazil, Swedish, Danish, Norwegian, and Chinese in simplified script and in the traditional scripts of Taiwan and Hong Kong. Each version has its own URL and its own HTML language attribute, which suits a coast that welcomes event planners from all over Europe and beyond."
+            ],
+            "image": "https://cdn.hlorenzoz.com/hlorenzoz.com/portfolio/meg/malagaeventgear-11.webp",
+            "imageAlt": "The Malaga Event Gear Technical Blog landing page with its latest articles"
+          },
+          {
+            "heading": "Structured data for rich results",
+            "paragraphs": [
+              "Google's Rich Results Test, on a crawl dated 18 June 2026, found three valid items on the home page: Breadcrumbs, Local businesses and Organisation, which makes it eligible for rich results in Google Search. Eligibility means Google can show them, not that it will.",
+              "Reading the live JSON-LD on 25 November 2026, the home describes MEG as a ProfessionalService with its address in Málaga, coordinates, opening hours, languages, founding year and a price range from 290 to 650 euros. It lists the 23 areas it serves, from Málaga, Marbella and the Costa del Sol to Seville and Granada, and links to its Google Maps and Bing Maps listings and its Medium and Pinterest profiles. The home also carries WebSite, BreadcrumbList and a FAQPage with five questions. Each package is described as a Service tied to the business, with its own FAQPage, and news posts use NewsArticle."
+            ],
+            "image": "https://cdn.hlorenzoz.com/hlorenzoz.com/portfolio/meg/malagaeventgear-structured-data.webp",
+            "imageAlt": "Google Rich Results Test showing three valid items for malagaeventgear.com: Breadcrumbs, Local businesses and Organisation"
+          },
+          {
+            "heading": "Performance at launch and today",
+            "paragraphs": [
+              "PageSpeed Insights measured the home page on mobile on 19 June 2026: 93 for Performance and 100 for Accessibility, Best Practices and SEO. As the case study explains, the Performance score was held back by the security scripts that Cloudflare injects, not by the site's own code.",
+              "We checked again with Lighthouse on 25 November 2026, on mobile, in lab conditions and in a single run: Performance 89, Accessibility 100, Best Practices 81 and SEO 100, with a Largest Contentful Paint of 2.4 s, a Cumulative Layout Shift of 0.001, a Total Blocking Time of 280 ms and a total page weight of 198 KiB. The Best Practices deductions came from deprecation warnings raised by Cloudflare's bot protection script, and Lighthouse noted that this run may be incomplete.",
+              "Lab results vary from run to run and with what the site publishes in between, so both reports are snapshots with their date, not promises. What they show consistently is a light page that renders its main content quickly and does not jump while it loads."
+            ],
+            "image": "https://cdn.hlorenzoz.com/hlorenzoz.com/portfolio/meg/malagaeventgear-pagespeed-insights.webp",
+            "imageAlt": "PageSpeed Insights mobile report for malagaeventgear.com: 93 Performance and 100 in Accessibility, Best Practices and SEO"
+          },
+          {
+            "heading": "What it means for an AV hire company",
+            "paragraphs": [
+              "For an audiovisual hire company, the website is the first technical test a client sees. Fixed prices and detailed package pages remove the back and forth of a manual quote for standard events. A form that only needs a date turns a visit into an availability request. The event gallery, the blog and the Google reviews shown on the site put real work in front of the client. And a fast, secure platform without a stack of plugins to keep updated means less maintenance risk for a small team.",
+              "None of this guarantees a position in Google, and we do not promise one. What it does is give search engines, AI assistants and clients complete, consistent and verifiable information about the business."
+            ],
+            "image": "https://cdn.hlorenzoz.com/hlorenzoz.com/portfolio/meg/malagaeventgear-2.webp",
+            "imageAlt": "Our events in action gallery with weddings, conferences and corporate events equipped by MEG"
+          },
+          {
+            "heading": "Where to see it",
+            "paragraphs": [
+              "The Malaga Event Gear case study in our portfolio shows the booking experience, the equipment catalogue, the packages, the blog and the contact page, along with the PageSpeed Insights and Rich Results reports. The live site is one click away from this page."
+            ],
+            "image": "https://cdn.hlorenzoz.com/hlorenzoz.com/portfolio/meg/malagaeventgear-12.webp",
+            "imageAlt": "Malaga Event Gear contact page with contact details and the Request a Quote form"
+          }
+        ]
+      },
+      "vicron-lopez-case-study": {
+        "title": "How we built the Vicron Lopez website for luxury car hire in Ourense",
+        "description": "Case study of the Vicron Lopez website: a bilingual SvelteKit site for luxury car hire in Ourense, with a filterable fleet, vehicle pages and local SEO.",
+        "paragraphs": [
+          "Vicron Lopez hires out luxury and sports cars in Ourense, Galicia, for short and long term hire, and its website now has its own case study in our portfolio. The site we developed is live in Spanish and English and carries our credit in its footer. This article explains how it was built, which decisions shaped it and what the measurements say about it.",
+          "Hiring a car at this level is a decision made on trust. Before anyone books a day in a Porsche, they want to see the car, know exactly what the price includes and confirm that there is a real, licensed business behind it in their own city. Every part of the site was designed around those three questions."
+        ],
+        "sections": [
+          {
+            "heading": "The business and the brief",
+            "paragraphs": [
+              "Vicron Lopez works from Ourense and serves customers across Galicia. Hire can be short or long term, prices are presented without hidden charges, and the car can be delivered to the customer's home and collected there afterwards. Every hire is insured, with plans that range from basic to full cover, and maintenance and servicing are done in house.",
+              "The brief was a showroom on the web: a site where a visitor can browse the fleet, understand each vehicle and send a booking request without needing a phone call first, in Spanish for local customers and in English for visitors. At the same time it had to carry the local signals that a hire business needs to be found and trusted in its own city."
+            ],
+            "image": "https://cdn.hlorenzoz.com/hlorenzoz.com/portfolio/vicronlopez/vicronlopez-header.webp",
+            "imageAlt": "Vicron Lopez home page in dark mode with an orange sports car next to the headline Redefining Mobility"
+          },
+          {
+            "heading": "The technology: SvelteKit served through Cloudflare",
+            "paragraphs": [
+              "The site is built with SvelteKit, the application framework for Svelte, and is served through Cloudflare's network. Every page reaches the browser as complete HTML, with its text, links and structured data already in place, so search engines and AI crawlers read the same content a visitor sees without waiting for JavaScript to run. Navigation between pages is then handled by the framework, which preloads the next page as soon as the pointer rests on a link.",
+              "Static files are published with content hashed names and a one year immutable cache, so a returning visitor's browser does not download them again. Vehicle photos are delivered through a picture element that offers AVIF, WebP and JPEG at several widths, which lets each browser take the lightest format it supports at the size it actually needs, and the main image of the page is requested with high priority. The two typefaces, Inter and Space Grotesk, are served from the site itself and preloaded instead of being fetched from an external font service.",
+              "The site also ships a web app manifest and a service worker, so it can be installed on a phone like an app, with its own icon and theme colour."
+            ]
+          },
+          {
+            "heading": "Design: one brand in light and dark",
+            "paragraphs": [
+              "The home opens on a large car photograph, a search box with a filter button and a short promise: redefining mobility. It continues with the reasons to choose Vicron Lopez, the featured fleet with the daily rate on every card, the four services (hire, delivery, maintenance and insurance), client reviews, the accepted payment methods and a closing invitation to contact the team.",
+              "A switch in the header changes between a light and a dark theme, and both keep the same premium feel: deep navy surfaces in dark mode, a strong blue accent and photography that does the selling. The language switch and the phone number stay in the header on every page, so calling or changing language is always one tap away on a phone."
+            ],
+            "image": "https://cdn.hlorenzoz.com/hlorenzoz.com/portfolio/vicronlopez/vicronlopez-home-light.webp",
+            "imageAlt": "Vicron Lopez home page in light mode with the vehicle search box and the featured car"
+          },
+          {
+            "heading": "A fleet you can search and vehicle pages that answer everything",
+            "paragraphs": [
+              "The inventory page lists every vehicle with its year, make, model and daily rate, together with a live search and quick filters by type, price and category. On 25 November 2026 the fleet listed three cars: a 2024 Porsche 992 GT3 and a 2015 Mercedes AMG GTS at 900 euros per day, and a 1969 Fiat 500 convertible at 150 euros per day. The catalogue grows with the business without touching the layout.",
+              "Each vehicle has its own page, built to answer every question before the booking: the daily price, the key specifications (acceleration, drivetrain, seats and fuel), what is included and the conditions. The Porsche page, for example, states that the price includes VAT, sets a limit of 200 km per day, includes fully comprehensive insurance and professional cleaning after the hire, and explains the refuelling service, where the customer pays only for the missing fuel at market price. It also shows the accepted payment methods: Visa, Mastercard, SEPA transfer and cash.",
+              "The page closes with a collection and return date picker and two ways to book: by email or by WhatsApp. The WhatsApp button opens a conversation with the message already written, including the vehicle, its daily price, the chosen dates and the address of the page, so the business receives a complete request and the customer does not have to type it."
+            ],
+            "image": "https://cdn.hlorenzoz.com/hlorenzoz.com/portfolio/vicronlopez/vicronlopez-vehicle-detail.webp",
+            "imageAlt": "Porsche 992 GT3 vehicle page with the daily price, specifications, inclusions and booking options"
+          },
+          {
+            "heading": "Local presence: proof that the business is where it says",
+            "paragraphs": [
+              "For a local business, the website also has to prove that the business exists where it says it does. Every page ends with the same block: an office in Ourense, the phone number, opening hours from Monday to Saturday, 9:00 to 19:00, and a note that the business is licensed by the City Council of Ourense. The contact page adds a contact form, the email address and a map with directions.",
+              "The about page tells the company story, its mission, its values (excellence, transparency and the customer first), a timeline and the people who run the business. For a hire where the customer drives away with a high value car, that context is part of the decision."
+            ],
+            "image": "https://cdn.hlorenzoz.com/hlorenzoz.com/portfolio/vicronlopez/vicronlopez-contact.webp",
+            "imageAlt": "Vicron Lopez contact page with address, phone, hours, a contact form and a map of Ourense"
+          },
+          {
+            "heading": "Bilingual SEO and structured data",
+            "paragraphs": [
+              "Spanish and English are not two copies under the same address. Each page has its own URL in each language, translated as well (vehiculos and vehicles, contacto and contact), and each declares its canonical address and its pair in the other language through hreflang, with English as the default for any other language. The root of the domain sends visitors to the Spanish version. The XML sitemap lists the 23 URLs of both languages with their alternates, and an HTML sitemap gives visitors and crawlers a path to every page.",
+              "We read the structured data on the live pages on 25 November 2026. The home declares the business as an AutoRental with its address in Ourense, coordinates, opening hours, phone, email, accepted currency and a contact point that speaks Spanish and English, together with a WebSite entity. Each vehicle page describes the car as a Car with brand, model and model year, and an Offer with its price in euros per day. The inventory, about and contact pages are typed as CollectionPage, AboutPage and ContactPage, and every inner page carries a BreadcrumbList.",
+              "Open Graph and Twitter card tags give every shared link a title, a description and a 1200 by 630 image, which matters when the link to a car is sent in a chat before anyone decides."
+            ],
+            "image": "https://cdn.hlorenzoz.com/hlorenzoz.com/portfolio/vicronlopez/vicronlopez-sitemap.webp",
+            "imageAlt": "Vicron Lopez HTML sitemap listing the main pages, the vehicles and the legal pages"
+          },
+          {
+            "heading": "Privacy and consent",
+            "paragraphs": [
+              "The cookie panel lets each visitor accept or reject analytics and marketing cookies separately, while essential cookies stay on because the site needs them to work, and a single button rejects everything that is not essential. The privacy policy and the terms of service sit next to it in the footer of every page.",
+              "In the HTML that a first time visitor receives, which we checked on 25 November 2026, no analytics script is loaded. Consent is a real choice, not a banner whose only option is to accept."
+            ],
+            "image": "https://cdn.hlorenzoz.com/hlorenzoz.com/portfolio/vicronlopez/vicronlopez-cookies.webp",
+            "imageAlt": "Cookie settings page with separate switches for essential, analytics and marketing cookies"
+          },
+          {
+            "heading": "Performance, measured and explained",
+            "paragraphs": [
+              "We measured the home page with Lighthouse on 25 November 2026, on mobile, in lab conditions and in a single run on the root address of the domain. It scored 64 in Performance, 97 in Accessibility, 81 in Best Practices and 100 in SEO. Largest Contentful Paint was 5.1 s, Cumulative Layout Shift 0.002 and Total Blocking Time 0 ms.",
+              "Read honestly, those numbers say two things. Once the page starts to render it is stable and responsive: almost no layout shift and no time blocked on the main thread. The cost is in the first render. Lighthouse estimates about 780 ms lost to the redirect from the root of the domain to the Spanish home, flags the main stylesheet as render blocking and points to the response time of the document. The Best Practices deductions come from deprecation warnings raised by the bot protection script that Cloudflare injects, not by the site's own code, and the accessibility audit flagged the colour contrast of some text.",
+              "These are lab figures under simulated mobile conditions, and they vary from run to run. They are a snapshot of one day, not a promise, and they show clearly where the next gains are, which is the reason to measure in the first place."
+            ]
+          },
+          {
+            "heading": "What it means for a car hire business",
+            "paragraphs": [
+              "For a business that hires out high value vehicles, each of these decisions removes one reason to hesitate. The price, the conditions and the payment methods are visible before the first message, so the requests that arrive are better informed. Booking through WhatsApp or email uses channels the customer already has, with no account to create. The address, the hours and the municipal licence answer the question of who is behind the keys. And the bilingual structure lets the same fleet reach residents in Spanish and visitors in English, with each language on its own indexable URL.",
+              "None of this guarantees a position in Google, and we do not promise one. What it does is give search engines and visitors complete, consistent and verifiable information about a local business, which is the foundation everything else is built on."
+            ],
+            "image": "https://cdn.hlorenzoz.com/hlorenzoz.com/portfolio/vicronlopez/vicronlopez-inventory-light.webp",
+            "imageAlt": "Vicron Lopez inventory page with search, filters and three vehicle cards with their daily rates"
+          },
+          {
+            "heading": "Where to see it",
+            "paragraphs": [
+              "The Vicron Lopez case study in our portfolio walks through the design in light and dark, the fleet, the vehicle page, the local presence, the company story, the legal pages and the bilingual sitemap, with a screenshot of each. The live site is one click away from this page."
+            ]
+          }
+        ]
+      },
+      "masajes-orisha-case-study": {
+        "title": "How we built the Masajes Orisha website: SvelteKit, two languages and booking in four steps",
+        "description": "Case study of the Masajes Orisha website in Costa Rica: SvelteKit on Cloudflare, Spanish and English, a treatment menu, booking in four steps and a journal.",
+        "paragraphs": [
+          "Yesterday we added Masajes Orisha to our portfolio. Today we tell the full story: how we built the website of a therapeutic massage studio in San Rafael de Heredia, Costa Rica, which decisions shaped it, which technology carries it and how it measures.",
+          "The short version: a bilingual site in Spanish and English, built with SvelteKit and served through Cloudflare, where a visitor reads about the studio and its therapist, chooses a treatment from a short menu, sees what it costs and asks for a time slot in four steps, without a phone call and without creating an account.",
+          "Below we go through the business, the design, the treatment menu, the booking flow, the journal, the technology, the measurements and the practices behind them, section by section."
+        ],
+        "sections": [
+          {
+            "heading": "The studio: a calendar that depends on trust",
+            "paragraphs": [
+              "Masajes Orisha is a therapeutic massage studio led by its founder and therapist, Sergio Zaldívar Guillén. It offers relaxing, deep tissue, hot stone and aromatherapy massage, in sessions of 60 to 90 minutes that combine manual technique with natural oils, one client at a time, in a private studio. It opens Monday to Saturday, from 10:00 to 21:00. The name is inspired by the Yoruba Orishas, taken as a philosophy of respect for the body.",
+              "For a studio like this, the calendar is the business, and every booking starts with a stranger deciding to trust a therapist they have never met. The site had to answer the questions that person would otherwise ask by phone: who is the therapist, what does each treatment involve, how long it lasts, how much it costs and when there is a free slot."
+            ]
+          },
+          {
+            "heading": "Design: editorial calm, dark by default",
+            "paragraphs": [
+              "We wanted the site to read as a private studio with a point of view, not as another spa template. Serif headings, a warm sand palette and generous space set an unhurried rhythm, and the home page tells the method in the therapist's own words before it shows a single price: no rigid protocols, pressure and pace adapted to each person, and rest treated as something you train for.",
+              "The site opens in a dark theme, the one that best matches the atmosphere of the studio, and offers a light theme for whoever prefers it. The choice is remembered in the browser and applied before the first paint, so the page never flashes from one theme to the other while it loads. Photos of the studio and a portrait of the therapist give the visitor a face and a place before the first message."
+            ],
+            "image": "https://cdn.hlorenzoz.com/hlorenzoz.com/portfolio/masajesorisha/0-hero-light.webp",
+            "imageAlt": "Masajes Orisha hero section in the light theme, with serif headings and a warm sand palette"
+          },
+          {
+            "heading": "Two languages, and Spanish the way Costa Rica speaks it",
+            "paragraphs": [
+              "The studio receives local clients and visitors from abroad, so the whole site exists in Spanish and in English: home, treatments, each treatment page, the journal, the booking page and the legal pages. A switch in the header moves between languages, and the root address reads the browser's language and sends each visitor to the version that suits them, with Spanish as the default. The home page declares both versions to search engines with hreflang annotations.",
+              "The Spanish booking page speaks in the voseo of Costa Rica, the way a local therapist would address a client. It is a small detail, but a local client notices it at once: the site sounds like the studio, not like a translation."
+            ]
+          },
+          {
+            "heading": "A short treatment menu, filtered in one tap",
+            "paragraphs": [
+              "The menu holds four signature treatments, split between two families: Calm and Wellness, and Therapeutic and Recovery. A row of filters shows all of them or one family in one tap, and each card carries its focus, its duration and its starting price. The list is short on purpose: fewer choices make for a faster decision.",
+              "Each treatment has its own page that describes the ritual of the session in four moments, from the initial consultation about tensions and pressure preferences to a quiet close with a herbal tea, with a button that opens the booking already set to that treatment."
+            ],
+            "image": "https://cdn.hlorenzoz.com/hlorenzoz.com/portfolio/masajesorisha/1-treatments-light.webp",
+            "imageAlt": "Masajes Orisha treatment menu with filters and four cards showing focus, duration and starting price"
+          },
+          {
+            "heading": "A booking request that prices itself",
+            "paragraphs": [
+              "The booking page works in four numbered steps: choose the treatment, the duration, the day and the time. Each duration shows its price, the days and times appear as buttons, and an estimate of the session updates as the client chooses. A name, an email and an optional note about preferences or areas to work on complete the request.",
+              "There is no account and no payment gateway. The request reaches the studio, and the therapist confirms availability by email. The form is a standard form processed on the server and protected against bots with Cloudflare Turnstile, so the studio receives real requests instead of spam. The privacy policy lists exactly which data the studio collects to handle a booking and why."
+            ],
+            "image": "https://cdn.hlorenzoz.com/hlorenzoz.com/portfolio/masajesorisha/3-contact-light.webp",
+            "imageAlt": "Masajes Orisha booking page with the four steps: treatment, duration, day and time, and the running estimate"
+          },
+          {
+            "heading": "A journal for the questions people search",
+            "paragraphs": [
+              "The site carries a journal with articles on manual therapy, the physiology of rest and muscle recovery, published in both languages with their date and reading time: why rest is something you train for, how deep manual therapy works on the neck and shoulder pain of office work, and what heat from volcanic stones does for muscle recovery.",
+              "These are the questions potential clients type into a search engine before they look for a therapist. Answering them with the studio's own voice shows expertise and gives the site content that is genuinely about its subject."
+            ],
+            "image": "https://cdn.hlorenzoz.com/hlorenzoz.com/portfolio/masajesorisha/2-journal-light.webp",
+            "imageAlt": "Masajes Orisha journal page with articles on manual therapy, rest and muscle recovery"
+          },
+          {
+            "heading": "Why SvelteKit on Cloudflare",
+            "paragraphs": [
+              "The site is built with SvelteKit, as its compiled assets and response headers show, and is served through Cloudflare's network. SvelteKit sends each page as complete HTML, so the content is readable before any script runs, and then adds the interactive parts: the treatment filters, the theme switch and the booking steps with their live estimate.",
+              "Running on the server where it matters also covers the two jobs a purely static site cannot do alone: choosing the language from the browser's preference on the first visit, and receiving the booking request. The style sheet has a versioned file name and is cached by browsers for a year, so returning visitors do not download it again."
+            ]
+          },
+          {
+            "heading": "Images that adapt to every screen",
+            "paragraphs": [
+              "A massage studio sells a place and a feeling, so the site leans on photography: the studio, the therapist and each treatment. Every photo is offered in AVIF and WebP, in widths from 320 to 1024 pixels, with size hints that let the browser pick the lightest version that fits the screen. Each image declares its width and height, so the page does not jump while photos arrive.",
+              "The main image of the home page loads first and with high priority; the other fifteen photos load lazily, as the visitor scrolls towards them, and fade in softly once they are ready."
+            ]
+          },
+          {
+            "heading": "Measured results",
+            "paragraphs": [
+              "We measured the home page with Lighthouse (mobile, lab) on 25 November 2026. It scored 82 in Performance and 100 in Accessibility, 100 in Best Practices and 100 in SEO. The same run recorded a Largest Contentful Paint of 3.5 s, a First Contentful Paint of 2.3 s, a Total Blocking Time of 50 ms and a Cumulative Layout Shift of 0.0003, with 258 KiB transferred in total.",
+              "The figures show where the site is strongest: a light page, almost no blocking script and a layout that stays still while it loads. The main paint is the part with the most room to improve, and the same report points to the language redirect on the first visit as one of the steps before it."
+            ],
+            "image": "https://cdn.hlorenzoz.com/hlorenzoz.com/portfolio/masajesorisha/0-home-light.webp",
+            "imageAlt": "Full Masajes Orisha home page in the light theme, from the hero to the footer"
+          },
+          {
+            "heading": "Structured data for a local studio",
+            "paragraphs": [
+              "The home page carries JSON-LD markup in each language. As we read it on 25 November 2026, it describes the business as a DaySpa, a schema.org type of local business, with its name, a description in the language of the page, its telephone, its location in San Rafael de Heredia, in the province of Heredia, Costa Rica, and its opening hours from Monday to Saturday, 10:00 to 21:00.",
+              "This markup gives search engines explicit facts about who the business is, where it is and when it opens, the same details a client looks for before booking. It helps search engines understand the business; it does not guarantee any particular result."
+            ]
+          },
+          {
+            "heading": "Accessibility and privacy",
+            "paragraphs": [
+              "The 100 in Accessibility in that same Lighthouse run comes from details such as descriptive text on the photos, including the portrait of the therapist, a correct language declaration on every page and clear names on the controls.",
+              "On privacy, the pages we reviewed load no analytics or advertising scripts. The theme preference stays in the visitor's own browser, and the only personal data the site asks for are the ones needed to answer a booking, as the privacy policy explains."
+            ]
+          },
+          {
+            "heading": "What this means for a studio or a clinic",
+            "paragraphs": [
+              "For a therapist working alone, every phone call during a session is a call that goes unanswered. A site that answers the usual questions, shows the prices and collects the request with the treatment, the duration, the day and the time already chosen lets the therapist reply when the session ends, by email, with all the details in front of them.",
+              "Two languages open the door to clients from abroad, the journal gives the site content people actually search for, and the calm design does part of the work of building trust before the first visit."
+            ]
+          },
+          {
+            "heading": "See the case study and the live site",
+            "paragraphs": [
+              "The Masajes Orisha case study in our portfolio walks through the design in both themes, the treatment menu, the booking flow and the journal, with screenshots of each section. The live site carries our credit in its footer. Both are linked below."
+            ]
+          }
+        ]
+      },
+      "gerp-dj-case-study": {
+        "title": "How we built the GERP DJ website: Astro, two languages and WhatsApp bookings",
+        "description": "Case study of the GERP DJ website in Ourense: Astro on Cloudflare, Spanish and Galician, WhatsApp date requests, 99 on PageSpeed and valid structured data.",
+        "paragraphs": [
+          "Yesterday we added GERP DJ to our portfolio. Today we look under the bonnet: this is the full story of how we built the website of a party, wedding and event DJ based in Ourense, what we chose, why we chose it, and what the measurements say.",
+          "The short version: a site written in Spanish and Galician, built with Astro and delivered through Cloudflare, that answers the three questions every client asks before booking a DJ (is the date free, what does a night look like, who is behind the decks) and turns the first one into a WhatsApp message ready to send. On 24 November 2026, PageSpeed Insights on mobile gave its home page 99 in Performance and 100 in Accessibility, Best Practices and SEO, and Google's Rich Results Test found valid structured data on it.",
+          "Below we walk through the business, the design, the booking flow, the technology, the results and the practices behind them, section by section."
+        ],
+        "sections": [
+          {
+            "heading": "The business: one question that starts every booking",
+            "paragraphs": [
+              "GERP DJ plays village festivals, weddings, private parties and company events across Galicia from a base in Ourense. According to the site's own bio, the DJ has been playing since 2023 and has done more than 15 performances, always with their own equipment: a booth carrying the GERP DJ name, a full sound system, LED lighting and light effects, a microphone for dedications and announcements, and a Denon DJ controller.",
+              "Bookings happen on WhatsApp Business, Monday to Friday from 10:00 to 19:00, with a reply within 48 working hours. That fact shaped the whole project. A DJ does not need a shop or a customer account; they need a visitor to ask \"are you free on that date?\" with enough detail to answer at once. Every page of the site was designed to lead to that message."
+            ]
+          },
+          {
+            "heading": "Spanish and Galician from the first line of code",
+            "paragraphs": [
+              "The audience lives in Galicia, so the site speaks both of its languages. Spanish is served at the root and Galician under its own folder, with a language switch in the header and every page available in both: home, booking, gallery, bio, privacy and cookies. Each page declares its language in the HTML and links to its counterpart with hreflang annotations, and the sitemap lists all twelve addresses with their alternates, so search engines can show each visitor the version in their language.",
+              "Translation went beyond the visible copy. The page titles, the meta descriptions, the social sharing tags (with Spanish as the main locale and Galician as the alternate) and the press dossier all exist in both languages."
+            ]
+          },
+          {
+            "heading": "Design: video first, in light or dark",
+            "paragraphs": [
+              "A DJ sells an atmosphere, and an atmosphere is easier to show than to describe. The home therefore opens on a muted background video of a real performance, with a visible button to pause it. Below it come the four services, each with its own shortcut to ask for a quote, a section with clips of the DJ in action, and a list of the equipment that arrives on the night.",
+              "The site offers a light and a dark theme through a toggle in the header. The visual language uses translucent glass panels over the imagery, so the photos and videos of the performances remain the protagonists."
+            ],
+            "image": "https://cdn.hlorenzoz.com/hlorenzoz.com/portfolio/gerp-dj/cover.webp",
+            "imageAlt": "GERP DJ home page with the background video of a performance and the date request panel"
+          },
+          {
+            "heading": "A date request that lands in WhatsApp",
+            "paragraphs": [
+              "Right under the headline on the home page sits a short panel titled with the key question: do you have a date? It asks for three details (the date, the town and the type of event, chosen from festival, wedding, private party, company or other) and, when sent, opens WhatsApp with the request already written. The visitor only has to press send.",
+              "The booking page offers a fuller version of the same request, adding a name, the venue and a free message, next to six frequently asked questions: how to book, how much a performance usually costs, where the DJ plays, which events, whether the equipment is included and when to get in touch. Answering the price question openly, with a usual range, saves an exchange of messages for both sides.",
+              "There is no server form in between, no database storing requests and no account to create. That choice keeps the flow as short as possible: the request travels in the visitor's own WhatsApp message, and the site's privacy policy explains what data is handled when someone writes that way."
+            ],
+            "image": "https://cdn.hlorenzoz.com/hlorenzoz.com/portfolio/gerp-dj/screencapture-home.webp",
+            "imageAlt": "Full GERP DJ home page with the services, the equipment and the WhatsApp date request"
+          },
+          {
+            "heading": "A gallery of real performances",
+            "paragraphs": [
+              "The gallery holds ten captioned video clips recorded at their performances and with their own equipment: terraces, pubs, halls, village festivals and the setup of sound and light. For a couple planning a wedding or a committee organising a village festival, seeing the booth lit up in a square is more convincing than any description.",
+              "The videos are served from the business's own hosting, not from an external player, which means no third party cookies and no foreign branding around the clips."
+            ],
+            "image": "https://cdn.hlorenzoz.com/hlorenzoz.com/portfolio/gerp-dj/screencapture-gallery.webp",
+            "imageAlt": "GERP DJ gallery page with a grid of captioned video clips of performances and setups"
+          },
+          {
+            "heading": "A bio with its press dossier",
+            "paragraphs": [
+              "The bio page tells who is behind the decks, with photos and the essentials: base, equipment and the area covered. It also offers a press dossier to download as a PDF (A4, six pages, with bio, services, equipment and contact), in a Spanish and a Galician edition, plus high resolution photos for festival committees and local media.",
+              "A dossier ready to download answers the requests that usually arrive from organisers and journalists before they have to be made."
+            ],
+            "image": "https://cdn.hlorenzoz.com/hlorenzoz.com/portfolio/gerp-dj/screencapture-bio-v2.webp",
+            "imageAlt": "GERP DJ bio page with photos of the DJ and the button to download the press dossier"
+          },
+          {
+            "heading": "Why Astro and Cloudflare",
+            "paragraphs": [
+              "The site is built with Astro, as its compiled assets show. Astro turns each page into finished HTML ahead of time and only sends JavaScript where something on the page needs it, which fits a site like this one: mostly content, plus a few small interactive pieces such as the theme toggle, the video controls, the mobile menu and the request forms.",
+              "Delivery runs on Cloudflare's network. When we checked the home page on 25 November 2026, its HTML was answered from Cloudflare's cache, so a visitor in Ourense or anywhere else receives the page from a nearby location instead of waiting for a distant server to build it."
+            ]
+          },
+          {
+            "heading": "Images and video without the weight",
+            "paragraphs": [
+              "Photos and videos are the heaviest part of any event website, so they got the most attention. Every photo is published in AVIF and WebP, in several widths from 320 to 1024 pixels, inside a picture element that lets the browser choose the lightest version that fits the screen. One image is requested with high priority, and the five images further down the page load lazily, only when the visitor scrolls towards them.",
+              "The second video on the home page and the ten clips of the gallery are not downloaded in advance: each one shows a still image until it is needed. Media files are served from a dedicated subdomain of the business, separate from the pages themselves."
+            ]
+          },
+          {
+            "heading": "Performance results",
+            "paragraphs": [
+              "Measured with PageSpeed Insights on mobile on 24 November 2026, the home page scored 99 in Performance and 100 in Accessibility, 100 in Best Practices and 100 in SEO. The portfolio case study shows the screenshot of that report, and anyone can run the test again from it.",
+              "Speed is not a vanity number here. A visitor who arrives from a search or from a WhatsApp link and sees the page respond at once is more likely to stay, and the visitor who stays is the one who asks for a date."
+            ],
+            "image": "https://cdn.hlorenzoz.com/hlorenzoz.com/portfolio/gerp-dj/gerp-dj-pagespeed-insights.webp",
+            "imageAlt": "PageSpeed Insights mobile report for the GERP DJ home page with 99 in Performance and 100 in Accessibility, Best Practices and SEO"
+          },
+          {
+            "heading": "Structured data Google can read",
+            "paragraphs": [
+              "On 24 November 2026, Google's Rich Results Test found three valid items on the home page: Breadcrumbs, Local business and Organisation, which makes the page eligible for rich results in Google Search. Eligibility is not a guarantee that Google will show them, but it removes a technical obstacle.",
+              "The JSON-LD on the live home page, as we read it on 25 November 2026, describes the business as an EntertainmentBusiness with its address in the province of Ourense, its telephone, the areas it serves (Ourense and Galicia), a reservations contact point with its WhatsApp hours, its links to YouTube, TikTok and its WhatsApp channel, and a catalogue of the four services. Each inner page adds its own type on top: ContactPage and FAQPage on the booking page, CollectionPage on the gallery, AboutPage on the bio, always with breadcrumbs."
+            ],
+            "image": "https://cdn.hlorenzoz.com/hlorenzoz.com/portfolio/gerp-dj/gerp-dj-structured-data-v2.webp",
+            "imageAlt": "Google Rich Results Test for the GERP DJ home page with three valid items: Breadcrumbs, Local business and Organisation"
+          },
+          {
+            "heading": "Accessibility built into the details",
+            "paragraphs": [
+              "The 100 in Accessibility comes from small decisions. The background video plays muted and has its own pause button, labelled for screen readers. The theme toggle is announced as a switch with its current state. A skip link lets keyboard users jump straight to the content, the icon buttons are at least 44 pixels across so they are easy to tap, and the photos carry text describing what they show."
+            ]
+          },
+          {
+            "heading": "No tracking, no cookie banner",
+            "paragraphs": [
+              "The cookie policy states that the site uses no analytics, advertising or personalisation cookies of its own and loads no tracking tools, which is why it shows no consent banner. The only cookies it mentions are the technical ones Cloudflare may set to tell real visits from automated traffic. Visitors get a cleaner first view, and the business has less personal data to look after."
+            ]
+          },
+          {
+            "heading": "Ready for search engines and AI assistants",
+            "paragraphs": [
+              "Beyond the sitemap, the site publishes a robots.txt that explicitly welcomes the main search engine crawlers and AI assistants while keeping a couple of internal paths out of the crawl, and an llms.txt file: a plain summary of the business, its services, its contact hours and its pages in both languages, written so that AI assistants can describe GERP DJ accurately when someone asks about a DJ in Ourense. Every page also carries its canonical address and sharing tags with an image prepared for social networks and messaging apps, with its own description."
+            ]
+          },
+          {
+            "heading": "What this means for an event business",
+            "paragraphs": [
+              "For a DJ, a band or any event service, the website has one job: to turn a curious visitor into a concrete request. Here, the request takes three fields and one tap, it arrives in the channel the business already answers every day, and it comes with the date, the place and the type of celebration already written.",
+              "The rest of the site supports that moment: videos that show the atmosphere, a bio and a dossier that build trust, answers to the usual questions, two languages for the region the business serves, and a fast page with structured data that helps search engines understand what the business does and where."
+            ]
+          },
+          {
+            "heading": "See the case study and the live site",
+            "paragraphs": [
+              "The GERP DJ case study in our portfolio shows the design in both themes, the date request, the gallery and the bio, together with the PageSpeed Insights report and the Rich Results Test. The live site carries our credit in its footer. Both are linked below."
+            ]
+          }
+        ]
+      },
+      "lorenzoz-agency-launch": {
+        "title": "Lorenzoz Agency launches its website on Next.js 16",
+        "description": "How we built and launched hlorenzoz.com in April 2026: a bilingual static site on Next.js 16 and Tailwind CSS 4, tested on every push, served by Cloudflare.",
+        "paragraphs": [
+          "Lorenzoz Agency now has a home of its own on the web. This is the site where a business owner first meets us, sees what we offer and books a free 15 minute consultation, so we built it to the standard we promise our clients: fast on a phone, written in two languages, readable for search engines and checked by automated tests before every release.",
+          "This article explains how the site was built and launched in the first week of April 2026: the framework, the design, the way it is published, the tests that guard it and what we could verify at launch. Every result quoted below comes from a report or a test run of that week, with its date."
+        ],
+        "sections": [
+          {
+            "heading": "What the site offers at launch",
+            "paragraphs": [
+              "The launch version leads with our AI voice service. The headline on the home page promises to scale a business with AI that sounds human, and the copy under it explains the benefit in plain terms: the business is available 24/7, including after hours and at weekends, and its customers get an answer at once. A single call to action invites the visitor to book a free 15 minute consultation, and the navigation covers solutions, benefits, prices, the portfolio and contact.",
+              "The service is also on the page itself. A voice assistant built with ElevenLabs sits in the corner of every page, where a visitor can type a question or start a call and talk to it. It is the most direct demonstration we could give of the product we sell: before booking anything, a visitor can hear how an AI receptionist answers.",
+              "Around the home page, the launch includes a portfolio with concept projects for a dental clinic, a luxury estate agency and a fitness studio, each with its own detail page in English and Spanish, a digital business card, and the privacy policy, cookie policy and terms and conditions. The picture at the top of this article is the home page as it looked at launch."
+            ]
+          },
+          {
+            "heading": "Built on Next.js 16 and Tailwind CSS 4",
+            "paragraphs": [
+              "The site is a Next.js 16 project, the React framework, styled with Tailwind CSS 4. Bun installs the dependencies and runs every script, from the linter to the tests, which keeps local work and the automated pipeline on the same commands.",
+              "Next.js builds the whole site ahead of time as a static export. Every page becomes a finished HTML file in an output folder, and nothing has to be generated on a server when a visitor arrives. A marketing site only changes when we publish, not when someone opens it, so there is no reason to run a server for each request: the files are ready, and the network only has to deliver them.",
+              "The illustration sums up the stack at launch: Next.js 16 and Tailwind CSS 4 for the site, Cloudflare as the edge network that hosts it, GitHub Actions for continuous integration, Vitest for unit tests and Playwright for end to end tests in real browsers."
+            ],
+            "image": "https://cdn.hlorenzoz.com/hlorenzoz.com/portfolio/me/tech-stack-visual.webp",
+            "imageAlt": "Illustration of the launch stack: Next.js 16, Tailwind CSS 4, Cloudflare, GitHub Actions, Vitest and Playwright"
+          },
+          {
+            "heading": "A glass design that holds on every screen",
+            "paragraphs": [
+              "The visual identity is a glassmorphism design: a dark hero, a frosted navigation bar that floats above the content, translucent cards and a bright brand blue for the actions that matter. The same tokens drive every page, so the portfolio, the legal pages and the business card all read as one site.",
+              "Most visitors to a local business arrive on a phone, so the layouts were checked in the browser at the sizes of an iPhone 14 Pro (393 by 852 pixels), a Pixel 7 Pro (480 by 1040), an iPhone 14 Pro Max (430 by 932) and an iPad Air 5 (820 by 1180). The screenshot shows the same hero on all four: the headline, the copy and the booking button reflow to the width of the screen without being cut or overlapping.",
+              "On small screens the menu folds behind a single button, while the logo and the language selector stay visible at the top, so switching between English and Spanish never takes more than one tap."
+            ],
+            "image": "https://cdn.hlorenzoz.com/hlorenzoz.com/portfolio/me/multiple-screens.webp",
+            "imageAlt": "The Lorenzoz Agency home page at launch on an iPhone 14 Pro, a Pixel 7 Pro, an iPhone 14 Pro Max and an iPad Air 5"
+          },
+          {
+            "heading": "Two languages from day one",
+            "paragraphs": [
+              "Every page exists in English and in Spanish under its own address, with the language as the first part of the path. Translations live in one message file per language and are loaded by a translation library made for Next.js, so a page is written once and filled with the text of the language the visitor chose.",
+              "Both versions are written natively, not passed through a translator. The automated tests open the English and Spanish versions of the home page and of the portfolio detail pages, and check that the language switch takes the visitor to the same page in the other language."
+            ]
+          },
+          {
+            "heading": "Published as static files on Cloudflare",
+            "paragraphs": [
+              "Because the build is a folder of plain files, publishing is a copy: the last step of the pipeline uploads the static export to Cloudflare, which serves it from its network close to each visitor. Images are delivered through the Cloudflare CDN rather than from the site build.",
+              "This setup has very little that can break. There is no server process to keep up to date, no database to fill or to lose, and no code running for each visit, so a sudden spike in traffic only means more files delivered from a cache. Hosting costs stay low for the same reason."
+            ]
+          },
+          {
+            "heading": "Every push goes through a pipeline",
+            "paragraphs": [
+              "The repository runs a GitHub Actions pipeline on every push and pull request. It has four jobs in a fixed order, and each one waits for the previous one to pass: quality checks and unit tests, the build of the static export, verification with end to end tests and Lighthouse, and the deploy to Cloudflare. A change that fails at any step never reaches the live site.",
+              "The quality job runs ESLint, a TypeScript type check and the unit tests in Vitest 4.1.0. In the run shown, 10 test files and 73 tests passed in about 11 seconds. They cover the security and input validation helpers, the portfolio data and components such as the carousels, the image that fades in on load and the buttons.",
+              "Before code even reaches the pipeline, pre commit hooks run on the developer's machine with Bun, so most mistakes are caught locally in seconds instead of minutes later in the pipeline."
+            ],
+            "image": "https://cdn.hlorenzoz.com/hlorenzoz.com/portfolio/me/tests-quality-unit.webp",
+            "imageAlt": "GitHub Actions log of the quality job: lint, type check and 73 Vitest tests passing in 10 files"
+          },
+          {
+            "heading": "End to end tests in five browsers",
+            "paragraphs": [
+              "The verification job tests the static export itself, the same files that are about to be deployed. Playwright opens the site in five browser profiles: Chromium, Firefox and WebKit on desktop, plus Mobile Chrome and Mobile Safari.",
+              "Each profile runs the same nine scenarios. On the home page the tests check that it loads, that the navigation works, that the features and the stats are shown, that the layout responds to the screen size and that both language versions are accessible. On the dental clinic case study they check the English and the Spanish detail pages and the switch between them. In the run of 6 April 2026 all 45 tests passed in 1.9 minutes."
+            ],
+            "image": "https://cdn.hlorenzoz.com/hlorenzoz.com/portfolio/me/tests-e2e.webp",
+            "imageAlt": "Playwright log in GitHub Actions with 45 end to end tests passing in Chromium, Firefox, WebKit, Mobile Chrome and Mobile Safari"
+          },
+          {
+            "heading": "Lighthouse audits in the same run",
+            "paragraphs": [
+              "In the same job, Lighthouse CI serves the static export on a local server and audits seven pages: the English home page, the portfolio, the dental clinic case study, the digital business card and the three legal pages. The results are checked against the assertions set for the project, and the job only passes if they hold.",
+              "The run in the screenshot passed and uploaded its reports on 6 April 2026. We do not quote scores from it here, because the log shows the audits passing rather than the individual numbers. What it shows is the habit that matters: performance, accessibility and SEO are checked on every change, not once before launch."
+            ],
+            "image": "https://cdn.hlorenzoz.com/hlorenzoz.com/portfolio/me/tests-lighthouse.webp",
+            "imageAlt": "Lighthouse CI log in GitHub Actions auditing seven pages of the static export, run on 6 April 2026"
+          },
+          {
+            "heading": "Structured data recognised by Google",
+            "paragraphs": [
+              "Search engines and AI assistants read a page more reliably when it describes itself in structured data. The home page carries JSON-LD that presents the agency as an organisation and a local business and publishes its frequently asked questions in a form Google can read.",
+              "On 6 April 2026 at 20:23, Google's Rich Results Test crawled the home page and found three valid items: FAQ, Local businesses and Organisation. Valid items make the page eligible for rich results in Google Search. The screenshot is that report."
+            ],
+            "image": "https://cdn.hlorenzoz.com/hlorenzoz.com/portfolio/me/structured-data.webp",
+            "imageAlt": "Google Rich Results Test report from 6 April 2026 with three valid items: FAQ, Local businesses and Organisation"
+          },
+          {
+            "heading": "What a local business can take from it",
+            "paragraphs": [
+              "Everything above is the standard we offer to clients. A static site served from the edge loads quickly on the mobile connections most local customers use, costs little to host and has very little that can go down. Two native language versions reach both audiences. Structured data tells Google who the business is and what it offers without guessing, and a pipeline of tests means a broken page is caught before a customer sees it.",
+              "None of this guarantees a position in Google, and we never promise one. What it does is remove the technical reasons a good business gets passed over: slow pages, unreadable data and layouts that break on a phone."
+            ]
+          },
+          {
+            "heading": "What came next",
+            "paragraphs": [
+              "In November 2026 we rebuilt the site on Astro, keeping the same addresses, design and content while sending far less JavaScript to the browser. A separate post covers that migration and its measured results."
+            ]
+          }
+        ]
+      }
+    },
+    "related": {
+      "title": "News about this project"
     }
   },
   "numbers": {
@@ -1558,5 +2270,12 @@
     "title": "Page not found",
     "text": "The page you are looking for does not exist or has moved.",
     "back": "Back to home"
+  },
+  "sitemap": {
+    "byline": {
+      "by": "Written by",
+      "updated": "Updated",
+      "readTime": "{min} min read"
+    }
   }
 }
