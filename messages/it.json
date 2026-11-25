@@ -443,7 +443,106 @@
     "aiVoiceReceptionist": {
       "name": "Receptionist vocale con IA",
       "meta": {
-        "description": "Receptionist vocali con IA attivi 24/7 che rispondono alle domande frequenti, fissano appuntamenti e raccolgono ogni contatto, così nessuna chiamata resta senza risposta."
+        "description": "Receptionist vocali con IA attivi 24/7 che rispondono alle domande frequenti, fissano appuntamenti e raccolgono ogni contatto, così nessuna chiamata resta senza risposta.",
+        "title": "Receptionist vocale con IA 24/7"
+      },
+      "hero": {
+        "eyebrow": "Receptionist vocale con IA",
+        "title": "Non perdere mai più una chiamata",
+        "subtitle": "Agenti vocali basati sull'elaborazione del linguaggio naturale che gestiscono le chiamate come farebbe una persona. Fissano appuntamenti e rispondono alle domande frequenti, 24 ore su 24, 7 giorni su 7.",
+        "price": "{price}/mese {tax}, senza costi di attivazione. {bundlePrice}/mese se abbinato alla SEO locale (sconto del {discount}%).",
+        "cta": "Prenota una consulenza"
+      },
+      "benefits": {
+        "title": "Cosa ottieni",
+        "items": [
+          {
+            "title": "Risposte alle domande frequenti 24/7",
+            "description": "Il tuo receptionist con IA risponde subito alle domande più comuni, di giorno e di notte, così nessun potenziale cliente resta in attesa di essere richiamato."
+          },
+          {
+            "title": "Prenotazione degli appuntamenti",
+            "description": "Chi chiama prenota direttamente nel tuo calendario durante la telefonata, senza scambi di email."
+          },
+          {
+            "title": "Fino al 90% delle chiamate risolte al primo contatto",
+            "description": "La maggior parte delle chiamate si chiude al primo tentativo: meno attese in linea e più tempo libero per il tuo team."
+          }
+        ]
+      },
+      "deliverables": {
+        "title": "Il pacchetto completo",
+        "groups": [
+          {
+            "label": "Sempre pronto a rispondere",
+            "items": [
+              "Risposte intelligenti alle domande frequenti, 24/7",
+              "Appuntamenti fissati direttamente nel tuo calendario",
+              "Raccolta dei contatti in modo naturale durante ogni chiamata",
+              "Fino al 90% delle chiamate risolte al primo contatto"
+            ]
+          },
+          {
+            "label": "Parla come il tuo team",
+            "items": [
+              "Voce e copione personalizzati in linea con il tuo brand",
+              "Configurazione leggera con il tuo sistema telefonico attuale",
+              "Integrazione con il CRM (HubSpot, Salesforce, GoHighLevel) una volta forniti gli accessi API",
+              "Ottimizzato per inglese e spagnolo"
+            ]
+          },
+          {
+            "label": "Assistenza continua",
+            "items": [
+              "Aggiornamenti mensili del copione e supporto proattivo",
+              "Test periodici del sistema",
+              "Trattamento dei dati conforme al GDPR",
+              "Pensato per coprire le chiamate fuori orario e nei momenti di picco"
+            ]
+          }
+        ]
+      },
+      "process": {
+        "title": "Come funziona",
+        "steps": [
+          {
+            "number": "01",
+            "title": "Prenotazione",
+            "description": "Fissa una consulenza gratuita per analizzare insieme come gestisci le chiamate."
+          },
+          {
+            "number": "02",
+            "title": "Incontro",
+            "description": "Valutiamo le tue esigenze e definiamo insieme copione e strategia."
+          },
+          {
+            "number": "03",
+            "title": "Sviluppo",
+            "description": "Realizziamo su misura il tuo agente vocale con IA e il suo copione."
+          },
+          {
+            "number": "04",
+            "title": "Consegna",
+            "description": "Il tuo agente entra in funzione, di solito tra i 7 e i 14 giorni."
+          }
+        ]
+      },
+      "faq": {
+        "title": "Domande frequenti",
+        "items": [
+          {
+            "question": "Il Receptionist vocale con IA si integra con il CRM che uso già?",
+            "answer": "Sì. Il nostro Receptionist vocale con IA può integrarsi con il CRM che già utilizzi (ad esempio HubSpot, Salesforce, GoHighLevel). Servono le specifiche tecniche e gli accessi API."
+          },
+          {
+            "question": "Quali lingue supporta il Receptionist vocale con IA?",
+            "answer": "Il Receptionist vocale con IA supporta molte lingue. I nostri sistemi, però, sono testati in modo rigoroso e ottimizzati in particolare per l'inglese e lo spagnolo, per garantire la migliore qualità di interazione."
+          },
+          {
+            "question": "Come viene fatturato il servizio di Receptionist vocale con IA?",
+            "answer": "Il servizio di Receptionist vocale con IA prevede un pagamento mensile ricorrente. Questo pagamento copre in modo continuativo il supporto proattivo, gli aggiornamenti delle informazioni, i test del sistema e i minuti di chiamata inclusi ogni mese."
+          }
+        ]
       }
     },
     "localSeo": {

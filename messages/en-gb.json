@@ -752,7 +752,106 @@
     "aiVoiceReceptionist": {
       "name": "AI Voice Receptionist",
       "meta": {
+        "title": "AI Voice Receptionist",
         "description": "24/7 AI voice receptionists that answer FAQs, book appointments and capture every lead, so no call goes unanswered."
+      },
+      "hero": {
+        "eyebrow": "AI Voice Receptionist",
+        "title": "Never Miss a Call Again",
+        "subtitle": "Natural language processing agents that handle calls just as a person would. They book appointments and answer FAQs, 24/7.",
+        "price": "{price} a month {tax}, no setup fee. {bundlePrice} a month alongside Local SEO ({discount}% off).",
+        "cta": "Book a consultation"
+      },
+      "benefits": {
+        "title": "What You Get",
+        "items": [
+          {
+            "title": "24/7 Smart FAQ Responses",
+            "description": "Your AI receptionist answers common questions instantly, day or night, so leads never wait for a callback."
+          },
+          {
+            "title": "Appointment Booking",
+            "description": "Callers book straight into your diary during the call, with no back and forth by email."
+          },
+          {
+            "title": "Up to 90% First Call Resolution",
+            "description": "Most calls are fully resolved first time, cutting waiting times and freeing up your team."
+          }
+        ]
+      },
+      "deliverables": {
+        "title": "The Complete Package",
+        "groups": [
+          {
+            "label": "Always On Answering",
+            "items": [
+              "24/7 smart FAQ responses",
+              "Appointment booking straight into your diary",
+              "Conversational lead capture on every call",
+              "Up to 90% first call resolution"
+            ]
+          },
+          {
+            "label": "Sounds Like Your Team",
+            "items": [
+              "Custom voice and script matched to your brand",
+              "Lightweight setup with your existing phone system",
+              "CRM integration (HubSpot, Salesforce, GoHighLevel) once you provide API access",
+              "Optimised for English and Spanish"
+            ]
+          },
+          {
+            "label": "Ongoing Care",
+            "items": [
+              "Monthly script updates and proactive support",
+              "Regular system testing",
+              "Data handling aligned with GDPR",
+              "Built for out of hours and overflow cover"
+            ]
+          }
+        ]
+      },
+      "process": {
+        "title": "How It Works",
+        "steps": [
+          {
+            "number": "01",
+            "title": "Book",
+            "description": "Arrange a free consultation to talk through your call flows."
+          },
+          {
+            "number": "02",
+            "title": "Meet",
+            "description": "We assess your needs and agree on the script and strategy."
+          },
+          {
+            "number": "03",
+            "title": "Develop",
+            "description": "We build your AI voice agent and its script to measure."
+          },
+          {
+            "number": "04",
+            "title": "Deliver",
+            "description": "Your agent goes live, usually within 7 to 14 days."
+          }
+        ]
+      },
+      "faq": {
+        "title": "Frequently Asked Questions",
+        "items": [
+          {
+            "question": "Can the AI Voice Receptionist integrate with my existing CRM?",
+            "answer": "Yes. Our AI Voice Receptionist can integrate with your existing CRM (for example HubSpot, Salesforce or GoHighLevel). You will need to provide the technical specifications and API access."
+          },
+          {
+            "question": "Which languages does the AI Voice Receptionist support?",
+            "answer": "The AI Voice Receptionist supports many languages worldwide. However, our systems are rigorously tested and optimised specifically for English and Spanish to ensure the highest quality conversations."
+          },
+          {
+            "question": "How is the AI Voice Receptionist service billed?",
+            "answer": "The AI Voice Receptionist service is billed as a recurring monthly payment. It covers ongoing proactive support, knowledge updates, system testing and your monthly allowance of call minutes."
+          }
+        ]
       }
     },
     "softwareDevelopment": {

@@ -758,7 +758,106 @@
     "aiVoiceReceptionist": {
       "name": "Réceptionniste vocal IA",
       "meta": {
+        "title": "Réceptionniste vocal IA disponible 24/7",
         "description": "Des réceptionnistes vocaux IA disponibles 24/7 qui répondent aux questions fréquentes, prennent les réservations et captent chaque prospect, pour qu'aucun appel ne reste sans réponse."
+      },
+      "hero": {
+        "eyebrow": "Réceptionniste vocal IA",
+        "title": "Ne manquez plus aucun appel",
+        "subtitle": "Des agents vocaux qui comprennent le langage naturel et traitent les appels comme le ferait une personne. Ils prennent les réservations et répondent aux questions fréquentes, 24/7.",
+        "price": "{price} par mois {tax}, sans frais de mise en service. {bundlePrice} par mois avec le SEO local ({discount} % de remise).",
+        "cta": "Réserver une consultation"
+      },
+      "benefits": {
+        "title": "Ce que vous obtenez",
+        "items": [
+          {
+            "title": "Réponses aux questions fréquentes 24/7",
+            "description": "Votre réceptionniste IA répond tout de suite aux questions courantes, de jour comme de nuit, pour que vos prospects n'attendent jamais d'être rappelés."
+          },
+          {
+            "title": "Prise de réservations",
+            "description": "Vos correspondants réservent un créneau dans votre agenda pendant l'appel, sans échanges de courriels."
+          },
+          {
+            "title": "Jusqu'à 90 % de résolution au premier appel",
+            "description": "La plupart des appels sont entièrement traités du premier coup, ce qui réduit l'attente et libère du temps pour votre équipe."
+          }
+        ]
+      },
+      "deliverables": {
+        "title": "La formule complète",
+        "groups": [
+          {
+            "label": "Une réponse à toute heure",
+            "items": [
+              "Réponses aux questions fréquentes 24/7",
+              "Réservations enregistrées directement dans votre agenda",
+              "Collecte des coordonnées des prospects à chaque appel",
+              "Jusqu'à 90 % de résolution au premier appel"
+            ]
+          },
+          {
+            "label": "La voix de votre entreprise",
+            "items": [
+              "Voix et script personnalisés selon votre marque",
+              "Mise en place légère avec votre système téléphonique actuel",
+              "Intégration à votre CRM (HubSpot, Salesforce, GoHighLevel) dès que vous fournissez l'accès API",
+              "Optimisé pour l'anglais et l'espagnol"
+            ]
+          },
+          {
+            "label": "Suivi continu",
+            "items": [
+              "Mises à jour mensuelles du script et support proactif",
+              "Tests réguliers du système",
+              "Traitement des données conforme au RGPD",
+              "Conçu pour couvrir les appels hors horaires et les pics d'activité"
+            ]
+          }
+        ]
+      },
+      "process": {
+        "title": "Comment ça marche",
+        "steps": [
+          {
+            "number": "01",
+            "title": "Réservation",
+            "description": "Planifiez une consultation gratuite pour passer en revue le parcours de vos appels."
+          },
+          {
+            "number": "02",
+            "title": "Rencontre",
+            "description": "Nous analysons vos besoins et validons ensemble le script et la stratégie."
+          },
+          {
+            "number": "03",
+            "title": "Développement",
+            "description": "Nous développons sur mesure votre agent vocal IA et son script."
+          },
+          {
+            "number": "04",
+            "title": "Livraison",
+            "description": "Votre agent est mis en service, généralement sous 7 à 14 jours."
+          }
+        ]
+      },
+      "faq": {
+        "title": "Questions fréquentes",
+        "items": [
+          {
+            "question": "Le réceptionniste vocal IA peut s'intégrer à mon CRM actuel ?",
+            "answer": "Oui. Notre réceptionniste vocal IA peut s'intégrer à votre CRM existant (par exemple HubSpot, Salesforce ou GoHighLevel). Vous devez nous fournir les spécifications techniques et l'accès API."
+          },
+          {
+            "question": "Dans quelles langues fonctionne le réceptionniste vocal IA ?",
+            "answer": "Le réceptionniste vocal IA prend en charge de nombreuses langues. Nos systèmes sont toutefois testés en profondeur et optimisés spécifiquement pour l'anglais et l'espagnol, afin de garantir des échanges de la meilleure qualité."
+          },
+          {
+            "question": "Comment est facturé le service de réceptionniste vocal IA ?",
+            "answer": "Le service de réceptionniste vocal IA est facturé par un paiement mensuel récurrent. Ce paiement couvre en continu le support proactif, les mises à jour des connaissances, les tests du système et votre forfait de minutes mensuel."
+          }
+        ]
       }
     },
     "softwareDevelopment": {

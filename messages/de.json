@@ -758,7 +758,106 @@
         "aiVoiceReceptionist": {
             "name": "Telefonassistent mit KI",
             "meta": {
-                "description": "Telefonassistenten mit KI, rund um die Uhr: Sie beantworten häufige Fragen, buchen Termine und erfassen jede Anfrage, damit kein Anruf unbeantwortet bleibt."
+                "description": "Telefonassistenten mit KI, rund um die Uhr: Sie beantworten häufige Fragen, buchen Termine und erfassen jede Anfrage, damit kein Anruf unbeantwortet bleibt.",
+                "title": "Telefonassistent mit KI rund um die Uhr"
+            },
+            "hero": {
+                "eyebrow": "Telefonassistent mit KI",
+                "title": "Nie wieder einen Anruf verpassen",
+                "subtitle": "Sprachassistenten mit KI, die Anrufe so natürlich führen wie ein Mensch. Sie vereinbaren Termine und beantworten häufige Fragen, rund um die Uhr.",
+                "price": "{price} pro Monat {tax}, ohne Einrichtungsgebühr. Zusammen mit dem Plan für lokales SEO {bundlePrice} pro Monat ({discount}% Rabatt).",
+                "cta": "Beratung buchen"
+            },
+            "benefits": {
+                "title": "Was Sie bekommen",
+                "items": [
+                    {
+                        "title": "Antworten auf häufige Fragen, rund um die Uhr",
+                        "description": "Ihr Telefonassistent beantwortet typische Fragen sofort, bei Tag und bei Nacht. So wartet kein Interessent auf einen Rückruf."
+                    },
+                    {
+                        "title": "Terminvereinbarung",
+                        "description": "Anrufer buchen ihren Termin direkt während des Gesprächs in Ihrem Kalender, ganz ohne langes Hin und Her per Mail."
+                    },
+                    {
+                        "title": "Bis zu 90% beim ersten Anruf gelöst",
+                        "description": "Die meisten Anliegen werden schon beim ersten Anruf vollständig geklärt. Das verkürzt Wartezeiten und entlastet Ihr Team."
+                    }
+                ]
+            },
+            "deliverables": {
+                "title": "Das Komplettpaket",
+                "groups": [
+                    {
+                        "label": "Immer erreichbar",
+                        "items": [
+                            "Antworten auf häufige Fragen, rund um die Uhr",
+                            "Terminvereinbarung direkt in Ihrem Kalender",
+                            "Erfassung von Anfragen im Gespräch, bei jedem Anruf",
+                            "Bis zu 90% der Anliegen beim ersten Anruf gelöst"
+                        ]
+                    },
+                    {
+                        "label": "Klingt wie Ihr Team",
+                        "items": [
+                            "Stimme und Gesprächsleitfaden passend zu Ihrer Marke",
+                            "Schlanke Einrichtung mit Ihrer bestehenden Telefonanlage",
+                            "Anbindung an Ihr CRM (HubSpot, Salesforce, GoHighLevel), sobald Sie uns Zugang zur API geben",
+                            "Optimiert für Englisch und Spanisch"
+                        ]
+                    },
+                    {
+                        "label": "Laufende Betreuung",
+                        "items": [
+                            "Monatliche Anpassungen des Leitfadens und proaktiver Support",
+                            "Regelmäßige Systemtests",
+                            "Datenverarbeitung im Einklang mit der DSGVO",
+                            "Ideal für Anrufe außerhalb der Geschäftszeiten und bei hohem Andrang"
+                        ]
+                    }
+                ]
+            },
+            "process": {
+                "title": "So funktioniert es",
+                "steps": [
+                    {
+                        "number": "01",
+                        "title": "Termin buchen",
+                        "description": "Vereinbaren Sie eine kostenlose Beratung, um Ihre Anrufabläufe gemeinsam durchzugehen."
+                    },
+                    {
+                        "number": "02",
+                        "title": "Gespräch",
+                        "description": "Wir analysieren Ihren Bedarf und stimmen Gesprächsleitfaden und Strategie mit Ihnen ab."
+                    },
+                    {
+                        "number": "03",
+                        "title": "Entwicklung",
+                        "description": "Wir entwickeln Ihren Sprachassistenten mit KI und seinen Leitfaden individuell für Sie."
+                    },
+                    {
+                        "number": "04",
+                        "title": "Übergabe",
+                        "description": "Ihr Assistent geht live, in der Regel innerhalb von 7 bis 14 Tagen."
+                    }
+                ]
+            },
+            "faq": {
+                "title": "Häufige Fragen",
+                "items": [
+                    {
+                        "question": "Lässt sich der Telefonassistent mit KI an mein bestehendes CRM anbinden?",
+                        "answer": "Ja. Unser Telefonassistent mit KI lässt sich in Ihr bestehendes CRM einbinden (zum Beispiel HubSpot, Salesforce, GoHighLevel). Dafür benötigen wir die technischen Spezifikationen und einen Zugang zur API."
+                    },
+                    {
+                        "question": "Welche Sprachen unterstützt der Telefonassistent mit KI?",
+                        "answer": "Der Telefonassistent mit KI unterstützt zahlreiche Sprachen weltweit. Gründlich getestet und gezielt optimiert sind unsere Systeme jedoch für Englisch und Spanisch, damit die Gespräche dort die höchste Qualität erreichen."
+                    },
+                    {
+                        "question": "Wie wird der Telefonassistent mit KI abgerechnet?",
+                        "answer": "Der Telefonassistent mit KI wird über eine wiederkehrende monatliche Zahlung abgerechnet. Sie deckt laufend den proaktiven Support, die Aktualisierung des Wissens, die Systemtests und Ihr monatliches Minutenkontingent ab."
+                    }
+                ]
             }
         },
         "softwareDevelopment": {

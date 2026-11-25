@@ -443,7 +443,106 @@
         "aiVoiceReceptionist": {
             "name": "Telefoonreceptionist met AI",
             "meta": {
+                "title": "Telefoonreceptionist met AI, dag en nacht",
                 "description": "Telefoonreceptionisten met AI die 24/7 veelgestelde vragen beantwoorden, afspraken inplannen en elke lead vastleggen, zodat geen telefoontje onbeantwoord blijft."
+            },
+            "hero": {
+                "eyebrow": "Telefoonreceptionist met AI",
+                "title": "Nooit meer een gemist telefoontje",
+                "subtitle": "Spraakassistenten die natuurlijke taal begrijpen en gesprekken voeren zoals een mens. Ze plannen afspraken in en beantwoorden veelgestelde vragen, 24/7.",
+                "price": "{price} per maand {tax}, zonder opstartkosten. {bundlePrice} per maand samen met Lokale SEO ({discount}% korting).",
+                "cta": "Consult boeken"
+            },
+            "benefits": {
+                "title": "Wat je krijgt",
+                "items": [
+                    {
+                        "title": "24/7 slimme antwoorden op veelgestelde vragen",
+                        "description": "Je receptionist met AI beantwoordt veelgestelde vragen direct, dag en nacht, zodat leads nooit op een terugbelverzoek hoeven te wachten."
+                    },
+                    {
+                        "title": "Afspraken inplannen",
+                        "description": "Bellers boeken tijdens het gesprek direct in je agenda, zonder heen en weer mailen."
+                    },
+                    {
+                        "title": "Tot 90% opgelost bij het eerste gesprek",
+                        "description": "De meeste telefoontjes worden in één keer volledig afgehandeld. Dat scheelt wachttijd en geeft je team meer ruimte."
+                    }
+                ]
+            },
+            "deliverables": {
+                "title": "Het complete pakket",
+                "groups": [
+                    {
+                        "label": "Altijd bereikbaar",
+                        "items": [
+                            "24/7 slimme antwoorden op veelgestelde vragen",
+                            "Afspraken direct in je agenda ingepland",
+                            "Leads vastleggen in een natuurlijk gesprek, bij elk telefoontje",
+                            "Tot 90% opgelost bij het eerste gesprek"
+                        ]
+                    },
+                    {
+                        "label": "Klinkt als je eigen team",
+                        "items": [
+                            "Stem en script op maat, afgestemd op je merk",
+                            "Eenvoudige koppeling met je bestaande telefoonsysteem",
+                            "Koppeling met je CRM (HubSpot, Salesforce, GoHighLevel) zodra je API toegang geeft",
+                            "Geoptimaliseerd voor Engels en Spaans"
+                        ]
+                    },
+                    {
+                        "label": "Doorlopende zorg",
+                        "items": [
+                            "Maandelijkse scriptupdates en proactieve ondersteuning",
+                            "Periodieke tests van het systeem",
+                            "Gegevensverwerking in lijn met de AVG",
+                            "Gemaakt voor bereikbaarheid buiten kantooruren en bij drukte"
+                        ]
+                    }
+                ]
+            },
+            "process": {
+                "title": "Zo werkt het",
+                "steps": [
+                    {
+                        "number": "01",
+                        "title": "Plannen",
+                        "description": "Plan een gratis kennismaking om je belstromen door te nemen."
+                    },
+                    {
+                        "number": "02",
+                        "title": "Kennismaken",
+                        "description": "We brengen in kaart wat je nodig hebt en stemmen script en aanpak samen af."
+                    },
+                    {
+                        "number": "03",
+                        "title": "Bouwen",
+                        "description": "We bouwen je spraakassistent met AI en het bijbehorende script op maat."
+                    },
+                    {
+                        "number": "04",
+                        "title": "Opleveren",
+                        "description": "Je assistent gaat live, meestal binnen 7 tot 14 dagen."
+                    }
+                ]
+            },
+            "faq": {
+                "title": "Veelgestelde vragen",
+                "items": [
+                    {
+                        "question": "Kan de telefoonreceptionist met AI koppelen met mijn bestaande CRM?",
+                        "answer": "Ja. Onze telefoonreceptionist met AI kan koppelen met je bestaande CRM omgeving (bijvoorbeeld HubSpot, Salesforce of GoHighLevel). Daarvoor hebben we de technische specificaties en API toegang van je nodig."
+                    },
+                    {
+                        "question": "Welke talen ondersteunt de telefoonreceptionist met AI?",
+                        "answer": "De telefoonreceptionist met AI ondersteunt meerdere wereldtalen. Onze systemen zijn wel specifiek getest en geoptimaliseerd voor Engels en Spaans, voor gesprekken van de hoogste kwaliteit."
+                    },
+                    {
+                        "question": "Hoe wordt de telefoonreceptionist met AI gefactureerd?",
+                        "answer": "De telefoonreceptionist met AI wordt gefactureerd met een terugkerende maandelijkse betaling. Die dekt doorlopend de proactieve ondersteuning, updates van de kennisbank, tests van het systeem en je maandelijkse belminuten."
+                    }
+                ]
             }
         },
         "localSeo": {

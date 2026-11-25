@@ -758,7 +758,106 @@
     "aiVoiceReceptionist": {
       "name": "Rececionista de voz com IA",
       "meta": {
+        "title": "Rececionista de voz com IA para empresas",
         "description": "Rececionistas de voz com IA, 24/7, que respondem a perguntas frequentes, marcam consultas e captam cada contacto, para que nenhuma chamada fique sem resposta."
+      },
+      "hero": {
+        "eyebrow": "Rececionista de voz com IA",
+        "title": "Nunca mais perca uma chamada",
+        "subtitle": "Agentes de processamento de linguagem natural que atendem chamadas como uma pessoa. Marcam consultas e respondem a perguntas frequentes, 24/7.",
+        "price": "{price}/mês {tax}, sem custos de instalação. {bundlePrice}/mês em conjunto com o SEO local ({discount}% de desconto).",
+        "cta": "Marcar consulta"
+      },
+      "benefits": {
+        "title": "O que recebe",
+        "items": [
+          {
+            "title": "Respostas inteligentes 24/7",
+            "description": "A sua rececionista com IA responde de imediato às perguntas mais comuns, de dia ou de noite, para que nenhum potencial cliente fique à espera de uma chamada de volta."
+          },
+          {
+            "title": "Marcação de consultas",
+            "description": "Quem liga marca diretamente na sua agenda durante a chamada, sem trocas de emails."
+          },
+          {
+            "title": "Até 90% resolvido à primeira chamada",
+            "description": "A maioria das chamadas fica resolvida logo à primeira, o que reduz os tempos de espera e liberta a sua equipa."
+          }
+        ]
+      },
+      "deliverables": {
+        "title": "O pacote completo",
+        "groups": [
+          {
+            "label": "Atendimento sempre disponível",
+            "items": [
+              "Respostas inteligentes a perguntas frequentes, 24/7",
+              "Marcação de consultas diretamente na sua agenda",
+              "Recolha de contactos em conversa, em cada chamada",
+              "Até 90% de resolução à primeira chamada"
+            ]
+          },
+          {
+            "label": "Soa como a sua equipa",
+            "items": [
+              "Voz e guião personalizados de acordo com a sua marca",
+              "Configuração simples com o seu sistema telefónico atual",
+              "Integração com CRM (HubSpot, Salesforce, GoHighLevel) assim que nos der acesso à API",
+              "Otimizada para inglês e espanhol"
+            ]
+          },
+          {
+            "label": "Acompanhamento contínuo",
+            "items": [
+              "Atualizações mensais do guião e suporte proativo",
+              "Testes periódicos do sistema",
+              "Tratamento de dados em conformidade com o RGPD",
+              "Pensada para cobrir as chamadas fora do horário de expediente e os picos de chamadas"
+            ]
+          }
+        ]
+      },
+      "process": {
+        "title": "Como funciona",
+        "steps": [
+          {
+            "number": "01",
+            "title": "Marcar",
+            "description": "Marque uma consulta gratuita para analisarmos o percurso das suas chamadas."
+          },
+          {
+            "number": "02",
+            "title": "Reunir",
+            "description": "Analisamos as suas necessidades e definimos em conjunto o guião e a estratégia."
+          },
+          {
+            "number": "03",
+            "title": "Desenvolver",
+            "description": "Construímos à medida o seu agente de voz com IA e o respetivo guião."
+          },
+          {
+            "number": "04",
+            "title": "Entregar",
+            "description": "O seu agente entra em funcionamento, normalmente em 7 a 14 dias."
+          }
+        ]
+      },
+      "faq": {
+        "title": "Perguntas frequentes",
+        "items": [
+          {
+            "question": "A rececionista de voz com IA pode ser integrada com o CRM que já utilizo?",
+            "answer": "Sim. A nossa rececionista de voz com IA pode ser integrada com a infraestrutura de CRM que já utiliza (por exemplo, HubSpot, Salesforce ou GoHighLevel). Para isso, é necessário fornecer as especificações técnicas e o acesso à API."
+          },
+          {
+            "question": "Que idiomas suporta a rececionista de voz com IA?",
+            "answer": "A rececionista de voz com IA suporta vários idiomas. No entanto, os nossos sistemas são testados com rigor e otimizados especificamente para inglês e espanhol, para garantir a melhor qualidade possível nas conversas."
+          },
+          {
+            "question": "Como é faturado o serviço de rececionista de voz com IA?",
+            "answer": "O serviço de rececionista de voz com IA é faturado através de um pagamento mensal recorrente. Este pagamento cobre de forma contínua o suporte proativo essencial, as atualizações de conhecimento, os testes do sistema e os minutos mensais incluídos no seu plano."
+          }
+        ]
       }
     },
     "softwareDevelopment": {
