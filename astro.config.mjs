@@ -2,6 +2,7 @@
 import { defineConfig, fontProviders } from 'astro/config';
 import react from '@astrojs/react';
 import tailwindcss from '@tailwindcss/vite';
+import trailingSlashRedirect from './src/integrations/trailing-slash-redirect.mjs';
 
 // Static build served as assets by a Cloudflare Worker (see wrangler.jsonc).
 // URLs take the form /{locale}/{path}/, emitted as /{locale}/{path}/index.html.
@@ -11,7 +12,8 @@ export default defineConfig({
   trailingSlash: 'always',
   build: { format: 'directory' },
   // React only renders the ElevenLabs island and the build-time QR code.
-  integrations: [react()],
+  // trailingSlashRedirect: `astro dev` redirects /en to /en/ like the Worker does.
+  integrations: [react(), trailingSlashRedirect()],
   vite: { plugins: [tailwindcss()] },
   fonts: [
     {
