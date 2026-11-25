@@ -9,9 +9,8 @@ import Footer from '@/src/components/Footer.astro';
 /**
  * Renders the Footer as if served at `pathname` (it reads `Astro.url`).
  *
- * Route hrefs carry the trailing slash: the Next tests asserted `/en/services`
- * because Vitest never loaded `trailingSlash: true`, but the static build
- * (`out/`) always emitted `/en/services/`, which is what this asserts now.
+ * Route hrefs carry the trailing slash (`/en/services/`), the canonical form
+ * the build emits with `trailingSlash: 'always'`.
  */
 async function renderAt(pathname: string, locale = 'en') {
     const container = await AstroContainer.create();

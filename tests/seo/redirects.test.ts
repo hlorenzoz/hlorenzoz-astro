@@ -62,7 +62,7 @@ describe('public/_redirects', () => {
     });
 
     it.each(RULES)('$from -> $to ends in the canonical trailing slash', (rule) => {
-        // next.config.ts sets trailingSlash: true. A target without one costs a
+        // astro.config.mjs sets trailingSlash: 'always'. A target without one costs a
         // second redirect hop, which Search Console counts separately.
         expect(rule.to.endsWith('/'), `"${rule.to}" is not the canonical form`).toBe(true);
     });

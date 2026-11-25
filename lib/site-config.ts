@@ -138,7 +138,7 @@ export const PERSON = {
 /**
  * Builds a canonical absolute URL: `${BASE_URL}/{locale}{path}/`.
  *
- * Mirrors `next.config.ts` `trailingSlash: true` and the per-page
+ * Mirrors `astro.config.mjs` `trailingSlash: 'always'` and the per-page
  * `alternates.canonical` values, so sitemap entries and canonicals can never
  * disagree. `path` may be empty (home), and leading/trailing slashes are
  * normalized so callers don't have to think about them.

@@ -1,6 +1,6 @@
-# Locale-less entry points. Every target MUST be a route that exists in out/,
+# Locale-less entry points. Every target MUST be a route that exists in dist/,
 # with the locale prefix and the trailing slash the site canonicalizes on
-# (next.config.ts trailingSlash: true). Redirecting to a locale-less path sends
+# (astro.config.mjs trailingSlash: 'always'). Redirecting to a locale-less path sends
 # visitors and crawlers to the 404 page: /demos pointed at /portfolio, which the
 # static export never generates.
 /                 /en/                    301

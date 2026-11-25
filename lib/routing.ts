@@ -94,8 +94,8 @@ export const ROUTE_PATH_PATTERN = /^$|^[a-z0-9]+(?:-[a-z0-9]+)*(?:\/[a-z0-9]+(?:
 /**
  * Builds the locale-prefixed href for a route path.
  *
- * The trailing slash is not cosmetic: `next.config.ts` sets
- * `trailingSlash: true`, so every canonical URL ends in one. Linking to
+ * The trailing slash is not cosmetic: `astro.config.mjs` sets
+ * `trailingSlash: 'always'`, so every canonical URL ends in one. Linking to
  * `/en/portfolio` points at a non-canonical form of a page whose own
  * `rel=canonical` says `/en/portfolio/`, costing a normalization hop and
  * muddying exactly the signal the og:url work cleaned up.

@@ -78,7 +78,7 @@ describe('HTML sitemap links use the canonical URL form', () => {
  * Internal links must use the same URL form as the canonicals they point at.
  *
  * The Navbar shipped `/${locale}/portfolio` with no trailing slash while the
- * site runs `trailingSlash: true`, so every page on the site carried a link to
+ * site runs `trailingSlash: 'always'`, so every page on the site carried a link to
  * a non-canonical form of the portfolio index. This checks the builders rather
  * than the markup so it runs without a build.
  */
