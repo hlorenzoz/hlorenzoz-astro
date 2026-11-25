@@ -37,6 +37,8 @@ export interface PageMeta {
     description?: string;
     keywords?: string[];
     category?: string;
+    /** e.g. 'noindex' for the 404 page. */
+    robots?: string;
     alternates?: { canonical?: string; languages?: Record<string, string> };
     openGraph?: {
         title?: string;

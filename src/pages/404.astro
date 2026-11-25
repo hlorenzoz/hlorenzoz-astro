@@ -5,9 +5,21 @@ import Footer from '@/src/components/Footer.astro';
 import { localeHref } from '@/lib/routing';
 
 const locale = 'en';
+
+// Not a page to index or to share: drop the home page's canonical, hreflang,
+// description, keywords and social cards the layout would otherwise lend it.
+const meta = {
+    title: 'Page not found | Lorenzoz Agency',
+    robots: 'noindex',
+    description: undefined,
+    keywords: undefined,
+    alternates: undefined,
+    openGraph: undefined,
+    twitter: undefined,
+};
 ---
 
-<BaseLayout locale={locale} meta={{ title: 'Page not found | Lorenzoz Agency' }}>
+<BaseLayout locale={locale} meta={meta}>
     <Navbar locale={locale} />
     <section class="min-h-[60vh] flex flex-col items-center justify-center text-center px-6 pt-40 pb-24">
         <p class="text-[11px] font-black uppercase tracking-[0.3em] text-blue-700 mb-4">404</p>

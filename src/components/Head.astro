@@ -26,6 +26,7 @@ const languages = Object.entries(m.alternates?.languages ?? {});
 <link rel="manifest" href="/manifest.json" />
 {m.keywords && <meta name="keywords" content={m.keywords.join(',')} />}
 {m.category && <meta name="category" content={m.category} />}
+{m.robots && <meta name="robots" content={m.robots} />}
 {m.alternates?.canonical && <link rel="canonical" href={m.alternates.canonical} />}
 {languages.map(([lang, href]) => <link rel="alternate" hreflang={lang} href={href} />)}
 <meta name="mobile-web-app-capable" content="yes" />
