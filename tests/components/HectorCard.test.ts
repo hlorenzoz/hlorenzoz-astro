@@ -38,4 +38,13 @@ describe('HectorCard', () => {
             expect(screen.getByRole('link', { name: label })).toHaveAttribute('target', '_blank');
         }
     });
+
+    it('draws the WhatsApp icon with a valid arc command', async () => {
+        // Chrome logged "Expected arc flag ('0' or '1')": the flags and the end
+        // point had fused into `0.012.048`, so the icon's outer ring broke.
+        const { body } = await renderAstro(HectorCard, { locale: 'en' });
+        const d = body.querySelector('a[aria-label="WhatsApp"] path, [aria-label="WhatsApp"] path')?.getAttribute('d') ?? '';
+        expect(d).toContain('A10.929 10.929 0 0012.048 0c');
+        expect(d).not.toContain('0.012.048');
+    });
 });
