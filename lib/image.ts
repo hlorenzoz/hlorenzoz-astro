@@ -19,24 +19,37 @@ export function imageUrl(src: string, width: number, quality = 50): string {
     return src;
 }
 
+type SrcSetOptions = { sizes?: string; width?: number; quality?: number };
+
 /**
- * `srcset` matching next/image: with `sizes` every breakpoint is offered (`w`
- * descriptors); with a fixed `width` only 1x and 2x are.
+ * Candidate widths, ported from next/image `getWidths`: with `sizes`, every
+ * breakpoint at or above the smallest viewport ratio it mentions (`vw`); with a
+ * fixed `width`, the deduped 1x and 2x candidates; otherwise the device sizes.
  */
-export function imageSrcSet(src: string, opts: { sizes?: string; width?: number; quality?: number }): string {
-    if (opts.width && !opts.sizes) {
-        const pick = (w: number) => ALL_SIZES.find((s) => s >= w) ?? ALL_SIZES[ALL_SIZES.length - 1];
-        return [1, 2].map((x) => `${imageUrl(src, pick(opts.width! * x), opts.quality)} ${x}x`).join(', ');
+function getWidths({ sizes, width }: SrcSetOptions): { widths: number[]; kind: 'w' | 'x' } {
+    if (sizes) {
+        const percents = [...sizes.matchAll(/(^|\s)(1?\d?\d)vw/g)].map((m) => parseInt(m[2], 10));
+        if (percents.length) {
+            const smallestRatio = Math.min(...percents) * 0.01;
+            return { widths: ALL_SIZES.filter((w) => w >= DEVICE_SIZES[0] * smallestRatio), kind: 'w' };
+        }
+        return { widths: ALL_SIZES, kind: 'w' };
     }
-    const widths = opts.sizes ? ALL_SIZES : DEVICE_SIZES;
-    return widths.map((w) => `${imageUrl(src, w, opts.quality)} ${w}w`).join(', ');
+    if (typeof width !== 'number') return { widths: DEVICE_SIZES, kind: 'w' };
+    const pick = (w: number) => ALL_SIZES.find((s) => s >= w) ?? ALL_SIZES[ALL_SIZES.length - 1];
+    return { widths: [...new Set([width, width * 2].map(pick))], kind: 'x' };
 }
 
-/** The `src` fallback next/image emitted: the largest candidate. */
-export function imageFallbackSrc(src: string, opts: { sizes?: string; width?: number; quality?: number }): string {
-    if (opts.width && !opts.sizes) {
-        const w = ALL_SIZES.find((s) => s >= opts.width! * 2) ?? 3840;
-        return imageUrl(src, w, opts.quality);
-    }
-    return imageUrl(src, 3840, opts.quality);
+/** `srcset` exactly as next/image emitted it. */
+export function imageSrcSet(src: string, opts: SrcSetOptions): string {
+    const { widths, kind } = getWidths(opts);
+    return widths
+        .map((w, i) => `${imageUrl(src, w, opts.quality)} ${kind === 'w' ? w : i + 1}${kind}`)
+        .join(', ');
+}
+
+/** The `src` fallback next/image emitted: the last (largest) candidate. */
+export function imageFallbackSrc(src: string, opts: SrcSetOptions): string {
+    const { widths } = getWidths(opts);
+    return imageUrl(src, widths[widths.length - 1], opts.quality);
 }
