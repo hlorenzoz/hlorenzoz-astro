@@ -3,8 +3,8 @@
  * and the ElevenLabs SDK stay out of the initial page load.
  */
 import { createRoot } from 'react-dom/client';
-import { ElevenLabsWidget } from './ElevenLabsWidget';
+import { ElevenLabsWidget, type AssistantLabels } from './ElevenLabsWidget';
 
-export function mount(container: HTMLElement, locale: string) {
-    createRoot(container).render(<ElevenLabsWidget locale={locale} />);
+export function mount(container: HTMLElement, locale: string, labels: AssistantLabels) {
+    createRoot(container).render(<ElevenLabsWidget locale={locale} labels={labels} />);
 }

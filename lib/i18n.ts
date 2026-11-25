@@ -29,13 +29,15 @@ const MESSAGES = { en, es, 'en-gb': enGb, gl, pt, it, fr, de, nl } as unknown as
 
 /**
  * Copy every page renders through the shell (BaseLayout, Navbar, Footer,
- * CookieBanner). A page cannot exist in a locale without it, whatever its own
- * copy. `home.meta` is here because BaseLayout builds its head defaults from it
- * on every page.
+ * CookieBanner, the ElevenLabs assistant). A page cannot exist in a locale
+ * without it, whatever its own copy: that includes alt and aria-label text.
+ * `home.meta` is here because BaseLayout builds its head defaults from it on
+ * every page.
  */
 export const SHELL_KEYS: readonly string[] = [
     'navigation',
     'cookieBanner',
+    'assistant',
     'home.meta',
     'footer.description',
     'footer.copyright',

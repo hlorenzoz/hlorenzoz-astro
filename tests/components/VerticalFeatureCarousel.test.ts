@@ -3,6 +3,7 @@ import { renderAstro } from '@/tests/helpers/render';
 import VerticalFeatureCarousel from '@/src/components/VerticalFeatureCarousel.astro';
 import type { PortfolioSlide } from '@/lib/portfolio';
 import en from '@/messages/en.json';
+import es from '@/messages/es.json';
 
 /**
  * Slide selection, arrow keys, the lightboxes and the scroll lock run in the
@@ -18,7 +19,10 @@ const mockSlides: PortfolioSlide[] = [
     { id: '3', image: ['/3a.webp', '/3b.webp'], title: 'GBP Optimization', badge: 'GBP', description: 'Test' },
 ];
 
-const render = (props: Record<string, unknown> = {}) => renderAstro(VerticalFeatureCarousel, { locale: 'en', slides: mockSlides, ...props });
+// The page always passes the entry's namespace; slides it has no copy for fall back to their data.
+const TRANSLATION_KEY = 'portfolio.lorenzoz-agency.features_carousel';
+const render = (props: Record<string, unknown> = {}) =>
+    renderAstro(VerticalFeatureCarousel, { locale: 'en', slides: mockSlides, translationKey: TRANSLATION_KEY, ...props });
 
 const slideButtons = (screen: Awaited<ReturnType<typeof render>>) =>
     screen.getAllByRole('button').filter((b) => b.hasAttribute('aria-current'));
@@ -53,9 +57,9 @@ describe('VerticalFeatureCarousel', () => {
         }
     });
 
-    it('renders the fallback header and the initial slide without a translation key', async () => {
+    it('renders the entry header and the initial slide', async () => {
         const screen = await render();
-        expect(screen.getByText(/Technical Excellence/i)).not.toBeNull();
+        expect(screen.getByText(en.portfolio['lorenzoz-agency'].features_carousel.title)).not.toBeNull();
         expect(screen.getAllByText(/Visibility/i).length).toBeGreaterThan(0);
     });
 
@@ -138,5 +142,23 @@ describe('VerticalFeatureCarousel', () => {
         const { body } = await render({ slides: [] });
         expect(body.querySelector('section')).toBeNull();
         expect(body.querySelector('[data-vfc-lightbox]')).toBeNull();
+    });
+
+    it('translates image alt text and control labels with the page (no English on a Spanish page)', async () => {
+        const copy = es.portfolio['lorenzoz-agency'].features_carousel.slides;
+        const screen = await render({
+            locale: 'es',
+            slides: [
+                { id: 'tech', image: '/1.webp', title: 'Technologies and Procedures' },
+                { id: 'screens', image: ['/2a.webp', '/2b.webp'], title: 'Tested Across Every Device' },
+            ],
+        });
+        expect(screen.getAllByAltText(copy.tech.title).length).toBeGreaterThan(0);
+        expect(screen.queryAllByAltText('Technologies and Procedures')).toHaveLength(0);
+        expect(screen.getAllByAltText(`${copy.screens.title}, imagen 1`).length).toBeGreaterThan(0);
+        expect(screen.getAllByAltText('Pantalla completa')).toHaveLength(1);
+        expect(screen.getByRole('button', { name: 'Característica anterior' })).toBeDisabled();
+        expect(screen.getAllByRole('button', { name: 'Cerrar', hidden: true }).length).toBeGreaterThan(0);
+        expect(screen.getByText(/Interactúa con clics/)).toBeInTheDocument();
     });
 });

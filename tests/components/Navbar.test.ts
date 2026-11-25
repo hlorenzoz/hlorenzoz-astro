@@ -108,4 +108,16 @@ describe('Navbar initial (closed) state, toggled by the client script', () => {
         expect(toggle.ownerDocument.querySelector('[data-mobile-menu]')).toHaveClass('hidden');
         expect(toggle.ownerDocument.querySelector('[data-mobile-menu-panel]')).toHaveClass('translate-x-full');
     });
+
+    it('hands the script translated open and close labels, so no English reaches a Spanish page', async () => {
+        const screen = await renderAt('/es/', 'es');
+        const lang = screen.getByTestId('language-switcher');
+        expect(lang.dataset.labelOpen).toBe('ES, abrir menú de idioma');
+        expect(lang.dataset.labelClose).toBe('ES, cerrar menú de idioma');
+        const toggle = screen.getByTestId('mobile-menu-toggle');
+        expect(toggle).toHaveAttribute('aria-label', 'Abrir menú de navegación');
+        expect(toggle.dataset.labelClose).toBe('Cerrar menú de navegación');
+        expect(screen.getByRole('link', { name: 'Inicio de Lorenzoz Agency' })).toHaveAttribute('href', '/es/');
+        for (const text of ['Navegación', 'Idioma', 'Escríbenos']) expect(screen.getByText(text)).toBeInTheDocument();
+    });
 });

@@ -12,12 +12,20 @@
     "language": "ES",
     "breadcrumb": "Ruta de navegación",
     "skipToContent": "Saltar al contenido principal",
-    "languageMenu": "{code}, abrir menú de idioma"
+    "languageMenu": "{code}, abrir menú de idioma",
+    "homeLabel": "Inicio de Lorenzoz Agency",
+    "openMenu": "Abrir menú de navegación",
+    "closeMenu": "Cerrar menú de navegación",
+    "languageMenuClose": "{code}, cerrar menú de idioma",
+    "menuTitle": "Navegación",
+    "languageTitle": "Idioma",
+    "connect": "Escríbenos"
   },
   "home": {
     "meta": {
       "title": "Lorenzoz Agency | SEO Local para negocios locales",
-      "description": "Más clientes locales desde Google y la IA. Un único plan mensual de SEO Local: contenido de autoridad, citaciones, autoridad en Google y en IA, y gestión de reseñas."
+      "description": "Más clientes locales desde Google y la IA. Un único plan mensual de SEO Local: contenido de autoridad, citaciones, autoridad en Google y en IA, y gestión de reseñas.",
+      "ogImageAlt": "Lorenzoz Agency: excelencia en IA y web"
     },
     "hero": {
       "badge": "SEO Local para negocios locales",
@@ -1193,14 +1201,22 @@
       "nfcWrite": "Escribir Tarjeta NFC",
       "nfcWriting": "Acerca tarjeta para escribir...",
       "nfcSuccess": "¡Escrito con éxito!",
-      "nfcError": "NFC falló o no soportado."
+      "nfcError": "NFC falló o no soportado.",
+      "email": "Correo",
+      "phone": "Teléfono",
+      "meta": {
+        "title": "Héctor Luis Lorenzo Zaldivar | Tarjeta de Visita Digital",
+        "description": "Fundador y Arquitecto de IA en Lorenzoz Agency. Conecta conmigo para automatización con IA y desarrollo web de alta gama.",
+        "ogImageAlt": "Héctor Luis Lorenzo Zaldivar, Fundador y Arquitecto de IA"
+      }
     }
   },
   "cookieBanner": {
     "text": "Utilizamos cookies para mejorar su experiencia de navegación, mostrar contenido personalizado y analizar nuestro tráfico. Al hacer clic en \"Aceptar todo\", usted da su consentimiento para que usemos cookies gestionadas por Cloudflare Zaraz.",
     "accept": "Aceptar todo",
     "reject": "Rechazar",
-    "preferences": "Política de Cookies"
+    "preferences": "Política de Cookies",
+    "label": "Aviso de consentimiento de cookies"
   },
   "portfolio": {
     "type": {
@@ -1719,7 +1735,18 @@
       "nextSlide": "Diapositiva siguiente",
       "prevImage": "Imagen anterior",
       "nextImage": "Imagen siguiente",
-      "goToImage": "Ir a la imagen {index}"
+      "goToImage": "Ir a la imagen {index}",
+      "close": "Cerrar",
+      "screenshotAlt": "{alt}, captura {index}",
+      "imageCount": "Imagen {index} de {total}",
+      "viewFullDetail": "Ver en detalle",
+      "slideAlt": "{alt}, imagen {index}",
+      "viewFull": "Ver completa",
+      "fullScreen": "Pantalla completa",
+      "prevFeature": "Característica anterior",
+      "nextFeature": "Característica siguiente",
+      "selectSection": "Seleccionar sección: {name}",
+      "interactHint": "Interactúa con clics o con las flechas ← →"
     },
     "gerp-dj": {
       "title": "GERP DJ: Web de DJ para Fiestas y Bodas en Ourense",
@@ -1778,6 +1805,16 @@
           "Todo el equipo de sonido e iluminación es propio: una cabina con el nombre de GERP DJ, altavoces, iluminación LED y un controlador Denon DJ. Se monta igual en la plaza de un pueblo, en una terraza o en un salón."
         ]
       }
+    },
+    "detail": {
+      "liveDemoAria": "{label} de {title}",
+      "contactForQuote": "Solicitar presupuesto",
+      "visitLivePlatform": "Visitar la plataforma en vivo: {title}",
+      "visitLiveDemo": "Ver la demo en vivo",
+      "showcaseAlt": "Vitrina de {title}",
+      "openShowcase": "Abrir la vitrina de {title}",
+      "fullScreenshotAlt": "Captura completa de {title}",
+      "exploreLivePlatform": "Explorar la plataforma en vivo"
     }
   },
   "news": {
@@ -2499,5 +2536,29 @@
     "related": {
       "title": "Noticias sobre este proyecto"
     }
+  },
+  "assistant": {
+    "expand": "Abrir el asistente",
+    "shrink": "Minimizar el asistente",
+    "avatarAlt": "Hector Lorenzoz",
+    "prompt": "¿En qué puedo ayudarte?",
+    "connecting": "Conectando...",
+    "speaking": "Estoy hablando...",
+    "listening": "Te escucho...",
+    "placeholder": "O envía un mensaje",
+    "send": "Enviar mensaje",
+    "startCall": "Iniciar una llamada",
+    "endCall": "Finalizar llamada",
+    "micError": "No se pudo acceder al micrófono o se produjo un error.",
+    "chatError": "No se pudo iniciar el chat. Inténtalo de nuevo."
+  },
+  "media": {
+    "calBooking": "Reserva en Cal.com"
+  },
+  "notFound": {
+    "metaTitle": "Página no encontrada | Lorenzoz Agency",
+    "title": "Página no encontrada",
+    "text": "La página que buscas no existe o se ha movido.",
+    "back": "Volver al inicio"
   }
 }

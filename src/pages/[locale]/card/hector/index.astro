@@ -6,6 +6,7 @@ import { profilePage } from '@/lib/schema';
 import { findRoute, routeAlternates, routeLocales } from '@/lib/routes';
 import type { PageMeta } from '@/lib/page-metadata';
 import { absoluteUrl, ogLocale } from '@/lib/site-config';
+import { getTranslations } from '@/lib/i18n';
 
 export function getStaticPaths() {
     return routeLocales('card/hector').map((locale) => ({ params: { locale } }));
@@ -13,8 +14,9 @@ export function getStaticPaths() {
 
 const { locale } = Astro.params as { locale: string };
 
-const TITLE = 'Héctor Luis Lorenzo Zaldivar - Digital Business Card';
-const DESCRIPTION = 'Founder & AI Architect at Lorenzoz Agency. Connect with me for AI automation and high-end web development.';
+const t = getTranslations(locale, 'card.hector.meta');
+const TITLE = t('title');
+const DESCRIPTION = t('description');
 const OG_IMAGE = '/hector-og-image.png';
 const url = absoluteUrl(locale, 'card/hector');
 
@@ -29,7 +31,7 @@ const meta: PageMeta = {
         siteName: 'Lorenzoz Agency',
         type: 'profile',
         locale: ogLocale(locale),
-        images: [{ url: OG_IMAGE, width: 1200, height: 630, alt: 'Héctor Luis Lorenzo Zaldivar - Founder & AI Architect' }],
+        images: [{ url: OG_IMAGE, width: 1200, height: 630, alt: t('ogImageAlt') }],
     },
     twitter: { card: 'summary_large_image', title: TITLE, description: DESCRIPTION, images: [OG_IMAGE] },
 };

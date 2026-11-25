@@ -37,10 +37,10 @@ const profilePhoto = 'https://cdn.hlorenzoz.com/hlorenzoz.com/hector-profile.web
 const cardUrl = `${BASE_URL}/card/hector`;
 
 const socialLinks = [
-    { label: 'LinkedIn', href: 'https://www.linkedin.com/in/hlorenzoz/', color: 'text-[#0077B5]' },
-    { label: 'WhatsApp', href: 'https://wa.me/34643844720', color: 'text-[#25D366]' },
-    { label: 'Email', href: 'mailto:hector@hlorenzoz.com', color: 'text-gray-900' },
-    { label: 'Phone', href: 'tel:+34643844720', color: 'text-gray-900' },
+    { key: 'linkedin', label: 'LinkedIn', href: 'https://www.linkedin.com/in/hlorenzoz/', color: 'text-[#0077B5]' },
+    { key: 'whatsapp', label: 'WhatsApp', href: 'https://wa.me/34643844720', color: 'text-[#25D366]' },
+    { key: 'email', label: t('email'), href: 'mailto:hector@hlorenzoz.com', color: 'text-gray-900' },
+    { key: 'phone', label: t('phone'), href: 'tel:+34643844720', color: 'text-gray-900' },
 ];
 
 const nfcBase = 'w-full mt-2 py-3 px-4 rounded-xl font-bold text-xs uppercase tracking-widest transition-all flex items-center justify-center gap-2';
@@ -125,18 +125,18 @@ const nfcState = {
                                 class="size-14 rounded-2xl bg-white border border-gray-100 flex items-center justify-center shadow-sm hover:shadow-md hover:scale-110 transition-all active:scale-90 group"
                             >
                                 <div class={`${link.color} transition-colors`}>
-                                    {link.label === 'LinkedIn' && (
+                                    {link.key === 'linkedin' && (
                                         <svg class="size-5" fill="currentColor" viewBox="0 0 24 24">
                                             <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
                                         </svg>
                                     )}
-                                    {link.label === 'WhatsApp' && (
+                                    {link.key === 'whatsapp' && (
                                         <svg class="size-5" fill="currentColor" viewBox="0 0 24 24">
                                             <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.27 9.27 0 01-4.735-1.303l-.339-.202-3.522.924.941-3.434-.221-.353a9.273 9.273 0 01-1.422-4.903c0-5.113 4.158-9.27 9.271-9.27 2.477 0 4.805.964 6.556 2.717a9.204 9.204 0 012.712 6.558c0 5.115-4.158 9.27-9.271 9.27m7.929-18.19A10.929 10.929 0 0012.048 0c-6.071 0-11.012 4.941-11.012 11.011 0 1.943.508 3.84 1.474 5.52L0 24l7.653-2.008a10.887 10.887 0 005.402 1.422H13.04c6.069 0 11.012-4.941 11.012-11.011a10.92 10.92 0 00-3.14-7.783" />
                                         </svg>
                                     )}
-                                    {link.label === 'Email' && <Mail class="w-5 h-5" />}
-                                    {link.label === 'Phone' && <Phone class="w-5 h-5" />}
+                                    {link.key === 'email' && <Mail class="w-5 h-5" />}
+                                    {link.key === 'phone' && <Phone class="w-5 h-5" />}
                                 </div>
                             </a>
                             <span class="text-[10px] font-bold text-gray-600 uppercase tracking-widest" aria-hidden="true">

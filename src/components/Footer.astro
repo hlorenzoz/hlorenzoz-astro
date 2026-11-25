@@ -29,6 +29,7 @@ interface FooterLink {
 
 const { locale } = Astro.props;
 const t = getTranslations(locale, 'footer');
+const tNav = getTranslations(locale, 'navigation');
 const pathname = Astro.url.pathname;
 
 const isHomePage = pathname === '/' || pathname === `/${locale}` || pathname === `/${locale}/`;
@@ -48,7 +49,7 @@ const mailLinks: Record<string, string[]> = {
     <div class="max-w-6xl mx-auto">
         <div class="grid grid-cols-1 md:grid-cols-4 gap-16 mb-20">
             <div class="col-span-1 md:col-span-1">
-                <a href={routeHref(locale, '')} class="flex items-center gap-2 mb-6 group text-white" aria-label="Lorenzoz Agency Home">
+                <a href={routeHref(locale, '')} class="flex items-center gap-2 mb-6 group text-white" aria-label={tNav('homeLabel')}>
                     <div class="size-8 rounded-full bg-white text-black flex items-center justify-center shadow-lg shadow-white/5">
                         <svg aria-hidden="true" class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
                             <path d="M7 18h2V6H7v12zm4 4h2V2h-2v20zm-8-8h2v-4H3v4zm12 4h2V6h-2v12zm4-8v4h2v-4h-2z"></path>

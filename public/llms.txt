@@ -13,7 +13,7 @@
 - Price range: €350 to €20,000+
 - Pricing terms: no price includes VAT; 50% is paid up front; optional services are 30% off their list price alongside Local SEO; there is no free trial
 - Payment accepted: Bank Transfer, Credit Card, Stripe
-- Languages: English and Spanish (full site localization); every page is published in both languages, and the Spanish version of any /en/... URL is the same path under /es/...
+- Languages: English and Spanish, with more languages being added page by page; every page is published in English and Spanish today, and the Spanish version of any /en/... URL is the same path under /es/...
 
 ## Docs
 
@@ -55,7 +55,7 @@
 
 ## Contact
 
-- [Website](https://hlorenzoz.com/): Lorenzoz Agency, English and Spanish.
+- [Website](https://hlorenzoz.com/): Lorenzoz Agency, in English and Spanish, with more languages being added.
 - [Email](mailto:contact@hlorenzoz.com): general enquiries and quotes.
 - [Privacy and support](mailto:privacy@hlorenzoz.com): privacy, data, and support requests.
 - [Phone](tel:+34643844720): +34 643 84 47 20.

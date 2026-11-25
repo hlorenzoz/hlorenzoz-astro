@@ -36,8 +36,8 @@ never guess the topic.
 3. **Author identity.** The `PERSON` object in `lib/site-config.ts` (name and job title; verify
    them there, do not assume). The LinkedIn profile URL is in `public/llms.txt`, section
    "## Contact". Posts and articles are written in the first person, as that person.
-4. **The page being promoted.** Its copy in `messages/en.json` or `messages/es.json` (the
-   namespace of that page), its entry in `lib/portfolio-data.json` or `lib/news-data.json`
+4. **The page being promoted.** Its copy in `messages/<locale>.json` for the locale of the post
+   (the namespace of that page), its entry in `lib/portfolio-data.json` or `lib/news-data.json`
    when it is a case study or a news post, and `public/llms.txt` as the summary index.
 5. **E-E-A-T.** On any E-E-A-T question read
    `~/.agents/context/google-eeat-guideline/searchqualityevaluatorguidelines.pdf`
@@ -141,8 +141,11 @@ unusual file), recheck the source page with WebFetch and say in your output when
   which covers static pages, services, portfolio case studies (from `lib/portfolio-data.json`)
   and news posts (from `lib/news-data.json`). Confirm the path with Grep in those files. Never
   link to an invented page.
-- **Canonical shape**: `https://hlorenzoz.com/<locale>/<path>/` with the trailing slash. Every
-  page exists in `en` and `es` under the same path; link to the locale of the content.
+- **Canonical shape**: `https://hlorenzoz.com/<locale>/<path>/` with the trailing slash. The site
+  supports the nine locales of `LOCALES` in `lib/routing.ts` and publishes page by page: a page
+  exists in a locale only once its copy is in `messages/<locale>.json`. Link to the locale of the
+  content, and only if that page is built in it (`routeLocales('<path>')` in `lib/routes.ts`);
+  otherwise link to the `/en/` page.
 - **UTM on the shared link only**:
   `?utm_source=linkedin&utm_medium=social&utm_campaign=<content-slug>`, where `<content-slug>`
   is the slug of the file you save. Never change canonical URLs on the site.

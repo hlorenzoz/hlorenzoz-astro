@@ -4,14 +4,18 @@
  * once the visitor scrolls past half the viewport (an engagement signal). React
  * is only downloaded at that point, through the dynamic import below.
  */
+import { getTranslations } from '@/lib/i18n';
+
 export interface Props {
     locale: string;
 }
 
 const { locale } = Astro.props;
+// The island's text, translated at build time: the island itself loads no messages.
+const labels = getTranslations(locale).raw('assistant');
 ---
 
-<div data-elevenlabs data-locale={locale}></div>
+<div data-elevenlabs data-locale={locale} data-labels={JSON.stringify(labels)}></div>
 
 <script>
     const container = document.querySelector<HTMLElement>('[data-elevenlabs]');
@@ -26,7 +30,7 @@ const { locale } = Astro.props;
         const handleScroll = () => {
             if (window.scrollY > window.innerHeight * 0.5) {
                 window.removeEventListener('scroll', handleScroll);
-                import('../islands/mount-elevenlabs').then(({ mount }) => mount(container, container.dataset.locale ?? 'en'));
+                import('../islands/mount-elevenlabs').then(({ mount }) => mount(container, container.dataset.locale ?? 'en', JSON.parse(container.dataset.labels!)));
             }
         };
         window.addEventListener('scroll', handleScroll, { passive: true });

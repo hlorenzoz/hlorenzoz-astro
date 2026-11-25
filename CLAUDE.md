@@ -34,7 +34,13 @@ Never bypass the pre-commit hook with `--no-verify`.
   for the ElevenLabs island (`src/islands/`), mounted on scroll. Do not add `client:*`
   React islands for things a small script can do: zero JS is the performance budget.
 - Translations: `getTranslations(locale, namespace)` from `lib/i18n.ts` (use-intl). Use
-  `t.markup()` + `set:html` where the old code used `t.rich()`.
+  `t.markup()` + `set:html` where the old code used `t.rich()`. Nine locales (`LOCALES` in
+  `lib/routing.ts`), published page by page: a page is built in a locale once its route's
+  `copyKeys` (plus `SHELL_KEYS`) exist in `messages/<locale>.json`. Never write an `alt`,
+  `title`, `aria-label`, caption or OpenGraph image alt as a literal in a component: put it in
+  the messages and list its key in the `copyKeys` of every route that renders it (or in
+  `SHELL_KEYS` for the shell), so it is translated with the page
+  (`tests/i18n/no-hardcoded-a11y-text.test.ts`).
 - Head metadata: pages pass a `PageMeta` (`lib/page-metadata.ts`) to `BaseLayout`, merged
   shallowly onto the layout defaults. Build every non-home page's meta with `pageMetadata()`.
 - Images live on the R2 CDN and are resized by Cloudflare (`lib/image.ts`), not by Astro.

@@ -12,12 +12,20 @@
     "language": "EN",
     "breadcrumb": "Breadcrumb",
     "skipToContent": "Skip to main content",
-    "languageMenu": "{code}, open language menu"
+    "languageMenu": "{code}, open language menu",
+    "homeLabel": "Lorenzoz Agency Home",
+    "openMenu": "Open navigation menu",
+    "closeMenu": "Close navigation menu",
+    "languageMenuClose": "{code}, close language menu",
+    "menuTitle": "Navigation",
+    "languageTitle": "Language",
+    "connect": "Connect"
   },
   "home": {
     "meta": {
       "title": "Lorenzoz Agency | Local SEO for Local Businesses",
-      "description": "More local customers from Google and AI. One monthly Local SEO plan: authority content, citations, authority on Google and AI, and review management."
+      "description": "More local customers from Google and AI. One monthly Local SEO plan: authority content, citations, authority on Google and AI, and review management.",
+      "ogImageAlt": "Lorenzoz Agency: AI & Web Excellence"
     },
     "hero": {
       "badge": "Local SEO for local businesses",
@@ -1193,14 +1201,22 @@
       "nfcWrite": "Write to NFC Card",
       "nfcWriting": "Tap card to write...",
       "nfcSuccess": "Written successfully!",
-      "nfcError": "NFC failed or unsupported."
+      "nfcError": "NFC failed or unsupported.",
+      "email": "Email",
+      "phone": "Phone",
+      "meta": {
+        "title": "Héctor Luis Lorenzo Zaldivar | Digital Business Card",
+        "description": "Founder & AI Architect at Lorenzoz Agency. Connect with me for AI automation and premium web development.",
+        "ogImageAlt": "Héctor Luis Lorenzo Zaldivar, Founder & AI Architect"
+      }
     }
   },
   "cookieBanner": {
     "text": "We use cookies to enhance your browsing experience, serve personalized ads or content, and analyze our traffic. By clicking \"Accept All\", you consent to our use of cookies as managed by Cloudflare Zaraz.",
     "accept": "Accept All",
     "reject": "Reject",
-    "preferences": "Cookie Policy"
+    "preferences": "Cookie Policy",
+    "label": "Cookie consent banner"
   },
   "portfolio": {
     "type": {
@@ -1719,7 +1735,18 @@
       "nextSlide": "Next slide",
       "prevImage": "Previous image",
       "nextImage": "Next image",
-      "goToImage": "Go to image {index}"
+      "goToImage": "Go to image {index}",
+      "close": "Close",
+      "screenshotAlt": "{alt} Screenshot, View {index}",
+      "imageCount": "Image {index} of {total}",
+      "viewFullDetail": "View Full Detail",
+      "slideAlt": "{alt}, Slide {index}",
+      "viewFull": "View Full",
+      "fullScreen": "Full Screen",
+      "prevFeature": "Previous feature",
+      "nextFeature": "Next feature",
+      "selectSection": "Select section: {name}",
+      "interactHint": "Interact using clicks or ← → Arrow keys"
     },
     "gerp-dj": {
       "title": "GERP DJ: DJ Website for Parties and Weddings in Ourense",
@@ -1778,6 +1805,16 @@
           "All the sound and lighting equipment is the DJ's own: a booth carrying the GERP DJ name, speakers, LED lighting and a Denon DJ controller. It is set up the same way in a village square, on a terrace or in a hall."
         ]
       }
+    },
+    "detail": {
+      "liveDemoAria": "{label} for {title}",
+      "contactForQuote": "Contact for Quote",
+      "visitLivePlatform": "Visit live platform: {title}",
+      "visitLiveDemo": "Visit Live Demo",
+      "showcaseAlt": "{title} Showcase",
+      "openShowcase": "Open showcase for {title}",
+      "fullScreenshotAlt": "{title} Full Screenshot",
+      "exploreLivePlatform": "Explore Live Platform"
     }
   },
   "news": {
@@ -2499,5 +2536,29 @@
     "related": {
       "title": "News about this project"
     }
+  },
+  "assistant": {
+    "expand": "Expand assistant",
+    "shrink": "Shrink widget",
+    "avatarAlt": "Hector Lorenzoz",
+    "prompt": "What can I help you with?",
+    "connecting": "Connecting...",
+    "speaking": "I am speaking...",
+    "listening": "I am listening...",
+    "placeholder": "Or send a message",
+    "send": "Send message",
+    "startCall": "Start a call",
+    "endCall": "End call",
+    "micError": "Microphone access denied or error occurred.",
+    "chatError": "Could not start the chat. Please try again."
+  },
+  "media": {
+    "calBooking": "Cal.com Booking"
+  },
+  "notFound": {
+    "metaTitle": "Page not found | Lorenzoz Agency",
+    "title": "Page not found",
+    "text": "The page you are looking for does not exist or has moved.",
+    "back": "Back to home"
   }
 }

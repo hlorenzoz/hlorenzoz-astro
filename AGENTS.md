@@ -4,7 +4,13 @@ This document tracks the specialized agents (skills) active in this project and 
 
 ## Project Focus
 
-Lorenzoz Agency's bilingual (English / Spanish) marketing site.
+Lorenzoz Agency's multilingual marketing site: the site supports the nine locales of
+`LOCALES` in `lib/routing.ts` (`en`, `es`, `en-gb`, `gl`, `pt`, `it`, `fr`, `de`, `nl`) and is published page by page: a page exists in a
+locale once its copy is translated into `messages/<locale>.json` (`pageLocales` in
+`lib/i18n.ts`); until then it is not built there and gets no hreflang to it. Image alt text,
+captions and titles, and every aria-label, are copy: they live in `messages/<locale>.json`, are
+translated with the page, and a locale missing one does not publish that page. Words are fixed
+in `docs/i18n-glossary.md`.
 
 This section is the **single versioned source of truth** for the agency's commercial
 facts: positioning, service lines, value ladder, and prices. Copy for the site, schema,
@@ -331,7 +337,7 @@ Current state, so an audit reports against reality rather than an assumed GBP tr
 
 - Route tiers today: `home`, `category` (one hub, `/services`), `service` (four pages), `page`,
   `legal`. Each service page shares one slug identity across `lib/routes.ts`,
-  `messages/{en,es}.json`'s `services.*` namespace, and its own
+  `messages/<locale>.json`'s `services.*` namespace, and its own
   `src/pages/[locale]/services/<slug>/index.astro`; there is no string-matched duplication.
 - **There is no blog / posts tier yet.** The `supporting` child tier that
   `KIND_TO_CHILD_TIER` (`lib/service-page.ts`) already points services at is UNPOPULATED: the
@@ -372,7 +378,7 @@ The opposite holds for what is specific to THIS site, which IS committed here:
 
 | Command | What it does | Runs |
 | :--- | :--- | :--- |
-| `/website:add-to-portfolio` (`.claude/commands/website/`) | New portfolio work: images to the CDN, bilingual detail page, Lighthouse and JSON-LD checks, plus its `/news/` post | inline |
+| `/website:add-to-portfolio` (`.claude/commands/website/`) | New portfolio work: images to the CDN, detail page and image text in every published locale, Lighthouse and JSON-LD checks, plus its `/news/` post | inline |
 | `/linkedin:create-content` (`.claude/commands/linkedin/`) | LinkedIn post, carousel or article that backlinks to a page of this site; drafts are saved under `.agents/content/linkedin/` | agent `linkedin-content-writer` (`.claude/agents/`) |
 | `/upwork:create-proposal` (`.claude/commands/upwork/`) | Upwork proposals mapped to the agency's services | inline |
 

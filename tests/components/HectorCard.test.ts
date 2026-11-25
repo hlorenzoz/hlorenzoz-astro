@@ -39,6 +39,12 @@ describe('HectorCard', () => {
         }
     });
 
+    it('labels the email and phone actions in the page language', async () => {
+        const screen = await renderAstro(HectorCard, { locale: 'es' });
+        expect(screen.getByRole('link', { name: 'Correo' })).toHaveAttribute('href', 'mailto:hector@hlorenzoz.com');
+        expect(screen.getByRole('link', { name: 'Teléfono' })).toHaveAttribute('href', 'tel:+34643844720');
+    });
+
     it('draws the WhatsApp icon with a valid arc command', async () => {
         // Chrome logged "Expected arc flag ('0' or '1')": the flags and the end
         // point had fused into `0.012.048`, so the icon's outer ring broke.

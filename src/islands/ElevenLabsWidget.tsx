@@ -12,11 +12,29 @@ import { localeHref } from '@/lib/routing';
 const AGENT_ID = 'agent_7601kjm9f042e55894dty11tqtnh';
 const AVATAR = 'https://cdn.hlorenzoz.com/hlorenzoz.com/hector-profile.webp';
 
-export interface ElevenLabsWidgetProps {
-    locale: string;
+/** The widget's visible and accessible text: `messages/<locale>.json` `assistant`, passed in by the loader. */
+export interface AssistantLabels {
+    expand: string;
+    shrink: string;
+    avatarAlt: string;
+    prompt: string;
+    connecting: string;
+    speaking: string;
+    listening: string;
+    placeholder: string;
+    send: string;
+    startCall: string;
+    endCall: string;
+    micError: string;
+    chatError: string;
 }
 
-export function ElevenLabsWidget({ locale }: ElevenLabsWidgetProps) {
+export interface ElevenLabsWidgetProps {
+    locale: string;
+    labels: AssistantLabels;
+}
+
+export function ElevenLabsWidget({ locale, labels }: ElevenLabsWidgetProps) {
     const [error, setError] = useState<string | null>(null);
     const [isHovered, setIsHovered] = useState(false);
     const [inputValue, setInputValue] = useState('');
@@ -103,7 +121,7 @@ export function ElevenLabsWidget({ locale }: ElevenLabsWidgetProps) {
                 });
             } catch (err: unknown) {
                 console.error("Failed to start conversation:", err);
-                setError("Microphone access denied or error occurred.");
+                setError(labels.micError);
             }
         }
     };
@@ -115,7 +133,7 @@ export function ElevenLabsWidget({ locale }: ElevenLabsWidgetProps) {
                     key="shrunk"
                     onClick={() => setIsShrunk(false)}
                     className="bg-[#227747] hover:bg-[#1c6b3d] text-white p-4 rounded-full shadow-2xl flex items-center justify-center border-none"
-                    aria-label="Expand assistant"
+                    aria-label={labels.expand}
                 >
                     <Phone className="w-6 h-6 fill-white" />
                 </button>
@@ -137,7 +155,7 @@ export function ElevenLabsWidget({ locale }: ElevenLabsWidgetProps) {
                         <button
                             onClick={() => setIsShrunk(true)}
                             className="absolute top-4 right-4 p-2 rounded-full bg-black/10 hover:bg-black/20 dark:bg-white/25 dark:hover:bg-white/40 z-10 focus:outline-none border-none"
-                            aria-label="Shrink widget"
+                            aria-label={labels.shrink}
                         >
                             <Minimize2 className="w-4 h-4 text-gray-900 dark:text-white" strokeWidth={2.5} aria-hidden="true" />
                         </button>
@@ -150,7 +168,7 @@ export function ElevenLabsWidget({ locale }: ElevenLabsWidgetProps) {
                                     src={imageFallbackSrc(AVATAR, { sizes: '64px' })}
                                     srcSet={imageSrcSet(AVATAR, { sizes: '64px' })}
                                     sizes="64px"
-                                    alt="Hector Lorenzoz"
+                                    alt={labels.avatarAlt}
                                     width={64}
                                     height={64}
                                     loading="lazy"
@@ -162,8 +180,8 @@ export function ElevenLabsWidget({ locale }: ElevenLabsWidgetProps) {
                             {/* Text */}
                             <div className="text-black dark:text-white font-semibold text-[20px] leading-tight flex-1 pr-8">
                                 {isConnected ?
-                                    (conversation.isSpeaking ? 'I am speaking...' : 'I am listening...') :
-                                    (isConnecting ? 'Connecting...' : 'What can I help you with?')}
+                                    (conversation.isSpeaking ? labels.speaking : labels.listening) :
+                                    (isConnecting ? labels.connecting : labels.prompt)}
                             </div>
                         </div>
 
@@ -208,7 +226,7 @@ export function ElevenLabsWidget({ locale }: ElevenLabsWidgetProps) {
                                                 sendText(inputValue);
                                             } catch (err: unknown) {
                                                 console.error("Failed to start text conversation:", err);
-                                                setError("Could not start the chat. Please try again.");
+                                                setError(labels.chatError);
                                             }
                                         } else {
                                             sendText(inputValue);
@@ -219,7 +237,7 @@ export function ElevenLabsWidget({ locale }: ElevenLabsWidgetProps) {
                             >
                                 <input
                                     type="text"
-                                    placeholder="Or send a message"
+                                    placeholder={labels.placeholder}
                                     value={inputValue}
                                     onChange={(e) => {
                                         setInputValue(e.target.value);
@@ -231,7 +249,7 @@ export function ElevenLabsWidget({ locale }: ElevenLabsWidgetProps) {
                                 />
                                 <button
                                     type="submit"
-                                    aria-label="Send message"
+                                    aria-label={labels.send}
                                     disabled={!inputValue.trim() || isConnecting}
                                     className="absolute right-1.5 p-2 bg-black/10 dark:bg-white/20 text-black dark:text-white rounded-[0.8rem] disabled:opacity-40 hover:bg-black/20 dark:hover:bg-white/30 dark:border dark:border-white/20"
                                 >
@@ -276,14 +294,14 @@ export function ElevenLabsWidget({ locale }: ElevenLabsWidgetProps) {
                                             <path d="M10.68 13.31a16 16 0 0 0 3.41 2.6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1 1.72 2v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.42 19.42 0 0 1-3.33-2.67m-2.67-3.34a19.79 19.79 0 0 1-3.07-8.63A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91"></path>
                                             <line x1="22" y1="2" x2="2" y2="22"></line>
                                         </svg>
-                                        <span>End call</span>
+                                        <span>{labels.endCall}</span>
                                     </>
                                 ) : (
                                     <>
                                         <svg aria-hidden="true" className="!text-white" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor" stroke="none">
                                             <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
                                         </svg>
-                                        <span>Start a call</span>
+                                        <span>{labels.startCall}</span>
                                     </>
                                 )}
                             </button>

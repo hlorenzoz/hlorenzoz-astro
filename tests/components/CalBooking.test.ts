@@ -17,6 +17,13 @@ describe('CalBooking', () => {
         expect(iframe!.getAttribute('title')).toBeTruthy();
     });
 
+    it('titles the iframe in the page language', async () => {
+        for (const [locale, title] of [['en', 'Cal.com Booking'], ['es', 'Reserva en Cal.com']]) {
+            const { body } = await renderAstro(CalBooking, { locale });
+            expect(body.querySelector('iframe')).toHaveAttribute('title', title);
+        }
+    });
+
     /**
      * Static markup: no state, no handler. It once shipped as client code,
      * which only pushed static markup into the client bundle of every page

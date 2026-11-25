@@ -38,8 +38,9 @@ const { locale, id: sectionId = 'portfolio-features', title: propTitle, descript
 
 const t = getTranslations(locale, translationKey);
 const has = (key: string) => Boolean(translationKey) && t.has(key);
-const title = propTitle || (has('title') ? t('title') : null) || 'Built for Technical Excellence';
-const description = propDescription || (has('description') ? t('description') : null) || 'Technical strategy and benchmarks.';
+// The horizontal carousel (`hic`) renders neither, and has no translationKey.
+const title = hic ? '' : propTitle || t('title');
+const description = hic ? '' : propDescription || t('description');
 const text = (slide: PortfolioSlide, field: string, fallback?: string) =>
     has(`slides.${slide.id}.${field}`) ? t(`slides.${slide.id}.${field}`) : fallback;
 
@@ -70,7 +71,7 @@ const hicDotOff = cn(hicDotBase, 'bg-white/40 hover:bg-white/60 w-2');
                     <div class="absolute inset-0 touch-pan-y" data-hic-slide hidden={i !== 0}>
                         <FadeInImage
                             src={src}
-                            alt={`${hic.alt} - Slide ${i + 1}`}
+                            alt={tCarousel('slideAlt', { alt: hic.alt, index: i + 1 })}
                             fill
                             sizes="(max-width: 1024px) 100vw, 50vw"
                             className="object-contain lg:object-cover pointer-events-none"
@@ -105,7 +106,7 @@ const hicDotOff = cn(hicDotBase, 'bg-white/40 hover:bg-white/60 w-2');
                 <div class="absolute top-6 right-6 opacity-0 group-hover/carousel:opacity-100 transition-opacity z-10">
                     <div class="bg-white/90 backdrop-blur-md px-4 py-2 rounded-xl shadow-lg flex items-center gap-2">
                         <Maximize2 class="w-4 h-4 text-gray-600" />
-                        <span class="text-[11px] font-bold uppercase tracking-widest text-gray-900">View Full</span>
+                        <span class="text-[11px] font-bold uppercase tracking-widest text-gray-900">{tCarousel('viewFull')}</span>
                     </div>
                 </div>
 
@@ -125,6 +126,7 @@ const hicDotOff = cn(hicDotBase, 'bg-white/40 hover:bg-white/60 w-2');
             >
                 <button
                     class="absolute top-6 right-6 lg:top-12 lg:right-12 size-14 rounded-full bg-white/10 text-white flex items-center justify-center hover:bg-white/20 transition-all z-20"
+                    aria-label={tCarousel('close')}
                     data-hic-close
                 >
                     <X class="w-8 h-8" />
@@ -186,7 +188,7 @@ const hicDotOff = cn(hicDotBase, 'bg-white/40 hover:bg-white/60 w-2');
                                 <p class="text-lg text-gray-500 font-medium leading-relaxed mb-4">{description}</p>
                                 <p class="text-sm text-gray-600 font-bold tracking-widest uppercase flex items-center justify-center gap-2">
                                     <span class="w-8 h-[1px] bg-gray-200" />
-                                    Interact using clicks or ← → Arrow keys
+                                    {tCarousel('interactHint')}
                                     <span class="w-8 h-[1px] bg-gray-200" />
                                 </p>
                             </div>
@@ -217,7 +219,7 @@ const hicDotOff = cn(hicDotBase, 'bg-white/40 hover:bg-white/60 w-2');
                                                     <div
                                                         role="button"
                                                         tabindex="0"
-                                                        aria-label={`Select section: ${badge}`}
+                                                        aria-label={tCarousel('selectSection', { name: badge ?? '' })}
                                                         aria-current={active ? 'true' : 'false'}
                                                         class="flex items-center gap-3 rounded-full outline-none focus-visible:ring-2 focus-visible:ring-blue-500"
                                                         data-vfc-trigger
@@ -254,7 +256,7 @@ const hicDotOff = cn(hicDotBase, 'bg-white/40 hover:bg-white/60 w-2');
                                                                     class="inline-flex items-center gap-2 px-8 py-3.5 rounded-full bg-black text-white text-sm font-bold hover:bg-blue-600 transition-all active:scale-95 group"
                                                                     data-vfc-stop
                                                                 >
-                                                                    {text(slide, 'cta', 'Experience Project')}
+                                                                    {t(`slides.${slide.id}.cta`)}
                                                                     <ExternalLink class="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
                                                                 </a>
                                                             </div>
@@ -263,15 +265,15 @@ const hicDotOff = cn(hicDotBase, 'bg-white/40 hover:bg-white/60 w-2');
                                                         {/* Mobile Media (Inline) */}
                                                         <div class="lg:hidden w-full h-56 md:h-80 relative rounded-2xl overflow-hidden shadow-lg mb-6 bg-gray-50 border border-gray-100" data-vfc-stop>
                                                             {slide.map ? (
-                                                                <iframe title={slide.title} src={slide.map} width="100%" height="100%" style="border:0" />
+                                                                <iframe title={text(slide, 'title', slide.title)} src={slide.map} width="100%" height="100%" style="border:0" />
                                                             ) : slide.image ? (
                                                                 Array.isArray(slide.image) ? (
-                                                                    <Astro.self locale={locale} hic={{ images: slide.image, alt: slide.title || '' }} />
+                                                                    <Astro.self locale={locale} hic={{ images: slide.image, alt: text(slide, 'title', slide.title) ?? '' }} />
                                                                 ) : (
                                                                     <div class="relative w-full h-full cursor-zoom-in" data-vfc-zoom={slide.image}>
                                                                         <FadeInImage
                                                                             src={slide.image}
-                                                                            alt={slide.title || ''}
+                                                                            alt={text(slide, 'title', slide.title) ?? ''}
                                                                             fill
                                                                             sizes="(max-width: 1024px) 100vw, 50vw"
                                                                             className="object-cover"
@@ -295,7 +297,7 @@ const hicDotOff = cn(hicDotBase, 'bg-white/40 hover:bg-white/60 w-2');
                                     <button
                                         disabled
                                         class="size-12 rounded-full border border-gray-100 flex items-center justify-center text-gray-400 hover:text-black hover:bg-gray-50 transition-all disabled:opacity-20 shadow-sm"
-                                        aria-label="Previous feature"
+                                        aria-label={tCarousel('prevFeature')}
                                         data-vfc-prev
                                     >
                                         <ArrowLeft class="w-5 h-5" aria-hidden="true" />
@@ -303,7 +305,7 @@ const hicDotOff = cn(hicDotBase, 'bg-white/40 hover:bg-white/60 w-2');
                                     <button
                                         disabled={slides.length === 1}
                                         class="size-12 rounded-full border border-gray-100 flex items-center justify-center text-gray-400 hover:text-black hover:bg-gray-50 transition-all disabled:opacity-20 shadow-sm"
-                                        aria-label="Next feature"
+                                        aria-label={tCarousel('nextFeature')}
                                         data-vfc-next
                                     >
                                         <ArrowRight class="w-5 h-5" aria-hidden="true" />
@@ -317,7 +319,7 @@ const hicDotOff = cn(hicDotBase, 'bg-white/40 hover:bg-white/60 w-2');
                                     <div class="absolute inset-0" data-vfc-media hidden={i !== 0}>
                                         {slide.map ? (
                                             <iframe
-                                                title={slide.title}
+                                                title={text(slide, 'title', slide.title)}
                                                 src={slide.map}
                                                 width="100%"
                                                 height="100%"
@@ -326,12 +328,12 @@ const hicDotOff = cn(hicDotBase, 'bg-white/40 hover:bg-white/60 w-2');
                                             />
                                         ) : slide.image ? (
                                             Array.isArray(slide.image) ? (
-                                                <Astro.self locale={locale} hic={{ images: slide.image, alt: slide.title || '' }} />
+                                                <Astro.self locale={locale} hic={{ images: slide.image, alt: text(slide, 'title', slide.title) ?? '' }} />
                                             ) : (
                                                 <div class="relative w-full h-full cursor-zoom-in group/zoom" data-vfc-zoom={slide.image}>
                                                     <FadeInImage
                                                         src={slide.image}
-                                                        alt={slide.title || ''}
+                                                        alt={text(slide, 'title', slide.title) ?? ''}
                                                         fill
                                                         sizes="(max-width: 1280px) 50vw, 640px"
                                                         className="object-cover"
@@ -359,14 +361,14 @@ const hicDotOff = cn(hicDotBase, 'bg-white/40 hover:bg-white/60 w-2');
                     data-vfc-lightbox
                     hidden
                 >
-                    <button class="absolute top-8 right-8 text-white hover:scale-110 transition-transform z-[10010]" data-vfc-lightbox-close>
+                    <button class="absolute top-8 right-8 text-white hover:scale-110 transition-transform z-[10010]" aria-label={tCarousel('close')} data-vfc-lightbox-close>
                         <X class="w-10 h-10" />
                     </button>
                     <div class="relative w-full h-full">
                         {/* Same <img> FadeInImage renders for fill / sizes 100vw / priority; srcset set on open. */}
                         <div class="absolute inset-0 overflow-hidden">
                             <img
-                                alt="Full Screen"
+                                alt={tCarousel('fullScreen')}
                                 fetchpriority="high"
                                 decoding="async"
                                 data-nimg="fill"

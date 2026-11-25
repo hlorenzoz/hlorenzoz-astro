@@ -16,6 +16,11 @@ describe('CookieBanner', () => {
         expect(body.querySelector('[data-testid="cookie-reject"]')).not.toBeNull();
     });
 
+    it('names the banner region in the page language', async () => {
+        const { body } = await renderAstro(CookieBanner, { locale: 'es' });
+        expect(body.querySelector('[role="region"]')).toHaveAttribute('aria-label', 'Aviso de consentimiento de cookies');
+    });
+
     it('links the preferences to the localized cookie policy', async () => {
         for (const locale of ['en', 'es']) {
             const { body } = await renderAstro(CookieBanner, { locale });

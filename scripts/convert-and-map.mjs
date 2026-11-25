@@ -16,6 +16,9 @@
  * exists only after a successful upload, so re-running processes only what is new
  * ("0 new images" when everything is mapped).
  *
+ * Images carry no text metadata here: a new image's alt text, caption and title live in
+ * `messages/<locale>.json` for every locale, added with the page (see add-to-portfolio).
+ *
  * Usage:  bun run images:sync           (bucket defaults to R2_BUCKET env or "images")
  */
 import process from 'node:process';

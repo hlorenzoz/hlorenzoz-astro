@@ -6,7 +6,8 @@ AI voice receptionists, and custom software / mobile app development.
 
 ## 🎯 What This Site Does
 
-Lorenzoz Agency's bilingual (English / Spanish) marketing site. This section documents
+Lorenzoz Agency's multilingual marketing site (nine locales, published page by page; see
+Internationalization below). This section documents
 the full commercial context so the site and its content can be evolved against it.
 
 > **Source of truth:** the agency's positioning, value ladder, and prices live in
@@ -67,7 +68,7 @@ built around Local SEO. See
 - **Icons**: Lucide (`@lucide/astro`)
 - **Interactivity**: vanilla `<script>` in `.astro` components; React only for the ElevenLabs voice widget island, loaded on scroll
 - **Fonts**: Inter, self-hosted through the Astro Fonts API
-- **Internationalization**: `use-intl` translator over `messages/{en,es}.json` (`lib/i18n.ts`)
+- **Internationalization**: `use-intl` translator over `messages/<locale>.json` (`lib/i18n.ts`)
 - **Testing**: Vitest (Astro Container API), Playwright, Lighthouse CI
 - **Deployment**: Cloudflare Workers (static assets, serving `dist/`)
 - **Package Manager**: Bun
@@ -96,7 +97,7 @@ hlorenzoz-astro/
 │   ├── islands/          # React island: ElevenLabs voice widget
 │   └── styles/           # global.css (Tailwind v4)
 ├── lib/                  # Data, pricing, routes, SEO metadata and JSON-LD builders
-├── messages/             # en.json, es.json
+├── messages/             # <locale>.json, one per locale in lib/routing.ts
 ├── public/               # Static assets, _redirects, _headers, llms.txt, sw.js
 ├── tests/                # Vitest suites mirroring the source tree; tests/e2e for Playwright
 ├── scripts/              # CDN image sync, Stripe links, commercial dossier
@@ -149,8 +150,16 @@ just verify     # build + validate + Playwright E2E + Lighthouse CI against dist
 
 ## 🌍 Internationalization
 
-English (default) and Spanish, every page under `/{locale}/`. Copy lives in
-`messages/en.json` and `messages/es.json`; `tests/i18n/messages-parity.test.ts` keeps them in step.
+Every page lives under `/{locale}/`, and the site supports the nine locales of `LOCALES` in `lib/routing.ts` (`en`, `es`,
+`en-gb`, `gl`, `pt`, `it`, `fr`, `de`, `nl`) and is published page by page: a page exists in a
+locale once its copy is translated into `messages/<locale>.json` (`pageLocales` in
+`lib/i18n.ts`); until then it is not built there and gets no hreflang to it. Image alt text,
+captions and titles, and every aria-label, are copy: they live in `messages/<locale>.json`, are
+translated with the page, and a locale missing one does not publish that page. Words are fixed
+in `docs/i18n-glossary.md`.
+`en` is the default (x-default); `tests/i18n/messages-parity.test.ts` keeps `en` and `es` in
+step, and `tests/i18n/no-hardcoded-a11y-text.test.ts` fails on any alt, title, aria-label or
+caption written into a component instead of the messages.
 
 ## 📦 Build & Deploy
 

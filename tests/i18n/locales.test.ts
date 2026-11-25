@@ -12,6 +12,8 @@ import { LOCALES, LOCALE_INFO, languageAlternates, ogLocale, absoluteUrl } from 
 import { SHELL_KEYS, localesWithKeys, pageLocales } from '@/lib/i18n';
 import { ALL_ROUTES, routeAlternates, routeExists, routeHref, routeLocales } from '@/lib/routes';
 import { formatAmount } from '@/lib/pricing';
+import en from '@/messages/en.json';
+import es from '@/messages/es.json';
 
 describe('locale table', () => {
     it('lists the nine URL codes, international English first', () => {
@@ -117,6 +119,41 @@ describe('live availability', () => {
 
     it('refuses an unregistered path instead of guessing its locales', () => {
         expect(() => routeLocales('no/such/page')).toThrow(/no\/such\/page/);
+    });
+});
+
+describe('image and accessible text gate publication like page copy', () => {
+    const without = (path: string) => {
+        const copy = structuredClone(es) as Record<string, unknown>;
+        const parts = path.split('.');
+        const leaf = parts.pop()!;
+        delete (parts.reduce((node, key) => node[key] as Record<string, unknown>, copy) as Record<string, unknown>)[leaf];
+        return copy;
+    };
+
+    it.each([
+        ['assistant.avatarAlt', ['home']],
+        ['navigation.closeMenu', ['home']],
+        ['cookieBanner.label', ['home']],
+        ['portfolio.detail.fullScreenshotAlt', ['portfolio.detail']],
+        ['portfolio.portfolioCarousel.slideAlt', ['portfolio.portfolioCarousel']],
+        ['media.calBooking', ['media.calBooking']],
+        ['card.hector.meta.ogImageAlt', ['card.hector']],
+    ])('a locale missing %s does not publish the page that renders it', (path, keys) => {
+        expect(localesWithKeys({ en, es }, keys)).toEqual(['en', 'es']);
+        expect(localesWithKeys({ en, es: without(path) }, keys)).toEqual(['en']);
+    });
+
+    it('every page requires the alt and label keys of the components it renders', () => {
+        const keysOf = (path: string) => ALL_ROUTES.find((r) => r.path === path)!.copyKeys ?? [];
+        expect(keysOf('')).toContain('media.calBooking');
+        for (const path of ['services/local-seo', 'services/website-development', 'services/ai-voice-receptionist', 'services/software-development']) {
+            expect(keysOf(path), path).toContain('media.calBooking');
+        }
+        for (const route of ALL_ROUTES.filter((r) => /^portfolio\/./.test(r.path))) {
+            expect(keysOf(route.path), route.path).toEqual(expect.arrayContaining(['portfolio.detail', 'portfolio.portfolioCarousel']));
+        }
+        expect(SHELL_KEYS).toEqual(expect.arrayContaining(['navigation', 'cookieBanner', 'assistant', 'home.meta']));
     });
 });
 

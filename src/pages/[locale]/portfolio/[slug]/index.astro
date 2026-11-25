@@ -37,6 +37,7 @@ const tNews = getTranslations(locale, 'news');
 // Posts about this project, newest first (getNewsItemsAction already orders them).
 const projectNews = (await getNewsItemsAction()).filter((post) => post.portfolioId === item.id && routeExists(`news/${post.slug}`, locale));
 const tNav = getTranslations(locale, 'navigation');
+const tDetail = getTranslations(locale, 'portfolio.detail');
 
 const pageUrl = absoluteUrl(locale, `portfolio/${item.slug}`);
 const metaTitle = `${t('title')} | Lorenzoz Agency`;
@@ -82,7 +83,7 @@ const structuredData = portfolioDetail({
 
 const screenshots = Array.isArray(item.fullScreenshot) ? item.fullScreenshot : [item.fullScreenshot];
 const multiShot = Array.isArray(item.fullScreenshot) && item.fullScreenshot.length > 1;
-const liveDemoLabel = t('liveDemoButton') || 'Live Demo';
+const liveDemoLabel = t('liveDemoButton');
 
 // `priority` images, preloaded in page order.
 const heroSizes = '(max-width: 768px) 100vw, 681px';
@@ -134,7 +135,7 @@ const preloadImages = [
                                         target="_blank"
                                         rel="noopener noreferrer"
                                         class="px-10 py-4 rounded-full bg-blue-700 text-white font-bold hover:bg-blue-800 transition-all active:scale-95"
-                                        aria-label={`${liveDemoLabel} for ${t('title')}`}
+                                        aria-label={tDetail('liveDemoAria', { label: liveDemoLabel, title: t('title') })}
                                     >
                                         {liveDemoLabel}
                                     </a>
@@ -146,7 +147,7 @@ const preloadImages = [
                                 {...bookingAttrs}
                                 class="px-10 py-4 rounded-full bg-white text-black font-bold hover:bg-gray-100 transition-all active:scale-95"
                             >
-                                Contact for Quote
+                                {tDetail('contactForQuote')}
                             </a>
                         </div>
                     </div>
@@ -155,7 +156,7 @@ const preloadImages = [
                         <div class="relative aspect-[16/11] rounded-[2.5rem] overflow-hidden shadow-2xl border border-white/10 group">
                             {
                                 item.url !== '#' ? (
-                                    <a href={item.url} target="_blank" rel="noopener noreferrer" aria-label={`Visit live platform: ${t('title')}`}>
+                                    <a href={item.url} target="_blank" rel="noopener noreferrer" aria-label={tDetail('visitLivePlatform', { title: t('title') })}>
                                         <FadeInImage
                                             src={item.image}
                                             alt={t('title')}
@@ -166,7 +167,7 @@ const preloadImages = [
                                         />
                                         <div class="absolute inset-0 bg-blue-600/0 group-hover:bg-blue-600/5 transition-colors duration-500 flex items-center justify-center">
                                             <div class="opacity-0 group-hover:opacity-100 transition-opacity duration-500 transform scale-95 group-hover:scale-100 flex items-center gap-2 bg-white/10 backdrop-blur-md px-6 py-3 rounded-full border border-white/20">
-                                                <span class="text-white font-bold text-sm">Visit Live Demo</span>
+                                                <span class="text-white font-bold text-sm">{tDetail('visitLiveDemo')}</span>
                                                 <ExternalLink class="w-4 h-4 text-white" />
                                             </div>
                                         </div>
@@ -220,12 +221,12 @@ const preloadImages = [
                                 )}
                             >
                                 {multiShot ? (
-                                    <FullScreenshotCarousel images={screenshots} alt={`${t('title')} Showcase`} isActive={true} />
+                                    <FullScreenshotCarousel locale={locale} images={screenshots} alt={tDetail('showcaseAlt', { title: t('title') })} isActive={true} />
                                 ) : item.url !== '#' ? (
-                                    <a href={item.url} target="_blank" rel="noopener noreferrer" aria-label={`Open showcase for ${t('title')}`}>
+                                    <a href={item.url} target="_blank" rel="noopener noreferrer" aria-label={tDetail('openShowcase', { title: t('title') })}>
                                         <FadeInImage
                                             src={screenshots[0]}
-                                            alt={`${t('title')} Full Screenshot`}
+                                            alt={tDetail('fullScreenshotAlt', { title: t('title') })}
                                             width={1920}
                                             height={1080}
                                             sizes="(max-width: 1024px) 100vw, 640px"
@@ -233,7 +234,7 @@ const preloadImages = [
                                         />
                                         <div class="absolute inset-0 bg-blue-600/0 group-hover:bg-blue-600/10 transition-colors duration-700 flex items-center justify-center">
                                             <div class="opacity-0 group-hover:opacity-100 transition-all duration-500 transform scale-95 group-hover:scale-100 flex items-center gap-3 bg-white/95 backdrop-blur-md px-8 py-4 rounded-full shadow-2xl border border-white">
-                                                <span class="text-black font-bold">Explore Live Platform</span>
+                                                <span class="text-black font-bold">{tDetail('exploreLivePlatform')}</span>
                                                 <ExternalLink class="w-5 h-5 text-blue-700" />
                                             </div>
                                         </div>
@@ -241,7 +242,7 @@ const preloadImages = [
                                 ) : (
                                     <FadeInImage
                                         src={screenshots[0]}
-                                        alt={`${t('title')} Full Screenshot`}
+                                        alt={tDetail('fullScreenshotAlt', { title: t('title') })}
                                         width={1920}
                                         height={1080}
                                         sizes="(max-width: 1024px) 100vw, 640px"
