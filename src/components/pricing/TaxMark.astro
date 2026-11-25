@@ -1,0 +1,22 @@
+---
+/**
+ * The "+ VAT" / "+ IVA" marker that sits beside a price.
+ *
+ * Every figure the site publishes is before tax (see AGENTS.md, "Value
+ * ladder"). The commercial dossier marks each one, so the site does too: a bare
+ * "750" reads as what the client pays, and the two documents would then
+ * disagree about the same number.
+ *
+ * A component rather than a string appended to the amount, so the marker can be
+ * styled on its own and counted in tests: "every price carries one" is an
+ * assertion about elements, not a regex over copy.
+ */
+export interface Props {
+    label: string;
+    className?: string;
+}
+
+const { label, className = '' } = Astro.props;
+---
+
+<span data-testid="tax-mark" class={`whitespace-nowrap text-[10px] font-black uppercase tracking-widest ${className}`}>{label}</span>

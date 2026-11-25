@@ -1,0 +1,187 @@
+---
+/**
+ * Port of `components/LinkedInArticles.tsx`. The server renders the initial
+ * state (article 0 active, "previous" disabled); the script below keeps the
+ * pagination dots and arrow buttons in step with the scroll position, and maps
+ * the ArrowLeft / ArrowRight keys to one article.
+ *
+ * Dates are formatted at build time in UTC (`formatContentDate`), so the month
+ * no longer depends on the reader's time zone at all.
+ */
+import { ArrowRight, ChevronLeft, ChevronRight, Clock, ExternalLink } from '@lucide/astro';
+import FadeInImage from '@/src/components/FadeInImage.astro';
+import type { LinkedInArticle } from '@/lib/linkedin';
+import { formatContentDate } from '@/lib/dates';
+import { getTranslations } from '@/lib/i18n';
+
+export interface Props {
+    articles: LinkedInArticle[];
+    /** Defaults to the route's `[locale]` param, as `useParams()` did. */
+    locale?: string;
+}
+
+const { articles } = Astro.props;
+const locale = Astro.props.locale || Astro.params.locale || 'en';
+const t = getTranslations(locale, 'articles');
+---
+
+{
+    articles.length > 0 && (
+        <section id="articles" class="py-24 px-6 bg-white overflow-hidden" data-carousel data-item-ratio="0.3" data-fallback-ratio="0.6">
+            <div class="max-w-7xl mx-auto mb-16 px-4">
+                <div class="flex flex-col md:flex-row md:items-end justify-between gap-8">
+                    <div>
+                        <p class="text-[12px] font-bold tracking-[0.2em] uppercase text-blue-700 mb-4">{t('eyebrow')}</p>
+                        <h2 class="text-4xl md:text-6xl font-bold text-black mb-6 tracking-tight">{t('title')}</h2>
+                        <p class="text-xl text-gray-900 max-w-2xl font-medium leading-relaxed">{t('subtitle')}</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="relative group/scroll-container">
+                <div
+                    data-carousel-track
+                    class="flex gap-6 overflow-x-auto snap-x snap-mandatory pb-12 px-[10%] md:px-[20%] cursor-grab active:cursor-grabbing"
+                    style="scrollbar-width:none;-ms-overflow-style:none"
+                >
+                    {articles.map((article) => (
+                        <a
+                            href={article.url}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="min-w-[42vw] md:min-w-[28vw] lg:min-w-[19vw] snap-center bg-white rounded-[1.5rem] border border-gray-100 shadow-[0_20px_60px_rgba(0,0,0,0.05)] overflow-hidden group/card flex flex-col"
+                        >
+                            <div class="relative aspect-[16/9] bg-zinc-100 overflow-hidden">
+                                <FadeInImage
+                                    src={article.image}
+                                    alt={article.title}
+                                    fill
+                                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 60vw, 38vw"
+                                    priority={false}
+                                    className="object-cover"
+                                />
+                            </div>
+
+                            <div class="flex flex-col flex-1 p-4 md:p-5">
+                                <div class="flex items-center gap-2 mb-2 text-[10px] font-bold tracking-widest uppercase text-gray-500">
+                                    {/* Degrades to the raw string rather than throwing:
+                                        `getLinkedInArticles()` casts the JSON with a bare
+                                        `as`, so nothing validates `date` at runtime, and
+                                        this carousel renders on the home page. */}
+                                    <span>{formatContentDate(locale, article.date, 'monthYear')?.text ?? article.date}</span>
+                                    <span aria-hidden="true">·</span>
+                                    <span class="inline-flex items-center gap-1">
+                                        <Clock class="w-3 h-3" aria-hidden="true" />
+                                        {t('readTime', { min: article.readTimeMin })}
+                                    </span>
+                                </div>
+
+                                <h3 class="text-base md:text-lg font-bold text-black mb-1.5 tracking-tight leading-tight">{article.title}</h3>
+                                <p class="text-xs text-gray-700 line-clamp-2 mb-4 leading-relaxed">{article.excerpt}</p>
+
+                                <span class="mt-auto inline-flex items-center gap-1.5 text-blue-700 font-bold text-xs">
+                                    <ExternalLink class="w-3.5 h-3.5" aria-hidden="true" />
+                                    {t('cta')}
+                                    <ArrowRight class="w-3.5 h-3.5" aria-hidden="true" />
+                                </span>
+                            </div>
+                        </a>
+                    ))}
+                </div>
+
+                {/* Desktop Side Navigation Buttons */}
+                {articles.length > 1 && (
+                    <>
+                        <button
+                            data-carousel-prev
+                            disabled
+                            aria-label={t('prevSlide')}
+                            class="absolute left-4 top-1/2 -translate-y-1/2 z-10 size-14 rounded-full bg-white/80 backdrop-blur-md border border-gray-100 flex items-center justify-center text-gray-400 shadow-lg group pointer-events-auto"
+                        >
+                            <ChevronLeft class="w-6 h-6" aria-hidden="true" />
+                        </button>
+                        <button
+                            data-carousel-next
+                            aria-label={t('nextSlide')}
+                            class="absolute right-4 top-1/2 -translate-y-1/2 z-10 size-14 rounded-full bg-white/80 backdrop-blur-md border border-gray-100 flex items-center justify-center text-gray-400 shadow-lg group pointer-events-auto"
+                        >
+                            <ChevronRight class="w-6 h-6" aria-hidden="true" />
+                        </button>
+                    </>
+                )}
+            </div>
+
+            {/* Pagination Dots */}
+            {articles.length > 1 && (
+                <div class="flex justify-center gap-2 mt-12 pb-4">
+                    {articles.map((_, i) => (
+                        <button
+                            data-carousel-dot
+                            aria-label={t('goToSlide', { index: i + 1 })}
+                            aria-current={i === 0 ? 'true' : 'false'}
+                            class="group relative size-12 flex items-center justify-center outline-none touch-manipulation"
+                        >
+                            <div class={`rounded-full h-2.5 ${i === 0 ? 'w-10 bg-blue-600' : 'w-2.5 bg-gray-300'}`} />
+                        </button>
+                    ))}
+                </div>
+            )}
+        </section>
+    )
+}
+
+<script>
+    // One subscription per carousel for its whole life: the React version once
+    // rebuilt the ResizeObserver and scroll listener on every step, dropping
+    // scroll events mid-gesture and leaving the dots and buttons stale.
+    document.querySelectorAll<HTMLElement>('#articles[data-carousel]').forEach((root) => {
+        const track = root.querySelector<HTMLElement>('[data-carousel-track]')!;
+        const prev = root.querySelector<HTMLButtonElement>('[data-carousel-prev]');
+        const next = root.querySelector<HTMLButtonElement>('[data-carousel-next]');
+        const dots = Array.from(root.querySelectorAll<HTMLButtonElement>('[data-carousel-dot]'));
+        const count = track.children.length;
+        const ratio = Number(root.dataset.itemRatio);
+        const fallback = Number(root.dataset.fallbackRatio);
+        let itemWidth = 0;
+        let active = 0;
+        const step = () => itemWidth || track.offsetWidth * fallback;
+
+        const setActive = (index: number) => {
+            if (index === active) return;
+            active = index;
+            dots.forEach((dot, i) => {
+                const on = i === index;
+                dot.setAttribute('aria-current', String(on));
+                const bar = dot.firstElementChild!;
+                bar.classList.toggle('w-10', on);
+                bar.classList.toggle('bg-blue-600', on);
+                bar.classList.toggle('w-2.5', !on);
+                bar.classList.toggle('bg-gray-300', !on);
+            });
+            if (prev) prev.disabled = index === 0;
+            if (next) next.disabled = index === count - 1;
+        };
+
+        const measure = () => {
+            itemWidth = track.offsetWidth * ratio;
+        };
+        measure();
+        new ResizeObserver(measure).observe(track);
+        track.addEventListener(
+            'scroll',
+            () => {
+                if (itemWidth === 0) return;
+                setActive(Math.round(track.scrollLeft / itemWidth));
+            },
+            { passive: true }
+        );
+
+        prev?.addEventListener('click', () => track.scrollBy({ left: -step() }));
+        next?.addEventListener('click', () => track.scrollBy({ left: step() }));
+        dots.forEach((dot, i) => dot.addEventListener('click', () => track.scrollTo({ left: i * step() })));
+        window.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowLeft' && active > 0) track.scrollBy({ left: -step() });
+            if (e.key === 'ArrowRight' && active < count - 1) track.scrollBy({ left: step() });
+        });
+    });
+</script>

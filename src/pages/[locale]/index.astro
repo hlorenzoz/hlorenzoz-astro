@@ -1,0 +1,574 @@
+---
+/**
+ * Port of `app/[locale]/page.tsx`: the home page. It passes no `meta`, so the
+ * layout's default metadata is the page's metadata, as it was under Next.
+ */
+import {
+    ArrowRight,
+    Award,
+    ChartColumn,
+    Check,
+    CircleCheckBig,
+    FileText,
+    Globe,
+    Layers,
+    Link2,
+    Repeat,
+    Search,
+    Sparkles,
+    Star,
+    TrendingUp,
+} from '@lucide/astro';
+import BaseLayout from '@/src/layouts/BaseLayout.astro';
+import Navbar from '@/src/components/Navbar.astro';
+import Footer from '@/src/components/Footer.astro';
+import FaqAccordion from '@/src/components/FaqAccordion.astro';
+import JsonLd from '@/src/components/JsonLd.astro';
+import NewsCarousel from '@/src/components/NewsCarousel.astro';
+import PortfolioCarousel from '@/src/components/PortfolioCarousel.astro';
+import LinkedInArticles from '@/src/components/LinkedInArticles.astro';
+import CalBooking from '@/src/components/services/CalBooking.astro';
+import TaxMark from '@/src/components/pricing/TaxMark.astro';
+import CorePlanCard from '@/src/components/pricing/CorePlanCard.astro';
+import AddOnCard from '@/src/components/pricing/AddOnCard.astro';
+import CostComparison from '@/src/components/numbers/CostComparison.astro';
+import MissedCustomerTable from '@/src/components/numbers/MissedCustomerTable.astro';
+import { getTranslations } from '@/lib/i18n';
+import { getPortfolioItemsAction } from '@/lib/actions/portfolio';
+import { getLinkedInArticlesAction } from '@/lib/actions/linkedin';
+import { getNewsItemsAction } from '@/lib/actions/news';
+import { serviceList, faqPage, webPage, organizationOffers } from '@/lib/schema';
+import {
+    PRICING,
+    bundledAmount,
+    formatAmount,
+    formatOfferBase,
+    offersByRole,
+    slugFromServiceKey,
+    type ServiceKey,
+} from '@/lib/pricing';
+import { offerNotes } from '@/lib/offer-notes';
+import { copyTokens, resolveFaq } from '@/lib/copy-tokens';
+import { costComparison, missedCustomerTable } from '@/lib/numbers';
+import { LOCALES, SERVED_MARKETS, absoluteUrl, marketNames } from '@/lib/site-config';
+import { localeHref } from '@/lib/routing';
+import { imageFallbackSrc, imageSrcSet } from '@/lib/image';
+
+export function getStaticPaths() {
+    return LOCALES.map((locale) => ({ params: { locale } }));
+}
+
+/**
+ * The four pillars of the core offer, in the order `home.solutions.items` and
+ * `home.pricing.core.groups` list them.
+ *
+ * The page loops over THIS list, not over the message arrays. The copy can then
+ * be reworded freely, but it cannot grow a fifth pillar or lose one without a
+ * code change, and each pillar's icon travels with its position.
+ */
+const PILLARS = [FileText, Link2, Award, Star] as const;
+
+/** The one core offer and the optional services, straight from `PRICING`. */
+const CORE: ServiceKey = offersByRole('core')[0];
+const ADD_ONS: ServiceKey[] = offersByRole('addOn');
+
+const { locale } = Astro.params as { locale: string };
+
+const t = getTranslations(locale, 'home');
+// Root translator: service names, the tax marker and the shared "numbers"
+// copy all live outside the `home` namespace.
+const tRoot = getTranslations(locale);
+const portfolioItems = await getPortfolioItemsAction();
+const articles = await getLinkedInArticlesAction();
+const news = await getNewsItemsAction();
+
+// Every figure below comes from `PRICING`. `messages/*.json` carries
+// `{price}` / `{discount}` / `{upfront}` / `{tax}` tokens, never a number.
+const tax = tRoot('tax.suffix');
+const tokens = copyTokens(locale, tax);
+const corePrice = formatOfferBase(PRICING[CORE], locale);
+const serviceHref = (key: ServiceKey) => localeHref(locale, `services/${slugFromServiceKey(key)}`);
+const faqItems = resolveFaq(t.raw('faq.items'), tokens);
+
+const problemTitle = t.markup('problem.title', {
+    trad: (chunks) =>
+        `<span class="relative inline-block px-1">${chunks}<span class="absolute inset-x-0 top-[55%] h-[2.5px] bg-red-600 opacity-60"></span></span>`,
+    br: () => '<br/>',
+});
+
+// A plain next/image <Image> (no fade wrapper) in the Next page, so a plain <img>.
+const BENEFITS_IMAGE = {
+    src: 'https://cdn.hlorenzoz.com/hlorenzoz.com/ai-benefits.webp',
+    width: 1000,
+    sizes: '(max-width: 768px) 100vw, 576px',
+};
+
+const PROBLEM_ICONS = [Search, Star, Sparkles];
+const BENEFIT_ICONS = [Search, Star, TrendingUp];
+const PROCESS_ICONS = [ChartColumn, Layers, Repeat];
+---
+
+{/* No image preload: Next emitted one for the Footer's Upwork favicon only because React
+    hoists eager <img> tags; a footer icon must not compete with the LCP image. */}
+<BaseLayout locale={locale}>
+    <div class="min-h-screen bg-white no-animations">
+        <Navbar locale={locale} />
+
+        <main>
+            {/* Hero Section */}
+            <section id="home" class="relative pt-32 pb-20 md:pt-48 md:pb-36 px-6 overflow-hidden hero-bg-deep">
+                <div class="max-w-4xl mx-auto text-center flex flex-col items-center gap-8 hero-content relative z-10">
+                    {/* Status Badge */}
+                    <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-400 text-[10px] font-bold tracking-[0.2em] uppercase">
+                        <span class="relative flex h-2 w-2">
+                            <span class="relative inline-flex rounded-full h-2 w-2 bg-blue-500"></span>
+                        </span>
+                        {t('hero.badge')}
+                    </div>
+
+                    <h1 class="text-5xl md:text-7xl font-bold tracking-tight text-white leading-[1.05]">
+                        {t('hero.title')} <span class="text-gradient">{t('hero.titleGradient')}</span>
+                    </h1>
+
+                    <p class="text-lg md:text-xl text-gray-200 max-w-2xl font-medium leading-relaxed">
+                        {t('hero.description')}
+                    </p>
+
+                    <div class="flex flex-wrap items-center justify-center gap-6">
+                        <a href="#contact" class="bg-blue-900 text-white text-base font-bold px-10 py-4 rounded-full shadow-glow hover:bg-blue-800">
+                            {t('hero.cta')}
+                        </a>
+                        <a href="#pricing" class="text-blue-200 text-xs font-extrabold uppercase tracking-[0.2em] hover:text-white">
+                            {t('hero.secondaryCta')}
+                        </a>
+                    </div>
+                </div>
+            </section>
+
+            {/* Stats Section. Three facts about the offer, each derived from
+                data rather than typed: the plan's price, how many pillars it
+                has and how many markets are served. They replaced "90% First
+                Call Resolution" and its neighbours, which were figures about
+                one optional service and were not documented anywhere in the
+                repo. */}
+            <section id="stats" class="relative z-20 pb-12 px-6 bg-transparent mt-[-2rem] md:-mt-24">
+                <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <div class="bg-white border border-gray-100 p-10 rounded-[2.5rem] flex flex-col items-center text-center shadow-xl">
+                        <div class="bg-blue-50 text-blue-700 p-4 rounded-full mb-6">
+                            <Layers class="w-8 h-8" aria-hidden="true" />
+                        </div>
+                        <p data-testid="stat-plan-price" class="mb-1 flex flex-wrap items-baseline justify-center gap-x-2 text-black">
+                            <span class="text-4xl font-bold">{corePrice.amount}</span>
+                            <span class="text-xs font-bold uppercase tracking-widest text-gray-600">{t('pricing.perMonth')}</span>
+                            <TaxMark label={tax} className="text-blue-700" />
+                        </p>
+                        <p class="text-[10px] font-bold text-gray-950 uppercase tracking-[0.2em]">{t('stats.plan.label')}</p>
+                    </div>
+                    <div class="bg-white border border-gray-100 p-10 rounded-[2.5rem] flex flex-col items-center text-center shadow-xl">
+                        <div class="bg-blue-50 text-blue-700 p-4 rounded-full mb-6">
+                            <CircleCheckBig class="w-8 h-8" aria-hidden="true" />
+                        </div>
+                        <p class="text-4xl font-bold text-black mb-1">{PILLARS.length}</p>
+                        <p class="text-[10px] font-bold text-gray-950 uppercase tracking-[0.2em]">{t('stats.pillars.label')}</p>
+                    </div>
+                    <div class="bg-white border border-gray-100 p-10 rounded-[2.5rem] flex flex-col items-center text-center shadow-xl">
+                        <div class="bg-blue-50 text-blue-700 p-4 rounded-full mb-6">
+                            <Globe class="w-8 h-8" aria-hidden="true" />
+                        </div>
+                        <p class="text-4xl font-bold text-black mb-1">{SERVED_MARKETS.length}</p>
+                        <p class="text-[10px] font-bold text-gray-950 uppercase tracking-[0.2em]">{t('stats.markets.label')}</p>
+                    </div>
+                </div>
+            </section>
+
+            {/* Global reach. This band and the JSON-LD `areaServed` both derive
+                from SERVED_MARKETS via `marketNames`, localized per page.
+                `public/llms.txt` states the same list by hand; a test
+                (llms-txt-accuracy) keeps it in step rather than letting the two
+                drift. */}
+            <section id="markets" class="py-16 px-6 bg-white border-y border-gray-100">
+                <div class="max-w-5xl mx-auto text-center">
+                    <p class="text-[11px] font-black uppercase tracking-[0.3em] text-blue-700 mb-4">{t('markets.eyebrow')}</p>
+                    <h2 class="text-2xl md:text-3xl font-bold text-black mb-3 tracking-tight">{t('markets.title')}</h2>
+                    <p class="text-sm text-gray-600 max-w-2xl mx-auto mb-10 font-medium leading-relaxed">{t('markets.subtitle')}</p>
+                    <ul class="flex flex-wrap justify-center gap-3">
+                        {
+                            marketNames(locale).map((name) => (
+                                <li class="px-5 py-2.5 rounded-full bg-gray-50 border border-gray-200 text-sm font-bold text-black shadow-sm">{name}</li>
+                            ))
+                        }
+                    </ul>
+                </div>
+            </section>
+
+            {/* Buying services vs buying a result */}
+            <section id="standard" class="py-24 px-6 bg-[#fafafa]">
+                <div class="max-w-5xl mx-auto">
+                    <div class="text-center mb-16 px-6">
+                        <h2 class="text-4xl md:text-6xl font-bold text-black mb-6 tracking-tight leading-tight">{t('standard.title')}</h2>
+                        <p class="text-lg text-gray-900 max-w-2xl mx-auto font-medium leading-relaxed">{t('standard.subtitle')}</p>
+                    </div>
+                    <div class="grid md:grid-cols-2 gap-8">
+                        <div class="p-10 rounded-[2.5rem] border-2 border-dashed border-gray-100 bg-gray-50/30">
+                            <div class="flex items-center gap-3 mb-8">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-red-500/50" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                                <h3 class="text-2xl font-bold text-gray-900">{t('standard.oldWay.title')}</h3>
+                            </div>
+                            <ul class="space-y-5">
+                                {
+                                    (t.raw('standard.oldWay.items') as string[]).map((item) => (
+                                        <li class="flex items-start gap-4 text-gray-900 font-medium">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-red-600 shrink-0 mt-1" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><path d="m15 9-6 6"></path><path d="m9 9 6 6"></path></svg>
+                                            <span>{item}</span>
+                                        </li>
+                                    ))
+                                }
+                            </ul>
+                        </div>
+                        {/* New Way */}
+                        <div class="p-10 rounded-[2.5rem] border-2 border-blue-500/20 bg-blue-50/10 shadow-lg shadow-blue-500/5">
+                            <div class="flex items-center gap-3 mb-8">
+                                <CircleCheckBig class="w-8 h-8 text-blue-500" aria-hidden="true" />
+                                <h3 class="text-2xl font-bold text-black">{t('standard.newWay.title')}</h3>
+                            </div>
+                            <ul class="space-y-5">
+                                {
+                                    (t.raw('standard.newWay.items') as string[]).map((item) => (
+                                        <li class="flex items-start gap-4 text-black font-bold">
+                                            <Check class="w-5 h-5 text-blue-500 shrink-0 mt-1" aria-hidden="true" />
+                                            <span>{item}</span>
+                                        </li>
+                                    ))
+                                }
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            {/* Problem Section */}
+            <section id="problem" class="py-24 px-6 bg-white">
+                <div class="max-w-6xl mx-auto">
+                    <div class="text-center mb-24 px-6">
+                        <p class="text-gray-950 font-bold tracking-[0.3em] uppercase text-[12px] mb-8">{t('problem.badge')}</p>
+                        <div class="relative inline-block max-w-4xl">
+                            <h2 class="text-4xl md:text-6xl font-bold text-black mb-10 tracking-tight leading-tight relative z-10">
+                                <Fragment set:html={problemTitle} />
+                            </h2>
+                        </div>
+                        <p class="text-lg md:text-xl text-gray-900 max-w-2xl mx-auto font-medium leading-relaxed mt-4">
+                            {t('problem.description')}
+                        </p>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                        {
+                            PROBLEM_ICONS.map((Icon, i) => (
+                                <div class="bg-white p-12 rounded-[4rem] flex flex-col gap-8 border border-gray-100 shadow-[0_20px_60px_rgba(0,0,0,0.05)] shadow-[0_40px_100px_rgba(0,0,0,0.1)] group cursor-default">
+                                    <div class="size-16 rounded-full bg-gray-100 flex items-center justify-center text-black shadow-inner">
+                                        <Icon class="w-8 h-8" aria-hidden="true" />
+                                    </div>
+                                    <div class="flex flex-col gap-4">
+                                        <h3 class="text-xl font-bold text-black tracking-tight leading-tight">{t(`problem.cards.${i}.title`)}</h3>
+                                        <p class="text-gray-900 leading-relaxed font-medium text-sm">{t(`problem.cards.${i}.description`)}</p>
+                                    </div>
+                                </div>
+                            ))
+                        }
+                    </div>
+                </div>
+            </section>
+
+            {/* The solution: one plan, four pillars. Every card leads to the
+                Local SEO page, because the pillars are parts of that one offer
+                and not services with pages of their own. */}
+            <section id="solutions" class="py-32 px-6 bg-[#f9f9f9]">
+                <div class="max-w-6xl mx-auto">
+                    <div class="flex flex-col md:flex-row justify-between items-end mb-24 gap-8">
+                        <div class="max-w-2xl">
+                            <p class="text-black font-extrabold tracking-[0.2em] uppercase text-[12px] mb-8">{t('solutions.badge')}</p>
+                            <h2 class="text-4xl md:text-6xl font-bold text-black mb-10 tracking-tight leading-tight">{t('solutions.title')}</h2>
+                            <p class="text-lg md:text-xl text-black font-medium leading-relaxed max-w-xl">{t('solutions.subtitle')}</p>
+                        </div>
+                        <a href={serviceHref(CORE)} class="text-blue-800 font-extrabold uppercase text-xs tracking-[0.2em] flex items-center gap-2 group mb-4 hover:gap-3">
+                            {t('solutions.cta')} <ArrowRight class="w-4 h-4" aria-hidden="true" />
+                        </a>
+                    </div>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                        {
+                            PILLARS.map((Icon, i) => (
+                                <a
+                                    href={serviceHref(CORE)}
+                                    data-testid="solutions-card-link"
+                                    class="bg-white p-9 rounded-[3rem] border border-gray-100 shadow-[0_20px_60px_rgba(0,0,0,0.05)] group block hover:border-blue-200 transition-colors"
+                                >
+                                    <div class="size-14 rounded-full flex items-center justify-center mb-6 shadow-inner bg-blue-50 text-blue-700">
+                                        <Icon class="w-7 h-7" aria-hidden="true" />
+                                    </div>
+                                    <h3 class="text-lg font-bold text-black mb-3 tracking-tight leading-tight">{t(`solutions.items.${i}.title`)}</h3>
+                                    <p class="text-gray-900 leading-relaxed font-medium text-sm mb-5">{t(`solutions.items.${i}.description`)}</p>
+                                    <ul class="space-y-2.5">
+                                        {(t.raw(`solutions.items.${i}.points`) as string[]).map((point) => (
+                                            <li class="flex items-start gap-2.5 text-xs font-bold text-black">
+                                                <CircleCheckBig class="w-4 h-4 shrink-0 text-blue-700" aria-hidden="true" />
+                                                <span>{point}</span>
+                                            </li>
+                                        ))}
+                                    </ul>
+                                </a>
+                            ))
+                        }
+                    </div>
+                </div>
+            </section>
+
+            {/* The numbers: what the work would cost bought separately, and
+                what a customer who never arrives costs. Built by
+                `lib/numbers.ts`, which the Local SEO page uses too, so both
+                pages (and the dossier) show the same arithmetic. */}
+            <section id="numbers" class="py-32 px-6 bg-[#fafafa]">
+                <div class="max-w-5xl mx-auto">
+                    <div class="text-center mb-16">
+                        <p class="text-black font-extrabold tracking-[0.3em] uppercase text-[12px] mb-8">{tRoot('numbers.badge')}</p>
+                        <h2 class="text-4xl md:text-6xl font-bold text-black mb-6 tracking-tight leading-tight">{tRoot('numbers.title')}</h2>
+                        <p class="text-lg text-gray-900 max-w-2xl mx-auto font-medium leading-relaxed">{tRoot('numbers.subtitle')}</p>
+                    </div>
+                    <CostComparison {...costComparison(locale, tRoot, tax)} />
+                    <div class="mt-20">
+                        <MissedCustomerTable {...missedCustomerTable(locale, tRoot, tax)} />
+                    </div>
+                </div>
+            </section>
+
+            <PortfolioCarousel portfolioItems={portfolioItems} locale={locale} />
+
+            {/* What changes for the business */}
+            <section id="benefits" class="py-32 px-6 bg-[#fafafa] overflow-hidden">
+                <div class="max-w-6xl mx-auto">
+                    <div class="grid md:grid-cols-2 gap-20 items-center">
+                        <div class="relative order-2 md:order-1">
+                            <div class="absolute -top-10 -left-10 w-40 h-40 bg-blue-500/10 rounded-full blur-3xl"></div>
+                            <div class="relative rounded-[3rem] overflow-hidden shadow-2xl border border-gray-100 aspect-square md:aspect-auto h-full max-h-[600px]">
+                                {/* Placeholder asset: this image predates the
+                                    results model and will be replaced in the
+                                    redesign (task #T0032). */}
+                                <img
+                                    alt={t('benefits.imageAlt')}
+                                    loading="lazy"
+                                    width="1000"
+                                    height="1000"
+                                    decoding="async"
+                                    data-nimg="1"
+                                    class="w-full h-full object-cover"
+                                    style="color:transparent"
+                                    sizes={BENEFITS_IMAGE.sizes}
+                                    srcset={imageSrcSet(BENEFITS_IMAGE.src, BENEFITS_IMAGE)}
+                                    src={imageFallbackSrc(BENEFITS_IMAGE.src, BENEFITS_IMAGE)}
+                                />
+                                <div class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
+                            </div>
+                        </div>
+                        <div class="order-1 md:order-2">
+                            <h2 class="text-4xl md:text-6xl font-bold text-black mb-12 tracking-tight leading-tight">
+                                {t('benefits.title')} <br />
+                                <span class="text-primary italic font-black">{t('benefits.titleGradient')}</span>
+                            </h2>
+                            <div class="space-y-10">
+                                {
+                                    BENEFIT_ICONS.map((Icon, i) => (
+                                        <div class="flex gap-6 group">
+                                            <div class="shrink-0 size-14 rounded-2xl bg-blue-50 text-blue-800 flex items-center justify-center border border-blue-100 group-hover:bg-blue-800 group-hover:text-white">
+                                                <Icon class="w-8 h-8" aria-hidden="true" />
+                                            </div>
+                                            <div>
+                                                <h3 class="text-xl font-bold text-black mb-2">{t(`benefits.items.${i}.title`)}</h3>
+                                                <p class="text-black font-medium leading-relaxed">{t(`benefits.items.${i}.description`)}</p>
+                                            </div>
+                                        </div>
+                                    ))
+                                }
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            {/* Process: a monthly cycle, with no delivery deadline. Local SEO is
+                ongoing work, so a "live in 7-14 days" promise would describe a
+                website build, not this. */}
+            <section id="process" class="py-32 px-6 bg-white">
+                <div class="max-w-6xl mx-auto text-center flex flex-col items-center">
+                    <div class="w-full">
+                        <h2 class="text-4xl md:text-6xl font-bold text-black mb-24 tracking-tight leading-tight">{t('process.title')}</h2>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-12 text-left w-full">
+                        {
+                            PROCESS_ICONS.map((Icon, i) => (
+                                <div class="flex flex-col items-start gap-8 group">
+                                    <div class="flex items-center gap-6">
+                                        <span class="text-7xl font-black text-gray-600 group-hover:text-gray-900/10">{t(`process.steps.${i}.number`)}</span>
+                                        <div class="size-16 rounded-3xl bg-white border border-gray-100 shadow-sm flex items-center justify-center text-blue-700">
+                                            <Icon class="w-8 h-8" aria-hidden="true" />
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <p class="text-[10px] font-bold tracking-[0.2em] uppercase text-blue-800 mb-3">{t(`process.steps.${i}.badge`)}</p>
+                                        <h3 class="text-2xl font-bold text-black mb-4 tracking-tight">{t(`process.steps.${i}.title`)}</h3>
+                                        <p class="text-black font-medium leading-relaxed">{t(`process.steps.${i}.description`)}</p>
+                                    </div>
+                                </div>
+                            ))
+                        }
+                    </div>
+                </div>
+            </section>
+
+            {/* Pricing: one core plan, then the optional services with their
+                list price and the price alongside the plan. The badge is not
+                "limited time": the discount has no end date, and saying it had
+                one would be false urgency. */}
+            <section
+                id="pricing"
+                class="py-32 px-6 bg-black relative overflow-hidden text-center"
+                style="background-image:radial-gradient(circle at 50% 50%, rgba(59, 130, 246, 0.1) 0%, rgba(0, 0, 0, 0) 70%)"
+            >
+                <div class="max-w-6xl mx-auto relative z-10 text-center">
+                    <div>
+                        <span class="inline-block py-1.5 px-6 rounded-full bg-blue-700 text-white text-[11px] font-black tracking-[0.3em] mb-10 uppercase">{t('pricing.badge')}</span>
+                        <h2 class="text-5xl md:text-7xl font-bold text-white mb-8 tracking-tight leading-tight">{t('pricing.title')}</h2>
+                        <p class="text-lg text-gray-400 max-w-2xl mx-auto mb-8 font-medium">{t('pricing.description', tokens)}</p>
+                        <p class="text-xs text-gray-400 max-w-xl mx-auto mb-3 leading-relaxed italic">{t('pricing.paymentTerms', tokens)}</p>
+                        <p class="text-xs text-gray-400 max-w-xl mx-auto leading-relaxed">{t('pricing.vat')}</p>
+                    </div>
+
+                    <CorePlanCard
+                        popular={t('pricing.core.popular')}
+                        title={t('pricing.core.title')}
+                        subtitle={t('pricing.core.subtitle')}
+                        price={corePrice.amount}
+                        period={t('pricing.perMonth')}
+                        tax={tax}
+                        goal={t('pricing.core.goal')}
+                        ctaLabel={t('pricing.core.cta')}
+                        ctaHref="#contact"
+                        learnMoreLabel={t('pricing.learnMore')}
+                        learnMoreHref={serviceHref(CORE)}
+                        groups={PILLARS.map((_, i) => ({
+                            label: t(`pricing.core.groups.${i}.label`),
+                            items: t.raw(`pricing.core.groups.${i}.items`) as string[],
+                        }))}
+                    />
+
+                    <h3 class="mt-20 mb-3 text-3xl font-bold tracking-tight text-white">{t('pricing.addOnsTitle')}</h3>
+                    <p class="mb-10 font-medium text-gray-400">{t('pricing.addOnsSubtitle', tokens)}</p>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 items-stretch">
+                        {
+                            ADD_ONS.map((key) => {
+                                const offer = PRICING[key];
+                                const base = formatOfferBase(offer, locale);
+                                return (
+                                    <AddOnCard
+                                        title={t(`pricing.addOns.${key}.title`)}
+                                        subtitle={t(`pricing.addOns.${key}.subtitle`)}
+                                        listPrice={base.amount}
+                                        bundlePrice={formatAmount(bundledAmount(offer.base.amount), locale)}
+                                        listLabel={t('pricing.listLabel')}
+                                        bundleLabel={t('pricing.bundleLabel')}
+                                        fromLabel={base.from ? t('pricing.from') : undefined}
+                                        terms={base.period === 'month' ? t('pricing.perMonth') : t('pricing.oneOff')}
+                                        tax={tax}
+                                        features={t.raw(`pricing.addOns.${key}.features`) as string[]}
+                                        ctaLabel={t(`pricing.addOns.${key}.cta`)}
+                                        ctaHref="#contact"
+                                        learnMoreLabel={t('pricing.learnMore')}
+                                        learnMoreHref={serviceHref(key)}
+                                    />
+                                );
+                            })
+                        }
+                    </div>
+                </div>
+            </section>
+
+            {/* Final CTA Section */}
+            <section id="contact" class="py-32 px-6 bg-white relative overflow-hidden">
+                <div class="max-w-6xl mx-auto flex flex-col items-center">
+                    <div class="text-center mb-20">
+                        <p class="text-black font-extrabold tracking-[0.3em] uppercase text-[12px] mb-8">{t('contact.badge')}</p>
+                        <h2 id="contact-heading" class="text-4xl md:text-7xl font-bold tracking-tight mb-8 text-black leading-tight text-center">
+                            <span class="text-black/80">{t('contact.title')}</span> <br />
+                            <span class="text-blue-800">{t('contact.subtitle')}</span>
+                        </h2>
+                    </div>
+
+                    <CalBooking titleId="contact-heading" />
+                </div>
+            </section>
+
+            {/* Frequently Asked Questions */}
+            <section id="faq" class="py-32 px-6 bg-[#fafafa] border-t border-gray-100">
+                <div class="max-w-4xl mx-auto">
+                    <h2 class="text-4xl md:text-6xl font-bold text-black mb-20 tracking-tight text-center leading-tight">{t('faq.title')}</h2>
+                    <FaqAccordion items={faqItems} />
+                </div>
+            </section>
+
+            {/* Latest News, directly above the LinkedIn articles */}
+            <NewsCarousel
+                locale={locale}
+                items={news.map((item) => ({
+                    slug: item.slug,
+                    title: tRoot(`news.items.${item.id}.title`),
+                    image: item.image,
+                    datePublished: item.datePublished,
+                }))}
+                eyebrow={tRoot('news.home.eyebrow')}
+                title={tRoot('news.home.title')}
+                subtitle={tRoot('news.home.subtitle')}
+                viewAll={tRoot('news.home.viewAll')}
+            />
+
+            {/* Latest LinkedIn Articles */}
+            <LinkedInArticles articles={articles} locale={locale} />
+
+            {/* Structured Data for SEO */}
+            <JsonLd
+                data={webPage({
+                    locale,
+                    name: t('meta.title'),
+                    description: t('meta.description'),
+                    url: absoluteUrl(locale),
+                    speakable: ['h1', '.hero-content p'],
+                })}
+            />
+            {/* The list and the catalogue name the OFFERS (Local SEO and the
+                optional services), never the pillars: a pillar is part of one
+                service, and emitting four `Service` nodes for them would tell a
+                crawler the agency sells them separately. */}
+            <JsonLd
+                data={serviceList(
+                    [CORE, ...ADD_ONS].map((key) => ({
+                        title: tRoot(`services.${key}.name`),
+                        description: tRoot(`services.${key}.meta.description`),
+                    }))
+                )}
+            />
+            {/* Built from PRICING, with only names and descriptions coming from
+                the copy. It used to be handed the raw tiers and re-derive every
+                figure by parsing the display strings, which is how a Spanish
+                "€1.299" could have been published as one euro. */}
+            <JsonLd
+                data={organizationOffers(
+                    [CORE, ...ADD_ONS].map((key) => ({
+                        name: tRoot(`services.${key}.name`),
+                        description: tRoot(`services.${key}.meta.description`),
+                        offer: PRICING[key],
+                        notes: offerNotes(PRICING[key], tRoot),
+                    }))
+                )}
+            />
+            <JsonLd data={faqPage(faqItems)} />
+        </main>
+
+        <Footer locale={locale} />
+    </div>
+</BaseLayout>

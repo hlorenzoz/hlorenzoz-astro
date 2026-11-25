@@ -14,8 +14,36 @@ import {
     coverage,
     formatAmount,
 } from '@/lib/pricing';
-import type { CostComparisonProps } from '@/components/numbers/CostComparison';
-import type { MissedCustomerTableProps } from '@/components/numbers/MissedCustomerTable';
+
+export interface CostComparisonProps {
+    separateTitle: string;
+    /**
+     * One row per pillar. `value` is set only for the pillars the agency once
+     * sold on their own, at their former list price. The others get the
+     * `unpricedLabel`: no figure is invented for something that never had one.
+     */
+    rows: { label: string; value?: string }[];
+    perMonth: string;
+    unpricedLabel: string;
+    totalLabel: string;
+    total: string;
+    note: string;
+    planTitle: string;
+    planPrice: string;
+    includedLabel: string;
+    saving: string;
+    tax: string;
+}
+
+export interface MissedCustomerTableProps {
+    title: string;
+    description: string;
+    columns: { value: string; cover: string; missed: string };
+    /** Worked examples, already formatted. Illustrative inputs, not results. */
+    rows: { value: string; cover: string; missed: string }[];
+    /** States that the values are an example. Always rendered. */
+    footnote: string;
+}
 
 /** A ROOT translator: keys are full paths such as `numbers.plan.title`. */
 type Translate = (key: string, values?: Record<string, string | number>) => string;

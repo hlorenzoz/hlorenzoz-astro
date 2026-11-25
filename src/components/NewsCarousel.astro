@@ -1,0 +1,92 @@
+---
+/**
+ * Home page news strip: a native horizontal scroller with CSS scroll-snap.
+ *
+ * No JS. The strip is a real list of real links, the browser handles touch and
+ * trackpad scrolling, and `tabindex="0"` makes the overflow region reachable
+ * and arrow-scrollable from the keyboard. Copy arrives as props, already
+ * translated, like `ArticleByline`.
+ */
+import { ArrowRight } from '@lucide/astro';
+import FadeInImage from '@/src/components/FadeInImage.astro';
+import { formatContentDate } from '@/lib/dates';
+import { localeHref } from '@/lib/routing';
+
+export interface NewsCard {
+    slug: string;
+    title: string;
+    image: string;
+    /** ISO date (YYYY-MM-DD). */
+    datePublished: string;
+}
+
+export interface Props {
+    locale: string;
+    items: NewsCard[];
+    eyebrow: string;
+    title: string;
+    subtitle: string;
+    viewAll: string;
+}
+
+const { locale, items, eyebrow, title, subtitle, viewAll } = Astro.props;
+---
+
+{
+    items.length > 0 && (
+        <section id="news" aria-labelledby="news-heading" class="py-24 px-6 bg-white overflow-hidden">
+            <div class="max-w-7xl mx-auto">
+                <div class="flex flex-col md:flex-row md:items-end justify-between gap-8 mb-12 px-4">
+                    <div>
+                        <p class="text-[12px] font-bold tracking-[0.2em] uppercase text-blue-700 mb-4">{eyebrow}</p>
+                        <h2 id="news-heading" class="text-4xl md:text-6xl font-bold text-black mb-6 tracking-tight">
+                            {title}
+                        </h2>
+                        <p class="text-xl text-gray-900 max-w-2xl font-medium leading-relaxed">{subtitle}</p>
+                    </div>
+                    <a href={localeHref(locale, 'news')} class="inline-flex items-center gap-2 text-blue-700 font-bold shrink-0 hover:underline underline-offset-4">
+                        {viewAll}
+                        <ArrowRight class="w-4 h-4" aria-hidden="true" />
+                    </a>
+                </div>
+
+                <ul
+                    role="list"
+                    tabindex="0"
+                    aria-label={title}
+                    class="flex gap-6 overflow-x-auto snap-x snap-mandatory pb-6 px-4 rounded-[1.5rem] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-blue-700"
+                >
+                    {items.map((item) => {
+                        const date = formatContentDate(locale, item.datePublished, 'dayMonthYear');
+                        return (
+                            <li class="snap-start shrink-0 w-[80%] sm:w-[45%] lg:w-[31%]">
+                                <a
+                                    href={localeHref(locale, `news/${item.slug}`)}
+                                    class="group flex flex-col h-full bg-white rounded-[1.5rem] border border-gray-100 shadow-[0_20px_60px_rgba(0,0,0,0.05)] overflow-hidden"
+                                >
+                                    <div class="relative aspect-[16/9] bg-zinc-100 overflow-hidden">
+                                        <FadeInImage
+                                            src={item.image}
+                                            alt=""
+                                            fill
+                                            sizes="(max-width: 640px) 80vw, (max-width: 1024px) 45vw, 400px"
+                                            className="object-cover transition-transform duration-700 group-hover:scale-105"
+                                        />
+                                    </div>
+                                    <div class="flex flex-col flex-1 p-5">
+                                        <p class="text-[11px] font-bold tracking-widest uppercase text-gray-600 mb-2">
+                                            {date ? <time datetime={date.iso}>{date.text}</time> : item.datePublished}
+                                        </p>
+                                        <h3 class="text-lg font-bold text-black tracking-tight leading-tight group-hover:text-blue-700 transition-colors">
+                                            {item.title}
+                                        </h3>
+                                    </div>
+                                </a>
+                            </li>
+                        );
+                    })}
+                </ul>
+            </div>
+        </section>
+    )
+}

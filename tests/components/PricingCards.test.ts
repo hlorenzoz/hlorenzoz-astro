@@ -1,8 +1,9 @@
 import { describe, it, expect } from 'vitest';
-import { render, screen, within } from '@testing-library/react';
-import { TaxMark } from '@/components/pricing/TaxMark';
-import { CorePlanCard } from '@/components/pricing/CorePlanCard';
-import { AddOnCard } from '@/components/pricing/AddOnCard';
+import { within } from '@testing-library/dom';
+import { renderAstro } from '@/tests/helpers/render';
+import TaxMark from '@/src/components/pricing/TaxMark.astro';
+import CorePlanCard from '@/src/components/pricing/CorePlanCard.astro';
+import AddOnCard from '@/src/components/pricing/AddOnCard.astro';
 
 /**
  * Every published price is before tax, and the dossier marks each one "+ VAT".
@@ -11,8 +12,8 @@ import { AddOnCard } from '@/components/pricing/AddOnCard';
  * the card", but inside the same price line.
  */
 describe('TaxMark', () => {
-    it('renders the marker it is given', () => {
-        render(<TaxMark label="+ VAT" />);
+    it('renders the marker it is given', async () => {
+        const screen = await renderAstro(TaxMark, { label: '+ VAT' });
         expect(screen.getByTestId('tax-mark')).toHaveTextContent('+ VAT');
     });
 });
@@ -36,8 +37,8 @@ const core = {
 };
 
 describe('CorePlanCard', () => {
-    it('shows the price with its period and its tax marker in one line', () => {
-        render(<CorePlanCard {...core} />);
+    it('shows the price with its period and its tax marker in one line', async () => {
+        const screen = await renderAstro(CorePlanCard, core);
         const line = screen.getByTestId('core-plan-price');
         expect(line).toHaveTextContent('€750');
         expect(line).toHaveTextContent('/ mo');
@@ -50,8 +51,8 @@ describe('CorePlanCard', () => {
      * blue with `!important`, which left the outline barely visible. A ring is a
      * box-shadow, so that rule cannot dim it.
      */
-    it('is outlined with a solid ring, not only the dimmed theme border', () => {
-        render(<CorePlanCard {...core} />);
+    it('is outlined with a solid ring, not only the dimmed theme border', async () => {
+        const screen = await renderAstro(CorePlanCard, core);
         const card = screen.getByTestId('core-plan-card');
         expect(card.className).toContain('ring-2');
         expect(card.className).toContain('ring-blue-500');
@@ -59,17 +60,19 @@ describe('CorePlanCard', () => {
         expect(card.className).not.toMatch(/ring-blue-500\/\d/);
     });
 
-    it('lists every pillar group with its items', () => {
-        render(<CorePlanCard {...core} />);
+    it('lists every pillar group with its items', async () => {
+        const screen = await renderAstro(CorePlanCard, core);
         expect(screen.getByText('Authority content')).toBeInTheDocument();
         expect(screen.getByText('Review growth tracked over time')).toBeInTheDocument();
     });
 
-    it('keeps the conversion CTA and adds a named learn-more link', () => {
-        render(<CorePlanCard {...core} />);
+    it('keeps the conversion CTA and adds a named learn-more link', async () => {
+        const screen = await renderAstro(CorePlanCard, core);
         expect(screen.getByRole('link', { name: 'Book a call' })).toHaveAttribute('href', '#contact');
         const more = screen.getByTestId('pricing-learn-more');
-        expect(more).toHaveAttribute('href', '/en/services/local-seo');
+        // A plain <a>: the trailing-slash href reaches the page as given, as
+        // next/link did in the static export (trailingSlash: true).
+        expect(more).toHaveAttribute('href', '/en/services/local-seo/');
         // The visible label is short; the sr-only span carries the offer name so
         // the link is not a bare "Learn more" to a screen reader or a crawler.
         expect(more.textContent).toContain('Local SEO');
@@ -94,8 +97,8 @@ const addOn = {
 };
 
 describe('AddOnCard', () => {
-    it('strikes the list price and states the bundled one beside its label', () => {
-        render(<AddOnCard {...addOn} />);
+    it('strikes the list price and states the bundled one beside its label', async () => {
+        const screen = await renderAstro(AddOnCard, addOn);
         const list = screen.getByTestId('addon-list-price');
         expect(list.tagName).toBe('S');
         expect(list).toHaveTextContent('€2,500');
@@ -103,21 +106,21 @@ describe('AddOnCard', () => {
         expect(screen.getByTestId('addon-bundle-price')).toHaveTextContent('€1,750');
     });
 
-    it('marks the bundled price as before tax', () => {
-        render(<AddOnCard {...addOn} />);
+    it('marks the bundled price as before tax', async () => {
+        const screen = await renderAstro(AddOnCard, addOn);
         expect(within(screen.getByTestId('addon-terms')).getByTestId('tax-mark')).toHaveTextContent('+ VAT');
     });
 
-    it('says "from" only when the price is a floor', () => {
-        const { rerender } = render(<AddOnCard {...addOn} />);
-        expect(screen.queryByTestId('addon-from')).toBeNull();
-        rerender(<AddOnCard {...addOn} fromLabel="from" />);
-        expect(screen.getByTestId('addon-from')).toHaveTextContent('from');
+    it('says "from" only when the price is a floor', async () => {
+        const exact = await renderAstro(AddOnCard, addOn);
+        expect(exact.queryByTestId('addon-from')).toBeNull();
+        const floor = await renderAstro(AddOnCard, { ...addOn, fromLabel: 'from' });
+        expect(floor.getByTestId('addon-from')).toHaveTextContent('from');
     });
 
-    it('lists its features and links to its page', () => {
-        render(<AddOnCard {...addOn} />);
+    it('lists its features and links to its page', async () => {
+        const screen = await renderAstro(AddOnCard, addOn);
         expect(screen.getByText('Landing page or full multi-page website')).toBeInTheDocument();
-        expect(screen.getByTestId('pricing-learn-more')).toHaveAttribute('href', '/en/services/website-development');
+        expect(screen.getByTestId('pricing-learn-more')).toHaveAttribute('href', '/en/services/website-development/');
     });
 });

@@ -1,7 +1,8 @@
 import { describe, it, expect } from 'vitest';
-import { render, screen, within } from '@testing-library/react';
-import { CostComparison } from '@/components/numbers/CostComparison';
-import { MissedCustomerTable } from '@/components/numbers/MissedCustomerTable';
+import { within } from '@testing-library/dom';
+import { renderAstro } from '@/tests/helpers/render';
+import CostComparison from '@/src/components/numbers/CostComparison.astro';
+import MissedCustomerTable from '@/src/components/numbers/MissedCustomerTable.astro';
 
 const comparison = {
     separateTitle: 'Bought separately',
@@ -24,8 +25,8 @@ const comparison = {
 };
 
 describe('CostComparison', () => {
-    it('prices the two pillars that had a list price and marks the others as extra', () => {
-        render(<CostComparison {...comparison} />);
+    it('prices the two pillars that had a list price and marks the others as extra', async () => {
+        const screen = await renderAstro(CostComparison, comparison);
         const rows = screen.getAllByTestId('ledger-row');
         expect(rows).toHaveLength(4);
         expect(rows[0]).toHaveTextContent('€897');
@@ -34,14 +35,14 @@ describe('CostComparison', () => {
         expect(rows[2].textContent).not.toMatch(/€/);
     });
 
-    it('marks every quoted figure as before tax: two rows, the total and the plan', () => {
-        render(<CostComparison {...comparison} />);
+    it('marks every quoted figure as before tax: two rows, the total and the plan', async () => {
+        const screen = await renderAstro(CostComparison, comparison);
         expect(screen.getAllByTestId('tax-mark')).toHaveLength(4);
         expect(within(screen.getByTestId('plan-price')).getByTestId('tax-mark')).toBeInTheDocument();
     });
 
-    it('states the total, the plan price and the saving', () => {
-        render(<CostComparison {...comparison} />);
+    it('states the total, the plan price and the saving', async () => {
+        const screen = await renderAstro(CostComparison, comparison);
         expect(screen.getByTestId('ledger-total')).toHaveTextContent('€1,194');
         expect(screen.getByTestId('plan-price')).toHaveTextContent('€750');
         expect(screen.getByText(/37% less/)).toBeInTheDocument();
@@ -60,22 +61,22 @@ const table = {
 };
 
 describe('MissedCustomerTable', () => {
-    it('is a real table with a header row, so the columns are announced', () => {
-        render(<MissedCustomerTable {...table} />);
+    it('is a real table with a header row, so the columns are announced', async () => {
+        const screen = await renderAstro(MissedCustomerTable, table);
         expect(screen.getAllByRole('columnheader')).toHaveLength(3);
         expect(screen.getAllByRole('row')).toHaveLength(3);
     });
 
-    it('renders each worked example', () => {
-        render(<MissedCustomerTable {...table} />);
+    it('renders each worked example', async () => {
+        const screen = await renderAstro(MissedCustomerTable, table);
         expect(screen.getByText('3 customers a month')).toBeInTheDocument();
         expect(screen.getByText('€30,000')).toBeInTheDocument();
     });
 
-    it('always shows the note that the values are an example', () => {
+    it('always shows the note that the values are an example', async () => {
         // The figures are illustrative inputs. Shown without the note they read
         // as results the agency claims.
-        render(<MissedCustomerTable {...table} />);
+        const screen = await renderAstro(MissedCustomerTable, table);
         expect(screen.getByTestId('missed-footnote')).toHaveTextContent('Illustrative example');
     });
 });

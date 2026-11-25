@@ -1,0 +1,237 @@
+---
+/**
+ * Port of `components/PortfolioCarousel.tsx`. The server renders the initial
+ * state (slide 0 active, "previous" disabled); the script below keeps the
+ * pagination dots and arrow buttons in step with the scroll position, and maps
+ * the ArrowLeft / ArrowRight keys to one slide.
+ */
+import { ArrowRight, ChevronLeft, ChevronRight, ExternalLink, Eye, Globe, PanelsTopLeft } from '@lucide/astro';
+import FadeInImage from '@/src/components/FadeInImage.astro';
+import type { PortfolioItem } from '@/lib/portfolio';
+import { portfolioTypeBadgeClass } from '@/lib/portfolio-theme';
+import { getTranslations } from '@/lib/i18n';
+import { localeHref } from '@/lib/routing';
+
+export interface Props {
+    portfolioItems: PortfolioItem[];
+    /** Defaults to the route's `[locale]` param, as `useParams()` did. */
+    locale?: string;
+}
+
+const { portfolioItems } = Astro.props;
+const locale = Astro.props.locale || Astro.params.locale || 'en';
+const t = getTranslations(locale, 'portfolio.portfolioCarousel');
+const tt = getTranslations(locale, 'portfolio');
+---
+
+<section id="portfolio" class="py-24 px-6 bg-white overflow-hidden" data-carousel data-item-ratio="0.8" data-fallback-ratio="0.5">
+    <div class="max-w-7xl mx-auto mb-16 px-4">
+        <div class="flex flex-col md:flex-row md:items-end justify-between gap-8">
+            <div>
+                <h2 class="text-4xl md:text-6xl font-bold text-black mb-6 tracking-tight">
+                    {t('title')}
+                </h2>
+                <p class="text-xl text-gray-900 max-w-2xl font-medium leading-relaxed">
+                    {t('subtitle')}
+                </p>
+            </div>
+            <a href={localeHref(locale, 'portfolio')} class="inline-flex items-center gap-2 text-blue-700 font-bold hover:text-blue-700 group">
+                {t('cta')}
+                <ArrowRight class="w-5 h-5" aria-hidden="true" />
+            </a>
+        </div>
+    </div>
+
+    <div class="relative group/scroll-container">
+        <div
+            data-carousel-track
+            class="flex gap-6 overflow-x-auto snap-x snap-mandatory pb-12 px-[10%] md:px-[20%] cursor-grab active:cursor-grabbing"
+            style="scrollbar-width:none;-ms-overflow-style:none"
+        >
+            {
+                portfolioItems.map((item) => (
+                    <div class="min-w-[85vw] md:min-w-[60vw] lg:min-w-[50vw] snap-center">
+                        <div class="relative aspect-[16/10] rounded-[2.5rem] overflow-hidden group/card shadow-2xl border border-white/10 bg-zinc-100 dark:bg-zinc-900">
+                            <FadeInImage
+                                src={item.image}
+                                alt={tt(`${item.id}.title`)}
+                                fill
+                                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 75vw, 60vw"
+                                priority={false}
+                                className="object-cover"
+                            />
+
+                            {/* Info Overlay */}
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent flex flex-col justify-end p-8 md:p-12">
+                                <div>
+                                    <div class="flex flex-wrap items-center gap-3 mb-4">
+                                        <span class="inline-block px-3 py-1 rounded-full bg-blue-900 border border-blue-900/30 text-white text-[11px] font-bold tracking-widest uppercase">
+                                            {tt(`${item.id}.badge`)}
+                                        </span>
+                                        <span class={portfolioTypeBadgeClass(item.type)}>
+                                            {item.type === 'live' ? <Globe class="w-3 h-3" aria-hidden="true" /> : <PanelsTopLeft class="w-3 h-3" aria-hidden="true" />}
+                                            {tt(`type.${item.type}`)}
+                                        </span>
+                                    </div>
+                                    <h3 class="text-3xl md:text-4xl font-bold text-white mb-3">{tt(`${item.id}.title`)}</h3>
+                                    <p class="text-gray-300 text-lg mb-8 max-w-xl line-clamp-2">{tt(`${item.id}.description`)}</p>
+
+                                    <div class="hidden lg:flex flex-wrap gap-4">
+                                        <a
+                                            href={localeHref(locale, `portfolio/${item.slug}`)}
+                                            class="px-6 py-3 rounded-full bg-white text-black font-bold text-sm flex items-center gap-2 shadow-lg"
+                                        >
+                                            <Eye class="w-4 h-4" aria-hidden="true" />
+                                            {t('explore')}
+                                        </a>
+                                        <a
+                                            href={item.url}
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            class="px-6 py-3 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-white font-bold text-sm flex items-center gap-2"
+                                        >
+                                            <ExternalLink class="w-4 h-4" aria-hidden="true" />
+                                            {item.type === 'live' ? t('viewLive') : t('liveDemo')}
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        {/* Mobile Controls */}
+                        <div class="lg:hidden mt-6 px-4">
+                            <div class="flex flex-col gap-4">
+                                <div class="flex flex-col gap-2 mb-2">
+                                    <div class="flex flex-wrap gap-2">
+                                        <span class="inline-block px-2 py-0.5 rounded-full bg-blue-900 text-white text-[11px] font-bold tracking-widest uppercase border border-blue-900">
+                                            {tt(`${item.id}.badge`)}
+                                        </span>
+                                        <span class={portfolioTypeBadgeClass(item.type, 'sm')}>
+                                            {item.type === 'live' ? <Globe class="w-3 h-3" aria-hidden="true" /> : <PanelsTopLeft class="w-3 h-3" aria-hidden="true" />}
+                                            {tt(`type.${item.type}`)}
+                                        </span>
+                                    </div>
+                                    <h3 class="text-xl font-bold text-zinc-950 mb-1">{tt(`${item.id}.title`)}</h3>
+                                    <p class="text-sm text-gray-900 line-clamp-2 mb-3">{tt(`${item.id}.description`)}</p>
+                                </div>
+                                <div class="flex gap-3">
+                                    <a
+                                        href={localeHref(locale, `portfolio/${item.slug}`)}
+                                        class="flex-1 px-4 py-3 rounded-2xl bg-black text-white font-bold text-sm flex items-center justify-center gap-2 shadow-xl"
+                                    >
+                                        <Eye class="w-4 h-4" aria-hidden="true" />
+                                        {t('explore')}
+                                    </a>
+                                    <a
+                                        href={item.url}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        class="flex-1 px-4 py-3 rounded-2xl bg-white border border-gray-200 text-black font-bold text-sm flex items-center justify-center gap-2"
+                                    >
+                                        <ExternalLink class="w-4 h-4" aria-hidden="true" />
+                                        {item.type === 'live' ? t('viewLive') : t('liveDemo')}
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                ))
+            }
+        </div>
+
+        {/* Desktop Side Navigation Buttons */}
+        {
+            portfolioItems.length > 1 && (
+                <>
+                    <button
+                        data-carousel-prev
+                        disabled
+                        aria-label={t('prevSlide')}
+                        class="absolute left-4 top-1/2 -translate-y-1/2 z-10 size-14 rounded-full bg-white/80 backdrop-blur-md border border-gray-100 flex items-center justify-center text-gray-400 shadow-lg group pointer-events-auto"
+                    >
+                        <ChevronLeft class="w-6 h-6" aria-hidden="true" />
+                    </button>
+                    <button
+                        data-carousel-next
+                        aria-label={t('nextSlide')}
+                        class="absolute right-4 top-1/2 -translate-y-1/2 z-10 size-14 rounded-full bg-white/80 backdrop-blur-md border border-gray-100 flex items-center justify-center text-gray-400 shadow-lg group pointer-events-auto"
+                    >
+                        <ChevronRight class="w-6 h-6" aria-hidden="true" />
+                    </button>
+                </>
+            )
+        }
+    </div>
+
+    {/* Pagination Dots */}
+    <div class="flex justify-center gap-2 mt-12 pb-4">
+        {
+            portfolioItems.map((_, i) => (
+                <button
+                    data-carousel-dot
+                    aria-label={t('goToSlide', { index: i + 1 })}
+                    aria-current={i === 0 ? 'true' : 'false'}
+                    class="group relative size-12 flex items-center justify-center outline-none touch-manipulation"
+                >
+                    <div class={`rounded-full h-2.5 ${i === 0 ? 'w-10 bg-blue-600' : 'w-2.5 bg-gray-300'}`} />
+                </button>
+            ))
+        }
+    </div>
+</section>
+
+<script>
+    // One subscription per carousel for its whole life: the React version once
+    // rebuilt the ResizeObserver and scroll listener on every step, dropping
+    // scroll events mid-gesture and leaving the dots and buttons stale.
+    document.querySelectorAll<HTMLElement>('#portfolio[data-carousel]').forEach((root) => {
+        const track = root.querySelector<HTMLElement>('[data-carousel-track]')!;
+        const prev = root.querySelector<HTMLButtonElement>('[data-carousel-prev]');
+        const next = root.querySelector<HTMLButtonElement>('[data-carousel-next]');
+        const dots = Array.from(root.querySelectorAll<HTMLButtonElement>('[data-carousel-dot]'));
+        const count = track.children.length;
+        const ratio = Number(root.dataset.itemRatio);
+        const fallback = Number(root.dataset.fallbackRatio);
+        let itemWidth = 0;
+        let active = 0;
+        const step = () => itemWidth || track.offsetWidth * fallback;
+
+        const setActive = (index: number) => {
+            if (index === active) return;
+            active = index;
+            dots.forEach((dot, i) => {
+                const on = i === index;
+                dot.setAttribute('aria-current', String(on));
+                const bar = dot.firstElementChild!;
+                bar.classList.toggle('w-10', on);
+                bar.classList.toggle('bg-blue-600', on);
+                bar.classList.toggle('w-2.5', !on);
+                bar.classList.toggle('bg-gray-300', !on);
+            });
+            if (prev) prev.disabled = index === 0;
+            if (next) next.disabled = index === count - 1;
+        };
+
+        const measure = () => {
+            itemWidth = track.offsetWidth * ratio;
+        };
+        measure();
+        new ResizeObserver(measure).observe(track);
+        track.addEventListener(
+            'scroll',
+            () => {
+                if (itemWidth === 0) return;
+                setActive(Math.round(track.scrollLeft / itemWidth));
+            },
+            { passive: true }
+        );
+
+        prev?.addEventListener('click', () => track.scrollBy({ left: -step() }));
+        next?.addEventListener('click', () => track.scrollBy({ left: step() }));
+        dots.forEach((dot, i) => dot.addEventListener('click', () => track.scrollTo({ left: i * step() })));
+        window.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowLeft' && active > 0) track.scrollBy({ left: -step() });
+            if (e.key === 'ArrowRight' && active < count - 1) track.scrollBy({ left: step() });
+        });
+    });
+</script>
