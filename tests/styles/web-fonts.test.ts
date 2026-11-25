@@ -12,11 +12,17 @@ import path from 'node:path';
 import config from '@/astro.config.mjs';
 
 const layout = readFileSync(path.join(process.cwd(), 'src/layouts/BaseLayout.astro'), 'utf8');
-const fonts = (config.fonts ?? []) as { name: string; cssVariable: string }[];
+const fonts = (config.fonts ?? []) as { name: string; cssVariable: string; styles?: string[] }[];
 
 describe('web fonts loaded by the base layout', () => {
     it('configures only Inter', () => {
         expect(fonts.map((font) => font.name)).toEqual(['Inter']);
+    });
+
+    it('loads the normal style only, so italic copy keeps its synthesized look', () => {
+        // Without `styles` the Fonts API also ships Inter Italic: a second preloaded
+        // file, and italic paragraphs whose glyphs and line wraps change.
+        expect(fonts.map((font) => font.styles)).toEqual([['normal']]);
     });
 
     it('renders a <Font> only for configured families', () => {

@@ -20,6 +20,8 @@ export default defineConfig({
       cssVariable: '--font-inter',
       weights: ['100 900'],
       subsets: ['latin'],
+      // Normal only: italic copy is synthesized from it, as the site always rendered it.
+      styles: ['normal'],
       display: 'swap',
     },
   ],
