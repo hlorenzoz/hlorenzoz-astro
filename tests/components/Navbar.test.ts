@@ -78,7 +78,7 @@ describe('Navbar language switcher', () => {
         const screen = await renderAt('/es/portfolio/', 'es');
         const options = screen.getAllByTestId(/^lang-option-/).map((a) => a.getAttribute('data-testid'));
         expect(options).toEqual(routeLocales('portfolio').map((l) => `lang-option-${l}`));
-        expect(options).toEqual(['lang-option-en', 'lang-option-es']);
+        expect(options[0]).toBe('lang-option-en');
         expect(screen.getByTestId('lang-option-es')).toHaveTextContent('Español');
         expect(screen.getByTestId('mobile-lang-option-en')).toHaveTextContent('English');
     });

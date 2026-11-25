@@ -7,6 +7,7 @@ import PortfolioPage from '@/src/pages/[locale]/portfolio/index.astro';
 import PortfolioItemPage, { getStaticPaths } from '@/src/pages/[locale]/portfolio/[slug]/index.astro';
 import { getPortfolioItems } from '@/lib/portfolio';
 import { getNewsItems } from '@/lib/news';
+import { routeLocales } from '@/lib/routes';
 
 /**
  * The pages render against the real data and catalogue (the Next version mocked
@@ -108,7 +109,7 @@ describe('Portfolio Pages', () => {
     it('generates static params for every locale and entry', async () => {
         const paths = await getStaticPaths();
         const items = getPortfolioItems();
-        expect(paths).toHaveLength(items.length * 2);
+        expect(paths).toHaveLength(items.reduce((n, item) => n + routeLocales(`portfolio/${item.slug}`).length, 0));
         expect(paths[0].params).toHaveProperty('locale');
         expect(paths[0].params).toHaveProperty('slug');
     });
