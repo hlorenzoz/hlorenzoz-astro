@@ -67,7 +67,7 @@ const mailLinks: Record<string, string[]> = {
                             {items.map((item) => (
                                 <li>
                                     {item.href.startsWith('#') ? (
-                                        <a href={isHomePage ? item.href : `/${locale}${item.href}`} class="hover:text-blue-500 transition-colors">
+                                        <a href={isHomePage ? item.href : `${localeHref(locale, "")}${item.href}`} class="hover:text-blue-500 transition-colors">
                                             {item.label}
                                         </a>
                                     ) : (

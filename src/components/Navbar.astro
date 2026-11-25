@@ -35,7 +35,7 @@ const getHref = (key: string) => {
     // and the Navbar ships on every route, so the mismatch was sitewide.
     if (key in ROUTE_KEYS) return localeHref(locale, ROUTE_KEYS[key]);
     const hash = key === 'price' ? 'pricing' : key;
-    return isHomePage ? `#${hash}` : `/${locale}#${hash}`;
+    return isHomePage ? `#${hash}` : `${localeHref(locale, "")}#${hash}`;
 };
 
 const navLinks = ['services', 'portfolio', 'price', 'contact'];
@@ -49,7 +49,7 @@ const switchHref = (newLocale: string) => {
     return segments.join('/') || '/';
 };
 
-const contactHref = isHomePage ? '#contact' : `/${locale}#contact`;
+const contactHref = isHomePage ? "#contact" : `${localeHref(locale, "")}#contact`;
 const langs = ['en', 'es'];
 ---
 

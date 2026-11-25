@@ -32,7 +32,7 @@ describe('Footer services links (fixed, registry-derived hrefs)', () => {
         expect(screen.getByText('Software Development').closest('a')).toHaveAttribute('href', '/en/services/software-development/');
         // Portfolio and Pricing moved to the Agency column; their hrefs are unchanged.
         expect(screen.getByText('Portfolio').closest('a')).toHaveAttribute('href', '/en/portfolio/');
-        expect(screen.getByText('Pricing').closest('a')).toHaveAttribute('href', '/en#pricing');
+        expect(screen.getByText('Pricing').closest('a')).toHaveAttribute('href', '/en/#pricing');
     });
 
     it('lists Local SEO first: it is the core offer', () => {
@@ -83,7 +83,7 @@ describe('Footer agency links', () => {
         expect(screen.getByRole('link', { name: 'News' })).toHaveAttribute('href', '/en/news/');
         // A homepage anchor, reached from a non-homepage route, has to travel
         // back to the homepage first.
-        expect(screen.getByRole('link', { name: 'Contact' })).toHaveAttribute('href', '/en#contact');
+        expect(screen.getByRole('link', { name: 'Contact' })).toHaveAttribute('href', '/en/#contact');
     });
 
     it('links every agency item to its explicit href, ES', async () => {
@@ -94,7 +94,7 @@ describe('Footer agency links', () => {
         expect(screen.getByRole('link', { name: 'Noticias' })).toHaveAttribute('href', '/es/news/');
         // The anchor id is the English `contact` in both locales: it is a DOM
         // id on the homepage, not user-facing copy.
-        expect(screen.getByRole('link', { name: 'Contacto' })).toHaveAttribute('href', '/es#contact');
+        expect(screen.getByRole('link', { name: 'Contacto' })).toHaveAttribute('href', '/es/#contact');
     });
 
     it('uses bare hashes on the home page', async () => {
