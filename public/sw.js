@@ -1,7 +1,8 @@
 // public/sw.js - Service Worker for PWA
-const _CACHE_NAME = 'ai-agency-v1';
-const STATIC_CACHE = 'ai-agency-static-v1';
-const DYNAMIC_CACHE = 'ai-agency-dynamic-v1';
+// v2: the Astro build. Bumping drops every cache from the previous build on activate.
+const _CACHE_NAME = 'ai-agency-v2';
+const STATIC_CACHE = 'ai-agency-static-v2';
+const DYNAMIC_CACHE = 'ai-agency-dynamic-v2';
 
 // Files to cache immediately
 const STATIC_ASSETS = [
