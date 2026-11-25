@@ -1855,7 +1855,8 @@
             "heading": "El antes y el después, medido",
             "paragraphs": [
               "Antes del cambio servimos las dos versiones en local y medimos las mismas páginas con Lighthouse en su perfil móvil, que simula un teléfono modesto con una conexión lenta. Cada cifra es la mediana de varias ejecuciones del 25 de noviembre de 2026. Las puntuaciones de laboratorio varían unos puntos entre ejecuciones, por eso pesan más las medianas.",
-              "Dos filas explican el resto. El Total Blocking Time es el tiempo en que el móvil está demasiado ocupado ejecutando scripts para reaccionar a un toque, y bajó a cero. El JavaScript de cada página se redujo en más de un 98%. Las dos últimas filas prueban que la velocidad no salió de quitar nada: misma cabecera, mismos datos estructurados, misma imagen en pantalla."
+              "Dos filas explican el resto. El Total Blocking Time es el tiempo en que el móvil está demasiado ocupado ejecutando scripts para reaccionar a un toque, y bajó a cero. El JavaScript de cada página se redujo en más de un 98%. Las dos últimas filas prueban que la velocidad no salió de quitar nada: misma cabecera, mismos datos estructurados, misma imagen en pantalla.",
+              "Las filas de laboratorio y la puntuación de PageSpeed Insights en producción miden la misma página en dos entornos distintos, y por eso la portada marca 89 en uno y 98 en el otro. En el laboratorio, ambas versiones se sirvieron desde un servidor estático local sin compresión, así que cada archivo viajó con su tamaño completo por la conexión lenta simulada; eso penaliza a las dos por igual y mantiene justa la comparación entre ellas. En producción, Cloudflare comprime cada archivo con Brotli y lo sirve desde su red, así que la misma página de Astro llega al móvil más ligera y antes. No guardamos ningún informe de PageSpeed Insights de la web en Next.js en producción, así que su puntuación en vivo no aparece en la tabla."
             ],
             "table": {
               "caption": "Versión en Next.js 16 y versión en Astro 7 de hlorenzoz.com, servidas en local y medidas el 25 de noviembre de 2026 (Lighthouse móvil, mediana de varias ejecuciones)",
@@ -1866,19 +1867,24 @@
               ],
               "rows": [
                 [
-                  "Rendimiento, portada en inglés",
+                  "Rendimiento, portada en inglés (laboratorio local)",
                   "77",
                   "89"
                 ],
                 [
-                  "Rendimiento, página del servicio de SEO Local",
+                  "Rendimiento, página del servicio de SEO Local (laboratorio local)",
                   "89",
                   "94"
                 ],
                 [
-                  "Rendimiento, caso de estudio de GERP DJ",
+                  "Rendimiento, caso de estudio de GERP DJ (laboratorio local)",
                   "72",
                   "86"
+                ],
+                [
+                  "Rendimiento, portada en inglés (en producción, PageSpeed Insights, 25 de noviembre de 2026)",
+                  "Sin medir",
+                  "98"
                 ],
                 [
                   "Total Blocking Time",

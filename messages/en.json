@@ -1855,7 +1855,8 @@
             "heading": "Before and after, measured",
             "paragraphs": [
               "Before switching, we served both builds locally and measured the same pages with Lighthouse in its mobile profile, which simulates a modest phone on a slow mobile connection. Each figure is the median of several runs, measured on November 25, 2026. Lab scores move by a few points between runs, so the medians matter more than any single number.",
-              "Two rows explain the rest. Total Blocking Time is how long the phone is too busy running scripts to react to a tap or a scroll, and it fell to zero. The JavaScript each page loads fell by more than 98%, from over half a megabyte to a few kilobytes. The last two rows are the proof that the speed did not come from removing anything: same head, same structured data, same picture on screen."
+              "Two rows explain the rest. Total Blocking Time is how long the phone is too busy running scripts to react to a tap or a scroll, and it fell to zero. The JavaScript each page loads fell by more than 98%, from over half a megabyte to a few kilobytes. The last two rows are the proof that the speed did not come from removing anything: same head, same structured data, same picture on screen.",
+              "The lab rows and the live PageSpeed Insights score measure the same page in two different setups, which is why the home page reads 89 in one and 98 in the other. In the lab, both builds were served from a local static server with no compression, so every file travelled at full size through the simulated slow connection; that penalises both builds equally and keeps the comparison between them fair. In production, Cloudflare compresses every file with Brotli and serves it from its edge, so the same Astro page reaches the phone smaller and sooner. We kept no PageSpeed Insights report of the live Next.js site, so its live score is not in the table."
             ],
             "table": {
               "caption": "Next.js 16 build and Astro 7 build of hlorenzoz.com, served locally and measured on November 25, 2026 (Lighthouse mobile, median of several runs)",
@@ -1866,19 +1867,24 @@
               ],
               "rows": [
                 [
-                  "Performance, English home page",
+                  "Performance, English home page (local lab)",
                   "77",
                   "89"
                 ],
                 [
-                  "Performance, Local SEO service page",
+                  "Performance, Local SEO service page (local lab)",
                   "89",
                   "94"
                 ],
                 [
-                  "Performance, GERP DJ case study",
+                  "Performance, GERP DJ case study (local lab)",
                   "72",
                   "86"
+                ],
+                [
+                  "Performance, English home page (live, PageSpeed Insights, November 25, 2026)",
+                  "Not measured",
+                  "98"
                 ],
                 [
                   "Total Blocking Time",
