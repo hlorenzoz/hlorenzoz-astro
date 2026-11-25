@@ -158,8 +158,8 @@ such wherever they are shown).
 
 The paused Digital Business Card lives in `PAUSED_PRICING`, outside `PRICING`, so nothing
 that iterates the offers can publish it. Its route is commented out in `lib/routes.ts`
-and its page sits in the private folder `app/[locale]/services/_digital-business-card/`,
-which Next.js does not route. Bringing it back is task #T0021.
+and its page sits in the private folder `src/pages/[locale]/services/_digital-business-card/`,
+which Astro does not route (the `_` prefix excludes it). Bringing it back is task #T0021.
 
 ### What this site currently implements
 
@@ -332,7 +332,7 @@ Current state, so an audit reports against reality rather than an assumed GBP tr
 - Route tiers today: `home`, `category` (one hub, `/services`), `service` (four pages), `page`,
   `legal`. Each service page shares one slug identity across `lib/routes.ts`,
   `messages/{en,es}.json`'s `services.*` namespace, and its own
-  `app/[locale]/services/<slug>/page.tsx`; there is no string-matched duplication.
+  `src/pages/[locale]/services/<slug>/index.astro`; there is no string-matched duplication.
 - **There is no blog / posts tier yet.** The `supporting` child tier that
   `KIND_TO_CHILD_TIER` (`lib/service-page.ts`) already points services at is UNPOPULATED: the
   reverse-silo scaffolding exists in code, the posts do not. That layer is the future content
@@ -458,7 +458,7 @@ The places, and the order to touch them:
    to be kept in step with it. A content page config has no `dateModified` field at all,
    deliberately: it used to, and one fact in two files kept in step by this very procedure
    is what let the schema date drift from the sitemap date.
-2. **The visible byline** - `components/ArticleByline.tsx` renders the same date in a
+2. **The visible byline** - `src/components/ArticleByline.astro` renders the same date in a
    `<time dateTime>` element. Readers and crawlers must see the same value.
 3. **`datePublished`** - set once, on creation. NEVER bump it on an edit. Rewriting the
    publication date of an existing page to look fresh is a trust problem, not an SEO tactic.
@@ -472,14 +472,14 @@ Never write a date into a schema builder by hand. Google's Rich Results Test fla
 only value as "Invalid datetime value" and "missing a time zone". Sitemaps and the visible
 byline keep the plain date. Likewise `about` and `mentions` are always typed objects
 (`@type`, `@id`, `url`, `name`), never a bare URL string, which Google reads as a Thing named
-after the URL. `components/JsonLd.tsx` asserts both rules on every object it renders, so a
+after the URL. `src/components/JsonLd.astro` asserts both rules on every object it renders, so a
 violation fails the build and the page tests.
 
 Two rules that are easy to get wrong:
 
 - **Do not use a build timestamp.** `lastModified` is hand-maintained on purpose. A
   `new Date()` at build time claims every page changed on every deploy, which teaches
-  crawlers to ignore the field entirely. `app/sitemap.ts` used to do this; it no longer does.
+  crawlers to ignore the field entirely. The sitemap generator used to do this; it no longer does.
 - **Bump only on meaningful content change.** A typo fix or a class rename is not a content
   change. Inflating the date on cosmetic edits devalues the signal exactly like a build
   timestamp does.
@@ -500,7 +500,7 @@ NEVER insert AI-tell typographic characters into ANY file (content, code, commen
 | Ellipsis | `…` | `...` (three dots) |
 | Non-breaking space | ` ` | normal space |
 
-This applies to `messages/*.json`, `lib/*.json`, all `.tsx/.ts` (copy, JSX, comments), scripts, and commit messages. When choosing a replacement for `—`, pick punctuation that fits the sentence: do not blindly swap for a hyphen in prose.
+This applies to `messages/*.json`, `lib/*.json`, all `.astro/.tsx/.ts` (copy, markup, comments), scripts, and commit messages. When choosing a replacement for `—`, pick punctuation that fits the sentence: do not blindly swap for a hyphen in prose.
 
 **No hyphens in site copy either.** Visible text (`messages/*.json`, the text fields of
 `lib/*.json`, `public/llms.txt`, and any copy written into components) never joins words with
@@ -524,5 +524,5 @@ a genuine proper or technical name, never to silence a compound.
 - **Lead Orchestrator**: Antigravity
 - **Methodology**: Test-Driven Development (TDD) + Spec-Driven Development (SDD)
 - **Design System**: Custom Glassmorphism (Vanilla CSS + Tailwind 4)
-- **Tech Stack (this site)**: Next.js 16 (App Router), Bun, Playwright, Cloudflare Workers.
+- **Tech Stack (this site)**: Astro 7 (static output), Tailwind CSS v4, Bun, Playwright, Cloudflare Workers.
 - **Client delivery stack (Software / Mobile App Development service)**: Flutter (frontend) + full-stack backend, targeting all devices and screens. Not the stack of this repo.

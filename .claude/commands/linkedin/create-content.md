@@ -9,7 +9,7 @@ CONTEXT:
 - Today: !`date +%Y-%m-%d`
 - Latest news posts (newest last): !`node -e "console.log(require('./lib/news-data.json').slice(-5).map(i => i.id).join(', '))"`
 - Latest portfolio case studies (newest last): !`node -e "console.log(require('./lib/portfolio-data.json').slice(-5).map(i => i.id).join(', '))"`
-- Service pages: !`node -e "console.log(require('fs').readdirSync('app/[locale]/services').filter(d => !d.startsWith('_') && !d.includes('.')).join(', '))"`
+- Service pages: !`node -e "console.log(require('fs').readdirSync('src/pages/[locale]/services').filter(d => !d.startsWith('_') && !d.includes('.')).join(', '))"`
 - Raw input: $ARGUMENTS
 
 INPUT RESOLUTION:

@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updated": "2026-11-24",
+  "updated": "2026-11-25",
   "tasks": [
     {
       "id": "#T0001",
@@ -1112,6 +1112,27 @@
       "descripcion": [
         "Diagnostico con el agente cwv-optimizer (mediana de 3 ejecuciones, produccion y build local), arreglo en los componentes compartidos, guardas en tests y asserts de rendimiento en lighthouserc.json.",
         "Verificar con just validate, build y Lighthouse antes y despues."
+      ]
+    },
+    {
+      "id": "#T0052",
+      "estado": "en curso",
+      "prioridad": "alta",
+      "tipo": "infra",
+      "titulo": "Migrar el sitio de Next.js a Astro sin cambiar URLs, head, diseno ni tooling",
+      "anotada": "2026-11-25",
+      "hecha": null,
+      "origen": "usuario",
+      "depende": [],
+      "notas": [
+        "Decision con el usuario: componentes nativos .astro con <script> vanilla; React solo para la isla de ElevenLabs.",
+        "Codigo origen de referencia: ../hlorenzoz-nextjs (no se edita). Pasos de la migracion en ../CLAUDE.md.",
+        "Relacionada con #T0051: la migracion elimina el runtime de React del camino critico."
+      ],
+      "descripcion": [
+        "Paginas en src/pages/[locale]/, componentes en src/components/, lib/ messages/ public/ sin mover.",
+        "Paridad contra el build de Next (out/): mismo conjunto de rutas, mismo head (title, description, canonical, hreflang, OG, JSON-LD), sitemap.xml y robots.txt identicos.",
+        "Verificar con just validate, just verify y capturas de Playwright de cada ruta en movil y escritorio."
       ]
     }
   ]

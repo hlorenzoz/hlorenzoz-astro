@@ -165,7 +165,7 @@ Read `AGENTS.md` and `CLAUDE.md` at the project root before editing. In particul
    literal translation); both must keep identical key sets (`tests/i18n/messages-parity.test.ts`).
    - **About the business (`type: 'live'` only).** Every live entry carries `portfolio.<id>.business`
      in both locales as `{ "title": "About <name>" / "Sobre <name>", "paragraphs": [2 strings] }`,
-     rendered by `components/PortfolioBusiness.tsx` right after the hero of its detail page. Say who the business is, what it offers and to whom, where it operates,
+     rendered by `src/components/PortfolioBusiness.astro` right after the hero of its detail page. Say who the business is, what it offers and to whom, where it operates,
      and what distinguishes it in its own terms. Describe, do not sell, and leave design and tech
      out: the rest of the page covers the website. Use only the facts collected in step 1, never
      the figures, prices, phones or emails excluded there. Write "we" only for the agency's own
@@ -183,7 +183,7 @@ Read `AGENTS.md` and `CLAUDE.md` at the project root before editing. In particul
      Never borrow figures from other companies' case studies.
 
 9. **References kept by hand.** Routes and both sitemaps derive from the data file
-   (`lib/routes.ts` ROUTE_SOURCES), and `app/[locale]/portfolio/[slug]/page.tsx` emits the JSON-LD
+   (`lib/routes.ts` ROUTE_SOURCES), and `src/pages/[locale]/portfolio/[slug]/index.astro` emits the JSON-LD
    through `portfolioDetail()` in `lib/schema/index.ts`; no new page file is needed. Edit only:
    - `public/llms.txt`: add the item once under `## Portfolio Case Studies`, in the same format as
      its siblings, including both results: the PageSpeed Insights scores and the valid structured
@@ -216,7 +216,7 @@ Read `AGENTS.md` and `CLAUDE.md` at the project root before editing. In particul
 
 1. `just validate` (lint + type-check + coverage). Fix every failure at its cause and run it again until
    green. Never `--no-verify`.
-2. `just build-pages` (static export into `out/`).
+2. `just build-pages` (static build into `dist/`).
 3. **Performance.** Serve the export in the background with `bun sirv out -p 45724 --single`, then
    run Lighthouse (mobile, the default form factor) for `/en/portfolio/<slug>/` and
    `/en/news/<slug>/`:
@@ -225,8 +225,8 @@ Read `AGENTS.md` and `CLAUDE.md` at the project root before editing. In particul
    CLS and TBT. Budgets (same as `lighthouserc.json`): accessibility >= 0.95, best-practices >= 0.9,
    SEO >= 0.95. Fix failures in the content you added (alt text, heading order, image sizes) and
    measure again. Stop the server with `kill`. Do NOT add these URLs to `lighthouserc.json`.
-4. **Structured data.** For `out/en/portfolio/<slug>/index.html`, `out/es/portfolio/<slug>/index.html`,
-   `out/en/news/<slug>/index.html` and `out/es/news/<slug>/index.html`, extract every
+4. **Structured data.** For `dist/en/portfolio/<slug>/index.html`, `dist/es/portfolio/<slug>/index.html`,
+   `dist/en/news/<slug>/index.html` and `dist/es/news/<slug>/index.html`, extract every
    `<script type="application/ld+json">` with a short `node -e` script, `JSON.parse` each, and
    assert:
    - portfolio: `BreadcrumbList` plus `WebSite` (type `live`) or `WebApplication` (type `demo`);
@@ -244,13 +244,13 @@ Read `AGENTS.md` and `CLAUDE.md` at the project root before editing. In particul
    Then run `bun x vitest run tests/seo`. After the deploy, run each live URL through Google's Rich
    Results Test (search.google.com/test/rich-results) and treat every warning, optional ones
    included, as a defect to fix before calling the work done.
-5. **Result slides.** In `out/en/portfolio/<slug>/index.html` and
-   `out/es/portfolio/<slug>/index.html`, assert that the `speed` and `data` slides render: each page
+5. **Result slides.** In `dist/en/portfolio/<slug>/index.html` and
+   `dist/es/portfolio/<slug>/index.html`, assert that the `speed` and `data` slides render: each page
    contains the `<id>-pagespeed-insights.webp` and `<id>-structured-data.webp` image URLs and both
    tool links (`https://pagespeed.web.dev/analysis?url=...` and
    `https://search.google.com/test/rich-results?url=...`, HTML escaped as `&amp;` where needed).
-6. **About the business** (`type: 'live'` only). In `out/en/portfolio/<slug>/index.html` and
-   `out/es/portfolio/<slug>/index.html`, assert that the "About the business" section renders: each
+6. **About the business** (`type: 'live'` only). In `dist/en/portfolio/<slug>/index.html` and
+   `dist/es/portfolio/<slug>/index.html`, assert that the "About the business" section renders: each
    page contains its heading and the text of both `portfolio.<id>.business` paragraphs of that
    locale (HTML escaped where needed).
 7. **Close the task.** Only when every step above passed: set the task `estado: "hecha"`,
