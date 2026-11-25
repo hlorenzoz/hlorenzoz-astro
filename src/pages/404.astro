@@ -1,0 +1,21 @@
+---
+import BaseLayout from '@/src/layouts/BaseLayout.astro';
+import Navbar from '@/src/components/Navbar.astro';
+import Footer from '@/src/components/Footer.astro';
+import { localeHref } from '@/lib/routing';
+
+const locale = 'en';
+---
+
+<BaseLayout locale={locale} meta={{ title: 'Page not found | Lorenzoz Agency' }}>
+    <Navbar locale={locale} />
+    <section class="min-h-[60vh] flex flex-col items-center justify-center text-center px-6 pt-40 pb-24">
+        <p class="text-[11px] font-black uppercase tracking-[0.3em] text-blue-700 mb-4">404</p>
+        <h1 class="text-4xl md:text-6xl font-black tracking-tight text-black mb-6">Page not found</h1>
+        <p class="text-gray-900 font-medium max-w-md mb-10">The page you are looking for does not exist or has moved.</p>
+        <a href={localeHref(locale, '')} class="bg-black text-white text-[11px] font-black uppercase tracking-[0.15em] px-6 py-3 rounded-full shadow-xl">
+            Back to home
+        </a>
+    </section>
+    <Footer locale={locale} />
+</BaseLayout>

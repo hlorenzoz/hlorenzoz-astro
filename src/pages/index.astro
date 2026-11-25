@@ -1,0 +1,24 @@
+---
+/**
+ * Root fallback. The real 301 to `/en/` lives in `public/_redirects` at the
+ * edge; this file only makes sure a physical `index.html` exists in `dist/`
+ * for hosts that ignore `_redirects`.
+ */
+import { absoluteUrl, DEFAULT_LOCALE } from '@/lib/site-config';
+import { localeHref } from '@/lib/routing';
+
+const target = localeHref(DEFAULT_LOCALE, '');
+---
+
+<!doctype html>
+<html lang={DEFAULT_LOCALE}>
+    <head>
+        <meta charset="utf-8" />
+        <title>Lorenzoz Agency</title>
+        <link rel="canonical" href={absoluteUrl(DEFAULT_LOCALE)} />
+        <meta http-equiv="refresh" content={`0; url=${target}`} />
+    </head>
+    <body>
+        <a href={target}>Lorenzoz Agency</a>
+    </body>
+</html>

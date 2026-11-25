@@ -1,6 +1,6 @@
-// Static data provider for Next.js 16+ localized portfolio export
+// Static data provider for the localized portfolio (read at build time)
 
-import { getPortfolioItems, getPortfolioItemBySlug, PortfolioItem } from '@/lib/portfolio';
+import { getPortfolioItems, getPortfolioItemBySlug, type PortfolioItem } from '@/lib/portfolio';
 
 /**
  * Server Action to fetch all portfolio items.

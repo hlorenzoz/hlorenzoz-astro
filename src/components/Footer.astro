@@ -1,0 +1,111 @@
+---
+/**
+ * Port of `components/Footer.tsx`. Static markup, no client JS.
+ *
+ * Every `{label, href}` list (Agency, Services, Legal) renders the same way.
+ * The hrefs are authored in `messages/*.json`, never guessed from the label.
+ * An earlier version string-matched the TRANSLATED label against a hardcoded
+ * map and fell back to `#solutions` when it missed, so a reworded entry, or a
+ * new one nobody remembered to add to the map, mislinked silently: no error,
+ * no warning, no failing test. There is deliberately no fallback, so a
+ * malformed entry fails loudly.
+ *
+ * A `#hash` href points at a homepage section, so off the homepage it needs
+ * the locale prefix to get back there first. A route href always takes one,
+ * plus the trailing slash the site canonicalizes on (`localeHref`).
+ */
+import { getTranslations } from '@/lib/i18n';
+import { localeHref } from '@/lib/routing';
+
+interface Props {
+    locale: string;
+}
+
+interface FooterLink {
+    label: string;
+    href: string;
+}
+
+const { locale } = Astro.props;
+const t = getTranslations(locale, 'footer');
+const pathname = Astro.url.pathname;
+
+const isHomePage = pathname === '/' || pathname === `/${locale}` || pathname === `/${locale}/`;
+
+const columns = (['agency', 'services', 'legal'] as const).map((key) => ({
+    key,
+    items: t.raw(`${key}.items`) as FooterLink[],
+}));
+const mailLinks: Record<string, string[]> = {
+    agency: ['contact@hlorenzoz.com', 'sales@hlorenzoz.com'],
+    services: [],
+    legal: ['privacy@hlorenzoz.com', 'legal@hlorenzoz.com'],
+};
+---
+
+<footer class="bg-black pt-24 pb-12 px-6 border-t border-white/5">
+    <div class="max-w-6xl mx-auto">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-16 mb-20">
+            <div class="col-span-1 md:col-span-1">
+                <a href={localeHref(locale, '')} class="flex items-center gap-2 mb-6 group text-white" aria-label="Lorenzoz Agency Home">
+                    <div class="size-8 rounded-full bg-white text-black flex items-center justify-center shadow-lg shadow-white/5">
+                        <svg aria-hidden="true" class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M7 18h2V6H7v12zm4 4h2V2h-2v20zm-8-8h2v-4H3v4zm12 4h2V6h-2v12zm4-8v4h2v-4h-2z"></path>
+                        </svg>
+                    </div>
+                    <span class="text-xl font-black tracking-tighter uppercase">Lorenzoz Agency</span>
+                </a>
+                <p class="text-gray-300 text-sm leading-relaxed max-w-xs font-medium">
+                    {t('description')}
+                </p>
+            </div>
+            {
+                columns.map(({ key, items }) => (
+                    <div>
+                        <h3 class="text-[10px] font-black uppercase tracking-[0.2em] text-white mb-8">{t(`${key}.title`)}</h3>
+                        <ul class="space-y-4 text-xs font-black uppercase tracking-widest text-gray-300">
+                            {items.map((item) => (
+                                <li>
+                                    {item.href.startsWith('#') ? (
+                                        <a href={isHomePage ? item.href : `/${locale}${item.href}`} class="hover:text-blue-500 transition-colors">
+                                            {item.label}
+                                        </a>
+                                    ) : (
+                                        <a href={localeHref(locale, item.href)} class="hover:text-blue-500 transition-colors">
+                                            {item.label}
+                                        </a>
+                                    )}
+                                </li>
+                            ))}
+                            {mailLinks[key].map((mail, i) => (
+                                <li class={i === 0 ? 'pt-4' : undefined}>
+                                    <a href={`mailto:${mail}`} class="hover:text-blue-500 transition-colors lowercase tracking-normal font-medium">
+                                        {mail}
+                                    </a>
+                                </li>
+                            ))}
+                        </ul>
+                    </div>
+                ))
+            }
+        </div>
+        <div class="flex flex-col md:flex-row justify-between items-center border-t border-white/5 pt-10 gap-6">
+            <p class="text-[10px] font-black uppercase tracking-widest text-gray-300">{t('copyright')}</p>
+            <div class="flex gap-6 items-center">
+                <a href="https://www.linkedin.com/in/hlorenzoz/" target="_blank" rel="noopener noreferrer" class="text-gray-300 hover:text-white" aria-label="LinkedIn">
+                    <svg aria-hidden="true" class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"></path>
+                    </svg>
+                </a>
+                <a href="https://github.com/hlorenzoz" target="_blank" rel="noopener noreferrer" class="text-gray-300 hover:text-white" aria-label="GitHub">
+                    <svg aria-hidden="true" class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"></path>
+                    </svg>
+                </a>
+                <a href="https://www.upwork.com/freelancers/hlorenzoz" target="_blank" rel="noopener noreferrer" class="text-gray-300 hover:text-white flex items-center" aria-label="Upwork">
+                    <img src="/assets/favicons/upwork-favicon.ico" alt="Upwork" class="w-5 h-5 object-contain" />
+                </a>
+            </div>
+        </div>
+    </div>
+</footer>

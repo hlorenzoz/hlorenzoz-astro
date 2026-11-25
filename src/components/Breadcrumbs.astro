@@ -1,0 +1,48 @@
+---
+/**
+ * Visible breadcrumb trail. Props-only, no client JS.
+ *
+ * Crumb urls are absolute (the schema needs them so); the links use only the
+ * pathname, so they stay on the current origin on localhost and previews.
+ */
+import { ChevronRight } from '@lucide/astro';
+
+export interface Props {
+    /**
+     * The SAME array the page passes to its JSON-LD builder, home first and the
+     * current page last. Google's structured data policy forbids marking up a
+     * trail readers cannot see, so the visible one renders the schema's crumbs
+     * rather than a second list that could drift from it.
+     */
+    crumbs: { name: string; url: string }[];
+    /** Accessible name of the nav landmark, from `navigation.breadcrumb`. */
+    label: string;
+    /** Container classes, so the trail aligns with the page's own column. */
+    className?: string;
+}
+
+const { crumbs, label, className } = Astro.props;
+---
+
+<nav aria-label={label} class={className}>
+    <ol class="flex flex-wrap items-center gap-x-2 gap-y-1 text-xs font-semibold text-gray-600">
+        {
+            crumbs.map((crumb, i) => (
+                <li class="flex items-center gap-2 min-w-0 max-w-full">
+                    {i === crumbs.length - 1 ? (
+                        <span aria-current="page" class="truncate text-gray-900">
+                            {crumb.name}
+                        </span>
+                    ) : (
+                        <>
+                            <a href={new URL(crumb.url).pathname} class="hover:text-blue-700 hover:underline underline-offset-4">
+                                {crumb.name}
+                            </a>
+                            <ChevronRight class="size-3.5 shrink-0 text-gray-400" aria-hidden="true" />
+                        </>
+                    )}
+                </li>
+            ))
+        }
+    </ol>
+</nav>

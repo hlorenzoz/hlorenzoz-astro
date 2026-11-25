@@ -6,12 +6,20 @@
  * working unchanged. `t.rich()` returns React nodes; in `.astro` files use
  * `t.markup()` and render it with `set:html`.
  */
-import { createTranslator, IntlErrorCode, type AbstractIntlMessages } from 'use-intl/core';
+import {
+    createTranslator,
+    IntlErrorCode,
+    type AbstractIntlMessages,
+    type MarkupTranslationValues,
+    type RichTranslationValues,
+    type TranslationValues,
+} from 'use-intl/core';
 import en from '@/messages/en.json';
 import es from '@/messages/es.json';
 import { DEFAULT_LOCALE, LOCALES, type Locale } from '@/lib/site-config';
 
-const MESSAGES: Record<Locale, AbstractIntlMessages> = { en, es };
+// The JSON holds arrays (read with t.raw), which AbstractIntlMessages does not model.
+const MESSAGES = { en, es } as unknown as Record<Locale, AbstractIntlMessages>;
 
 /** Narrows an unknown route param to a supported locale, falling back to the default. */
 export function resolveLocale(value: string | undefined): Locale {
@@ -31,7 +39,20 @@ export function getMessages(locale: string): AbstractIntlMessages {
  * warnings. `tests/i18n/messages-parity.test.ts` is the real guard; this is the
  * runtime backstop.
  */
-export function getTranslations(locale: string, namespace?: string) {
+/**
+ * Keys are plain strings: namespaces are chosen at runtime (`news.items.${id}`),
+ * which the key-typed translator cannot express. `messages-parity.test.ts` and
+ * the dev-time throw above guard the keys instead.
+ */
+export interface Translator {
+    (key: string, values?: TranslationValues): string;
+    raw(key: string): any; // eslint-disable-line @typescript-eslint/no-explicit-any
+    markup(key: string, values?: MarkupTranslationValues): string;
+    rich(key: string, values?: RichTranslationValues): ReturnType<ReturnType<typeof createTranslator>['rich']>;
+    has(key: string): boolean;
+}
+
+export function getTranslations(locale: string, namespace?: string): Translator {
     return createTranslator({
         locale: resolveLocale(locale),
         messages: getMessages(locale),
@@ -47,7 +68,5 @@ export function getTranslations(locale: string, namespace?: string) {
             }
             return key.split('.').pop() ?? key;
         },
-    });
+    }) as unknown as Translator;
 }
-
-export type Translator = ReturnType<typeof getTranslations>;

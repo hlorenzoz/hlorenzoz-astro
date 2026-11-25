@@ -7,6 +7,9 @@
 import { Font } from 'astro:assets';
 import Head from '@/src/components/Head.astro';
 import JsonLd from '@/src/components/JsonLd.astro';
+import PwaRegistration from '@/src/components/PwaRegistration.astro';
+import CookieBanner from '@/src/components/CookieBanner.astro';
+import ElevenLabsLoader from '@/src/components/ElevenLabsLoader.astro';
 import type { PageMeta } from '@/lib/page-metadata';
 import { getTranslations } from '@/lib/i18n';
 import { organizationGraph } from '@/lib/schema';
@@ -67,7 +70,7 @@ const defaults: PageMeta = {
         {
             preloadImages.map((img) =>
                 img.srcset ? (
-                    <link rel="preload" as="image" imagesrcset={img.srcset} imagesizes={img.sizes} />
+                    <link rel="preload" as="image" imagesrcset={img.srcset} imagesizes={img.sizes} fetchpriority="high" />
                 ) : (
                     <link rel="preload" as="image" href={img.href} />
                 )
@@ -140,7 +143,9 @@ const defaults: PageMeta = {
         <main id="main-content" tabindex="-1" class="focus:outline-none">
             <slot />
         </main>
-        <!-- SITE_WIDGETS: PwaRegistration, CookieBanner, ElevenLabsLoader -->
+        <PwaRegistration />
+        <CookieBanner locale={locale} />
+        <ElevenLabsLoader locale={locale} />
         <JsonLd data={organizationGraph({ locale })} />
     </body>
 </html>

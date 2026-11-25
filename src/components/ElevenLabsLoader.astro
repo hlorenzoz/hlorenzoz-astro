@@ -1,0 +1,34 @@
+---
+/**
+ * Port of `components/ElevenLabsLazy.tsx`. Mounts the ElevenLabs React island
+ * once the visitor scrolls past half the viewport (an engagement signal). React
+ * is only downloaded at that point, through the dynamic import below.
+ */
+export interface Props {
+    locale: string;
+}
+
+const { locale } = Astro.props;
+---
+
+<div data-elevenlabs data-locale={locale}></div>
+
+<script>
+    const container = document.querySelector<HTMLElement>('[data-elevenlabs]');
+
+    // Skip for bots to ensure clean LCP/Performance scores
+    const isBot =
+        /Lighthouse|Googlebot|HeadlessChrome|PageSpeed|Chrome-Lighthouse|Pingdom|GTmetrix|bot|spider|crawl/i.test(navigator.userAgent) ||
+        navigator.webdriver;
+
+    if (container && !isBot) {
+        // Mount as soon as the user scrolls below the fold (engagement signal).
+        const handleScroll = () => {
+            if (window.scrollY > window.innerHeight * 0.5) {
+                window.removeEventListener('scroll', handleScroll);
+                import('../islands/mount-elevenlabs').then(({ mount }) => mount(container, container.dataset.locale ?? 'en'));
+            }
+        };
+        window.addEventListener('scroll', handleScroll, { passive: true });
+    }
+</script>

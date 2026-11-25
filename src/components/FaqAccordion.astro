@@ -1,0 +1,59 @@
+---
+/**
+ * Port of `components/FaqAccordion.tsx`. One answer open at a time per
+ * accordion. Answers are server-rendered with `hidden` (the React version did
+ * not render closed answers at all); the script below toggles them and the
+ * same ARIA state.
+ */
+import { Plus } from '@lucide/astro';
+
+export interface Props {
+    items: { question: string; answer: string }[];
+}
+
+const { items } = Astro.props;
+---
+
+<div class="space-y-6" data-faq>
+    {
+        items.map((item, i) => (
+            <div class="border-b border-gray-100 pb-6">
+                <button aria-expanded="false" aria-controls={`faq-answer-${i}`} class="w-full flex justify-between items-center text-left py-4 group">
+                    <span id={`faq-question-${i}`} class="text-xl font-bold text-black">
+                        {item.question}
+                    </span>
+                    <div class="rotate-0">
+                        <Plus class="w-8 h-8 text-gray-950" aria-hidden="true" />
+                    </div>
+                </button>
+                <div id={`faq-answer-${i}`} role="region" aria-labelledby={`faq-question-${i}`} hidden>
+                    <p class="text-gray-900 leading-relaxed font-medium mt-4">{item.answer}</p>
+                </div>
+            </div>
+        ))
+    }
+</div>
+
+<script>
+    document.querySelectorAll<HTMLElement>('[data-faq]').forEach((faq) => {
+        const buttons = Array.from(faq.querySelectorAll<HTMLButtonElement>(':scope > div > button'));
+        const set = (button: HTMLButtonElement, open: boolean) => {
+            button.setAttribute('aria-expanded', String(open));
+            (button.nextElementSibling as HTMLElement).hidden = !open;
+            const [label, iconBox] = Array.from(button.children);
+            label.classList.toggle('text-blue-800', open);
+            label.classList.toggle('text-black', !open);
+            iconBox.classList.toggle('rotate-45', open);
+            iconBox.classList.toggle('rotate-0', !open);
+            const icon = iconBox.firstElementChild!;
+            icon.classList.toggle('text-blue-800', open);
+            icon.classList.toggle('text-gray-950', !open);
+        };
+        buttons.forEach((button) =>
+            button.addEventListener('click', () => {
+                const open = button.getAttribute('aria-expanded') !== 'true';
+                buttons.forEach((b) => set(b, b === button && open));
+            })
+        );
+    });
+</script>

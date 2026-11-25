@@ -1,0 +1,30 @@
+---
+/**
+ * The legal pages' sidebar: resolves copy from the `footer.legal.*` namespace
+ * and hands it to `PageSidebar`, which owns the rendering.
+ */
+import PageSidebar, { type SidebarSection } from '@/src/components/PageSidebar.astro';
+import { getTranslations } from '@/lib/i18n';
+
+export interface Props {
+    locale: string;
+    sections: SidebarSection[];
+}
+
+const { locale, sections } = Astro.props;
+const t = getTranslations(locale, 'footer');
+const legalItems = t.raw('legal.items') as { label: string; href: string }[];
+---
+
+<PageSidebar
+    locale={locale}
+    tocLabel={t('legal.toc')}
+    sections={sections}
+    relatedLinks={legalItems}
+    helpCard={{
+        title: t('legal.needHelp.title'),
+        content: t('legal.needHelp.content'),
+        cta: t('legal.needHelp.cta'),
+        href: 'mailto:legal@hlorenzoz.com',
+    }}
+/>

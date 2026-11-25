@@ -1,0 +1,95 @@
+---
+/**
+ * Port of `components/FadeInImage.tsx`: emits the same `<img>` next/image did
+ * (srcset/sizes through the Cloudflare loader in `lib/image.ts`, `data-nimg`,
+ * fill styles, lazy or high fetch priority) and keeps the blur-to-sharp fade.
+ *
+ * The server renders the "not loaded yet" state; the script below flips it on
+ * load/error, or after 500 ms as a fallback if those events were missed.
+ */
+import { imageFallbackSrc, imageSrcSet } from '@/lib/image';
+
+export interface Props {
+    src: string;
+    alt: string;
+    fill?: boolean;
+    width?: number;
+    height?: number;
+    sizes?: string;
+    priority?: boolean;
+    fetchPriority?: 'high' | 'low' | 'auto';
+    quality?: number;
+    className?: string;
+    containerClassName?: string;
+}
+
+const { src, alt, fill, width, height, sizes, priority, fetchPriority, quality, className, containerClassName } = Astro.props;
+
+// If fill is true, the outer container must be absolute to fill the parent
+// We maintain 'relative' as the default for non-fill cases
+const wrapperClass = fill ? 'absolute inset-0 overflow-hidden' : `relative overflow-hidden ${containerClassName || ''}`;
+
+// next/image: without `sizes` or a fixed width it offers device widths and
+// declares `sizes="100vw"`; with only a fixed width it uses 1x/2x and no sizes.
+const resolvedSizes = sizes ?? (width && !fill ? undefined : '100vw');
+const opts = { sizes, width: fill ? undefined : width, quality };
+
+// A high priority image (LCP candidate) gets no JS state, transition or
+// overlay: just the raw image, as fast as possible.
+const img = {
+    alt,
+    fetchpriority: priority ? fetchPriority || 'high' : undefined,
+    loading: priority ? undefined : ('lazy' as const),
+    width: fill ? undefined : width,
+    height: fill ? undefined : height,
+    decoding: 'async' as const,
+    'data-nimg': fill ? 'fill' : '1',
+    class: `object-cover w-full h-full ${className || ''}`,
+    style: fill
+        ? 'position:absolute;height:100%;width:100%;left:0;top:0;right:0;bottom:0;color:transparent'
+        : 'color:transparent',
+    sizes: resolvedSizes,
+    srcset: imageSrcSet(src, opts),
+    src: imageFallbackSrc(src, opts),
+};
+---
+
+{
+    priority ? (
+        <div class={wrapperClass}>
+            <img {...img} />
+        </div>
+    ) : (
+        <div class={`${wrapperClass} transition-all duration-1000 bg-zinc-100 dark:bg-zinc-900/50`} data-fade-in>
+            <div class="relative w-full h-full transition-all duration-1000 ease-[cubic-bezier(0.16,1,0.3,1)] opacity-100 blur-[10px]">
+                <img {...img} />
+            </div>
+
+            {/* Loading Placeholder - Non-animating for LCP safety */}
+            <div class="absolute inset-0 flex items-center justify-center bg-zinc-100/5 dark:bg-zinc-900/5">
+                <div class="w-6 h-6 border-2 border-blue-500/10 border-t-blue-500/30 rounded-full"></div>
+            </div>
+        </div>
+    )
+}
+
+<script>
+    document.querySelectorAll<HTMLElement>('[data-fade-in]').forEach((wrapper) => {
+        const inner = wrapper.firstElementChild as HTMLElement;
+        const img = inner.querySelector('img')!;
+        let done = false;
+        const loaded = () => {
+            if (done) return;
+            done = true;
+            wrapper.classList.remove('bg-zinc-100', 'dark:bg-zinc-900/50');
+            wrapper.classList.add('bg-transparent');
+            inner.classList.replace('blur-[10px]', 'blur-0');
+            inner.nextElementSibling?.remove();
+        };
+        if (img.complete && img.naturalWidth) return loaded();
+        img.addEventListener('load', loaded, { once: true });
+        img.addEventListener('error', loaded, { once: true });
+        // Fallback in case the load/error event fired before this script ran.
+        setTimeout(loaded, 500);
+    });
+</script>

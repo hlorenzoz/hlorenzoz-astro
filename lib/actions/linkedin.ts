@@ -1,6 +1,6 @@
-// Static data provider for Next.js 16+ localized LinkedIn articles export
+// Static data provider for the localized LinkedIn articles (read at build time)
 
-import { getLinkedInArticles, LinkedInArticle } from '@/lib/linkedin';
+import { getLinkedInArticles, type LinkedInArticle } from '@/lib/linkedin';
 
 /**
  * Server Action to fetch all LinkedIn articles.

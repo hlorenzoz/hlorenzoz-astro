@@ -1,0 +1,76 @@
+---
+/**
+ * Port of `components/CookieBanner.tsx`. Rendered `hidden`; the script shows it
+ * 8 s after load unless the visitor already chose or is a bot, and forwards the
+ * choice to Cloudflare Zaraz.
+ */
+import { getTranslations } from '@/lib/i18n';
+import { localeHref } from '@/lib/routing';
+
+export interface Props {
+    locale: string;
+}
+
+const { locale } = Astro.props;
+const t = getTranslations(locale, 'cookieBanner');
+---
+
+<div
+    role="region"
+    aria-label="Cookie consent banner"
+    class="fixed bottom-0 left-0 right-0 z-[100] p-2 sm:p-4 md:max-w-xl md:left-6 md:bottom-6 md:right-auto"
+    data-cookie-banner
+    hidden
+>
+    <div class="bg-white/95 backdrop-blur-md border border-white/40 shadow-2xl rounded-[2rem] p-5 relative overflow-hidden">
+        {/* Glass effect backgrounds */}
+        <div class="absolute inset-0 bg-gradient-to-tr from-white/40 to-white/10 pointer-events-none"></div>
+        <div class="absolute -top-16 -right-16 w-32 h-32 bg-blue-400/20 blur-3xl rounded-full mix-blend-multiply"></div>
+
+        <div class="relative z-10 flex flex-col gap-4">
+            <p class="text-gray-900 text-sm font-semibold leading-relaxed">
+                {t('text')}
+            </p>
+
+            <div class="flex flex-wrap items-center gap-3">
+                <button data-testid="cookie-accept" class="px-6 py-2.5 bg-black text-white text-sm font-bold rounded-full shadow-lg">
+                    {t('accept')}
+                </button>
+                <button data-testid="cookie-reject" class="px-6 py-2.5 bg-white text-black border border-gray-200 text-sm font-bold rounded-full">
+                    {t('reject')}
+                </button>
+
+                <a href={localeHref(locale, 'cookie-policy')} class="ml-auto text-blue-700 text-sm font-bold hover:underline">
+                    {t('preferences')}
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    type Zaraz = { consent?: { setAll: (consent: boolean) => void } };
+
+    const banner = document.querySelector<HTMLElement>('[data-cookie-banner]');
+
+    // Skip for bots to avoid interfering with Lighthouse/LCP
+    // We include a broader set of bot/crawler strings and check for webdriver
+    const isBot =
+        /Lighthouse|Googlebot|HeadlessChrome|PageSpeed|Chrome-Lighthouse|Pingdom|GTmetrix|bot|spider|crawl/i.test(navigator.userAgent) ||
+        navigator.webdriver;
+
+    // Check if the user has already dismissed the banner
+    if (banner && !isBot && !localStorage.getItem('zaraz-consent')) {
+        // Delay showing the banner significantly to ensure LCP is recorded
+        setTimeout(() => (banner.hidden = false), 8000);
+
+        const choose = (consent: boolean) => {
+            // Send the choice to Cloudflare Zaraz
+            (window as unknown as { zaraz?: Zaraz }).zaraz?.consent?.setAll(consent);
+            localStorage.setItem('zaraz-consent', String(consent));
+            banner.hidden = true;
+        };
+        banner.querySelector('[data-testid="cookie-accept"]')!.addEventListener('click', () => choose(true));
+        banner.querySelector('[data-testid="cookie-reject"]')!.addEventListener('click', () => choose(false));
+    }
+</script>

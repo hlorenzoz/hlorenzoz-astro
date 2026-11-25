@@ -1,6 +1,8 @@
+// @vitest-environment jsdom
+// The island stays React, so it keeps React Testing Library and a DOM env.
+// `@testing-library/user-event` is not a dependency here: `fireEvent` drives it.
 import { describe, it, expect, vi, beforeEach } from 'vitest';
-import { render, screen, waitFor, act } from '@testing-library/react';
-import userEvent from '@testing-library/user-event';
+import { render, screen, waitFor, act, fireEvent } from '@testing-library/react';
 
 // Controllable mock of the ElevenLabs conversation hook.
 // `options` captures the config the widget passes (onMessage, callbacks, etc.).
@@ -32,11 +34,10 @@ vi.mock('lucide-react', () => ({
         <div data-testid="icon-minimize" className={className} />,
 }));
 
-vi.mock('@/components/FadeInImage', () => ({
-    FadeInImage: () => <div data-testid="avatar" />,
-}));
+import { ElevenLabsWidget } from '@/src/islands/ElevenLabsWidget';
 
-import { ElevenLabsWidget } from '@/components/ElevenLabsWidget';
+// jsdom has no layout, so no scrollIntoView: stub it to observe the call.
+HTMLElement.prototype.scrollIntoView = vi.fn();
 
 describe('ElevenLabsWidget - text vs voice decoupling', () => {
     beforeEach(() => {
@@ -53,12 +54,11 @@ describe('ElevenLabsWidget - text vs voice decoupling', () => {
     });
 
     it('sends a text message WITHOUT requesting the microphone (text-only session)', async () => {
-        const user = userEvent.setup();
-        render(<ElevenLabsWidget />);
+        render(<ElevenLabsWidget locale="en" />);
 
         const input = await screen.findByPlaceholderText('Or send a message');
-        await user.type(input, 'Hola');
-        await user.click(screen.getByRole('button', { name: /send message/i }));
+        fireEvent.change(input, { target: { value: 'Hola' } });
+        fireEvent.click(screen.getByRole('button', { name: /send message/i }));
 
         await waitFor(() =>
             expect(mockConversation.startSession).toHaveBeenCalledWith(
@@ -72,10 +72,9 @@ describe('ElevenLabsWidget - text vs voice decoupling', () => {
     });
 
     it('starts a VOICE session with microphone access when "Start a call" is clicked', async () => {
-        const user = userEvent.setup();
-        render(<ElevenLabsWidget />);
+        render(<ElevenLabsWidget locale="en" />);
 
-        await user.click(await screen.findByRole('button', { name: /start a call/i }));
+        fireEvent.click(await screen.findByRole('button', { name: /start a call/i }));
 
         await waitFor(() =>
             expect(navigator.mediaDevices.getUserMedia).toHaveBeenCalledWith({ audio: true })
@@ -90,12 +89,11 @@ describe('ElevenLabsWidget - text vs voice decoupling', () => {
 
     it('sends text directly over an open connection without restarting the session', async () => {
         mockConversation.status = 'connected';
-        const user = userEvent.setup();
-        render(<ElevenLabsWidget />);
+        render(<ElevenLabsWidget locale="en" />);
 
         const input = await screen.findByPlaceholderText('Or send a message');
-        await user.type(input, 'Hola');
-        await user.click(screen.getByRole('button', { name: /send message/i }));
+        fireEvent.change(input, { target: { value: 'Hola' } });
+        fireEvent.click(screen.getByRole('button', { name: /send message/i }));
 
         await waitFor(() =>
             expect(mockConversation.sendUserMessage).toHaveBeenCalledWith('Hola')
@@ -106,7 +104,7 @@ describe('ElevenLabsWidget - text vs voice decoupling', () => {
 
     it('renders incoming messages (user and agent) in a transcript', async () => {
         mockConversation.status = 'connected';
-        render(<ElevenLabsWidget />);
+        render(<ElevenLabsWidget locale="en" />);
         await screen.findByPlaceholderText('Or send a message');
 
         act(() => {
@@ -121,7 +119,7 @@ describe('ElevenLabsWidget - text vs voice decoupling', () => {
     it('scrolls the latest message into view when a response arrives', async () => {
         mockConversation.status = 'connected';
         const scrollSpy = HTMLElement.prototype.scrollIntoView as ReturnType<typeof vi.fn>;
-        render(<ElevenLabsWidget />);
+        render(<ElevenLabsWidget locale="en" />);
         await screen.findByPlaceholderText('Or send a message');
         scrollSpy.mockClear();
 
@@ -152,13 +150,13 @@ describe('ElevenLabsWidget - shrink control legibility', () => {
     const shrinkButton = () => screen.getByRole('button', { name: /shrink widget/i });
 
     it('gives the shrink icon an explicit dark foreground', () => {
-        render(<ElevenLabsWidget />);
+        render(<ElevenLabsWidget locale="en" />);
 
         expect(screen.getByTestId('icon-minimize').className).toMatch(/\btext-gray-900\b/);
     });
 
     it('gives the shrink control a resting background, not only a hover one', () => {
-        render(<ElevenLabsWidget />);
+        render(<ElevenLabsWidget locale="en" />);
 
         const classes = shrinkButton().className.split(/\s+/);
         const resting = classes.filter((c) => /^bg-/.test(c));
@@ -173,7 +171,7 @@ describe('ElevenLabsWidget - shrink control legibility', () => {
         // `dark:` is class-gated (see tests/styles/dark-variant.test.ts) and
         // nothing adds `.dark`, so a control whose only readable colour lived
         // behind `dark:` would render unstyled.
-        render(<ElevenLabsWidget />);
+        render(<ElevenLabsWidget locale="en" />);
 
         const iconClasses = screen.getByTestId('icon-minimize').className.split(/\s+/);
         const unconditional = iconClasses.filter((c) => /^text-/.test(c));
@@ -182,12 +180,21 @@ describe('ElevenLabsWidget - shrink control legibility', () => {
     });
 
     it('still shrinks the widget when activated', async () => {
-        const user = userEvent.setup();
-        render(<ElevenLabsWidget />);
+        render(<ElevenLabsWidget locale="en" />);
 
-        await user.click(shrinkButton());
+        fireEvent.click(shrinkButton());
 
         expect(screen.getByRole('button', { name: /expand assistant/i })).toBeInTheDocument();
         expect(screen.queryByRole('button', { name: /shrink widget/i })).toBeNull();
+    });
+});
+
+describe('ElevenLabsWidget - avatar', () => {
+    it('renders the avatar as a lazy CDN image with a responsive srcset', async () => {
+        render(<ElevenLabsWidget locale="en" />);
+        const img = await screen.findByAltText('Hector Lorenzoz');
+        expect(img).toHaveAttribute('loading', 'lazy');
+        expect(img).toHaveAttribute('sizes', '64px');
+        expect(img.getAttribute('srcset')).toContain('cdn.hlorenzoz.com/cdn-cgi/image/width=64,quality=50,format=auto/');
     });
 });
