@@ -1,6 +1,6 @@
 {
   "$schema": "node_modules/wrangler/config-schema.json",
-  "name": "hlorenzoz",
+  "name": "hlorenzoz-astro",
   "account_id": "13d0158ca86f44bd9284e29fd158432b",
   "compatibility_date": "2026-06-18",
   // Static-assets-only Worker: serves the Astro static build from ./dist.

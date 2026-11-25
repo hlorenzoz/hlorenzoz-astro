@@ -25,5 +25,5 @@ Redirects and headers are Cloudflare configuration files in `public/`:
 
 ## 6. Build & deployment
 -   **Build command**: `astro build` (`bun run build` / `just build-pages`), emitting `dist/`.
--   **Deployment target**: a static-assets Cloudflare **Worker** (`wrangler.jsonc`, `name: hlorenzoz`) serving `./dist` with `html_handling: auto-trailing-slash` and `not_found_handling: 404-page` (`dist/404.html`). Not Cloudflare Pages.
+-   **Deployment target**: a static-assets Cloudflare **Worker** (`wrangler.jsonc`, `name: hlorenzoz-astro`) serving `./dist` with `html_handling: auto-trailing-slash` and `not_found_handling: 404-page` (`dist/404.html`). Not Cloudflare Pages.
 -   **Deployment strategy**: automatic on every push via **Cloudflare Workers Builds** once the Worker is linked to this GitHub repo. Manual fallback: `just deploy` (`astro build` + `wrangler deploy`).
