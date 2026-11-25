@@ -52,6 +52,11 @@ const toggle = (base: string, on: string, off: string, active: boolean) => ({
 
 const hicDotBase = 'h-2 rounded-full transition-all duration-500';
 const hicDotOn = cn(hicDotBase, 'bg-white w-6');
+// Icon-only controls need a name of their own; the messages files have no image-carousel keys.
+const hicLabels =
+    locale === 'es'
+        ? { prev: 'Imagen anterior', next: 'Imagen siguiente', dot: (n: number) => `Ir a la imagen ${n}` }
+        : { prev: 'Previous image', next: 'Next image', dot: (n: number) => `Go to image ${n}` };
 const hicDotOff = cn(hicDotBase, 'bg-white/40 hover:bg-white/60 w-2');
 ---
 
@@ -82,14 +87,16 @@ const hicDotOff = cn(hicDotBase, 'bg-white/40 hover:bg-white/60 w-2');
                     <button
                         class="size-11 rounded-full bg-white/90 backdrop-blur-md shadow-lg flex items-center justify-center text-black hover:bg-white active:scale-95 transition-all"
                         data-hic-prev
+                        aria-label={hicLabels.prev}
                     >
-                        <ChevronLeft class="w-5 h-5" />
+                        <ChevronLeft class="w-5 h-5" aria-hidden="true" />
                     </button>
                     <button
                         class="size-11 rounded-full bg-white/90 backdrop-blur-md shadow-lg flex items-center justify-center text-black hover:bg-white active:scale-95 transition-all"
                         data-hic-next
+                        aria-label={hicLabels.next}
                     >
-                        <ChevronRight class="w-5 h-5" />
+                        <ChevronRight class="w-5 h-5" aria-hidden="true" />
                     </button>
                 </div>
 
@@ -101,9 +108,9 @@ const hicDotOff = cn(hicDotBase, 'bg-white/40 hover:bg-white/60 w-2');
                 </div>
 
                 {/* Dots */}
-                <div class="absolute bottom-8 left-1/2 -translate-x-1/2 flex gap-2.5 z-10 px-4 py-2 rounded-full bg-black/20 backdrop-blur-md border border-white/10 group-hover/carousel:bg-black/40 transition-colors">
+                <div class="absolute bottom-8 left-1/2 -translate-x-1/2 flex gap-4 z-10 px-4 py-2 rounded-full bg-black/20 backdrop-blur-md border border-white/10 group-hover/carousel:bg-black/40 transition-colors">
                     {hic.images.map((_, i) => (
-                        <button class={i === 0 ? hicDotOn : hicDotOff} data-hic-dot data-on={hicDotOn} data-off={hicDotOff} />
+                        <button class={i === 0 ? hicDotOn : hicDotOff} data-hic-dot data-on={hicDotOn} data-off={hicDotOff} aria-label={hicLabels.dot(i + 1)} />
                     ))}
                 </div>
             </div>
@@ -144,16 +151,18 @@ const hicDotOff = cn(hicDotBase, 'bg-white/40 hover:bg-white/60 w-2');
                     <button
                         class="size-16 rounded-full bg-white/10 backdrop-blur-md flex items-center justify-center text-white hover:bg-white/20 active:scale-95 transition-all"
                         data-hic-prev
+                        aria-label={hicLabels.prev}
                     >
-                        <ChevronLeft class="w-10 h-10" />
+                        <ChevronLeft class="w-10 h-10" aria-hidden="true" />
                     </button>
                 </div>
                 <div class="absolute inset-y-0 right-0 flex items-center px-4 lg:px-8 z-30">
                     <button
                         class="size-16 rounded-full bg-white/10 backdrop-blur-md flex items-center justify-center text-white hover:bg-white/20 active:scale-95 transition-all"
                         data-hic-next
+                        aria-label={hicLabels.next}
                     >
-                        <ChevronRight class="w-10 h-10" />
+                        <ChevronRight class="w-10 h-10" aria-hidden="true" />
                     </button>
                 </div>
 
@@ -173,7 +182,7 @@ const hicDotOff = cn(hicDotBase, 'bg-white/40 hover:bg-white/60 w-2');
                             <div class="max-w-3xl mx-auto">
                                 <h2 class="text-3xl md:text-4xl font-bold mb-4 text-black">{title}</h2>
                                 <p class="text-lg text-gray-500 font-medium leading-relaxed mb-4">{description}</p>
-                                <p class="text-sm text-gray-400 font-bold tracking-widest uppercase flex items-center justify-center gap-2">
+                                <p class="text-sm text-gray-600 font-bold tracking-widest uppercase flex items-center justify-center gap-2">
                                     <span class="w-8 h-[1px] bg-gray-200" />
                                     Interact using clicks or ← → Arrow keys
                                     <span class="w-8 h-[1px] bg-gray-200" />
@@ -192,19 +201,25 @@ const hicDotOff = cn(hicDotBase, 'bg-white/40 hover:bg-white/60 w-2');
                                         return (
                                             <div class="relative">
                                                 <div
-                                                    role="button"
-                                                    tabindex="0"
                                                     {...toggle(
                                                         'w-full text-left flex flex-col gap-2 p-4 rounded-[1.5rem] transition-all duration-700 cursor-pointer outline-none focus-visible:ring-2 focus-visible:ring-blue-500',
                                                         'bg-blue-50/50 border border-blue-100 shadow-[0_8px_32px_rgba(59,130,246,0.05)]',
                                                         'hover:bg-gray-50/50 border border-transparent',
                                                         active
                                                     )}
-                                                    aria-label={`Select section: ${badge}`}
-                                                    aria-current={active ? 'true' : 'false'}
                                                     data-vfc-item
                                                 >
-                                                    <div class="flex items-center gap-3">
+                                                    {/* Only the header row is the button: the details below hold a
+                                                        heading, copy and links, which must not sit inside a button
+                                                        or be read as its name. */}
+                                                    <div
+                                                        role="button"
+                                                        tabindex="0"
+                                                        aria-label={`Select section: ${badge}`}
+                                                        aria-current={active ? 'true' : 'false'}
+                                                        class="flex items-center gap-3 rounded-full outline-none focus-visible:ring-2 focus-visible:ring-blue-500"
+                                                        data-vfc-trigger
+                                                    >
                                                         <div
                                                             {...toggle(
                                                                 'size-10 rounded-full flex items-center justify-center border transition-all duration-500',
@@ -484,7 +499,7 @@ const hicDotOff = cn(hicDotBase, 'bg-white/40 hover:bg-white/60 w-2');
             activeIndex = target;
             items.forEach((item, i) => {
                 const on = i === target;
-                item.setAttribute('aria-current', String(on));
+                item.querySelector('[data-vfc-trigger]')!.setAttribute('aria-current', String(on));
                 [item, ...item.querySelectorAll('[data-vfc-on]')].forEach((el) => flip(el, on));
                 item.querySelector<HTMLElement>('[data-vfc-details]')!.hidden = !on;
                 media[i].hidden = !on;
@@ -503,7 +518,8 @@ const hicDotOff = cn(hicDotBase, 'bg-white/40 hover:bg-white/60 w-2');
 
         items.forEach((item, i) => {
             item.addEventListener('click', () => scrollToSlide(i));
-            item.addEventListener('keydown', (e) => {
+            // Keys on the trigger only: Enter on a link inside the details must still follow it.
+            item.querySelector<HTMLElement>('[data-vfc-trigger]')!.addEventListener('keydown', (e) => {
                 if (e.key === 'Enter' || e.key === ' ') {
                     e.preventDefault();
                     scrollToSlide(i);

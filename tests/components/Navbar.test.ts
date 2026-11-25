@@ -84,7 +84,7 @@ describe('Navbar initial (closed) state, toggled by the client script', () => {
         const screen = await renderAt('/en/');
         const lang = screen.getByTestId('language-switcher');
         expect(lang).toHaveAttribute('aria-expanded', 'false');
-        expect(lang).toHaveAttribute('aria-label', 'Open language menu');
+        expect(lang).toHaveAttribute('aria-label', 'EN, open language menu');
         expect(lang.nextElementSibling).toHaveClass('hidden');
 
         const toggle = screen.getByTestId('mobile-menu-toggle');

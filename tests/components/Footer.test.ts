@@ -120,7 +120,7 @@ describe('Footer agency links', () => {
 
     it('orders the columns Agency before Services', async () => {
         const { container } = await renderAt('/en/');
-        const headings = Array.from(container.querySelectorAll('h3'), (h) => h.textContent);
+        const headings = Array.from(container.querySelectorAll('h2'), (h) => h.textContent);
         expect(headings.indexOf('Agency')).toBeLessThan(headings.indexOf('Services'));
     });
 });

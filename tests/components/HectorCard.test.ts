@@ -47,4 +47,11 @@ describe('HectorCard', () => {
         expect(d).toContain('A10.929 10.929 0 0012.048 0c');
         expect(d).not.toContain('0.012.048');
     });
+
+    it('keeps the copyright line readable on the light card background', async () => {
+        // On #eff6ff, gray-400 is 2.4:1 and gray-500 4.4:1; WCAG AA needs 4.5:1 for 10px text.
+        const { body } = await renderAstro(HectorCard, { locale: 'en' });
+        const copyright = [...body.querySelectorAll('p')].find((p) => p.textContent?.includes('©'))!;
+        expect(copyright).toHaveClass('text-gray-600');
+    });
 });

@@ -24,6 +24,35 @@ const slideButtons = (screen: Awaited<ReturnType<typeof render>>) =>
     screen.getAllByRole('button').filter((b) => b.hasAttribute('aria-current'));
 
 describe('VerticalFeatureCarousel', () => {
+    it('keeps the keyboard hint readable (WCAG AA contrast on white)', async () => {
+        // text-gray-400 on white is about 2.5:1; Lighthouse flagged it on every portfolio page.
+        const r = await render();
+        const hint = r.getByText(/Interact using clicks or/i);
+        expect(hint).not.toHaveClass('text-gray-400');
+        expect(hint).toHaveClass('text-gray-600');
+    });
+
+    it('names every image-carousel control and spaces the dots for touch (WCAG 2.5.8)', async () => {
+        const screen = await render();
+        // Slide 3 has two images: inline and lightbox prev/next, plus one dot per image.
+        expect(screen.getAllByRole('button', { name: 'Previous image', hidden: true }).length).toBeGreaterThan(0);
+        expect(screen.getAllByRole('button', { name: 'Next image', hidden: true }).length).toBeGreaterThan(0);
+        const dots = screen.body.querySelectorAll('[data-hic-dot]');
+        expect([...dots].map((d) => d.getAttribute('aria-label'))).toEqual(
+            Array.from({ length: dots.length }, (_, i) => `Go to image ${(i % 2) + 1}`)
+        );
+        expect(dots[0].parentElement).toHaveClass('gap-4');
+    });
+
+    it('makes only the header row the slide button, so links and copy stay outside it', async () => {
+        const screen = await render();
+        for (const trigger of slideButtons(screen)) {
+            expect(trigger).toHaveAttribute('data-vfc-trigger');
+            expect(trigger.querySelector('a, h3, p')).toBeNull();
+            expect(trigger.closest('[data-vfc-item]')).not.toBe(trigger);
+        }
+    });
+
     it('renders the fallback header and the initial slide without a translation key', async () => {
         const screen = await render();
         expect(screen.getByText(/Technical Excellence/i)).not.toBeNull();
@@ -64,7 +93,8 @@ describe('VerticalFeatureCarousel', () => {
 
     it('carries the active/inactive class tokens the script swaps', async () => {
         const screen = await render();
-        const [first, second] = slideButtons(screen);
+        // The tokens live on the slide container that wraps each header-row button.
+        const [first, second] = slideButtons(screen).map((b) => b.closest<HTMLElement>('[data-vfc-item]')!);
         expect(first.className).toContain('bg-blue-50/50');
         expect(second.className).toContain('border-transparent');
         expect(first.dataset.vfcOn).toContain('bg-blue-50/50');

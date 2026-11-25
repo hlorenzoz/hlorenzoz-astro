@@ -51,6 +51,8 @@ const switchHref = (newLocale: string) => {
 
 const contactHref = isHomePage ? "#contact" : `${localeHref(locale, "")}#contact`;
 const langs = ['en', 'es'];
+// Starts with the visible locale code so the accessible name contains the visible label (WCAG 2.5.3).
+const langMenuLabel = locale === 'es' ? 'ES, abrir menú de idioma' : 'EN, open language menu';
 ---
 
 <nav class="fixed top-0 left-0 right-0 z-[100] px-2 sm:px-6 py-4 sm:py-6">
@@ -81,7 +83,7 @@ const langs = ['en', 'es'];
             <div class="relative" data-lang-switcher>
                 <button
                     data-testid="language-switcher"
-                    aria-label="Open language menu"
+                    aria-label={langMenuLabel}
                     aria-haspopup="listbox"
                     aria-expanded="false"
                     class="flex items-center gap-1 sm:gap-2 text-[11px] font-black uppercase tracking-[0.1em] text-gray-900 px-2 sm:px-3 py-2 rounded-full cursor-pointer"

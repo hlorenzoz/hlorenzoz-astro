@@ -32,7 +32,7 @@ describe('Portfolio Pages', () => {
         expect(document.querySelector('#portfolio-grid')).not.toBeNull();
 
         expect(screen.getByRole('heading', { level: 1, name: en.portfolio.list.title })).toBeInTheDocument();
-        expect(screen.getByRole('heading', { level: 3, name: en.portfolio['dental-clinic-1'].title })).toBeInTheDocument();
+        expect(screen.getByRole('heading', { level: 2, name: en.portfolio['dental-clinic-1'].title })).toBeInTheDocument();
     });
 
     it('renders one card per portfolio entry, each linking to its detail page', async () => {
