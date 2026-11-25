@@ -516,6 +516,12 @@
     }
   },
   "services": {
+    "hub": {
+      "eyebrow": "O que fazemos",
+      "title": "Um plano, e o que o complementa",
+      "subtitle": "O SEO local é a oferta principal: um único plano mensal que traz clientes locais vindos do Google e da IA. Desenvolvimento web, Rececionista de voz com IA e Desenvolvimento de software são opcionais, com {discount}% de desconto quando contratados em conjunto com ele.",
+      "cta": "Ver os serviços"
+    },
     "localSeo": {
       "name": "SEO local",
       "meta": {

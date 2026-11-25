@@ -516,6 +516,12 @@
         }
     },
     "services": {
+        "hub": {
+            "eyebrow": "Unsere Leistungen",
+            "title": "Ein Plan und alles, was ihn ergänzt",
+            "subtitle": "Lokales SEO ist unser Kernangebot: ein monatlicher Plan, der Ihnen Kunden aus Ihrer Region über Google und KI bringt. Webentwicklung, Telefonassistent mit KI und Softwareentwicklung sind optional. Zusammen mit dem Plan für lokales SEO erhalten Sie sie mit {discount}% Rabatt.",
+            "cta": "Leistungen ansehen"
+        },
         "localSeo": {
             "name": "Lokales SEO",
             "meta": {

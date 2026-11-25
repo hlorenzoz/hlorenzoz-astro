@@ -539,6 +539,12 @@
       "meta": {
         "description": "Full stack products, web and mobile, built to run on every device and screen size, from first prototype to production launch."
       }
+    },
+    "hub": {
+      "eyebrow": "What We Do",
+      "title": "One plan, and what goes around it",
+      "subtitle": "Local SEO is the core offer: one monthly plan that brings in local customers from Google and AI. Website Development, AI Voice Receptionist and Software Development are optional, at {discount}% off alongside it.",
+      "cta": "Browse the services"
     }
   },
   "assistant": {

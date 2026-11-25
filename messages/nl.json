@@ -327,6 +327,12 @@
         }
     },
     "services": {
+        "hub": {
+            "eyebrow": "Wat we doen",
+            "title": "Eén plan, en wat eromheen hoort",
+            "subtitle": "Lokale SEO is ons kernaanbod: één maandelijks plan dat klanten uit je regio oplevert via Google en AI. Websiteontwikkeling, Telefoonreceptionist met AI en Softwareontwikkeling zijn optioneel, met {discount}% korting als je ze samen met Lokale SEO afneemt.",
+            "cta": "Bekijk de diensten"
+        },
         "websiteDevelopment": {
             "name": "Websiteontwikkeling",
             "meta": {

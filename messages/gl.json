@@ -539,6 +539,12 @@
       "meta": {
         "description": "Produtos full stack, web e móbiles, feitos para funcionar en calquera dispositivo e tamaño de pantalla, desde o primeiro prototipo ata o lanzamento en produción."
       }
+    },
+    "hub": {
+      "eyebrow": "Que facemos",
+      "title": "Un plan, e o que o acompaña",
+      "subtitle": "O SEO local é a oferta central: un único plan mensual que trae clientes locais desde Google e a IA. Desenvolvemento web, Recepcionista de voz con IA e Desenvolvemento de software son opcionais, cun {discount}% de desconto se os contratas xunto con el.",
+      "cta": "Ver os servizos"
     }
   },
   "assistant": {

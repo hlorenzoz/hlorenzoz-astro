@@ -516,6 +516,12 @@
     }
   },
   "services": {
+    "hub": {
+      "eyebrow": "Ce que nous faisons",
+      "title": "Un forfait, et ce qui l'accompagne",
+      "subtitle": "Le SEO local est notre offre principale : un forfait mensuel qui vous amène des clients locaux depuis Google et l'IA. La création de sites web, le réceptionniste vocal IA et le développement logiciel sont optionnels, avec {discount} % de remise en complément.",
+      "cta": "Découvrir les services"
+    },
     "localSeo": {
       "name": "SEO local",
       "meta": {

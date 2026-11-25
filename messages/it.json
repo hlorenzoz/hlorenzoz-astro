@@ -327,6 +327,12 @@
     }
   },
   "services": {
+    "hub": {
+      "eyebrow": "Cosa facciamo",
+      "title": "Un solo piano e ciò che gli ruota attorno",
+      "subtitle": "La SEO locale è l'offerta principale: un unico piano mensile che porta clienti della tua zona da Google e dall'IA. Sviluppo web, Receptionist vocale con IA e Sviluppo software sono servizi facoltativi, scontati del {discount}% se abbinati alla SEO locale.",
+      "cta": "Scopri i servizi"
+    },
     "websiteDevelopment": {
       "name": "Sviluppo web",
       "meta": {
