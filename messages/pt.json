@@ -525,7 +525,127 @@
     "localSeo": {
       "name": "SEO local",
       "meta": {
-        "description": "Um plano mensal de SEO local: conteúdo de autoridade, backlinks e citações, autoridade no Google e na IA e gestão de avaliações, para que os clientes da sua zona o encontrem primeiro."
+        "description": "Um plano mensal de SEO local: conteúdo de autoridade, backlinks e citações, autoridade no Google e na IA e gestão de avaliações, para que os clientes da sua zona o encontrem primeiro.",
+        "title": "SEO local para empresas e negócios locais"
+      },
+      "hero": {
+        "eyebrow": "SEO local",
+        "title": "Seja encontrado antes da concorrência",
+        "subtitle": "Um plano mensal com todo o trabalho necessário para ganhar visibilidade nas pesquisas locais do Google e nas respostas dos motores de IA.",
+        "price": "{price}/mês {tax}. Os quatro pilares incluídos, {upfront}% pago antecipadamente.",
+        "cta": "Marcar uma chamada"
+      },
+      "benefits": {
+        "title": "Porquê um único plano",
+        "items": [
+          {
+            "title": "Compra um resultado, não uma lista de tarefas",
+            "description": "Conteúdo, links, autoridade e avaliações são partes do mesmo objetivo. Trabalhados em separado, por fornecedores diferentes, nenhum chega. Num único plano, cada um reforça os outros."
+          },
+          {
+            "title": "Mais acessível do que comprar por partes",
+            "description": "Os dois pilares que antes vendíamos em separado custavam, juntos, mais do que o plano completo custa agora, e o plano inclui os outros dois. As contas estão mais abaixo nesta página."
+          },
+          {
+            "title": "Sabe o que foi feito em cada mês",
+            "description": "Um relatório mensal em linguagem clara: o que foi trabalhado, como está a evoluir a sua visibilidade e quais são os próximos passos."
+          }
+        ]
+      },
+      "deliverables": {
+        "title": "O que está incluído",
+        "groups": [
+          {
+            "label": "Conteúdo de autoridade",
+            "items": [
+              "Estudo de keywords por localização",
+              "Clusters de conteúdo",
+              "Análise de lacunas de conteúdo",
+              "Atualização do conteúdo existente"
+            ]
+          },
+          {
+            "label": "Backlinks e citações",
+            "items": [
+              "Links de diretórios de confiança",
+              "Citações em sites relevantes",
+              "Sinais de autoridade local mais fortes",
+              "Para o Google e para os motores de IA"
+            ]
+          },
+          {
+            "label": "Autoridade no Google e na IA",
+            "items": [
+              "Auditoria e otimização do Google Business Profile",
+              "SEO local on page para o seu site",
+              "Dados estruturados de negócio local",
+              "Suporte para várias localizações"
+            ]
+          },
+          {
+            "label": "Gestão de avaliações",
+            "items": [
+              "Evolução das avaliações acompanhada ao longo do tempo",
+              "Tendências das opiniões positivas e negativas",
+              "Respostas aos clientes monitorizadas",
+              "Links de avaliação com a sua marca"
+            ]
+          }
+        ]
+      },
+      "process": {
+        "title": "Como trabalhamos",
+        "steps": [
+          {
+            "number": "01",
+            "title": "Primeira chamada",
+            "description": "15 minutos para conhecer o seu negócio, a sua zona e quem quer alcançar."
+          },
+          {
+            "number": "02",
+            "title": "Auditoria",
+            "description": "Analisamos a sua presença atual no Google, o seu site, as suas avaliações e quem é recomendado hoje na sua zona."
+          },
+          {
+            "number": "03",
+            "title": "Trabalhamos os quatro pilares",
+            "description": "Conteúdo, citações, autoridade e avaliações avançam em paralelo, segundo um plano que conhece de antemão."
+          },
+          {
+            "number": "04",
+            "title": "Relatório e ajuste mensal",
+            "description": "Todos os meses recebe um relatório em linguagem clara e ajustamos o trabalho ao que mudou."
+          }
+        ]
+      },
+      "faq": {
+        "title": "Perguntas frequentes",
+        "items": [
+          {
+            "question": "Garantem a primeira posição no Google?",
+            "answer": "Não, e desconfie de quem garanta: ninguém controla o ranking do Google. A primeira posição é o objetivo para o qual trabalhamos todos os meses, e um relatório em linguagem clara mostra o que foi feito e como está a evoluir a sua visibilidade."
+          },
+          {
+            "question": "Quanto tempo até ver resultados nas pesquisas locais?",
+            "answer": "A maioria dos clientes vê uma evolução significativa nos resultados do mapa do Google em 30 a 60 dias, embora os mercados mais competitivos possam demorar mais."
+          },
+          {
+            "question": "Preciso de já ter um perfil no Google Business Profile?",
+            "answer": "Não. Se ainda não tiver um, nós criamos e verificamos o perfil em seu nome como parte do processo de arranque."
+          },
+          {
+            "question": "Serve para mais do que uma localização?",
+            "answer": "Sim. Os negócios com várias localizações estão abrangidos, e cada localização recebe o seu próprio perfil otimizado e conteúdo local."
+          },
+          {
+            "question": "Que plataformas de avaliações monitorizam?",
+            "answer": "O Google Business Profile é o canal principal, a par do Facebook e de qualquer site específico do seu setor que seja relevante para o seu negócio. Podemos acrescentar outras fontes à medida que as suas necessidades crescem."
+          },
+          {
+            "question": "Como conseguem mais avaliações?",
+            "answer": "Com links de avaliação com a sua marca, que facilitam aos seus clientes deixar uma avaliação. São enviados a todos os clientes, não só aos satisfeitos: filtrar a quem se pede uma avaliação vai contra as políticas do Google."
+          }
+        ]
       }
     },
     "websiteDevelopment": {

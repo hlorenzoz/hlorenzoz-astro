@@ -519,7 +519,127 @@
     "localSeo": {
       "name": "SEO local",
       "meta": {
-        "description": "Un único plan mensual de SEO local: contido de autoridade, backlinks e citacións, autoridade en Google e na IA, e xestión de recensións, para que os clientes da túa zona te atopen primeiro."
+        "description": "Un único plan mensual de SEO local: contido de autoridade, backlinks e citacións, autoridade en Google e na IA, e xestión de recensións, para que os clientes da túa zona te atopen primeiro.",
+        "title": "SEO local para negocios en Galicia"
+      },
+      "hero": {
+        "eyebrow": "SEO local",
+        "title": "Que te atopen antes que á túa competencia",
+        "subtitle": "Un único plan mensual con todo o traballo necesario para gañar visibilidade nas buscas locais de Google e nas respostas dos motores de IA.",
+        "price": "{price}/mes {tax}. Os catro piares incluídos, {upfront}% por adiantado.",
+        "cta": "Reservar unha chamada"
+      },
+      "benefits": {
+        "title": "Por que un único plan",
+        "items": [
+          {
+            "title": "Mercas un resultado, non unha lista de tarefas",
+            "description": "Contido, ligazóns, autoridade e recensións son pezas do mesmo obxectivo. Traballadas por separado, e por provedores distintos, ningunha chega. Nun só plan, cada unha empurra as demais."
+          },
+          {
+            "title": "Máis económico que contratalo por partes",
+            "description": "Os dous piares que antes vendiamos por separado custaban, xuntos, máis que o plan completo de agora, que ademais inclúe os outros dous. As contas están máis abaixo nesta páxina."
+          },
+          {
+            "title": "Sabes o que se fixo cada mes",
+            "description": "Un informe mensual sen tecnicismos: que se traballou, como evoluciona a túa visibilidade e que vén despois."
+          }
+        ]
+      },
+      "deliverables": {
+        "title": "O que inclúe",
+        "groups": [
+          {
+            "label": "Contido de autoridade",
+            "items": [
+              "Investigación de palabras clave por localización",
+              "Clústeres de contido",
+              "Análise das lagoas de contido",
+              "Actualización do contido existente"
+            ]
+          },
+          {
+            "label": "Backlinks e citacións",
+            "items": [
+              "Ligazóns desde directorios de confianza",
+              "Citacións en webs relevantes",
+              "Sinais de autoridade local máis fortes",
+              "Para Google e para os motores de IA"
+            ]
+          },
+          {
+            "label": "Autoridade en Google e na IA",
+            "items": [
+              "Auditoría e optimización de Google Business Profile",
+              "SEO local nas páxinas da túa web",
+              "Datos estruturados de negocio local",
+              "Soporte para varias localizacións"
+            ]
+          },
+          {
+            "label": "Xestión de recensións",
+            "items": [
+              "Seguimento do crecemento das recensións",
+              "Tendencias de opinións positivas e negativas",
+              "Control das respostas dos clientes",
+              "Ligazóns de opinión coa túa marca"
+            ]
+          }
+        ]
+      },
+      "process": {
+        "title": "Como traballamos",
+        "steps": [
+          {
+            "number": "01",
+            "title": "Primeira chamada",
+            "description": "15 minutos para coñecer o teu negocio, a túa zona e a quen queres chegar."
+          },
+          {
+            "number": "02",
+            "title": "Auditoría",
+            "description": "Revisamos a túa presenza actual en Google, a túa web, as túas recensións e a quen se recomenda hoxe na túa zona."
+          },
+          {
+            "number": "03",
+            "title": "Traballamos os catro piares",
+            "description": "Contido, citacións, autoridade e recensións avanzan en paralelo, cun plan que coñeces de antemán."
+          },
+          {
+            "number": "04",
+            "title": "Informe e axuste mensual",
+            "description": "Cada mes recibes un informe sen tecnicismos e axustamos o traballo segundo o que cambiou."
+          }
+        ]
+      },
+      "faq": {
+        "title": "Preguntas frecuentes",
+        "items": [
+          {
+            "question": "Garantides a primeira posición en Google?",
+            "answer": "Non, e desconfía de quen o garanta: ninguén controla a clasificación de Google. A primeira posición é o obxectivo polo que traballamos cada mes, e un informe sen tecnicismos móstrache o que se fixo e como evoluciona a túa visibilidade."
+          },
+          {
+            "question": "Canto tempo pasa ata que se ven resultados no posicionamento local?",
+            "answer": "A maioría dos clientes notan un movemento significativo no mapa local entre os 30 e os 60 días, aínda que nos mercados máis competitivos pode levar máis tempo."
+          },
+          {
+            "question": "Necesito ter xa un Google Business Profile?",
+            "answer": "Non. Se aínda non o tes, creámolo e verificámolo ao teu nome como parte da posta en marcha."
+          },
+          {
+            "question": "Serve para máis dunha localización?",
+            "answer": "Si. Os negocios con varios locais están incluídos: cada localización recibe o seu propio perfil optimizado e contido local."
+          },
+          {
+            "question": "Que plataformas de recensións supervisades?",
+            "answer": "Google Business Profile é a canle principal, xunto con Facebook e calquera web específica do teu sector que sexa relevante para o teu negocio. Podemos engadir máis fontes a medida que medren as túas necesidades."
+          },
+          {
+            "question": "Como se conseguen máis recensións?",
+            "answer": "Con ligazóns de opinión coa túa marca que lles facilitan aos teus clientes deixar a súa recensión. Envíanse a todos os clientes, non só aos satisfeitos: filtrar a quen se lle pide vai contra as políticas de Google."
+          }
+        ]
       }
     },
     "websiteDevelopment": {

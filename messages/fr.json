@@ -525,7 +525,127 @@
     "localSeo": {
       "name": "SEO local",
       "meta": {
-        "description": "Un forfait mensuel de SEO local : contenu d'autorité, backlinks et citations, autorité sur Google et l'IA, et gestion des avis, pour que les clients autour de vous vous trouvent en premier."
+        "description": "Un forfait mensuel de SEO local : contenu d'autorité, backlinks et citations, autorité sur Google et l'IA, et gestion des avis, pour que les clients autour de vous vous trouvent en premier.",
+        "title": "SEO local pour entreprises de proximité"
+      },
+      "hero": {
+        "eyebrow": "SEO local",
+        "title": "Soyez trouvé avant vos concurrents",
+        "subtitle": "Un forfait mensuel qui réunit tout le travail nécessaire pour gagner en visibilité dans les recherches locales sur Google et dans les réponses des moteurs d'IA.",
+        "price": "{price} par mois {tax}. Les quatre piliers inclus, {upfront} % réglé d'avance.",
+        "cta": "Réserver un appel"
+      },
+      "benefits": {
+        "title": "Pourquoi un forfait unique",
+        "items": [
+          {
+            "title": "Vous achetez un résultat, pas une liste de tâches",
+            "description": "Contenu, liens, autorité et avis servent le même objectif. Travaillés séparément, par des prestataires différents, aucun ne suffit. Réunis dans un seul forfait, chacun renforce les autres."
+          },
+          {
+            "title": "Moins cher que de l'acheter en morceaux",
+            "description": "Les deux piliers que nous vendions séparément coûtaient plus cher, ensemble, que le forfait complet aujourd'hui, et le forfait inclut les deux autres. Les chiffres sont plus bas sur cette page."
+          },
+          {
+            "title": "Chaque mois, vous savez ce qui a été fait",
+            "description": "Un rapport mensuel en langage clair : ce qui a été travaillé, comment évolue votre visibilité et quelles sont les prochaines étapes."
+          }
+        ]
+      },
+      "deliverables": {
+        "title": "Ce qui est inclus",
+        "groups": [
+          {
+            "label": "Contenu d'autorité",
+            "items": [
+              "Recherche de mots clés par zone géographique",
+              "Clusters de contenu",
+              "Analyse des lacunes de contenu",
+              "Mise à jour du contenu existant"
+            ]
+          },
+          {
+            "label": "Backlinks et citations",
+            "items": [
+              "Liens depuis des annuaires de confiance",
+              "Citations sur des sites pertinents",
+              "Signaux d'autorité locale renforcés",
+              "Pour Google et pour les moteurs d'IA"
+            ]
+          },
+          {
+            "label": "Autorité sur Google et l'IA",
+            "items": [
+              "Audit et optimisation de la fiche Google Business Profile",
+              "SEO local on page pour votre site web",
+              "Données structurées d'entreprise locale",
+              "Prise en charge de plusieurs établissements"
+            ]
+          },
+          {
+            "label": "Gestion des avis",
+            "items": [
+              "Évolution du nombre d'avis suivie dans le temps",
+              "Tendances des retours positifs et négatifs",
+              "Suivi des réponses aux clients",
+              "Liens de demande d'avis à vos couleurs"
+            ]
+          }
+        ]
+      },
+      "process": {
+        "title": "Notre méthode",
+        "steps": [
+          {
+            "number": "01",
+            "title": "Premier appel",
+            "description": "15 minutes pour comprendre votre entreprise, votre zone et la clientèle que vous voulez toucher."
+          },
+          {
+            "number": "02",
+            "title": "Audit",
+            "description": "Nous analysons votre présence actuelle sur Google, votre site web, vos avis et les entreprises recommandées aujourd'hui dans votre secteur."
+          },
+          {
+            "number": "03",
+            "title": "Nous travaillons les quatre piliers",
+            "description": "Contenu, citations, autorité et avis avancent en parallèle, selon un plan que vous connaissez à l'avance."
+          },
+          {
+            "number": "04",
+            "title": "Rapport mensuel et ajustements",
+            "description": "Chaque mois, vous recevez un rapport en langage clair et nous ajustons le travail en fonction de ce qui a changé."
+          }
+        ]
+      },
+      "faq": {
+        "title": "Questions fréquentes",
+        "items": [
+          {
+            "question": "Vous garantissez la première position sur Google ?",
+            "answer": "Non, et soyez prudent face à quiconque le promet : personne ne contrôle le classement de Google. La première position est l'objectif vers lequel nous travaillons chaque mois, et un rapport en langage clair vous montre ce qui a été fait et comment évolue votre visibilité."
+          },
+          {
+            "question": "Quel délai avant de voir des résultats dans les classements locaux ?",
+            "answer": "La plupart des clients constatent une progression nette dans le pack local de Google Maps en 30 à 60 jours, mais les marchés très concurrentiels peuvent demander plus de temps."
+          },
+          {
+            "question": "J'ai besoin d'une fiche Google Business Profile au départ ?",
+            "answer": "Non. Si vous n'en avez pas encore, nous la créons et la faisons valider pour vous lors de la mise en place."
+          },
+          {
+            "question": "Le forfait couvre plusieurs établissements ?",
+            "answer": "Oui. Les entreprises avec plusieurs établissements sont prises en charge : chaque établissement a sa propre fiche optimisée et son propre contenu local."
+          },
+          {
+            "question": "Quelles plateformes d'avis sont surveillées ?",
+            "answer": "Google Business Profile est le canal principal, avec Facebook et tout site propre à votre secteur et pertinent pour votre activité. Nous pouvons ajouter d'autres sources à mesure que vos besoins évoluent."
+          },
+          {
+            "question": "Comment obtenir plus d'avis ?",
+            "answer": "Avec des liens de demande d'avis à vos couleurs, qui permettent à vos clients de laisser un avis facilement. Ils sont envoyés à tous les clients, pas seulement aux clients satisfaits : filtrer les personnes sollicitées est contraire aux règles de Google."
+          }
+        ]
       }
     },
     "websiteDevelopment": {

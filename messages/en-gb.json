@@ -519,7 +519,127 @@
     "localSeo": {
       "name": "Local SEO",
       "meta": {
+        "title": "Local SEO Services for Local Businesses",
         "description": "One monthly Local SEO plan: authority content, backlinks and citations, authority on Google and AI, and review management, so nearby customers find you first."
+      },
+      "hero": {
+        "eyebrow": "Local SEO",
+        "title": "Get Found Before Your Competitors",
+        "subtitle": "One monthly plan covering all the work it takes to become visible in local Google searches and in the answers AI engines give.",
+        "price": "{price} a month {tax}. All four pillars included, {upfront}% paid up front.",
+        "cta": "Book a call"
+      },
+      "benefits": {
+        "title": "Why a single plan",
+        "items": [
+          {
+            "title": "You buy a result, not a list of tasks",
+            "description": "Content, links, authority and reviews all serve the same goal. Handled separately, by different suppliers, none of them is enough on its own. In one plan, each one strengthens the others."
+          },
+          {
+            "title": "Better value than buying it piecemeal",
+            "description": "The two pillars we used to sell individually cost more together than the whole plan does now, and the plan includes the other two as well. The figures are further down this page."
+          },
+          {
+            "title": "You know what was done every month",
+            "description": "A monthly report in plain English: what was worked on, how your visibility is moving and what comes next."
+          }
+        ]
+      },
+      "deliverables": {
+        "title": "What's included",
+        "groups": [
+          {
+            "label": "Authority content",
+            "items": [
+              "Keyword research by location",
+              "Content clusters",
+              "Content gap analysis",
+              "Updates to existing content"
+            ]
+          },
+          {
+            "label": "Backlinks and citations",
+            "items": [
+              "Links from trusted directories",
+              "Citations on relevant websites",
+              "Stronger local authority signals",
+              "For Google and for AI engines"
+            ]
+          },
+          {
+            "label": "Authority on Google and AI",
+            "items": [
+              "Google Business Profile audit and optimisation",
+              "On page local SEO for your website",
+              "Local business structured data",
+              "Support for multiple locations"
+            ]
+          },
+          {
+            "label": "Review management",
+            "items": [
+              "Review growth tracked over time",
+              "Positive and negative feedback trends",
+              "Customer responses monitored",
+              "Branded feedback links"
+            ]
+          }
+        ]
+      },
+      "process": {
+        "title": "How we work",
+        "steps": [
+          {
+            "number": "01",
+            "title": "First call",
+            "description": "15 minutes to get to know your business, your area and the customers you want to reach."
+          },
+          {
+            "number": "02",
+            "title": "Audit",
+            "description": "We review your current presence on Google, your website, your reviews and who is being recommended in your area today."
+          },
+          {
+            "number": "03",
+            "title": "We work on the four pillars",
+            "description": "Content, citations, authority and reviews move forward in parallel, following a plan you know in advance."
+          },
+          {
+            "number": "04",
+            "title": "Monthly report and adjustments",
+            "description": "Every month you get a report in plain English and we adjust the work to whatever has changed."
+          }
+        ]
+      },
+      "faq": {
+        "title": "Frequently asked questions",
+        "items": [
+          {
+            "question": "Do you guarantee the first position on Google?",
+            "answer": "No, and be wary of anyone who does: nobody controls Google's rankings. The first position is the goal we work towards every month, and a plain English report shows you what was done and how your visibility is moving."
+          },
+          {
+            "question": "How long before I see results in local search rankings?",
+            "answer": "Most clients see meaningful movement in the local map pack within 30 to 60 days, though competitive markets can take longer."
+          },
+          {
+            "question": "Do I need a Google Business Profile already?",
+            "answer": "No. If you don't have one yet, we set it up and verify it for you as part of onboarding."
+          },
+          {
+            "question": "Does this cover more than one location?",
+            "answer": "Yes. Businesses with several locations are supported, and each location gets its own optimised profile and local content."
+          },
+          {
+            "question": "Which review platforms do you monitor?",
+            "answer": "Google Business Profile is the main channel, alongside Facebook and any site specific to your sector that matters for your business. We can add more sources as your needs grow."
+          },
+          {
+            "question": "How do you get more reviews?",
+            "answer": "With branded feedback links that make it easy for your customers to leave a review. They go to every customer, not just the happy ones: filtering who gets asked is against Google's policies."
+          }
+        ]
       }
     },
     "websiteDevelopment": {

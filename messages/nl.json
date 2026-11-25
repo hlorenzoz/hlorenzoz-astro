@@ -348,7 +348,127 @@
         "localSeo": {
             "name": "Lokale SEO",
             "meta": {
-                "description": "Eén maandelijks plan voor lokale SEO: autoriteitscontent, backlinks en vermeldingen, autoriteit in Google en AI, en reviewbeheer, zodat klanten in de buurt jou als eerste vinden."
+                "description": "Eén maandelijks plan voor lokale SEO: autoriteitscontent, backlinks en vermeldingen, autoriteit in Google en AI, en reviewbeheer, zodat klanten in de buurt jou als eerste vinden.",
+                "title": "Lokale SEO voor ondernemers in je regio"
+            },
+            "hero": {
+                "eyebrow": "Lokale SEO",
+                "title": "Eerder gevonden dan je concurrent",
+                "subtitle": "Eén maandelijks plan met al het werk dat nodig is om zichtbaar te worden in lokale zoekresultaten op Google en in de antwoorden van AI.",
+                "price": "{price} per maand {tax}. Alle vier de pijlers inbegrepen, {upfront}% vooraf te betalen.",
+                "cta": "Plan een gesprek"
+            },
+            "benefits": {
+                "title": "Waarom één plan",
+                "items": [
+                    {
+                        "title": "Je koopt een resultaat, geen takenlijst",
+                        "description": "Content, links, autoriteit en reviews dienen hetzelfde doel. Los van elkaar, bij verschillende leveranciers, is geen van allen genoeg. In één plan versterken ze elkaar."
+                    },
+                    {
+                        "title": "Voordeliger dan in losse onderdelen",
+                        "description": "De twee pijlers die we vroeger los verkochten, kostten samen meer dan het hele plan nu, en in het plan zitten ook de andere twee. De bedragen staan verderop op deze pagina."
+                    },
+                    {
+                        "title": "Je weet elke maand wat er is gedaan",
+                        "description": "Elke maand een rapport in gewone taal: waaraan is gewerkt, hoe je zichtbaarheid zich ontwikkelt en wat de volgende stap is."
+                    }
+                ]
+            },
+            "deliverables": {
+                "title": "Wat er inbegrepen is",
+                "groups": [
+                    {
+                        "label": "Autoriteitscontent",
+                        "items": [
+                            "Zoekwoordonderzoek per locatie",
+                            "Contentclusters",
+                            "Analyse van ontbrekende content",
+                            "Bestaande content bijwerken"
+                        ]
+                    },
+                    {
+                        "label": "Backlinks en vermeldingen",
+                        "items": [
+                            "Links vanuit betrouwbare bedrijvengidsen",
+                            "Vermeldingen op relevante websites",
+                            "Sterkere lokale autoriteitssignalen",
+                            "Voor Google en voor AI"
+                        ]
+                    },
+                    {
+                        "label": "Autoriteit in Google en AI",
+                        "items": [
+                            "Audit en optimalisatie van je Google Business Profile",
+                            "Lokale SEO op je eigen website",
+                            "Gestructureerde gegevens voor lokale bedrijven",
+                            "Ondersteuning voor meerdere vestigingen"
+                        ]
+                    },
+                    {
+                        "label": "Reviewbeheer",
+                        "items": [
+                            "Groei van je reviews door de tijd gevolgd",
+                            "Trends in positieve en negatieve feedback",
+                            "Reacties op klanten in de gaten gehouden",
+                            "Feedbacklinks in je eigen huisstijl"
+                        ]
+                    }
+                ]
+            },
+            "process": {
+                "title": "Zo werken we",
+                "steps": [
+                    {
+                        "number": "01",
+                        "title": "Kennismakingsgesprek",
+                        "description": "15 minuten om je bedrijf, je regio en je doelgroep te leren kennen."
+                    },
+                    {
+                        "number": "02",
+                        "title": "Audit",
+                        "description": "We bekijken je huidige aanwezigheid op Google, je website, je reviews en wie er vandaag in je regio wordt aanbevolen."
+                    },
+                    {
+                        "number": "03",
+                        "title": "We werken aan de vier pijlers",
+                        "description": "Content, vermeldingen, autoriteit en reviews lopen tegelijk, volgens een plan dat je vooraf kent."
+                    },
+                    {
+                        "number": "04",
+                        "title": "Maandrapport en bijsturing",
+                        "description": "Elke maand krijg je een rapport in gewone taal en sturen we het werk bij op wat er is veranderd."
+                    }
+                ]
+            },
+            "faq": {
+                "title": "Veelgestelde vragen",
+                "items": [
+                    {
+                        "question": "Garanderen jullie de eerste positie op Google?",
+                        "answer": "Nee, en wees op je hoede voor wie dat wel doet: niemand heeft de ranking van Google in handen. De eerste positie is het doel waar we elke maand naartoe werken, en een rapport in gewone taal laat je zien wat er is gedaan en hoe je zichtbaarheid zich ontwikkelt."
+                    },
+                    {
+                        "question": "Hoe lang duurt het voordat ik resultaat zie in de lokale zoekresultaten?",
+                        "answer": "De meeste klanten zien binnen 30 tot 60 dagen duidelijke beweging in de lokale kaartresultaten van Google, al kan het in concurrerende markten langer duren."
+                    },
+                    {
+                        "question": "Moet ik al een Google Business Profile hebben?",
+                        "answer": "Nee. Heb je er nog geen, dan maken en verifiëren we het voor je als onderdeel van de onboarding."
+                    },
+                    {
+                        "question": "Werkt dit ook voor meer dan één vestiging?",
+                        "answer": "Ja. Bedrijven met meerdere vestigingen worden ondersteund: elke vestiging krijgt een eigen geoptimaliseerd profiel en eigen lokale content."
+                    },
+                    {
+                        "question": "Welke reviewplatforms houden jullie in de gaten?",
+                        "answer": "Google Business Profile is het belangrijkste kanaal, naast Facebook en elke site die specifiek is voor jouw branche en relevant voor je bedrijf. Groeien je behoeften, dan kunnen we meer bronnen toevoegen."
+                    },
+                    {
+                        "question": "Hoe krijgen jullie meer reviews?",
+                        "answer": "Met feedbacklinks in je eigen huisstijl die het je klanten makkelijk maken om een review achter te laten. Ze gaan naar elke klant, niet alleen naar de tevreden klanten: selecteren wie je om een review vraagt, is in strijd met het beleid van Google."
+                    }
+                ]
             }
         },
         "softwareDevelopment": {

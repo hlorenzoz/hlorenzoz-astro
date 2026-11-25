@@ -525,7 +525,127 @@
         "localSeo": {
             "name": "Lokales SEO",
             "meta": {
-                "description": "Ein monatlicher Plan für lokales SEO: Inhalte mit Autorität, Backlinks und Brancheneinträge, Autorität bei Google und KI sowie Bewertungsmanagement, damit Kunden in der Nähe zuerst Sie finden."
+                "description": "Ein monatlicher Plan für lokales SEO: Inhalte mit Autorität, Backlinks und Brancheneinträge, Autorität bei Google und KI sowie Bewertungsmanagement, damit Kunden in der Nähe zuerst Sie finden.",
+                "title": "Lokales SEO für Unternehmen vor Ort"
+            },
+            "hero": {
+                "eyebrow": "Lokales SEO",
+                "title": "Vor Ihrer Konkurrenz gefunden werden",
+                "subtitle": "Ein monatlicher Plan mit der gesamten Arbeit, die es braucht, um in der lokalen Suche bei Google und in den Antworten von KI sichtbar zu werden.",
+                "price": "{price} pro Monat {tax}. Alle vier Säulen inklusive, {upfront}% werden im Voraus gezahlt.",
+                "cta": "Gespräch vereinbaren"
+            },
+            "benefits": {
+                "title": "Warum ein einziger Plan",
+                "items": [
+                    {
+                        "title": "Sie kaufen ein Ergebnis, keine Aufgabenliste",
+                        "description": "Inhalte, Links, Autorität und Bewertungen dienen demselben Ziel. Getrennt bearbeitet, von verschiedenen Anbietern, reicht keiner dieser Bausteine aus. In einem Plan treibt jeder die anderen voran."
+                    },
+                    {
+                        "title": "Günstiger als der Einkauf in Einzelteilen",
+                        "description": "Die beiden Säulen, die wir früher einzeln verkauft haben, kosten zusammen mehr als heute der gesamte Plan, und der Plan enthält zusätzlich die anderen beiden. Die Zahlen finden Sie weiter unten auf dieser Seite."
+                    },
+                    {
+                        "title": "Sie wissen jeden Monat, was getan wurde",
+                        "description": "Ein monatlicher Bericht in klarer Sprache: woran gearbeitet wurde, wie sich Ihre Sichtbarkeit entwickelt und was als Nächstes kommt."
+                    }
+                ]
+            },
+            "deliverables": {
+                "title": "Das ist enthalten",
+                "groups": [
+                    {
+                        "label": "Inhalte mit Autorität",
+                        "items": [
+                            "Keywordrecherche nach Standort",
+                            "Themencluster",
+                            "Analyse von Inhaltslücken",
+                            "Aktualisierung bestehender Inhalte"
+                        ]
+                    },
+                    {
+                        "label": "Backlinks und Brancheneinträge",
+                        "items": [
+                            "Links aus vertrauenswürdigen Verzeichnissen",
+                            "Erwähnungen auf relevanten Websites",
+                            "Stärkere lokale Autoritätssignale",
+                            "Für Google und für KI"
+                        ]
+                    },
+                    {
+                        "label": "Autorität bei Google und KI",
+                        "items": [
+                            "Prüfung und Optimierung Ihres Google Business Profile",
+                            "Lokale Onpageoptimierung Ihrer Website",
+                            "Strukturierte Daten für lokale Unternehmen",
+                            "Betreuung mehrerer Standorte"
+                        ]
+                    },
+                    {
+                        "label": "Bewertungsmanagement",
+                        "items": [
+                            "Entwicklung Ihrer Bewertungen im Zeitverlauf",
+                            "Trends bei positivem und negativem Feedback",
+                            "Kundenantworten immer im Blick",
+                            "Feedbacklinks mit Ihrer Marke"
+                        ]
+                    }
+                ]
+            },
+            "process": {
+                "title": "So arbeiten wir",
+                "steps": [
+                    {
+                        "number": "01",
+                        "title": "Erstes Gespräch",
+                        "description": "15 Minuten, um Ihr Unternehmen, Ihre Region und Ihre Zielgruppe kennenzulernen."
+                    },
+                    {
+                        "number": "02",
+                        "title": "Analyse",
+                        "description": "Wir prüfen Ihre aktuelle Präsenz bei Google, Ihre Website, Ihre Bewertungen und wer heute in Ihrer Region empfohlen wird."
+                    },
+                    {
+                        "number": "03",
+                        "title": "Wir bearbeiten die vier Säulen",
+                        "description": "Inhalte, Brancheneinträge, Autorität und Bewertungen laufen parallel, nach einem Plan, den Sie vorab kennen."
+                    },
+                    {
+                        "number": "04",
+                        "title": "Monatsbericht und Anpassung",
+                        "description": "Jeden Monat erhalten Sie einen Bericht in klarer Sprache, und wir passen die Arbeit an das an, was sich verändert hat."
+                    }
+                ]
+            },
+            "faq": {
+                "title": "Häufige Fragen",
+                "items": [
+                    {
+                        "question": "Garantieren Sie Platz eins bei Google?",
+                        "answer": "Nein, und seien Sie vorsichtig bei jedem, der das tut: Niemand kontrolliert das Ranking von Google. Platz eins ist das Ziel, auf das wir jeden Monat hinarbeiten, und ein Bericht in klarer Sprache zeigt Ihnen, was getan wurde und wie sich Ihre Sichtbarkeit entwickelt."
+                    },
+                    {
+                        "question": "Wie lange dauert es, bis ich Ergebnisse im lokalen Ranking sehe?",
+                        "answer": "Die meisten Kunden sehen innerhalb von 30 bis 60 Tagen spürbare Bewegung im lokalen Kartenbereich von Google (Local Pack), in umkämpften Märkten kann es länger dauern."
+                    },
+                    {
+                        "question": "Brauche ich bereits ein Google Business Profile?",
+                        "answer": "Nein. Wenn Sie noch keines haben, erstellen und verifizieren wir es im Rahmen des Einstiegs für Sie."
+                    },
+                    {
+                        "question": "Gilt das auch für mehrere Standorte?",
+                        "answer": "Ja. Unternehmen mit mehreren Standorten werden unterstützt, jeder Standort erhält ein eigenes optimiertes Profil und eigene lokale Inhalte."
+                    },
+                    {
+                        "question": "Welche Bewertungsplattformen beobachten Sie?",
+                        "answer": "Google Business Profile ist der wichtigste Kanal, dazu kommen Facebook und jede branchenspezifische Plattform, die für Ihr Unternehmen relevant ist. Weitere Quellen können wir ergänzen, wenn Ihr Bedarf wächst."
+                    },
+                    {
+                        "question": "Wie bekommen Sie mehr Bewertungen?",
+                        "answer": "Mit Feedbacklinks mit Ihrer Marke, über die Ihre Kunden ganz einfach eine Bewertung abgeben können. Sie gehen an alle Kunden, nicht nur an die zufriedenen: Vorab zu filtern, wer gefragt wird, verstößt gegen die Richtlinien von Google."
+                    }
+                ]
             }
         },
         "websiteDevelopment": {

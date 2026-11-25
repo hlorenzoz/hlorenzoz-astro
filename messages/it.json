@@ -348,7 +348,127 @@
     "localSeo": {
       "name": "SEO locale",
       "meta": {
+        "title": "Servizio di SEO locale per la tua attività",
         "description": "Un unico piano mensile di SEO locale: contenuti autorevoli, backlink e citazioni, autorevolezza su Google e IA e gestione delle recensioni, perché i clienti della tua zona trovino te per primo."
+      },
+      "hero": {
+        "eyebrow": "SEO locale",
+        "title": "Fatti trovare prima dei tuoi concorrenti",
+        "subtitle": "Un unico piano mensile con tutto il lavoro necessario per guadagnare visibilità nelle ricerche locali su Google e nelle risposte dei motori di IA.",
+        "price": "{price}/mese {tax}. Tutti e quattro i pilastri inclusi, il {upfront}% si paga in anticipo.",
+        "cta": "Prenota una chiamata"
+      },
+      "benefits": {
+        "title": "Perché un unico piano",
+        "items": [
+          {
+            "title": "Compri un risultato, non una lista di compiti",
+            "description": "Contenuti, link, autorevolezza e recensioni sono parti dello stesso obiettivo. Gestiti separatamente, da fornitori diversi, nessuno basta da solo. In un unico piano, ognuno dà forza agli altri."
+          },
+          {
+            "title": "Più conveniente che comprarlo a pezzi",
+            "description": "I due pilastri che prima vendevamo separatamente, sommati, costano più di quanto costi oggi l'intero piano, che in più include gli altri due. I numeri sono più in basso in questa pagina."
+          },
+          {
+            "title": "Ogni mese sai cosa è stato fatto",
+            "description": "Un report mensile in parole semplici: su cosa abbiamo lavorato, come si sta muovendo la tua visibilità e quali sono i prossimi passi."
+          }
+        ]
+      },
+      "deliverables": {
+        "title": "Cosa è incluso",
+        "groups": [
+          {
+            "label": "Contenuti autorevoli",
+            "items": [
+              "Ricerca delle parole chiave per località",
+              "Cluster di contenuti",
+              "Analisi delle lacune nei contenuti",
+              "Aggiornamento dei contenuti esistenti"
+            ]
+          },
+          {
+            "label": "Backlink e citazioni",
+            "items": [
+              "Link da directory affidabili",
+              "Citazioni su siti pertinenti",
+              "Segnali di autorevolezza locale più forti",
+              "Per Google e per i motori di IA"
+            ]
+          },
+          {
+            "label": "Autorevolezza su Google e IA",
+            "items": [
+              "Audit e ottimizzazione del Google Business Profile",
+              "SEO locale on page per il tuo sito",
+              "Dati strutturati per attività locali",
+              "Supporto per attività con più sedi"
+            ]
+          },
+          {
+            "label": "Gestione delle recensioni",
+            "items": [
+              "Crescita delle recensioni monitorata nel tempo",
+              "Andamento dei feedback positivi e negativi",
+              "Risposte dei clienti monitorate",
+              "Link per il feedback con il tuo brand"
+            ]
+          }
+        ]
+      },
+      "process": {
+        "title": "Come lavoriamo",
+        "steps": [
+          {
+            "number": "01",
+            "title": "Prima chiamata",
+            "description": "15 minuti per conoscere la tua attività, la tua zona e i clienti che vuoi raggiungere."
+          },
+          {
+            "number": "02",
+            "title": "Audit",
+            "description": "Analizziamo la tua presenza attuale su Google, il tuo sito, le tue recensioni e chi viene consigliato oggi nella tua zona."
+          },
+          {
+            "number": "03",
+            "title": "Lavoriamo sui quattro pilastri",
+            "description": "Contenuti, citazioni, autorevolezza e recensioni avanzano in parallelo, secondo un piano che conosci in anticipo."
+          },
+          {
+            "number": "04",
+            "title": "Report mensile e aggiustamenti",
+            "description": "Ogni mese ricevi un report in parole semplici e adattiamo il lavoro a ciò che è cambiato."
+          }
+        ]
+      },
+      "faq": {
+        "title": "Domande frequenti",
+        "items": [
+          {
+            "question": "Garantite la prima posizione su Google?",
+            "answer": "No, e diffida di chi lo fa: nessuno controlla il posizionamento di Google. La prima posizione è l'obiettivo per cui lavoriamo ogni mese, e un report in parole semplici ti mostra cosa è stato fatto e come si sta muovendo la tua visibilità."
+          },
+          {
+            "question": "Quanto tempo serve per vedere risultati nel posizionamento locale?",
+            "answer": "La maggior parte dei clienti nota movimenti significativi nel local pack della mappa tra 30 e 60 giorni, anche se nei mercati più competitivi può volerci di più."
+          },
+          {
+            "question": "Devo avere già un Google Business Profile?",
+            "answer": "No. Se non ne hai ancora uno, lo creiamo e lo verifichiamo per te nella fase di avvio del servizio."
+          },
+          {
+            "question": "Il servizio copre più di una sede?",
+            "answer": "Sì. Le attività con più sedi sono supportate: ogni sede ha il proprio profilo ottimizzato e i propri contenuti locali."
+          },
+          {
+            "question": "Quali piattaforme di recensioni monitorate?",
+            "answer": "Il canale principale è il Google Business Profile, insieme a Facebook e a qualsiasi sito specifico del tuo settore e rilevante per la tua attività. Possiamo aggiungere altre fonti man mano che le tue esigenze crescono."
+          },
+          {
+            "question": "Come ottenete più recensioni?",
+            "answer": "Con link per il feedback con il tuo brand, che rendono facile ai tuoi clienti lasciare una recensione. Arrivano a tutti i clienti, non solo a quelli soddisfatti: scegliere a chi chiederla va contro le norme di Google."
+          }
+        ]
       }
     },
     "softwareDevelopment": {
