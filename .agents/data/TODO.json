@@ -1138,19 +1138,20 @@
     },
     {
       "id": "#T0053",
-      "estado": "en curso",
+      "estado": "hecha",
       "prioridad": "media",
       "tipo": "contenido",
       "titulo": "Noticia extensa (caso de estudio) en /news/ para cada Live Site del portafolio, en y es",
       "anotada": "2026-11-25",
-      "hecha": null,
+      "hecha": "2026-11-25",
       "origen": "usuario",
       "depende": [
         "#T0052"
       ],
       "notas": [
         "Fecha de cada noticia: el dia siguiente a la entrada del proyecto en el portafolio segun git: lorenzoz-agency 2026-04-07, malaga-event-gear 2026-06-19, vicron-lopez 2026-07-24, masajes-orisha 2026-07-24, gerp-dj 2026-11-25. lastModified 2026-11-25.",
-        "Las noticias de anuncio existentes (gerp-dj-added-to-portfolio, masajes-orisha-added-to-portfolio) no se tocan."
+        "Las noticias de anuncio existentes (gerp-dj-added-to-portfolio, masajes-orisha-added-to-portfolio) no se reescriben; la URL de la segunda se acorta a masajes-orisha-in-portfolio con 301 para quedar en 60 caracteres o menos.",
+        "2026-11-25: 5 casos de estudio publicados (en y es) con secciones e imagenes del CDN. Lighthouse movil local: noticias 96 a 97 / 100 / 100 / 100, CLS 0; ficha lorenzoz-agency 92 / 100 / 100 / 100. Slugs <id>-case-study, todas las URLs <= 60 caracteres; masajes-orisha-added-to-portfolio pasa a masajes-orisha-in-portfolio con 301."
       ],
       "descripcion": [
         "lib/news-data.json + messages/{en,es}.json news.items.<id> (intro y sections con imagenes reutilizadas del CDN) + public/llms.txt.",

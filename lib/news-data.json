@@ -1,7 +1,39 @@
 [
     {
+        "id": "lorenzoz-agency-case-study",
+        "slug": "lorenzoz-agency-case-study",
+        "datePublished": "2026-04-07",
+        "lastModified": "2026-11-25",
+        "portfolioId": "lorenzoz-agency",
+        "image": "https://cdn.hlorenzoz.com/hlorenzoz.com/portfolio/me/cover.webp"
+    },
+    {
+        "id": "malaga-event-gear-case-study",
+        "slug": "malaga-event-gear-case-study",
+        "datePublished": "2026-06-19",
+        "lastModified": "2026-11-25",
+        "portfolioId": "malaga-event-gear",
+        "image": "https://cdn.hlorenzoz.com/hlorenzoz.com/portfolio/meg/malagaeventgear-1.webp"
+    },
+    {
+        "id": "vicron-lopez-case-study",
+        "slug": "vicron-lopez-case-study",
+        "datePublished": "2026-07-24",
+        "lastModified": "2026-11-25",
+        "portfolioId": "vicron-lopez",
+        "image": "https://cdn.hlorenzoz.com/hlorenzoz.com/portfolio/vicronlopez/vicronlopez-header.webp"
+    },
+    {
+        "id": "masajes-orisha-case-study",
+        "slug": "masajes-orisha-case-study",
+        "datePublished": "2026-07-24",
+        "lastModified": "2026-11-25",
+        "portfolioId": "masajes-orisha",
+        "image": "https://cdn.hlorenzoz.com/hlorenzoz.com/portfolio/masajesorisha/0-hero-dark.webp"
+    },
+    {
         "id": "masajes-orisha-added-to-portfolio",
-        "slug": "masajes-orisha-added-to-portfolio",
+        "slug": "masajes-orisha-in-portfolio",
         "datePublished": "2026-11-24",
         "lastModified": "2026-11-24",
         "portfolioId": "masajes-orisha",
@@ -12,6 +44,15 @@
         "slug": "gerp-dj-added-to-portfolio",
         "datePublished": "2026-11-24",
         "lastModified": "2026-11-24",
+        "portfolioId": "gerp-dj",
+        "image": "https://cdn.hlorenzoz.com/hlorenzoz.com/portfolio/gerp-dj/cover.webp",
+        "ogImage": "https://cdn.hlorenzoz.com/hlorenzoz.com/portfolio/gerp-dj/cover.jpeg"
+    },
+    {
+        "id": "gerp-dj-case-study",
+        "slug": "gerp-dj-case-study",
+        "datePublished": "2026-11-25",
+        "lastModified": "2026-11-25",
         "portfolioId": "gerp-dj",
         "image": "https://cdn.hlorenzoz.com/hlorenzoz.com/portfolio/gerp-dj/cover.webp",
         "ogImage": "https://cdn.hlorenzoz.com/hlorenzoz.com/portfolio/gerp-dj/cover.jpeg"

@@ -32,7 +32,7 @@
 
 ## Portfolio Case Studies
 
-- [Lorenzoz Agency (this site)](https://hlorenzoz.com/en/portfolio/lorenzoz-agency/): Live project. Astro 7, Tailwind 4, Cloudflare CDN, Vitest + Playwright CI/CD, 95%+ PageSpeed score, JSON-LD structured data, PWA support.
+- [Lorenzoz Agency (this site)](https://hlorenzoz.com/en/portfolio/lorenzoz-agency/): Live project. Astro 7, Tailwind 4, Cloudflare CDN, Vitest + Playwright CI/CD, PageSpeed Insights 98 on mobile (2026-11-25), JSON-LD structured data, PWA support.
 - [Dental Clinic Demo](https://hlorenzoz.com/en/portfolio/dental-clinic-1/): Demo project for a dental clinic with Google Business Profile optimization, Next.js 16, full test coverage, 95%+ PageSpeed, PWA and structured data.
 - [Real Estate Demo](https://hlorenzoz.com/en/portfolio/real-estate/): Demo real estate listings site with property/rental browsing, GBP optimization, Next.js 16, full test suite, 95%+ PageSpeed, structured data.
 - [Malaga Event Gear](https://hlorenzoz.com/en/portfolio/malaga-event-gear/): Live client project (malagaeventgear.com) for event equipment rental with online booking, 93+ mobile PageSpeed, Local Business and Organization schema.
@@ -44,8 +44,13 @@
 
 ## News
 
-- [Masajes Orisha joins the portfolio](https://hlorenzoz.com/en/news/masajes-orisha-added-to-portfolio/): Announcement (2026-11-24) that the website of Masajes Orisha, a live client project for a therapeutic massage studio in San Rafael de Heredia, Costa Rica, now has its own case study in the portfolio.
+- [How we built the Lorenzoz Agency website, and why we moved it to Astro](https://hlorenzoz.com/en/news/lorenzoz-agency-case-study/): How the agency site is built (Astro 7, Tailwind CSS 4, static assets on Cloudflare Workers, R2 image CDN, bilingual hreflang, JSON-LD), the Lighthouse comparison of the Next.js 16 and Astro builds of November 25, 2026, the live Lighthouse scores of the same day, and the Rich Results Test of April 6, 2026
+- [How we rebuilt Malaga Event Gear, from WordPress to a fast SvelteKit site](https://hlorenzoz.com/en/news/malaga-event-gear-case-study/): Case study of the AV rental site migrated from WordPress to SvelteKit on Cloudflare: fixed price packages, date request form, llms.txt, thirteen hreflang languages; PageSpeed Insights mobile on June 19, 2026 scored 93 Performance and 100 Accessibility, Best Practices and SEO, and the Rich Results Test (crawl June 18, 2026) found valid Breadcrumbs, Local business and Organisation.
+- [How we built the Vicron Lopez website for luxury car rental in Ourense](https://hlorenzoz.com/en/news/vicron-lopez-case-study/): Case study of the bilingual SvelteKit site for a luxury car rental in Ourense: searchable fleet, vehicle pages with WhatsApp booking, translated URLs with hreflang, AutoRental and Car structured data, Lighthouse mobile lab run on November 25, 2026 (Performance 64, Accessibility 97, Best Practices 81, SEO 100).
+- [How we built the Masajes Orisha website: SvelteKit, two languages and booking in four steps](https://hlorenzoz.com/en/news/masajes-orisha-case-study/): Case study (2026-07-24, updated 2026-11-25) of the Masajes Orisha website for a therapeutic massage studio in San Rafael de Heredia, Costa Rica: SvelteKit served through Cloudflare, Spanish and English with hreflang, a filterable treatment menu, a booking request in four steps protected by Cloudflare Turnstile, a bilingual journal, AVIF and WebP images, DaySpa JSON-LD. Lighthouse mobile lab, measured 2026-11-25: Performance 82, Accessibility 100, Best Practices 100, SEO 100.
+- [Masajes Orisha joins the portfolio](https://hlorenzoz.com/en/news/masajes-orisha-in-portfolio/): Announcement (2026-11-24) that the website of Masajes Orisha, a live client project for a therapeutic massage studio in San Rafael de Heredia, Costa Rica, now has its own case study in the portfolio.
 - [GERP DJ joins the portfolio](https://hlorenzoz.com/en/news/gerp-dj-added-to-portfolio/): Announcement (2026-11-24) that the website of GERP DJ, a live client project for a party, wedding and event DJ in Ourense, Galicia, now has its own case study in the portfolio.
+- [How we built the GERP DJ website: Astro, two languages and WhatsApp bookings](https://hlorenzoz.com/en/news/gerp-dj-case-study/): Case study (2026-11-25) of the GERP DJ website for a party, wedding and event DJ in Ourense: Astro delivered through Cloudflare, Spanish and Galician with hreflang, a date request that opens WhatsApp, AVIF and WebP images, no tracking cookies, llms.txt. PageSpeed Insights mobile, measured 2026-11-24: Performance 99, Accessibility 100, Best Practices 100, SEO 100. Google Rich Results Test, tested 2026-11-24: 3 valid items (Breadcrumbs, Local business, Organisation).
 
 ## Contact
 

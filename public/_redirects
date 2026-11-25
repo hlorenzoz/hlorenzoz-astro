@@ -33,3 +33,10 @@
 /en/services/digital-business-card/          /en/services/              301
 /es/services/digital-business-card           /es/services/              301
 /es/services/digital-business-card/          /es/services/              301
+
+# News URLs are kept at 60 characters or fewer (tests/seo/url-length.test.ts).
+# This post was published under a longer slug on 2026-11-24.
+/en/news/masajes-orisha-added-to-portfolio    /en/news/masajes-orisha-in-portfolio/    301
+/en/news/masajes-orisha-added-to-portfolio/   /en/news/masajes-orisha-in-portfolio/    301
+/es/news/masajes-orisha-added-to-portfolio    /es/news/masajes-orisha-in-portfolio/    301
+/es/news/masajes-orisha-added-to-portfolio/   /es/news/masajes-orisha-in-portfolio/    301

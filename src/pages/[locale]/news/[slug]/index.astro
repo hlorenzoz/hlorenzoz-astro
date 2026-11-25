@@ -39,6 +39,9 @@ const tRoot = getTranslations(locale);
 
 const title = t(`items.${item.id}.title`);
 const paragraphs = t.raw(`items.${item.id}.paragraphs`) as string[];
+// Long posts add titled sections after the intro, each with an optional image reused from the case study.
+type NewsSection = { heading: string; paragraphs: string[]; image?: string; imageAlt?: string };
+const sections = (t.has(`items.${item.id}.sections`) ? t.raw(`items.${item.id}.sections`) : []) as NewsSection[];
 const pageUrl = absoluteUrl(locale, `news/${item.slug}`);
 const published = formatContentDate(locale, item.datePublished, 'dayMonthYear');
 
@@ -108,6 +111,22 @@ const sizes = '(max-width: 768px) 100vw, 768px';
                 <div class="space-y-6 text-lg text-gray-900 leading-relaxed">
                     {paragraphs.map((paragraph) => <p>{paragraph}</p>)}
                 </div>
+
+                {
+                    sections.map((section) => (
+                        <section class="mt-16">
+                            <h2 class="text-2xl md:text-3xl font-bold tracking-tight text-black mb-6 leading-tight">{section.heading}</h2>
+                            {section.image && (
+                                <div class="relative aspect-[16/9] rounded-[2rem] overflow-hidden mb-8 border border-gray-100 bg-zinc-50">
+                                    <FadeInImage src={section.image} alt={section.imageAlt ?? section.heading} fill sizes={sizes} className="!object-contain" />
+                                </div>
+                            )}
+                            <div class="space-y-6 text-lg text-gray-900 leading-relaxed">
+                                {section.paragraphs.map((paragraph) => <p>{paragraph}</p>)}
+                            </div>
+                        </section>
+                    ))
+                }
 
                 <div class="flex flex-wrap gap-4 mt-12">
                     <a

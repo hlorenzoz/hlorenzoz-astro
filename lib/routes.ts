@@ -55,7 +55,7 @@ import {
  * happens to equal today.
  */
 const STATIC_ROUTES: readonly SiteRoute[] = [
-    { path: '', tier: 'home', labelKey: 'navigation.home', lastModified: '2026-11-24' },
+    { path: '', tier: 'home', labelKey: 'navigation.home', lastModified: '2026-11-25' },
     { path: 'portfolio', tier: 'page', labelKey: 'navigation.portfolio', lastModified: '2026-11-24', parent: '' },
     // The index lists every post, so its date follows the freshest one instead of a second hand-kept date.
     { path: 'news', tier: 'page', labelKey: 'navigation.news', lastModified: latestNewsModified(), parent: '' },

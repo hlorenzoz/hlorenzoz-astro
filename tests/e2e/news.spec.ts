@@ -1,6 +1,6 @@
 import { test, expect } from '@playwright/test';
 
-const SEED = 'masajes-orisha-added-to-portfolio';
+const SEED = 'masajes-orisha-in-portfolio';
 
 test.describe('News', () => {
     test('listing -> post -> portfolio case study (EN)', async ({ page }) => {

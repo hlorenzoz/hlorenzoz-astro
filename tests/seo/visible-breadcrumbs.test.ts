@@ -38,7 +38,7 @@ function visibleNav(document: Document, locale: string) {
 
 const PAGES: [string, unknown, string][] = [
     ['news listing', NewsPage, ''],
-    ['news post', NewsPostPage, 'masajes-orisha-added-to-portfolio'],
+    ['news post', NewsPostPage, 'masajes-orisha-in-portfolio'],
     ['portfolio listing', PortfolioPage, ''],
     ['portfolio detail', PortfolioItemPage, 'masajes-orisha'],
     ['privacy policy', PrivacyPolicyPage, ''],

@@ -89,7 +89,7 @@ describe('news data source', () => {
     });
 
     it('seeds the masajes-orisha announcement', () => {
-        const seed = getNewsItemBySlug('masajes-orisha-added-to-portfolio');
+        const seed = getNewsItemBySlug('masajes-orisha-in-portfolio');
         expect(seed).toMatchObject({
             portfolioId: 'masajes-orisha',
             datePublished: '2026-11-24',
@@ -109,10 +109,13 @@ describe('news data source', () => {
     it('gives every post its copy in both locales', () => {
         for (const item of getNewsItems()) {
             for (const messages of [en, es]) {
-                const copy = (messages.news.items as Record<string, { title: string; description: string; paragraphs: string[] }>)[item.id];
+                const copy = (messages.news.items as unknown as Record<string, { title: string; description: string; paragraphs: string[]; sections?: { paragraphs: string[] }[] }>)[item.id];
                 expect(copy?.title, `${item.id} title`).toBeTruthy();
                 expect(copy?.description, `${item.id} description`).toBeTruthy();
-                expect(copy?.paragraphs.length, `${item.id} paragraphs`).toBeGreaterThanOrEqual(3);
+                // A post with titled sections may keep a short intro; the article still needs body copy.
+                const sectionParagraphs = (copy?.sections ?? []).reduce((n, s) => n + s.paragraphs.length, 0);
+                expect(copy?.paragraphs.length, `${item.id} intro paragraphs`).toBeGreaterThanOrEqual(copy?.sections ? 1 : 3);
+                expect(copy?.paragraphs.length + sectionParagraphs, `${item.id} paragraphs`).toBeGreaterThanOrEqual(3);
             }
         }
     });

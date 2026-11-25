@@ -8,7 +8,7 @@ import en from '@/messages/en.json';
 import es from '@/messages/es.json';
 import { headFacts, jsonLdNodes, renderPage } from './render-page';
 
-const SEED = 'masajes-orisha-added-to-portfolio';
+const SEED = 'masajes-orisha-in-portfolio';
 const BASE = 'https://hlorenzoz.com';
 const MESSAGES: Record<string, typeof en> = { en, es };
 
@@ -135,4 +135,31 @@ describe('news post page', () => {
         expect(document.querySelector(`a[href="${work.url}"]`)).not.toBeNull();
         expect(document.querySelectorAll('h1')).toHaveLength(1);
     });
+});
+
+describe('long posts with sections', () => {
+    type Section = { heading: string; paragraphs: string[]; image?: string; imageAlt?: string };
+    const withSections = getNewsItems().filter((item) => (en.news.items as unknown as Record<string, { sections?: Section[] }>)[item.id].sections);
+
+    it('includes the in-depth case studies', () => {
+        expect(withSections.length).toBeGreaterThanOrEqual(5);
+    });
+
+    it.each(withSections.flatMap((item) => (['en', 'es'] as const).map((locale) => [item.slug, locale, item.id] as const)))(
+        '%s (%s) renders every section as an h2 with its copy and image',
+        async (slug, locale, id) => {
+            const messages = (locale === "en" ? en : es).news.items as unknown as Record<string, { sections: Section[] }>;
+            const sections = messages[id].sections;
+            const document = await renderPage(NewsPostPage, { locale, slug }, `/${locale}/news/${slug}/`);
+            const headings = [...document.querySelectorAll('article h2, main h2')].map((h) => h.textContent?.trim());
+            for (const section of sections) {
+                expect(headings).toContain(section.heading);
+                expect(document.body.textContent).toContain(section.paragraphs[0]);
+                if (section.image) {
+                    const img = [...document.querySelectorAll('img')].find((i) => i.getAttribute('alt') === section.imageAlt);
+                    expect(img, `${section.imageAlt}`).toBeDefined();
+                }
+            }
+        }
+    );
 });
