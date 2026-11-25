@@ -1,0 +1,114 @@
+---
+/**
+ * Type filter over the portfolio index.
+ *
+ * The cards arrive as the default slot, already rendered by the page, each one
+ * an element carrying `data-portfolio-type`. Filtering needs interactivity,
+ * but the data behind a card does not need to reach the browser to be hidden:
+ * only the markup and a two-value discriminator do. `cards` carries just that
+ * discriminator, so the counts are computed at build time.
+ *
+ * `all` is the initial state, which is what keeps this safe on a static page:
+ * every card ships in the HTML that crawlers and no-JS visitors receive, and
+ * the script below only ever narrows it.
+ *
+ * The controls are toggle buttons with `aria-pressed` rather than tabs. Tabs
+ * imply separate panels reached by arrow keys; this is one grid being narrowed
+ * in place, and `role="tablist"` would promise a keyboard model that is not
+ * implemented here.
+ */
+import { Globe, Layers, PanelsTopLeft } from '@lucide/astro';
+import { getTranslations } from '@/lib/i18n';
+import { portfolioTypeChipClass, type PortfolioType } from '@/lib/portfolio-theme';
+
+export interface PortfolioFilterCard {
+    id: string;
+    type: PortfolioType;
+}
+
+export interface Props {
+    locale: string;
+    cards: PortfolioFilterCard[];
+}
+
+const { locale, cards } = Astro.props;
+const t = getTranslations(locale, 'portfolio');
+
+const counts = {
+    all: cards.length,
+    live: cards.filter((c) => c.type === 'live').length,
+    demo: cards.filter((c) => c.type === 'demo').length,
+};
+
+const options = [
+    { value: 'all', label: t('list.filters.all'), Icon: Layers },
+    { value: 'live', label: t('type.live'), Icon: Globe },
+    { value: 'demo', label: t('type.demo'), Icon: PanelsTopLeft },
+] as const;
+
+const base =
+    'inline-flex items-center gap-2 px-5 py-2.5 rounded-full border text-[11px] font-bold tracking-widest uppercase transition-colors duration-300';
+const inactive = 'bg-white text-gray-900 border-gray-200 hover:border-gray-400';
+const showing = (value: keyof typeof counts) => t('list.filters.showing', { count: counts[value], total: cards.length });
+---
+
+<div data-portfolio-filter>
+    <div role="group" aria-label={t('list.filters.label')} class="flex flex-wrap justify-center gap-3 mb-14">
+        {
+            options.map(({ value, label, Icon }) => {
+                const isActive = value === 'all';
+                /*
+                 * A selected type chip takes its own category colour, so the
+                 * control reads as "showing the green ones" rather than merely
+                 * "something is selected". `all` spans both categories and so
+                 * has no colour of its own; it stays neutral black.
+                 */
+                const activeClass = value === 'all' ? 'bg-black text-white border-black' : portfolioTypeChipClass(value);
+                return (
+                    <button
+                        type="button"
+                        aria-pressed={isActive ? 'true' : 'false'}
+                        class={`${base} ${isActive ? activeClass : inactive}`}
+                        data-filter={value}
+                        data-on={`${base} ${activeClass}`}
+                        data-off={`${base} ${inactive}`}
+                        data-status={showing(value)}
+                    >
+                        <Icon class="w-3.5 h-3.5" aria-hidden="true" />
+                        {label}
+                        <span class={isActive ? 'text-white/60 tabular-nums' : 'text-gray-500 tabular-nums'}>{counts[value]}</span>
+                    </button>
+                );
+            })
+        }
+    </div>
+
+    {/* Narrowing a grid changes the page without moving focus, so this announces the new result count instead. */}
+    <p role="status" aria-live="polite" class="sr-only">{showing('all')}</p>
+
+    <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
+        <slot />
+    </div>
+</div>
+
+<script>
+    document.querySelectorAll<HTMLElement>('[data-portfolio-filter]').forEach((root) => {
+        const buttons = root.querySelectorAll<HTMLButtonElement>('[data-filter]');
+        const status = root.querySelector('[role="status"]')!;
+        buttons.forEach((button) =>
+            button.addEventListener('click', () => {
+                const filter = button.dataset.filter!;
+                buttons.forEach((b) => {
+                    const on = b === button;
+                    b.setAttribute('aria-pressed', String(on));
+                    b.className = (on ? b.dataset.on : b.dataset.off)!;
+                    b.lastElementChild!.className = on ? 'text-white/60 tabular-nums' : 'text-gray-500 tabular-nums';
+                });
+                root.querySelectorAll<HTMLElement>('[data-portfolio-type]').forEach((card) => {
+                    card.hidden = filter !== 'all' && card.dataset.portfolioType !== filter;
+                });
+                status.textContent = button.dataset.status!;
+            })
+        );
+    });
+</script>

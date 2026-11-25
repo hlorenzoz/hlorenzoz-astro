@@ -1,0 +1,164 @@
+---
+import { ArrowRight, Globe, PanelsTopLeft } from '@lucide/astro';
+import BaseLayout from '@/src/layouts/BaseLayout.astro';
+import Navbar from '@/src/components/Navbar.astro';
+import Footer from '@/src/components/Footer.astro';
+import FadeInImage from '@/src/components/FadeInImage.astro';
+import JsonLd from '@/src/components/JsonLd.astro';
+import Breadcrumbs from '@/src/components/Breadcrumbs.astro';
+import PortfolioTypeFilter from '@/src/components/PortfolioTypeFilter.astro';
+import { getTranslations } from '@/lib/i18n';
+import { getPortfolioItemsAction } from '@/lib/actions/portfolio';
+import { portfolioTypeBadgeClass } from '@/lib/portfolio-theme';
+import { collectionPage } from '@/lib/schema';
+import { imageSrcSet } from '@/lib/image';
+import { localeHref } from '@/lib/routing';
+import type { PageMeta } from '@/lib/page-metadata';
+import { absoluteUrl, languageAlternates, LOCALES } from '@/lib/site-config';
+
+export function getStaticPaths() {
+    return LOCALES.map((locale) => ({ params: { locale } }));
+}
+
+const { locale } = Astro.params as { locale: string };
+
+const t = getTranslations(locale, 'portfolio');
+const tNav = getTranslations(locale, 'navigation');
+const items = await getPortfolioItemsAction();
+
+const url = absoluteUrl(locale, 'portfolio');
+const title = `${t('list.title')} | Lorenzoz Agency`;
+const description = t('list.subtitle');
+const meta: PageMeta = {
+    title,
+    description,
+    alternates: { canonical: url, languages: languageAlternates('portfolio') },
+    openGraph: {
+        title,
+        description,
+        url,
+        siteName: 'Lorenzoz Agency',
+        type: 'website',
+        locale: locale === 'es' ? 'es_ES' : 'en_US',
+        images: [{ url: 'https://cdn.hlorenzoz.com/hlorenzoz.com/og-image.webp', width: 1200, height: 630, alt: title }],
+    },
+    twitter: {
+        card: 'summary_large_image',
+        title,
+        description,
+        images: ['https://cdn.hlorenzoz.com/hlorenzoz.com/og-image.webp'],
+    },
+};
+
+const crumbs = [
+    { name: tNav('home'), url: absoluteUrl(locale) },
+    { name: tNav('portfolio'), url: absoluteUrl(locale, 'portfolio') },
+];
+
+const collectionData = collectionPage({
+    locale,
+    name: t('list.title'),
+    description: t('list.subtitle'),
+    url: absoluteUrl(locale, 'portfolio'),
+    items: items.map((item) => ({
+        name: t(`${item.id}.title`),
+        url: absoluteUrl(locale, `portfolio/${item.slug}`),
+    })),
+    crumbs,
+});
+
+const sizes = '(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 350px';
+// The first six cards are `priority`, so they are preloaded like next/image did.
+const preloadImages = items.slice(0, 6).map((item) => ({ srcset: imageSrcSet(item.image, { sizes }), sizes }));
+---
+
+<BaseLayout locale={locale} meta={meta} preloadImages={preloadImages}>
+    <div class="min-h-screen bg-white">
+        <JsonLd data={collectionData} />
+        <Navbar locale={locale} />
+
+        <main class="pt-32 pb-24">
+            <div class="px-6 mb-10">
+                <Breadcrumbs crumbs={crumbs} label={tNav('breadcrumb')} className="max-w-7xl mx-auto" />
+            </div>
+
+            {/* Hero section - Matching the Home page fonts and the user's reference */}
+            <section id="portfolio-hero" class="px-6 mb-20 text-center">
+                <div class="max-w-4xl mx-auto">
+                    <h1 class="text-5xl md:text-7xl font-bold tracking-tight text-black mb-8">
+                        {t('list.title')}
+                    </h1>
+                    <p class="text-xl text-gray-900 max-w-2xl mx-auto font-medium leading-relaxed">
+                        {t('list.subtitle')}
+                    </p>
+                </div>
+            </section>
+
+            {/*
+             * The cards are built here and handed to the filter already rendered.
+             * The filter needs interactivity; the portfolio data does not need to
+             * reach the browser for a card to be hidden.
+             */}
+            <section id="portfolio-grid" class="px-6">
+                <PortfolioTypeFilter locale={locale} cards={items.map(({ id, type }) => ({ id, type }))}>
+                    {
+                        items.map((item, i) => (
+                            <div class="group" data-portfolio-type={item.type}>
+                                <a
+                                    href={localeHref(locale, `portfolio/${item.slug}`)}
+                                    class="block relative aspect-[16/10] rounded-[2.5rem] overflow-hidden mb-8 shadow-2xl border border-gray-100 group/image"
+                                    aria-label={`${t('list.cta')} ${t(`${item.id}.title`)}`}
+                                >
+                                    <FadeInImage
+                                        src={item.image}
+                                        alt={t(`${item.id}.title`)}
+                                        fill
+                                        priority={i < 6}
+                                        sizes={sizes}
+                                        className="transition-transform duration-1000 group-hover:scale-110"
+                                    />
+                                    <div class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
+                                </a>
+
+                                <div class="px-4">
+                                    <div class="flex flex-wrap items-center gap-2 mb-3">
+                                        <span class="text-[11px] font-bold tracking-widest uppercase text-blue-700 bg-blue-50 px-3 py-1 rounded-full border border-blue-100">
+                                            {t(`${item.id}.badge`)}
+                                        </span>
+                                        <span class={portfolioTypeBadgeClass(item.type)}>
+                                            {item.type === 'live' ? (
+                                                <Globe class="w-3 h-3" aria-hidden="true" />
+                                            ) : (
+                                                <PanelsTopLeft class="w-3 h-3" aria-hidden="true" />
+                                            )}
+                                            {t(`type.${item.type}`)}
+                                        </span>
+                                    </div>
+                                    <h3 class="text-2xl font-bold text-black mb-3 group-hover:text-blue-700 transition-colors duration-500">
+                                        {t(`${item.id}.title`)}
+                                    </h3>
+                                    <p class="text-gray-900 mb-6 line-clamp-2 font-medium leading-relaxed">
+                                        {t(`${item.id}.description`)}
+                                    </p>
+                                    <a
+                                        href={localeHref(locale, `portfolio/${item.slug}`)}
+                                        class="inline-flex items-center gap-2 text-black font-bold group/link"
+                                        aria-label={`${t('list.cta')} ${t(`${item.id}.title`)}`}
+                                    >
+                                        <span class="relative">
+                                            {t('list.cta')}
+                                            <span class="absolute -bottom-1 left-0 w-full h-0.5 bg-blue-600 origin-left scale-x-0 group-hover/link:scale-x-100 transition-transform duration-500" />
+                                        </span>
+                                        <ArrowRight class="w-4 h-4 transition-transform group-hover/link:translate-x-1.5 duration-500" />
+                                    </a>
+                                </div>
+                            </div>
+                        ))
+                    }
+                </PortfolioTypeFilter>
+            </section>
+        </main>
+
+        <Footer locale={locale} />
+    </div>
+</BaseLayout>

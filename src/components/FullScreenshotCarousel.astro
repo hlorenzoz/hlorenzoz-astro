@@ -1,0 +1,247 @@
+---
+/**
+ * Full-page screenshot carousel with a scrollable lightbox.
+ *
+ * Every slide is rendered and all but the current one carry `hidden`: the
+ * first image is `priority` (as in the React version), the rest are lazy and
+ * so only load once shown. The lightbox image is filled in by the script on
+ * open, so a closed lightbox costs no download.
+ */
+import { ChevronLeft, ChevronRight, Maximize2, X } from '@lucide/astro';
+import FadeInImage from '@/src/components/FadeInImage.astro';
+
+export interface Props {
+    images: string[];
+    alt: string;
+    isActive?: boolean;
+}
+
+const { images = [], alt, isActive } = Astro.props;
+
+const pad = (n: number) => String(n).padStart(2, '0');
+const dotBase = 'h-1.5 rounded-full transition-all duration-700';
+const dotOn = `${dotBase} bg-white w-8 shadow-[0_0_15px_rgba(255,255,255,0.5)]`;
+const dotOff = `${dotBase} bg-white/30 w-3 hover:bg-white/50`;
+---
+
+{
+    images.length > 0 && (
+        <div class="w-full relative" data-fsc data-images={JSON.stringify(images)} data-active={isActive ? 'true' : 'false'}>
+            <div
+                class="relative w-full aspect-[16/10] md:aspect-[16/9] lg:aspect-[16/8] xl:aspect-[21/9] rounded-[2rem] md:rounded-[3.5rem] overflow-hidden shadow-2xl border border-gray-100 group cursor-zoom-in group/carousel"
+                data-fsc-open
+            >
+                {images.map((src, i) => (
+                    <div class="absolute inset-0 touch-pan-y" data-fsc-slide hidden={i !== 0}>
+                        <FadeInImage
+                            src={src}
+                            alt={`${alt} Screenshot - View ${i + 1}`}
+                            fill
+                            sizes="(max-width: 1280px) 100vw, 1280px"
+                            className="object-contain sm:object-cover sm:object-top"
+                            priority={i === 0}
+                        />
+
+                        {/* Overlay Gradient for better visibility of controls */}
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent opacity-0 group-hover/carousel:opacity-100 transition-opacity duration-500" />
+                    </div>
+                ))}
+
+                {/* Overlays/Controls */}
+                <div class="absolute inset-0 flex items-center justify-between px-6 md:px-10 opacity-0 group-hover/carousel:opacity-100 transition-all duration-500">
+                    <button
+                        class="size-12 md:size-14 rounded-full bg-white/90 backdrop-blur-xl shadow-2xl flex items-center justify-center text-black hover:bg-white active:scale-90 transition-all border border-white/20"
+                        aria-label="Previous image"
+                        data-fsc-prev
+                    >
+                        <ChevronLeft class="w-6 h-6 md:w-8 md:h-8" />
+                    </button>
+                    <button
+                        class="size-12 md:size-14 rounded-full bg-white/90 backdrop-blur-xl shadow-2xl flex items-center justify-center text-black hover:bg-white active:scale-90 transition-all border border-white/20"
+                        aria-label="Next image"
+                        data-fsc-next
+                    >
+                        <ChevronRight class="w-6 h-6 md:w-8 md:h-8" />
+                    </button>
+                </div>
+
+                {/* Info Text */}
+                <div class="absolute top-6 right-6 md:top-10 md:right-10 opacity-0 group-hover/carousel:opacity-100 transition-all duration-500 transform translate-y-2 group-hover/carousel:translate-y-0">
+                    <div class="bg-white/90 backdrop-blur-xl px-4 py-2.5 rounded-2xl shadow-2xl flex items-center gap-3 border border-white/40">
+                        <Maximize2 class="w-5 h-5 text-blue-700" />
+                        <span class="text-xs font-bold uppercase tracking-[0.1em] text-gray-900">View Full Detail</span>
+                    </div>
+                </div>
+
+                {/* Visual Indicator of count */}
+                <div class="absolute bottom-10 left-10 opacity-0 group-hover/carousel:opacity-100 transition-all duration-500 flex items-center gap-4">
+                    <div class="bg-black/20 backdrop-blur-md px-4 py-2 rounded-xl border border-white/10 text-white font-bold text-sm" data-fsc-counter>
+                        {pad(1)} / {pad(images.length)}
+                    </div>
+                </div>
+
+                {/* Navigation Dots */}
+                <div class="absolute bottom-10 left-1/2 -translate-x-1/2 flex gap-3 z-10 px-5 py-2.5 rounded-full bg-black/10 backdrop-blur-xl border border-white/10 group-hover/carousel:bg-black/30 transition-all duration-500">
+                    {images.map((_, i) => (
+                        <button
+                            class={i === 0 ? dotOn : dotOff}
+                            aria-label={`Go to slide ${i + 1}`}
+                            data-fsc-dot
+                            data-on={dotOn}
+                            data-off={dotOff}
+                        />
+                    ))}
+                </div>
+            </div>
+
+            {/* Modal Lightbox - Optimized for Full Screenshots */}
+            <div class="fixed inset-0 z-[9999] flex flex-col bg-black/98 backdrop-blur-2xl animate-in fade-in duration-500" data-fsc-modal hidden>
+                {/* Modal Header */}
+                <div class="w-full flex items-center justify-between p-6 md:p-10 z-20">
+                    <div class="flex flex-col">
+                        <h3 class="text-white font-bold text-xl md:text-2xl">{alt}</h3>
+                        <p class="text-white/50 text-sm mt-1" data-fsc-modal-count>
+                            Image 1 of {images.length}
+                        </p>
+                    </div>
+                    <button
+                        class="size-12 md:size-16 rounded-full bg-white/5 text-white flex items-center justify-center hover:bg-white/10 active:scale-95 transition-all outline-none border border-white/10"
+                        aria-label="Close"
+                        data-fsc-close
+                    >
+                        <X class="w-7 h-7 md:w-9 md:h-9" aria-hidden="true" />
+                    </button>
+                </div>
+
+                {/* Modal Content - Scrollable if image is tall */}
+                <div class="flex-1 overflow-y-auto overflow-x-hidden px-4 md:px-20 pb-20 custom-scrollbar" data-fsc-stop>
+                    <div class="w-full max-w-7xl mx-auto flex flex-col items-center">
+                        <div class="w-full relative shadow-[0_50px_100px_rgba(0,0,0,0.5)] rounded-2xl md:rounded-3xl overflow-hidden bg-gray-900 border border-white/5">
+                            {/* Same <img> FadeInImage renders for width 1920 / height 10000 / sizes 100vw / priority; srcset set on open. */}
+                            <div class="relative overflow-hidden ">
+                                <img
+                                    alt={alt}
+                                    fetchpriority="high"
+                                    width="1920"
+                                    height="10000"
+                                    decoding="async"
+                                    data-nimg="1"
+                                    class="object-cover w-full h-full w-full h-auto object-contain"
+                                    style="color:transparent"
+                                    sizes="100vw"
+                                    data-fsc-modal-img
+                                />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                {/* Modal Floating Navigation */}
+                <div class="absolute inset-y-0 left-6 md:left-12 flex items-center pointer-events-none">
+                    <button
+                        class="size-16 md:size-20 rounded-full bg-white/5 backdrop-blur-md flex items-center justify-center text-white hover:bg-white/10 active:scale-90 transition-all pointer-events-auto border border-white/10"
+                        aria-label="Previous image"
+                        data-fsc-prev
+                    >
+                        <ChevronLeft class="w-10 h-10 md:w-14 md:h-14" aria-hidden="true" />
+                    </button>
+                </div>
+                <div class="absolute inset-y-0 right-6 md:right-12 flex items-center pointer-events-none">
+                    <button
+                        class="size-16 md:size-20 rounded-full bg-white/5 backdrop-blur-md flex items-center justify-center text-white hover:bg-white/10 active:scale-90 transition-all pointer-events-auto border border-white/10"
+                        aria-label="Next image"
+                        data-fsc-next
+                    >
+                        <ChevronRight class="w-10 h-10 md:w-14 md:h-14" aria-hidden="true" />
+                    </button>
+                </div>
+            </div>
+        </div>
+    )
+}
+
+<script>
+    import { imageFallbackSrc, imageSrcSet } from '@/lib/image';
+
+    const pad = (n: number) => String(n).padStart(2, '0');
+
+    document.querySelectorAll<HTMLElement>('[data-fsc]').forEach((root) => {
+        const images: string[] = JSON.parse(root.dataset.images!);
+        const isActive = root.dataset.active === 'true';
+        const total = images.length;
+        const slides = root.querySelectorAll<HTMLElement>('[data-fsc-slide]');
+        const dots = root.querySelectorAll<HTMLElement>('[data-fsc-dot]');
+        const counter = root.querySelector('[data-fsc-counter]')!;
+        const modal = root.querySelector<HTMLElement>('[data-fsc-modal]')!;
+        const modalCount = root.querySelector('[data-fsc-modal-count]')!;
+        const modalImg = root.querySelector<HTMLImageElement>('[data-fsc-modal-img]')!;
+        let index = 0;
+        let timer: ReturnType<typeof setInterval> | undefined;
+
+        const renderModalImage = () => {
+            const opts = { sizes: '100vw', width: 1920 };
+            modalImg.srcset = imageSrcSet(images[index], opts);
+            modalImg.src = imageFallbackSrc(images[index], opts);
+        };
+
+        const show = (next: number) => {
+            index = ((next % total) + total) % total;
+            slides.forEach((s, i) => (s.hidden = i !== index));
+            dots.forEach((d, i) => (d.className = (i === index ? d.dataset.on : d.dataset.off)!));
+            counter.textContent = `${pad(index + 1)} / ${pad(total)}`;
+            modalCount.textContent = `Image ${index + 1} of ${total}`;
+            if (!modal.hidden) renderModalImage();
+        };
+
+        // Autoplay every 5 s while active and the lightbox is closed; restarted on each toggle like the React effect.
+        const restartTimer = () => {
+            clearInterval(timer);
+            timer = setInterval(() => {
+                if (modal.hidden && isActive) show(index + 1);
+            }, 5000);
+        };
+
+        const setModal = (open: boolean) => {
+            if (modal.hidden === !open) return;
+            modal.hidden = !open;
+            if (open) renderModalImage();
+            restartTimer();
+        };
+
+        root.querySelector('[data-fsc-open]')!.addEventListener('click', () => setModal(true));
+        modal.addEventListener('click', () => setModal(false));
+        root.querySelector('[data-fsc-stop]')!.addEventListener('click', (e) => e.stopPropagation());
+        root.querySelector('[data-fsc-close]')!.addEventListener('click', (e) => {
+            e.stopPropagation();
+            setModal(false);
+        });
+        root.querySelectorAll('[data-fsc-prev]').forEach((b) =>
+            b.addEventListener('click', (e) => {
+                e.stopPropagation();
+                show(index - 1);
+            })
+        );
+        root.querySelectorAll('[data-fsc-next]').forEach((b) =>
+            b.addEventListener('click', (e) => {
+                e.stopPropagation();
+                show(index + 1);
+            })
+        );
+        dots.forEach((d, i) =>
+            d.addEventListener('click', (e) => {
+                e.stopPropagation();
+                show(i);
+            })
+        );
+
+        window.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') setModal(false);
+            if (isActive || !modal.hidden) {
+                if (e.key === 'ArrowLeft') show(index - 1);
+                if (e.key === 'ArrowRight') show(index + 1);
+            }
+        });
+
+        restartTimer();
+    });
+</script>

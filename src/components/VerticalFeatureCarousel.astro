@@ -1,0 +1,540 @@
+---
+/**
+ * Feature carousel of a portfolio detail page: a list of selectable slides on
+ * the left, the active slide's media on the right (inline on mobile), a
+ * single-image lightbox, and a horizontal image carousel with its own lightbox
+ * for slides that carry several images.
+ *
+ * Static first render, vanilla script after. Every slide's details and media
+ * are rendered; all but the active one carry `hidden`, so the shipped HTML
+ * shows exactly what the React version's first render showed. Only the first
+ * slide's media is `priority`; the others are lazy, so a hidden image costs no
+ * download until its slide is shown. Lightbox images are filled in on open.
+ *
+ * The horizontal carousel is the second component of the original file. It is
+ * rendered through `Astro.self` with the `hic` prop so it stays in this file.
+ *
+ * The React version's `motion-preset-*` / `intersect:` classes are dropped: the
+ * plugins behind them were never registered, so they produced no CSS.
+ */
+import { ArrowLeft, ArrowRight, ChevronLeft, ChevronRight, ExternalLink, Maximize2, Plus, X } from '@lucide/astro';
+import FadeInImage from '@/src/components/FadeInImage.astro';
+import { getTranslations } from '@/lib/i18n';
+import { cn } from '@/lib/utils/cn';
+import type { PortfolioSlide } from '@/lib/portfolio';
+
+export interface Props {
+    locale: string;
+    id?: string;
+    title?: string;
+    description?: string;
+    slides?: PortfolioSlide[];
+    translationKey?: string;
+    /** Internal: render only the horizontal image carousel (see the docblock). */
+    hic?: { images: string[]; alt: string };
+}
+
+const { locale, id: sectionId = 'portfolio-features', title: propTitle, description: propDescription, slides = [], translationKey, hic } = Astro.props;
+
+const t = getTranslations(locale, translationKey);
+const has = (key: string) => Boolean(translationKey) && t.has(key);
+const title = propTitle || (has('title') ? t('title') : null) || 'Built for Technical Excellence';
+const description = propDescription || (has('description') ? t('description') : null) || 'Technical strategy and benchmarks.';
+const text = (slide: PortfolioSlide, field: string, fallback?: string) =>
+    has(`slides.${slide.id}.${field}`) ? t(`slides.${slide.id}.${field}`) : fallback;
+
+/** Class string for the first render plus the tokens the script swaps when the state flips. */
+const toggle = (base: string, on: string, off: string, active: boolean) => ({
+    class: cn(base, active ? on : off),
+    'data-vfc-on': on,
+    'data-vfc-off': off,
+});
+
+const hicDotBase = 'h-2 rounded-full transition-all duration-500';
+const hicDotOn = cn(hicDotBase, 'bg-white w-6');
+const hicDotOff = cn(hicDotBase, 'bg-white/40 hover:bg-white/60 w-2');
+---
+
+{
+    hic ? (
+        <div class="contents" data-hic data-images={JSON.stringify(hic.images)}>
+            <div class="relative w-full h-full overflow-hidden group/carousel cursor-zoom-in" data-hic-open>
+                {hic.images.map((src, i) => (
+                    <div class="absolute inset-0 touch-pan-y" data-hic-slide hidden={i !== 0}>
+                        <FadeInImage
+                            src={src}
+                            alt={`${hic.alt} - Slide ${i + 1}`}
+                            fill
+                            sizes="(max-width: 1024px) 100vw, 50vw"
+                            className="object-contain lg:object-cover pointer-events-none"
+                        />
+                        {/* Zoom Affordance */}
+                        <div class="absolute inset-0 bg-black/0 group-hover/carousel:bg-black/10 transition-colors duration-500 flex items-center justify-center">
+                            <div class="size-16 rounded-full bg-white/90 backdrop-blur-md shadow-2xl flex items-center justify-center scale-0 group-hover/carousel:scale-100 transition-transform duration-500 ease-out">
+                                <Maximize2 class="w-6 h-6 text-black" />
+                            </div>
+                        </div>
+                    </div>
+                ))}
+
+                {/* Overlays/Controls */}
+                <div class="absolute inset-0 bg-black/5 group-hover/carousel:bg-black/10 transition-colors duration-500 flex items-center justify-between px-6 opacity-0 group-hover/carousel:opacity-100 z-10">
+                    <button
+                        class="size-11 rounded-full bg-white/90 backdrop-blur-md shadow-lg flex items-center justify-center text-black hover:bg-white active:scale-95 transition-all"
+                        data-hic-prev
+                    >
+                        <ChevronLeft class="w-5 h-5" />
+                    </button>
+                    <button
+                        class="size-11 rounded-full bg-white/90 backdrop-blur-md shadow-lg flex items-center justify-center text-black hover:bg-white active:scale-95 transition-all"
+                        data-hic-next
+                    >
+                        <ChevronRight class="w-5 h-5" />
+                    </button>
+                </div>
+
+                <div class="absolute top-6 right-6 opacity-0 group-hover/carousel:opacity-100 transition-opacity z-10">
+                    <div class="bg-white/90 backdrop-blur-md px-4 py-2 rounded-xl shadow-lg flex items-center gap-2">
+                        <Maximize2 class="w-4 h-4 text-gray-600" />
+                        <span class="text-[11px] font-bold uppercase tracking-widest text-gray-900">View Full</span>
+                    </div>
+                </div>
+
+                {/* Dots */}
+                <div class="absolute bottom-8 left-1/2 -translate-x-1/2 flex gap-2.5 z-10 px-4 py-2 rounded-full bg-black/20 backdrop-blur-md border border-white/10 group-hover/carousel:bg-black/40 transition-colors">
+                    {hic.images.map((_, i) => (
+                        <button class={i === 0 ? hicDotOn : hicDotOff} data-hic-dot data-on={hicDotOn} data-off={hicDotOff} />
+                    ))}
+                </div>
+            </div>
+
+            {/* Modal Lightbox */}
+            <div
+                class="fixed inset-0 z-[9999] flex items-center justify-center bg-black/95 backdrop-blur-xl p-4 lg:p-12 animate-in fade-in duration-500"
+                data-hic-modal
+                hidden
+            >
+                <button
+                    class="absolute top-6 right-6 lg:top-12 lg:right-12 size-14 rounded-full bg-white/10 text-white flex items-center justify-center hover:bg-white/20 transition-all z-20"
+                    data-hic-close
+                >
+                    <X class="w-8 h-8" />
+                </button>
+
+                <div class="relative w-full h-full max-w-7xl flex items-center justify-center" data-hic-stop>
+                    <div class="relative w-full h-full">
+                        {/* Same <img> FadeInImage renders for fill / priority; srcset set on open. */}
+                        <div class="absolute inset-0 overflow-hidden">
+                            <img
+                                alt={hic.alt}
+                                fetchpriority="high"
+                                decoding="async"
+                                data-nimg="fill"
+                                class="object-cover w-full h-full object-contain"
+                                style="position:absolute;height:100%;width:100%;left:0;top:0;right:0;bottom:0;color:transparent"
+                                sizes="(max-width: 1280px) 100vw, 1280px"
+                                data-hic-modal-img
+                            />
+                        </div>
+                    </div>
+                </div>
+
+                {/* Modal Navigation */}
+                <div class="absolute inset-y-0 left-0 flex items-center px-4 lg:px-8 z-30">
+                    <button
+                        class="size-16 rounded-full bg-white/10 backdrop-blur-md flex items-center justify-center text-white hover:bg-white/20 active:scale-95 transition-all"
+                        data-hic-prev
+                    >
+                        <ChevronLeft class="w-10 h-10" />
+                    </button>
+                </div>
+                <div class="absolute inset-y-0 right-0 flex items-center px-4 lg:px-8 z-30">
+                    <button
+                        class="size-16 rounded-full bg-white/10 backdrop-blur-md flex items-center justify-center text-white hover:bg-white/20 active:scale-95 transition-all"
+                        data-hic-next
+                    >
+                        <ChevronRight class="w-10 h-10" />
+                    </button>
+                </div>
+
+                {/* Slide Counter */}
+                <div class="absolute bottom-12 left-1/2 -translate-x-1/2 text-white/60 text-base font-medium tracking-widest" data-hic-counter>
+                    1 / {hic.images.length}
+                </div>
+            </div>
+        </div>
+    ) : (
+        slides.length > 0 && (
+            <section id={sectionId} class="bg-white relative" data-vfc>
+                <div class="relative w-full py-20 md:py-32">
+                    <div class="w-full">
+                        {/* Section Header (Compact) */}
+                        <div class="w-full pb-12 px-6 md:px-20 text-center relative z-30">
+                            <div class="max-w-3xl mx-auto">
+                                <h2 class="text-3xl md:text-4xl font-bold mb-4 text-black">{title}</h2>
+                                <p class="text-lg text-gray-500 font-medium leading-relaxed mb-4">{description}</p>
+                                <p class="text-sm text-gray-400 font-bold tracking-widest uppercase flex items-center justify-center gap-2">
+                                    <span class="w-8 h-[1px] bg-gray-200" />
+                                    Interact using clicks or ← → Arrow keys
+                                    <span class="w-8 h-[1px] bg-gray-200" />
+                                </p>
+                            </div>
+                        </div>
+
+                        {/* Main Layout Container */}
+                        <div class="h-full w-full max-w-[90vw] xl:max-w-[75vw] mx-auto flex flex-col lg:flex-row items-center px-6 md:px-12 gap-6 md:gap-10 lg:gap-20 relative">
+                            {/* Left Side: Navigation & Info */}
+                            <div class="flex-1 w-full max-w-xl flex flex-col justify-start relative z-20 overflow-y-auto max-h-full">
+                                <div class="flex flex-col gap-2">
+                                    {slides.map((slide, i) => {
+                                        const active = i === 0;
+                                        const badge = text(slide, 'badge', slide.badge);
+                                        return (
+                                            <div class="relative">
+                                                <div
+                                                    role="button"
+                                                    tabindex="0"
+                                                    {...toggle(
+                                                        'w-full text-left flex flex-col gap-2 p-4 rounded-[1.5rem] transition-all duration-700 cursor-pointer outline-none focus-visible:ring-2 focus-visible:ring-blue-500',
+                                                        'bg-blue-50/50 border border-blue-100 shadow-[0_8px_32px_rgba(59,130,246,0.05)]',
+                                                        'hover:bg-gray-50/50 border border-transparent',
+                                                        active
+                                                    )}
+                                                    aria-label={`Select section: ${badge}`}
+                                                    aria-current={active ? 'true' : 'false'}
+                                                    data-vfc-item
+                                                >
+                                                    <div class="flex items-center gap-3">
+                                                        <div
+                                                            {...toggle(
+                                                                'size-10 rounded-full flex items-center justify-center border transition-all duration-500',
+                                                                'bg-blue-600 border-blue-600 text-white',
+                                                                'bg-gray-100/80 border-gray-200 text-gray-400',
+                                                                active
+                                                            )}
+                                                        >
+                                                            <Plus {...toggle('w-5 h-5 transition-transform duration-500', 'rotate-45', 'rotate-0', active)} />
+                                                        </div>
+                                                        <span {...toggle('text-base font-bold transition-colors duration-500', 'text-blue-700', 'text-gray-500', active)}>
+                                                            {badge}
+                                                        </span>
+                                                    </div>
+
+                                                    <div class="overflow-hidden animate-in fade-in slide-in-from-top-2 duration-500" data-vfc-details hidden={!active}>
+                                                        <h3 class="text-3xl md:text-2xl font-bold text-black mt-2 mb-2 leading-tight">
+                                                            {text(slide, 'title', slide.title)}
+                                                        </h3>
+                                                        <p class="text-gray-900 text-sm md:text-base leading-relaxed font-medium mb-4">
+                                                            {text(slide, 'description', slide.description)}
+                                                        </p>
+
+                                                        {slide.link && (
+                                                            <div class="mb-4">
+                                                                <a
+                                                                    href={slide.link}
+                                                                    target="_blank"
+                                                                    rel="noopener noreferrer"
+                                                                    class="inline-flex items-center gap-2 px-8 py-3.5 rounded-full bg-black text-white text-sm font-bold hover:bg-blue-600 transition-all active:scale-95 group"
+                                                                    data-vfc-stop
+                                                                >
+                                                                    {text(slide, 'cta', 'Experience Project')}
+                                                                    <ExternalLink class="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+                                                                </a>
+                                                            </div>
+                                                        )}
+
+                                                        {/* Mobile Media (Inline) */}
+                                                        <div class="lg:hidden w-full h-56 md:h-80 relative rounded-2xl overflow-hidden shadow-lg mb-6 bg-gray-50 border border-gray-100" data-vfc-stop>
+                                                            {slide.map ? (
+                                                                <iframe title={slide.title} src={slide.map} width="100%" height="100%" style="border:0" />
+                                                            ) : slide.image ? (
+                                                                Array.isArray(slide.image) ? (
+                                                                    <Astro.self locale={locale} hic={{ images: slide.image, alt: slide.title || '' }} />
+                                                                ) : (
+                                                                    <div class="relative w-full h-full cursor-zoom-in" data-vfc-zoom={slide.image}>
+                                                                        <FadeInImage
+                                                                            src={slide.image}
+                                                                            alt={slide.title || ''}
+                                                                            fill
+                                                                            sizes="(max-width: 1024px) 100vw, 50vw"
+                                                                            className="object-cover"
+                                                                        />
+                                                                        <div class="absolute top-4 right-4 bg-white/90 backdrop-blur-md p-2 rounded-lg shadow-lg">
+                                                                            <Maximize2 class="w-4 h-4 text-black" />
+                                                                        </div>
+                                                                    </div>
+                                                                )
+                                                            ) : null}
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        );
+                                    })}
+                                </div>
+
+                                {/* Section Controls */}
+                                <div class="mt-12 flex gap-4 pl-6">
+                                    <button
+                                        disabled
+                                        class="size-12 rounded-full border border-gray-100 flex items-center justify-center text-gray-400 hover:text-black hover:bg-gray-50 transition-all disabled:opacity-20 shadow-sm"
+                                        aria-label="Previous feature"
+                                        data-vfc-prev
+                                    >
+                                        <ArrowLeft class="w-5 h-5" aria-hidden="true" />
+                                    </button>
+                                    <button
+                                        disabled={slides.length === 1}
+                                        class="size-12 rounded-full border border-gray-100 flex items-center justify-center text-gray-400 hover:text-black hover:bg-gray-50 transition-all disabled:opacity-20 shadow-sm"
+                                        aria-label="Next feature"
+                                        data-vfc-next
+                                    >
+                                        <ArrowRight class="w-5 h-5" aria-hidden="true" />
+                                    </button>
+                                </div>
+                            </div>
+
+                            {/* Right Side: Media Display */}
+                            <div class="hidden lg:flex flex-1 w-full h-[65vh] xl:h-[70vh] relative rounded-[3rem] overflow-hidden shadow-[0_32px_120px_-20px_rgba(0,0,0,0.15)] border border-gray-100 bg-gray-50">
+                                {slides.map((slide, i) => (
+                                    <div class="absolute inset-0" data-vfc-media hidden={i !== 0}>
+                                        {slide.map ? (
+                                            <iframe
+                                                title={slide.title}
+                                                src={slide.map}
+                                                width="100%"
+                                                height="100%"
+                                                style="border:0"
+                                                class="grayscale hover:grayscale-0 transition-all duration-700"
+                                            />
+                                        ) : slide.image ? (
+                                            Array.isArray(slide.image) ? (
+                                                <Astro.self locale={locale} hic={{ images: slide.image, alt: slide.title || '' }} />
+                                            ) : (
+                                                <div class="relative w-full h-full cursor-zoom-in group/zoom" data-vfc-zoom={slide.image}>
+                                                    <FadeInImage
+                                                        src={slide.image}
+                                                        alt={slide.title || ''}
+                                                        fill
+                                                        sizes="(max-width: 1280px) 50vw, 640px"
+                                                        className="object-cover"
+                                                        priority={i === 0}
+                                                    />
+                                                    {/* Zoom Affordance */}
+                                                    <div class="absolute inset-0 bg-black/0 group-hover/zoom:bg-black/10 transition-colors duration-500 flex items-center justify-center">
+                                                        <div class="size-16 rounded-full bg-white/90 backdrop-blur-md shadow-2xl flex items-center justify-center scale-0 group-hover/zoom:scale-100 transition-transform duration-500 ease-out">
+                                                            <Maximize2 class="w-6 h-6 text-black" />
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            )
+                                        ) : null}
+                                    </div>
+                                ))}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                {/* Lightbox / Zoom View */}
+                <div
+                    class="fixed inset-0 z-[10000] flex items-center justify-center bg-black/95 backdrop-blur-2xl p-4 md:p-12 animate-in fade-in duration-500"
+                    data-vfc-lightbox
+                    hidden
+                >
+                    <button class="absolute top-8 right-8 text-white hover:scale-110 transition-transform z-[10010]" data-vfc-lightbox-close>
+                        <X class="w-10 h-10" />
+                    </button>
+                    <div class="relative w-full h-full">
+                        {/* Same <img> FadeInImage renders for fill / sizes 100vw / priority; srcset set on open. */}
+                        <div class="absolute inset-0 overflow-hidden">
+                            <img
+                                alt="Full Screen"
+                                fetchpriority="high"
+                                decoding="async"
+                                data-nimg="fill"
+                                class="object-cover w-full h-full object-contain"
+                                style="position:absolute;height:100%;width:100%;left:0;top:0;right:0;bottom:0;color:transparent"
+                                sizes="100vw"
+                                data-vfc-lightbox-img
+                            />
+                        </div>
+                    </div>
+                </div>
+            </section>
+        )
+    )
+}
+
+<script>
+    import { imageFallbackSrc, imageSrcSet } from '@/lib/image';
+
+    const fillImage = (img: HTMLImageElement, src: string) => {
+        img.srcset = imageSrcSet(src, { sizes: img.sizes });
+        img.src = imageFallbackSrc(src, { sizes: img.sizes });
+    };
+
+    /** Swaps the state-dependent class tokens declared in data-vfc-on / data-vfc-off. */
+    const flip = (el: Element, on: boolean) => {
+        const html = el as HTMLElement;
+        const add = (on ? html.dataset.vfcOn : html.dataset.vfcOff)!.split(' ');
+        const remove = (on ? html.dataset.vfcOff : html.dataset.vfcOn)!.split(' ');
+        el.classList.remove(...remove);
+        el.classList.add(...add);
+    };
+
+    const anyModalOpen = () =>
+        Boolean(document.querySelector('[data-vfc-lightbox]:not([hidden]), [data-hic-modal]:not([hidden])'));
+    // Prevent background scrolling while any lightbox is open.
+    const syncScrollLock = () => {
+        document.body.style.overflow = anyModalOpen() ? 'hidden' : '';
+    };
+
+    // Horizontal image carousels (slides with several images).
+    document.querySelectorAll<HTMLElement>('[data-hic]').forEach((root) => {
+        const images: string[] = JSON.parse(root.dataset.images!);
+        const total = images.length;
+        const slides = root.querySelectorAll<HTMLElement>('[data-hic-slide]');
+        const dots = root.querySelectorAll<HTMLElement>('[data-hic-dot]');
+        const modal = root.querySelector<HTMLElement>('[data-hic-modal]')!;
+        const modalImg = root.querySelector<HTMLImageElement>('[data-hic-modal-img]')!;
+        const counter = root.querySelector('[data-hic-counter]')!;
+        let index = 0;
+        let timer: ReturnType<typeof setInterval> | undefined;
+
+        // Active while its slide is the visible one (the React version only mounted it then).
+        const isActive = () => !root.parentElement!.closest('[hidden]');
+
+        const show = (next: number) => {
+            index = ((next % total) + total) % total;
+            slides.forEach((s, i) => (s.hidden = i !== index));
+            dots.forEach((d, i) => (d.className = (i === index ? d.dataset.on : d.dataset.off)!));
+            counter.textContent = `${index + 1} / ${total}`;
+            if (!modal.hidden) fillImage(modalImg, images[index]);
+        };
+
+        const restartTimer = () => {
+            clearInterval(timer);
+            timer = setInterval(() => {
+                if (isActive() && modal.hidden) show(index + 1);
+            }, 5000);
+        };
+
+        const toggleModal = (open: boolean) => {
+            modal.hidden = !open;
+            if (open) fillImage(modalImg, images[index]);
+            syncScrollLock();
+            restartTimer();
+        };
+
+        // The React version remounted (back to the first image) each time its slide became active.
+        root.addEventListener('hic:reset', () => {
+            show(0);
+            restartTimer();
+        });
+
+        root.querySelector('[data-hic-open]')!.addEventListener('click', () => toggleModal(true));
+        modal.addEventListener('click', () => toggleModal(false));
+        root.querySelector('[data-hic-stop]')!.addEventListener('click', (e) => e.stopPropagation());
+        root.querySelector('[data-hic-close]')!.addEventListener('click', (e) => {
+            e.stopPropagation();
+            toggleModal(false);
+        });
+        root.querySelectorAll('[data-hic-prev]').forEach((b) =>
+            b.addEventListener('click', (e) => {
+                e.stopPropagation();
+                show(index - 1);
+            })
+        );
+        root.querySelectorAll('[data-hic-next]').forEach((b) =>
+            b.addEventListener('click', (e) => {
+                e.stopPropagation();
+                show(index + 1);
+            })
+        );
+        dots.forEach((d, i) =>
+            d.addEventListener('click', (e) => {
+                e.stopPropagation();
+                show(i);
+            })
+        );
+
+        window.addEventListener('keydown', (e) => {
+            if (modal.hidden) return;
+            if (e.key === 'Escape') toggleModal(false);
+            else if (e.key === 'ArrowRight') show(index + 1);
+            else if (e.key === 'ArrowLeft') show(index - 1);
+        });
+
+        restartTimer();
+    });
+
+    document.querySelectorAll<HTMLElement>('[data-vfc]').forEach((section) => {
+        const items = section.querySelectorAll<HTMLElement>('[data-vfc-item]');
+        const media = section.querySelectorAll<HTMLElement>('[data-vfc-media]');
+        const prev = section.querySelector<HTMLButtonElement>('[data-vfc-prev]')!;
+        const next = section.querySelector<HTMLButtonElement>('[data-vfc-next]')!;
+        const lightbox = section.querySelector<HTMLElement>('[data-vfc-lightbox]')!;
+        const lightboxImg = section.querySelector<HTMLImageElement>('[data-vfc-lightbox-img]')!;
+        const total = items.length;
+        let activeIndex = 0;
+
+        const scrollToSlide = (target: number) => {
+            if (target < 0 || target >= total) return;
+            activeIndex = target;
+            items.forEach((item, i) => {
+                const on = i === target;
+                item.setAttribute('aria-current', String(on));
+                [item, ...item.querySelectorAll('[data-vfc-on]')].forEach((el) => flip(el, on));
+                item.querySelector<HTMLElement>('[data-vfc-details]')!.hidden = !on;
+                media[i].hidden = !on;
+            });
+            prev.disabled = target === 0;
+            next.disabled = target === total - 1;
+            items[target].querySelectorAll('[data-hic]').forEach((h) => h.dispatchEvent(new Event('hic:reset')));
+            media[target].querySelectorAll('[data-hic]').forEach((h) => h.dispatchEvent(new Event('hic:reset')));
+        };
+
+        const setLightbox = (src: string | null) => {
+            lightbox.hidden = !src;
+            if (src) fillImage(lightboxImg, src);
+            syncScrollLock();
+        };
+
+        items.forEach((item, i) => {
+            item.addEventListener('click', () => scrollToSlide(i));
+            item.addEventListener('keydown', (e) => {
+                if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault();
+                    scrollToSlide(i);
+                }
+            });
+        });
+        section.querySelectorAll('[data-vfc-stop]').forEach((el) => el.addEventListener('click', (e) => e.stopPropagation()));
+        section.querySelectorAll<HTMLElement>('[data-vfc-zoom]').forEach((el) =>
+            el.addEventListener('click', (e) => {
+                e.stopPropagation();
+                setLightbox(el.dataset.vfcZoom!);
+            })
+        );
+        prev.addEventListener('click', () => scrollToSlide(activeIndex - 1));
+        next.addEventListener('click', () => scrollToSlide(activeIndex + 1));
+        lightbox.addEventListener('click', () => setLightbox(null));
+        section.querySelector('[data-vfc-lightbox-close]')!.addEventListener('click', (e) => {
+            e.stopPropagation();
+            setLightbox(null);
+        });
+
+        window.addEventListener('keydown', (e) => {
+            // Escape closes the single-image lightbox and never falls through to the arrows.
+            if (e.key === 'Escape') {
+                if (!lightbox.hidden) setLightbox(null);
+                return;
+            }
+            // Guard against slide changes when any modal is open.
+            if (anyModalOpen()) return;
+            if (e.key === 'ArrowRight') scrollToSlide((activeIndex + 1) % total);
+            else if (e.key === 'ArrowLeft') scrollToSlide((activeIndex - 1 + total) % total);
+        });
+    });
+</script>

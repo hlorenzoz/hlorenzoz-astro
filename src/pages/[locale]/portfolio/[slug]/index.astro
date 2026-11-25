@@ -1,0 +1,275 @@
+---
+import { ArrowRight, ExternalLink } from '@lucide/astro';
+import BaseLayout from '@/src/layouts/BaseLayout.astro';
+import Navbar from '@/src/components/Navbar.astro';
+import Footer from '@/src/components/Footer.astro';
+import FadeInImage from '@/src/components/FadeInImage.astro';
+import JsonLd from '@/src/components/JsonLd.astro';
+import Breadcrumbs from '@/src/components/Breadcrumbs.astro';
+import PortfolioBusiness from '@/src/components/PortfolioBusiness.astro';
+import VerticalFeatureCarousel from '@/src/components/VerticalFeatureCarousel.astro';
+import FullScreenshotCarousel from '@/src/components/FullScreenshotCarousel.astro';
+import { getTranslations } from '@/lib/i18n';
+import { getPortfolioItemBySlugAction, getPortfolioItemsAction } from '@/lib/actions/portfolio';
+import { portfolioDetail } from '@/lib/schema';
+import { imageSrcSet } from '@/lib/image';
+import { cn } from '@/lib/utils/cn';
+import type { PageMeta } from '@/lib/page-metadata';
+import { absoluteUrl, languageAlternates } from '@/lib/site-config';
+
+export async function getStaticPaths() {
+    const items = await getPortfolioItemsAction();
+    const locales = ['en', 'es'];
+
+    return locales.flatMap((locale) => items.map((item) => ({ params: { locale, slug: item.slug } })));
+}
+
+const { locale, slug } = Astro.params as { locale: string; slug: string };
+
+const item = await getPortfolioItemBySlugAction(slug);
+// Every path comes from getStaticPaths, so a miss means the data changed under the build.
+if (!item) throw new Error(`Unknown portfolio slug: ${slug}`);
+
+const t = getTranslations(locale, `portfolio.${item.id}`);
+const tNav = getTranslations(locale, 'navigation');
+
+const pageUrl = absoluteUrl(locale, `portfolio/${item.slug}`);
+const metaTitle = `${t('title')} | Lorenzoz Agency`;
+const metaDescription = t('description');
+const meta: PageMeta = {
+    title: metaTitle,
+    description: metaDescription,
+    alternates: { canonical: pageUrl, languages: languageAlternates(`portfolio/${item.slug}`) },
+    openGraph: {
+        title: metaTitle,
+        description: metaDescription,
+        url: pageUrl,
+        siteName: 'Lorenzoz Agency',
+        type: 'website',
+        locale: locale === 'es' ? 'es_ES' : 'en_US',
+        images: [{ url: item.image, alt: t('title') }],
+    },
+    twitter: { card: 'summary_large_image', title: metaTitle, description: metaDescription, images: [item.image] },
+};
+
+// Live projects can route quotes to their own booking page; others use the local contact form.
+const isExternalBooking = Boolean(item.bookingUrl);
+const bookingHref = item.bookingUrl ?? `/${locale}/#contact`;
+const bookingAttrs = isExternalBooking ? { target: '_blank', rel: 'noopener noreferrer' } : {};
+
+const crumbs = [
+    { name: tNav('home'), url: absoluteUrl(locale) },
+    { name: tNav('portfolio'), url: absoluteUrl(locale, 'portfolio') },
+    { name: t('title'), url: pageUrl },
+];
+
+const structuredData = portfolioDetail({
+    locale,
+    name: t('title'),
+    description: t('description'),
+    projectUrl: item.url,
+    image: item.image,
+    type: item.type,
+    keywords: t('badge'),
+    crumbs,
+});
+
+const screenshots = Array.isArray(item.fullScreenshot) ? item.fullScreenshot : [item.fullScreenshot];
+const multiShot = Array.isArray(item.fullScreenshot) && item.fullScreenshot.length > 1;
+const liveDemoLabel = t('liveDemoButton') || 'Live Demo';
+
+// next/image `priority` images, preloaded in the same order Next emitted them.
+const heroSizes = '(max-width: 768px) 100vw, 681px';
+const firstSlideImage = item.slides?.[0]?.map ? undefined : item.slides?.[0]?.image;
+const preloadImages = [
+    { srcset: imageSrcSet(item.image, { sizes: heroSizes }), sizes: heroSizes },
+    ...(typeof firstSlideImage === 'string'
+        ? [{ srcset: imageSrcSet(firstSlideImage, { sizes: '(max-width: 1280px) 50vw, 640px' }), sizes: '(max-width: 1280px) 50vw, 640px' }]
+        : []),
+    ...(item.fullScreenshot && multiShot
+        ? [{ srcset: imageSrcSet(screenshots[0], { sizes: '(max-width: 1280px) 100vw, 1280px' }), sizes: '(max-width: 1280px) 100vw, 1280px' }]
+        : []),
+];
+---
+
+<BaseLayout locale={locale} meta={meta} preloadImages={preloadImages}>
+    <div class="min-h-screen bg-white">
+        <JsonLd data={structuredData} />
+        <Navbar locale={locale} />
+
+        <main class="pt-32 relative">
+            <div class="px-6 mb-6">
+                <Breadcrumbs crumbs={crumbs} label={tNav('breadcrumb')} className="max-w-7xl mx-auto" />
+            </div>
+
+            {/* Hero Section */}
+            <section
+                id="portfolio-hero"
+                class="px-6 py-20 bg-black overflow-hidden relative"
+                style="background-image:radial-gradient(circle at 50% -20%, rgba(59, 130, 246, 0.15) 0%, rgba(0, 0, 0, 0) 60%)"
+            >
+                <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center gap-16 relative z-10">
+                    <div class="flex-1 text-left">
+                        <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-400 text-[10px] font-bold tracking-[0.2em] uppercase mb-8">
+                            {t('badge')}
+                        </div>
+                        <h1 class="text-5xl md:text-7xl font-bold tracking-tight text-white mb-8 leading-[1.05]">
+                            {t('heroTitle')}
+                        </h1>
+                        <p class="text-xl text-gray-300 max-w-2xl font-medium leading-relaxed mb-12">
+                            {t('heroSubtitle')}
+                        </p>
+
+                        <div class="flex flex-wrap gap-4">
+                            {
+                                item.url !== '#' && (
+                                    <a
+                                        href={item.url}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        class="px-10 py-4 rounded-full bg-blue-700 text-white font-bold hover:bg-blue-800 transition-all active:scale-95"
+                                        aria-label={`${liveDemoLabel} for ${t('title')}`}
+                                    >
+                                        {liveDemoLabel}
+                                    </a>
+                                )
+                            }
+
+                            <a
+                                href={bookingHref}
+                                {...bookingAttrs}
+                                class="px-10 py-4 rounded-full bg-white text-black font-bold hover:bg-gray-100 transition-all active:scale-95"
+                            >
+                                Contact for Quote
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="flex-1 w-full max-w-2xl">
+                        <div class="relative aspect-[16/11] rounded-[2.5rem] overflow-hidden shadow-2xl border border-white/10 group">
+                            {
+                                item.url !== '#' ? (
+                                    <a href={item.url} target="_blank" rel="noopener noreferrer" aria-label={`Visit live platform: ${t('title')}`}>
+                                        <FadeInImage
+                                            src={item.image}
+                                            alt={t('title')}
+                                            fill
+                                            sizes={heroSizes}
+                                            className="transition-transform duration-1000 group-hover:scale-105"
+                                            priority
+                                        />
+                                        <div class="absolute inset-0 bg-blue-600/0 group-hover:bg-blue-600/5 transition-colors duration-500 flex items-center justify-center">
+                                            <div class="opacity-0 group-hover:opacity-100 transition-opacity duration-500 transform scale-95 group-hover:scale-100 flex items-center gap-2 bg-white/10 backdrop-blur-md px-6 py-3 rounded-full border border-white/20">
+                                                <span class="text-white font-bold text-sm">Visit Live Demo</span>
+                                                <ExternalLink class="w-4 h-4 text-white" />
+                                            </div>
+                                        </div>
+                                    </a>
+                                ) : (
+                                    <FadeInImage
+                                        src={item.image}
+                                        alt={t('title')}
+                                        fill
+                                        sizes={heroSizes}
+                                        className="grayscale-[0.5] group-hover:grayscale-0 transition-all duration-1000"
+                                        priority
+                                    />
+                                )
+                            }
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            {/* About the business: who the client is, before the page turns to the website. Real client sites only. */}
+            {item.type === 'live' && <PortfolioBusiness title={t('business.title')} paragraphs={t.raw('business.paragraphs') as string[]} />}
+
+            {/* Features Carousel - Showcase specific technical implementations */}
+            {
+                item.slides && item.slides.length > 0 && (
+                    <VerticalFeatureCarousel locale={locale} slides={item.slides} translationKey={`portfolio.${item.id}.features_carousel`} />
+                )
+            }
+
+            {/* Full Showcase Section */}
+            {
+                item.fullScreenshot && (
+                    <section id="portfolio-showcase" class="py-24 px-6 bg-white overflow-hidden">
+                        <div class="max-w-7xl mx-auto">
+                            <div class="text-center mb-16">
+                                <h2 class="text-4xl md:text-5xl font-bold text-black mb-6">{t('showcaseTitle')}</h2>
+                                <p class="text-xl text-gray-900 max-w-2xl mx-auto">
+                                    <Fragment
+                                        set:html={t.markup('showcaseDescription', {
+                                            meg: (chunks) =>
+                                                `<a href="${item.url}" target="_blank" rel="noopener noreferrer" class="font-semibold text-blue-700 underline decoration-blue-700/30 underline-offset-4 hover:decoration-blue-700 transition-colors">${chunks}</a>`,
+                                        })}
+                                    />
+                                </p>
+                            </div>
+                            <div
+                                class={cn(
+                                    'relative mx-auto',
+                                    multiShot ? 'w-full' : 'rounded-[3rem] overflow-hidden shadow-2xl border border-gray-100 group lg:max-w-[50%]'
+                                )}
+                            >
+                                {multiShot ? (
+                                    <FullScreenshotCarousel images={screenshots} alt={`${t('title')} Showcase`} isActive={true} />
+                                ) : item.url !== '#' ? (
+                                    <a href={item.url} target="_blank" rel="noopener noreferrer" aria-label={`Open showcase for ${t('title')}`}>
+                                        <FadeInImage
+                                            src={screenshots[0]}
+                                            alt={`${t('title')} Full Screenshot`}
+                                            width={1920}
+                                            height={1080}
+                                            sizes="(max-width: 1024px) 100vw, 640px"
+                                            className="w-full h-auto transition-transform duration-1000 group-hover:scale-[1.02]"
+                                        />
+                                        <div class="absolute inset-0 bg-blue-600/0 group-hover:bg-blue-600/10 transition-colors duration-700 flex items-center justify-center">
+                                            <div class="opacity-0 group-hover:opacity-100 transition-all duration-500 transform scale-95 group-hover:scale-100 flex items-center gap-3 bg-white/95 backdrop-blur-md px-8 py-4 rounded-full shadow-2xl border border-white">
+                                                <span class="text-black font-bold">Explore Live Platform</span>
+                                                <ExternalLink class="w-5 h-5 text-blue-700" />
+                                            </div>
+                                        </div>
+                                    </a>
+                                ) : (
+                                    <FadeInImage
+                                        src={screenshots[0]}
+                                        alt={`${t('title')} Full Screenshot`}
+                                        width={1920}
+                                        height={1080}
+                                        sizes="(max-width: 1024px) 100vw, 640px"
+                                        className="w-full h-auto"
+                                    />
+                                )}
+                            </div>
+                        </div>
+                    </section>
+                )
+            }
+
+            {/* Call to Action */}
+            <section id="portfolio-cta" class="py-24 px-6 mb-24">
+                <div class="max-w-5xl mx-auto p-12 md:p-20 rounded-[3.5rem] bg-blue-700 text-center relative overflow-hidden shadow-2xl">
+                    <div class="relative z-10">
+                        <h2 class="text-4xl md:text-6xl font-bold text-white mb-8">{t('ctaTitle')}</h2>
+                        <p class="text-xl text-blue-100 mb-12 max-w-2xl mx-auto">{t('ctaDescription')}</p>
+                        <a
+                            href={bookingHref}
+                            {...bookingAttrs}
+                            class="px-12 py-5 rounded-full bg-white text-blue-700 font-bold text-lg hover:bg-gray-100 transition-all active:scale-95 shadow-xl inline-flex items-center gap-2"
+                        >
+                            {t('ctaButton')}
+                            <ArrowRight class="w-5 h-5" />
+                        </a>
+                    </div>
+                    {/* Background Decor */}
+                    <div class="absolute top-0 right-0 -translate-y-1/2 translate-x-1/2 w-[30rem] h-[30rem] bg-white opacity-5 blur-[100px] rounded-full" />
+                    <div class="absolute bottom-0 left-0 translate-y-1/2 -translate-x-1/2 w-[30rem] h-[30rem] bg-white opacity-5 blur-[100px] rounded-full" />
+                </div>
+            </section>
+        </main>
+
+        <Footer locale={locale} />
+    </div>
+</BaseLayout>

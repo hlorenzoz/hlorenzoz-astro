@@ -1,0 +1,86 @@
+---
+/**
+ * Visible authorship line for content pages.
+ *
+ * The counterpart to the `author: { '@id': #person }` reference the schema
+ * emits: structured data tells a crawler who is accountable for the page, this
+ * tells a reader. Both point at the same Person node published by the digital
+ * card, so the claim is checkable rather than asserted.
+ *
+ * Static markup, no client JS. Copy arrives as props, already translated.
+ */
+import { Clock } from '@lucide/astro';
+import FadeInImage from '@/src/components/FadeInImage.astro';
+import { localeHref } from '@/lib/routing';
+import { formatContentDate } from '@/lib/dates';
+import { PERSON } from '@/lib/site-config';
+
+export interface Props {
+    locale: string;
+    /** ISO date (YYYY-MM-DD) of the last meaningful content change. */
+    dateModified: string;
+    /** Localized label prefix, e.g. 'By' / 'Por'. */
+    byLabel: string;
+    /** Localized "updated" label, e.g. 'Updated' / 'Actualizado'. */
+    updatedLabel: string;
+    /**
+     * Localized read-time label with the minute count already interpolated,
+     * e.g. "7 min read". Omit to hide the read time.
+     *
+     * The raw minute count is deliberately not a second prop: it would let a
+     * caller pass a number that disagrees with the rendered label, and the
+     * component only ever prints the label.
+     */
+    readTimeLabel?: string;
+}
+
+const { locale, dateModified, byLabel, updatedLabel, readTimeLabel } = Astro.props;
+
+// Degrades rather than throwing. The strict check lives at the data boundary
+// (the sitemap validates every route and can name the offending one), because
+// this component renders on every content page: a throw here fails the whole
+// static build, so one malformed date would block deploying the other two
+// dozen pages. Falling back to the raw ISO string keeps the cost local and
+// still visible.
+//
+// `formatContentDate` owns the UTC pin, this degradation path, and the
+// formatter cache, so no date-rendering site has to remember all three.
+const formatted = formatContentDate(locale, dateModified, 'dayMonthYear');
+---
+
+<div class="flex flex-wrap items-center gap-x-6 gap-y-3 py-6 border-y border-gray-100">
+    {/* Built through `localeHref` rather than by hand: a hand-built href in a raw <a> was the sitewide Navbar regression. */}
+    <a href={localeHref(locale, 'card/hector')} class="flex items-center gap-3 group" rel="author">
+        <div class="relative size-11 rounded-full overflow-hidden border border-gray-100 flex-shrink-0">
+            <FadeInImage src={PERSON.image[0]} alt={PERSON.name} fill sizes="44px" className="object-cover" />
+        </div>
+        <div class="leading-tight">
+            <p class="text-[10px] font-black uppercase tracking-[0.2em] text-gray-500 m-0">{byLabel}</p>
+            <p class="text-sm font-bold text-black m-0 group-hover:text-blue-700 transition-colors">{PERSON.name}</p>
+            <p class="text-[12px] font-medium text-gray-500 m-0">{PERSON.jobTitle}</p>
+        </div>
+    </a>
+
+    <div class="flex items-center gap-4 text-[12px] font-bold text-gray-500">
+        <span>
+            {/*
+              * `<time datetime>` must hold a valid HTML5 date. On the degraded
+              * path the value is by definition not one, so the element is
+              * dropped rather than emitting invalid markup that would also feed
+              * crawlers a malformed date on a page whose whole purpose is
+              * signalling freshness. The accessibility gate in
+              * lighthouserc.json is an error at 0.95, not a warning.
+              */}
+            {updatedLabel}{' '}
+            {formatted ? <time datetime={formatted.iso}>{formatted.text}</time> : <span data-invalid-date="true">{dateModified}</span>}
+        </span>
+        {
+            readTimeLabel && (
+                <span class="flex items-center gap-1.5">
+                    <Clock class="w-3.5 h-3.5" aria-hidden="true" />
+                    {readTimeLabel}
+                </span>
+            )
+        }
+    </div>
+</div>

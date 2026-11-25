@@ -1,0 +1,139 @@
+---
+import { ArrowRight, ExternalLink } from '@lucide/astro';
+import BaseLayout from '@/src/layouts/BaseLayout.astro';
+import Navbar from '@/src/components/Navbar.astro';
+import Footer from '@/src/components/Footer.astro';
+import FadeInImage from '@/src/components/FadeInImage.astro';
+import ArticleByline from '@/src/components/ArticleByline.astro';
+import Breadcrumbs from '@/src/components/Breadcrumbs.astro';
+import JsonLd from '@/src/components/JsonLd.astro';
+import { getTranslations } from '@/lib/i18n';
+import { newsArticle } from '@/lib/schema';
+import { schemaDateTime } from '@/lib/schema/datetime';
+import { getNewsItemBySlugAction, getNewsItemsAction } from '@/lib/actions/news';
+import { getPortfolioItemsAction } from '@/lib/actions/portfolio';
+import { formatContentDate } from '@/lib/dates';
+import { localeHref } from '@/lib/routing';
+import { imageSrcSet } from '@/lib/image';
+import type { PageMeta } from '@/lib/page-metadata';
+import { LOCALES, absoluteUrl, languageAlternates } from '@/lib/site-config';
+
+export async function getStaticPaths() {
+    const items = await getNewsItemsAction();
+    return LOCALES.flatMap((locale) => items.map((item) => ({ params: { locale, slug: item.slug } })));
+}
+
+const { locale, slug } = Astro.params as { locale: string; slug: string };
+
+const item = await getNewsItemBySlugAction(slug);
+// Every path comes from getStaticPaths, so a miss means the data changed under the build.
+if (!item) throw new Error(`Unknown news slug: ${slug}`);
+
+// `lib/news.ts` already rejected any post whose portfolioId is unknown.
+const work = (await getPortfolioItemsAction()).find((p) => p.id === item.portfolioId)!;
+
+const t = getTranslations(locale, 'news');
+const tNav = getTranslations(locale, 'navigation');
+const tByline = getTranslations(locale, 'sitemap.byline');
+const tRoot = getTranslations(locale);
+
+const title = t(`items.${item.id}.title`);
+const paragraphs = t.raw(`items.${item.id}.paragraphs`) as string[];
+const pageUrl = absoluteUrl(locale, `news/${item.slug}`);
+const published = formatContentDate(locale, item.datePublished, 'dayMonthYear');
+
+const metaTitle = `${title} | Lorenzoz Agency`;
+const metaDescription = t(`items.${item.id}.description`);
+const ogImage = item.ogImage ?? item.image;
+const meta: PageMeta = {
+    title: metaTitle,
+    description: metaDescription,
+    alternates: { canonical: pageUrl, languages: languageAlternates(`news/${item.slug}`) },
+    openGraph: {
+        title: metaTitle,
+        description: metaDescription,
+        url: pageUrl,
+        siteName: 'Lorenzoz Agency',
+        type: 'article',
+        publishedTime: schemaDateTime(item.datePublished),
+        modifiedTime: schemaDateTime(item.lastModified),
+        locale: locale === 'es' ? 'es_ES' : 'en_US',
+        images: [{ url: ogImage, alt: title }],
+    },
+    twitter: { card: 'summary_large_image', title: metaTitle, description: metaDescription, images: [ogImage] },
+};
+
+const crumbs = [
+    { name: tNav('home'), url: absoluteUrl(locale) },
+    { name: tNav('news'), url: absoluteUrl(locale, 'news') },
+    { name: title, url: pageUrl },
+];
+
+const structuredData = newsArticle({
+    locale,
+    headline: title,
+    description: t(`items.${item.id}.description`),
+    url: pageUrl,
+    datePublished: item.datePublished,
+    dateModified: item.lastModified,
+    image: [...new Set([item.image, item.ogImage ?? item.image])],
+    about: { url: absoluteUrl(locale, `portfolio/${work.slug}`), name: tRoot(`portfolio.${work.id}.title`) },
+    crumbs,
+});
+
+const sizes = '(max-width: 768px) 100vw, 768px';
+---
+
+<BaseLayout locale={locale} meta={meta} preloadImages={[{ srcset: imageSrcSet(item.image, { sizes }), sizes }]}>
+    <div class="min-h-screen bg-white">
+        <JsonLd data={structuredData} />
+        <Navbar locale={locale} />
+
+        <main class="pt-32 pb-24 px-6">
+            <Breadcrumbs crumbs={crumbs} label={tNav('breadcrumb')} className="max-w-3xl mx-auto mb-8" />
+
+            <article class="max-w-3xl mx-auto">
+                <p class="text-[12px] font-bold tracking-[0.2em] uppercase text-gray-600 mb-4">
+                    {t('post.published')}{' '}
+                    {published ? <time datetime={published.iso}>{published.text}</time> : item.datePublished}
+                </p>
+                <h1 class="text-4xl md:text-6xl font-bold tracking-tight text-black mb-8 leading-[1.1]">{title}</h1>
+
+                <ArticleByline locale={locale} dateModified={item.lastModified} byLabel={tByline('by')} updatedLabel={tByline('updated')} />
+
+                <div class="relative aspect-[16/9] rounded-[2rem] overflow-hidden my-12 border border-gray-100 bg-zinc-100">
+                    <FadeInImage src={item.image} alt={title} fill priority sizes={sizes} />
+                </div>
+
+                <div class="space-y-6 text-lg text-gray-900 leading-relaxed">
+                    {paragraphs.map((paragraph) => <p>{paragraph}</p>)}
+                </div>
+
+                <div class="flex flex-wrap gap-4 mt-12">
+                    <a
+                        href={localeHref(locale, `portfolio/${work.slug}`)}
+                        class="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-blue-700 text-white font-bold hover:bg-blue-800 transition-colors"
+                    >
+                        {t('post.readCaseStudy')}
+                        <ArrowRight class="w-4 h-4" aria-hidden="true" />
+                    </a>
+                    {
+                        work.url !== '#' && (
+                            <a
+                                href={work.url}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                class="inline-flex items-center gap-2 px-8 py-4 rounded-full border border-gray-200 text-black font-bold hover:bg-gray-50 transition-colors"
+                            >
+                                {t('post.visitSite')}
+                                <ExternalLink class="w-4 h-4" aria-hidden="true" />
+                            </a>
+                        )
+                    }
+                </div>
+            </article>
+        </main>
+
+        <Footer locale={locale} />
+    </div>
+</BaseLayout>

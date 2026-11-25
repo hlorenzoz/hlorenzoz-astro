@@ -1,0 +1,26 @@
+---
+/** "About the business" block of a live portfolio entry: plain server rendered text, no client JS. */
+export interface Props {
+    title: string;
+    paragraphs: string[];
+}
+
+const { title, paragraphs } = Astro.props;
+---
+
+{
+    paragraphs.length > 0 && (
+        <section id="portfolio-business" aria-labelledby="portfolio-business-title" class="px-6 py-20 md:py-24 bg-white">
+            <div class="max-w-3xl mx-auto">
+                <h2 id="portfolio-business-title" class="text-4xl md:text-5xl font-bold text-black mb-8">
+                    {title}
+                </h2>
+                <div class="space-y-6 text-lg md:text-xl text-gray-700 leading-relaxed">
+                    {paragraphs.map((paragraph) => (
+                        <p>{paragraph}</p>
+                    ))}
+                </div>
+            </div>
+        </section>
+    )
+}
