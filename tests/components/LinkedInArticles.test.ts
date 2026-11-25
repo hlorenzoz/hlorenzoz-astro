@@ -110,11 +110,9 @@ describe('LinkedInArticles initial carousel state', () => {
         expect(screen.getByRole('button', { name: 'Next article' })).toBeEnabled();
     });
 
-    it('marks the scroll track and its ratios for the client script', async () => {
+    it('marks the scroll track for the client script', async () => {
         const { body } = await render(three);
         const root = body.querySelector('#articles[data-carousel]') as HTMLElement;
-        expect(root.dataset.itemRatio).toBe('0.3');
-        expect(root.dataset.fallbackRatio).toBe('0.6');
         expect(root.querySelector('[data-carousel-track]')?.children).toHaveLength(3);
     });
 

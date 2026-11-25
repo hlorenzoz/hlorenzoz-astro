@@ -24,7 +24,7 @@ const t = getTranslations(locale, 'portfolio.portfolioCarousel');
 const tt = getTranslations(locale, 'portfolio');
 ---
 
-<section id="portfolio" class="py-24 px-6 bg-white overflow-hidden" data-carousel data-item-ratio="0.8" data-fallback-ratio="0.5">
+<section id="portfolio" class="py-24 px-6 bg-white overflow-hidden" data-carousel>
     <div class="max-w-7xl mx-auto mb-16 px-4">
         <div class="flex flex-col md:flex-row md:items-end justify-between gap-8">
             <div>
@@ -181,20 +181,25 @@ const tt = getTranslations(locale, 'portfolio');
 </section>
 
 <script>
-    // One subscription per carousel for its whole life: the previous version once
-    // rebuilt the ResizeObserver and scroll listener on every step, dropping
-    // scroll events mid-gesture and leaving the dots and buttons stale.
+    // One scroll listener per carousel for its whole life: rebuilding listeners on
+    // every step once dropped scroll events mid-gesture and left the dots stale.
     document.querySelectorAll<HTMLElement>('#portfolio[data-carousel]').forEach((root) => {
         const track = root.querySelector<HTMLElement>('[data-carousel-track]')!;
         const prev = root.querySelector<HTMLButtonElement>('[data-carousel-prev]');
         const next = root.querySelector<HTMLButtonElement>('[data-carousel-next]');
         const dots = Array.from(root.querySelectorAll<HTMLButtonElement>('[data-carousel-dot]'));
-        const count = track.children.length;
-        const ratio = Number(root.dataset.itemRatio);
-        const fallback = Number(root.dataset.fallbackRatio);
-        let itemWidth = 0;
+        const slides = Array.from(track.children) as HTMLElement[];
+        const count = slides.length;
         let active = 0;
-        const step = () => itemWidth || track.offsetWidth * fallback;
+        // scrollLeft that centers slide i (slides are snap-center). Measured from
+        // the real layout: slide widths are vw-based and differ per breakpoint, so
+        // a fixed fraction of the track width lands on the wrong slide on mobile.
+        const target = (i: number) => {
+            const t = track.getBoundingClientRect();
+            const s = slides[i].getBoundingClientRect();
+            return track.scrollLeft + s.left - t.left + s.width / 2 - track.clientWidth / 2;
+        };
+        const goTo = (i: number) => track.scrollTo({ left: target(Math.max(0, Math.min(count - 1, i))) });
 
         const setActive = (index: number) => {
             if (index === active) return;
@@ -212,26 +217,25 @@ const tt = getTranslations(locale, 'portfolio');
             if (next) next.disabled = index === count - 1;
         };
 
-        const measure = () => {
-            itemWidth = track.offsetWidth * ratio;
-        };
-        measure();
-        new ResizeObserver(measure).observe(track);
+        // Active = the slide whose centered position is closest to the scroll offset.
         track.addEventListener(
             'scroll',
             () => {
-                if (itemWidth === 0) return;
-                setActive(Math.round(track.scrollLeft / itemWidth));
+                let best = 0;
+                slides.forEach((_, i) => {
+                    if (Math.abs(target(i) - track.scrollLeft) < Math.abs(target(best) - track.scrollLeft)) best = i;
+                });
+                setActive(best);
             },
             { passive: true }
         );
 
-        prev?.addEventListener('click', () => track.scrollBy({ left: -step() }));
-        next?.addEventListener('click', () => track.scrollBy({ left: step() }));
-        dots.forEach((dot, i) => dot.addEventListener('click', () => track.scrollTo({ left: i * step() })));
+        prev?.addEventListener('click', () => goTo(active - 1));
+        next?.addEventListener('click', () => goTo(active + 1));
+        dots.forEach((dot, i) => dot.addEventListener('click', () => goTo(i)));
         window.addEventListener('keydown', (e) => {
-            if (e.key === 'ArrowLeft' && active > 0) track.scrollBy({ left: -step() });
-            if (e.key === 'ArrowRight' && active < count - 1) track.scrollBy({ left: step() });
+            if (e.key === 'ArrowLeft' && active > 0) goTo(active - 1);
+            if (e.key === 'ArrowRight' && active < count - 1) goTo(active + 1);
         });
     });
 </script>

@@ -66,8 +66,6 @@ describe('PortfolioCarousel', () => {
         expect(screen.getByRole('button', { name: copy.prevSlide })).toBeDisabled();
         expect(screen.getByRole('button', { name: copy.nextSlide })).toBeEnabled();
         const root = screen.body.querySelector('#portfolio[data-carousel]') as HTMLElement;
-        expect(root.dataset.itemRatio).toBe('0.8');
-        expect(root.dataset.fallbackRatio).toBe('0.5');
         expect(root.querySelector('[data-carousel-track]')?.children).toHaveLength(2);
     });
 });
