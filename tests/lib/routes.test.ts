@@ -382,10 +382,22 @@ describe('ROUTE_GROUPS', () => {
         }
     });
 
-    it('keeps Core 30 order, with home first', () => {
-        expect(ROUTE_GROUPS[0].tier).toBe('home');
-        const order = ROUTE_GROUPS.map((g) => SECTION_TIERS.indexOf(g.tier));
-        expect(order).toEqual([...order].sort((a, b) => a - b));
+    it('starts with home, then gives services, portfolio and news a section each, then pages and legal', () => {
+        expect(ROUTE_GROUPS.map((g) => g.id)).toEqual(['home', 'services', 'portfolio', 'news', 'page', 'legal']);
+    });
+
+    it('puts each hub first in its section, followed by everything under it', () => {
+        for (const id of ['services', 'portfolio', 'news']) {
+            const group = ROUTE_GROUPS.find((g) => g.id === id)!;
+            expect(group.routes[0].path).toBe(id);
+            expect(group.routes.slice(1).every((route) => route.path.startsWith(`${id}/`))).toBe(true);
+            expect(group.routes.length).toBe(ALL_ROUTES.filter((r) => r.path === id || r.path.startsWith(`${id}/`)).length);
+        }
+    });
+
+    it('lists every route exactly once across the sections', () => {
+        const listed = ROUTE_GROUPS.flatMap((g) => g.routes.map((r) => r.path));
+        expect([...listed].sort()).toEqual(ALL_ROUTES.map((r) => r.path).sort());
     });
 });
 

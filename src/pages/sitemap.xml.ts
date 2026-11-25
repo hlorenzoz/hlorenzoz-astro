@@ -15,6 +15,7 @@
  * `<priority>` and `<changefreq>`, and Bing schedules crawls around an
  * accurate `lastmod`, which is the whole value of this file.
  */
+import { schemaDateTime } from '@/lib/schema/datetime';
 import type { APIRoute } from 'astro';
 import { ALL_ROUTES } from '@/lib/routes';
 import { LOCALES, absoluteUrl } from '@/lib/site-config';
@@ -33,7 +34,9 @@ export function sitemap(): { url: string; lastModified: Date }[] {
 
 export function sitemapXml(): string {
     const urls = sitemap()
-        .map((e) => `<url>\n<loc>${e.url}</loc>\n<lastmod>${e.lastModified.toISOString()}</lastmod>\n</url>\n`)
+        // W3C Datetime with its zone, the same Madrid midnight the JSON-LD dateModified carries
+        // (`lastModified` is the UTC midnight of the stored YYYY-MM-DD, so its date part is that day).
+        .map((e) => `<url>\n<loc>${e.url}</loc>\n<lastmod>${schemaDateTime(e.lastModified.toISOString().slice(0, 10))}</lastmod>\n</url>\n`)
         .join('');
     return `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${urls}</urlset>\n`;
 }

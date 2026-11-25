@@ -48,3 +48,8 @@ export function getPortfolioItems(): PortfolioItem[] {
 export function getPortfolioItemBySlug(slug: string): PortfolioItem | undefined {
     return (portfolioData as PortfolioItem[]).find(item => item.slug === slug);
 }
+
+/** The freshest `lastModified` of any item: the portfolio index changes whenever an item does. */
+export function latestPortfolioModified(): string {
+    return (portfolioData as PortfolioItem[]).map((item) => item.lastModified).sort().at(-1)!;
+}

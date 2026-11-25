@@ -6,6 +6,7 @@
  */
 import { getTranslations } from '@/lib/i18n';
 import { webPage, type JsonLdObject } from '@/lib/schema';
+import { findRoute } from '@/lib/routes';
 import { pageMetadata, type PageMeta } from '@/lib/page-metadata';
 import { absoluteUrl, metaDescription, SITE_NAME } from '@/lib/site-config';
 
@@ -53,5 +54,6 @@ export async function legalPageSchema(
         description: metaDescription(t(cfg.contentKey)),
         url: absoluteUrl(locale, cfg.slug),
         crumbs,
+        dateModified: findRoute(cfg.slug)?.lastModified,
     });
 }

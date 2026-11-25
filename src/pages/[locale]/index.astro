@@ -3,6 +3,7 @@
  * The home page. It passes no `meta`, so the
  * layout's default metadata is the page's metadata.
  */
+import { findRoute } from '@/lib/routes';
 import {
     ArrowRight,
     Award,
@@ -538,6 +539,7 @@ const PROCESS_ICONS = [ChartColumn, Layers, Repeat];
                     description: t('meta.description'),
                     url: absoluteUrl(locale),
                     speakable: ['h1', '.hero-content p'],
+                    dateModified: findRoute('')?.lastModified,
                 })}
             />
             {/* The list and the catalogue name the OFFERS (Local SEO and the

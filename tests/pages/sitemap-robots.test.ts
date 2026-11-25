@@ -3,6 +3,7 @@ import { GET as sitemapGET, sitemap } from '@/src/pages/sitemap.xml';
 import { GET as robotsGET } from '@/src/pages/robots.txt';
 import { ALL_ROUTES } from '@/lib/routes';
 import { LOCALES, absoluteUrl } from '@/lib/site-config';
+import { schemaDateTime } from '@/lib/schema/datetime';
 
 // The endpoints ignore their context argument.
 const ctx = {} as Parameters<typeof sitemapGET>[0];
@@ -23,10 +24,19 @@ describe('/sitemap.xml', () => {
         for (const route of ALL_ROUTES) {
             for (const locale of LOCALES) {
                 expect(xml).toContain(
-                    `<url>\n<loc>${absoluteUrl(locale, route.path)}</loc>\n<lastmod>${route.lastModifiedDate.toISOString()}</lastmod>\n</url>\n`
+                    `<url>\n<loc>${absoluteUrl(locale, route.path)}</loc>\n<lastmod>${schemaDateTime(route.lastModified)}</lastmod>\n</url>\n`
                 );
             }
         }
+    });
+
+    it('writes lastmod as a W3C datetime with its zone, the same instant the JSON-LD dateModified states', async () => {
+        // Google reads lastmod in W3C Datetime format; no milliseconds, no bare UTC "Z" midnight
+        // (which is 23:00 the previous day in Madrid, a different day than the page claims).
+        const xml = await (await sitemapGET(ctx)).text();
+        const values = [...xml.matchAll(/<lastmod>([^<]+)<\/lastmod>/g)].map((m) => m[1]);
+        expect(values.length).toBe(ALL_ROUTES.length * LOCALES.length);
+        for (const value of values) expect(value).toMatch(/^\d{4}-\d{2}-\d{2}T00:00:00[+-]\d{2}:\d{2}$/);
     });
 
     it('emits only loc and lastmod', async () => {

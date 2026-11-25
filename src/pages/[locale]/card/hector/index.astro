@@ -3,6 +3,7 @@ import BaseLayout from '@/src/layouts/BaseLayout.astro';
 import JsonLd from '@/src/components/JsonLd.astro';
 import HectorCard from '@/src/components/HectorCard.astro';
 import { profilePage } from '@/lib/schema';
+import { findRoute } from '@/lib/routes';
 import type { PageMeta } from '@/lib/page-metadata';
 import { absoluteUrl, languageAlternates } from '@/lib/site-config';
 
@@ -38,6 +39,6 @@ const meta: PageMeta = {
 ---
 
 <BaseLayout locale={locale} meta={meta}>
-    <JsonLd data={profilePage({ locale })} />
+    <JsonLd data={profilePage({ locale, dateModified: findRoute('card/hector')?.lastModified })} />
     <HectorCard locale={locale} />
 </BaseLayout>

@@ -19,7 +19,7 @@
  * the browser bundle. Pure helpers a client script might want (`localeHref`,
  * the date parsers, the tier types) live in `lib/routing.ts` instead.
  */
-import { getPortfolioItems } from '@/lib/portfolio';
+import { getPortfolioItems, latestPortfolioModified } from '@/lib/portfolio';
 import { getNewsItems, latestNewsModified } from '@/lib/news';
 import {
     SECTION_TIERS,
@@ -56,7 +56,7 @@ import {
  */
 const STATIC_ROUTES: readonly SiteRoute[] = [
     { path: '', tier: 'home', labelKey: 'navigation.home', lastModified: '2026-11-25' },
-    { path: 'portfolio', tier: 'page', labelKey: 'navigation.portfolio', lastModified: '2026-11-24', parent: '' },
+    { path: 'portfolio', tier: 'page', labelKey: 'navigation.portfolio', lastModified: latestPortfolioModified(), parent: '' },
     // The index lists every post, so its date follows the freshest one instead of a second hand-kept date.
     { path: 'news', tier: 'page', labelKey: 'navigation.news', lastModified: latestNewsModified(), parent: '' },
     { path: 'card/hector', tier: 'page', labelKey: 'sitemap.labels.card', lastModified: '2026-07-10', parent: '' },
@@ -147,16 +147,41 @@ export const ALL_ROUTES: readonly ValidatedRoute[] = [
 ];
 
 /**
- * Routes grouped by tier in `SECTION_TIERS` order, with empty tiers dropped.
+ * The HTML sitemap's sections, computed once at module scope (locale invariant;
+ * callers resolve `labelKey`).
  *
- * Computed once at module scope: the grouping is locale-invariant, so doing it
- * per render meant repeating identical work for every locale at build time.
- * Only the labels differ between locales, and those are resolved by the caller.
+ * Every top-level page that has subpages (services, portfolio, news) is its own
+ * section, the hub first and then everything under it. All other routes are
+ * grouped by tier in `SECTION_TIERS` order. Hubs follow the tier order of the
+ * hub itself, so services (a category) comes before portfolio and news.
  */
-export const ROUTE_GROUPS: readonly { tier: RouteTier; routes: readonly ValidatedRoute[] }[] =
-    SECTION_TIERS
-        .map((tier) => ({ tier, routes: ALL_ROUTES.filter((route) => route.tier === tier) }))
-        .filter((group) => group.routes.length > 0);
+export interface RouteGroup {
+    /** Anchor id of the section: the tier, or the hub path. */
+    id: string;
+    /** Translation key of the section title. */
+    labelKey: string;
+    routes: readonly ValidatedRoute[];
+}
+
+function descendants(path: string): ValidatedRoute[] {
+    return ALL_ROUTES.filter((route) => route.parent === path).flatMap((child) => [child, ...descendants(child.path)]);
+}
+
+const HUBS = ALL_ROUTES.filter((route) => route.parent === '' && ALL_ROUTES.some((child) => child.parent === route.path)).sort(
+    (a, b) => SECTION_TIERS.indexOf(a.tier) - SECTION_TIERS.indexOf(b.tier)
+);
+const IN_HUB = new Set(HUBS.flatMap((hub) => [hub.path, ...descendants(hub.path).map((route) => route.path)]));
+const byTier = (tier: RouteTier): RouteGroup => ({
+    id: tier,
+    labelKey: `sitemap.tiers.${tier}`,
+    routes: ALL_ROUTES.filter((route) => route.tier === tier && !IN_HUB.has(route.path)),
+});
+
+export const ROUTE_GROUPS: readonly RouteGroup[] = [
+    byTier('home'),
+    ...HUBS.map((hub) => ({ id: hub.path, labelKey: hub.labelKey, routes: [hub, ...descendants(hub.path)] })),
+    ...SECTION_TIERS.filter((tier) => tier !== 'home').map(byTier),
+].filter((group) => group.routes.length > 0);
 
 const BY_PATH = new Map(ALL_ROUTES.map((route) => [route.path, route]));
 

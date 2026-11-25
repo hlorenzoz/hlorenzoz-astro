@@ -628,7 +628,7 @@ export function newsArticle(args: Omit<Parameters<typeof articlePage>[0], 'type'
 }
 
 /** ProfilePage wrapping the globally-defined Person, for the digital card. */
-export function profilePage({ locale }: { locale: string }): JsonLdObject {
+export function profilePage({ locale, dateModified }: { locale: string; dateModified?: string }): JsonLdObject {
     return {
         '@context': CONTEXT,
         '@type': 'ProfilePage',
@@ -636,6 +636,7 @@ export function profilePage({ locale }: { locale: string }): JsonLdObject {
         inLanguage: locale,
         isPartOf: { '@id': SCHEMA_IDS.website },
         mainEntity: { '@id': SCHEMA_IDS.person },
+        ...(dateModified ? { dateModified: schemaDateTime(dateModified) } : {}),
     };
 }
 
@@ -651,6 +652,7 @@ export function webPage({
     url,
     crumbs,
     speakable,
+    dateModified,
 }: {
     locale: string;
     name: string;
@@ -658,6 +660,8 @@ export function webPage({
     url: string;
     crumbs?: { name: string; url: string }[];
     speakable?: string[];
+    /** The route's `lastModified` (`YYYY-MM-DD`), emitted zoned like every schema date. */
+    dateModified?: string;
 }): JsonLdObject {
     const page: JsonLdObject = {
         '@type': 'WebPage',
@@ -667,6 +671,7 @@ export function webPage({
         inLanguage: locale,
         isPartOf: { '@id': SCHEMA_IDS.website },
         primaryImageOfPage: OG_IMAGE,
+        ...(dateModified ? { dateModified: schemaDateTime(dateModified) } : {}),
     };
     if (speakable) {
         page.speakable = { '@type': 'SpeakableSpecification', cssSelector: speakable };

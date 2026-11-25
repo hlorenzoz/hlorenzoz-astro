@@ -467,10 +467,10 @@ The places, and the order to touch them:
 **Stored as a date, emitted as a datetime.** Every one of these places stores a plain
 `YYYY-MM-DD`. JSON-LD date properties and OpenGraph `article:published_time` /
 `article:modified_time` emit it through `schemaDateTime` (`lib/schema/datetime.ts`), which
-turns it into midnight in Europe/Madrid with its real offset: `2026-11-24T00:00:00+01:00`.
+turns it into midnight in Europe/Madrid with its real offset: `2026-11-24T00:00:00+01:00`. `/sitemap.xml` `<lastmod>` uses the same value (W3C Datetime, as Google reads it).
 Never write a date into a schema builder by hand. Google's Rich Results Test flags a date
-only value as "Invalid datetime value" and "missing a time zone". Sitemaps and the visible
-byline keep the plain date. Likewise `about` and `mentions` are always typed objects
+only value as "Invalid datetime value" and "missing a time zone". The visible
+byline keeps the plain date. Likewise `about` and `mentions` are always typed objects
 (`@type`, `@id`, `url`, `name`), never a bare URL string, which Google reads as a Thing named
 after the URL. `src/components/JsonLd.astro` asserts both rules on every object it renders, so a
 violation fails the build and the page tests.

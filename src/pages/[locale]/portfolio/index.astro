@@ -1,4 +1,5 @@
 ---
+import { findRoute } from '@/lib/routes';
 import { ArrowRight, Globe, PanelsTopLeft } from '@lucide/astro';
 import BaseLayout from '@/src/layouts/BaseLayout.astro';
 import Navbar from '@/src/components/Navbar.astro';
@@ -64,6 +65,7 @@ const collectionData = collectionPage({
         name: t(`${item.id}.title`),
         url: absoluteUrl(locale, `portfolio/${item.slug}`),
     })),
+    dateModified: findRoute('portfolio')?.lastModified,
     crumbs,
 });
 

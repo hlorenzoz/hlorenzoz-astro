@@ -81,6 +81,15 @@ describe.skipIf(!fresh)(`dist/: every built page ships a complete head (${fresh 
 
         // Every JSON-LD block parses and keeps the datetime / typed-about rules.
         const blocks = [...document.querySelectorAll('script[type="application/ld+json"]')];
+        // The page's own structured data states the same last change as the sitemap (AGENTS.md
+        // "Freshness Dates"). The site-wide entity graph carries no dates, so any dated node is the page's.
+        const lastmod = sitemap().find((entry) => entry.url === url)!.lastModified.toISOString().slice(0, 10);
+        const modified = blocks
+            .flatMap((b) => { const d = JSON.parse(b.textContent ?? '{}'); return d['@graph'] ?? [d]; })
+            .map((node: { dateModified?: string }) => node.dateModified)
+            .filter((value): value is string => Boolean(value))
+            .map((value) => value.slice(0, 10));
+        expect(modified, 'JSON-LD dateModified equal to the sitemap lastmod').toContain(lastmod);
         expect(blocks.length).toBeGreaterThan(0);
         for (const block of blocks) {
             const data = JSON.parse(block.textContent ?? '');
