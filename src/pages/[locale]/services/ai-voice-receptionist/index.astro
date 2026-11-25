@@ -1,0 +1,34 @@
+---
+import ServicePage from '../_ServicePage.astro';
+import SocialProofStrip from '@/src/components/services/SocialProofStrip.astro';
+import { serviceContentPagesByKey } from '../_service-content';
+import { getTranslations } from '@/lib/i18n';
+import { PRICING, priceMessageValues } from '@/lib/pricing';
+import { paymentLinkUrl } from '@/lib/payment-links';
+import { LOCALES, type Locale } from '@/lib/site-config';
+
+export function getStaticPaths() {
+    return LOCALES.map((locale) => ({ params: { locale } }));
+}
+
+const { locale } = Astro.params as { locale: Locale };
+const tRoot = getTranslations(locale);
+const price = tRoot('services.aiVoiceReceptionist.hero.price', { ...priceMessageValues(PRICING.aiVoiceReceptionist, locale), tax: tRoot('tax.suffix') });
+---
+
+<ServicePage
+    locale={locale}
+    namespace="services.aiVoiceReceptionist"
+    path="services/ai-voice-receptionist"
+    page={serviceContentPagesByKey.aiVoiceReceptionist[locale]}
+    price={price}
+    paymentHref={paymentLinkUrl('aiVoiceReceptionist')}
+>
+    {/* Social proof sits directly under the hero, per the conversion
+        framework's scroll order (promise -> trust -> offer). Reuses the
+        existing `home.testimonials` copy: all three are about AI call
+        handling and response time, so they are on topic here. The other
+        service pages render no social-proof section rather than borrow a quote
+        about a different service (see service-pages-social-proof.test.ts). */}
+    <SocialProofStrip slot="after-hero" items={tRoot.raw('home.testimonials.items')} />
+</ServicePage>

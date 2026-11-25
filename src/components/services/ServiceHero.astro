@@ -1,0 +1,41 @@
+---
+/**
+ * Shared hero for the services hub and the service pages.
+ *
+ * Props-only, and per the layout-diversity requirement NOT a centered hero on
+ * a dark mesh (the homepage already is one): this one is left-aligned.
+ */
+export interface Props {
+    eyebrow?: string;
+    title: string;
+    subtitle: string;
+    ctaLabel: string;
+    ctaHref: string;
+}
+
+const { eyebrow, title, subtitle, ctaLabel, ctaHref } = Astro.props;
+---
+
+<section class="relative pt-24 pb-20 md:pb-28 px-6 overflow-hidden hero-bg-deep">
+    <div class="max-w-3xl mx-auto text-left flex flex-col items-start gap-6 relative z-10">
+        {
+            eyebrow && (
+                <span class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-400 text-[10px] font-bold tracking-[0.2em] uppercase">
+                    {eyebrow}
+                </span>
+            )
+        }
+
+        <h1 class="text-4xl md:text-6xl font-bold tracking-tight text-white leading-[1.05]">
+            {title}
+        </h1>
+
+        <p class="text-lg md:text-xl text-gray-200 max-w-2xl font-medium leading-relaxed">
+            {subtitle}
+        </p>
+
+        <a href={ctaHref} class="bg-blue-900 text-white text-base font-bold px-10 py-4 rounded-full shadow-glow hover:bg-blue-800">
+            {ctaLabel}
+        </a>
+    </div>
+</section>

@@ -1,0 +1,31 @@
+---
+/**
+ * Optional testimonial strip for a service page.
+ *
+ * Renders nothing when there are no items: a page with an empty testimonials
+ * section is worse than one that omits it, and callers should be able to
+ * pass an empty array unconditionally rather than branching themselves.
+ */
+export interface Props {
+    items: { quote: string; author: string; position: string }[];
+}
+
+const { items } = Astro.props;
+---
+
+{
+    items.length > 0 && (
+        <section class="py-20 px-6 bg-white border-y border-gray-100">
+            <div class="max-w-5xl mx-auto grid gap-10 md:grid-cols-2">
+                {items.map((item) => (
+                    <figure class="flex flex-col gap-4">
+                        <blockquote class="text-lg font-medium text-black leading-relaxed">&ldquo;{item.quote}&rdquo;</blockquote>
+                        <figcaption class="text-sm text-gray-900">
+                            <span class="font-bold">{item.author}</span>, <span>{item.position}</span>
+                        </figcaption>
+                    </figure>
+                ))}
+            </div>
+        </section>
+    )
+}

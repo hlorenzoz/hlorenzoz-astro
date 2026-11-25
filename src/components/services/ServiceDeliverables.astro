@@ -1,0 +1,94 @@
+---
+/**
+ * Deliverables + pricing section for a service page.
+ *
+ * A DIFFERENT layout family from `BenefitsList` (asymmetric two-column grid)
+ * and `ProcessTimeline` (vertical numbered `<ol>`): this renders the concrete
+ * deliverables as labelled clusters of checklist items, each its own `<ul>`,
+ * next to a sticky pricing panel. A flat `<ul>` of 10-13 items is explicitly
+ * the wrong shape per `design-taste-frontend`; grouping into named clusters
+ * keeps every deliverable scannable without one giant list.
+ *
+ * The cluster grid uses exactly as many columns as there are groups (capped at
+ * 3), so it never leaves a trailing empty cell. A fixed `sm:grid-cols-2` did:
+ * with the three groups every service ships, it laid out 2 + 1 and left a
+ * blank fourth cell, the "empty cell at the end" the design guide calls a
+ * planning error. Driving the column count from `groups.length` fills the row
+ * for any group count.
+ *
+ * Reuses `.pricing-bg` (already defined for the homepage's pricing section)
+ * and `.glass-card`/`.btn-primary` rather than inventing a new palette.
+ */
+import { Check } from '@lucide/astro';
+import PaymentLinkButton from './PaymentLinkButton.astro';
+
+export interface ServiceDeliverablesGroup {
+    label: string;
+    items: string[];
+}
+
+export interface Props {
+    title: string;
+    price: string;
+    ctaLabel: string;
+    ctaHref: string;
+    groups: ServiceDeliverablesGroup[];
+    /** Rendered as a second CTA in the pricing panel only when both are set. */
+    paymentHref?: string;
+    paymentLabel?: string;
+}
+
+/**
+ * Tailwind column class for N groups, static strings so the JIT keeps them.
+ *
+ * Four groups sit two by two, never three plus one: Local SEO lists one group
+ * per pillar, and a 3 + 1 layout would single out the last pillar as an
+ * afterthought. Above four the grid falls back to three columns.
+ */
+const GROUP_GRID_COLS: Record<number, string> = {
+    1: 'grid-cols-1',
+    2: 'sm:grid-cols-2',
+    // Single column until all three fit at lg. A `sm:grid-cols-2` here would
+    // reintroduce the 2 + 1 orphan at the sm/md range; stacking below lg keeps
+    // every row full at every breakpoint.
+    3: 'lg:grid-cols-3',
+    4: 'sm:grid-cols-2',
+};
+
+const { title, price, ctaLabel, ctaHref, groups, paymentHref, paymentLabel } = Astro.props;
+const gridCols = GROUP_GRID_COLS[groups.length] ?? 'sm:grid-cols-2 lg:grid-cols-3';
+---
+
+<section class="py-24 px-6 pricing-bg">
+    <div class="max-w-6xl mx-auto relative z-10">
+        <h2 class="text-3xl md:text-5xl font-bold text-white mb-16 tracking-tight leading-tight max-w-2xl">
+            {title}
+        </h2>
+
+        <div class="grid lg:grid-cols-3 gap-8 items-start">
+            <div class={`lg:col-span-2 grid gap-6 ${gridCols}`}>
+                {
+                    groups.map((group) => (
+                        <div class="glass-card rounded-2xl p-6">
+                            <h3 class="text-xs font-bold uppercase tracking-[0.15em] text-blue-700 mb-4">{group.label}</h3>
+                            <ul class="space-y-3">
+                                {group.items.map((item) => (
+                                    <li class="flex items-start gap-3">
+                                        <Check class="size-5 text-blue-700 shrink-0 mt-0.5" aria-hidden="true" />
+                                        <span class="text-gray-900 font-medium leading-snug">{item}</span>
+                                    </li>
+                                ))}
+                            </ul>
+                        </div>
+                    ))
+                }
+            </div>
+
+            <div class="glass-card rounded-2xl p-8 flex flex-col gap-6 lg:sticky lg:top-28">
+                <p class="text-3xl md:text-4xl font-bold text-black tracking-tight">{price}</p>
+                <a href={ctaHref} class="btn-primary text-center">{ctaLabel}</a>
+                {paymentHref && paymentLabel && <PaymentLinkButton href={paymentHref} label={paymentLabel} />}
+            </div>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,180 @@
+---
+import { RefreshCw, CreditCard, Percent, Receipt, CircleX, Images, Mail } from '@lucide/astro';
+import BaseLayout from '@/src/layouts/BaseLayout.astro';
+import Navbar from '@/src/components/Navbar.astro';
+import Footer from '@/src/components/Footer.astro';
+import LegalSidebar from '@/src/components/LegalSidebar.astro';
+import JsonLd from '@/src/components/JsonLd.astro';
+import Breadcrumbs from '@/src/components/Breadcrumbs.astro';
+import { getTranslations } from '@/lib/i18n';
+import { legalCrumbs, legalMetadata, legalPageSchema, type LegalPageConfig } from '@/lib/legal-page';
+import { LOCALES } from '@/lib/site-config';
+import { BUNDLE_DISCOUNT, UPFRONT_SHARE } from '@/lib/pricing';
+
+export function getStaticPaths() {
+    return LOCALES.map((locale) => ({ params: { locale } }));
+}
+
+/**
+ * The percentages the legal copy states, from the same source as the pricing
+ * section. Typed into the message file they would be a second copy of a term,
+ * free to disagree with the first.
+ */
+const TERMS_TOKENS = {
+    discount: Math.round(BUNDLE_DISCOUNT * 100),
+    upfront: Math.round(UPFRONT_SHARE * 100),
+};
+
+const LEGAL: LegalPageConfig = {
+    slug: 'terms-conditions',
+    labelIndex: 1,
+    contentKey: 'footer.termsPage.sections.terms.content',
+};
+
+const { locale } = Astro.params as { locale: string };
+const t = getTranslations(locale);
+const meta = await legalMetadata(locale, LEGAL);
+
+const sections = [
+    { id: 'introduction', title: t('footer.termsPage.sections.terms.title') },
+    { id: 'license', title: t('footer.termsPage.sections.license.title') },
+    { id: 'property', title: t('footer.termsPage.sections.property.title') },
+    { id: 'pricing', title: t('home.pricing.title') },
+    { id: 'liability', title: t('footer.termsPage.sections.liability.title') },
+    { id: 'contact', title: t('footer.termsPage.sections.contact.title') }
+];
+
+const PRICING_TERMS = [
+    { key: 'payment', icon: CreditCard },
+    // The two conditions attached to every published price. They are terms,
+    // not marketing lines: a discount stated without its condition, or a
+    // figure without its tax status, is how an invoice gets disputed.
+    { key: 'discount', icon: Percent, isPageKey: true },
+    { key: 'tax', icon: Receipt, isPageKey: true },
+    { key: 'subscriptions', icon: RefreshCw, isPageKey: true },
+    { key: 'cancellations', icon: CircleX, isPageKey: true },
+    { key: 'marketing', icon: Images },
+];
+
+const crumbs = await legalCrumbs(locale, LEGAL);
+const pageSchema = await legalPageSchema(locale, LEGAL, crumbs);
+---
+
+<BaseLayout locale={locale} meta={meta}>
+        <div class="min-h-screen bg-white">
+            <JsonLd data={pageSchema} />
+            <Navbar locale={locale} />
+            <main class="pt-40 pb-24 px-6">
+                <Breadcrumbs
+                    crumbs={crumbs}
+                    label={t('navigation.breadcrumb')}
+                    className="max-w-7xl mx-auto mb-10"
+                />
+                <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-[280px_1fr] gap-16">
+                    <LegalSidebar locale={locale} sections={sections} />
+    
+                    <div>
+                        <div class="mb-16">
+                            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50 text-blue-700 text-[10px] font-bold uppercase tracking-widest mb-6">
+                                <RefreshCw class="w-3.5 h-3.5" />
+                                {t('footer.termsPage.lastUpdated')}
+                            </div>
+                            <h1 class="text-4xl md:text-7xl font-bold text-black tracking-tight leading-tight mb-8">
+                                {t('footer.legal.items.1.label')}
+                            </h1>
+                            <p class="text-gray-500 text-lg leading-relaxed font-medium max-w-2xl">
+                                Please read these terms carefully before using our services. By accessing Lorenzoz Agency, you agree to be bound by these conditions.
+                            </p>
+                        </div>
+    
+                        <div class="prose prose-lg max-w-none text-gray-600 font-medium leading-relaxed space-y-24">
+                            <section id="introduction" class="scroll-mt-32">
+                                <div class="flex items-center gap-4 mb-8">
+                                    <span class="flex items-center justify-center size-10 rounded-2xl bg-gray-50 text-black text-sm font-black border border-gray-100">1</span>
+                                    <h2 class="text-3xl font-bold text-black m-0">{t('footer.termsPage.sections.terms.title')}</h2>
+                                </div>
+                                <div class="p-8 rounded-3xl bg-gray-50/50 border border-gray-100">
+                                    <p class="m-0">{t('footer.termsPage.sections.terms.content')}</p>
+                                </div>
+                            </section>
+    
+                            <section id="license" class="scroll-mt-32">
+                                <div class="flex items-center gap-4 mb-8">
+                                    <span class="flex items-center justify-center size-10 rounded-2xl bg-gray-50 text-black text-sm font-black border border-gray-100">2</span>
+                                    <h2 class="text-3xl font-bold text-black m-0">{t('footer.termsPage.sections.license.title')}</h2>
+                                </div>
+                                <p class="mb-8">{t('footer.termsPage.sections.license.content')}</p>
+                                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                    {[0, 1, 2, 3].map((i) => (
+                                        <div class="flex items-start gap-4 p-5 rounded-2xl bg-white border border-gray-100 shadow-sm">
+                                            <div class="size-2 rounded-full bg-blue-500 mt-2 flex-shrink-0"></div>
+                                            <p class="text-sm font-bold text-gray-600 m-0">{t(`footer.termsPage.sections.license.list.${i}`)}</p>
+                                        </div>
+                                    ))}
+                                </div>
+                            </section>
+    
+                            <section id="property" class="scroll-mt-32">
+                                <div class="flex items-center gap-4 mb-8">
+                                    <span class="flex items-center justify-center size-10 rounded-2xl bg-gray-50 text-black text-sm font-black border border-gray-100">3</span>
+                                    <h2 class="text-3xl font-bold text-black m-0">{t('footer.termsPage.sections.property.title')}</h2>
+                                </div>
+                                <div class="p-8 rounded-3xl bg-gray-50/50 border border-gray-100">
+                                    <p class="m-0 italic">{t('footer.termsPage.sections.property.content')}</p>
+                                </div>
+                            </section>
+    
+                            <section id="pricing" class="scroll-mt-32">
+                                <div class="flex items-center gap-4 mb-8">
+                                    <span class="flex items-center justify-center size-10 rounded-2xl bg-gray-50 text-black text-sm font-black border border-gray-100">4</span>
+                                    <h2 class="text-3xl font-bold text-black m-0">{t('home.pricing.title')}</h2>
+                                </div>
+                                <p class="mb-10">{t('footer.termsPage.sections.pricing.intro')}</p>
+                                <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                                    {PRICING_TERMS.map((item) => {
+                                        const titleKey = item.isPageKey ? `footer.termsPage.sections.pricing.${item.key}.title` : `footer.terms.${item.key}.title`;
+                                        const descKey = item.isPageKey ? `footer.termsPage.sections.pricing.${item.key}.description` : `footer.terms.${item.key}.description`;
+                                        const Icon = item.icon;
+                                        return (
+                                            <div class="p-8 rounded-3xl bg-white border border-gray-100 shadow-xl shadow-gray-100/20 group hover:border-blue-100 transition-colors">
+                                                <div class="flex items-center gap-3 mb-4">
+                                                    <Icon class="w-6 h-6 text-blue-700" />
+                                                    <p class="text-sm font-black uppercase tracking-widest text-black m-0">{t(titleKey)}</p>
+                                                </div>
+                                                <p class="text-sm text-gray-500 font-medium m-0 leading-relaxed">{t(descKey, TERMS_TOKENS)}</p>
+                                            </div>
+                                        );
+                                    })}
+                                </div>
+                            </section>
+    
+                            <section id="liability" class="scroll-mt-32">
+                                <div class="flex items-center gap-4 mb-8">
+                                    <span class="flex items-center justify-center size-10 rounded-2xl bg-gray-50 text-black text-sm font-black border border-gray-100">5</span>
+                                    <h2 class="text-3xl font-bold text-black m-0">{t('footer.termsPage.sections.liability.title')}</h2>
+                                </div>
+                                <div class="p-8 rounded-3xl bg-black text-white shadow-2xl shadow-blue-200">
+                                    <p class="m-0 font-medium leading-relaxed opacity-90">
+                                        {t('footer.termsPage.sections.liability.content')}
+                                    </p>
+                                </div>
+                            </section>
+    
+                            <section id="contact" class="scroll-mt-32 pt-12 border-t border-gray-100 text-center lg:text-left">
+                                <h2 class="text-3xl font-bold text-black mb-6">{t('footer.termsPage.sections.contact.title')}</h2>
+                                <p class="text-gray-500 mb-10 max-w-xl mx-auto lg:mx-0">{t('footer.termsPage.sections.contact.content')}</p>
+                                <a
+                                    href="mailto:legal@hlorenzoz.com"
+                                    class="inline-flex items-center gap-3 px-8 py-4 bg-black text-white rounded-full font-bold hover:scale-105 transition-transform"
+                                >
+                                    <Mail class="w-6 h-6" />
+                                    legal@hlorenzoz.com
+                                </a>
+                            </section>
+                        </div>
+                    </div>
+                </div>
+            </main>
+            <Footer locale={locale} />
+        </div>
+</BaseLayout>

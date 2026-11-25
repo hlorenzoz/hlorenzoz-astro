@@ -1,0 +1,140 @@
+---
+import { Cookie, ShieldCheck, ChartColumn, Mail } from '@lucide/astro';
+import BaseLayout from '@/src/layouts/BaseLayout.astro';
+import Navbar from '@/src/components/Navbar.astro';
+import Footer from '@/src/components/Footer.astro';
+import LegalSidebar from '@/src/components/LegalSidebar.astro';
+import JsonLd from '@/src/components/JsonLd.astro';
+import Breadcrumbs from '@/src/components/Breadcrumbs.astro';
+import { getTranslations } from '@/lib/i18n';
+import { legalCrumbs, legalMetadata, legalPageSchema, type LegalPageConfig } from '@/lib/legal-page';
+import { LOCALES } from '@/lib/site-config';
+
+export function getStaticPaths() {
+    return LOCALES.map((locale) => ({ params: { locale } }));
+}
+
+const LEGAL: LegalPageConfig = {
+    slug: 'cookie-policy',
+    labelIndex: 2,
+    contentKey: 'footer.cookiePage.sections.whatAre.content',
+};
+
+const { locale } = Astro.params as { locale: string };
+const t = getTranslations(locale);
+const meta = await legalMetadata(locale, LEGAL);
+
+const sections = [
+    { id: 'whatAre', title: t('footer.cookiePage.sections.whatAre.title') },
+    { id: 'howWeUse', title: t('footer.cookiePage.sections.howWeUse.title') },
+    { id: 'control', title: t('footer.cookiePage.sections.control.title') },
+    { id: 'updates', title: t('footer.cookiePage.sections.updates.title') },
+    { id: 'contact', title: t('footer.cookiePage.sections.contact.title') }
+];
+
+const crumbs = await legalCrumbs(locale, LEGAL);
+const pageSchema = await legalPageSchema(locale, LEGAL, crumbs);
+---
+
+<BaseLayout locale={locale} meta={meta}>
+        <div class="min-h-screen bg-white">
+            <JsonLd data={pageSchema} />
+            <Navbar locale={locale} />
+            <main class="pt-40 pb-24 px-6">
+                <Breadcrumbs
+                    crumbs={crumbs}
+                    label={t('navigation.breadcrumb')}
+                    className="max-w-7xl mx-auto mb-10"
+                />
+                <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-[280px_1fr] gap-16">
+                    <LegalSidebar locale={locale} sections={sections} />
+    
+                    <div>
+                        <div class="mb-16">
+                            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50 text-blue-700 text-[10px] font-bold uppercase tracking-widest mb-6">
+                                <Cookie class="w-3.5 h-3.5" />
+                                {t('footer.cookiePage.lastUpdated')}
+                            </div>
+                            <h1 class="text-4xl md:text-7xl font-bold text-black tracking-tight leading-tight mb-8">
+                                {t('footer.legal.items.2.label')}
+                            </h1>
+                            <p class="text-gray-500 text-lg leading-relaxed font-medium max-w-2xl">
+                                We use cookies to provide you with a smoother, faster, and more personalized experience on our platform.
+                            </p>
+                        </div>
+    
+                        <div class="prose prose-lg max-w-none text-gray-600 font-medium leading-relaxed space-y-24">
+                            <section id="whatAre" class="scroll-mt-32">
+                                <div class="flex items-center gap-4 mb-8">
+                                    <span class="flex items-center justify-center size-10 rounded-2xl bg-gray-50 text-black text-sm font-black border border-gray-100">1</span>
+                                    <h2 class="text-3xl font-bold text-black m-0">{t('footer.cookiePage.sections.whatAre.title')}</h2>
+                                </div>
+                                <div class="p-8 rounded-3xl bg-gray-50/50 border border-gray-100">
+                                    <p class="m-0">{t('footer.cookiePage.sections.whatAre.content')}</p>
+                                </div>
+                            </section>
+    
+                            <section id="howWeUse" class="scroll-mt-32">
+                                <div class="flex items-center gap-4 mb-8">
+                                    <span class="flex items-center justify-center size-10 rounded-2xl bg-gray-50 text-black text-sm font-black border border-gray-100">2</span>
+                                    <h2 class="text-3xl font-bold text-black m-0">{t('footer.cookiePage.sections.howWeUse.title')}</h2>
+                                </div>
+                                <p class="mb-10">{t('footer.cookiePage.sections.howWeUse.content')}</p>
+                                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                    <div class="p-8 rounded-3xl bg-white border border-gray-100 shadow-xl shadow-gray-100/20 group hover:border-blue-100 transition-colors">
+                                        <div class="flex items-center gap-3 mb-4">
+                                            <ShieldCheck class="w-6 h-6 text-blue-700" />
+                                            <p class="text-sm font-black uppercase tracking-widest text-black m-0">{t('footer.cookiePage.sections.howWeUse.items.essential.title')}</p>
+                                        </div>
+                                        <p class="text-sm text-gray-500 font-medium m-0 leading-relaxed">{t('footer.cookiePage.sections.howWeUse.items.essential.description')}</p>
+                                    </div>
+                                    <div class="p-8 rounded-3xl bg-white border border-gray-100 shadow-xl shadow-gray-100/20 group hover:border-blue-100 transition-colors">
+                                        <div class="flex items-center gap-3 mb-4">
+                                            <ChartColumn class="w-6 h-6 text-blue-700" />
+                                            <p class="text-sm font-black uppercase tracking-widest text-black m-0">{t('footer.cookiePage.sections.howWeUse.items.analytics.title')}</p>
+                                        </div>
+                                        <p class="text-sm text-gray-500 font-medium m-0 leading-relaxed">{t('footer.cookiePage.sections.howWeUse.items.analytics.description')}</p>
+                                    </div>
+                                </div>
+                            </section>
+    
+                            <section id="control" class="scroll-mt-32">
+                                <div class="flex items-center gap-4 mb-8">
+                                    <span class="flex items-center justify-center size-10 rounded-2xl bg-gray-50 text-black text-sm font-black border border-gray-100">3</span>
+                                    <h2 class="text-3xl font-bold text-black m-0">{t('footer.cookiePage.sections.control.title')}</h2>
+                                </div>
+                                <div class="p-8 rounded-3xl bg-blue-600 text-white shadow-2xl shadow-blue-200">
+                                    <p class="m-0 font-medium leading-relaxed opacity-90 text-lg italic">
+                                        &quot;{t('footer.cookiePage.sections.control.content')}&quot;
+                                    </p>
+                                </div>
+                            </section>
+    
+                            <section id="updates" class="scroll-mt-32">
+                                <div class="flex items-center gap-4 mb-8">
+                                    <span class="flex items-center justify-center size-10 rounded-2xl bg-gray-50 text-black text-sm font-black border border-gray-100">4</span>
+                                    <h2 class="text-3xl font-bold text-black m-0">{t('footer.cookiePage.sections.updates.title')}</h2>
+                                </div>
+                                <div class="p-8 rounded-3xl bg-gray-50/50 border border-gray-100">
+                                    <p class="m-0">{t('footer.cookiePage.sections.updates.content')}</p>
+                                </div>
+                            </section>
+    
+                            <section id="contact" class="scroll-mt-32 pt-12 border-t border-gray-100 text-center lg:text-left">
+                                <h2 class="text-3xl font-bold text-black mb-6">{t('footer.cookiePage.sections.contact.title')}</h2>
+                                <p class="text-gray-500 mb-10 max-w-xl mx-auto lg:mx-0">{t('footer.cookiePage.sections.contact.content')}</p>
+                                <a
+                                    href="mailto:privacy@hlorenzoz.com"
+                                    class="inline-flex items-center gap-3 px-8 py-4 bg-black text-white rounded-full font-bold hover:scale-105 transition-transform"
+                                >
+                                    <Mail class="w-6 h-6" />
+                                    privacy@hlorenzoz.com
+                                </a>
+                            </section>
+                        </div>
+                    </div>
+                </div>
+            </main>
+            <Footer locale={locale} />
+        </div>
+</BaseLayout>

@@ -1,6 +1,6 @@
 import { describe, it, expect } from 'vitest';
-import { render, screen } from '@testing-library/react';
-import { BenefitsList } from '@/components/services/BenefitsList';
+import { renderAstro } from '@/tests/helpers/render';
+import BenefitsList from '@/src/components/services/BenefitsList.astro';
 
 const items = [
     { title: 'Faster launch', description: 'Ship in weeks, not months.' },
@@ -9,9 +9,8 @@ const items = [
 ];
 
 describe('BenefitsList', () => {
-    it('renders the title and every item', () => {
-        render(<BenefitsList title="Why it works" items={items} />);
-
+    it('renders the title and every item', async () => {
+        const screen = await renderAstro(BenefitsList, { title: 'Why it works', items });
         expect(screen.getByRole('heading', { name: 'Why it works' })).toBeInTheDocument();
         for (const item of items) {
             expect(screen.getByText(item.title)).toBeInTheDocument();
@@ -19,11 +18,9 @@ describe('BenefitsList', () => {
         }
     });
 
-    it('renders an asymmetric layout: the first item is featured, the rest are not', () => {
-        render(<BenefitsList title="Why it works" items={items} />);
-
-        const featured = screen.getByTestId('benefit-featured');
-        expect(featured).toHaveTextContent(items[0].title);
+    it('renders an asymmetric layout: the first item is featured, the rest are not', async () => {
+        const screen = await renderAstro(BenefitsList, { title: 'Why it works', items });
+        expect(screen.getByTestId('benefit-featured')).toHaveTextContent(items[0].title);
         expect(screen.queryAllByTestId('benefit-featured')).toHaveLength(1);
     });
 });

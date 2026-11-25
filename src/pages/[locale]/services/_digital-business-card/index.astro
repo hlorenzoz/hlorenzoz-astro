@@ -1,0 +1,51 @@
+---
+/*
+ * PAUSED since 2026-10-08. This page is NOT routed.
+ *
+ * The Digital Business Card is not offered for now, but it is coming back, so
+ * the page is parked rather than deleted. The leading underscore makes this a
+ * private folder Astro does not route, and nothing imports this module, so the
+ * `defineContentPage` calls below never run (they would throw: the route is
+ * commented out in `lib/routes.ts`).
+ *
+ * To bring it back (task #T0021): rename the folder to `digital-business-card`,
+ * uncomment its route, move its offer from `PAUSED_PRICING` into `PRICING`, and
+ * remove its redirect from `public/_redirects`.
+ */
+import ServicePage from '../_ServicePage.astro';
+import { LOCALE_MESSAGES } from '../_service-content';
+import { defineContentPage, type ContentPage, type ServicePageConfig } from '@/lib/service-page';
+import { getTranslations } from '@/lib/i18n';
+import { PAUSED_PRICING, priceMessageValues } from '@/lib/pricing';
+import { LOCALES, type Locale } from '@/lib/site-config';
+
+const PATH = 'services/digital-business-card';
+const NAMESPACE = 'services.digitalBusinessCard';
+
+function buildConfig(locale: Locale): ServicePageConfig {
+    const s = LOCALE_MESSAGES[locale].services.digitalBusinessCard;
+    return {
+        path: PATH,
+        kind: 'service',
+        title: s.meta.title,
+        description: s.meta.description,
+        name: s.hero.title,
+        faq: s.faq.items,
+        offer: PAUSED_PRICING.digitalBusinessCard,
+    };
+}
+
+const contentPages: Record<Locale, ContentPage> = {
+    en: defineContentPage(buildConfig('en')),
+    es: defineContentPage(buildConfig('es')),
+};
+
+export function getStaticPaths() {
+    return LOCALES.map((locale) => ({ params: { locale } }));
+}
+
+const { locale } = Astro.params as { locale: Locale };
+const price = getTranslations(locale, NAMESPACE)('hero.price', priceMessageValues(PAUSED_PRICING.digitalBusinessCard, locale));
+---
+
+<ServicePage locale={locale} namespace={NAMESPACE} path={PATH} page={contentPages[locale]} price={price} breadcrumbs={false} />

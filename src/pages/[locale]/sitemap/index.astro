@@ -1,0 +1,131 @@
+---
+/**
+ * Human-readable sitemap.
+ *
+ * Reads the same `lib/routes.ts` registry that produces `/sitemap.xml`, so the
+ * machine-readable and human-readable views of the site cannot disagree. Adding
+ * a page to the registry publishes it in both places at once, which is the
+ * point: two hand-maintained lists is how a sitemap goes stale.
+ */
+import BaseLayout from '@/src/layouts/BaseLayout.astro';
+import Navbar from '@/src/components/Navbar.astro';
+import Footer from '@/src/components/Footer.astro';
+import PageSidebar from '@/src/components/PageSidebar.astro';
+import Breadcrumbs from '@/src/components/Breadcrumbs.astro';
+import JsonLd from '@/src/components/JsonLd.astro';
+import { getTranslations } from '@/lib/i18n';
+import { ROUTE_GROUPS } from '@/lib/routes';
+import { localeHref } from '@/lib/routing';
+import { collectionPage } from '@/lib/schema';
+import { pageMetadata } from '@/lib/page-metadata';
+import { absoluteUrl, LOCALES, metaDescription, SITE_NAME } from '@/lib/site-config';
+
+export function getStaticPaths() {
+    return LOCALES.map((locale) => ({ params: { locale } }));
+}
+
+const { locale } = Astro.params as { locale: string };
+const t = getTranslations(locale, 'sitemap');
+const tAll = getTranslations(locale);
+
+const meta = pageMetadata({
+    locale,
+    path: 'sitemap',
+    title: `${t('title')} | ${SITE_NAME}`,
+    description: metaDescription(t('subtitle')),
+});
+
+// `ROUTE_GROUPS` is grouped once at module scope and already contains the
+// data-derived routes, so this render only resolves labels. No tier here is
+// special-cased, and nothing knows where a route came from.
+const groups = ROUTE_GROUPS.map((group) => ({
+    tier: group.tier,
+    routes: group.routes.map((route) => ({
+        path: route.path,
+        label: tAll(route.labelKey),
+    })),
+}));
+
+const sections = groups.map((group) => ({
+    id: group.tier,
+    title: t(`tiers.${group.tier}`),
+}));
+
+const crumbs = [
+    { name: tAll('navigation.home'), url: absoluteUrl(locale) },
+    { name: t('title'), url: absoluteUrl(locale, 'sitemap') },
+];
+
+const pageSchema = collectionPage({
+    locale,
+    name: t('title'),
+    description: metaDescription(t('subtitle')),
+    url: absoluteUrl(locale, 'sitemap'),
+    items: groups.flatMap((group) =>
+        group.routes.map((route) => ({
+            name: route.label,
+            url: absoluteUrl(locale, route.path),
+        }))
+    ),
+    crumbs,
+});
+---
+
+<BaseLayout locale={locale} meta={meta}>
+        <div class="min-h-screen bg-white">
+            <JsonLd data={pageSchema} />
+            <Navbar locale={locale} />
+            <main class="pt-40 pb-24 px-6">
+                <Breadcrumbs
+                    crumbs={crumbs}
+                    label={tAll('navigation.breadcrumb')}
+                    className="max-w-7xl mx-auto mb-10"
+                />
+                <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-[280px_1fr] gap-16">
+                    <PageSidebar locale={locale} tocLabel={t('toc')} sections={sections} />
+    
+                    <div>
+                        <div class="mb-16">
+                            <h1 class="text-4xl md:text-7xl font-bold text-black tracking-tight leading-tight mb-8">
+                                {t('title')}
+                            </h1>
+                            <p class="text-gray-500 text-lg leading-relaxed font-medium max-w-2xl">
+                                {t('subtitle')}
+                            </p>
+                        </div>
+    
+                        <div class="space-y-16">
+                            {groups.map((group, index) => (
+                                <section id={group.tier} class="scroll-mt-32">
+                                    <div class="flex items-center gap-4 mb-8">
+                                        <span class="flex items-center justify-center size-10 rounded-2xl bg-gray-50 text-black text-sm font-black border border-gray-100">
+                                            {index + 1}
+                                        </span>
+                                        <h2 class="text-3xl font-bold text-black m-0">
+                                            {t(`tiers.${group.tier}`)}
+                                        </h2>
+                                    </div>
+                                    <ul class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                        {group.routes.map((route) => (
+                                            <li>
+                                                <a
+                                                    href={localeHref(locale, route.path)}
+                                                    class="flex items-center gap-4 p-5 rounded-2xl bg-white border border-gray-100 shadow-sm hover:border-blue-100 transition-colors group"
+                                                >
+                                                    <div class="size-2 rounded-full bg-blue-500 flex-shrink-0"></div>
+                                                    <span class="text-sm font-bold text-gray-600 group-hover:text-black transition-colors">
+                                                        {route.label}
+                                                    </span>
+                                                </a>
+                                            </li>
+                                        ))}
+                                    </ul>
+                                </section>
+                            ))}
+                        </div>
+                    </div>
+                </div>
+            </main>
+            <Footer locale={locale} />
+        </div>
+</BaseLayout>

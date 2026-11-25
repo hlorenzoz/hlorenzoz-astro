@@ -1,0 +1,161 @@
+---
+import { RefreshCw, CircleCheck, Mail } from '@lucide/astro';
+import BaseLayout from '@/src/layouts/BaseLayout.astro';
+import Navbar from '@/src/components/Navbar.astro';
+import Footer from '@/src/components/Footer.astro';
+import LegalSidebar from '@/src/components/LegalSidebar.astro';
+import JsonLd from '@/src/components/JsonLd.astro';
+import Breadcrumbs from '@/src/components/Breadcrumbs.astro';
+import { getTranslations } from '@/lib/i18n';
+import { legalCrumbs, legalMetadata, legalPageSchema, type LegalPageConfig } from '@/lib/legal-page';
+import { LOCALES } from '@/lib/site-config';
+
+export function getStaticPaths() {
+    return LOCALES.map((locale) => ({ params: { locale } }));
+}
+
+const LEGAL: LegalPageConfig = {
+    slug: 'privacy-policy',
+    labelIndex: 0,
+    contentKey: 'footer.privacyPage.sections.introduction.content',
+};
+
+const { locale } = Astro.params as { locale: string };
+const t = getTranslations(locale);
+const meta = await legalMetadata(locale, LEGAL);
+
+const sections = [
+    { id: 'introduction', title: t('footer.privacyPage.sections.introduction.title') },
+    { id: 'dataCollection', title: t('footer.privacyPage.sections.dataCollection.title') },
+    { id: 'dataUsage', title: t('footer.privacyPage.sections.dataUsage.title') },
+    { id: 'thirdParty', title: t('footer.privacyPage.sections.thirdParty.title') },
+    { id: 'rights', title: t('footer.privacyPage.sections.rights.title') },
+    { id: 'contact', title: t('footer.privacyPage.sections.contact.title') }
+];
+
+const crumbs = await legalCrumbs(locale, LEGAL);
+const pageSchema = await legalPageSchema(locale, LEGAL, crumbs);
+---
+
+<BaseLayout locale={locale} meta={meta}>
+        <div class="min-h-screen bg-white">
+            <JsonLd data={pageSchema} />
+            <Navbar locale={locale} />
+            <main class="pt-40 pb-24 px-6">
+                <Breadcrumbs
+                    crumbs={crumbs}
+                    label={t('navigation.breadcrumb')}
+                    className="max-w-7xl mx-auto mb-10"
+                />
+                <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-[280px_1fr] gap-16">
+                    <LegalSidebar locale={locale} sections={sections} />
+    
+                    <div>
+                        <div class="mb-16">
+                            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50 text-blue-700 text-[10px] font-bold uppercase tracking-widest mb-6">
+                                <RefreshCw class="w-3.5 h-3.5" />
+                                {t('footer.privacyPage.lastUpdated')}
+                            </div>
+                            <h1 class="text-4xl md:text-7xl font-bold text-black tracking-tight leading-tight mb-8">
+                                {t('footer.legal.items.0.label')}
+                            </h1>
+                            <p class="text-gray-500 text-lg leading-relaxed font-medium max-w-2xl">
+                                At Lorenzoz Agency, transparency isn&apos;t just a legal requirement. It&apos;s the core of our relationship with you.
+                            </p>
+                        </div>
+    
+                        <div class="prose prose-lg max-w-none text-gray-600 font-medium leading-relaxed space-y-24">
+                            <section id="introduction" class="scroll-mt-32">
+                                <div class="flex items-center gap-4 mb-8">
+                                    <span class="flex items-center justify-center size-10 rounded-2xl bg-gray-50 text-black text-sm font-black border border-gray-100">1</span>
+                                    <h2 class="text-3xl font-bold text-black m-0">{t('footer.privacyPage.sections.introduction.title')}</h2>
+                                </div>
+                                <div class="p-8 rounded-3xl bg-gray-50/50 border border-gray-100">
+                                    <p class="m-0">{t('footer.privacyPage.sections.introduction.content')}</p>
+                                </div>
+                            </section>
+    
+                            <section id="dataCollection" class="scroll-mt-32">
+                                <div class="flex items-center gap-4 mb-8">
+                                    <span class="flex items-center justify-center size-10 rounded-2xl bg-gray-50 text-black text-sm font-black border border-gray-100">2</span>
+                                    <h2 class="text-3xl font-bold text-black m-0">{t('footer.privacyPage.sections.dataCollection.title')}</h2>
+                                </div>
+                                <p class="mb-8">{t('footer.privacyPage.sections.dataCollection.content')}</p>
+                                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                    {[0, 1, 2, 3].map((i) => (
+                                        <div class="flex items-start gap-4 p-5 rounded-2xl bg-white border border-gray-100 shadow-sm">
+                                            <div class="size-2 rounded-full bg-blue-500 mt-2 flex-shrink-0"></div>
+                                            <p class="text-sm font-bold text-gray-600 m-0">{t(`footer.privacyPage.sections.dataCollection.list.${i}`)}</p>
+                                        </div>
+                                    ))}
+                                </div>
+                            </section>
+    
+                            <section id="dataUsage" class="scroll-mt-32">
+                                <div class="flex items-center gap-4 mb-8">
+                                    <span class="flex items-center justify-center size-10 rounded-2xl bg-gray-50 text-black text-sm font-black border border-gray-100">3</span>
+                                    <h2 class="text-3xl font-bold text-black m-0">{t('footer.privacyPage.sections.dataUsage.title')}</h2>
+                                </div>
+                                <p class="mb-8">{t('footer.privacyPage.sections.dataUsage.content')}</p>
+                                <div class="space-y-4">
+                                    {[0, 1, 2].map((i) => (
+                                        <div class="flex items-center gap-4 p-5 rounded-2xl bg-gray-50/50 border border-gray-100">
+                                            <CircleCheck class="w-6 h-6 text-blue-700" />
+                                            <p class="text-sm font-bold text-gray-900 m-0">{t(`footer.privacyPage.sections.dataUsage.list.${i}`)}</p>
+                                        </div>
+                                    ))}
+                                </div>
+                            </section>
+    
+                            <section id="thirdParty" class="scroll-mt-32">
+                                <div class="flex items-center gap-4 mb-8">
+                                    <span class="flex items-center justify-center size-10 rounded-2xl bg-gray-50 text-black text-sm font-black border border-gray-100">4</span>
+                                    <h2 class="text-3xl font-bold text-black m-0">{t('footer.privacyPage.sections.thirdParty.title')}</h2>
+                                </div>
+                                <p class="mb-8">{t('footer.privacyPage.sections.thirdParty.content')}</p>
+                                <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                                    {[
+                                        { key: 'hosting', val: 'Cloudflare / Vercel' },
+                                        { key: 'payments', val: 'Stripe / PayPal' },
+                                        { key: 'booking', val: 'Cal.com / Google Calendar' },
+                                        { key: 'analytics', val: 'Google Analytics' },
+                                        { key: 'ai', val: 'ElevenLabs' }
+                                    ].map((item) => (
+                                        <div class="p-6 rounded-3xl bg-white border border-gray-100 shadow-xl shadow-gray-100/20 group hover:border-blue-100 transition-colors">
+                                            <p class="text-[10px] font-black uppercase tracking-widest text-blue-700 mb-2">{t(`footer.privacyPage.sections.thirdParty.${item.key}`)}</p>
+                                            <p class="text-black font-bold m-0">{item.val}</p>
+                                        </div>
+                                    ))}
+                                </div>
+                            </section>
+    
+                            <section id="rights" class="scroll-mt-32">
+                                <div class="flex items-center gap-4 mb-8">
+                                    <span class="flex items-center justify-center size-10 rounded-2xl bg-gray-50 text-black text-sm font-black border border-gray-100">5</span>
+                                    <h2 class="text-3xl font-bold text-black m-0">{t('footer.privacyPage.sections.rights.title')}</h2>
+                                </div>
+                                <div class="p-8 rounded-3xl bg-blue-600 text-white shadow-2xl shadow-blue-200">
+                                    <p class="m-0 font-medium leading-relaxed italic opacity-90 text-lg">
+                                        &quot;{t('footer.privacyPage.sections.rights.content')}&quot;
+                                    </p>
+                                </div>
+                            </section>
+    
+                            <section id="contact" class="scroll-mt-32 pt-12 border-t border-gray-100 text-center lg:text-left">
+                                <h2 class="text-3xl font-bold text-black mb-6">{t('footer.privacyPage.sections.contact.title')}</h2>
+                                <p class="text-gray-500 mb-10 max-w-xl mx-auto lg:mx-0">{t('footer.privacyPage.sections.contact.content')}</p>
+                                <a
+                                    href="mailto:privacy@hlorenzoz.com"
+                                    class="inline-flex items-center gap-3 px-8 py-4 bg-black text-white rounded-full font-bold hover:scale-105 transition-transform"
+                                >
+                                    <Mail class="w-6 h-6" />
+                                    privacy@hlorenzoz.com
+                                </a>
+                            </section>
+                        </div>
+                    </div>
+                </div>
+            </main>
+            <Footer locale={locale} />
+        </div>
+</BaseLayout>

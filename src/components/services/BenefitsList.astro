@@ -1,0 +1,34 @@
+---
+/**
+ * Asymmetric benefits list for a service page.
+ *
+ * NOT a grid of equal cards: the first item spans the full row and the rest
+ * pair up beneath it, per `landing-page-conversion-framework`'s ban on
+ * repeating the homepage's three-equal-card pattern.
+ */
+export interface Props {
+    title: string;
+    items: { title: string; description: string }[];
+}
+
+const { title, items } = Astro.props;
+---
+
+<section class="py-24 px-6 bg-white">
+    <div class="max-w-5xl mx-auto">
+        <h2 class="text-3xl md:text-5xl font-bold text-black mb-16 tracking-tight leading-tight max-w-2xl">
+            {title}
+        </h2>
+
+        <div class="grid md:grid-cols-2 gap-x-12 gap-y-12">
+            {
+                items.map((item, i) => (
+                    <div data-testid={i === 0 ? 'benefit-featured' : undefined} class={i === 0 ? 'md:col-span-2 border-b border-gray-100 pb-10' : ''}>
+                        <h3 class="text-xl font-bold text-black mb-3 tracking-tight">{item.title}</h3>
+                        <p class="text-gray-900 font-medium leading-relaxed">{item.description}</p>
+                    </div>
+                ))
+            }
+        </div>
+    </div>
+</section>

@@ -1,0 +1,91 @@
+---
+/**
+ * Core 30 hub: the category page that groups the service pages beneath it.
+ * Its `defineContentPage` config lives in `./_service-content.ts`.
+ */
+import { CodeXml, Globe, MapPin, Phone } from '@lucide/astro';
+import BaseLayout from '@/src/layouts/BaseLayout.astro';
+import Navbar from '@/src/components/Navbar.astro';
+import Footer from '@/src/components/Footer.astro';
+import JsonLd from '@/src/components/JsonLd.astro';
+import Breadcrumbs from '@/src/components/Breadcrumbs.astro';
+import ServiceHero from '@/src/components/services/ServiceHero.astro';
+import ServiceDirectoryList, { type ServiceDirectoryItem } from '@/src/components/services/ServiceDirectoryList.astro';
+import { HUB_TOKENS, hubContentPages, LOCALE_MESSAGES } from './_service-content';
+import { getTranslations } from '@/lib/i18n';
+import { localeHref } from '@/lib/routing';
+import { serviceKeyFromSlug } from '@/lib/pricing';
+import { LOCALES, type Locale } from '@/lib/site-config';
+
+export function getStaticPaths() {
+    return LOCALES.map((locale) => ({ params: { locale } }));
+}
+
+/**
+ * Per-slug icon. The slugs themselves come from the route registry, through
+ * `page.children()`; this only decorates them.
+ */
+const SLUG_TO_ICON: Record<string, ServiceDirectoryItem['icon']> = {
+    'local-seo': MapPin,
+    'website-development': Globe,
+    'ai-voice-receptionist': Phone,
+    'software-development': CodeXml,
+};
+
+const { locale } = Astro.params as { locale: Locale };
+const t = getTranslations(locale, 'services.hub');
+// Root translator: resolves the full-path `labelKey`s the route registry
+// carries (e.g. `navigation.home`), exactly like `page.schema()` expects.
+const tRoot = getTranslations(locale);
+const page = hubContentPages[locale];
+const messages = LOCALE_MESSAGES[locale];
+
+// `children()` yields ABSOLUTE urls, because that is what the JSON-LD needs.
+// Rendered HTML needs the opposite: an absolute href sent every hub card to
+// `https://hlorenzoz.com/...`, leaving localhost and previews. The relative
+// href is rebuilt from the slug with the helper the Navbar and Footer use.
+const items: ServiceDirectoryItem[] = page.children(locale, tRoot).map((link) => {
+    const slug = new URL(link.url).pathname.split('/').filter(Boolean).pop() ?? '';
+    return {
+        name: link.name,
+        href: localeHref(locale, `services/${slug}`),
+        description: messages.services[serviceKeyFromSlug(slug)].meta.description,
+        icon: SLUG_TO_ICON[slug],
+    };
+});
+---
+
+<BaseLayout locale={locale} meta={page.metadata(locale)}>
+    <div class="min-h-screen bg-white">
+        <JsonLd data={page.schema(locale, tRoot)} />
+        <Navbar locale={locale} />
+
+        <main class="pt-32 pb-24">
+            <div class="px-6 mb-6">
+                <Breadcrumbs crumbs={page.crumbs(locale, tRoot)} label={tRoot('navigation.breadcrumb')} className="max-w-3xl mx-auto" />
+            </div>
+
+            <ServiceHero
+                eyebrow={t('eyebrow')}
+                title={t('title')}
+                subtitle={t('subtitle', HUB_TOKENS)}
+                ctaLabel={t('cta')}
+                ctaHref={`${localeHref(locale, 'services')}#directory`}
+            />
+
+            {/*
+             * The hub deliberately carries NO booking widget, unlike the
+             * service pages. Editorially, this is a directory: a visitor here
+             * is still choosing a service, and asking for the meeting before
+             * the offer is explained inverts the sales script. Technically,
+             * the Cal.com iframe pulls third-party cookies and on this short
+             * page it entered the viewport during Lighthouse runs, dropping
+             * best-practices to 0.79 against a 0.9 threshold. The navbar's
+             * "Book Consultation" CTA still offers booking on every page.
+             */}
+            <ServiceDirectoryList items={items} />
+        </main>
+
+        <Footer locale={locale} />
+    </div>
+</BaseLayout>

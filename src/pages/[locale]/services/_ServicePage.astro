@@ -1,0 +1,100 @@
+---
+/**
+ * The layout every service page shares: hero, benefits, deliverables with the
+ * price, process, FAQ and the booking embed. Pages differ only through the
+ * `after-hero` slot (AI Voice Receptionist's social proof) and the
+ * `after-deliverables` slot (Local SEO's numbers table).
+ */
+import BaseLayout from '@/src/layouts/BaseLayout.astro';
+import Navbar from '@/src/components/Navbar.astro';
+import Footer from '@/src/components/Footer.astro';
+import JsonLd from '@/src/components/JsonLd.astro';
+import FaqAccordion from '@/src/components/FaqAccordion.astro';
+import Breadcrumbs from '@/src/components/Breadcrumbs.astro';
+import ServiceHero from '@/src/components/services/ServiceHero.astro';
+import BenefitsList from '@/src/components/services/BenefitsList.astro';
+import ServiceDeliverables from '@/src/components/services/ServiceDeliverables.astro';
+import ProcessTimeline from '@/src/components/services/ProcessTimeline.astro';
+import CalBooking from '@/src/components/services/CalBooking.astro';
+import type { ContentPage } from '@/lib/service-page';
+import { getTranslations } from '@/lib/i18n';
+import { localeHref } from '@/lib/routing';
+
+export interface Props {
+    locale: string;
+    /** `services.<key>` message namespace. */
+    namespace: string;
+    path: string;
+    page: ContentPage;
+    /** The formatted `hero.price` line. */
+    price: string;
+    paymentHref?: string;
+    /** The paused Digital Business Card page rendered no breadcrumb trail. */
+    breadcrumbs?: boolean;
+}
+
+const { locale, namespace, path, page, price, paymentHref, breadcrumbs = true } = Astro.props;
+const t = getTranslations(locale, namespace);
+const tRoot = getTranslations(locale);
+
+// One booking anchor per page: the hero CTA and the deliverables CTA both
+// point here, so the target lives in one place.
+const bookingHref = `${localeHref(locale, path)}#booking`;
+---
+
+<BaseLayout locale={locale} meta={page.metadata(locale)}>
+    <div class="min-h-screen bg-white">
+        <JsonLd data={page.schema(locale, tRoot)} />
+        <Navbar locale={locale} />
+
+        <main class="pt-32 pb-24">
+            {
+                breadcrumbs && (
+                    <div class="px-6 mb-6">
+                        <Breadcrumbs crumbs={page.crumbs(locale, tRoot)} label={tRoot('navigation.breadcrumb')} className="max-w-3xl mx-auto" />
+                    </div>
+                )
+            }
+
+            <ServiceHero eyebrow={t('hero.eyebrow')} title={t('hero.title')} subtitle={t('hero.subtitle')} ctaLabel={t('hero.cta')} ctaHref={bookingHref} />
+
+            <slot name="after-hero" />
+
+            <BenefitsList title={t('benefits.title')} items={t.raw('benefits.items')} />
+
+            <ServiceDeliverables
+                title={t('deliverables.title')}
+                price={price}
+                ctaLabel={t('hero.cta')}
+                ctaHref={bookingHref}
+                groups={t.raw('deliverables.groups')}
+                paymentHref={paymentHref}
+                paymentLabel={tRoot('payment.cta')}
+            />
+
+            <slot name="after-deliverables" />
+
+            <ProcessTimeline title={t('process.title')} steps={t.raw('process.steps')} />
+
+            <section id="faq" class="py-24 px-6 bg-white">
+                <div class="max-w-3xl mx-auto">
+                    <h2 class="text-3xl md:text-5xl font-bold text-black mb-12 tracking-tight">
+                        {t('faq.title')}
+                    </h2>
+                    <FaqAccordion items={t.raw('faq.items')} />
+                </div>
+            </section>
+
+            <section id="booking" class="py-24 px-6 bg-[#f9f9f9]">
+                <div class="max-w-3xl mx-auto text-center mb-12">
+                    <h2 id="booking-heading" class="text-3xl md:text-5xl font-bold text-black tracking-tight">
+                        {t('hero.cta')}
+                    </h2>
+                </div>
+                <CalBooking titleId="booking-heading" />
+            </section>
+        </main>
+
+        <Footer locale={locale} />
+    </div>
+</BaseLayout>

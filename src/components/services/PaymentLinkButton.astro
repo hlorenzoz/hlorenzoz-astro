@@ -1,0 +1,14 @@
+---
+/**
+ * A Stripe Payment Link is an external `buy.stripe.com` URL, not a route on
+ * this site, so it opens in a new tab.
+ */
+export interface Props {
+    href: string;
+    label: string;
+}
+
+const { href, label } = Astro.props;
+---
+
+<a href={href} target="_blank" rel="noopener noreferrer" class="btn-primary text-center">{label}</a>

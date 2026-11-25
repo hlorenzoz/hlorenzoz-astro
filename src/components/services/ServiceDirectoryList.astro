@@ -1,0 +1,50 @@
+---
+/**
+ * Hub-only directory of the service pages.
+ *
+ * `href` is LOCALE-RELATIVE (`/en/services/local-seo/`), deliberately.
+ *
+ * This component used to take the fully qualified `absoluteUrl()` string
+ * straight from `ContentPage.children()`, which meant every card on the hub
+ * pointed at `https://hlorenzoz.com/...`: on localhost that walked the visitor
+ * off the dev server and onto production, and on a preview deploy it would do
+ * the same. `children()` still returns absolute URLs because JSON-LD requires
+ * them; converting one to a relative href is the hub's job, not this
+ * component's. The field is named `href` rather than `url` so that the
+ * distinction is visible at every call site.
+ */
+import type { MapPin } from '@lucide/astro';
+
+export interface ServiceDirectoryItem {
+    name: string;
+    href: string;
+    description: string;
+    /** A `@lucide/astro` icon component, rendered at `size-6`. */
+    icon: typeof MapPin;
+}
+
+export interface Props {
+    items: ServiceDirectoryItem[];
+}
+
+const { items } = Astro.props;
+---
+
+<section id="directory" class="py-24 px-6 bg-white">
+    <div class="max-w-5xl mx-auto grid gap-6 md:grid-cols-2">
+        {
+            items.map(({ name, href, description, icon: Icon }) => (
+                <a
+                    href={href}
+                    class="group flex flex-col gap-4 p-8 rounded-3xl border border-gray-100 bg-[#f9f9f9] hover:border-blue-200 transition-colors"
+                >
+                    <div class="size-12 rounded-full bg-blue-50 text-blue-700 flex items-center justify-center" aria-hidden="true">
+                        <Icon class="size-6" aria-hidden="true" />
+                    </div>
+                    <h3 class="text-xl font-bold text-black tracking-tight">{name}</h3>
+                    <p class="text-gray-900 font-medium leading-relaxed text-sm">{description}</p>
+                </a>
+            ))
+        }
+    </div>
+</section>
