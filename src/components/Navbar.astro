@@ -2,12 +2,13 @@
 /**
  * Markup is static; the dropdown, the mobile
  * menu, outside click, Escape and the body scroll lock live in the script
- * below. The language switcher is plain links to the other locale's same path,
- * computed at build time (it used to be `router.push`).
+ * below. The language switcher is plain links to the same page in each locale
+ * it exists in (`lib/routes.ts`), computed at build time.
  */
 import { getTranslations } from '@/lib/i18n';
 import { localeHref } from '@/lib/routing';
-import { LOCALES } from '@/lib/site-config';
+import { findRoute, routeHref } from '@/lib/routes';
+import { LOCALES, LOCALE_INFO } from '@/lib/site-config';
 
 interface Props {
     locale: string;
@@ -33,32 +34,33 @@ const getHref = (key: string) => {
     // (astro.config.mjs `trailingSlash: 'always'`). A bare `/en/portfolio` is
     // a non-canonical form of a page whose own rel=canonical ends in a slash,
     // and the Navbar ships on every route, so the mismatch was sitewide.
-    if (key in ROUTE_KEYS) return localeHref(locale, ROUTE_KEYS[key]);
+    if (key in ROUTE_KEYS) return routeHref(locale, ROUTE_KEYS[key]);
     const hash = key === 'price' ? 'pricing' : key;
-    return isHomePage ? `#${hash}` : `${localeHref(locale, "")}#${hash}`;
+    return isHomePage ? `#${hash}` : `${routeHref(locale, '')}#${hash}`;
 };
 
 const navLinks = ['services', 'portfolio', 'price', 'contact'];
 
-// Same path in another locale. A path without a locale prefix (the 404 page)
-// has no translated twin, so it falls back to that locale's home.
-const switchHref = (newLocale: string) => {
-    const segments = pathname.split('/');
-    if (!(LOCALES as readonly string[]).includes(segments[1])) return localeHref(newLocale, '');
-    segments[1] = newLocale;
-    return segments.join('/') || '/';
-};
+// The registered page this URL is, if any. A path without a locale prefix
+// (the 404 page) or an unregistered one has no translated twin, so the
+// switcher offers the locale homes instead.
+const segments = pathname.split('/');
+const pagePath = (LOCALES as readonly string[]).includes(segments[1]) ? segments.slice(2).join('/').replace(/\/+$/, '') : undefined;
+const page = pagePath === undefined ? undefined : findRoute(pagePath);
+const switchPath = page ? page.path : '';
+// Only the locales this page exists in: a link to an unbuilt translation is a 404.
+const langs = (page ?? findRoute(''))?.locales ?? [];
+const switchHref = (newLocale: string) => localeHref(newLocale, switchPath);
 
-const contactHref = isHomePage ? "#contact" : `${localeHref(locale, "")}#contact`;
-const langs = ['en', 'es'];
+const contactHref = isHomePage ? "#contact" : `${routeHref(locale, '')}#contact`;
 // Starts with the visible locale code so the accessible name contains the visible label (WCAG 2.5.3).
-const langMenuLabel = locale === 'es' ? 'ES, abrir menú de idioma' : 'EN, open language menu';
+const langMenuLabel = t('languageMenu', { code: locale.toUpperCase() });
 ---
 
 <nav class="fixed top-0 left-0 right-0 z-[100] px-2 sm:px-6 py-4 sm:py-6">
     <div class="bg-white/95 mx-auto max-w-6xl w-full rounded-full px-3 sm:px-6 py-2.5 flex items-center justify-between shadow-2xl shadow-black/5 gap-2 sm:gap-4 border border-white/20">
         {/* Logo */}
-        <a href={localeHref(locale, '')} class="flex items-center gap-2 group flex-shrink-0" aria-label="Lorenzoz Agency Home" data-nav-logo>
+        <a href={routeHref(locale, '')} class="flex items-center gap-2 group flex-shrink-0" aria-label="Lorenzoz Agency Home" data-nav-logo>
             <div class="size-8 rounded-full bg-black flex items-center justify-center text-white shadow-lg shadow-black/10 flex-shrink-0">
                 <svg aria-hidden="true" class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
                     <path d="M7 18h2V6H7v12zm4 4h2V2h-2v20zm-8-8h2v-4H3v4zm12 4h2V6h-2v12zm4-8v4h2v-4h-2z"></path>
@@ -101,7 +103,7 @@ const langMenuLabel = locale === 'es' ? 'ES, abrir menú de idioma' : 'EN, open 
                                     data-testid={`lang-option-${loc}`}
                                     class={`px-4 py-2 text-[11px] font-black uppercase tracking-widest flex items-center justify-between w-full cursor-pointer ${locale === loc ? 'text-blue-700' : 'text-gray-900'}`}
                                 >
-                                    <span>{loc === 'en' ? 'English' : 'Español'}</span>
+                                    <span>{LOCALE_INFO[loc].name}</span>
                                     <span class="opacity-30">{loc}</span>
                                 </a>
                             ))
@@ -148,7 +150,7 @@ const langMenuLabel = locale === 'es' ? 'ES, abrir menú de idioma' : 'EN, open 
                             data-testid={`mobile-lang-option-${loc}`}
                             class={`flex-1 text-center py-4 rounded-2xl font-black uppercase text-[10px] tracking-widest ${locale === loc ? 'bg-black text-white shadow-xl shadow-black/10' : 'bg-gray-100 text-gray-900'}`}
                         >
-                            {loc === 'en' ? 'English' : 'Español'}
+                            {LOCALE_INFO[loc].name}
                         </a>
                     ))
                 }
@@ -224,7 +226,8 @@ const langMenuLabel = locale === 'es' ? 'ES, abrir menú de idioma' : 'EN, open 
     document.querySelector('[data-nav-logo]')?.addEventListener('click', (event) => {
         setMenu(false);
         const { pathname } = window.location;
-        const locale = document.documentElement.lang;
+        // `lang` is the BCP 47 tag (`en-GB`); the URL uses the lowercase code.
+        const locale = document.documentElement.lang.toLowerCase();
         if (pathname === '/' || pathname === `/${locale}` || pathname === `/${locale}/`) {
             event.preventDefault();
             window.scrollTo({ top: 0, behavior: 'smooth' });

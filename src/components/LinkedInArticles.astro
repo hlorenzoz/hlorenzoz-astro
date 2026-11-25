@@ -12,6 +12,7 @@ import { ArrowRight, ChevronLeft, ChevronRight, Clock, ExternalLink } from '@luc
 import FadeInImage from '@/src/components/FadeInImage.astro';
 import type { LinkedInArticle } from '@/lib/linkedin';
 import { formatContentDate } from '@/lib/dates';
+import { localeInfo } from '@/lib/routing';
 import { getTranslations } from '@/lib/i18n';
 
 export interface Props {
@@ -68,7 +69,7 @@ const t = getTranslations(locale, 'articles');
                                         `getLinkedInArticles()` casts the JSON with a bare
                                         `as`, so nothing validates `date` at runtime, and
                                         this carousel renders on the home page. */}
-                                    <span>{formatContentDate(locale, article.date, 'monthYear')?.text ?? article.date}</span>
+                                    <span>{formatContentDate(localeInfo(locale).tag, article.date, 'monthYear')?.text ?? article.date}</span>
                                     <span aria-hidden="true">·</span>
                                     <span class="inline-flex items-center gap-1">
                                         <Clock class="w-3 h-3" aria-hidden="true" />

@@ -8,10 +8,10 @@ import JsonLd from '@/src/components/JsonLd.astro';
 import Breadcrumbs from '@/src/components/Breadcrumbs.astro';
 import { getTranslations } from '@/lib/i18n';
 import { legalCrumbs, legalMetadata, legalPageSchema, type LegalPageConfig } from '@/lib/legal-page';
-import { LOCALES } from '@/lib/site-config';
+import { routeLocales } from '@/lib/routes';
 
 export function getStaticPaths() {
-    return LOCALES.map((locale) => ({ params: { locale } }));
+    return routeLocales('privacy-policy').map((locale) => ({ params: { locale } }));
 }
 
 const LEGAL: LegalPageConfig = {

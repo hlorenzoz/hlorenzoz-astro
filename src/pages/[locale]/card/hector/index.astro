@@ -3,12 +3,12 @@ import BaseLayout from '@/src/layouts/BaseLayout.astro';
 import JsonLd from '@/src/components/JsonLd.astro';
 import HectorCard from '@/src/components/HectorCard.astro';
 import { profilePage } from '@/lib/schema';
-import { findRoute } from '@/lib/routes';
+import { findRoute, routeAlternates, routeLocales } from '@/lib/routes';
 import type { PageMeta } from '@/lib/page-metadata';
-import { absoluteUrl, languageAlternates } from '@/lib/site-config';
+import { absoluteUrl, ogLocale } from '@/lib/site-config';
 
 export function getStaticPaths() {
-    return [{ params: { locale: 'en' } }, { params: { locale: 'es' } }];
+    return routeLocales('card/hector').map((locale) => ({ params: { locale } }));
 }
 
 const { locale } = Astro.params as { locale: string };
@@ -21,14 +21,14 @@ const url = absoluteUrl(locale, 'card/hector');
 const meta: PageMeta = {
     title: TITLE,
     description: DESCRIPTION,
-    alternates: { canonical: url, languages: languageAlternates('card/hector') },
+    alternates: { canonical: url, languages: routeAlternates('card/hector') },
     openGraph: {
         title: TITLE,
         description: DESCRIPTION,
         url,
         siteName: 'Lorenzoz Agency',
         type: 'profile',
-        locale: locale === 'es' ? 'es_ES' : 'en_US',
+        locale: ogLocale(locale),
         images: [{ url: OG_IMAGE, width: 1200, height: 630, alt: 'Héctor Luis Lorenzo Zaldivar - Founder & AI Architect' }],
     },
     twitter: { card: 'summary_large_image', title: TITLE, description: DESCRIPTION, images: [OG_IMAGE] },

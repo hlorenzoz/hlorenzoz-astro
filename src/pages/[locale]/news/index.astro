@@ -11,20 +11,23 @@ import { collectionPage } from '@/lib/schema';
 import { getNewsItemsAction } from '@/lib/actions/news';
 import { latestNewsModified } from '@/lib/news';
 import { formatContentDate } from '@/lib/dates';
+import { localeInfo } from '@/lib/routing';
 import { localeHref } from '@/lib/routing';
 import { imageSrcSet } from '@/lib/image';
 import type { PageMeta } from '@/lib/page-metadata';
-import { OG_IMAGE, absoluteUrl, languageAlternates, LOCALES } from '@/lib/site-config';
+import { OG_IMAGE, absoluteUrl, ogLocale } from '@/lib/site-config';
+import { routeAlternates, routeExists, routeLocales } from '@/lib/routes';
 
 export function getStaticPaths() {
-    return LOCALES.map((locale) => ({ params: { locale } }));
+    return routeLocales('news').map((locale) => ({ params: { locale } }));
 }
 
 const { locale } = Astro.params as { locale: string };
 
 const t = getTranslations(locale, 'news');
 const tNav = getTranslations(locale, 'navigation');
-const items = await getNewsItemsAction();
+// Only posts whose page exists in this locale: their copy and link must both resolve.
+const items = (await getNewsItemsAction()).filter((item) => routeExists(`news/${item.slug}`, locale));
 
 const url = absoluteUrl(locale, 'news');
 const title = `${t('list.title')} | Lorenzoz Agency`;
@@ -32,14 +35,14 @@ const description = t('list.subtitle');
 const meta: PageMeta = {
     title,
     description,
-    alternates: { canonical: url, languages: languageAlternates('news') },
+    alternates: { canonical: url, languages: routeAlternates('news') },
     openGraph: {
         title,
         description,
         url,
         siteName: 'Lorenzoz Agency',
         type: 'website',
-        locale: locale === 'es' ? 'es_ES' : 'en_US',
+        locale: ogLocale(locale),
         images: [{ url: OG_IMAGE, width: 1200, height: 630, alt: title }],
     },
     twitter: { card: 'summary_large_image', title, description, images: [OG_IMAGE] },
@@ -91,7 +94,7 @@ const preloadImages = items.slice(0, 3).map((item) => ({ srcset: imageSrcSet(ite
                         items.map((item, i) => {
                             const href = localeHref(locale, `news/${item.slug}`);
                             const title = t(`items.${item.id}.title`);
-                            const date = formatContentDate(locale, item.datePublished, 'dayMonthYear');
+                            const date = formatContentDate(localeInfo(locale).tag, item.datePublished, 'dayMonthYear');
                             return (
                                 <li class="group">
                                     <div class="relative aspect-[16/10] rounded-[2.5rem] overflow-hidden mb-8 shadow-2xl border border-gray-100 bg-zinc-100">

@@ -3,9 +3,10 @@
  *
  * Built at module scope, once per locale: `defineContentPage` validates path
  * registration, kind/tier agreement and the title budget at import time, not
- * on every render. Two instances because the factory's `title`/`description`
- * are plain strings and this site's copy is bilingual. The copy is read
- * straight from the message files, as the Next pages did.
+ * on every render. One instance per locale the page is built in
+ * (`routeLocales`), because the factory's `title`/`description` are plain
+ * strings. The copy is read straight from the message files, as the Next pages
+ * did.
  *
  * Lives next to the pages (the `_` prefix keeps it unrouted) so
  * `tests/seo/service-pages-config.test.ts` can exercise the real configs.
@@ -13,11 +14,33 @@
 import { defineContentPage, type CategoryPageConfig, type ContentPage } from '@/lib/service-page';
 import { BUNDLE_DISCOUNT, PRICING, slugFromServiceKey, type ServiceKey } from '@/lib/pricing';
 import { fillTokens } from '@/lib/copy-tokens';
-import type { Locale } from '@/lib/site-config';
-import enMessages from '@/messages/en.json';
-import esMessages from '@/messages/es.json';
+import { LOCALES, type Locale } from '@/lib/site-config';
+import { getMessages } from '@/lib/i18n';
+import { routeLocales } from '@/lib/routes';
+import type enMessages from '@/messages/en.json';
 
-export const LOCALE_MESSAGES = { en: enMessages, es: esMessages } as const;
+/**
+ * Typed with the default locale's shape. Only safe to read for a locale a page
+ * is built in: `routeLocales` guarantees that locale's file holds the page's
+ * copy, while the rest of an untranslated file is empty.
+ */
+export const LOCALE_MESSAGES = Object.fromEntries(LOCALES.map((locale) => [locale, getMessages(locale)])) as unknown as Record<
+    Locale,
+    typeof enMessages
+>;
+
+/** One content page per locale `path` is built in; absent for the others. */
+export type LocaleContentPages = Partial<Record<Locale, ContentPage>>;
+
+const pagesFor = (path: string, build: (locale: Locale) => ContentPage): LocaleContentPages =>
+    Object.fromEntries(routeLocales(path).map((locale) => [locale, build(locale)]));
+
+/** The page for a locale `getStaticPaths` built; a miss means the two read different registries. */
+export function contentPageFor(pages: LocaleContentPages, locale: Locale): ContentPage {
+    const page = pages[locale];
+    if (!page) throw new Error(`No content page for locale "${locale}"`);
+    return page;
+}
 
 /** The hub subtitle states the bundle discount, which lives in `lib/pricing.ts`. */
 export const HUB_TOKENS = { discount: Math.round(BUNDLE_DISCOUNT * 100) };
@@ -39,16 +62,14 @@ function hubConfig(locale: Locale): CategoryPageConfig {
     };
 }
 
-export const hubContentPages: Record<Locale, ContentPage> = {
-    en: defineContentPage(hubConfig('en')),
-    es: defineContentPage(hubConfig('es')),
-};
+export const hubContentPages: LocaleContentPages = pagesFor('services', (locale) => defineContentPage(hubConfig(locale)));
 
-function serviceContentPages(key: ServiceKey): Record<Locale, ContentPage> {
+function serviceContentPages(key: ServiceKey): LocaleContentPages {
+    const path = `services/${slugFromServiceKey(key)}`;
     const build = (locale: Locale) => {
         const s = LOCALE_MESSAGES[locale].services[key];
         return defineContentPage({
-            path: `services/${slugFromServiceKey(key)}`,
+            path,
             kind: 'service',
             title: s.meta.title,
             description: s.meta.description,
@@ -59,10 +80,10 @@ function serviceContentPages(key: ServiceKey): Record<Locale, ContentPage> {
             offer: PRICING[key],
         });
     };
-    return { en: build('en'), es: build('es') };
+    return pagesFor(path, build);
 }
 
-export const serviceContentPagesByKey: Record<ServiceKey, Record<Locale, ContentPage>> = {
+export const serviceContentPagesByKey: Record<ServiceKey, LocaleContentPages> = {
     localSeo: serviceContentPages('localSeo'),
     websiteDevelopment: serviceContentPages('websiteDevelopment'),
     aiVoiceReceptionist: serviceContentPages('aiVoiceReceptionist'),

@@ -11,6 +11,7 @@ import type { PortfolioItem } from '@/lib/portfolio';
 import { portfolioTypeBadgeClass } from '@/lib/portfolio-theme';
 import { getTranslations } from '@/lib/i18n';
 import { localeHref } from '@/lib/routing';
+import { routeHref } from '@/lib/routes';
 
 export interface Props {
     portfolioItems: PortfolioItem[];
@@ -35,7 +36,7 @@ const tt = getTranslations(locale, 'portfolio');
                     {t('subtitle')}
                 </p>
             </div>
-            <a href={localeHref(locale, 'portfolio')} class="inline-flex items-center gap-2 text-blue-700 font-bold hover:text-blue-700 group">
+            <a href={routeHref(locale, 'portfolio')} class="inline-flex items-center gap-2 text-blue-700 font-bold hover:text-blue-700 group">
                 {t('cta')}
                 <ArrowRight class="w-5 h-5" aria-hidden="true" />
             </a>

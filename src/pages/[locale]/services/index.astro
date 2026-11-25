@@ -11,14 +11,15 @@ import JsonLd from '@/src/components/JsonLd.astro';
 import Breadcrumbs from '@/src/components/Breadcrumbs.astro';
 import ServiceHero from '@/src/components/services/ServiceHero.astro';
 import ServiceDirectoryList, { type ServiceDirectoryItem } from '@/src/components/services/ServiceDirectoryList.astro';
-import { HUB_TOKENS, hubContentPages, LOCALE_MESSAGES } from './_service-content';
+import { HUB_TOKENS, contentPageFor, hubContentPages, LOCALE_MESSAGES } from './_service-content';
 import { getTranslations } from '@/lib/i18n';
 import { localeHref } from '@/lib/routing';
 import { serviceKeyFromSlug } from '@/lib/pricing';
-import { LOCALES, type Locale } from '@/lib/site-config';
+import { type Locale } from '@/lib/site-config';
+import { routeExists, routeLocales } from '@/lib/routes';
 
 export function getStaticPaths() {
-    return LOCALES.map((locale) => ({ params: { locale } }));
+    return routeLocales('services').map((locale) => ({ params: { locale } }));
 }
 
 /**
@@ -37,14 +38,15 @@ const t = getTranslations(locale, 'services.hub');
 // Root translator: resolves the full-path `labelKey`s the route registry
 // carries (e.g. `navigation.home`), exactly like `page.schema()` expects.
 const tRoot = getTranslations(locale);
-const page = hubContentPages[locale];
+const page = contentPageFor(hubContentPages, locale);
 const messages = LOCALE_MESSAGES[locale];
 
 // `children()` yields ABSOLUTE urls, because that is what the JSON-LD needs.
 // Rendered HTML needs the opposite: an absolute href sent every hub card to
 // `https://hlorenzoz.com/...`, leaving localhost and previews. The relative
 // href is rebuilt from the slug with the helper the Navbar and Footer use.
-const items: ServiceDirectoryItem[] = page.children(locale, tRoot).map((link) => {
+// Only services whose page exists in this locale: their description and link must both resolve.
+const items: ServiceDirectoryItem[] = page.children(locale, tRoot).filter((link) => routeExists(new URL(link.url).pathname.split('/').slice(2).join('/'), locale)).map((link) => {
     const slug = new URL(link.url).pathname.split('/').filter(Boolean).pop() ?? '';
     return {
         name: link.name,

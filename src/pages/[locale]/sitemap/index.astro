@@ -14,14 +14,14 @@ import PageSidebar from '@/src/components/PageSidebar.astro';
 import Breadcrumbs from '@/src/components/Breadcrumbs.astro';
 import JsonLd from '@/src/components/JsonLd.astro';
 import { getTranslations } from '@/lib/i18n';
-import { findRoute, ROUTE_GROUPS } from '@/lib/routes';
+import { findRoute, ROUTE_GROUPS, routeLocales } from '@/lib/routes';
 import { localeHref } from '@/lib/routing';
 import { collectionPage } from '@/lib/schema';
 import { pageMetadata } from '@/lib/page-metadata';
-import { absoluteUrl, LOCALES, metaDescription, SITE_NAME } from '@/lib/site-config';
+import { absoluteUrl, metaDescription, SITE_NAME } from '@/lib/site-config';
 
 export function getStaticPaths() {
-    return LOCALES.map((locale) => ({ params: { locale } }));
+    return routeLocales('sitemap').map((locale) => ({ params: { locale } }));
 }
 
 const { locale } = Astro.params as { locale: string };
@@ -37,15 +37,18 @@ const meta = pageMetadata({
 
 // `ROUTE_GROUPS` is grouped once at module scope and already contains the
 // data-derived routes, so this render only resolves labels. No tier here is
-// special-cased, and nothing knows where a route came from.
+// special-cased, and nothing knows where a route came from. Only pages that
+// exist in this locale are listed, the same set `/sitemap-{locale}.xml` lists.
 const groups = ROUTE_GROUPS.map((group) => ({
     id: group.id,
     title: tAll(group.labelKey),
-    routes: group.routes.map((route) => ({
-        path: route.path,
-        label: tAll(route.labelKey),
-    })),
-}));
+    routes: group.routes
+        .filter((route) => (route.locales as readonly string[]).includes(locale))
+        .map((route) => ({
+            path: route.path,
+            label: tAll(route.labelKey),
+        })),
+})).filter((group) => group.routes.length > 0);
 
 const sections = groups.map((group) => ({ id: group.id, title: group.title }));
 

@@ -32,8 +32,8 @@ describe('absoluteUrl (canonical URL builder)', () => {
         expect(absoluteUrl('en', 'portfolio/real-estate')).toBe('https://hlorenzoz.com/en/portfolio/real-estate/');
     });
 
-    it('languageAlternates includes en, es and x-default', () => {
-        expect(languageAlternates('privacy-policy')).toEqual({
+    it('languageAlternates lists the given locales and x-default', () => {
+        expect(languageAlternates('privacy-policy', ['en', 'es'])).toEqual({
             en: 'https://hlorenzoz.com/en/privacy-policy/',
             es: 'https://hlorenzoz.com/es/privacy-policy/',
             'x-default': 'https://hlorenzoz.com/en/privacy-policy/',

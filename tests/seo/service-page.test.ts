@@ -102,10 +102,11 @@ describe('contentPageMetadata', () => {
         expect(m.openGraph?.url).not.toBe('https://hlorenzoz.com/');
     });
 
-    it('carries hreflang for both locales plus x-default', () => {
+    it('lists hreflang only for locales the live registry vouches for, plus x-default', () => {
+        // The fixture path is not in the live route registry, so nothing proves
+        // the page exists in another locale: only the rendered one is listed.
         const m = contentPageMetadata('es', SERVICE);
-        expect(m.alternates?.languages).toMatchObject({
-            en: absoluteUrl('en', SERVICE.path),
+        expect(m.alternates?.languages).toEqual({
             es: absoluteUrl('es', SERVICE.path),
             'x-default': absoluteUrl('en', SERVICE.path),
         });

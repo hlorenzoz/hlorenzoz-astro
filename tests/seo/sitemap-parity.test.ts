@@ -8,7 +8,7 @@
  */
 import { describe, it, expect } from 'vitest';
 import { sitemap } from '@/src/pages/sitemap.xml';
-import { ALL_ROUTES, ROUTE_GROUPS } from '@/lib/routes';
+import { ALL_ROUTES, ROUTE_GROUPS, routeLocales } from '@/lib/routes';
 import { SECTION_TIERS, localeHref, type RouteTier } from '@/lib/routing';
 import { getPortfolioItems } from '@/lib/portfolio';
 import { LOCALES, absoluteUrl } from '@/lib/site-config';
@@ -66,7 +66,7 @@ describe('HTML sitemap links use the canonical URL form', () => {
 
     it('matches the path portion of the canonical for every registered route', () => {
         for (const route of ALL_ROUTES) {
-            for (const locale of LOCALES) {
+            for (const locale of route.locales) {
                 const canonical = new URL(absoluteUrl(locale, route.path)).pathname;
                 expect(localeHref(locale, route.path)).toBe(canonical);
             }
@@ -85,7 +85,7 @@ describe('HTML sitemap links use the canonical URL form', () => {
 describe('internal link builders produce canonical forms', () => {
     it('never produces a path-only href without a trailing slash', () => {
         const hrefs = ALL_ROUTES.flatMap((route) =>
-            LOCALES.map((locale) => localeHref(locale, route.path))
+            route.locales.map((locale) => localeHref(locale, route.path))
         );
         for (const href of hrefs) {
             expect(href.endsWith('/'), `"${href}" is not canonical`).toBe(true);
@@ -103,24 +103,28 @@ describe('XML sitemap', () => {
     const entries = sitemap();
     const urls = entries.map((e) => e.url);
 
-    it('lists every registered route in every locale', () => {
+    it('lists every registered route in every locale it is built in, and no other', () => {
         for (const route of ALL_ROUTES) {
             for (const locale of LOCALES) {
+                if (!route.locales.includes(locale)) {
+                    expect(urls).not.toContain(absoluteUrl(locale, route.path));
+                    continue;
+                }
                 expect(urls).toContain(absoluteUrl(locale, route.path));
             }
         }
     });
 
-    it('lists every portfolio item in every locale', () => {
+    it('lists every portfolio item in every locale it is built in', () => {
         for (const item of getPortfolioItems()) {
-            for (const locale of LOCALES) {
+            for (const locale of routeLocales(`portfolio/${item.slug}`)) {
                 expect(urls).toContain(absoluteUrl(locale, `portfolio/${item.slug}`));
             }
         }
     });
 
     /**
-     * The sitemap carries `<loc>` and `<lastmod>` and nothing else.
+     * The sitemap carries `<loc>`, `<lastmod>` and the hreflang alternates, nothing else.
      *
      * It used to also emit `<changefreq>` (hardcoded "weekly" on every entry)
      * and `<priority>` (from a `routePriority` helper that existed only to feed
@@ -135,10 +139,10 @@ describe('XML sitemap', () => {
      * default from quietly putting the ignored fields back, since every other
      * test here reads only `url` and `lastModified`.
      */
-    it('emits only loc and lastmod, never the fields crawlers ignore', () => {
+    it('emits only loc, lastmod and alternates, never the fields crawlers ignore', () => {
         expect(entries.length).toBeGreaterThan(0);
         for (const entry of entries) {
-            expect(Object.keys(entry).sort()).toEqual(['lastModified', 'url']);
+            expect(Object.keys(entry).sort()).toEqual(['alternates', 'lastModified', 'url']);
         }
     });
 
@@ -157,7 +161,8 @@ describe('XML sitemap', () => {
             checked.push(entry.url);
         }
         // Guards the guard: a regex that stops matching would pass vacuously.
-        expect(checked.length).toBe(bySlug.size * LOCALES.length);
+        const expected = getPortfolioItems().reduce((n, item) => n + routeLocales(`portfolio/${item.slug}`).length, 0);
+        expect(checked.length).toBe(expected);
     });
 
     /**
@@ -176,7 +181,7 @@ describe('XML sitemap', () => {
 
         for (const entry of entries) {
             const path = new URL(entry.url).pathname
-                .replace(/^\/(?:en|es)\//, '')
+                .replace(new RegExp(`^/(?:${LOCALES.join('|')})/`), '')
                 .replace(/\/$/, '');
             const expected = expectedByPath.get(path);
             expect(expected, `sitemap emitted "${entry.url}" which is in no registry entry`).toBeDefined();
@@ -186,7 +191,7 @@ describe('XML sitemap', () => {
 
         // Proves the loop ran: a path-extraction change that stopped matching
         // would otherwise turn this whole test into a no-op.
-        expect(asserted).toBe(ALL_ROUTES.length * LOCALES.length);
+        expect(asserted).toBe(ALL_ROUTES.reduce((n, r) => n + r.locales.length, 0));
     });
 
     it('has no duplicate URLs', () => {

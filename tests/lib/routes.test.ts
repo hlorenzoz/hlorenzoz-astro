@@ -357,8 +357,9 @@ describe('DERIVED_ROUTES', () => {
         // tell which entries came from JSON, so no consumer needs a branch.
         // `lastModifiedDate` is added by `assertValidRoute`, which every route
         // passes through regardless of origin. `parent` is present on all but
-        // the home route, which is the root of the tree.
-        const required = ['labelKey', 'lastModified', 'lastModifiedDate', 'path', 'tier'];
+        // the home route, which is the root of the tree. `copyKeys` and the
+        // `locales` derived from them decide where every page is built.
+        const required = ['copyKeys', 'labelKey', 'lastModified', 'lastModifiedDate', 'locales', 'path', 'tier'];
         const hand = ALL_ROUTES.filter((r) => !DERIVED_ROUTES.includes(r));
         expect(hand.length).toBeGreaterThan(0);
 

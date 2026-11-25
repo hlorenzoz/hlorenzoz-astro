@@ -13,18 +13,17 @@ import { getTranslations } from '@/lib/i18n';
 import { getPortfolioItemBySlugAction, getPortfolioItemsAction } from '@/lib/actions/portfolio';
 import { getNewsItemsAction } from '@/lib/actions/news';
 import { formatContentDate } from '@/lib/dates';
-import { localeHref } from '@/lib/routing';
+import { localeHref, localeInfo } from '@/lib/routing';
 import { portfolioDetail } from '@/lib/schema';
 import { imageSrcSet } from '@/lib/image';
 import { cn } from '@/lib/utils/cn';
 import type { PageMeta } from '@/lib/page-metadata';
-import { absoluteUrl, languageAlternates } from '@/lib/site-config';
+import { absoluteUrl, ogLocale } from '@/lib/site-config';
+import { routeAlternates, routeExists, routeLocales } from '@/lib/routes';
 
 export async function getStaticPaths() {
     const items = await getPortfolioItemsAction();
-    const locales = ['en', 'es'];
-
-    return locales.flatMap((locale) => items.map((item) => ({ params: { locale, slug: item.slug } })));
+    return items.flatMap((item) => routeLocales(`portfolio/${item.slug}`).map((locale) => ({ params: { locale, slug: item.slug } })));
 }
 
 const { locale, slug } = Astro.params as { locale: string; slug: string };
@@ -36,7 +35,7 @@ if (!item) throw new Error(`Unknown portfolio slug: ${slug}`);
 const t = getTranslations(locale, `portfolio.${item.id}`);
 const tNews = getTranslations(locale, 'news');
 // Posts about this project, newest first (getNewsItemsAction already orders them).
-const projectNews = (await getNewsItemsAction()).filter((post) => post.portfolioId === item.id);
+const projectNews = (await getNewsItemsAction()).filter((post) => post.portfolioId === item.id && routeExists(`news/${post.slug}`, locale));
 const tNav = getTranslations(locale, 'navigation');
 
 const pageUrl = absoluteUrl(locale, `portfolio/${item.slug}`);
@@ -45,14 +44,14 @@ const metaDescription = t('description');
 const meta: PageMeta = {
     title: metaTitle,
     description: metaDescription,
-    alternates: { canonical: pageUrl, languages: languageAlternates(`portfolio/${item.slug}`) },
+    alternates: { canonical: pageUrl, languages: routeAlternates(`portfolio/${item.slug}`) },
     openGraph: {
         title: metaTitle,
         description: metaDescription,
         url: pageUrl,
         siteName: 'Lorenzoz Agency',
         type: 'website',
-        locale: locale === 'es' ? 'es_ES' : 'en_US',
+        locale: ogLocale(locale),
         images: [{ url: item.image, alt: t('title') }],
     },
     twitter: { card: 'summary_large_image', title: metaTitle, description: metaDescription, images: [item.image] },
@@ -264,7 +263,7 @@ const preloadImages = [
                                 {projectNews.map((post) => (
                                     <li class="p-8 rounded-[2rem] bg-gray-50 border border-gray-100">
                                         <time datetime={post.datePublished} class="text-sm font-bold text-gray-600">
-                                            {formatContentDate(locale, post.datePublished, 'dayMonthYear')}
+                                            {formatContentDate(localeInfo(locale).tag, post.datePublished, 'dayMonthYear')}
                                         </time>
                                         <h3 class="text-xl font-bold text-black mt-3 mb-3 leading-snug">
                                             <a href={localeHref(locale, `news/${post.slug}`)} class="hover:text-blue-700 transition-colors">{tNews(`items.${post.id}.title`)}</a>

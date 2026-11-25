@@ -11,7 +11,8 @@
  */
 import { Clock } from '@lucide/astro';
 import FadeInImage from '@/src/components/FadeInImage.astro';
-import { localeHref } from '@/lib/routing';
+import { localeInfo } from '@/lib/routing';
+import { routeHref } from '@/lib/routes';
 import { formatContentDate } from '@/lib/dates';
 import { PERSON } from '@/lib/site-config';
 
@@ -45,12 +46,12 @@ const { locale, dateModified, byLabel, updatedLabel, readTimeLabel } = Astro.pro
 //
 // `formatContentDate` owns the UTC pin, this degradation path, and the
 // formatter cache, so no date-rendering site has to remember all three.
-const formatted = formatContentDate(locale, dateModified, 'dayMonthYear');
+const formatted = formatContentDate(localeInfo(locale).tag, dateModified, 'dayMonthYear');
 ---
 
 <div class="flex flex-wrap items-center gap-x-6 gap-y-3 py-6 border-y border-gray-100">
     {/* Built through `localeHref` rather than by hand: a hand-built href in a raw <a> was the sitewide Navbar regression. */}
-    <a href={localeHref(locale, 'card/hector')} class="flex items-center gap-3 group" rel="author">
+    <a href={routeHref(locale, 'card/hector')} class="flex items-center gap-3 group" rel="author">
         <div class="relative size-11 rounded-full overflow-hidden border border-gray-100 flex-shrink-0">
             <FadeInImage src={PERSON.image[0]} alt={PERSON.name} fill sizes="44px" className="object-cover" />
         </div>

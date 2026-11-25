@@ -21,6 +21,7 @@
  * Every amount is BEFORE TAX. The copy marks each figure "+ VAT" / "+ IVA" and
  * the JSON-LD declares `valueAddedTaxIncluded: false`.
  */
+import { localeInfo } from '@/lib/routing';
 
 /** Service keys mirror the slugs registered in `lib/routes.ts`, camel-cased. */
 export type ServiceKey =
@@ -176,7 +177,7 @@ export function slugFromServiceKey(key: ServiceKey): string {
  * "€2,500.00" on a pricing card is noise.
  */
 export function formatAmount(amount: number, locale: string): string {
-    return new Intl.NumberFormat(locale === 'es' ? 'es-ES' : 'en-IE', {
+    return new Intl.NumberFormat(localeInfo(locale).intl, {
         style: 'currency',
         currency: CURRENCY,
         minimumFractionDigits: 0,

@@ -12,10 +12,11 @@
  *
  * A `#hash` href points at a homepage section, so off the homepage it needs
  * the locale prefix to get back there first. A route href always takes one,
- * plus the trailing slash the site canonicalizes on (`localeHref`).
+ * plus the trailing slash the site canonicalizes on (`routeHref`, which
+ * links to the English page while a translation is not published yet).
  */
 import { getTranslations } from '@/lib/i18n';
-import { localeHref } from '@/lib/routing';
+import { routeHref } from '@/lib/routes';
 
 interface Props {
     locale: string;
@@ -47,7 +48,7 @@ const mailLinks: Record<string, string[]> = {
     <div class="max-w-6xl mx-auto">
         <div class="grid grid-cols-1 md:grid-cols-4 gap-16 mb-20">
             <div class="col-span-1 md:col-span-1">
-                <a href={localeHref(locale, '')} class="flex items-center gap-2 mb-6 group text-white" aria-label="Lorenzoz Agency Home">
+                <a href={routeHref(locale, '')} class="flex items-center gap-2 mb-6 group text-white" aria-label="Lorenzoz Agency Home">
                     <div class="size-8 rounded-full bg-white text-black flex items-center justify-center shadow-lg shadow-white/5">
                         <svg aria-hidden="true" class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
                             <path d="M7 18h2V6H7v12zm4 4h2V2h-2v20zm-8-8h2v-4H3v4zm12 4h2V6h-2v12zm4-8v4h2v-4h-2z"></path>
@@ -67,11 +68,11 @@ const mailLinks: Record<string, string[]> = {
                             {items.map((item) => (
                                 <li>
                                     {item.href.startsWith('#') ? (
-                                        <a href={isHomePage ? item.href : `${localeHref(locale, "")}${item.href}`} class="hover:text-blue-500 transition-colors">
+                                        <a href={isHomePage ? item.href : `${routeHref(locale, '')}${item.href}`} class="hover:text-blue-500 transition-colors">
                                             {item.label}
                                         </a>
                                     ) : (
-                                        <a href={localeHref(locale, item.href)} class="hover:text-blue-500 transition-colors">
+                                        <a href={routeHref(locale, item.href)} class="hover:text-blue-500 transition-colors">
                                             {item.label}
                                         </a>
                                     )}

@@ -13,6 +13,7 @@ import {
     OG_IMAGE,
     DEFAULT_LOCALE,
     absoluteUrl,
+    localeInfo,
 } from '@/lib/site-config';
 import {
     CURRENCY,
@@ -230,7 +231,7 @@ export function organizationGraph({ locale }: { locale: string }): JsonLdObject 
                 url: ENTITY_URLS.site,
                 name: SITE_NAME,
                 publisher: { '@id': SCHEMA_IDS.organization },
-                inLanguage: locale,
+                inLanguage: localeInfo(locale).tag,
             },
             {
                 '@type': 'Person',
@@ -358,7 +359,7 @@ export function collectionPage({
         name,
         description,
         url,
-        inLanguage: locale,
+        inLanguage: localeInfo(locale).tag,
         isPartOf: { '@id': SCHEMA_IDS.website },
         // Same attribution the service and article builders emit, so a category
         // page names an accountable human rather than an anonymous brand.
@@ -415,7 +416,7 @@ export function portfolioDetail({
         description,
         url: projectUrl,
         image,
-        inLanguage: locale,
+        inLanguage: localeInfo(locale).tag,
         creator: { '@id': SCHEMA_IDS.organization },
     };
     if (type === 'demo') work.applicationCategory = 'BusinessApplication';
@@ -507,7 +508,7 @@ export function servicePage({
         description,
         url,
         serviceType: serviceType ?? name,
-        inLanguage: locale,
+        inLanguage: localeInfo(locale).tag,
         provider: { '@id': SCHEMA_IDS.organization },
         image: image ?? OG_IMAGE,
     };
@@ -533,7 +534,7 @@ export function servicePage({
         name,
         description,
         url,
-        inLanguage: locale,
+        inLanguage: localeInfo(locale).tag,
         isPartOf: { '@id': SCHEMA_IDS.website },
         mainEntity: { '@id': serviceId },
         // The named human accountable for the page. Points at the same Person
@@ -599,7 +600,7 @@ export function articlePage({
         headline,
         description,
         url,
-        inLanguage: locale,
+        inLanguage: localeInfo(locale).tag,
         image: image ?? OG_IMAGE,
         author: { '@id': SCHEMA_IDS.person },
         publisher: { '@id': SCHEMA_IDS.organization },
@@ -633,7 +634,7 @@ export function profilePage({ locale, dateModified }: { locale: string; dateModi
         '@context': CONTEXT,
         '@type': 'ProfilePage',
         url: absoluteUrl(locale, 'card/hector'),
-        inLanguage: locale,
+        inLanguage: localeInfo(locale).tag,
         isPartOf: { '@id': SCHEMA_IDS.website },
         mainEntity: { '@id': SCHEMA_IDS.person },
         ...(dateModified ? { dateModified: schemaDateTime(dateModified) } : {}),
@@ -668,7 +669,7 @@ export function webPage({
         name,
         ...(description ? { description } : {}),
         url,
-        inLanguage: locale,
+        inLanguage: localeInfo(locale).tag,
         isPartOf: { '@id': SCHEMA_IDS.website },
         primaryImageOfPage: OG_IMAGE,
         ...(dateModified ? { dateModified: schemaDateTime(dateModified) } : {}),

@@ -8,11 +8,11 @@ import JsonLd from '@/src/components/JsonLd.astro';
 import Breadcrumbs from '@/src/components/Breadcrumbs.astro';
 import { getTranslations } from '@/lib/i18n';
 import { legalCrumbs, legalMetadata, legalPageSchema, type LegalPageConfig } from '@/lib/legal-page';
-import { LOCALES } from '@/lib/site-config';
+import { routeLocales } from '@/lib/routes';
 import { BUNDLE_DISCOUNT, UPFRONT_SHARE } from '@/lib/pricing';
 
 export function getStaticPaths() {
-    return LOCALES.map((locale) => ({ params: { locale } }));
+    return routeLocales('terms-conditions').map((locale) => ({ params: { locale } }));
 }
 
 /**

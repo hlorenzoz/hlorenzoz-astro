@@ -10,7 +10,8 @@
 import { ArrowRight } from '@lucide/astro';
 import FadeInImage from '@/src/components/FadeInImage.astro';
 import { formatContentDate } from '@/lib/dates';
-import { localeHref } from '@/lib/routing';
+import { localeHref, localeInfo } from '@/lib/routing';
+import { routeHref } from '@/lib/routes';
 
 export interface NewsCard {
     slug: string;
@@ -44,7 +45,7 @@ const { locale, items, eyebrow, title, subtitle, viewAll } = Astro.props;
                         </h2>
                         <p class="text-xl text-gray-900 max-w-2xl font-medium leading-relaxed">{subtitle}</p>
                     </div>
-                    <a href={localeHref(locale, 'news')} class="inline-flex items-center gap-2 text-blue-700 font-bold shrink-0 hover:underline underline-offset-4">
+                    <a href={routeHref(locale, 'news')} class="inline-flex items-center gap-2 text-blue-700 font-bold shrink-0 hover:underline underline-offset-4">
                         {viewAll}
                         <ArrowRight class="w-4 h-4" aria-hidden="true" />
                     </a>
@@ -57,7 +58,7 @@ const { locale, items, eyebrow, title, subtitle, viewAll } = Astro.props;
                     class="flex gap-6 overflow-x-auto snap-x snap-mandatory pb-6 px-4 rounded-[1.5rem] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-blue-700"
                 >
                     {items.map((item) => {
-                        const date = formatContentDate(locale, item.datePublished, 'dayMonthYear');
+                        const date = formatContentDate(localeInfo(locale).tag, item.datePublished, 'dayMonthYear');
                         return (
                             <li class="snap-start shrink-0 w-[80%] sm:w-[45%] lg:w-[31%]">
                                 <a

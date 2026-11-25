@@ -15,6 +15,47 @@
  */
 
 /**
+ * URL codes, lowercase because they are path segments (`/en-gb/`). Order is the
+ * order the language switcher, hreflang and the sitemap index list them in.
+ */
+export const LOCALES = ['en', 'es', 'en-gb', 'gl', 'pt', 'it', 'fr', 'de', 'nl'] as const;
+export type Locale = (typeof LOCALES)[number];
+export const DEFAULT_LOCALE: Locale = 'en';
+
+export interface LocaleInfo {
+    /** BCP 47 tag: hreflang, `<html lang>` and JSON-LD `inLanguage`. */
+    tag: string;
+    /** OpenGraph `language_TERRITORY`. */
+    ogLocale: string;
+    /** Intl locale for prices. `en` is en-IE: euro amounts formatted the way EU English readers expect. */
+    intl: string;
+    /** Native name shown in the language switcher. */
+    name: string;
+}
+
+/**
+ * Every per-locale fact in one table, so no page or component branches on
+ * `locale === 'es'`. `/en/` is international English (x-default); `/pt/` is
+ * Portuguese of Portugal.
+ */
+export const LOCALE_INFO: Record<Locale, LocaleInfo> = {
+    en: { tag: 'en', ogLocale: 'en_US', intl: 'en-IE', name: 'English' },
+    es: { tag: 'es', ogLocale: 'es_ES', intl: 'es-ES', name: 'Español' },
+    'en-gb': { tag: 'en-GB', ogLocale: 'en_GB', intl: 'en-GB', name: 'English (UK)' },
+    gl: { tag: 'gl', ogLocale: 'gl_ES', intl: 'gl-ES', name: 'Galego' },
+    pt: { tag: 'pt-PT', ogLocale: 'pt_PT', intl: 'pt-PT', name: 'Português' },
+    it: { tag: 'it', ogLocale: 'it_IT', intl: 'it-IT', name: 'Italiano' },
+    fr: { tag: 'fr', ogLocale: 'fr_FR', intl: 'fr-FR', name: 'Français' },
+    de: { tag: 'de', ogLocale: 'de_DE', intl: 'de-DE', name: 'Deutsch' },
+    nl: { tag: 'nl', ogLocale: 'nl_NL', intl: 'nl-NL', name: 'Nederlands' },
+};
+
+/** The facts for a locale code; an unknown code gets the default locale's. */
+export function localeInfo(locale: string): LocaleInfo {
+    return LOCALE_INFO[locale as Locale] ?? LOCALE_INFO[DEFAULT_LOCALE];
+}
+
+/**
  * Core 30 tiers. The hierarchy a local business site is graded on, and the
  * grouping the HTML sitemap renders. `page` covers everything outside the
  * Core 30 ladder (portfolio, the digital card, legal).
@@ -42,6 +83,13 @@ export interface SiteRoute {
      * A route that cannot be named does not belong in a human sitemap.
      */
     labelKey: string;
+    /**
+     * Message keys holding this page's own copy. The page exists in a locale
+     * only when that locale's messages hold all of them (plus the shell copy):
+     * see `localesWithKeys` in `lib/i18n.ts`. A key naming a subtree requires
+     * every leaf under it. Defaults to `[labelKey]`.
+     */
+    copyKeys?: readonly string[];
     /**
      * ISO date (YYYY-MM-DD) of the last meaningful content change.
      *

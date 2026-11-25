@@ -1,5 +1,5 @@
 ---
-import { findRoute } from '@/lib/routes';
+import { findRoute, routeAlternates, routeExists, routeLocales } from '@/lib/routes';
 import { ArrowRight, Globe, PanelsTopLeft } from '@lucide/astro';
 import BaseLayout from '@/src/layouts/BaseLayout.astro';
 import Navbar from '@/src/components/Navbar.astro';
@@ -15,17 +15,18 @@ import { collectionPage } from '@/lib/schema';
 import { imageSrcSet } from '@/lib/image';
 import { localeHref } from '@/lib/routing';
 import type { PageMeta } from '@/lib/page-metadata';
-import { absoluteUrl, languageAlternates, LOCALES } from '@/lib/site-config';
+import { absoluteUrl, ogLocale } from '@/lib/site-config';
 
 export function getStaticPaths() {
-    return LOCALES.map((locale) => ({ params: { locale } }));
+    return routeLocales('portfolio').map((locale) => ({ params: { locale } }));
 }
 
 const { locale } = Astro.params as { locale: string };
 
 const t = getTranslations(locale, 'portfolio');
 const tNav = getTranslations(locale, 'navigation');
-const items = await getPortfolioItemsAction();
+// Only projects whose page exists in this locale: their copy and link must both resolve.
+const items = (await getPortfolioItemsAction()).filter((item) => routeExists(`portfolio/${item.slug}`, locale));
 
 const url = absoluteUrl(locale, 'portfolio');
 const title = `${t('list.title')} | Lorenzoz Agency`;
@@ -33,14 +34,14 @@ const description = t('list.subtitle');
 const meta: PageMeta = {
     title,
     description,
-    alternates: { canonical: url, languages: languageAlternates('portfolio') },
+    alternates: { canonical: url, languages: routeAlternates('portfolio') },
     openGraph: {
         title,
         description,
         url,
         siteName: 'Lorenzoz Agency',
         type: 'website',
-        locale: locale === 'es' ? 'es_ES' : 'en_US',
+        locale: ogLocale(locale),
         images: [{ url: 'https://cdn.hlorenzoz.com/hlorenzoz.com/og-image.webp', width: 1200, height: 630, alt: title }],
     },
     twitter: {

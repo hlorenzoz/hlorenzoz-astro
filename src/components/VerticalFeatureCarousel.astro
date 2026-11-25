@@ -52,11 +52,13 @@ const toggle = (base: string, on: string, off: string, active: boolean) => ({
 
 const hicDotBase = 'h-2 rounded-full transition-all duration-500';
 const hicDotOn = cn(hicDotBase, 'bg-white w-6');
-// Icon-only controls need a name of their own; the messages files have no image-carousel keys.
-const hicLabels =
-    locale === 'es'
-        ? { prev: 'Imagen anterior', next: 'Imagen siguiente', dot: (n: number) => `Ir a la imagen ${n}` }
-        : { prev: 'Previous image', next: 'Next image', dot: (n: number) => `Go to image ${n}` };
+// Icon-only controls need a name of their own.
+const tCarousel = getTranslations(locale, 'portfolio.portfolioCarousel');
+const hicLabels = {
+    prev: tCarousel('prevImage'),
+    next: tCarousel('nextImage'),
+    dot: (n: number) => tCarousel('goToImage', { index: n }),
+};
 const hicDotOff = cn(hicDotBase, 'bg-white/40 hover:bg-white/60 w-2');
 ---
 

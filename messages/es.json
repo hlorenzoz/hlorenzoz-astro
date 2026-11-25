@@ -10,7 +10,9 @@
     "bookConsultation": "Reservar Consulta",
     "services": "Servicios",
     "language": "ES",
-    "breadcrumb": "Ruta de navegación"
+    "breadcrumb": "Ruta de navegación",
+    "skipToContent": "Saltar al contenido principal",
+    "languageMenu": "{code}, abrir menú de idioma"
   },
   "home": {
     "meta": {
@@ -1714,7 +1716,10 @@
       "viewLive": "Ver Sitio en Vivo",
       "goToSlide": "Ir a la diapositiva {index}",
       "prevSlide": "Diapositiva anterior",
-      "nextSlide": "Diapositiva siguiente"
+      "nextSlide": "Diapositiva siguiente",
+      "prevImage": "Imagen anterior",
+      "nextImage": "Imagen siguiente",
+      "goToImage": "Ir a la imagen {index}"
     },
     "gerp-dj": {
       "title": "GERP DJ: Web de DJ para Fiestas y Bodas en Ourense",

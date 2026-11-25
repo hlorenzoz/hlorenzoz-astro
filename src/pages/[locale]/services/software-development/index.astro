@@ -1,13 +1,14 @@
 ---
 import ServicePage from '../_ServicePage.astro';
-import { serviceContentPagesByKey } from '../_service-content';
+import { contentPageFor, serviceContentPagesByKey } from '../_service-content';
 import { getTranslations } from '@/lib/i18n';
 import { PRICING, priceMessageValues } from '@/lib/pricing';
 import { paymentLinkUrl } from '@/lib/payment-links';
-import { LOCALES, type Locale } from '@/lib/site-config';
+import { type Locale } from '@/lib/site-config';
+import { routeLocales } from '@/lib/routes';
 
 export function getStaticPaths() {
-    return LOCALES.map((locale) => ({ params: { locale } }));
+    return routeLocales('services/software-development').map((locale) => ({ params: { locale } }));
 }
 
 const { locale } = Astro.params as { locale: Locale };
@@ -19,7 +20,7 @@ const price = tRoot('services.softwareDevelopment.hero.price', { ...priceMessage
     locale={locale}
     namespace="services.softwareDevelopment"
     path="services/software-development"
-    page={serviceContentPagesByKey.softwareDevelopment[locale]}
+    page={contentPageFor(serviceContentPagesByKey.softwareDevelopment, locale)}
     price={price}
     paymentHref={paymentLinkUrl('softwareDevelopment')}
 ></ServicePage>

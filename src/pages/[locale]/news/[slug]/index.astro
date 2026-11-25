@@ -13,15 +13,16 @@ import { schemaDateTime } from '@/lib/schema/datetime';
 import { getNewsItemBySlugAction, getNewsItemsAction } from '@/lib/actions/news';
 import { getPortfolioItemsAction } from '@/lib/actions/portfolio';
 import { formatContentDate } from '@/lib/dates';
-import { localeHref } from '@/lib/routing';
+import { localeHref, localeInfo } from '@/lib/routing';
 import { imageSrcSet } from '@/lib/image';
 import { createTechLinker } from '@/lib/tech-links';
 import type { PageMeta } from '@/lib/page-metadata';
-import { LOCALES, absoluteUrl, languageAlternates } from '@/lib/site-config';
+import { absoluteUrl, ogLocale } from '@/lib/site-config';
+import { routeAlternates, routeLocales } from '@/lib/routes';
 
 export async function getStaticPaths() {
     const items = await getNewsItemsAction();
-    return LOCALES.flatMap((locale) => items.map((item) => ({ params: { locale, slug: item.slug } })));
+    return items.flatMap((item) => routeLocales(`news/${item.slug}`).map((locale) => ({ params: { locale, slug: item.slug } })));
 }
 
 const { locale, slug } = Astro.params as { locale: string; slug: string };
@@ -49,7 +50,7 @@ const linkTech = createTechLinker();
 const introSegments = paragraphs.map(linkTech);
 const sectionSegments = sections.map((section) => section.paragraphs.map(linkTech));
 const pageUrl = absoluteUrl(locale, `news/${item.slug}`);
-const published = formatContentDate(locale, item.datePublished, 'dayMonthYear');
+const published = formatContentDate(localeInfo(locale).tag, item.datePublished, 'dayMonthYear');
 
 const metaTitle = `${title} | Lorenzoz Agency`;
 const metaDescription = t(`items.${item.id}.description`);
@@ -57,7 +58,7 @@ const ogImage = item.ogImage ?? item.image;
 const meta: PageMeta = {
     title: metaTitle,
     description: metaDescription,
-    alternates: { canonical: pageUrl, languages: languageAlternates(`news/${item.slug}`) },
+    alternates: { canonical: pageUrl, languages: routeAlternates(`news/${item.slug}`) },
     openGraph: {
         title: metaTitle,
         description: metaDescription,
@@ -66,7 +67,7 @@ const meta: PageMeta = {
         type: 'article',
         publishedTime: schemaDateTime(item.datePublished),
         modifiedTime: schemaDateTime(item.lastModified),
-        locale: locale === 'es' ? 'es_ES' : 'en_US',
+        locale: ogLocale(locale),
         images: [{ url: ogImage, alt: title }],
     },
     twitter: { card: 'summary_large_image', title: metaTitle, description: metaDescription, images: [ogImage] },

@@ -2,14 +2,15 @@
 import ServicePage from '../_ServicePage.astro';
 import MissedCustomerTable from '@/src/components/numbers/MissedCustomerTable.astro';
 import { missedCustomerTable } from '@/lib/numbers';
-import { serviceContentPagesByKey } from '../_service-content';
+import { contentPageFor, serviceContentPagesByKey } from '../_service-content';
 import { getTranslations } from '@/lib/i18n';
 import { PRICING, priceMessageValues } from '@/lib/pricing';
 import { paymentLinkUrl } from '@/lib/payment-links';
-import { LOCALES, type Locale } from '@/lib/site-config';
+import { type Locale } from '@/lib/site-config';
+import { routeLocales } from '@/lib/routes';
 
 export function getStaticPaths() {
-    return LOCALES.map((locale) => ({ params: { locale } }));
+    return routeLocales('services/local-seo').map((locale) => ({ params: { locale } }));
 }
 
 const { locale } = Astro.params as { locale: Locale };
@@ -21,7 +22,7 @@ const price = tRoot('services.localSeo.hero.price', { ...priceMessageValues(PRIC
     locale={locale}
     namespace="services.localSeo"
     path="services/local-seo"
-    page={serviceContentPagesByKey.localSeo[locale]}
+    page={contentPageFor(serviceContentPagesByKey.localSeo, locale)}
     price={price}
     paymentHref={paymentLinkUrl('localSeo')}
 >

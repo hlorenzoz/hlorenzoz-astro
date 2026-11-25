@@ -12,6 +12,7 @@
  * derived from the same `path`, so they cannot disagree.
  */
 import { schemaDateTime } from '@/lib/schema/datetime';
+import { findRoute } from '@/lib/routes';
 import {
     absoluteUrl,
     languageAlternates,
@@ -94,7 +95,10 @@ export function pageMetadata({
         description,
         alternates: {
             canonical: url,
-            languages: languageAlternates(path),
+            // Only the locales the page is built in (the route registry). A path
+            // the live registry does not know (the content factory's injected
+            // registry in tests) can vouch only for the page being rendered.
+            languages: languageAlternates(path, findRoute(path)?.locales ?? [locale]),
         },
         openGraph: {
             title,

@@ -3,6 +3,7 @@ import { experimental_AstroContainer as AstroContainer } from 'astro/container';
 import { within } from '@testing-library/dom';
 import { JSDOM } from 'jsdom';
 import Navbar from '@/src/components/Navbar.astro';
+import { routeLocales } from '@/lib/routes';
 
 /** Renders the Navbar as if served at `pathname` (it reads `Astro.url`). */
 async function renderAt(pathname: string, locale = 'en') {
@@ -71,6 +72,20 @@ describe('Navbar language switcher', () => {
         expect(screen.getByTestId('lang-option-en')).toHaveClass('text-gray-900');
         expect(screen.getByTestId('mobile-lang-option-es')).toHaveClass('bg-black');
         expect(screen.getAllByText('Servicios').length).toBe(2);
+    });
+
+    it('offers exactly the locales the page is built in, named natively', async () => {
+        const screen = await renderAt('/es/portfolio/', 'es');
+        const options = screen.getAllByTestId(/^lang-option-/).map((a) => a.getAttribute('data-testid'));
+        expect(options).toEqual(routeLocales('portfolio').map((l) => `lang-option-${l}`));
+        expect(options).toEqual(['lang-option-en', 'lang-option-es']);
+        expect(screen.getByTestId('lang-option-es')).toHaveTextContent('Español');
+        expect(screen.getByTestId('mobile-lang-option-en')).toHaveTextContent('English');
+    });
+
+    it('names the switcher with the visible locale code in each language', async () => {
+        const screen = await renderAt('/es/', 'es');
+        expect(screen.getByTestId('language-switcher')).toHaveAttribute('aria-label', 'ES, abrir menú de idioma');
     });
 
     it('falls back to the locale home on a path without a locale (404)', async () => {

@@ -12,9 +12,10 @@ export const BASE_URL = 'https://hlorenzoz.com';
 export const CDN_URL = 'https://cdn.hlorenzoz.com';
 export const SITE_NAME = 'Lorenzoz Agency';
 
-export const LOCALES = ['en', 'es'] as const;
-export type Locale = (typeof LOCALES)[number];
-export const DEFAULT_LOCALE: Locale = 'en';
+// The locale table lives in the import-free `lib/routing.ts` so `lib/pricing.ts`
+// can read it without an import cycle (this module imports pricing).
+export { DEFAULT_LOCALE, LOCALES, LOCALE_INFO, localeInfo, type Locale, type LocaleInfo } from '@/lib/routing';
+import { DEFAULT_LOCALE, LOCALES, LOCALE_INFO, localeInfo } from '@/lib/routing';
 
 export const OG_IMAGE = `${CDN_URL}/hlorenzoz.com/og-image.webp`;
 
@@ -39,7 +40,7 @@ export const SERVED_MARKETS = ['AU', 'CA', 'CR', 'IE', 'NZ', 'ES', 'GB', 'US'] a
  */
 const MARKET_NAMES_CACHE = new Map<string, readonly string[]>();
 export function marketNames(locale: string): readonly string[] {
-    const key = locale === 'es' ? 'es' : 'en';
+    const key = localeInfo(locale).tag;
     const cached = MARKET_NAMES_CACHE.get(key);
     if (cached) return cached;
 
@@ -178,14 +179,19 @@ export function metaDescription(text: string, max = 160): string {
  * than each page inlining its own `locale === 'es' ? ... : ...` ternary.
  */
 export function ogLocale(locale: string): string {
-    return locale === 'es' ? 'es_ES' : 'en_US';
+    return localeInfo(locale).ogLocale;
 }
 
-/** hreflang map (`en`, `es`, plus `x-default`) for a given path. */
-export function languageAlternates(path = ''): Record<string, string> {
+/**
+ * hreflang map for a path that exists in `locales`: BCP 47 tag -> URL, plus
+ * `x-default` -> the default locale. `locales` is required on purpose: listing
+ * every configured locale would point hreflang at pages not built yet. Pages
+ * get it from the route registry (`routeAlternates` in `lib/routes.ts`).
+ */
+export function languageAlternates(path: string, locales: readonly string[]): Record<string, string> {
     const alternates: Record<string, string> = {};
     for (const locale of LOCALES) {
-        alternates[locale] = absoluteUrl(locale, path);
+        if (locales.includes(locale)) alternates[LOCALE_INFO[locale].tag] = absoluteUrl(locale, path);
     }
     alternates['x-default'] = absoluteUrl(DEFAULT_LOCALE, path);
     return alternates;

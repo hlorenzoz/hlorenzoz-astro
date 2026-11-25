@@ -13,7 +13,8 @@ import ElevenLabsLoader from '@/src/components/ElevenLabsLoader.astro';
 import type { PageMeta } from '@/lib/page-metadata';
 import { getTranslations } from '@/lib/i18n';
 import { organizationGraph } from '@/lib/schema';
-import { absoluteUrl, CDN_URL, languageAlternates, ogLocale, OG_IMAGE, SITE_NAME } from '@/lib/site-config';
+import { routeAlternates } from '@/lib/routes';
+import { absoluteUrl, CDN_URL, localeInfo, ogLocale, OG_IMAGE, SITE_NAME } from '@/lib/site-config';
 import '@/src/styles/global.css';
 
 interface Props {
@@ -25,6 +26,9 @@ interface Props {
 
 const { locale, meta, preloadImages = [] } = Astro.props;
 const t = getTranslations(locale, 'home');
+const tNav = getTranslations(locale, 'navigation');
+// BCP 47 tag (`en-GB`, `pt-PT`); the URL keeps the lowercase code.
+const htmlLang = localeInfo(locale).tag;
 
 // The layout's metadata: what the home page uses and what other pages merge onto.
 const defaults: PageMeta = {
@@ -58,12 +62,12 @@ const defaults: PageMeta = {
         description: t('meta.description'),
         images: [OG_IMAGE],
     },
-    alternates: { canonical: absoluteUrl(locale), languages: languageAlternates() },
+    alternates: { canonical: absoluteUrl(locale), languages: routeAlternates('') },
 };
 ---
 
 <!doctype html>
-<html lang={locale}>
+<html lang={htmlLang}>
     <head>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
@@ -138,7 +142,7 @@ const defaults: PageMeta = {
             href="#main-content"
             class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-[999] focus:bg-black focus:text-white focus:px-4 focus:py-2 focus:rounded-md focus:shadow-xl focus:border focus:border-white/20 transition-all outline-none"
         >
-            {locale === 'es' ? 'Saltar al contenido principal' : 'Skip to main content'}
+            {tNav('skipToContent')}
         </a>
         <main id="main-content" tabindex="-1" class="focus:outline-none">
             <slot />

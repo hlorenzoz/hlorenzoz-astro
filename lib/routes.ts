@@ -21,9 +21,12 @@
  */
 import { getPortfolioItems, latestPortfolioModified } from '@/lib/portfolio';
 import { getNewsItems, latestNewsModified } from '@/lib/news';
+import { pageLocales } from '@/lib/i18n';
+import { DEFAULT_LOCALE, languageAlternates, type Locale } from '@/lib/site-config';
 import {
     SECTION_TIERS,
     assertValidRoute,
+    localeHref,
     type RouteTier,
     type SiteRoute,
     type ValidatedRoute,
@@ -54,27 +57,43 @@ import {
  * its source cannot detect a `new Date()` regression on a day when every source
  * happens to equal today.
  */
+/** Copy the home page renders: its namespace plus the shared blocks it shows. */
+const HOME_KEYS = [
+    'home',
+    'news.home',
+    'numbers',
+    'tax',
+    'offer',
+    'articles',
+    'portfolio.portfolioCarousel',
+    'portfolio.type',
+    ...['localSeo', 'websiteDevelopment', 'aiVoiceReceptionist', 'softwareDevelopment'].flatMap((key) => [
+        `services.${key}.name`,
+        `services.${key}.meta.description`,
+    ]),
+];
+
 const STATIC_ROUTES: readonly SiteRoute[] = [
-    { path: '', tier: 'home', labelKey: 'navigation.home', lastModified: '2026-11-25' },
-    { path: 'portfolio', tier: 'page', labelKey: 'navigation.portfolio', lastModified: latestPortfolioModified(), parent: '' },
+    { path: '', tier: 'home', labelKey: 'navigation.home', copyKeys: HOME_KEYS, lastModified: '2026-11-25' },
+    { path: 'portfolio', tier: 'page', labelKey: 'navigation.portfolio', copyKeys: ['portfolio.list', 'portfolio.type'], lastModified: latestPortfolioModified(), parent: '' },
     // The index lists every post, so its date follows the freshest one instead of a second hand-kept date.
-    { path: 'news', tier: 'page', labelKey: 'navigation.news', lastModified: latestNewsModified(), parent: '' },
-    { path: 'card/hector', tier: 'page', labelKey: 'sitemap.labels.card', lastModified: '2026-07-10', parent: '' },
-    { path: 'sitemap', tier: 'page', labelKey: 'sitemap.labels.sitemap', lastModified: '2026-11-25', parent: '' },
-    { path: 'privacy-policy', tier: 'legal', labelKey: 'footer.legal.items.0.label', lastModified: '2026-07-10', parent: '' },
-    { path: 'terms-conditions', tier: 'legal', labelKey: 'footer.legal.items.1.label', lastModified: '2026-10-09', parent: '' },
-    { path: 'cookie-policy', tier: 'legal', labelKey: 'footer.legal.items.2.label', lastModified: '2026-07-10', parent: '' },
+    { path: 'news', tier: 'page', labelKey: 'navigation.news', copyKeys: ['news.list'], lastModified: latestNewsModified(), parent: '' },
+    { path: 'card/hector', tier: 'page', labelKey: 'sitemap.labels.card', copyKeys: ['card.hector'], lastModified: '2026-07-10', parent: '' },
+    { path: 'sitemap', tier: 'page', labelKey: 'sitemap.labels.sitemap', copyKeys: ['sitemap'], lastModified: '2026-11-25', parent: '' },
+    { path: 'privacy-policy', tier: 'legal', labelKey: 'footer.legal.items.0.label', copyKeys: ['footer.privacyPage', 'footer.legal'], lastModified: '2026-07-10', parent: '' }, // gitleaks:allow (translation key path, not a secret)
+    { path: 'terms-conditions', tier: 'legal', labelKey: 'footer.legal.items.1.label', copyKeys: ['footer.termsPage', 'footer.legal'], lastModified: '2026-10-09', parent: '' }, // gitleaks:allow (translation key path, not a secret)
+    { path: 'cookie-policy', tier: 'legal', labelKey: 'footer.legal.items.2.label', copyKeys: ['footer.cookiePage', 'footer.legal'], lastModified: '2026-07-10', parent: '' }, // gitleaks:allow (translation key path, not a secret)
     // Core 30 hub + its four services. `parent: ''` because home's own path IS
     // '' — `null` is not a valid `findRoute` key and would break
     // `breadcrumbTrail`'s parent-chain walk.
     //
     // Local SEO is listed first on purpose: it is the core offer, and this
     // order is the order the hub and the sitemaps present the services in.
-    { path: 'services', tier: 'category', labelKey: 'navigation.services', lastModified: '2026-10-09', parent: '' },
-    { path: 'services/local-seo', tier: 'service', labelKey: 'services.localSeo.name', lastModified: '2026-10-09', parent: 'services' },
-    { path: 'services/website-development', tier: 'service', labelKey: 'services.websiteDevelopment.name', lastModified: '2026-10-09', parent: 'services' },
-    { path: 'services/ai-voice-receptionist', tier: 'service', labelKey: 'services.aiVoiceReceptionist.name', lastModified: '2026-10-09', parent: 'services' },
-    { path: 'services/software-development', tier: 'service', labelKey: 'services.softwareDevelopment.name', lastModified: '2026-10-09', parent: 'services' },
+    { path: 'services', tier: 'category', labelKey: 'navigation.services', copyKeys: ['services.hub'], lastModified: '2026-10-09', parent: '' },
+    { path: 'services/local-seo', tier: 'service', labelKey: 'services.localSeo.name', copyKeys: ['services.localSeo'], lastModified: '2026-10-09', parent: 'services' },
+    { path: 'services/website-development', tier: 'service', labelKey: 'services.websiteDevelopment.name', copyKeys: ['services.websiteDevelopment'], lastModified: '2026-10-09', parent: 'services' },
+    { path: 'services/ai-voice-receptionist', tier: 'service', labelKey: 'services.aiVoiceReceptionist.name', copyKeys: ['services.aiVoiceReceptionist'], lastModified: '2026-10-09', parent: 'services' },
+    { path: 'services/software-development', tier: 'service', labelKey: 'services.softwareDevelopment.name', copyKeys: ['services.softwareDevelopment'], lastModified: '2026-10-09', parent: 'services' },
     // PAUSED since 2026-10-08, not retired (task #T0021 brings it back). The
     // page lives in the private folder `services/_digital-business-card/`, its
     // price in `PAUSED_PRICING`, and its copy in `services.digitalBusinessCard`.
@@ -102,6 +121,9 @@ interface RouteSource {
     routes: readonly SiteRoute[];
 }
 
+/** Copy a portfolio detail page renders. */
+const PORTFOLIO_PAGE_KEYS = (id: string) => [`portfolio.${id}`, 'portfolio.portfolioCarousel', 'portfolio.type'];
+
 const ROUTE_SOURCES: readonly RouteSource[] = [
     {
         name: 'portfolio-data.json',
@@ -112,6 +134,7 @@ const ROUTE_SOURCES: readonly RouteSource[] = [
             path: `portfolio/${item.slug}`,
             tier: 'page' as const,
             labelKey: `portfolio.${item.id}.title`,
+            copyKeys: PORTFOLIO_PAGE_KEYS(item.id),
             lastModified: item.lastModified,
             parent: 'portfolio',
         })),
@@ -123,11 +146,40 @@ const ROUTE_SOURCES: readonly RouteSource[] = [
             path: `news/${item.slug}`,
             tier: 'page' as const,
             labelKey: `news.items.${item.id}.title`,
+            // A post links to its case study, so it exists only where that page does.
+            copyKeys: [`news.items.${item.id}`, 'news.post', 'news.related', 'sitemap.byline', ...PORTFOLIO_PAGE_KEYS(item.portfolioId)],
             lastModified: item.lastModified,
             parent: 'news',
         })),
     },
 ];
+
+/** A registered route plus the locales it is built in. */
+export interface LocalizedRoute extends ValidatedRoute {
+    /** Where the page exists, in `LOCALES` order. Derived from the messages files, never typed by hand. */
+    readonly locales: readonly Locale[];
+}
+
+const LOCALES_BY_PATH = new Map<string, readonly Locale[]>();
+
+/**
+ * Attaches the locales a route is built in: those whose messages hold its copy
+ * (`pageLocales`), and only where its parent is built too, because its
+ * breadcrumb links to the parent. Parents must be registered before their
+ * children, which the registry order already guarantees.
+ */
+function localized(route: ValidatedRoute): LocalizedRoute {
+    const own = pageLocales(...(route.copyKeys ?? [route.labelKey]));
+    const parent = route.parent === undefined ? undefined : LOCALES_BY_PATH.get(route.parent);
+    if (route.parent !== undefined && !parent) {
+        throw new Error(`Route "${route.path}" is registered before its parent "${route.parent}".`);
+    }
+    const locales = parent ? own.filter((locale) => parent.includes(locale)) : own;
+    LOCALES_BY_PATH.set(route.path, locales);
+    return { ...route, locales };
+}
+
+const STATIC_LOCALIZED = STATIC_ROUTES.map((route) => localized(assertValidRoute(route, 'STATIC_ROUTES')));
 
 /**
  * Routes contributed by data sources, validated as they enter the registry.
@@ -136,15 +188,19 @@ const ROUTE_SOURCES: readonly RouteSource[] = [
  * validation pass and the sitemap share one parse instead of each doing their
  * own.
  */
-export const DERIVED_ROUTES: readonly ValidatedRoute[] = ROUTE_SOURCES.flatMap((source) =>
-    source.routes.map((route) => assertValidRoute(route, source.name))
+export const DERIVED_ROUTES: readonly LocalizedRoute[] = ROUTE_SOURCES.flatMap((source) =>
+    source.routes.map((route) => localized(assertValidRoute(route, source.name)))
 );
 
-/** Every indexable route, hand-declared and derived alike. */
-export const ALL_ROUTES: readonly ValidatedRoute[] = [
-    ...STATIC_ROUTES.map((route) => assertValidRoute(route, 'STATIC_ROUTES')),
-    ...DERIVED_ROUTES,
-];
+/**
+ * Every indexable route, hand-declared and derived alike, with its locales.
+ *
+ * `locales` is the ONE answer to "does page P exist in locale L": the page's
+ * `getStaticPaths`, its hreflang, both sitemaps and the language switcher all
+ * read it, so a page cannot be built in a locale it is not linked in, or the
+ * reverse.
+ */
+export const ALL_ROUTES: readonly LocalizedRoute[] = [...STATIC_LOCALIZED, ...DERIVED_ROUTES];
 
 /**
  * The HTML sitemap's sections, computed once at module scope (locale invariant;
@@ -160,10 +216,10 @@ export interface RouteGroup {
     id: string;
     /** Translation key of the section title. */
     labelKey: string;
-    routes: readonly ValidatedRoute[];
+    routes: readonly LocalizedRoute[];
 }
 
-function descendants(path: string): ValidatedRoute[] {
+function descendants(path: string): LocalizedRoute[] {
     return ALL_ROUTES.filter((route) => route.parent === path).flatMap((child) => [child, ...descendants(child.path)]);
 }
 
@@ -186,12 +242,40 @@ export const ROUTE_GROUPS: readonly RouteGroup[] = [
 const BY_PATH = new Map(ALL_ROUTES.map((route) => [route.path, route]));
 
 /** Lookup by path. */
-export function findRoute(path: string): ValidatedRoute | undefined {
+export function findRoute(path: string): LocalizedRoute | undefined {
     return BY_PATH.get(path);
 }
 
+/** The locales a registered page is built in. Throws on an unregistered path rather than guessing. */
+export function routeLocales(path: string): readonly Locale[] {
+    const route = findRoute(path);
+    if (!route) throw new Error(`Route "${path}" is not in the route registry`);
+    return route.locales;
+}
+
+/** Whether page `path` exists in `locale`. For filtering lists of links. */
+export function routeExists(path: string, locale: string): boolean {
+    const clean = path.replace(/^\/+|\/+$/g, '');
+    return (findRoute(clean)?.locales as readonly string[] | undefined)?.includes(locale) ?? false;
+}
+
+/** hreflang map for a registered page: only the locales it exists in, plus x-default. */
+export function routeAlternates(path: string): Record<string, string> {
+    return languageAlternates(path, routeLocales(path));
+}
+
+/**
+ * Locale-prefixed href to a registered page, or to its default locale version
+ * when the page is not translated into `locale` yet. For shell links (footer,
+ * navbar, cookie banner) whose label exists in every published locale but
+ * whose target may not: a link to the English page beats a 404.
+ */
+export function routeHref(locale: string, path: string): string {
+    return localeHref(routeExists(path, locale) ? locale : DEFAULT_LOCALE, path);
+}
+
 /** Direct children of a route, for Core 30 internal linking. */
-export function childRoutes(parentPath: string): ValidatedRoute[] {
+export function childRoutes(parentPath: string): LocalizedRoute[] {
     return ALL_ROUTES.filter((route) => route.parent === parentPath);
 }
 
@@ -203,8 +287,8 @@ export function childRoutes(parentPath: string): ValidatedRoute[] {
  * a cycle or a missing parent instead of looping: both mean the registry is
  * wrong, and a build failure naming the route beats a hung build.
  */
-export function breadcrumbTrail(path: string): ValidatedRoute[] {
-    const trail: ValidatedRoute[] = [];
+export function breadcrumbTrail(path: string): LocalizedRoute[] {
+    const trail: LocalizedRoute[] = [];
     const seen = new Set<string>();
     let current = findRoute(path);
 

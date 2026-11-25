@@ -5,7 +5,7 @@
  * choice to Cloudflare Zaraz.
  */
 import { getTranslations } from '@/lib/i18n';
-import { localeHref } from '@/lib/routing';
+import { routeHref } from '@/lib/routes';
 
 export interface Props {
     locale: string;
@@ -40,7 +40,7 @@ const t = getTranslations(locale, 'cookieBanner');
                     {t('reject')}
                 </button>
 
-                <a href={localeHref(locale, 'cookie-policy')} class="ml-auto text-blue-700 text-sm font-bold hover:underline">
+                <a href={routeHref(locale, 'cookie-policy')} class="ml-auto text-blue-700 text-sm font-bold hover:underline">
                     {t('preferences')}
                 </a>
             </div>

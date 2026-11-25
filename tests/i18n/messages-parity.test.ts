@@ -141,3 +141,32 @@ describe('messages/en.json <-> messages/es.json declaration order', () => {
         ).toEqual([]);
     });
 });
+
+/**
+ * The seven locales added for the page by page rollout are partial on purpose:
+ * a page is published in a locale once its keys land (`lib/routes.ts`
+ * `copyKeys`). Partial must still mean a subset of English: a key English does
+ * not have is a typo nothing would ever read, and a value of another type
+ * (a string where English has a list) breaks `t.raw()` consumers at build.
+ */
+describe('rollout locale files hold only English keys, with English value types', () => {
+    const ROLLOUT = ['en-gb', 'gl', 'pt', 'it', 'fr', 'de', 'nl'] as const;
+    const files = import.meta.glob<Json>('/messages/*.json', { eager: true, import: 'default' });
+    const typeOf = (v: unknown) => (Array.isArray(v) ? 'array' : v === null ? 'null' : typeof v);
+
+    /** Paths in `b` that `a` lacks or types differently, walking objects and arrays alike. */
+    function strays(a: unknown, b: unknown, path = ''): string[] {
+        if (typeOf(a) !== typeOf(b)) return [`${path} (${typeOf(b)}, en has ${typeOf(a)})`];
+        if (b === null || typeof b !== 'object') return [];
+        return Object.entries(b as Json).flatMap(([key, child]) => {
+            const at = path ? `${path}.${key}` : key;
+            return key in (a as Json) ? strays((a as Json)[key], child, at) : [`${at} (not in en)`];
+        });
+    }
+
+    it.each(ROLLOUT)('messages/%s.json', (locale) => {
+        const messages = files[`/messages/${locale}.json`];
+        expect(messages, `messages/${locale}.json is missing`).toBeDefined();
+        expect(strays(en, messages)).toEqual([]);
+    });
+});

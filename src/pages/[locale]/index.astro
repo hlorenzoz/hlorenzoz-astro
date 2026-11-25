@@ -3,7 +3,7 @@
  * The home page. It passes no `meta`, so the
  * layout's default metadata is the page's metadata.
  */
-import { findRoute } from '@/lib/routes';
+import { findRoute, routeExists, routeHref, routeLocales } from '@/lib/routes';
 import {
     ArrowRight,
     Award,
@@ -51,12 +51,11 @@ import {
 import { offerNotes } from '@/lib/offer-notes';
 import { copyTokens, resolveFaq } from '@/lib/copy-tokens';
 import { costComparison, missedCustomerTable } from '@/lib/numbers';
-import { LOCALES, SERVED_MARKETS, absoluteUrl, marketNames } from '@/lib/site-config';
-import { localeHref } from '@/lib/routing';
+import { SERVED_MARKETS, absoluteUrl, marketNames } from '@/lib/site-config';
 import { imageFallbackSrc, imageSrcSet } from '@/lib/image';
 
 export function getStaticPaths() {
-    return LOCALES.map((locale) => ({ params: { locale } }));
+    return routeLocales('').map((locale) => ({ params: { locale } }));
 }
 
 /**
@@ -79,16 +78,18 @@ const t = getTranslations(locale, 'home');
 // Root translator: service names, the tax marker and the shared "numbers"
 // copy all live outside the `home` namespace.
 const tRoot = getTranslations(locale);
-const portfolioItems = await getPortfolioItemsAction();
+// Carousels show only work and posts whose page exists in this locale: their copy and link must both resolve.
+const portfolioItems = (await getPortfolioItemsAction()).filter((item) => routeExists(`portfolio/${item.slug}`, locale));
 const articles = await getLinkedInArticlesAction();
-const news = await getNewsItemsAction();
+const news = (await getNewsItemsAction()).filter((item) => routeExists(`news/${item.slug}`, locale));
 
 // Every figure below comes from `PRICING`. `messages/*.json` carries
 // `{price}` / `{discount}` / `{upfront}` / `{tax}` tokens, never a number.
 const tax = tRoot('tax.suffix');
 const tokens = copyTokens(locale, tax);
 const corePrice = formatOfferBase(PRICING[CORE], locale);
-const serviceHref = (key: ServiceKey) => localeHref(locale, `services/${slugFromServiceKey(key)}`);
+// The English page until this locale's translation is published.
+const serviceHref = (key: ServiceKey) => routeHref(locale, `services/${slugFromServiceKey(key)}`);
 const faqItems = resolveFaq(t.raw('faq.items'), tokens);
 
 const problemTitle = t.markup('problem.title', {

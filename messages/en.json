@@ -10,7 +10,9 @@
     "bookConsultation": "Book Consultation",
     "services": "Services",
     "language": "EN",
-    "breadcrumb": "Breadcrumb"
+    "breadcrumb": "Breadcrumb",
+    "skipToContent": "Skip to main content",
+    "languageMenu": "{code}, open language menu"
   },
   "home": {
     "meta": {
@@ -1714,7 +1716,10 @@
       "viewLive": "View Live Site",
       "goToSlide": "Go to slide {index}",
       "prevSlide": "Previous slide",
-      "nextSlide": "Next slide"
+      "nextSlide": "Next slide",
+      "prevImage": "Previous image",
+      "nextImage": "Next image",
+      "goToImage": "Go to image {index}"
     },
     "gerp-dj": {
       "title": "GERP DJ: DJ Website for Parties and Weddings in Ourense",
