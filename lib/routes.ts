@@ -76,9 +76,9 @@ const HOME_KEYS = [
 
 const STATIC_ROUTES: readonly SiteRoute[] = [
     { path: '', tier: 'home', labelKey: 'navigation.home', copyKeys: HOME_KEYS, lastModified: '2026-11-25' },
-    { path: 'portfolio', tier: 'page', labelKey: 'navigation.portfolio', copyKeys: ['portfolio.list', 'portfolio.type'], lastModified: latestPortfolioModified(), parent: '' },
+    { path: 'portfolio', tier: 'page', labelKey: 'navigation.portfolio', copyKeys: ['portfolio.list', 'portfolio.type', ...getPortfolioItems().flatMap((item) => ['title', 'badge', 'description'].map((k) => `portfolio.${item.id}.${k}`))], lastModified: latestPortfolioModified(), parent: '' },
     // The index lists every post, so its date follows the freshest one instead of a second hand-kept date.
-    { path: 'news', tier: 'page', labelKey: 'navigation.news', copyKeys: ['news.list'], lastModified: latestNewsModified(), parent: '' },
+    { path: 'news', tier: 'page', labelKey: 'navigation.news', copyKeys: ['news.list', ...getNewsItems().flatMap((item) => ['title', 'description'].map((k) => `news.items.${item.id}.${k}`))], lastModified: latestNewsModified(), parent: '' },
     { path: 'card/hector', tier: 'page', labelKey: 'sitemap.labels.card', copyKeys: ['card.hector'], lastModified: '2026-07-10', parent: '' },
     { path: 'sitemap', tier: 'page', labelKey: 'sitemap.labels.sitemap', copyKeys: ['sitemap'], lastModified: '2026-11-25', parent: '' },
     { path: 'privacy-policy', tier: 'legal', labelKey: 'footer.legal.items.0.label', copyKeys: ['footer.privacyPage', 'footer.legal'], lastModified: '2026-07-10', parent: '' }, // gitleaks:allow (translation key path, not a secret)

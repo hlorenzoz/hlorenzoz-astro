@@ -26,7 +26,8 @@ Objective: translate hlorenzoz.com from en/es to 9 locales, page by page, with p
 | T6 | S1, S2 | Website Development page | 7 agents | done | 0d4919a (gl/de titles shortened to the 42-char budget) |
 | T7 | S1, S2 | AI Voice Receptionist page | 7 agents | done | 8ad92df |
 | T8 | S1, S2 | Software Development page | 7 agents | done | hreflang 10, tax marker ok, 0 English-identical strings |
-| T9.. | S1, S2 | Then one page at a time: portfolio index, each portfolio item, news index, each post, legal pages, card, HTML sitemap, 404 | 7 agents per page | pending | |
+| T9 | S2 | Gate the portfolio and news indexes on every card's copy (title/badge/description), so an index never shows English cards or links to an unbuilt detail page | inline | done | this commit; RED 2 tests without the routes change |
+| T10.. | S1, S2 | Then one page at a time: each portfolio item, portfolio index, each news post, news index, legal pages, card, HTML sitemap | 7 agents per page | pending | |
 
 ## Log
 
@@ -34,3 +35,4 @@ Objective: translate hlorenzoz.com from en/es to 9 locales, page by page, with p
 - **L2** (2026-11-25, user answer): "/en-gb/ nuevo + pt-PT (Recommended)".
 - **L3** (2026-11-25, user, verbatim): "Ve página por página (una página a la vez)". A page is published in a locale only once its copy exists there; untranslated pages are not built for that locale and get no hreflang to it.
 - **L4** (2026-11-25, user, verbatim): "Cada vez que termines te traducir una página en todos los idiomas, revísalas, haz el commit, y sube los cambios porfa" and "Revisa los metadatos de las imágenes: description, caption, title, ... y asegúrate de que también estén traducidos porfa, y que cada vez que se procesen nuevas imágenes, se hagan también las respectivas traducciones y referencias. Actualiza las referencias (incluyendo agentes) que lo requieran." T1 done (f7e42a3); gitleaks flagged translation key paths in lib/routes.ts as generic-api-key, annotated gitleaks:allow.
+- **L5** (2026-11-25, evidence): the portfolio and news indexes render every item's card (`portfolio.<id>.title/badge/description`, `news.items.<id>.title/description`) and link to its detail page with `localeHref`, but their copyKeys listed only `portfolio.list`/`news.list`. Fixed in T9; order is now items before their index. The home carousels already filter to items built in the locale (`routeExists`), so home was not affected.

@@ -163,6 +163,23 @@ describe('image and accessible text gate publication like page copy', () => {
         }
         expect(SHELL_KEYS).toEqual(expect.arrayContaining(['navigation', 'cookieBanner', 'assistant', 'home.meta']));
     });
+
+    it.each([
+        ['portfolio', 'portfolio.gerp-dj.badge'],
+        ['news', 'news.items.gerp-dj-case-study.description'],
+    ])('the %s index does not publish while one of its cards is untranslated', (path, cardKey) => {
+        const keys = [...(ALL_ROUTES.find((r) => r.path === path)!.copyKeys ?? [])];
+        expect(localesWithKeys({ en, es }, keys)).toEqual(['en', 'es']);
+        expect(localesWithKeys({ en, es: without(cardKey) }, keys)).toEqual(['en']);
+    });
+
+    it('an index is only built where every page its cards link to is built', () => {
+        for (const prefix of ['portfolio', 'news']) {
+            for (const item of ALL_ROUTES.filter((r) => r.path.startsWith(`${prefix}/`))) {
+                expect(item.locales, item.path).toEqual(expect.arrayContaining([...routeLocales(prefix)]));
+            }
+        }
+    });
 });
 
 describe('languageAlternates', () => {
