@@ -1,0 +1,147 @@
+# ─────────────────────────────────────────────────────────────────────────────
+# DISABLED. This GitHub Actions pipeline (quality + build + deploy) is not used.
+# - Quality gates: local pre-commit hooks + pre-commit.ci (on PRs).
+# - Deploys: handled by Cloudflare Workers Builds, which is linked to this GitHub
+#   repo and builds + deploys the Worker automatically on every push.
+# To re-enable this workflow, uncomment the contents below.
+# ─────────────────────────────────────────────────────────────────────────────
+# name: 🚀 Pipeline
+#
+# on:
+#   push:
+#     branches: [main, devel, staging]
+#   pull_request:
+#     branches: [main, devel, staging]
+#
+# permissions:
+#   contents: read
+#   deployments: write
+#   pull-requests: write
+#
+# # Global environment variables
+# env:
+#   NODE_VERSION: 24
+#   FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+#
+# jobs:
+#   quality:
+#     name: 🛡️ Quality & Unit Tests
+#     runs-on: ubuntu-latest
+#     steps:
+#       - name: ⬇️ Checkout repository
+#         uses: actions/checkout@v6
+#
+#       - name: Setup project
+#         uses: ./.github/actions/setup
+#
+#       - name: 🔍 Lint
+#         run: bun run lint
+#
+#       - name: 🔷 Type-check
+#         run: bun run type-check
+#
+#       - name: 🧪 Unit & Integration Tests
+#         run: bun run test
+#
+#   build:
+#     name: 🏗️ Build Static Export
+#     needs: quality
+#     runs-on: ubuntu-latest
+#     steps:
+#       - name: ⬇️ Checkout repository
+#         uses: actions/checkout@v6
+#
+#       - name: Setup project
+#         uses: ./.github/actions/setup
+#
+#       - name: 💾 Cache Next.js build
+#         uses: actions/cache@v5
+#         with:
+#           path: |
+#             ${{ github.workspace }}/.next/cache
+#           key: ${{ runner.os }}-nextjs-${{ hashFiles('**/bun.lock', '**/package.json') }}-${{ hashFiles('**/*.js', '**/*.jsx', '**/*.ts', '**/*.tsx') }}
+#           restore-keys: |
+#             ${{ runner.os }}-nextjs-${{ hashFiles('**/bun.lock', '**/package.json') }}-
+#
+#       - name: 🏗️ Build for Pages
+#         run: bun run build:pages
+#
+#       - name: 📦 Upload production bundle
+#         uses: actions/upload-artifact@v7
+#         with:
+#           name: production-bundle
+#           path: out/
+#           retention-days: 1
+#
+#   verify:
+#     name: 🚦 Verification (E2E & LH)
+#     needs: build
+#     runs-on: ubuntu-latest
+#     steps:
+#       - name: ⬇️ Checkout repository
+#         uses: actions/checkout@v6
+#
+#       - name: Setup project
+#         uses: ./.github/actions/setup
+#
+#       - name: 📦 Download production bundle
+#         uses: actions/download-artifact@v7
+#         with:
+#           name: production-bundle
+#           path: out/
+#
+#       - name: 💾 Cache Playwright browsers
+#         uses: actions/cache@v5
+#         id: playwright-cache
+#         with:
+#           path: ~/.cache/ms-playwright
+#           key: ${{ runner.os }}-playwright-${{ hashFiles('**/bun.lock', '**/package.json') }}
+#           restore-keys: |
+#             ${{ runner.os }}-playwright-
+#
+#       - name: 🎭 Install Playwright Browsers & Deps
+#         if: steps.playwright-cache.outputs.cache-hit != 'true'
+#         run: bun x playwright install --with-deps
+#
+#       - name: 🎭 Install Playwright System Deps
+#         if: steps.playwright-cache.outputs.cache-hit == 'true'
+#         run: bun x playwright install-deps
+#
+#       - name: 🧪 E2E Tests (Static)
+#         run: bun run test:e2e:static
+#
+#       - name: ⚡ Lighthouse Audit
+#         run: bun run test:lighthouse:static
+#         env:
+#           LHCI_GITHUB_APP_TOKEN: ${{ secrets.LHCI_GITHUB_APP_TOKEN }}
+#           LHCI_GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+#           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+#
+#   deploy:
+#     name: 🚀 Deploy to Cloudflare
+#     needs: verify
+#     runs-on: ubuntu-latest
+#     environment:
+#       name: ${{ github.ref_name == 'main' && 'production' || 'staging' }}
+#     steps:
+#       - name: ⬇️ Checkout repository
+#         uses: actions/checkout@v6
+#
+#       - name: Setup project
+#         uses: ./.github/actions/setup
+#
+#       - name: 📦 Download production bundle
+#         uses: actions/download-artifact@v7
+#         with:
+#           name: production-bundle
+#           path: out/
+#
+#       - name: 🚀 Deploy to Cloudflare Pages
+#         uses: cloudflare/wrangler-action@v3
+#         with:
+#           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+#           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+#           command: pages deploy out --project-name=hlorenzoz --branch=${{ github.ref_name }} --commit-dirty=true
+#           gitHubToken: ${{ secrets.GITHUB_TOKEN }}
+#           packageManager: bun
+#           wranglerVersion: 'latest'

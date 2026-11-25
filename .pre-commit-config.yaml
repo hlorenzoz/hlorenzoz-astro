@@ -1,0 +1,96 @@
+# See https://pre-commit.com for more information
+# See https://pre-commit.com/hooks.html for more hooks
+#
+# Local hooks (lint / type-check / unit tests) run on every commit via the
+# `pre-commit` git hook. They are skipped on pre-commit.ci (the `ci.skip` list
+# below) because that environment has no `bun`. Heavier checks — E2E and
+# Lighthouse — are intentionally NOT here; run them on demand with
+# `just test-e2e` / `just test-lighthouse` (or `just verify` for the full gate).
+# `pre-commit install` (or `just setup`) installs the three hook types below.
+default_install_hook_types: [pre-commit, commit-msg, pre-push]
+default_stages: [pre-commit]
+
+ci:
+  autofix_commit_msg: "style: auto fixes from pre-commit hooks"
+  autofix_prs: true
+  autoupdate_commit_msg: "chore: pre-commit autoupdate"
+  autoupdate_schedule: weekly
+  skip: [guardrail-selfcheck, guardrail-perturb, lint, type-check, test-related, test]
+
+repos:
+# The shared locks. First, so a broken installation is caught before anything else.
+-   repo: https://github.com/hlorenzoz/engineering-guardrail
+    rev: v0.1.2
+    hooks:
+    -   id: guardrail-selfcheck
+    -   id: guardrail-staged
+    -   id: guardrail-perturb
+    -   id: guardrail-commit-gate
+
+-   repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v6.0.0
+    hooks:
+    -   id: trailing-whitespace
+    -   id: end-of-file-fixer
+    -   id: check-yaml
+    -   id: check-json
+    -   id: check-merge-conflict
+    -   id: check-case-conflict
+    -   id: detect-private-key
+    -   id: check-added-large-files
+        # Keeps the 500 KB default for everything, with one documented
+        # exception: Google's Search Quality Rater Guidelines (8.6 MB). AGENTS.md
+        # names that PDF as the canonical E-E-A-T source and instructs agents to
+        # read it rather than answer from memory, so a dangling reference would
+        # defeat the rule. Excluding the path rather than raising --maxkb keeps
+        # the guard doing its real job: catching large files nobody chose.
+        exclude: '^\.agents/context/Google EEAT Guideline/'
+
+# Secrets in the staged changes.
+-   repo: https://github.com/gitleaks/gitleaks
+    rev: v8.30.0
+    hooks:
+    -   id: gitleaks
+
+-   repo: https://github.com/compilerla/conventional-pre-commit
+    rev: v4.4.0
+    hooks:
+    -   id: conventional-pre-commit
+        stages: [commit-msg]
+
+-   repo: local
+    hooks:
+    # Workspace rule: conventional commits only, never an AI attribution line.
+    -   id: no-ai-attribution
+        name: no AI attribution in the commit message
+        language: pygrep
+        entry: '(?i)(co-authored-by:.*(claude|anthropic|copilot|openai|chatgpt|gemini|cursor|codex)|generated with .*(claude|copilot|chatgpt|gemini|cursor))'
+        stages: [commit-msg]
+    -   id: lint
+        name: lint
+        entry: bun run lint
+        language: system
+        files: \.(js|jsx|ts|tsx)$
+        pass_filenames: false
+    -   id: type-check
+        name: type-check
+        entry: bun run type-check
+        language: system
+        pass_filenames: false
+    # On commit: only the tests that import a staged file.
+    -   id: test-related
+        name: tests related to the staged files
+        entry: sh tests/log.sh vitest_related bunx vitest related --run --passWithNoTests --reporter=verbose
+        # One process: pre-commit would otherwise split the files into batches and
+        # run several test runners at once, which fail each other.
+        require_serial: true
+        language: system
+        files: \.(js|jsx|ts|tsx)$
+    # On push: the full unit suite.
+    -   id: test
+        name: test (unit, full)
+        entry: bun run test
+        language: system
+        pass_filenames: false
+        always_run: true
+        stages: [pre-push]

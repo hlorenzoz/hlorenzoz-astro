@@ -1,0 +1,1821 @@
+{
+  "navigation": {
+    "home": "Inicio",
+    "benefits": "Beneficios",
+    "solutions": "Soluciones",
+    "price": "Precio",
+    "portfolio": "Portafolio",
+    "news": "Noticias",
+    "contact": "Contacto",
+    "bookConsultation": "Reservar Consulta",
+    "services": "Servicios",
+    "language": "ES",
+    "breadcrumb": "Ruta de navegación"
+  },
+  "home": {
+    "meta": {
+      "title": "Lorenzoz Agency | SEO Local para negocios locales",
+      "description": "Más clientes locales desde Google y la IA. Un único plan mensual de SEO Local: contenido de autoridad, citaciones, autoridad en Google y en IA, y gestión de reseñas."
+    },
+    "hero": {
+      "badge": "SEO Local para negocios locales",
+      "title": "Más clientes locales",
+      "titleGradient": "desde Google y la IA",
+      "description": "No vendemos servicios sueltos. Trabajamos por un resultado: que quien busca lo que ofrece tu negocio te encuentre a ti primero.",
+      "cta": "Reservar una llamada",
+      "secondaryCta": "Ver el plan y los precios"
+    },
+    "stats": {
+      "plan": {
+        "label": "Un plan, todo incluido"
+      },
+      "pillars": {
+        "label": "Pilares de trabajo"
+      },
+      "markets": {
+        "label": "Mercados atendidos"
+      }
+    },
+    "markets": {
+      "eyebrow": "Alcance Global, Foco Local",
+      "title": "Trabajamos con negocios en todo el mundo",
+      "subtitle": "Con base en España, entregamos online en los mercados donde nuestros clientes crecen más rápido."
+    },
+    "standard": {
+      "title": "Resultados, no servicios sueltos",
+      "subtitle": "Una web, unas reseñas o un perfil de Google no traen clientes por separado. Los trae el conjunto, trabajado cada mes con un único objetivo.",
+      "oldWay": {
+        "title": "Comprar servicios",
+        "items": [
+          "Varios proveedores que no se coordinan entre sí",
+          "Entregables que nadie mide contra las ventas",
+          "Una web publicada que nadie encuentra",
+          "Reseñas y directorios sin atender"
+        ]
+      },
+      "newWay": {
+        "title": "Comprar un resultado",
+        "items": [
+          "Un solo responsable de tu captación de clientes",
+          "Todo el trabajo apunta a aparecer primero en tu zona",
+          "Contenido, enlaces, autoridad y reseñas avanzan juntos",
+          "Informe mensual, sin tecnicismos, de lo que se hizo"
+        ]
+      }
+    },
+    "problem": {
+      "badge": "El problema",
+      "title": "Tus clientes te <trad>buscan</trad><br></br>y encuentran a otro",
+      "description": "La decisión se toma en la primera pantalla de Google y, cada vez más, en la respuesta de un asistente de IA. Quien no está ahí, no entra en la comparación.",
+      "cards": [
+        {
+          "title": "Invisible en Google",
+          "description": "Si tu negocio no aparece cuando alguien busca tu servicio en tu zona, esa llamada la recibe un competidor."
+        },
+        {
+          "title": "Poca reputación visible",
+          "description": "Pocas reseñas, antiguas o sin respuesta, restan confianza justo antes de que el cliente decida."
+        },
+        {
+          "title": "La IA recomienda a otros",
+          "description": "Los asistentes de IA responden con los negocios que reconocen como referencia. Ese lugar hay que ganárselo."
+        }
+      ]
+    },
+    "solutions": {
+      "badge": "La solución",
+      "title": "Un plan. Cuatro pilares.",
+      "subtitle": "Un único plan mensual que reúne el trabajo que hace falta para ganar visibilidad en las búsquedas locales de Google y en las respuestas de los motores de IA.",
+      "cta": "Ver SEO Local",
+      "items": [
+        {
+          "title": "Contenido de autoridad",
+          "description": "El contenido que establece a tu negocio como referencia en su sector.",
+          "points": [
+            "Keyword research",
+            "Clústeres de contenido",
+            "Análisis de gaps de contenido",
+            "Actualización del contenido existente"
+          ]
+        },
+        {
+          "title": "Backlinks y citaciones",
+          "description": "Presencia en directorios y sitios de citaciones de confianza.",
+          "points": [
+            "Enlaces desde directorios de confianza",
+            "Citaciones en sitios relevantes",
+            "Señales de autoridad local más fuertes",
+            "Para Google y para los motores de IA"
+          ]
+        },
+        {
+          "title": "Autoridad en Google y en IA",
+          "description": "Tu negocio y tu web como la referencia que se recomienda.",
+          "points": [
+            "Google Business Profile optimizado",
+            "SEO local en las páginas de tu sitio web",
+            "Datos estructurados de negocio local",
+            "Presencia en resultados de Google y de IA"
+          ]
+        },
+        {
+          "title": "Gestión de reseñas",
+          "description": "Tu reputación, medida y trabajada mes a mes.",
+          "points": [
+            "Seguimiento del crecimiento de reseñas",
+            "Tendencias positivas y negativas",
+            "Monitoreo de las respuestas de clientes",
+            "Enlaces de opinión con tu marca"
+          ]
+        }
+      ]
+    },
+    "benefits": {
+      "title": "Lo que cambia en tu negocio",
+      "titleGradient": "cuando te encuentran",
+      "imageAlt": "Panel de crecimiento del negocio",
+      "items": [
+        {
+          "title": "Visibilidad donde se decide",
+          "description": "Tu negocio presente en las búsquedas locales de Google y en el mapa, donde tus clientes eligen a quién llamar."
+        },
+        {
+          "title": "Una reputación que trabaja por ti",
+          "description": "Reseñas que crecen de forma constante y un seguimiento claro de lo que opinan tus clientes."
+        },
+        {
+          "title": "Recomendado por Google y la IA",
+          "description": "Contenido y autoridad para que buscadores y asistentes te reconozcan como la referencia de tu zona."
+        }
+      ]
+    },
+    "process": {
+      "title": "Un proceso claro, mes a mes",
+      "steps": [
+        {
+          "number": "01",
+          "badge": "Auditoría",
+          "title": "Entendemos tu punto de partida",
+          "description": "Revisamos tu presencia actual en Google, tu web, tus reseñas y a quién recomiendan hoy en tu zona."
+        },
+        {
+          "number": "02",
+          "badge": "Construcción",
+          "title": "Trabajamos los cuatro pilares",
+          "description": "Contenido, citaciones, autoridad y reseñas avanzan en paralelo, con un plan que conoces de antemano."
+        },
+        {
+          "number": "03",
+          "badge": "Iteración",
+          "title": "Medimos y ajustamos",
+          "description": "Cada mes recibes un informe sin tecnicismos y ajustamos el trabajo según lo que cambió."
+        }
+      ]
+    },
+    "pricing": {
+      "badge": "Un plan, todo incluido",
+      "title": "Precio simple y transparente",
+      "description": "Un único plan mensual con los cuatro pilares. Los servicios opcionales tienen un {discount}% de descuento cuando se contratan junto a SEO Local.",
+      "vat": "Ningún precio incluye IVA. Los residentes en la UE están sujetos a +21% de IVA.",
+      "paymentTerms": "Al contratar se abona el {upfront}% por adelantado (el primer mes). Cubre los gastos de las herramientas y servicios que hacen posible el trabajo.",
+      "perMonth": "/ mes",
+      "oneOff": "pago único",
+      "from": "desde",
+      "learnMore": "Más información",
+      "listLabel": "Precio de lista",
+      "bundleLabel": "Con SEO Local",
+      "core": {
+        "popular": "La oferta central",
+        "title": "SEO Local",
+        "subtitle": "Los cuatro pilares incluidos",
+        "goal": "Objetivo: la primera posición en Google para las búsquedas de tu zona",
+        "cta": "Reservar una llamada",
+        "groups": [
+          {
+            "label": "Contenido de autoridad",
+            "items": [
+              "Keyword research",
+              "Clústeres de contenido",
+              "Análisis de gaps de contenido"
+            ]
+          },
+          {
+            "label": "Backlinks y citaciones",
+            "items": [
+              "Enlaces desde directorios de confianza",
+              "Citaciones en sitios relevantes",
+              "Señales de autoridad local más fuertes"
+            ]
+          },
+          {
+            "label": "Autoridad en Google y en IA",
+            "items": [
+              "Google Business Profile optimizado",
+              "SEO local en las páginas de tu sitio web",
+              "Datos estructurados de negocio local"
+            ]
+          },
+          {
+            "label": "Gestión de reseñas",
+            "items": [
+              "Seguimiento del crecimiento de reseñas",
+              "Tendencias positivas y negativas",
+              "Monitoreo de las respuestas de clientes"
+            ]
+          }
+        ]
+      },
+      "addOnsTitle": "Servicios opcionales",
+      "addOnsSubtitle": "{discount}% de descuento sobre el precio de lista al contratarlos junto a SEO Local.",
+      "addOns": {
+        "websiteDevelopment": {
+          "title": "Desarrollo Web",
+          "subtitle": "Sitios que convierten",
+          "features": [
+            "Landing page o sitio completo de varias páginas",
+            "Diseño pensado primero para el móvil y Core Web Vitals desde el día uno",
+            "Open Graph y datos estructurados desde el lanzamiento"
+          ],
+          "cta": "Empezar"
+        },
+        "aiVoiceReceptionist": {
+          "title": "Recepcionista de Voz IA",
+          "subtitle": "Ninguna llamada sin atender",
+          "features": [
+            "Citas agendadas directo en tu calendario",
+            "Voz y guion personalizados según tu marca",
+            "Optimizado para inglés y español"
+          ],
+          "cta": "Empezar"
+        },
+        "softwareDevelopment": {
+          "title": "Desarrollo de Software",
+          "subtitle": "A medida, listo para escalar",
+          "features": [
+            "Un solo código para iOS, Android, web y escritorio",
+            "Pruebas automatizadas y pipeline de CI/CD",
+            "Propiedad completa del código fuente al entregarse"
+          ],
+          "cta": "Pedir presupuesto"
+        }
+      }
+    },
+    "testimonials": {
+      "title": "Historias de Éxito",
+      "subtitle": "Únete a cientos de empresas que han transformado sus operaciones con nuestras soluciones de IA.",
+      "items": [
+        {
+          "quote": "Lorenzoz Agency redujo nuestro tiempo de respuesta en un 80%. No hemos perdido ni un solo prospecto en tres meses.",
+          "author": "David Chen",
+          "position": "CEO, TechFlow Solutions"
+        },
+        {
+          "quote": "El recepcionista de voz IA suena increíblemente humano. Nuestros clientes realmente disfrutan interactuando con él.",
+          "author": "Sarah Jenkins",
+          "position": "Gerente de Ops, Bloom Retail"
+        },
+        {
+          "quote": "Escalar nuestro soporte solía ser nuestro mayor dolor de cabeza. Ahora, la IA gestiona el 90% del volumen sin esfuerzo.",
+          "author": "Marcus Thorne",
+          "position": "Fundador, Thorne & Co."
+        }
+      ]
+    },
+    "contact": {
+      "badge": "Contacto",
+      "title": "Hablemos de tu negocio.",
+      "subtitle": "Reserva una llamada de 15 minutos."
+    },
+    "faq": {
+      "title": "Preguntas frecuentes",
+      "items": [
+        {
+          "question": "¿Se garantiza la primera posición en Google?",
+          "answer": "No, y conviene desconfiar de quien lo haga: nadie controla el algoritmo de Google. La primera posición es el objetivo por el que trabajamos cada mes, y un informe sin tecnicismos te muestra lo que se hizo y cómo evoluciona tu visibilidad."
+        },
+        {
+          "question": "¿Qué incluye exactamente el plan?",
+          "answer": "Los cuatro pilares por {price} al mes {tax}: contenido de autoridad, backlinks y citaciones, autoridad en Google y en IA, y gestión de reseñas. Nada se factura aparte."
+        },
+        {
+          "question": "¿Cuánto tiempo tarda en verse resultados en el posicionamiento local?",
+          "answer": "La mayoría de los clientes ven un movimiento significativo en el mapa local entre 30 y 60 días, aunque en mercados más competitivos puede tardar más."
+        },
+        {
+          "question": "¿Por qué se paga una parte por adelantado?",
+          "answer": "Al contratar se abona el {upfront}% por adelantado. Cubre las herramientas y los servicios que contratamos para hacer el trabajo desde el primer día."
+        },
+        {
+          "question": "¿Necesito tener ya una web o un perfil de Google?",
+          "answer": "No. Si no tienes Google Business Profile lo creamos y lo verificamos a tu nombre, y la web se puede sumar como servicio opcional con un {discount}% de descuento."
+        },
+        {
+          "question": "¿Cómo funciona el descuento de los servicios opcionales?",
+          "answer": "Desarrollo Web, Recepcionista de Voz IA y Desarrollo de Software tienen un {discount}% de descuento sobre su precio de lista cuando se contratan junto a SEO Local. Contratados por separado cuestan el precio de lista."
+        }
+      ]
+    }
+  },
+  "services": {
+    "hub": {
+      "eyebrow": "Qué hacemos",
+      "title": "Un plan, y lo que lo acompaña",
+      "subtitle": "SEO Local es la oferta central: un único plan mensual que trae clientes locales desde Google y la IA. Desarrollo Web, Recepcionista de Voz IA y Desarrollo de Software son opcionales, con un {discount}% de descuento a su lado.",
+      "cta": "Ver los servicios"
+    },
+    "websiteDevelopment": {
+      "name": "Desarrollo Web",
+      "meta": {
+        "title": "Servicios de Desarrollo Web",
+        "description": "Sitios web personalizados de alta velocidad diseñados para convertir visitantes en clientes. Optimizados para SEO y adaptables a móviles."
+      },
+      "hero": {
+        "eyebrow": "Desarrollo Web",
+        "title": "Sitios Web que Convierten",
+        "subtitle": "Sitios web personalizados de alta velocidad diseñados para convertir visitantes en clientes. Optimizados para SEO y adaptables a móviles.",
+        "price": "{price} {tax}, pago único. {bundlePrice} junto a SEO Local ({discount}% de descuento). Hosting opcional: {monthly}/mes.",
+        "cta": "Reserva una Consulta Gratis de 15 min"
+      },
+      "benefits": {
+        "title": "Qué Incluye",
+        "items": [
+          {
+            "title": "Diseño Pensado para el Móvil",
+            "description": "Cada sección se diseña y prueba primero para móviles, para que tu sitio se vea bien y cargue rápido en cualquier pantalla."
+          },
+          {
+            "title": "Cumplimiento Core Web Vitals",
+            "description": "Los sitios están diseñados para superar los estándares de rendimiento de Google, protegiendo tu posicionamiento y la experiencia del usuario."
+          },
+          {
+            "title": "SEO y Datos Estructurados",
+            "description": "Las etiquetas Open Graph y los datos estructurados se implementan desde el primer día, para que los buscadores entiendan tu sitio desde el lanzamiento."
+          }
+        ]
+      },
+      "deliverables": {
+        "title": "El Paquete Completo",
+        "groups": [
+          {
+            "label": "Rendimiento y Seguridad",
+            "items": [
+              "Landing page o sitio web completo de varias páginas",
+              "Diseño pensado primero para el móvil, probado en cada tamaño de pantalla",
+              "Cumplimiento Core Web Vitals incorporado desde el día uno",
+              "PWA instalable con páginas listas para funcionar sin conexión",
+              "Seguridad de grado empresarial en cada despliegue"
+            ]
+          },
+          {
+            "label": "SEO e Infraestructura",
+            "items": [
+              "Open Graph y datos estructurados desde el lanzamiento",
+              "Soporte de navegación agéntica para agentes de IA y rastreadores",
+              "Certificados SSL y CDN incluidos",
+              "Hosting e infraestructura gestionados por nosotros",
+              "Etiquetado del lado del servidor como opción adicional"
+            ]
+          },
+          {
+            "label": "Calidad y Entrega",
+            "items": [
+              "Pruebas automatizadas en cada build",
+              "Control de calidad estándar antes de cada lanzamiento",
+              "Pipeline de CI/CD (DevOpsSec)",
+              "En vivo en 7 a 14 días"
+            ]
+          }
+        ]
+      },
+      "process": {
+        "title": "Cómo Construimos tu Sitio",
+        "steps": [
+          {
+            "number": "01",
+            "title": "Reserva",
+            "description": "Agenda una consulta gratuita para conversar sobre tus objetivos."
+          },
+          {
+            "number": "02",
+            "title": "Reunión",
+            "description": "Auditamos tus necesidades y alineamos la estrategia."
+          },
+          {
+            "number": "03",
+            "title": "Desarrollo",
+            "description": "Construimos a medida tu sitio web adaptado a tu marca."
+          },
+          {
+            "number": "04",
+            "title": "Entrega",
+            "description": "Lanzamos tu sitio y te entregamos la documentación completa, normalmente en 7 a 14 días."
+          }
+        ]
+      },
+      "faq": {
+        "title": "Preguntas Frecuentes",
+        "items": [
+          {
+            "question": "¿El SEO está incluido en el paquete de Desarrollo Web, o tiene un costo adicional?",
+            "answer": "Sí. Todos los paquetes de Desarrollo Web vienen con SEO técnico fundacional incluido desde el primer día, abarcando Datos Estructurados optimizados y etiquetas Open Graph para que los motores de búsqueda amen tu sitio."
+          },
+          {
+            "question": "¿Quién es el propietario del sitio web una vez completado el proyecto?",
+            "answer": "Nuestros clientes son dueños del 100% de cada artefacto, incluyendo el código fuente del sitio, los diseños y la documentación, una vez que el proyecto se completa y se paga en su totalidad."
+          },
+          {
+            "question": "¿Qué tipo de soporte técnico está disponible si surge un problema después del lanzamiento?",
+            "answer": "Ofrecemos soporte técnico dedicado dentro de nuestro horario laboral (lunes a viernes). Todos los problemas se abordan con prontitud para asegurar que tus sistemas permanezcan operativos."
+          }
+        ]
+      }
+    },
+    "aiVoiceReceptionist": {
+      "name": "Recepcionista de Voz IA",
+      "meta": {
+        "title": "Recepcionista de Voz IA",
+        "description": "Recepcionistas de voz con IA disponibles 24/7 que responden preguntas, agendan citas y capturan cada prospecto, sin dejar ninguna llamada sin atender."
+      },
+      "hero": {
+        "eyebrow": "Recepcionista de Voz IA",
+        "title": "No Pierdas Ni Una Llamada",
+        "subtitle": "Agentes de procesamiento de lenguaje natural que gestionan llamadas como un humano. Programan citas y responden preguntas frecuentes, 24/7.",
+        "price": "{price}/mes {tax}, sin coste de alta. {bundlePrice}/mes junto a SEO Local ({discount}% de descuento).",
+        "cta": "Reservar Consulta"
+      },
+      "benefits": {
+        "title": "Qué Incluye",
+        "items": [
+          {
+            "title": "Respuestas Inteligentes 24/7",
+            "description": "Tu recepcionista de IA responde preguntas frecuentes al instante, de día o de noche, para que ningún prospecto espere un llamado de vuelta."
+          },
+          {
+            "title": "Programación de Citas",
+            "description": "Quienes llaman agendan directamente en tu calendario durante la llamada, sin intercambio de emails."
+          },
+          {
+            "title": "Hasta 90% de Resolución en 1ra Llamada",
+            "description": "La mayoría de las llamadas se resuelven en el primer intento, reduciendo tiempos de espera y liberando a tu equipo."
+          }
+        ]
+      },
+      "deliverables": {
+        "title": "El Paquete Completo",
+        "groups": [
+          {
+            "label": "Atención Permanente",
+            "items": [
+              "Respuestas inteligentes a preguntas frecuentes 24/7",
+              "Programación de citas directo en tu calendario",
+              "Captura conversacional de prospectos en cada llamada",
+              "Hasta 90% de resolución en la primera llamada"
+            ]
+          },
+          {
+            "label": "Suena Como Tu Equipo",
+            "items": [
+              "Voz y guion personalizados según tu marca",
+              "Configuración liviana con tu sistema telefónico actual",
+              "Integración con CRM (HubSpot, Salesforce, GoHighLevel) cuando nos das acceso a la API",
+              "Optimizado para inglés y español"
+            ]
+          },
+          {
+            "label": "Cuidado Continuo",
+            "items": [
+              "Actualizaciones mensuales de guion y soporte proactivo",
+              "Pruebas recurrentes del sistema",
+              "Manejo de datos alineado con GDPR",
+              "Pensado para cobertura fuera de horario y desborde"
+            ]
+          }
+        ]
+      },
+      "process": {
+        "title": "Cómo Funciona",
+        "steps": [
+          {
+            "number": "01",
+            "title": "Reserva",
+            "description": "Agenda una consulta gratuita para revisar tus flujos de llamadas."
+          },
+          {
+            "number": "02",
+            "title": "Reunión",
+            "description": "Auditamos tus necesidades y alineamos el guion y la estrategia."
+          },
+          {
+            "number": "03",
+            "title": "Desarrollo",
+            "description": "Construimos a medida tu agente de voz IA y su guion."
+          },
+          {
+            "number": "04",
+            "title": "Entrega",
+            "description": "Tu agente entra en funcionamiento, normalmente en 7 a 14 días."
+          }
+        ]
+      },
+      "faq": {
+        "title": "Preguntas Frecuentes",
+        "items": [
+          {
+            "question": "¿El Recepcionista de Voz IA se puede integrar con mi CRM actual?",
+            "answer": "Sí. Nuestro Recepcionista de Voz IA puede integrarse con tu infraestructura CRM existente (ej. HubSpot, Salesforce, GoHighLevel). Se deben proporcionar especificaciones técnicas y acceso a la API."
+          },
+          {
+            "question": "¿Qué idiomas admite el Recepcionista de Voz IA?",
+            "answer": "El Recepcionista de Voz IA admite múltiples idiomas globales. Sin embargo, nuestros sistemas son probados y optimizados rigurosamente de manera específica para inglés y español para garantizar la máxima calidad de interacción."
+          },
+          {
+            "question": "¿Cómo se factura el servicio del Recepcionista de Voz IA?",
+            "answer": "El servicio de Recepcionista de Voz IA se factura con un pago mensual recurrente. Este pago cubre continuamente el soporte proactivo esencial, las actualizaciones de conocimiento, las pruebas del sistema y tu asignación mensual de minutos."
+          }
+        ]
+      }
+    },
+    "digitalBusinessCard": {
+      "name": "Tarjeta Digital",
+      "meta": {
+        "title": "Tarjetas de Presentación Digitales",
+        "description": "Tarjetas digitales con NFC y QR para compartir contactos al instante. Crea una impresión profesional duradera con un solo toque."
+      },
+      "hero": {
+        "eyebrow": "Tarjeta Digital",
+        "title": "Networking Modernizado",
+        "subtitle": "Tarjetas con tecnología NFC para compartir contactos al instante. Crea una impresión profesional duradera con un toque.",
+        "price": "{price} por tarjeta (+ {monthly}/mes de mantenimiento opcional), con descuentos por cantidad. La primera va incluida sin cargo, con mantenimiento, al contratar Desarrollo Web.",
+        "cta": "Empezar"
+      },
+      "benefits": {
+        "title": "Qué Incluye",
+        "items": [
+          {
+            "title": "Tecnología NFC y Código QR",
+            "description": "Comparte tu perfil de contacto completo con un toque o un escaneo, sin necesidad de descargar ninguna app."
+          },
+          {
+            "title": "App Web Progresiva Instalable",
+            "description": "Tu tarjeta se instala como una app y funciona sin conexión, siempre lista cuando la necesites."
+          },
+          {
+            "title": "Descarga de Contacto en Un Toque",
+            "description": "Quienes te conocen guardan tus datos directo en su teléfono como .vcard, con LinkedIn, teléfono y email incluidos."
+          }
+        ]
+      },
+      "deliverables": {
+        "title": "El Paquete Completo",
+        "groups": [
+          {
+            "label": "Tocá y Compartí",
+            "items": [
+              "Tecnología NFC, un toque para compartir sin necesidad de app",
+              "Integración de código QR para dispositivos sin NFC",
+              "Compartí LinkedIn, teléfono, URL y email al instante",
+              "Descarga como contacto .vcard con un toque"
+            ]
+          },
+          {
+            "label": "Tu Marca, Tu Tarjeta",
+            "items": [
+              "Diseño personalizado según tu marca",
+              "Descripción de bio para presentarte",
+              "Mapa de Google My Business integrado",
+              "App Web Progresiva instalable"
+            ]
+          },
+          {
+            "label": "Funciona en Cualquier Lado",
+            "items": [
+              "Acceso sin conexión una vez instalada",
+              "Hosting y certificados SSL incluidos",
+              "Mantenimiento y actualizaciones mensuales opcionales",
+              "Lista en 7 a 14 días"
+            ]
+          }
+        ]
+      },
+      "process": {
+        "title": "Cómo Funciona",
+        "steps": [
+          {
+            "number": "01",
+            "title": "Reserva",
+            "description": "Agenda una consulta gratuita para conversar sobre el diseño y los datos de tu tarjeta."
+          },
+          {
+            "number": "02",
+            "title": "Reunión",
+            "description": "Auditamos tus necesidades y alineamos el diseño y el contenido."
+          },
+          {
+            "number": "03",
+            "title": "Desarrollo",
+            "description": "Construimos a medida tu tarjeta digital y conectamos tu tag NFC."
+          },
+          {
+            "number": "04",
+            "title": "Entrega",
+            "description": "Tu tarjeta entra en funcionamiento, normalmente en 7 a 14 días."
+          }
+        ]
+      },
+      "faq": {
+        "title": "Preguntas Frecuentes",
+        "items": [
+          {
+            "question": "¿Necesito comprar mi propio hardware para la Tarjeta Digital?",
+            "answer": "No necesariamente. Si optas por nuestro plan de mantenimiento mensual, nosotros gestionamos todos los servicios de alojamiento y CDN. Si decides no incluir el mantenimiento de la Tarjeta Digital, se te entregará el código para que lo alojes independientemente en el proveedor de tu preferencia."
+          },
+          {
+            "question": "¿Por qué se requiere un pago anticipado del 50%?",
+            "answer": "Se requiere un pago anticipado del 50% para reservar el espacio de tu proyecto y cubrir los recursos iniciales de desarrollo. El 50% restante solo se abona una vez finalizado con éxito, antes de la entrega final."
+          },
+          {
+            "question": "¿Qué tipo de soporte técnico está disponible si surge un problema después del lanzamiento?",
+            "answer": "Ofrecemos soporte técnico dedicado dentro de nuestro horario laboral (lunes a viernes). Todos los problemas se abordan con prontitud para asegurar que tus sistemas permanezcan operativos."
+          }
+        ]
+      }
+    },
+    "localSeo": {
+      "name": "SEO Local",
+      "meta": {
+        "title": "SEO Local para negocios locales",
+        "description": "Un único plan mensual de SEO Local: contenido de autoridad, backlinks y citaciones, autoridad en Google y en IA, y gestión de reseñas, para que te encuentren primero."
+      },
+      "hero": {
+        "eyebrow": "SEO Local",
+        "title": "Que te encuentren antes que a tu competencia",
+        "subtitle": "Un único plan mensual con todo el trabajo que hace falta para ganar visibilidad en las búsquedas locales de Google y en las respuestas de la IA.",
+        "price": "{price}/mes {tax}. Los cuatro pilares incluidos, {upfront}% por adelantado.",
+        "cta": "Reservar una llamada"
+      },
+      "benefits": {
+        "title": "Por qué un solo plan",
+        "items": [
+          {
+            "title": "Compras un resultado, no una lista de tareas",
+            "description": "Contenido, enlaces, autoridad y reseñas son piezas del mismo objetivo. Trabajadas por separado y por proveedores distintos, ninguna alcanza. En un solo plan, cada una empuja a las otras."
+          },
+          {
+            "title": "Más asequible que contratarlo por partes",
+            "description": "Los dos pilares que antes vendíamos por separado costaban, juntos, más que el plan completo de ahora, que además incluye los otros dos. Las cuentas están más abajo en esta página."
+          },
+          {
+            "title": "Sabes lo que se hizo cada mes",
+            "description": "Un informe mensual sin tecnicismos: qué se trabajó, cómo evoluciona tu visibilidad y qué sigue."
+          }
+        ]
+      },
+      "deliverables": {
+        "title": "Lo que incluye",
+        "groups": [
+          {
+            "label": "Contenido de autoridad",
+            "items": [
+              "Keyword research por ubicación",
+              "Clústeres de contenido",
+              "Análisis de gaps de contenido",
+              "Actualización del contenido existente"
+            ]
+          },
+          {
+            "label": "Backlinks y citaciones",
+            "items": [
+              "Enlaces desde directorios de confianza",
+              "Citaciones en sitios relevantes",
+              "Señales de autoridad local más fuertes",
+              "Para Google y para los motores de IA"
+            ]
+          },
+          {
+            "label": "Autoridad en Google y en IA",
+            "items": [
+              "Auditoría y optimización de Google Business Profile",
+              "SEO local en las páginas de tu sitio web",
+              "Datos estructurados de negocio local",
+              "Soporte multiubicación"
+            ]
+          },
+          {
+            "label": "Gestión de reseñas",
+            "items": [
+              "Seguimiento del crecimiento de reseñas",
+              "Tendencias positivas y negativas",
+              "Monitoreo de las respuestas de clientes",
+              "Enlaces de opinión con tu marca"
+            ]
+          }
+        ]
+      },
+      "process": {
+        "title": "Cómo trabajamos",
+        "steps": [
+          {
+            "number": "01",
+            "title": "Llamada inicial",
+            "description": "15 minutos para conocer tu negocio, tu zona y a quién quieres llegar."
+          },
+          {
+            "number": "02",
+            "title": "Auditoría",
+            "description": "Revisamos tu presencia actual en Google, tu web, tus reseñas y a quién recomiendan hoy en tu zona."
+          },
+          {
+            "number": "03",
+            "title": "Trabajamos los cuatro pilares",
+            "description": "Contenido, citaciones, autoridad y reseñas avanzan en paralelo, con un plan que conoces de antemano."
+          },
+          {
+            "number": "04",
+            "title": "Informe y ajuste mensual",
+            "description": "Cada mes recibes un informe sin tecnicismos y ajustamos el trabajo según lo que cambió."
+          }
+        ]
+      },
+      "faq": {
+        "title": "Preguntas Frecuentes",
+        "items": [
+          {
+            "question": "¿Se garantiza la primera posición en Google?",
+            "answer": "No, y conviene desconfiar de quien lo haga: nadie controla el algoritmo de Google. La primera posición es el objetivo por el que trabajamos cada mes, y un informe sin tecnicismos te muestra lo que se hizo y cómo evoluciona tu visibilidad."
+          },
+          {
+            "question": "¿Cuánto tiempo tarda en verse resultados en el posicionamiento local?",
+            "answer": "La mayoría de los clientes ven un movimiento significativo en el mapa local entre 30 y 60 días, aunque en mercados más competitivos puede tardar más."
+          },
+          {
+            "question": "¿Necesito tener ya un Google Business Profile?",
+            "answer": "No. Si todavía no tienes uno, lo creamos y lo verificamos a tu nombre como parte del proceso de incorporación."
+          },
+          {
+            "question": "¿Esto cubre más de una ubicación?",
+            "answer": "Sí. Los negocios con varias sucursales están cubiertos, cada ubicación recibe su propio perfil optimizado y contenido basado en su zona."
+          },
+          {
+            "question": "¿Qué plataformas de reseñas monitorean?",
+            "answer": "Google Business Profile es el canal principal, junto con Facebook y cualquier sitio específico de tu rubro. Podemos sumar más fuentes a medida que tus necesidades crezcan."
+          },
+          {
+            "question": "¿Cómo se consiguen más reseñas?",
+            "answer": "Con enlaces de opinión con tu marca que facilitan a tus clientes dejar su reseña. Se envían a todos los clientes, no solo a los satisfechos: filtrar a quién se le pide va contra las políticas de Google."
+          }
+        ]
+      }
+    },
+    "softwareDevelopment": {
+      "name": "Desarrollo de Software",
+      "meta": {
+        "title": "Desarrollo de Software a Medida",
+        "description": "Productos full stack, web y mobile, construidos para funcionar en cualquier dispositivo y tamaño de pantalla, desde el primer prototipo hasta producción."
+      },
+      "hero": {
+        "eyebrow": "Desarrollo de Software",
+        "title": "Software a Medida, Listo para Escalar",
+        "subtitle": "Productos full stack con frontend en Flutter y un backend robusto, construidos para funcionar en cualquier dispositivo y tamaño de pantalla.",
+        "price": "Desde {price} {tax}. Desde {bundlePrice} junto a SEO Local ({discount}% de descuento).",
+        "cta": "Reserva una Consulta Gratis de 15 min"
+      },
+      "benefits": {
+        "title": "Qué Incluye",
+        "items": [
+          {
+            "title": "Multiplataforma Desde el Día Uno",
+            "description": "Un solo código en Flutter llega a iOS, Android, la web, macOS, Windows y Linux, para que alcances cada dispositivo sin triplicar el presupuesto."
+          },
+          {
+            "title": "Backend de Grado Producción",
+            "description": "Un backend construido para tráfico real, con pruebas automatizadas y CI/CD, no un prototipo frágil disfrazado de producto."
+          },
+          {
+            "title": "Eres dueño de todo el stack",
+            "description": "El código fuente, la infraestructura y la documentación son tuyos por completo una vez entregado el proyecto."
+          }
+        ]
+      },
+      "deliverables": {
+        "title": "El Paquete Completo",
+        "groups": [
+          {
+            "label": "Un Código, Todas las Plataformas",
+            "items": [
+              "Frontend en Flutter para iOS, Android, la web, macOS, Windows y Linux",
+              "Interfaz consistente en cada dispositivo",
+              "Rendimiento nativo desde un solo código",
+              "Layouts responsivos para cada tamaño de pantalla"
+            ]
+          },
+          {
+            "label": "Construido Como Producción, No Como Prototipo",
+            "items": [
+              "Arquitectura de backend a medida para tu producto",
+              "Pruebas automatizadas desde el día uno",
+              "Pipeline de CI/CD para lanzamientos seguros",
+              "Infraestructura y hosting escalables"
+            ]
+          },
+          {
+            "label": "Eres dueño de todo",
+            "items": [
+              "Propiedad completa del código fuente al entregarse",
+              "Documentación técnica completa",
+              "Traspaso de infraestructura y despliegue",
+              "Presupuesto por proyecto, desde un precio de partida publicado"
+            ]
+          }
+        ]
+      },
+      "process": {
+        "title": "Cómo Funciona",
+        "steps": [
+          {
+            "number": "01",
+            "title": "Reserva",
+            "description": "Agenda una consulta gratuita para conversar sobre qué estás construyendo."
+          },
+          {
+            "number": "02",
+            "title": "Reunión",
+            "description": "Auditamos tus requerimientos y alineamos el enfoque técnico."
+          },
+          {
+            "number": "03",
+            "title": "Desarrollo",
+            "description": "Construimos a medida el frontend y el backend de tu producto."
+          },
+          {
+            "number": "04",
+            "title": "Entrega",
+            "description": "Tu producto se lanza, con plazos definidos por proyecto según su alcance."
+          }
+        ]
+      },
+      "faq": {
+        "title": "Preguntas Frecuentes",
+        "items": [
+          {
+            "question": "¿Para qué plataformas pueden desarrollar?",
+            "answer": "iOS, Android, la web, macOS, Windows y Linux desde un solo código en Flutter, respaldado por un backend a medida construido específicamente para las necesidades de tu producto."
+          },
+          {
+            "question": "¿Cómo se cotiza un proyecto de software a medida?",
+            "answer": "Cada proyecto se dimensiona individualmente según sus funcionalidades y complejidad. La cifra publicada es un precio de partida: el presupuesto final llega tras una consulta inicial, no es un paquete fijo."
+          },
+          {
+            "question": "¿Soy dueño del código fuente una vez terminado el proyecto?",
+            "answer": "Sí. Eres dueño del código fuente completo, la configuración de infraestructura y la documentación una vez que el proyecto se entrega y se paga en su totalidad."
+          }
+        ]
+      }
+    }
+  },
+  "sitemap": {
+    "title": "Mapa del sitio",
+    "subtitle": "Todas las páginas de este sitio, agrupadas según su estructura. Si buscas algo concreto, esta es la vía más rápida para encontrarlo.",
+    "toc": "Secciones",
+    "tiers": {
+      "home": "Empieza aquí",
+      "category": "Servicios",
+      "service": "Servicios individuales",
+      "supporting": "Guías y respuestas",
+      "location": "Zonas donde trabajamos",
+      "page": "Páginas",
+      "legal": "Legal"
+    },
+    "labels": {
+      "card": "Tarjeta de visita digital",
+      "sitemap": "Mapa del sitio"
+    },
+    "byline": {
+      "by": "Escrito por",
+      "updated": "Actualizado",
+      "readTime": "{min} min de lectura"
+    }
+  },
+  "offer": {
+    "from": "Precio de partida: el presupuesto final depende de los requerimientos funcionales.",
+    "bundleDiscount": "{discount}% de descuento sobre el precio de lista al contratarlo junto a {name}.",
+    "upfront": "El {upfront}% se abona por adelantado.",
+    "beforeTax": "El precio no incluye IVA."
+  },
+  "tax": {
+    "suffix": "+ IVA"
+  },
+  "numbers": {
+    "badge": "Las cuentas",
+    "title": "Lo que cuesta, y lo que cuesta no hacerlo",
+    "subtitle": "Dos cuentas sencillas: cuánto costaría contratar este trabajo por partes y cuánto le cuesta a un negocio cada cliente que no llega.",
+    "perMonth": "/ mes",
+    "separate": {
+      "title": "Por separado",
+      "items": [
+        "SEO Local",
+        "Gestión de reseñas",
+        "Contenido de autoridad",
+        "Backlinks y citaciones"
+      ],
+      "unpriced": "aparte",
+      "totalLabel": "Solo dos de los cuatro",
+      "note": "Precios de lista con los que ofrecíamos estos dos servicios por separado. El contenido y los backlinks se presupuestaban aparte."
+    },
+    "plan": {
+      "title": "En un solo plan",
+      "includedLabel": "Los cuatro pilares incluidos",
+      "saving": "{saving}% menos que dos de los pilares contratados por separado, con los otros dos ya incluidos."
+    },
+    "missed": {
+      "title": "Lo que cuesta un cliente que no llega",
+      "description": "El plan cuesta {annual} {tax} al año. Compáralo con lo que deja de ingresar tu negocio por cada cliente que elige a un competidor.",
+      "columns": {
+        "value": "Si un cliente nuevo te deja al año",
+        "cover": "El plan se paga con",
+        "missed": "Un cliente menos al mes te cuesta al año"
+      },
+      "coverClients": "{count} clientes al mes",
+      "coverOne": "1 cliente al mes",
+      "coverMonths": "1 cliente cada {months} meses",
+      "footnote": "Ejemplo ilustrativo con valores de cliente supuestos: haz la cuenta con el tuyo. No es una previsión de resultados."
+    }
+  },
+  "payment": {
+    "cta": "Pagar en Línea de Forma Segura"
+  },
+  "articles": {
+    "eyebrow": "DESDE LINKEDIN",
+    "title": "Últimos artículos de LinkedIn",
+    "subtitle": "Análisis a fondo sobre arquitectura, escalabilidad y desarrollo web moderno, directo desde mi LinkedIn.",
+    "cta": "Leer en LinkedIn",
+    "readTime": "{min} min de lectura",
+    "prevSlide": "Artículo anterior",
+    "nextSlide": "Artículo siguiente",
+    "goToSlide": "Ir al artículo {index}"
+  },
+  "footer": {
+    "description": "El socio de crecimiento para negocios locales. Nos encargamos de la adquisición de clientes para que puedas enfocarte en atender a los tuyos.",
+    "services": {
+      "title": "Servicios",
+      "items": [
+        {
+          "label": "SEO Local",
+          "href": "/services/local-seo"
+        },
+        {
+          "label": "Desarrollo Web",
+          "href": "/services/website-development"
+        },
+        {
+          "label": "Recepcionista de Voz IA",
+          "href": "/services/ai-voice-receptionist"
+        },
+        {
+          "label": "Desarrollo de Software",
+          "href": "/services/software-development"
+        }
+      ]
+    },
+    "agency": {
+      "title": "Agencia",
+      "items": [
+        {
+          "label": "Servicios",
+          "href": "/services"
+        },
+        {
+          "label": "Portafolio",
+          "href": "/portfolio"
+        },
+        {
+          "label": "Noticias",
+          "href": "/news"
+        },
+        {
+          "label": "Precios",
+          "href": "#pricing"
+        },
+        {
+          "label": "Contacto",
+          "href": "#contact"
+        },
+        {
+          "label": "Tarjeta de Héctor",
+          "href": "/card/hector"
+        },
+        {
+          "label": "Mapa del sitio",
+          "href": "/sitemap"
+        }
+      ]
+    },
+    "legal": {
+      "title": "Legal",
+      "toc": "Tabla de Contenidos",
+      "onThisPage": "En esta página",
+      "needHelp": {
+        "title": "¿Necesitas ayuda?",
+        "content": "Contacta con nuestro equipo legal para aclaraciones.",
+        "cta": "Contactar Soporte"
+      },
+      "items": [
+        {
+          "label": "Política de Privacidad",
+          "href": "/privacy-policy"
+        },
+        {
+          "label": "Términos de Servicio",
+          "href": "/terms-conditions"
+        },
+        {
+          "label": "Política de Cookies",
+          "href": "/cookie-policy"
+        }
+      ]
+    },
+    "terms": {
+      "payment": {
+        "title": "Pagos",
+        "description": "Al contratar se abona el {upfront}% por adelantado (el primer mes). Cubre los gastos de las herramientas y servicios de los que depende el trabajo. En los proyectos de pago único, el saldo restante se liquida al finalizar y antes de la entrega final."
+      },
+      "marketing": {
+        "title": "Portafolio y Casos de Éxito",
+        "description": "Los proyectos finalizados podrán ser utilizados por Lorenzoz Agency como casos de éxito o referencias de marketing para mostrar nuestro trabajo, a menos que se acuerde lo contrario por escrito."
+      }
+    },
+    "copyright": "© 2026 Lorenzoz Agency. Todos los derechos reservados.",
+    "termsPage": {
+      "lastUpdated": "Última actualización: 22 de julio de 2026",
+      "sections": {
+        "terms": {
+          "title": "Términos",
+          "content": "Al acceder al sitio web en hlorenzoz.com, usted acepta estar sujeto a estos términos de servicio, a todas las leyes y regulaciones aplicables, y acepta que es responsable del cumplimiento de cualquier ley local aplicable."
+        },
+        "license": {
+          "title": "Licencia de Uso",
+          "content": "Se otorga permiso para descargar temporalmente una copia de los materiales (información o software) en el sitio web de Lorenzoz Agency solo para visualización transitoria personal y no comercial.",
+          "list": [
+            "Modificar o copiar los materiales.",
+            "Utilizar los materiales para cualquier fin comercial o para cualquier exhibición pública (comercial o no comercial).",
+            "Intentar descompilar o realizar ingeniería inversa de cualquier software contenido en el sitio web de Lorenzoz Agency.",
+            "Eliminar cualquier derecho de autor u otras notaciones de propiedad de los materiales."
+          ]
+        },
+        "property": {
+          "title": "Propiedad Intelectual",
+          "content": "El Servicio y su contenido, características y funcionalidad originales son y seguirán siendo propiedad exclusiva de Lorenzoz Agency y sus licenciantes. Nuestras marcas comerciales e imagen comercial no pueden utilizarse en relación con ningún producto o servicio sin el consentimiento previo por escrito de Lorenzoz Agency."
+        },
+        "pricing": {
+          "intro": "Si desea adquirir cualquier producto o servicio puesto a disposición a través del Servicio, es posible que se le solicite que proporcione cierta información relevante para su Compra.",
+          "discount": {
+            "title": "Descuento en servicios opcionales",
+            "description": "Desarrollo Web, Recepcionista de Voz IA y Desarrollo de Software tienen un {discount}% de descuento sobre su precio de lista cuando se contratan junto a SEO Local. Contratados por separado se cobran al precio de lista. No hay prueba gratuita."
+          },
+          "tax": {
+            "title": "Precios sin IVA",
+            "description": "Ningún precio publicado incluye IVA. Los residentes en la UE están sujetos a +21% de IVA, que se añade en la factura."
+          },
+          "subscriptions": {
+            "title": "Suscripciones",
+            "description": "Facturado por adelantado de forma recurrente y periódica (mensual o anual)."
+          },
+          "cancellations": {
+            "title": "Cancelaciones",
+            "description": "Puede cancelar la renovación de su suscripción a través de su página de administración de cuenta o contactándonos."
+          }
+        },
+        "liability": {
+          "title": "Responsabilidad y Descargos",
+          "content": "En ningún caso Lorenzoz Agency, ni sus directores, empleados, socios, agentes, proveedores o afiliados, serán responsables de cualquier daño indirecto, incidental, especial, consecuente o punitivo que resulte de su acceso o uso del Servicio."
+        },
+        "contact": {
+          "title": "Contáctenos",
+          "content": "Si tiene alguna pregunta sobre estos Términos, comuníquese con nosotros:"
+        }
+      }
+    },
+    "privacyPage": {
+      "lastUpdated": "Última actualización: 24 de febrero de 2026",
+      "sections": {
+        "introduction": {
+          "title": "Introducción",
+          "content": "En Lorenzoz Agency, respetamos su privacidad y nos comprometemos a proteger sus datos personales."
+        },
+        "dataCollection": {
+          "title": "Recopilación de Datos",
+          "content": "Recopilamos información que usted nos proporciona directamente cuando utiliza nuestros servicios.",
+          "list": [
+            "Identificación directa (Nombre, Email)",
+            "Información profesional (Empresa, Cargo)",
+            "Datos de uso y preferencias",
+            "Historial de comunicaciones"
+          ]
+        },
+        "dataUsage": {
+          "title": "Uso de Datos",
+          "content": "Sus datos nos ayudan a proporcionar y mejorar nuestros servicios de manera eficiente.",
+          "list": [
+            "Proporcionar y mantener nuestros servicios",
+            "Comunicar actualizaciones del proyecto",
+            "Mejorar la experiencia del usuario"
+          ]
+        },
+        "thirdParty": {
+          "title": "Servicios de Terceros",
+          "content": "Utilizamos proveedores externos de confianza para mejorar nuestras capacidades operativas.",
+          "hosting": "Infraestructura y Alojamiento",
+          "payments": "Procesamiento de Pagos",
+          "booking": "Programación y Calendario",
+          "analytics": "Rendimiento y Analítica",
+          "ai": "Infraestructura de Voz IA"
+        },
+        "rights": {
+          "title": "Sus Derechos",
+          "content": "Usted tiene derecho a acceder, corregir o eliminar su información personal en cualquier momento. Apoyamos la portabilidad de datos y su derecho al olvido."
+        },
+        "contact": {
+          "title": "Equipo de Privacidad",
+          "content": "Si tiene preguntas sobre nuestras prácticas de privacidad, nuestro equipo está listo para ayudar."
+        }
+      }
+    },
+    "cookiePage": {
+      "lastUpdated": "Última actualización: 24 de febrero de 2026",
+      "sections": {
+        "whatAre": {
+          "title": "¿Qué son las Cookies?",
+          "content": "Las cookies son pequeños archivos de texto almacenados en su dispositivo que ayudan a que los sitios web funcionen de manera eficiente y nos brindan información de uso."
+        },
+        "howWeUse": {
+          "title": "Cómo Usamos las Cookies",
+          "content": "Utilizamos cookies para mejorar su experiencia, comprender el uso del sitio y admitir funciones básicas.",
+          "items": {
+            "essential": {
+              "title": "Esenciales",
+              "description": "Necesarias para que el sitio funcione. No se pueden desactivar."
+            },
+            "analytics": {
+              "title": "Analíticas",
+              "description": "Nos ayudan a entender cómo los visitantes interactúan con el sitio."
+            }
+          }
+        },
+        "control": {
+          "title": "Control de Cookies",
+          "content": "Puede aceptar o rechazar cookies a través de nuestro banner o la configuración de su navegador. Rechazar cookies puede afectar algunas funciones del sitio."
+        },
+        "updates": {
+          "title": "Actualizaciones de la Política",
+          "content": "Revisamos esta política periódicamente para reflejar cambios tecnológicos y legales. Por favor, consulte con frecuencia."
+        },
+        "contact": {
+          "title": "¿Preguntas?",
+          "content": "Para aclaraciones sobre nuestro uso de cookies, comuníquese con nuestro equipo de privacidad."
+        }
+      }
+    }
+  },
+  "card": {
+    "hector": {
+      "name": "Héctor Luis Lorenzo Zaldivar",
+      "title": "Fundador y Arquitecto de IA",
+      "agency": "Lorenzoz Agency",
+      "getInTouch": "Ponte en Contacto",
+      "addContacts": "Añadir a Contactos",
+      "bookCall": "Reservar Llamada",
+      "website": "Sitio Web",
+      "viewMaps": "Ver en Google Maps",
+      "installApp": "Instalar App",
+      "addToHome": "Añadir a Pantalla de Inicio",
+      "location": "Xinzo de Limia, Ourense",
+      "nfcWrite": "Escribir Tarjeta NFC",
+      "nfcWriting": "Acerca tarjeta para escribir...",
+      "nfcSuccess": "¡Escrito con éxito!",
+      "nfcError": "NFC falló o no soportado."
+    }
+  },
+  "cookieBanner": {
+    "text": "Utilizamos cookies para mejorar su experiencia de navegación, mostrar contenido personalizado y analizar nuestro tráfico. Al hacer clic en \"Aceptar todo\", usted da su consentimiento para que usemos cookies gestionadas por Cloudflare Zaraz.",
+    "accept": "Aceptar todo",
+    "reject": "Rechazar",
+    "preferences": "Política de Cookies"
+  },
+  "portfolio": {
+    "type": {
+      "live": "Sitio en Vivo",
+      "demo": "Demo de Concepto"
+    },
+    "list": {
+      "title": "Portafolio de Sitios Web Premium",
+      "subtitle": "Descubre nuestra colección de portafolios de sitios web de alto rendimiento y optimizados para la conversión, creados para empresas modernas.",
+      "cta": "Ver Detalles",
+      "filters": {
+        "all": "Todos los Proyectos",
+        "label": "Filtrar proyectos por tipo",
+        "showing": "Mostrando {count} de {total} proyectos"
+      }
+    },
+    "malaga-event-gear": {
+      "title": "Malaga Event Gear",
+      "description": "Alquiler de equipos audiovisuales premium para eventos en Málaga y la Costa del Sol: sonido nítido e iluminación espectacular para bodas, eventos corporativos y fiestas exclusivas.",
+      "badge": "Alquiler AV",
+      "liveDemoButton": "Visitar Sitio",
+      "heroTitle": "Alquiler de Equipos Audiovisuales Premium en Málaga",
+      "heroSubtitle": "Sonido nítido e iluminación espectacular para bodas, eventos corporativos y fiestas exclusivas en la Costa del Sol.",
+      "showcaseTitle": "Una Mirada de Cerca",
+      "showcaseDescription": "Desde la experiencia de reserva hasta el catálogo de equipos: explora <meg>Malaga Event Gear (MEG)</meg>, la plataforma que migramos desde WordPress y reconstruimos para ganar velocidad, seguridad, nuevas funcionalidades y una mejor experiencia de usuario.",
+      "ctaTitle": "¿Organizas un evento en Málaga?",
+      "ctaDescription": "Equipémoslo con sonido e iluminación premium. Recibe un presupuesto a medida en minutos.",
+      "ctaButton": "Pedir Presupuesto",
+      "features_carousel": {
+        "title": "Construido para la Excelencia Técnica",
+        "description": "Reconstruimos el sitio de WordPress como una plataforma rápida y accesible, totalmente estructurada para los buscadores.",
+        "slides": {
+          "speed": {
+            "badge": "Rendimiento",
+            "title": "Rendimiento",
+            "description": "PageSpeed Insights: 93 en móvil, limitado únicamente por los scripts de seguridad que inyecta Cloudflare, con 100 en Accesibilidad, Buenas Prácticas y SEO.",
+            "cta": "Probar en PageSpeed Insights"
+          },
+          "data": {
+            "badge": "Rich Results",
+            "title": "Datos Estructurados para Rich Results",
+            "description": "Esquemas válidos de Breadcrumbs, Local Business y Organisation, confirmados por el Test de Rich Results de Google.",
+            "cta": "Probar Rich Results"
+          }
+        }
+      },
+      "business": {
+        "title": "Sobre Malaga Event Gear",
+        "paragraphs": [
+          "Malaga Event Gear (MEG) alquila equipos audiovisuales para eventos en Málaga y la Costa del Sol: sonido, iluminación, proyectores y pantallas, micrófonos y una máquina de humo, además de los técnicos que los manejan. Trabaja con bodas, eventos corporativos y congresos, y fiestas privadas.",
+          "El equipo se contrata en packs de precio cerrado, sin costes ocultos, y cada uno incluye la entrega, el montaje y la recogida. No hay tienda física ni recogida por cuenta del cliente: el material siempre viaja hasta el lugar del evento, y los packs Wedding y MICE incluyen un técnico. La atención al cliente es en inglés y en español."
+        ]
+      }
+    },
+    "lorenzoz-agency": {
+      "title": "Lorenzoz Agency",
+      "description": "Nuestra propia identidad digital. Un portafolio de agencia enfocado en la conversión y el alto rendimiento, demostrando nuestras capacidades técnicas y creativas.",
+      "badge": "Nuestra Agencia",
+      "liveDemoButton": "Visitar Sitio",
+      "heroTitle": "Diseñando el Futuro de los Negocios Digitales",
+      "heroSubtitle": "Combinamos inteligencia artificial similar a la humana con diseño premium para escalar tus operaciones 24/7.",
+      "features": [
+        "UI de Glassmorphism Dinámico",
+        "Next.js 16 y Tailwind 4",
+        "Pipelines de CI/CD Empresariales",
+        "QA Automatizado y Pruebas E2E",
+        "Optimización Lighthouse y Core Web Vitals",
+        "Capacidad de PWA y Offline"
+      ],
+      "techStack": "Next.js 16, Tailwind 4, Bun, Playwright, Vitest, CI/CD",
+      "seoOptimization": "JSON-LD, GEO, AEO, SEO Tradicional, Resultados Enriquecidos",
+      "showcaseTitle": "Escaparate de la Agencia",
+      "showcaseDescription": "Explora cómo aplicamos nuestros propios estándares a nuestra sede digital.",
+      "ctaTitle": "¿Listo para escalar?",
+      "ctaDescription": "Construyamos juntos tu negocio de alto rendimiento.",
+      "ctaButton": "Contáctanos",
+      "features_carousel": {
+        "title": "Construido para la Excelencia Técnica",
+        "description": "Nuestro proceso de desarrollo integra los últimos estándares web para asegurar que tu presencia no solo sea hermosa, sino técnicamente superior.",
+        "slides": {
+          "tech": {
+            "badge": "Tech Stack",
+            "title": "Tecnologías y Procedimientos",
+            "description": "NextJS 16. Tailwind 4. CDN de Cloudflare. Vitest y Playwright: GitHub Actions para CI/CD."
+          },
+          "tests": {
+            "badge": "Pruebas",
+            "title": "Funcionales y QA",
+            "description": "Vitest para Funcionales y Componentes, Playwright para pruebas e2e y Lighthouse para Core Web Vitals."
+          },
+          "screens": {
+            "badge": "Multidispositivo",
+            "title": "Probado en Cada Dispositivo",
+            "description": "Perfecto al píxel en móvil, tablet y escritorio. Cada diseño, cada interacción, cada resolución, verificados antes del lanzamiento."
+          },
+          "seo": {
+            "badge": "SEO",
+            "title": "SEO / AEO / GEO",
+            "description": "Estrategia de visibilidad de búsqueda multicapa. Optimizamos para búsquedas tradicionales, respuestas de IA y resultados geográficos."
+          },
+          "speed": {
+            "badge": "Rendimiento",
+            "title": "Rendimiento",
+            "description": "Prueba realizada con Google Page Speed Insight con 95%+ de rendimiento.",
+            "cta": "Probar en PageSpeed Insights"
+          },
+          "pwa": {
+            "badge": "Experiencia PWA",
+            "title": "Aplicación Web Progresiva",
+            "description": "Accede a tu presencia digital al instante en cualquier dispositivo, incluso sin conexión. Una experiencia rápida, confiable e inversiva."
+          },
+          "og": {
+            "badge": "Social",
+            "title": "OpenGraph",
+            "description": "Identidad social premium. Configuraciones de metadatos personalizadas que aseguran que tu marca luzca profesional en todas las plataformas."
+          },
+          "data": {
+            "badge": "Resultados Enriquecidos",
+            "title": "Datos Estructurados para Resultados Enriquecidos",
+            "description": "Habla el lenguaje de los motores de búsqueda. Implementación avanzada de esquemas JSON-LD para visibilidad mejorada.",
+            "cta": "Probar Resultados"
+          }
+        }
+      },
+      "business": {
+        "title": "Sobre Lorenzoz Agency",
+        "paragraphs": [
+          "Lorenzoz Agency crea soluciones para negocios locales de cualquier tamaño, y lo que vendemos es un único resultado: nuevos clientes. Todo se apoya en una oferta principal, el SEO Local, que trabaja cuatro frentes a la vez: contenido de autoridad, backlinks y citaciones, autoridad en Google y en las respuestas de la IA, y gestión de reseñas.",
+          "Alrededor de esa oferta hay tres servicios opcionales, disponibles por separado o junto al SEO Local: desarrollo web, recepcionista de voz con IA y desarrollo de software. Estamos registrados en Xinzo de Limia (Ourense, España) y trabajamos en línea con clientes de todo el mundo, sobre todo de Australia, Canadá, Costa Rica, Irlanda, Nueva Zelanda, España, Reino Unido y Estados Unidos. El reparto es sencillo: el cliente se centra en prestar bien su servicio y nosotros nos ocupamos de conseguirle clientes y de darles seguimiento."
+        ]
+      }
+    },
+    "dental-clinic-1": {
+      "title": "Ecladent Dental Clinic",
+      "description": "Una demo de clínica dental boutique dirigida por mujeres, centrada en el bienestar emocional, la excelencia clínica y la estética de bienestar de alta gama.",
+      "badge": "Salud y Bienestar",
+      "liveDemoButton": "Demo en Vivo",
+      "heroTitle": "Restaura Tu Confianza",
+      "heroSubtitle": "Atención dental de élite en un santuario privado diseñado para tu comodidad y tranquilidad.",
+      "features": [
+        "Viaje del Paciente Boutique",
+        "Arquitectura de Sonrisa Digital",
+        "Santuario Dental Minimalista",
+        "Precisión Clínica y Cuidado Artesanal",
+        "Suite de Bienestar Privada",
+        "Salud Holística y Longevidad"
+      ],
+      "techStack": "Next.js, React, Tailwind CSS, Hosting en Vercel, CDN de Cloudflare",
+      "seoOptimization": "Esquema JSON-LD, Twitter Cards, Puntuación Lighthouse 95+",
+      "showcaseTitle": "Escaparate del Sitio Completo",
+      "showcaseDescription": "Explora la estructura y excelencia de diseño completa de la demo del santuario.",
+      "ctaTitle": "¿Listo para lanzar tu clínica?",
+      "ctaDescription": "Obtén esta demo personalizada para tu práctica en tiempo record.",
+      "ctaButton": "Comenzar Proyecto",
+      "features_carousel": {
+        "title": "Construido para la Excelencia Técnica",
+        "description": "Nuestro proceso de desarrollo integra los últimos estándares web para asegurar que tu presencia no solo sea hermosa, sino técnicamente superior.",
+        "slides": {
+          "gmb": {
+            "badge": "GBP Optimización",
+            "title": "Maestría en Perfil de Negocio de Google",
+            "description": "Contenido creado y optimizado basado en el Perfil de Google My Business."
+          },
+          "tech": {
+            "badge": "Tech Stack",
+            "title": "Tecnologías y Procedimientos",
+            "description": "NextJS 16. Tailwind 4. CDN. Pruebas: Funcionales y pruebas e2e. Control de Calidad. CI/CD."
+          },
+          "screens": {
+            "badge": "Multidispositivo",
+            "title": "Probado en Cada Dispositivo",
+            "description": "Perfecto al píxel en móvil, tablet y escritorio. Cada diseño, cada interacción, cada resolución, verificados antes del lanzamiento para que tus pacientes siempre tengan una primera impresión impecable."
+          },
+          "seo": {
+            "badge": "SEO",
+            "title": "SEO / AEO / GEO",
+            "description": "Estrategia de visibilidad de búsqueda multicapa. Optimizamos para búsquedas tradicionales, respuestas de IA y resultados geográficos."
+          },
+          "speed": {
+            "badge": "Rendimiento",
+            "title": "Rendimiento",
+            "description": "Prueba realizada con Google Page Speed Insight con 95%+ de rendimiento.",
+            "cta": "Probar en PageSpeed Insights"
+          },
+          "pwa": {
+            "badge": "Experiencia PWA",
+            "title": "Aplicación Web Progresiva",
+            "description": "Lista para cualquier conexión. Accede a la presencia digital de tu clínica al instante en cualquier dispositivo, incluso sin conexión. Una experiencia rápida, confiable e inversiva similar a una app nativa."
+          },
+          "og": {
+            "badge": "Social",
+            "title": "OpenGraph",
+            "description": "Identidad social premium. Configuraciones de metadatos personalizadas que aseguran que tu marca luzca profesional en todas las plataformas."
+          },
+          "data": {
+            "badge": "Resultados Enriquecidos",
+            "title": "Datos Estructurados para Resultados Enriquecidos",
+            "description": "Habla el lenguaje de los motores de búsqueda. Implementación avanzada de esquemas JSON-LD para visibilidad mejorada.",
+            "cta": "Probar Resultados"
+          }
+        }
+      }
+    },
+    "demo-massages": {
+      "title": "Demo Massage",
+      "description": "Demo de un estudio de masaje terapéutico en Richmond, Londres. Diseño editorial oscuro, un menú de tratamientos claro y un proceso de reserva sin fricción, pensado para el cuerpo y no para la venta.",
+      "badge": "Bienestar y Terapia",
+      "liveDemoButton": "Ver Demo",
+      "heroTitle": "El cuerpo recuerda lo que la mente olvida",
+      "heroSubtitle": "Un estudio de masaje terapéutico trabajado a tu ritmo, con técnica manual profunda que devuelve movilidad, descanso y equilibrio.",
+      "showcaseTitle": "Recorrido Completo del Sitio",
+      "showcaseDescription": "Explora la maquetación completa, desde la portada y el menú de tratamientos hasta el proceso de reserva, en la demo en vivo.",
+      "ctaTitle": "¿Diriges una marca de bienestar serena y seria?",
+      "ctaDescription": "Adapta esta demo a tu estudio, tus tratamientos y tu voz en tiempo récord.",
+      "ctaButton": "Empieza tu Proyecto",
+      "features_carousel": {
+        "title": "Diseñado para la calma y la conversión",
+        "description": "Cada sección está pensada para transmitir calma mientras guía con suavidad al visitante hacia una reserva.",
+        "slides": {
+          "design": {
+            "badge": "Diseño",
+            "title": "Una marca tranquila y editorial",
+            "description": "Dirección de arte oscura y sobria, con títulos serif y mucho espacio. El diseño transmite trabajo corporal serio, no una plantilla de spa genérica."
+          },
+          "craft": {
+            "badge": "Oficio",
+            "title": "Pocos gestos, efecto profundo",
+            "description": "Técnica manual, trabajo profundo, ritmo sin prisas y un estudio privado. El contenido gira en torno a la terapia, no a la venta adicional."
+          },
+          "treatments": {
+            "badge": "Tratamientos",
+            "title": "Sesiones a la medida de tu cuerpo",
+            "description": "Un menú de tratamientos filtrable (relajante, descontracturante, piedras calientes, aromaterapia) con duraciones y precios claros, en sesiones de 60 a 90 minutos."
+          },
+          "booking": {
+            "badge": "Reserva",
+            "title": "Reservar sin fricción",
+            "description": "Elige tratamiento, duración, fecha y hora, consulta la inversión estimada y solicita tu espacio. Sin cuentas, sin embudos, sin ruido."
+          },
+          "journal": {
+            "badge": "Contenido",
+            "title": "Un diario que gana búsquedas",
+            "description": "Artículos extensos sobre terapia manual, fisiología del descanso y cuidado del cuerpo. Contenido real que construye autoridad y atrae tráfico orgánico."
+          },
+          "speed": {
+            "badge": "Rendimiento",
+            "title": "Rendimiento y calidad",
+            "description": "PageSpeed Insights: 81 en móvil, con 100 en Accesibilidad, Buenas Prácticas y SEO.",
+            "cta": "Probar en PageSpeed Insights"
+          }
+        }
+      }
+    },
+    "investep-app": {
+      "title": "Investep App",
+      "description": "Una plataforma de gestión de carteras para los estudiantes de Investep Academy. Sigue varios brókers, proyecta la rentabilidad en cualquier marco de tiempo y mapea activos apalancados, desde un solo código Flutter sobre Cloudflare.",
+      "badge": "Plataforma Fintech",
+      "liveDemoButton": "Ver Demo",
+      "heroTitle": "Toda la cartera, un centro de control claro",
+      "heroSubtitle": "Los estudiantes de Investep Academy siguen sus brókers, trades y planes de inversión en un solo lugar, con la rentabilidad proyectada en diario, semanal, mensual y anual.",
+      "showcaseTitle": "Recorrido Completo de la Plataforma",
+      "showcaseDescription": "Explora el dashboard, las proyecciones de desempeño, el mapa de activos, la academia y la consola de administración en la <meg>demo en vivo</meg>.",
+      "ctaTitle": "¿Estás construyendo una plataforma para tu comunidad?",
+      "ctaDescription": "Consigue una aplicación como Investep, multiplataforma y veloz desde el edge, hecha a la medida de tu producto y tus usuarios.",
+      "ctaButton": "Empieza tu Proyecto",
+      "features_carousel": {
+        "title": "Pensada para Inversores, Diseñada para Escalar",
+        "description": "Cada pantalla convierte la complejidad de una cartera en una experiencia calma y guiada, hoy en la web y mañana nativa.",
+        "slides": {
+          "dashboard": {
+            "badge": "Dashboard",
+            "title": "Toda tu cartera de un vistazo",
+            "description": "Saldo consolidado de todos tus brókers, un gráfico de distribución en vivo y el reparto entre acciones y opciones, todo en un panel de control claro."
+          },
+          "brokers": {
+            "badge": "Brókers",
+            "title": "Múltiples brókers, múltiples cuentas",
+            "description": "Gestiona varios brókers y múltiples cuentas por cada uno, para acciones y opciones, cada una con su capital y sus metas mensuales y diarias."
+          },
+          "performance": {
+            "badge": "Desempeño",
+            "title": "Rentabilidad proyectada en cada marco de tiempo",
+            "description": "Proyección diaria, semanal, mensual y anual según el tipo de plan y si son acciones u opciones, con un registro de trades por cada posición abierta y cerrada."
+          },
+          "assets": {
+            "badge": "Activos",
+            "title": "Apalancados e inversos, mapeados",
+            "description": "Cada activo principal conectado con sus ETFs apalancados (x2, x3) y sus pares inversos, con búsqueda y favoritos, para ver toda la relación de un vistazo."
+          },
+          "academy": {
+            "badge": "Academia",
+            "title": "Pensada para la comunidad",
+            "description": "Planes de membresía de Investep, una tienda con libros y merch, y una biblioteca de audiolibros, todo para acompañar a los estudiantes de Investep Academy."
+          },
+          "admin": {
+            "badge": "Administración",
+            "title": "Todo el control desde una consola",
+            "description": "Gestiona planes de membresía y precios, usuarios y roles, y los catálogos de brókers, activos, productos de la tienda y libros desde un solo panel de administración."
+          },
+          "platform": {
+            "badge": "Multiplataforma",
+            "title": "Un solo código, todos los dispositivos",
+            "description": "Hoy en la web y lista para exportarse nativamente a Windows, macOS, Linux, Android e iOS, con temas claro y oscuro y español e inglés incluidos."
+          },
+          "tech": {
+            "badge": "Tech Stack",
+            "title": "Flutter, Hono, Cloudflare",
+            "description": "Un front end en Flutter para web y nativo, una API en Hono sobre Cloudflare Workers, y datos y assets servidos desde el edge para un rendimiento global e instantáneo."
+          }
+        }
+      }
+    },
+    "vicron-lopez": {
+      "title": "Vicron Lopez",
+      "description": "Alquiler de coches de lujo y deportivos en Ourense, Galicia. Un sitio bilingüe con una flota filtrable, fichas de vehículo que responden todas las dudas antes de la reserva, y las señales locales que un negocio de alquiler necesita para que lo encuentren en su propia ciudad.",
+      "badge": "Alquiler de Coches de Lujo",
+      "liveDemoButton": "Visitar Sitio",
+      "heroTitle": "Alquiler de Coches de Lujo en Ourense",
+      "heroSubtitle": "Una experiencia de showroom en español e inglés, donde cada vehículo se explora, se entiende y se reserva sin necesidad de una llamada previa.",
+      "showcaseTitle": "Una Mirada de Cerca",
+      "showcaseDescription": "De la flota y las fichas de vehículo al contacto y las secciones legales: explora <meg>Vicron Lopez</meg>, hecho para un negocio local que alquila vehículos de alto valor a visitantes y residentes de Ourense.",
+      "ctaTitle": "¿Tienes un negocio de alquiler?",
+      "ctaDescription": "Pongamos tu flota online con la misma claridad, en tus idiomas y en tu ciudad.",
+      "ctaButton": "Pedir Presupuesto",
+      "features_carousel": {
+        "title": "Hecho para un Negocio Local que Alquila Vehículos de Alto Valor",
+        "description": "Cada sección elimina un motivo de duda, desde la primera búsqueda hasta la solicitud de reserva.",
+        "slides": {
+          "design": {
+            "badge": "Diseño",
+            "title": "Una marca, en claro y en oscuro",
+            "description": "Una home con nivel de showroom que mantiene la misma sensación premium en modo claro y oscuro, con la flota, los servicios y las reseñas de clientes ordenados para quien decide en segundos."
+          },
+          "inventory": {
+            "badge": "Flota",
+            "title": "La flota, buscable y filtrable",
+            "description": "Búsqueda en vivo más filtros por tipo, precio y categoría, con la tarifa diaria en cada tarjeta. El catálogo crece con el negocio sin tocar una línea de maquetación."
+          },
+          "vehicle": {
+            "badge": "Ficha de Vehículo",
+            "title": "Todas las dudas resueltas antes de reservar",
+            "description": "Especificaciones, qué incluye el precio, fianza, métodos de pago aceptados y un selector de fechas de recogida y devolución, cerrando con reserva por email o WhatsApp."
+          },
+          "local": {
+            "badge": "Presencia Local",
+            "title": "Anclado en Ourense",
+            "description": "Dirección, teléfono, horario, licencia del ayuntamiento y un mapa con cómo llegar. Las señales que un negocio local necesita para que lo encuentren y confíen en él en Galicia."
+          },
+          "about": {
+            "badge": "Confianza",
+            "title": "Las personas detrás de las llaves",
+            "description": "Historia de la empresa, valores, trayectoria y el equipo directivo. Información real sobre el negocio, que es lo que genera confianza en un alquiler de ticket alto."
+          },
+          "legal": {
+            "badge": "Cumplimiento",
+            "title": "RGPD bien resuelto",
+            "description": "Política de privacidad, términos del servicio y un panel de cookies granular donde analítica y marketing se pueden rechazar por separado. El consentimiento es real, no un banner que solo dice aceptar."
+          },
+          "bilingual": {
+            "badge": "SEO Bilingüe",
+            "title": "Español e inglés, indexados como un solo sitio",
+            "description": "Cada página existe en los dos idiomas con URLs traducidas y pares hreflang, más un mapa del sitio en HTML para que visitantes y rastreadores lleguen a todo el catálogo."
+          }
+        }
+      },
+      "business": {
+        "title": "Sobre Vicron Lopez",
+        "paragraphs": [
+          "Vicron Lopez alquila coches de lujo y deportivos en Ourense (Galicia, España), en alquileres de corta y de larga duración. Los precios son transparentes, sin cargos ocultos, y el coche se puede entregar y recoger en el domicilio del cliente.",
+          "Todos los alquileres van asegurados, con planes que van desde la cobertura básica hasta la completa, y el mantenimiento y la puesta a punto de los coches se hacen en sus propias instalaciones. La empresa resume sus valores en la excelencia, la transparencia y el cliente primero."
+        ]
+      }
+    },
+    "masajes-orisha": {
+      "title": "Masajes Orisha",
+      "description": "Estudio de masaje terapéutico en San Rafael de Heredia, Costa Rica. Bilingüe, en claro y oscuro, con menú de tratamientos filtrable y reserva en cuatro pasos.",
+      "badge": "Estudio de Masaje Terapéutico",
+      "liveDemoButton": "Visitar Sitio",
+      "heroTitle": "Masaje Terapéutico en Costa Rica",
+      "heroSubtitle": "Un estudio privado en San Rafael de Heredia, online en español e inglés, donde el visitante elige el tratamiento, ve lo que cuesta y pide su hora sin una sola llamada.",
+      "showcaseTitle": "Una Mirada de Cerca",
+      "showcaseDescription": "Del menú de tratamientos y la solicitud de reserva al diario y al propio estudio: explora <meg>Masajes Orisha</meg>, hecho para un terapeuta local cuya agenda depende de que alguien que no lo conoce confíe en él antes de llegar.",
+      "ctaTitle": "¿Tienes un estudio o una clínica?",
+      "ctaDescription": "Pongamos tus tratamientos, tus precios y tu agenda online, en tus idiomas y en tu ciudad.",
+      "ctaButton": "Pedir Presupuesto",
+      "features_carousel": {
+        "title": "Hecho para un Terapeuta Local Cuya Agenda Es el Negocio",
+        "description": "Cada sección responde una pregunta que, si no, el cliente tendría que hacer por teléfono.",
+        "slides": {
+          "design": {
+            "badge": "Diseño",
+            "title": "Calma editorial, en claro y en oscuro",
+            "description": "Titulares en serif, una paleta de arena cálida y espacio generoso, que mantienen el mismo carácter en los dos temas. Se lee como un estudio privado con criterio, no como otra plantilla de spa."
+          },
+          "treatments": {
+            "badge": "Tratamientos",
+            "title": "Un menú corto, filtrado en un toque",
+            "description": "Cuatro tratamientos de autor repartidos entre calma y bienestar por un lado y terapéutico y recuperación por otro, con la duración y el enfoque en cada tarjeta. Corto a propósito: menos opciones, decisión más rápida."
+          },
+          "booking": {
+            "badge": "Reserva",
+            "title": "Un formulario de reserva que se cotiza solo",
+            "description": "Tratamiento, duración, día y hora en cuatro pasos, con un estimado que se actualiza mientras el cliente elige. Sin cuenta y sin pasarela de pago: solo una solicitud que el terapeuta confirma por email, protegida frente a bots."
+          },
+          "journal": {
+            "badge": "Contenido",
+            "title": "Notas que traen el tráfico de búsqueda",
+            "description": "Piezas largas sobre terapia manual, fisiología del descanso y recuperación muscular. Contenido por el que un estudio de masaje puede posicionar de verdad, publicado en los dos idiomas."
+          }
+        }
+      },
+      "business": {
+        "title": "Sobre Masajes Orisha",
+        "paragraphs": [
+          "Masajes Orisha es un estudio de masaje terapéutico en San Rafael de Heredia, Costa Rica, dirigido por su fundador y terapeuta, Sergio Zaldívar Guillén. Ofrece masaje relajante, descontracturante, con piedras calientes y con aromaterapia, en sesiones de 60 a 90 minutos que combinan la técnica manual con aceites naturales.",
+          "Trabaja sin prisas: la presión y el ritmo se adaptan a cada persona, sin protocolos rígidos. Las sesiones se dan en un estudio privado, en una sala insonorizada con luz regulable, con un solo cliente a la vez. El nombre se inspira en los Orishas yorubas, entendidos como una filosofía de respeto por el cuerpo."
+        ]
+      }
+    },
+    "real-estate": {
+      "title": "Inmobiliaria de Lujo",
+      "description": "Demo exclusiva para listados de propiedades de alta gama y agencias inmobiliarias que buscan una identidad visual premium.",
+      "badge": "Inmobiliario",
+      "liveDemoButton": "Demo en Vivo",
+      "heroTitle": "Espacios de Vida Exclusivos",
+      "heroSubtitle": "Muestra tus propiedades de lujo con una experiencia digital elegante e inmersiva.",
+      "features": [
+        "Formularios de Generación de Leads",
+        "Filtros de Búsqueda Avanzados"
+      ],
+      "showcaseTitle": "Escaparate Inmobiliario",
+      "showcaseDescription": "Un vistazo más cercano a cómo presentamos propiedades premium a clientes exclusivos.",
+      "ctaTitle": "¿Vendes Lujo?",
+      "ctaDescription": "Cautiva a tu audiencia con un sitio web tan exclusivo como tus listados.",
+      "ctaButton": "Crear Sitio de Agencia",
+      "features_carousel": {
+        "title": "Construido para la Excelencia Técnica",
+        "description": "Nuestro proceso de desarrollo integra los últimos estándares web para asegurar que tu presencia no sea solo hermosa, sino técnicamente superior.",
+        "slides": {
+          "gmb": {
+            "badge": "Optimización de GBP",
+            "title": "Dominio del Perfil de Empresa en Google",
+            "description": "Contenido creado y optimizado basado en el Perfil de Empresa en Google."
+          },
+          "tech": {
+            "badge": "Stack Tecnológico",
+            "title": "Tecnologías y Procedimientos",
+            "description": "NextJS 16. Tailwind 4. CDN. Pruebas: Funcionales y e2e. Quality Assurance. CI/CD."
+          },
+          "tests": {
+            "badge": "Pruebas",
+            "title": "Funcionales y QA",
+            "description": "Vitest para funcionales y componentes, Playwright para pruebas e2e y Lighthouse para Core Web Vitals."
+          },
+          "screens": {
+            "badge": "Multidispositivo",
+            "title": "Probado en cada dispositivo",
+            "description": "Perfecto al píxel en móvil, tablet y escritorio. Cada diseño, cada interacción, cada tamaño de pantalla, probado y verificado antes del lanzamiento."
+          },
+          "seo": {
+            "badge": "Visibilidad",
+            "title": "SEO / AEO / GEO",
+            "description": "Estrategia de visibilidad de búsqueda multicapa. Optimizamos para búsqueda tradicional, respuestas de IA y resultados geográficos para asegurar una cobertura total."
+          },
+          "speed": {
+            "badge": "Rendimiento",
+            "title": "Rendimiento",
+            "description": "Pruebas realizadas con Google Page Speed Insight con un 95%+ de rendimiento.",
+            "cta": "Probar en PageSpeed Insights"
+          },
+          "pwa": {
+            "badge": "Experiencia PWA",
+            "title": "Aplicación Web Progresiva",
+            "description": "Accede a la presencia digital de tu clínica instantáneamente en cualquier dispositivo, incluso sin conexión. Una experiencia rápida, fiable e inmersiva similar a una aplicación."
+          },
+          "og": {
+            "badge": "Social",
+            "title": "OpenGraph",
+            "description": "Identidad social premium. Configuraciones de metadatos personalizados que aseguran que tu marca luzca profesional en todas las plataformas."
+          },
+          "data": {
+            "badge": "Resultados Enriquecidos",
+            "title": "Datos Estructurados para Resultados Enriquecidos",
+            "description": "Habla el lenguaje de los motores de búsqueda. Implementación avanzada de esquemas JSON-LD para visibilidad mejorada.",
+            "cta": "Probar Resultados Enriquecidos"
+          }
+        }
+      }
+    },
+    "fitness-studio-pro": {
+      "title": "Fitness Studio Pro",
+      "description": "Demo dinámica y enérgica para gimnasios, entrenadores personales y centros de bienestar que buscan construir una comunidad.",
+      "badge": "Fitness y Bienestar",
+      "liveDemoButton": "Demo en Vivo",
+      "heroTitle": "Eleva tu Viaje de Fitness",
+      "heroSubtitle": "Inspira a tus miembros con una plataforma audaz y profesional que impulsa resultados.",
+      "features": [
+        "Páginas de Perfil de Entrenadores",
+        "Blog Integrado y Motivación"
+      ],
+      "showcaseTitle": "Escaparate del Estudio",
+      "showcaseDescription": "Mira cómo construimos una experiencia de comunidad de alta energía para tus miembros.",
+      "ctaTitle": "¿Listo para Entrenar?",
+      "ctaDescription": "Transforma el alcance digital de tu estudio con una plataforma de alto rendimiento.",
+      "ctaButton": "Obtener Demo del Estudio"
+    },
+    "portfolioCarousel": {
+      "title": "Construido para la Excelencia",
+      "subtitle": "Explora nuestro portafolio premium de sitios web de alto rendimiento y proyectos en producción.",
+      "cta": "Ver portafolio completo",
+      "explore": "Explorar Detalles",
+      "liveDemo": "Demo en Vivo",
+      "viewLive": "Ver Sitio en Vivo",
+      "goToSlide": "Ir a la diapositiva {index}",
+      "prevSlide": "Diapositiva anterior",
+      "nextSlide": "Diapositiva siguiente"
+    },
+    "gerp-dj": {
+      "title": "GERP DJ: Web de DJ para Fiestas y Bodas en Ourense",
+      "description": "Web de GERP DJ, DJ para fiestas, bodas y eventos en Ourense. En español y gallego, con una solicitud de fecha que se abre en WhatsApp lista para enviar.",
+      "badge": "DJ para Eventos",
+      "liveDemoButton": "Visitar Sitio",
+      "heroTitle": "Un DJ para Cada Fiesta en Galicia",
+      "heroSubtitle": "Un DJ de Ourense con equipo de sonido e iluminación propio, que pincha en verbenas, bodas, fiestas privadas y eventos de empresa por toda Galicia. La web está en español y gallego, y bastan tres datos para pedir una fecha sin llamar.",
+      "showcaseTitle": "Una Mirada de Cerca",
+      "showcaseDescription": "De la solicitud de fecha y la galería de vídeos a la bio y su dossier de prensa: explora <meg>GERP DJ</meg>, hecho para un DJ cuyas contrataciones empiezan con una pregunta: ¿tienes libre esa fecha?",
+      "ctaTitle": "¿Animas bodas, fiestas o eventos?",
+      "ctaDescription": "Pongamos tus servicios, tus vídeos y tus solicitudes de fecha online, en tus idiomas y en tu zona.",
+      "ctaButton": "Pedir Presupuesto",
+      "features_carousel": {
+        "title": "Pensado para la Pregunta que Todo Cliente Hace Primero",
+        "description": "Si la fecha está libre, cómo es una actuación y quién está a los platos: cada sección resuelve una de esas dudas antes del primer mensaje. Y debajo, una web que carga al momento, porque la velocidad retiene a las visitas y trae sus solicitudes, y datos estructurados que ayudan a los buscadores a entender el negocio.",
+        "slides": {
+          "design": {
+            "badge": "Diseño",
+            "title": "Primero el vídeo, en claro u oscuro",
+            "description": "La portada se abre con un vídeo de fondo que se puede pausar, con tema claro y oscuro y el cambio entre español y gallego en la cabecera."
+          },
+          "speed": {
+            "badge": "Rendimiento",
+            "title": "99 en móvil, una web que responde al momento",
+            "description": "PageSpeed Insights en móvil, 24 de noviembre de 2026: 99 en Rendimiento y 100 en Accesibilidad, Prácticas recomendadas y SEO. La velocidad forma parte de la experiencia: una página que carga y responde rápido retiene al visitante, y el visitante que se queda es el que envía la solicitud de fecha.",
+            "cta": "Probar en PageSpeed Insights"
+          },
+          "data": {
+            "badge": "Rich Results",
+            "title": "Datos estructurados que Google entiende",
+            "description": "Prueba de resultados enriquecidos de Google, 24 de noviembre de 2026: tres elementos válidos, Breadcrumbs, Local business y Organisation, de modo que la portada puede optar a resultados enriquecidos en la Búsqueda de Google. Los datos estructurados dan a los buscadores pistas explícitas sobre quién es el negocio y cómo se relacionan sus páginas, lo que ayuda a la búsqueda semántica a entender el sitio y favorece su SEO.",
+            "cta": "Probar Rich Results"
+          },
+          "booking": {
+            "badge": "Reservas",
+            "title": "Una solicitud de fecha que llega por WhatsApp",
+            "description": "Fecha, localidad y tipo de evento, y la solicitud se abre en WhatsApp lista para enviar. Sin formulario en servidor y sin cuentas: solo un mensaje que el visitante envía al momento."
+          },
+          "gallery": {
+            "badge": "Galería",
+            "title": "Diez clips de actuaciones y montajes",
+            "description": "La galería reúne diez vídeos con su descripción, grabados en sus actuaciones y con su propio equipo, para que una pareja o quien organiza la fiesta sienta el ambiente antes de pedir fecha."
+          },
+          "bio": {
+            "badge": "Bio",
+            "title": "Una bio con su dossier de prensa",
+            "description": "Quién está a los platos, con fotos y un dossier de prensa para descargar en PDF, en español y en gallego."
+          }
+        }
+      },
+      "business": {
+        "title": "Sobre GERP DJ",
+        "paragraphs": [
+          "GERP DJ es un DJ con base en Ourense que pincha en verbenas, bodas, fiestas privadas y eventos de empresa por toda Galicia. Las reservas se hacen por WhatsApp.",
+          "Todo el equipo de sonido e iluminación es propio: una cabina con el nombre de GERP DJ, altavoces, iluminación LED y un controlador Denon DJ. Se monta igual en la plaza de un pueblo, en una terraza o en un salón."
+        ]
+      }
+    }
+  },
+  "news": {
+    "list": {
+      "title": "Noticias",
+      "subtitle": "Novedades de Lorenzoz Agency: los trabajos que se suman al portafolio y para qué se construyó cada uno.",
+      "cta": "Leer la noticia",
+      "published": "Publicado"
+    },
+    "home": {
+      "eyebrow": "NOTICIAS",
+      "title": "Últimas noticias",
+      "subtitle": "Nuevos casos de estudio y novedades de la agencia.",
+      "viewAll": "Ver todas las noticias"
+    },
+    "post": {
+      "published": "Publicado",
+      "readCaseStudy": "Ver el caso de estudio",
+      "visitSite": "Visitar el sitio publicado"
+    },
+    "items": {
+      "masajes-orisha-added-to-portfolio": {
+        "title": "Masajes Orisha se suma al portafolio",
+        "description": "El sitio web de Masajes Orisha, un estudio de masaje terapéutico en San Rafael de Heredia (Costa Rica), ya tiene su propio caso de estudio en nuestro portafolio.",
+        "paragraphs": [
+          "Masajes Orisha, la web que creamos para un estudio de masaje terapéutico en San Rafael de Heredia (Costa Rica), ya cuenta con su propio caso de estudio en el portafolio. El sitio ya está en línea en masajesorisha.com.",
+          "Es la versión en producción del concepto de estudio de masaje que también figura en el portafolio como demo: bilingüe en español e inglés de principio a fin, con un tema claro y otro oscuro que conservan el mismo carácter sereno y editorial.",
+          "Quien entra elige entre un menú corto de cuatro tratamientos de autor, que se filtra con un toque y muestra en cada tarjeta la duración y el enfoque. La solicitud de reserva se completa en cuatro pasos (tratamiento, duración, día y hora) y va calculando un estimado antes de enviarla. No hace falta crear cuenta ni pagar en línea: el terapeuta confirma cada solicitud por email.",
+          "El sitio incluye además un diario con artículos extensos sobre terapia manual, fisiología del descanso y recuperación muscular, publicados en los dos idiomas.",
+          "En el caso de estudio recorremos el diseño, el menú de tratamientos, el flujo de reserva y el diario, con capturas de cada sección."
+        ]
+      },
+      "gerp-dj-added-to-portfolio": {
+        "title": "GERP DJ se suma al portafolio",
+        "description": "La web de GERP DJ, DJ para fiestas, bodas y eventos con base en Ourense (Galicia), ya tiene su propio caso de estudio en nuestro portafolio.",
+        "paragraphs": [
+          "GERP DJ, DJ para fiestas, bodas y eventos con base en Ourense y disponible en toda Galicia, ya cuenta con su propio caso de estudio en el portafolio. La web que desarrollamos ya está en línea y lleva nuestra firma en el pie de página.",
+          "Está publicada en español y en gallego, con un selector de idioma en la cabecera, y ofrece tema claro y oscuro. La portada se abre con un vídeo de fondo que se puede pausar y sigue con los cuatro servicios: verbenas y fiestas de aldea, bodas, fiestas privadas y eventos de empresa.",
+          "Pedir fecha requiere tres datos: el día, la localidad y el tipo de evento. Después el formulario abre WhatsApp con la solicitud ya redactada y lista para enviar, sin formulario en servidor de por medio. La página de contratación ofrece una versión más completa de esa solicitud junto a unas preguntas frecuentes.",
+          "Una galería de diez vídeos con su descripción, grabados en sus actuaciones y con su propio equipo, enseña cómo es una fiesta con GERP DJ, y la página de contratación ofrece un dossier de prensa para descargar en PDF, en español y en gallego. La política de cookies indica que el sitio no usa cookies de analítica ni de publicidad.",
+          "Medida con PageSpeed Insights en móvil el 24 de noviembre de 2026, la portada obtuvo 99 en Rendimiento y 100 en Accesibilidad, Prácticas recomendadas y SEO. Ese mismo día, la prueba de resultados enriquecidos de Google detectó en la portada datos estructurados válidos de Breadcrumbs, Local business y Organisation, con los que puede optar a resultados enriquecidos en la Búsqueda de Google. El caso de estudio muestra ambos informes y recorre el diseño, la solicitud de fecha, la galería y la bio, con capturas de cada sección."
+        ]
+      }
+    }
+  }
+}

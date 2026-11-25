@@ -1,0 +1,25 @@
+name: 'Lighthouse Audit'
+description: 'Build project and run Lighthouse CI'
+inputs:
+  lhci_github_app_token:
+    description: 'LHCI GitHub App Token'
+    required: true
+  next_public_api_url:
+    description: 'Next.js Public API URL'
+    required: false
+runs:
+  using: 'composite'
+  steps:
+    - name: 🏗️ Build project
+      shell: bash
+      run: bun run build
+      env:
+        NEXT_PUBLIC_API_URL: ${{ inputs.next_public_api_url }}
+
+    - name: 🚀 Run Lighthouse CI
+      shell: bash
+      run: |
+        bun install -g @lhci/cli
+        npx lhci autorun
+      env:
+        LHCI_GITHUB_APP_TOKEN: ${{ inputs.lhci_github_app_token }}

@@ -1,0 +1,35 @@
+# Locale-less entry points. Every target MUST be a route that exists in out/,
+# with the locale prefix and the trailing slash the site canonicalizes on
+# (next.config.ts trailingSlash: true). Redirecting to a locale-less path sends
+# visitors and crawlers to the 404 page: /demos pointed at /portfolio, which the
+# static export never generates.
+/                 /en/                    301
+# The short URL printed on cards, encoded in the QR and written to NFC tags.
+# It outlives every deploy: tags cannot be rewritten remotely and cards cannot
+# be reprinted, so both spellings must resolve forever.
+/card/hector      /en/card/hector/        301
+/card/hector/     /en/card/hector/        301
+
+# Legacy /demos paths, renamed to /portfolio.
+/demos            /en/portfolio/          301
+/en/demos         /en/portfolio/          301
+/es/demos         /es/portfolio/          301
+/demos/*          /en/portfolio/:splat/   301
+/en/demos/*       /en/portfolio/:splat/   301
+/es/demos/*       /es/portfolio/:splat/   301
+
+# Review management stopped being a service of its own on 2026-10-09: it is a
+# pillar of Local SEO now, so its old page points there.
+/en/services/reputation-review-management    /en/services/local-seo/    301
+/en/services/reputation-review-management/   /en/services/local-seo/    301
+/es/services/reputation-review-management    /es/services/local-seo/    301
+/es/services/reputation-review-management/   /es/services/local-seo/    301
+
+# The Digital Business Card service is PAUSED, not retired (task #T0021). Its
+# page sends visitors to the services hub meanwhile. REMOVE these four rules
+# when the service comes back, or its own page will be unreachable.
+# This is the service page, not Hector's card above: /card/hector is untouched.
+/en/services/digital-business-card           /en/services/              301
+/en/services/digital-business-card/          /en/services/              301
+/es/services/digital-business-card           /es/services/              301
+/es/services/digital-business-card/          /es/services/              301

@@ -1,0 +1,613 @@
+[
+    {
+        "id": "lorenzoz-agency",
+        "slug": "lorenzoz-agency",
+        "lastModified": "2026-11-24",
+        "type": "live",
+        "image": "https://cdn.hlorenzoz.com/hlorenzoz.com/portfolio/me/cover.webp",
+        "fullScreenshot": [
+            "https://cdn.hlorenzoz.com/hlorenzoz.com/portfolio/me/screencapture-home.webp",
+            "https://cdn.hlorenzoz.com/hlorenzoz.com/portfolio/me/card-hector.webp",
+            "https://cdn.hlorenzoz.com/hlorenzoz.com/portfolio/me/screencapture-privacy-policy.webp"
+        ],
+        "url": "https://hlorenzoz.com/",
+        "slides": [
+            {
+                "id": "tech",
+                "image": "https://cdn.hlorenzoz.com/hlorenzoz.com/portfolio/me/tech-stack-visual.webp",
+                "badge": "Tech Stack",
+                "title": "Technologies and Procedures",
+                "description": "NextJS 16. Tailwind 4. Cloudflare CDN. Vitest & Playwright: GitHub Actions for CI/CD."
+            },
+            {
+                "id": "tests",
+                "image": [
+                    "https://cdn.hlorenzoz.com/hlorenzoz.com/portfolio/me/tests-e2e.webp",
+                    "https://cdn.hlorenzoz.com/hlorenzoz.com/portfolio/me/tests-lighthouse.webp",
+                    "https://cdn.hlorenzoz.com/hlorenzoz.com/portfolio/me/tests-quality-unit.webp"
+                ],
+                "badge": "Tests",
+                "title": "Functionals & QA",
+                "description": "Vitest for Functionals and Components, Playwright for e2e tests, and Lighthouse for Core Web Vitals."
+            },
+            {
+                "id": "screens",
+                "image": "https://cdn.hlorenzoz.com/hlorenzoz.com/portfolio/me/multiple-screens.webp",
+                "badge": "Multidevice",
+                "title": "Tested Across Every Device",
+                "description": "Pixel perfect on mobile, tablet, and desktop. Every layout, every interaction, every screen size, tested and verified before launch."
+            },
+            {
+                "id": "seo",
+                "image": "https://cdn.hlorenzoz.com/hlorenzoz.com/portfolio/me/seo.webp",
+                "badge": "SEO",
+                "title": "SEO / AEO / GEO",
+                "description": "Multilayered search visibility strategy. We optimize for traditional search, AI answers, and geographical results to ensure total coverage."
+            },
+            {
+                "id": "speed",
+                "image": "https://cdn.hlorenzoz.com/hlorenzoz.com/portfolio/dental-clinic-1/dental_clinic_1_performance.webp",
+                "link": "https://pagespeed.web.dev/analysis?url=https%3A%2F%2Fhlorenzoz.com%2F",
+                "badge": "Performance",
+                "title": "Performance",
+                "description": "Test made with Google Page Speed Insight with 95%+ of performance."
+            },
+            {
+                "id": "pwa",
+                "image": "https://cdn.hlorenzoz.com/hlorenzoz.com/portfolio/me/pwa-tech.webp",
+                "badge": "PWA Experience",
+                "title": "Progressive Web App",
+                "description": "Access your clinic's digital presence instantly on any device, even offline. A fast, reliable, and immersive experience that feels like an app."
+            },
+            {
+                "id": "og",
+                "image": "https://cdn.hlorenzoz.com/hlorenzoz.com/portfolio/me/og.webp",
+                "badge": "Social",
+                "title": "OpenGraph",
+                "description": "Premium social identity. Custom metadata configurations that ensure your brand looks professional across all platforms."
+            },
+            {
+                "id": "data",
+                "image": "https://cdn.hlorenzoz.com/hlorenzoz.com/portfolio/me/structured-data.webp",
+                "link": "https://search.google.com/test/rich-results?url=https%3A%2F%2Fhlorenzoz.com%2F",
+                "badge": "Rich Results",
+                "title": "Structured Data for Rich Results",
+                "description": "Speak the search engine's language. Advanced JSON-LD schema implementation for enhanced visibility."
+            }
+        ]
+    },
+    {
+        "id": "dental-clinic-1",
+        "slug": "dental-clinic-1",
+        "lastModified": "2026-06-19",
+        "type": "demo",
+        "image": "https://cdn.hlorenzoz.com/hlorenzoz.com/portfolio/dental-clinic-1/cover_dental_clinic_1.webp",
+        "fullScreenshot": "https://cdn.hlorenzoz.com/hlorenzoz.com/portfolio/dental-clinic-1/dental_clinic_1_screenshot.webp",
+        "url": "https://dental-clinic-1.hlorenzoz.com/",
+        "slides": [
+            {
+                "id": "gmb",
+                "image": "",
+                "map": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2477.491673522309!2d-0.24694500000000003!3d51.614202!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x487616db5a8a8ec1%3A0xa2d2c213952e410b!2sEcladent!5e0!3m2!1sen!2ses!4v1774389817675!5m2!1sen!2ses",
+                "badge": "GBP Optimization",
+                "title": "Google Business Profile Mastery",
+                "description": "Content created and optimized based on Google My Business Profile."
+            },
+            {
+                "id": "tech",
+                "image": "https://cdn.hlorenzoz.com/hlorenzoz.com/portfolio/dental-clinic-1/tech.webp",
+                "badge": "Tech Stack",
+                "title": "Technologies and Procedures",
+                "description": "NextJS 16. Tailwind 4. CDN. Tests: Functionals and e2e tests. Quality Assurance. CI/CD."
+            },
+            {
+                "id": "screens",
+                "image": "https://cdn.hlorenzoz.com/hlorenzoz.com/portfolio/dental-clinic-1/dental_clinic_1_multiple_screens.webp",
+                "badge": "Multidevice",
+                "title": "Tested Across Every Device",
+                "description": "Pixel perfect on mobile, tablet, and desktop. Every layout, every interaction, every screen size, tested and verified before launch so your patients always get a flawless first impression."
+            },
+            {
+                "id": "seo",
+                "image": "https://cdn.hlorenzoz.com/hlorenzoz.com/portfolio/dental-clinic-1/seo.webp",
+                "badge": "SEO",
+                "title": "SEO / AEO / GEO",
+                "description": "Multilayered search visibility strategy. We optimize for traditional search, AI answers, and geographical results to ensure total coverage."
+            },
+            {
+                "id": "speed",
+                "image": "https://cdn.hlorenzoz.com/hlorenzoz.com/portfolio/dental-clinic-1/dental_clinic_1_performance.webp",
+                "link": "https://pagespeed.web.dev/analysis?url=https%3A%2F%2Fdental-clinic-1.hlorenzoz.com%2F",
+                "badge": "Performance",
+                "title": "Performance",
+                "description": "Test made with Google Page Speed Insight with 95%+ of performance."
+            },
+            {
+                "id": "pwa",
+                "image": "https://cdn.hlorenzoz.com/hlorenzoz.com/portfolio/dental-clinic-1/dental_clinic_1_pwa.webp",
+                "badge": "PWA Experience",
+                "title": "Progressive Web App",
+                "description": "Ready for any connection. Access your clinic's digital presence instantly on any device, even offline. A fast, reliable, and immersive experience that feels like an app, without downloading anything."
+            },
+            {
+                "id": "og",
+                "image": "https://cdn.hlorenzoz.com/hlorenzoz.com/portfolio/dental-clinic-1/og.webp",
+                "badge": "Social",
+                "title": "OpenGraph",
+                "description": "Premium social identity. Custom metadata configurations that ensure your brand looks professional across all platforms."
+            },
+            {
+                "id": "data",
+                "image": "https://cdn.hlorenzoz.com/hlorenzoz.com/portfolio/dental-clinic-1/data.webp",
+                "link": "https://search.google.com/test/rich-results?url=https%3A%2F%2Fdental-clinic-1.hlorenzoz.com%2F",
+                "badge": "Rich Results",
+                "title": "Structured Data for Rich Results",
+                "description": "Speak the search engine's language. Advanced JSON-LD schema implementation for enhanced visibility and click through rates."
+            }
+        ]
+    },
+    {
+        "id": "real-estate",
+        "slug": "real-estate",
+        "lastModified": "2026-04-10",
+        "type": "demo",
+        "image": "https://cdn.hlorenzoz.com/hlorenzoz.com/portfolio/real-estate/cover.webp",
+        "fullScreenshot": [
+            "https://cdn.hlorenzoz.com/hlorenzoz.com/portfolio/real-estate/screencapture-home.jpg",
+            "https://cdn.hlorenzoz.com/hlorenzoz.com/portfolio/real-estate/screencapture-properties.webp",
+            "https://cdn.hlorenzoz.com/hlorenzoz.com/portfolio/real-estate/screencapture-listings.webp",
+            "https://cdn.hlorenzoz.com/hlorenzoz.com/portfolio/real-estate/screencapture-rentals.webp"
+        ],
+        "url": "https://real-estate.hlorenzoz.com/en",
+        "slides": [
+            {
+                "id": "gmb",
+                "image": "",
+                "map": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3153.8354345093533!2d-122.41941548468252!3d37.77492951919451!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8085809c6c8f4459%3A0xb10ed59c15a20130!2sCity%20Hall!5e0!3m2!1sen!2sus!4v1620163353590!5m2!1sen!2sus",
+                "badge": "GBP Optimization",
+                "title": "Google Business Profile Mastery",
+                "description": "Content created and optimized based on Google My Business Profile."
+            },
+            {
+                "id": "tech",
+                "image": "https://cdn.hlorenzoz.com/hlorenzoz.com/portfolio/real-estate/tech.webp",
+                "badge": "Tech Stack",
+                "title": "Technologies and Procedures",
+                "description": "NextJS 16. Tailwind 4. CDN. Tests: Functionals and e2e tests. Quality Assurance. CI/CD."
+            },
+            {
+                "id": "tests",
+                "image": [
+                    "https://cdn.hlorenzoz.com/hlorenzoz.com/portfolio/real-estate/tests-lint.webp",
+                    "https://cdn.hlorenzoz.com/hlorenzoz.com/portfolio/real-estate/tests-unit-test.webp",
+                    "https://cdn.hlorenzoz.com/hlorenzoz.com/portfolio/real-estate/tests-e2e.webp",
+                    "https://cdn.hlorenzoz.com/hlorenzoz.com/portfolio/real-estate/tests-lighthouse.webp"
+                ],
+                "badge": "Tests",
+                "title": "Functionals & QA",
+                "description": "Vitest for Functionals and Components, Playwright for e2e tests, and Lighthouse for Core Web Vitals."
+            },
+            {
+                "id": "screens",
+                "image": "https://cdn.hlorenzoz.com/hlorenzoz.com/portfolio/real-estate/multiple-screens.webp",
+                "badge": "Multidevice",
+                "title": "Tested Across Every Device",
+                "description": "Pixel perfect on mobile, tablet, and desktop. Every layout, every interaction, every screen size, tested and verified before launch."
+            },
+            {
+                "id": "seo",
+                "image": "https://cdn.hlorenzoz.com/hlorenzoz.com/portfolio/real-estate/seo.webp",
+                "badge": "Visibility",
+                "title": "SEO / AEO / GEO",
+                "description": "Multilayered search visibility strategy. We optimize for traditional search, AI answers, and geographical results to ensure total coverage."
+            },
+            {
+                "id": "speed",
+                "image": "https://cdn.hlorenzoz.com/hlorenzoz.com/portfolio/real-estate/pagespeed-insights.webp",
+                "link": "https://pagespeed.web.dev/analysis?url=https%3A%2F%2Freal-estate.hlorenzoz.com%2Fen",
+                "badge": "Performance",
+                "title": "Performance",
+                "description": "Test made with Google Page Speed Insight with 95%+ of performance."
+            },
+            {
+                "id": "pwa",
+                "image": "https://cdn.hlorenzoz.com/hlorenzoz.com/portfolio/real-estate/pwa.webp",
+                "badge": "PWA Experience",
+                "title": "Progressive Web App",
+                "description": "Access your clinic's digital presence instantly on any device, even offline. A fast, reliable, and immersive experience that feels like an app."
+            },
+            {
+                "id": "og",
+                "image": "https://cdn.hlorenzoz.com/hlorenzoz.com/portfolio/real-estate/og.webp",
+                "badge": "Social",
+                "title": "OpenGraph",
+                "description": "Premium social identity. Custom metadata configurations that ensure your brand looks professional across all platforms."
+            },
+            {
+                "id": "data",
+                "image": [
+                    "https://cdn.hlorenzoz.com/hlorenzoz.com/portfolio/real-estate/structured-data-1.webp",
+                    "https://cdn.hlorenzoz.com/hlorenzoz.com/portfolio/real-estate/structured-data-2.webp"
+                ],
+                "link": "https://search.google.com/test/rich-results?url=https%3A%2F%2Freal-estate.hlorenzoz.com%2Fen",
+                "badge": "Rich Results",
+                "title": "Structured Data for Rich Results",
+                "description": "Speak the search engine's language. Advanced JSON-LD schema implementation for enhanced visibility."
+            }
+        ]
+    },
+    {
+        "id": "malaga-event-gear",
+        "slug": "malaga-event-gear",
+        "lastModified": "2026-11-24",
+        "type": "live",
+        "image": "https://cdn.hlorenzoz.com/hlorenzoz.com/portfolio/meg/malagaeventgear-1.webp",
+        "fullScreenshot": [
+            "https://cdn.hlorenzoz.com/hlorenzoz.com/portfolio/meg/malagaeventgear-2.webp",
+            "https://cdn.hlorenzoz.com/hlorenzoz.com/portfolio/meg/malagaeventgear-3.webp",
+            "https://cdn.hlorenzoz.com/hlorenzoz.com/portfolio/meg/malagaeventgear-7.webp",
+            "https://cdn.hlorenzoz.com/hlorenzoz.com/portfolio/meg/malagaeventgear-9.webp",
+            "https://cdn.hlorenzoz.com/hlorenzoz.com/portfolio/meg/malagaeventgear-11.webp",
+            "https://cdn.hlorenzoz.com/hlorenzoz.com/portfolio/meg/malagaeventgear-12.webp",
+            "https://cdn.hlorenzoz.com/hlorenzoz.com/portfolio/meg/malagaeventgear-13.webp"
+        ],
+        "url": "https://malagaeventgear.com/",
+        "bookingUrl": "https://malagaeventgear.com/packages/",
+        "slides": [
+            {
+                "id": "speed",
+                "image": "https://cdn.hlorenzoz.com/hlorenzoz.com/portfolio/meg/malagaeventgear-pagespeed-insights.webp",
+                "link": "https://pagespeed.web.dev/analysis?url=https%3A%2F%2Fmalagaeventgear.com%2F",
+                "badge": "Performance",
+                "title": "Performance",
+                "description": "PageSpeed Insights: 93 on mobile, capped only by the security scripts Cloudflare injects, with 100 in Accessibility, Best Practices and SEO."
+            },
+            {
+                "id": "data",
+                "image": "https://cdn.hlorenzoz.com/hlorenzoz.com/portfolio/meg/malagaeventgear-structured-data.webp",
+                "link": "https://search.google.com/test/rich-results?url=https%3A%2F%2Fmalagaeventgear.com%2F",
+                "badge": "Rich Results",
+                "title": "Structured Data for Rich Results",
+                "description": "Valid Breadcrumbs, Local Business and Organisation schemas, confirmed by Google's Rich Results Test."
+            }
+        ]
+    },
+    {
+        "id": "demo-massages",
+        "slug": "demo-massages",
+        "lastModified": "2026-06-21",
+        "type": "demo",
+        "image": "https://cdn.hlorenzoz.com/hlorenzoz.com/portfolio/demo-massages/demo-massages-1.webp",
+        "fullScreenshot": [
+            "https://cdn.hlorenzoz.com/hlorenzoz.com/portfolio/demo-massages/demo-massages-1.webp",
+            "https://cdn.hlorenzoz.com/hlorenzoz.com/portfolio/demo-massages/demo-massages-5.webp",
+            "https://cdn.hlorenzoz.com/hlorenzoz.com/portfolio/demo-massages/demo-massages-6.webp"
+        ],
+        "url": "https://demo-massages.hlorenzoz.com/",
+        "slides": [
+            {
+                "id": "design",
+                "image": "https://cdn.hlorenzoz.com/hlorenzoz.com/portfolio/demo-massages/demo-massages-0.webp",
+                "badge": "Design",
+                "title": "A calm, editorial brand",
+                "description": "Dark, restrained art direction with serif headings and generous space. The design says serious bodywork, not a generic spa template."
+            },
+            {
+                "id": "craft",
+                "image": "https://cdn.hlorenzoz.com/hlorenzoz.com/portfolio/demo-massages/demo-massages-2.webp",
+                "badge": "Craft",
+                "title": "Few gestures, deep effect",
+                "description": "Manual technique, deep work, unhurried pace and a private studio. The content is built around the therapy, not upsells."
+            },
+            {
+                "id": "treatments",
+                "image": "https://cdn.hlorenzoz.com/hlorenzoz.com/portfolio/demo-massages/demo-massages-3.webp",
+                "badge": "Treatments",
+                "title": "Sessions shaped around your body",
+                "description": "A filterable treatment menu (relaxing, deep tissue, hot stone, aromatherapy) with clear durations and prices, in sessions of 60 to 90 minutes."
+            },
+            {
+                "id": "booking",
+                "image": "https://cdn.hlorenzoz.com/hlorenzoz.com/portfolio/demo-massages/demo-massages-6.webp",
+                "badge": "Booking",
+                "title": "Booking without friction",
+                "description": "Pick treatment, duration, date and time, see the estimated investment and request your space. No accounts, no funnels, no noise."
+            },
+            {
+                "id": "journal",
+                "image": "https://cdn.hlorenzoz.com/hlorenzoz.com/portfolio/demo-massages/demo-massages-4.webp",
+                "badge": "Content",
+                "title": "A journal that earns search",
+                "description": "Long form notes on manual therapy, physiology of rest and body care. Real content that builds authority and brings in organic traffic."
+            },
+            {
+                "id": "speed",
+                "image": "https://cdn.hlorenzoz.com/hlorenzoz.com/portfolio/demo-massages/demo-massages-google-pagespeed-insights.webp",
+                "link": "https://pagespeed.web.dev/analysis?url=https%3A%2F%2Fdemo-massages.hlorenzoz.com%2Fen%2F",
+                "badge": "Performance",
+                "title": "Performance and quality",
+                "description": "PageSpeed Insights: 81 on mobile, with 100 in Accessibility, Best Practices and SEO."
+            }
+        ]
+    },
+    {
+        "id": "investep-app",
+        "slug": "investep-app",
+        "lastModified": "2026-07-10",
+        "type": "demo",
+        "image": "https://cdn.hlorenzoz.com/hlorenzoz.com/portfolio/investep-app/investep-app-0.webp",
+        "fullScreenshot": [
+            "https://cdn.hlorenzoz.com/hlorenzoz.com/portfolio/investep-app/investep-app-9.webp",
+            "https://cdn.hlorenzoz.com/hlorenzoz.com/portfolio/investep-app/investep-app-2.webp",
+            "https://cdn.hlorenzoz.com/hlorenzoz.com/portfolio/investep-app/investep-app-4.webp",
+            "https://cdn.hlorenzoz.com/hlorenzoz.com/portfolio/investep-app/investep-app-10.webp",
+            "https://cdn.hlorenzoz.com/hlorenzoz.com/portfolio/investep-app/investep-app-8.webp"
+        ],
+        "url": "https://investep.hlorenzoz.com/",
+        "slides": [
+            {
+                "id": "dashboard",
+                "image": "https://cdn.hlorenzoz.com/hlorenzoz.com/portfolio/investep-app/investep-app-0.webp",
+                "badge": "Dashboard",
+                "title": "Your whole portfolio at a glance",
+                "description": "Consolidated balance across every broker, a live distribution chart and the split between stocks and options, all in one calm control center."
+            },
+            {
+                "id": "brokers",
+                "image": [
+                    "https://cdn.hlorenzoz.com/hlorenzoz.com/portfolio/investep-app/investep-app-1.webp",
+                    "https://cdn.hlorenzoz.com/hlorenzoz.com/portfolio/investep-app/investep-app-12.webp"
+                ],
+                "badge": "Brokers",
+                "title": "Multiple brokers, multiple accounts",
+                "description": "Run several brokers and multiple accounts each, for stocks and options, every one with its own capital and its monthly and daily targets."
+            },
+            {
+                "id": "performance",
+                "image": [
+                    "https://cdn.hlorenzoz.com/hlorenzoz.com/portfolio/investep-app/investep-app-2.webp",
+                    "https://cdn.hlorenzoz.com/hlorenzoz.com/portfolio/investep-app/investep-app-3.webp"
+                ],
+                "badge": "Performance",
+                "title": "Returns projected across every timeframe",
+                "description": "Profitability projected daily, weekly, monthly and annual by plan type and asset class, with a trade journal tracking every open and closed position."
+            },
+            {
+                "id": "assets",
+                "image": "https://cdn.hlorenzoz.com/hlorenzoz.com/portfolio/investep-app/investep-app-4.webp",
+                "badge": "Assets",
+                "title": "Leveraged and inverse, mapped",
+                "description": "Each core asset linked to its leveraged ETFs (x2, x3) and inverse pairs, searchable and easy to favorite, so the full relationship is clear at a glance."
+            },
+            {
+                "id": "academy",
+                "image": [
+                    "https://cdn.hlorenzoz.com/hlorenzoz.com/portfolio/investep-app/investep-app-10.webp",
+                    "https://cdn.hlorenzoz.com/hlorenzoz.com/portfolio/investep-app/investep-app-5.webp",
+                    "https://cdn.hlorenzoz.com/hlorenzoz.com/portfolio/investep-app/investep-app-6.webp"
+                ],
+                "badge": "Academy",
+                "title": "Built around the community",
+                "description": "Investep membership plans, a store with books and merch, and a curated audiobook library, all wired to support Investep Academy students."
+            },
+            {
+                "id": "admin",
+                "image": "https://cdn.hlorenzoz.com/hlorenzoz.com/portfolio/investep-app/investep-app-8.webp",
+                "badge": "Administration",
+                "title": "Full control from one console",
+                "description": "Manage membership plans and pricing, users and roles, and the catalogs of brokers, assets, store products and books from a single admin panel."
+            },
+            {
+                "id": "platform",
+                "image": [
+                    "https://cdn.hlorenzoz.com/hlorenzoz.com/portfolio/investep-app/investep-app-11.webp",
+                    "https://cdn.hlorenzoz.com/hlorenzoz.com/portfolio/investep-app/investep-app-13.webp",
+                    "https://cdn.hlorenzoz.com/hlorenzoz.com/portfolio/investep-app/investep-app-14.webp"
+                ],
+                "badge": "Multiplatform",
+                "title": "One codebase, every device",
+                "description": "On the web today and ready to ship natively to Windows, macOS, Linux, Android and iOS, with light and dark themes and Spanish and English built in."
+            },
+            {
+                "id": "tech",
+                "image": "https://cdn.hlorenzoz.com/hlorenzoz.com/portfolio/investep-app/investep-app-9.webp",
+                "badge": "Tech Stack",
+                "title": "Flutter, Hono, Cloudflare",
+                "description": "A Flutter front end for web and native, a Hono API on Cloudflare Workers, and data and assets served from the edge for instant, global performance."
+            }
+        ]
+    },
+    {
+        "id": "vicron-lopez",
+        "slug": "vicron-lopez",
+        "lastModified": "2026-11-24",
+        "type": "live",
+        "image": "https://cdn.hlorenzoz.com/hlorenzoz.com/portfolio/vicronlopez/vicronlopez-header.webp",
+        "fullScreenshot": [
+            "https://cdn.hlorenzoz.com/hlorenzoz.com/portfolio/vicronlopez/vicronlopez-home-light.webp",
+            "https://cdn.hlorenzoz.com/hlorenzoz.com/portfolio/vicronlopez/vicronlopez-home-dark.webp",
+            "https://cdn.hlorenzoz.com/hlorenzoz.com/portfolio/vicronlopez/vicronlopez-inventory-light.webp",
+            "https://cdn.hlorenzoz.com/hlorenzoz.com/portfolio/vicronlopez/vicronlopez-vehicle-detail.webp",
+            "https://cdn.hlorenzoz.com/hlorenzoz.com/portfolio/vicronlopez/vicronlopez-about.webp",
+            "https://cdn.hlorenzoz.com/hlorenzoz.com/portfolio/vicronlopez/vicronlopez-contact.webp"
+        ],
+        "url": "https://www.vicronlopez.es/",
+        "slides": [
+            {
+                "id": "design",
+                "image": [
+                    "https://cdn.hlorenzoz.com/hlorenzoz.com/portfolio/vicronlopez/vicronlopez-home-light.webp",
+                    "https://cdn.hlorenzoz.com/hlorenzoz.com/portfolio/vicronlopez/vicronlopez-home-dark.webp"
+                ],
+                "badge": "Design",
+                "title": "One brand, light and dark",
+                "description": "A showroom grade home page that carries the same premium feel in light and dark mode, with the fleet, the services and the client reviews laid out for a visitor who decides in seconds."
+            },
+            {
+                "id": "inventory",
+                "image": [
+                    "https://cdn.hlorenzoz.com/hlorenzoz.com/portfolio/vicronlopez/vicronlopez-inventory-light.webp",
+                    "https://cdn.hlorenzoz.com/hlorenzoz.com/portfolio/vicronlopez/vicronlopez-inventory-dark.webp"
+                ],
+                "badge": "Inventory",
+                "title": "The fleet, searchable and filterable",
+                "description": "Live search plus filters by type, price and category, with the daily rate on every card. The catalog grows with the business without touching a line of layout."
+            },
+            {
+                "id": "vehicle",
+                "image": "https://cdn.hlorenzoz.com/hlorenzoz.com/portfolio/vicronlopez/vicronlopez-vehicle-detail.webp",
+                "badge": "Vehicle Page",
+                "title": "Every question answered before booking",
+                "description": "Specifications, what the price includes, deposit, accepted payment methods and a pickup and return date picker, closing with booking by email or WhatsApp."
+            },
+            {
+                "id": "local",
+                "image": "https://cdn.hlorenzoz.com/hlorenzoz.com/portfolio/vicronlopez/vicronlopez-contact.webp",
+                "badge": "Local Presence",
+                "title": "Anchored in Ourense",
+                "description": "Address, phone, opening hours, city council licence and a map with directions. The signals a local business needs to be found and trusted in Galicia."
+            },
+            {
+                "id": "about",
+                "image": "https://cdn.hlorenzoz.com/hlorenzoz.com/portfolio/vicronlopez/vicronlopez-about.webp",
+                "badge": "Trust",
+                "title": "The people behind the keys",
+                "description": "Company story, values, timeline and the leadership team. Real information about the business, which is what earns trust for a high ticket rental."
+            },
+            {
+                "id": "legal",
+                "image": [
+                    "https://cdn.hlorenzoz.com/hlorenzoz.com/portfolio/vicronlopez/vicronlopez-privacy.webp",
+                    "https://cdn.hlorenzoz.com/hlorenzoz.com/portfolio/vicronlopez/vicronlopez-terms.webp",
+                    "https://cdn.hlorenzoz.com/hlorenzoz.com/portfolio/vicronlopez/vicronlopez-cookies.webp"
+                ],
+                "badge": "Compliance",
+                "title": "GDPR handled properly",
+                "description": "Privacy policy, terms of service and a granular cookie panel where analytics and marketing can be rejected one by one. Consent is real, not a banner that only says accept."
+            },
+            {
+                "id": "bilingual",
+                "image": "https://cdn.hlorenzoz.com/hlorenzoz.com/portfolio/vicronlopez/vicronlopez-sitemap.webp",
+                "badge": "Bilingual SEO",
+                "title": "Spanish and English, indexed as one site",
+                "description": "Every page exists in both languages with translated URLs and hreflang pairs, plus an HTML sitemap so visitors and crawlers reach the whole catalog."
+            }
+        ]
+    },
+    {
+        "id": "masajes-orisha",
+        "slug": "masajes-orisha",
+        "lastModified": "2026-11-24",
+        "type": "live",
+        "image": "https://cdn.hlorenzoz.com/hlorenzoz.com/portfolio/masajesorisha/0-hero-dark.webp",
+        "fullScreenshot": [
+            "https://cdn.hlorenzoz.com/hlorenzoz.com/portfolio/masajesorisha/0-home-light.webp",
+            "https://cdn.hlorenzoz.com/hlorenzoz.com/portfolio/masajesorisha/0-home-dark.webp",
+            "https://cdn.hlorenzoz.com/hlorenzoz.com/portfolio/masajesorisha/1-treatments-light.webp",
+            "https://cdn.hlorenzoz.com/hlorenzoz.com/portfolio/masajesorisha/2-journal-light.webp",
+            "https://cdn.hlorenzoz.com/hlorenzoz.com/portfolio/masajesorisha/3-contact-light.webp"
+        ],
+        "url": "https://masajesorisha.com/",
+        "slides": [
+            {
+                "id": "design",
+                "image": [
+                    "https://cdn.hlorenzoz.com/hlorenzoz.com/portfolio/masajesorisha/0-hero-light.webp",
+                    "https://cdn.hlorenzoz.com/hlorenzoz.com/portfolio/masajesorisha/0-hero-dark.webp"
+                ],
+                "badge": "Design",
+                "title": "Editorial calm, in light and dark",
+                "description": "Serif headings, a warm sand palette and generous space, holding the same character in both themes. It reads as a private studio with a point of view, not as another spa template."
+            },
+            {
+                "id": "treatments",
+                "image": [
+                    "https://cdn.hlorenzoz.com/hlorenzoz.com/portfolio/masajesorisha/1-treatments-light.webp",
+                    "https://cdn.hlorenzoz.com/hlorenzoz.com/portfolio/masajesorisha/1-treatments-dark.webp"
+                ],
+                "badge": "Treatments",
+                "title": "A short menu, filtered in one tap",
+                "description": "Four signature treatments split between Calm & Wellness and Therapeutic & Recovery, each card carrying its duration and its focus. Short on purpose: fewer choices, faster decision."
+            },
+            {
+                "id": "booking",
+                "image": [
+                    "https://cdn.hlorenzoz.com/hlorenzoz.com/portfolio/masajesorisha/3-contact-light.webp",
+                    "https://cdn.hlorenzoz.com/hlorenzoz.com/portfolio/masajesorisha/3-contact-dark.webp"
+                ],
+                "badge": "Booking",
+                "title": "A booking form that prices itself",
+                "description": "Treatment, duration, day and time in four steps, with a running estimate that updates as the client chooses. No account and no payment gateway, just a request the therapist confirms by email, protected against bots."
+            },
+            {
+                "id": "journal",
+                "image": [
+                    "https://cdn.hlorenzoz.com/hlorenzoz.com/portfolio/masajesorisha/2-journal-light.webp",
+                    "https://cdn.hlorenzoz.com/hlorenzoz.com/portfolio/masajesorisha/2-journal-dark.webp"
+                ],
+                "badge": "Content",
+                "title": "Notes that bring the search traffic",
+                "description": "Long form pieces on manual therapy, the physiology of rest and muscle recovery. Content a massage studio can genuinely rank for, published in both languages."
+            }
+        ]
+    },
+    {
+        "id": "gerp-dj",
+        "slug": "gerp-dj",
+        "lastModified": "2026-11-24",
+        "type": "live",
+        "image": "https://cdn.hlorenzoz.com/hlorenzoz.com/portfolio/gerp-dj/cover.webp",
+        "fullScreenshot": [
+            "https://cdn.hlorenzoz.com/hlorenzoz.com/portfolio/gerp-dj/screencapture-home.webp",
+            "https://cdn.hlorenzoz.com/hlorenzoz.com/portfolio/gerp-dj/screencapture-bio-v2.webp",
+            "https://cdn.hlorenzoz.com/hlorenzoz.com/portfolio/gerp-dj/screencapture-gallery.webp"
+        ],
+        "url": "https://gerp-dj.com/",
+        "slides": [
+            {
+                "id": "design",
+                "image": "https://cdn.hlorenzoz.com/hlorenzoz.com/portfolio/gerp-dj/cover.webp",
+                "badge": "Design",
+                "title": "Video first, in light or dark",
+                "description": "The home opens on a background video the visitor can pause, with a light and a dark theme and a Spanish and Galician switch in the header."
+            },
+            {
+                "id": "speed",
+                "image": "https://cdn.hlorenzoz.com/hlorenzoz.com/portfolio/gerp-dj/gerp-dj-pagespeed-insights.webp",
+                "link": "https://pagespeed.web.dev/analysis?url=https%3A%2F%2Fgerp-dj.com%2F",
+                "badge": "Performance",
+                "title": "99 on mobile, a page that answers at once",
+                "description": "PageSpeed Insights on mobile, November 24, 2026: 99 in Performance and 100 in Accessibility, Best Practices and SEO. Speed is part of the experience: a page that loads and responds quickly keeps the visitor on it, and the visitor who stays is the one who sends the date request."
+            },
+            {
+                "id": "data",
+                "image": "https://cdn.hlorenzoz.com/hlorenzoz.com/portfolio/gerp-dj/gerp-dj-structured-data-v2.webp",
+                "link": "https://search.google.com/test/rich-results?url=https%3A%2F%2Fgerp-dj.com%2F",
+                "badge": "Rich Results",
+                "title": "Structured data Google can read",
+                "description": "Google's Rich Results Test, November 24, 2026: three valid items, Breadcrumbs, Local business and Organisation, so the home page is eligible for rich results in Google Search. Structured data gives search engines explicit clues about who the business is and how its pages fit together, which helps semantic search understand the site and supports its SEO."
+            },
+            {
+                "id": "booking",
+                "image": "https://cdn.hlorenzoz.com/hlorenzoz.com/portfolio/gerp-dj/screencapture-home.webp",
+                "badge": "Booking",
+                "title": "A date request that lands in WhatsApp",
+                "description": "Date, town and type of event, and the request opens in WhatsApp ready to send. No server form and no account, just a message the visitor sends right away."
+            },
+            {
+                "id": "gallery",
+                "image": "https://cdn.hlorenzoz.com/hlorenzoz.com/portfolio/gerp-dj/screencapture-gallery.webp",
+                "badge": "Gallery",
+                "title": "Ten clips of performances and setups",
+                "description": "The gallery holds ten captioned video clips, recorded at their performances and with their own equipment, so a couple or an event planner can feel the atmosphere before asking for a date."
+            },
+            {
+                "id": "bio",
+                "image": "https://cdn.hlorenzoz.com/hlorenzoz.com/portfolio/gerp-dj/screencapture-bio-v2.webp",
+                "badge": "Bio",
+                "title": "A bio with its press dossier",
+                "description": "Who is behind the decks, with photos and a press dossier to download as a PDF in Spanish and in Galician."
+            }
+        ]
+    }
+]

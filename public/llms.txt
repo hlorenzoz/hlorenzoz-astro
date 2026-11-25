@@ -1,0 +1,58 @@
+# Lorenzoz Agency
+
+> Local SEO for local businesses: one monthly plan that brings local customers from Google and AI, with optional website development, AI voice receptionist and custom software. Built by Héctor Luis Lorenzo Zaldivar (Founder & AI Architect) from Xinzo de Limia, Spain.
+
+**Key facts**
+
+- Founder: Héctor Luis Lorenzo Zaldivar, Founder & AI Architect
+- Headquartered in Xinzo de Limia, Ourense, Spain
+- Serves clients worldwide, with a primary focus on Australia, Canada, Costa Rica, Ireland, New Zealand, Spain, the United Kingdom, and the United States
+- Core offer: Local SEO, one monthly plan made of four pillars (authority content, backlinks and citations, authority on Google and AI, review management)
+- Optional services: website development, AI voice receptionist, software development
+- Tech stack: Next.js, Tailwind CSS, Cloudflare (CDN, Workers, Pages), Vitest, Playwright, Lighthouse CI
+- Price range: €350 to €20,000+
+- Pricing terms: no price includes VAT; 50% is paid up front; optional services are 30% off their list price alongside Local SEO; there is no free trial
+- Payment accepted: Bank Transfer, Credit Card, Stripe
+- Languages: English and Spanish (full site localization); every page is published in both languages, and the Spanish version of any /en/... URL is the same path under /es/...
+
+## Docs
+
+- [Home](https://hlorenzoz.com/en/): The offer in one page. Local SEO as a single monthly plan with four pillars, what the same work cost bought separately, what a customer who never arrives costs, and the optional services with their list price and their price alongside Local SEO. It also shows the latest agency news.
+- [Portfolio](https://hlorenzoz.com/en/portfolio/): Case studies of live and demo projects, each documented with tech stack, performance scores, structured data, and multidevice testing evidence.
+- [News](https://hlorenzoz.com/en/news/): Agency announcements, such as new work added to the portfolio, each linking to its case study.
+- [Digital Business Card](https://hlorenzoz.com/en/card/hector/): Héctor's NFC enabled digital business card with contact details, "Add to Contacts", call booking, and location on Google Maps.
+
+## Services
+
+- [Services Hub](https://hlorenzoz.com/en/services/): Directory of all 4 service offerings, each with pricing, process, and FAQ. Local SEO is the core offer; the other three are optional.
+- [Local SEO](https://hlorenzoz.com/en/services/local-seo/): The core offer. One monthly plan with four pillars, all included: authority content, backlinks and citations, authority on Google and AI, and review management. €750/mo plus VAT. The goal is the first position on Google for local searches; no ranking is guaranteed.
+- [Website Development](https://hlorenzoz.com/en/services/website-development/): Custom, high speed websites built to convert visitors into clients, SEO optimized and mobile responsive. €2,500 paid once plus VAT, or €1,750 alongside Local SEO, plus an optional €49/mo for hosting and maintenance.
+- [AI Voice Receptionist](https://hlorenzoz.com/en/services/ai-voice-receptionist/): AI voice agents that answer calls, schedule appointments, and handle FAQs 24/7. €350/mo plus VAT with no setup fee, or €245/mo alongside Local SEO.
+- [Software Development](https://hlorenzoz.com/en/services/software-development/): Full stack products with a Flutter frontend and a robust backend, built for every device. From €20,000 plus VAT, or from €14,000 alongside Local SEO; the final quote depends on the functional requirements.
+
+## Portfolio Case Studies
+
+- [Lorenzoz Agency (this site)](https://hlorenzoz.com/en/portfolio/lorenzoz-agency/): Live project. Next.js 16, Tailwind 4, Cloudflare CDN, Vitest + Playwright CI/CD, 95%+ PageSpeed score, JSON-LD structured data, PWA support.
+- [Dental Clinic Demo](https://hlorenzoz.com/en/portfolio/dental-clinic-1/): Demo project for a dental clinic with Google Business Profile optimization, Next.js 16, full test coverage, 95%+ PageSpeed, PWA and structured data.
+- [Real Estate Demo](https://hlorenzoz.com/en/portfolio/real-estate/): Demo real estate listings site with property/rental browsing, GBP optimization, Next.js 16, full test suite, 95%+ PageSpeed, structured data.
+- [Malaga Event Gear](https://hlorenzoz.com/en/portfolio/malaga-event-gear/): Live client project (malagaeventgear.com) for event equipment rental with online booking, 93+ mobile PageSpeed, Local Business and Organization schema.
+- [Massage Studio Demo](https://hlorenzoz.com/en/portfolio/demo-massages/): Demo project for a massage studio with a filterable treatment menu, frictionless booking flow, editorial design, journal content written for SEO.
+- [Investep App](https://hlorenzoz.com/en/portfolio/investep-app/): Demo multibroker investment tracking app with consolidated portfolio dashboard, profitability projections, trade journal, Flutter + Hono + Cloudflare stack, admin console.
+- [Vicron Lopez](https://hlorenzoz.com/en/portfolio/vicron-lopez/): Live client project (www.vicronlopez.es) for a luxury and sports car rental business in Ourense, Galicia. Bilingual Spanish/English site with translated URLs and hreflang, filterable fleet, a page per vehicle with specs and booking, GDPR cookie consent.
+- [Masajes Orisha](https://hlorenzoz.com/en/portfolio/masajes-orisha/): Live client project (masajesorisha.com) for a therapeutic massage studio in San Rafael de Heredia, Costa Rica. The production build of the massage studio concept: bilingual Spanish/English throughout, light and dark themes, a booking request in four steps that estimates the session before it is sent, and a fully translated journal.
+- [GERP DJ](https://hlorenzoz.com/en/portfolio/gerp-dj/): Live client project (gerp-dj.com) for a party, wedding and event DJ in Ourense, Galicia. Published in Spanish and Galician with light and dark themes, a date request that opens WhatsApp ready to send, a gallery of ten video clips of performances and setups and a press dossier to download. PageSpeed Insights mobile, measured 2026-11-24: Performance 99, Accessibility 100, Best Practices 100, SEO 100. Google Rich Results Test, tested 2026-11-24: 3 valid items (Breadcrumbs, Local business, Organisation).
+
+## News
+
+- [Masajes Orisha joins the portfolio](https://hlorenzoz.com/en/news/masajes-orisha-added-to-portfolio/): Announcement (2026-11-24) that the website of Masajes Orisha, a live client project for a therapeutic massage studio in San Rafael de Heredia, Costa Rica, now has its own case study in the portfolio.
+- [GERP DJ joins the portfolio](https://hlorenzoz.com/en/news/gerp-dj-added-to-portfolio/): Announcement (2026-11-24) that the website of GERP DJ, a live client project for a party, wedding and event DJ in Ourense, Galicia, now has its own case study in the portfolio.
+
+## Contact
+
+- [Website](https://hlorenzoz.com/): Lorenzoz Agency, English and Spanish.
+- [Email](mailto:contact@hlorenzoz.com): general enquiries and quotes.
+- [Privacy and support](mailto:privacy@hlorenzoz.com): privacy, data, and support requests.
+- [Phone](tel:+34643844720): +34 643 84 47 20.
+- [LinkedIn](https://www.linkedin.com/in/hlorenzoz/): Héctor Luis Lorenzo Zaldivar.
+- [GitHub](https://github.com/hlorenzoz): Héctor Luis Lorenzo Zaldivar.
+- [Upwork](https://www.upwork.com/freelancers/hlorenzoz): Héctor Luis Lorenzo Zaldivar.

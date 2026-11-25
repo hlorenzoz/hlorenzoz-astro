@@ -1,0 +1,1118 @@
+{
+  "version": 1,
+  "updated": "2026-11-24",
+  "tasks": [
+    {
+      "id": "#T0001",
+      "estado": "hecha",
+      "prioridad": "alta",
+      "tipo": "negocio",
+      "titulo": "Reescribir Project Focus de AGENTS.md con el modelo de resultados (Local SEO como oferta central)",
+      "anotada": "2026-10-08",
+      "hecha": "2026-10-09",
+      "origen": "usuario",
+      "depende": [],
+      "notas": [
+        "Supuestos S1 a S6 sin confirmar: no hay trial ni tarjeta gratis (S1), hosting 49/mes sigue (S2), el 30% dura mientras Local SEO siga activo (S3), 50% por adelantado y como se cobra en los mensuales (S6).",
+        "2026-10-09: AGENTS.md reescrito (Agency Services, Value ladder, cinco detalles de facturacion, donde viven los precios, que implementa el sitio). README apunta a AGENTS.md en vez de repetir la escalera. El codigo todavia NO coincide: lo alinean #T0003 en adelante."
+      ],
+      "descripcion": [
+        "Objetivo: que la fuente de verdad comercial diga que se venden resultados (nuevos clientes), no servicios.",
+        "Oferta central: Local SEO, 750 EUR/mes, con cuatro pilares: contenido de autoridad, backlinks y citaciones, autoridad en Google y en IA, review management.",
+        "Opcionales con 30% de descuento junto a Local SEO: Website Development 2500 EUR unico, AI Voice Receptionist 350 EUR/mes, Software / Mobile App desde 20000 EUR unico.",
+        "Condicion: 50% por adelantado.",
+        "Reescribir: Positioning, Agency Services, Value ladder, los cuatro detalles de facturacion y What this site currently implements (cuatro paginas de servicio).",
+        "La primera posicion en Google se escribe como objetivo, nunca como garantia.",
+        "Archivo: AGENTS.md"
+      ]
+    },
+    {
+      "id": "#T0002",
+      "estado": "hecha",
+      "prioridad": "alta",
+      "tipo": "docs",
+      "titulo": "Seccion Task tracking en CLAUDE.md y .agents/data/ documentado en AGENTS.md",
+      "anotada": "2026-10-08",
+      "hecha": "2026-10-08",
+      "origen": "usuario",
+      "depende": [],
+      "notas": [],
+      "descripcion": [
+        "Objetivo: que .agents/data/TODO.json sea el unico backlog del proyecto y que todo agente lo use.",
+        "Archivo: CLAUDE.md (seccion Task tracking), AGENTS.md (Skills Location)."
+      ]
+    },
+    {
+      "id": "#T0003",
+      "estado": "hecha",
+      "prioridad": "alta",
+      "tipo": "datos",
+      "titulo": "Extender los tipos de lib/pricing.ts: rol central/opcional, descuento de bundle, anticipo y precio desde",
+      "anotada": "2026-10-08",
+      "hecha": "2026-10-09",
+      "origen": "usuario",
+      "depende": [
+        "#T0001"
+      ],
+      "notas": [
+        "tests/lib/offer-notes.test.ts lineas 64 a 69 prohibe hoy un porcentaje en las notas de oferta: ese test cambia primero.",
+        "2026-10-09: lib/pricing.ts reescrito: OfferRole (core | addOn), PriceComponent.from (piso), BUNDLE_DISCOUNT, UPFRONT_SHARE, FORMER_STANDALONE, EXAMPLE_CUSTOMER_VALUES, PAUSED_PRICING y los helpers offersByRole, bundledAmount, upfrontAmount, coverage, slugFromServiceKey. Fuera quoted, capped, trialDays, includes y volumeDiscounts."
+      ],
+      "descripcion": [
+        "Objetivo: que PRICING pueda expresar el modelo nuevo. Hoy no modela descuento porcentual, anticipo, precio piso ni rol.",
+        "Agregar OfferRole (core | addOn), BUNDLE_DISCOUNT = 0.3, UPFRONT_SHARE = 0.5 y PriceComponent.from (piso).",
+        "Quitar trialDays, BundledInclusion, includes y capped.",
+        "Helpers nuevos: bundledAmount(offer), upfrontAmount(amount). priceMessageValues emite ademas bundlePrice, discount y upfront.",
+        "Archivo: lib/pricing.ts, tests/lib/pricing.test.ts"
+      ]
+    },
+    {
+      "id": "#T0004",
+      "estado": "hecha",
+      "prioridad": "alta",
+      "tipo": "datos",
+      "titulo": "Nuevos importes en PRICING y reconectar el dossier a PRICING",
+      "anotada": "2026-10-08",
+      "hecha": "2026-10-09",
+      "origen": "usuario",
+      "depende": [
+        "#T0003"
+      ],
+      "notas": [
+        "El dossier (#T0022) lleva los importes nuevos en DOSSIER_OFFERS, marcada TEMPORAL en scripts/build-dossier.mjs. Al cerrar esta tarea debe leerlos de PRICING y esa constante se borra.",
+        "2026-10-09: el usuario agrego al dossier el marcador + IVA / + VAT junto a cada precio. El sitio debe llevar el mismo marcador en todo precio, y el JSON-LD valueAddedTaxIncluded: false.",
+        "2026-10-09: PRICING con los importes nuevos (750 / 2500 / 350 / desde 20000). El dossier ya lee PRICING: se borro DOSSIER_OFFERS y los helpers duplicados de scripts/build-dossier.mjs. priceRange pasa a ser de 350 a 20000+. Cada precio lleva el marcador + IVA / + VAT (components/pricing/TaxMark.tsx)."
+      ],
+      "descripcion": [
+        "Local SEO 750/mes (core). Website Development 2500 unico. AI Voice Receptionist 350/mes. Software Development desde 20000 unico (deja de ser quoted).",
+        "Derivados que siguen el cambio: lib/offer-notes.ts, lib/site-config.ts (priceRange), messages/{en,es}.json (placeholders), publishedPriceRange con precio desde.",
+        "Archivo: lib/pricing.ts y sus tests."
+      ]
+    },
+    {
+      "id": "#T0005",
+      "estado": "hecha",
+      "prioridad": "alta",
+      "tipo": "datos",
+      "titulo": "Retirar Review Management como servicio independiente, con 301 a Local SEO",
+      "anotada": "2026-10-08",
+      "hecha": "2026-10-09",
+      "origen": "usuario",
+      "depende": [
+        "#T0004"
+      ],
+      "notas": [
+        "2026-10-09: Ruta, pagina y namespace de Review Management eliminados; 301 a /services/local-seo/ en en y es. Su pregunta frecuente sobre plataformas se conserva en la pagina de SEO Local. NO se agrego el nombre a retired-product-names.test.ts: review management sigue siendo el nombre del pilar, y prohibir la cadena romperia copy legitimo. Lo cubren los tests de rutas, pie, hub y llms.txt."
+      ],
+      "descripcion": [
+        "Objetivo: review management pasa a ser un pilar de Local SEO.",
+        "Quitar: lib/routes.ts (fila reputation-review-management), app/[locale]/services/reputation-review-management/, services.reputationReviewManagement en ambos mensajes, mapas SLUG_TO_CAMEL y SLUG_TO_ICON del hub, footer.services.items, public/llms.txt, ledger de Stripe.",
+        "301 en public/_redirects para en y es hacia /services/local-seo/.",
+        "Agregar el nombre a tests/seo/retired-product-names.test.ts.",
+        "Tests que fijan seis servicios: routes, service-pages-config, services-shape-parity, llms-txt-accuracy, Footer, service-payment-links."
+      ]
+    },
+    {
+      "id": "#T0006",
+      "estado": "hecha",
+      "prioridad": "alta",
+      "tipo": "schema",
+      "titulo": "JSON-LD: precio desde, sin trials, oferta central mas opcionales",
+      "anotada": "2026-10-08",
+      "hecha": "2026-10-09",
+      "origen": "usuario",
+      "depende": [
+        "#T0004"
+      ],
+      "notas": [
+        "2026-10-09: priceSpec emite minPrice para el precio desde y valueAddedTaxIncluded: false en toda especificacion. Fuera billingStart y los addOn de precio cero. El catalogo de la home lista la oferta central y los tres opcionales."
+      ],
+      "descripcion": [
+        "priceSpec y serviceOffer en lib/schema/index.ts: minPrice para el precio desde, fuera billingStart y los addOn de precio cero.",
+        "organizationOffers de la home pasa a central mas opcionales.",
+        "Archivo: lib/schema/index.ts, tests/seo/schema.test.ts, tests/seo/service-page.test.ts"
+      ]
+    },
+    {
+      "id": "#T0007",
+      "estado": "hecha",
+      "prioridad": "alta",
+      "tipo": "contenido",
+      "titulo": "Pagina Local SEO como pagina pilar: cuatro pilares y review management absorbido",
+      "anotada": "2026-10-08",
+      "hecha": "2026-10-09",
+      "origen": "usuario",
+      "depende": [
+        "#T0005"
+      ],
+      "notas": [
+        "2026-10-09: Pagina SEO Local reescrita: cuatro grupos de entregables (2x2), tabla del cliente que no llega (misma funcion que la home, lib/numbers.ts), proceso mensual en cuatro pasos y seis preguntas."
+      ],
+      "descripcion": [
+        "Hero de resultado, cuatro grupos de entregables (uno por pilar), proceso mensual y FAQ ampliada.",
+        "La FAQ incluye las tres preguntas de reviews y una respuesta honesta a si se garantiza el primer puesto.",
+        "Archivo: services.localSeo en messages/{en,es}.json, app/[locale]/services/local-seo/page.tsx"
+      ]
+    },
+    {
+      "id": "#T0008",
+      "estado": "hecha",
+      "prioridad": "alta",
+      "tipo": "diseno",
+      "titulo": "Home: secciones reordenadas y componentes de pricing (plan central mas opcionales)",
+      "anotada": "2026-10-08",
+      "hecha": "2026-10-09",
+      "origen": "usuario",
+      "depende": [
+        "#T0004",
+        "#T0023"
+      ],
+      "notas": [
+        "El encabezado animado es #T0031 y las imagenes nuevas son #T0032: se hacen sobre esta estructura.",
+        "2026-10-09: Home reescrita sobre componentes nuevos: CorePlanCard, AddOnCard, CostComparison, MissedCustomerTable. Seccion nueva #numbers. La pagina recorre datos (PRICING, PILLARS), no la forma de los mensajes.",
+        "2026-10-09: la tarjeta de la oferta central lleva un anillo solido (ring-2 ring-blue-500) y mas resplandor, a pedido del usuario. force-dark-theme fija border-color al 50% con !important, por eso el borde solo no alcanzaba."
+      ],
+      "descripcion": [
+        "Mantener el diseno: mismos tokens de app/globals.css, Inter y Noto Serif.",
+        "Pricing: UNA tarjeta central (750/mes) y una grilla de opcionales con precio de lista y precio con Local SEO.",
+        "Extraer la tarjeta inline de app/[locale]/page.tsx a components/pricing/CorePlanCard.tsx y AddOnCard.tsx.",
+        "FEATURED_SERVICES y BUNDLE_PRICES se reemplazan por una lista derivada de PRICING por rol; desaparece el idx === 1 hardcodeado.",
+        "Tests: LandingPageSections, deliverables-match-pricing, homepage.spec."
+      ]
+    },
+    {
+      "id": "#T0009",
+      "estado": "hecha",
+      "prioridad": "alta",
+      "tipo": "contenido",
+      "titulo": "Home: copy en y es (hero, stats, problema, pilares, beneficios, proceso, FAQ, meta)",
+      "anotada": "2026-10-08",
+      "hecha": "2026-10-09",
+      "origen": "usuario",
+      "depende": [
+        "#T0008"
+      ],
+      "notas": [
+        "2026-10-09: Namespace home regenerado en en y es desde el dossier. Los textos compartidos de Las cuentas viven en el namespace raiz numbers. Las preguntas frecuentes usan tokens {price}, {discount}, {upfront}, {tax} resueltos por lib/copy-tokens.ts."
+      ],
+      "descripcion": [
+        "Hoy el hero, las stats y las 14 FAQ hablan del recepcionista de voz.",
+        "Stats: hechos verificables (un plan, cuatro pilares, ocho mercados), sin cifras de resultado inventadas.",
+        "home.meta y las keywords hardcodeadas de app/[locale]/layout.tsx dejan de ser AI-first.",
+        "Archivo: namespace home en messages/{en,es}.json"
+      ]
+    },
+    {
+      "id": "#T0010",
+      "estado": "hecha",
+      "prioridad": "media",
+      "tipo": "contenido",
+      "titulo": "Paginas de los tres opcionales: precio de lista mas precio con Local SEO",
+      "anotada": "2026-10-08",
+      "hecha": "2026-10-09",
+      "origen": "usuario",
+      "depende": [
+        "#T0004"
+      ],
+      "notas": [
+        "2026-10-09: hero.price de web, voz y software con precio de lista, precio junto a SEO Local y marcador de impuesto. Software pasa de Custom quote a desde."
+      ],
+      "descripcion": [
+        "website-development, ai-voice-receptionist y software-development.",
+        "hero.price con placeholders de lista y de bundle; fuera todo rastro de trial y de tarjeta gratis.",
+        "Software pasa de Custom quote a desde {price}."
+      ]
+    },
+    {
+      "id": "#T0011",
+      "estado": "hecha",
+      "prioridad": "media",
+      "tipo": "contenido",
+      "titulo": "Hub /services: oferta central destacada y opcionales debajo",
+      "anotada": "2026-10-08",
+      "hecha": "2026-10-09",
+      "origen": "usuario",
+      "depende": [
+        "#T0005"
+      ],
+      "notas": [
+        "2026-10-09: Hub reescrito. Su subtitulo lleva {discount}, resuelto tambien en la meta description."
+      ],
+      "descripcion": [
+        "Reescribir services.hub (hoy dice Six ways...).",
+        "Archivo: app/[locale]/services/page.tsx, messages/{en,es}.json"
+      ]
+    },
+    {
+      "id": "#T0012",
+      "estado": "hecha",
+      "prioridad": "media",
+      "tipo": "contenido",
+      "titulo": "Navbar, footer, ORGANIZATION.description y keywords del layout al modelo nuevo",
+      "anotada": "2026-10-08",
+      "hecha": "2026-10-09",
+      "origen": "usuario",
+      "depende": [
+        "#T0005"
+      ],
+      "notas": [
+        "2026-10-09: Pie con SEO Local primero y sin los dos servicios retirados. ORGANIZATION.description y keywords del layout actualizados. Navbar sin cambios."
+      ],
+      "descripcion": [
+        "Footer: Local SEO primero, sin Review Management ni Digital Business Card.",
+        "ORGANIZATION.description en lib/site-config.ts hoy habla de AI automation, website building y digital business cards."
+      ]
+    },
+    {
+      "id": "#T0013",
+      "estado": "hecha",
+      "prioridad": "media",
+      "tipo": "contenido",
+      "titulo": "Terminos y condiciones: anticipo, sin trial y descuento de bundle",
+      "anotada": "2026-10-08",
+      "hecha": "2026-10-09",
+      "origen": "usuario",
+      "depende": [
+        "#T0004"
+      ],
+      "notas": [
+        "Depende de confirmar S6: como se cobra el 50% en los servicios mensuales.",
+        "2026-10-09: footer.terms.payment y termsPage.pricing: fuera la prueba gratuita; entran el descuento y la nota de precios sin IVA. Los porcentajes salen de lib/pricing.ts."
+      ],
+      "descripcion": [
+        "footer.terms.payment y termsPage.pricing.trial en messages/{en,es}.json.",
+        "Las FAQ del 50% upfront (home y servicios) tambien."
+      ]
+    },
+    {
+      "id": "#T0014",
+      "estado": "hecha",
+      "prioridad": "media",
+      "tipo": "contenido",
+      "titulo": "Actualizar public/llms.txt con el nuevo modelo del negocio",
+      "anotada": "2026-10-08",
+      "hecha": "2026-10-09",
+      "origen": "usuario",
+      "depende": [
+        "#T0005",
+        "#T0020"
+      ],
+      "notas": [
+        "Pedida de nuevo por el usuario el 2026-10-08: no dejarla para el final, es lo que leen los motores de IA.",
+        "Depende de #T0005 y #T0020 porque los tests exigen que cada servicio registrado aparezca exactamente una vez: no se puede quitar una linea antes de quitar la ruta.",
+        "2026-10-09: public/llms.txt reescrito. Los tests comprueban cada precio en la linea de su servicio, el precio junto a SEO Local, desde solo en el piso, plus VAT en cada linea y los terminos con las cifras del codigo."
+      ],
+      "descripcion": [
+        "Objetivo: que los motores de IA describan a la agencia como proveedor de resultados (Local SEO como oferta central), no como seis servicios pares.",
+        "Es manual; ningun script lo genera. Solo los tests llms-txt-accuracy y llms-txt-spec lo atan a PRICING y al registro de rutas.",
+        "Linea 3 (resumen) y linea 18 (descripcion de la home): hoy son AI-first, pasan a Local SEO y resultados.",
+        "Linea 10 (lista de servicios): Local SEO primero, luego los tres opcionales. Fuera Review Management y Digital Business Card.",
+        "Linea 12 (Price range): debe igualar publishedPriceRange('en') tras #T0004.",
+        "Linea 24: Directory of all 6 service offerings pasa a 4.",
+        "Lineas 25 a 30 (una por servicio): Local SEO 750/mes con sus cuatro pilares; opcionales con precio de lista y 30% de descuento junto a Local SEO; software desde 20000. Fuera 15-day free trial y Custom quote.",
+        "Condicion de pago: 50% por adelantado.",
+        "La primera posicion en Google se escribe como objetivo, no como garantia.",
+        "Tests a actualizar primero: tests/seo/llms-txt-accuracy.test.ts (conteo de servicios, importes, trials, quoted, price range) y llms-txt-spec.test.ts (estructura).",
+        "Verificacion: just validate, y revisar out/llms.txt tras just build-pages."
+      ]
+    },
+    {
+      "id": "#T0015",
+      "estado": "pendiente",
+      "prioridad": "media",
+      "tipo": "infra",
+      "titulo": "Resincronizar los Stripe Payment Links con los importes nuevos",
+      "anotada": "2026-10-08",
+      "hecha": null,
+      "origen": "usuario",
+      "depende": [
+        "#T0004"
+      ],
+      "notas": [
+        "Pregunta abierta: el Payment Link de cada pagina cobra el total o el anticipo del 50%? Hoy cobra el total.",
+        "El ledger lib/payment-links.json esta entero en modo test.",
+        "2026-10-09: paymentLinkUrl ya oculta los enlaces desactualizados (lib/payment-links.ts, isCurrent). Hoy NO se muestra ningun boton Pagar online: el ledger tiene los importes viejos. Vuelven al resincronizar con STRIPE_SECRET_KEY."
+      ],
+      "descripcion": [
+        "scripts/create-payment-links.mjs, lib/payment-links.json, tests/lib/payment-links.test.ts.",
+        "Sin trial_period_days. Software con precio desde no lleva enlace de pago."
+      ]
+    },
+    {
+      "id": "#T0016",
+      "estado": "pendiente",
+      "prioridad": "baja",
+      "tipo": "docs",
+      "titulo": "CHANGELOG y brief de .agents/context/ al modelo nuevo",
+      "anotada": "2026-10-08",
+      "hecha": null,
+      "origen": "usuario",
+      "depende": [
+        "#T0001"
+      ],
+      "notas": [
+        "2026-10-09: pendiente solo el CHANGELOG y la nota de superado en el brief de .agents/context/.",
+        "2026-10-09: el README se hizo dentro de #T0001, por eso sale del titulo."
+      ],
+      "descripcion": [
+        "CHANGELOG.md: registrar el cambio al modelo de resultados.",
+        "El brief original de .agents/context/ describe el modelo anterior: anotar que quedo superado y que la fuente vigente es AGENTS.md."
+      ]
+    },
+    {
+      "id": "#T0017",
+      "estado": "hecha",
+      "prioridad": "media",
+      "tipo": "contenido",
+      "titulo": "Fechas lastModified de todas las paginas tocadas",
+      "anotada": "2026-10-08",
+      "hecha": "2026-10-09",
+      "origen": "usuario",
+      "depende": [
+        "#T0007",
+        "#T0009",
+        "#T0010",
+        "#T0011",
+        "#T0013"
+      ],
+      "notas": [
+        "2026-10-09: lastModified a 2026-10-09 en home, hub, las cuatro paginas de servicio, terms-conditions y sitemap. NO desplegado: una fecha sin desplegar no es una pagina actualizada.",
+        "2026-10-09: verificacion sobre el export estatico. just validate en verde (875 tests). E2E: 16 de 16 en chromium, Mobile Chrome, webkit y Mobile Safari. Firefox NO se pudo verificar: no arranca dentro del entorno aislado del agente (sandbox_extension_issue_file_to_process, Operation not permitted); correr just test-e2e-static en una terminal normal. Lighthouse: las 12 URL pasan sus umbrales.",
+        "2026-10-09: CORRECCION. Esta tarea se titulaba fechas y redeploy y se cerro sin que hubiera redespliegue. Las fechas SI estan hechas; el despliegue pasa a #T0034, que es donde debe seguirse."
+      ],
+      "descripcion": [
+        "Regla Freshness Dates de AGENTS.md: un cambio, todos los lugares, mismo valor.",
+        "lib/routes.ts: home, hub, paginas de servicio, terms-conditions y la ruta sitemap (debe igualar la fecha mas nueva).",
+        "Una fecha que no se desplego no es una pagina actualizada."
+      ]
+    },
+    {
+      "id": "#T0018",
+      "estado": "bloqueada",
+      "prioridad": "media",
+      "tipo": "facturacion",
+      "titulo": "Datos fiscales del emisor: razon social, NIF, IBAN y serie de facturas",
+      "anotada": "2026-10-08",
+      "hecha": null,
+      "origen": "usuario",
+      "depende": [],
+      "notas": [
+        "Bloqueada: faltan los datos. No hay NIF/CIF ni IBAN en el repo y legalName es igual al nombre comercial.",
+        "El IVA del 21% existe solo como texto en messages; no hay constante ni calculo."
+      ],
+      "descripcion": [
+        "Sin estos datos ninguna factura es valida.",
+        "Decidir donde viven: lo publico en lib/site-config.ts, lo sensible fuera del repo."
+      ]
+    },
+    {
+      "id": "#T0019",
+      "estado": "pendiente",
+      "prioridad": "media",
+      "tipo": "facturacion",
+      "titulo": "Generacion y envio de facturas con Stripe Invoicing (script offline)",
+      "anotada": "2026-10-08",
+      "hecha": null,
+      "origen": "usuario",
+      "depende": [
+        "#T0004",
+        "#T0018"
+      ],
+      "notas": [
+        "Decidido el 2026-10-08: Stripe Invoicing, no un generador de PDF propio.",
+        "Verificar antes de implementar la normativa espanola de sistemas de facturacion (Verifactu)."
+      ],
+      "descripcion": [
+        "scripts/create-invoice.mjs mas receta just invoice: recibe cliente y servicios, arma las lineas desde PRICING (aplica BUNDLE_DISCOUNT y UPFRONT_SHARE) y crea la factura en Stripe.",
+        "Stripe numera, envia por email, hospeda el PDF y cobra. Encaja con el export estatico: no hay servidor.",
+        "Los datos de clientes son datos personales: fuera del repo o en carpeta gitignoreada.",
+        "Verificacion: emitir una factura en modo test y revisar PDF, numeracion, IVA y anticipo."
+      ]
+    },
+    {
+      "id": "#T0020",
+      "estado": "hecha",
+      "prioridad": "alta",
+      "tipo": "datos",
+      "titulo": "Pausar Digital Business Card: comentar precio y ruta, carpeta privada y 301 al hub",
+      "anotada": "2026-10-08",
+      "hecha": "2026-10-09",
+      "origen": "usuario",
+      "depende": [
+        "#T0004"
+      ],
+      "notas": [
+        "Decidido el 2026-10-08: no se ofrece por ahora. Se comenta, no se borra.",
+        "2026-10-09: Tarjeta en pausa: PAUSED_PRICING, ruta comentada, pagina en app/[locale]/services/_digital-business-card/, copy dormido en services.digitalBusinessCard, 301 al hub. /card/hector intacto."
+      ],
+      "descripcion": [
+        "lib/pricing.ts: entrada de PRICING y clave de ServiceKey comentadas, con nota en pausa desde 2026-10-08, ver #T0021.",
+        "lib/routes.ts: fila de la ruta comentada.",
+        "app/[locale]/services/digital-business-card/ se renombra a _digital-business-card/ (carpeta privada de Next: sale del routing sin borrarse).",
+        "services.digitalBusinessCard se queda en messages como copy dormido (JSON no admite comentarios). Sale de footer.services.items y de los mapas del hub.",
+        "Fuera de public/llms.txt, del ledger de Stripe y del JSON-LD.",
+        "301 al hub /services/ en en y es.",
+        "NO tocar /card/hector: es la tarjeta personal, no el servicio."
+      ]
+    },
+    {
+      "id": "#T0021",
+      "estado": "pendiente",
+      "prioridad": "baja",
+      "tipo": "negocio",
+      "titulo": "Reactivar Digital Business Card cuando vuelva a ofrecerse",
+      "anotada": "2026-10-08",
+      "hecha": null,
+      "origen": "usuario",
+      "depende": [
+        "#T0020"
+      ],
+      "notas": [
+        "Sin fecha. Definir precio y si entra al descuento del 30% antes de reactivar.",
+        "2026-10-09: pasos para reactivar documentados en el comentario de cabecera de app/[locale]/services/_digital-business-card/page.tsx."
+      ],
+      "descripcion": [
+        "Deshacer #T0020: descomentar precio y ruta, renombrar la carpeta, quitar la regla 301 y volver a listarlo en hub, footer, llms.txt y dossier."
+      ]
+    },
+    {
+      "id": "#T0022",
+      "estado": "hecha",
+      "prioridad": "alta",
+      "tipo": "contenido",
+      "titulo": "Dossier comercial en PDF (es y en) con servicios, precios y contacto, con el diseno del sitio",
+      "anotada": "2026-10-08",
+      "hecha": "2026-10-08",
+      "origen": "usuario",
+      "depende": [],
+      "notas": [
+        "PRIMERA tarea en ejecutarse. Tras entregarla se PARA para revision antes de seguir con el resto.",
+        "Los importes nuevos viven en DOSSIER_OFFERS (scripts/build-dossier.mjs), marcada TEMPORAL hasta #T0004.",
+        "2026-10-08: primera version generada (es y en), just validate en verde. Revisada y aceptada por el usuario el mismo dia.",
+        "2026-10-08: el usuario pidio dos enfoques, ya en la pagina Las cuentas y a llevar tambien al copy del sitio (#T0007, #T0009): lo asequible del plan frente a contratar por separado, y el costo de no ganar un cliente frente al costo del plan.",
+        "La comparacion Por separado usa SOLO los precios de lista propios anteriores (SEO Local 897 y Gestion de resenas 297, constante FORMER_STANDALONE). Contenido y backlinks figuran como aparte porque no hay precio documentado: pendiente que el usuario diga si quiere ponerles cifra.",
+        "La tabla del cliente que no llega usa valores de cliente de EJEMPLO (250, 750, 2500 al ano), rotulados como ilustrativos. Pendiente que el usuario confirme o cambie esos valores.",
+        "Copy en espanol neutro (tu), no el voseo del sitio: el dossier va a Espana y Costa Rica. A confirmar.",
+        "Enlaces de opinion con marca: el dossier NO dice dirigir solo a clientes contentos. Pedir resenas solo a los satisfechos (review gating) incumple las politicas de Google.",
+        "Requiere el Chromium de Playwright: bun x playwright install chromium.",
+        "2026-10-08: en Vista Previa de macOS salian bloques grises y un rectangulo azul sobre el titular. Causa: box-shadow y background-clip: text, que Chromium exporta con mascaras que Quartz no respeta; pdf.js ademas tenia de rojo los degradados translucidos. Quitados los tres del CSS de impresion y bloqueados por test. Verificado renderizando las 14 paginas con Quartz.",
+        "2026-10-08: el usuario pidio que cada precio diga que no incluye IVA (Precio + IVA). Marcador + IVA / + VAT (content.tax.suffix, token {tax}) junto a los 8 precios citados y en el costo anual del plan, mas una linea en la nota de opcionales. Bloqueado por test. Al migrar a PRICING (#T0004) y al llevar los precios al sitio, mantener el mismo marcador."
+      ],
+      "descripcion": [
+        "Objetivo: un PDF para entrega digital con los servicios y sus descripciones, los precios y las formas de contacto.",
+        "Siete paginas A4: portada, enfoque, Local SEO (cuatro pilares, 750/mes), las cuentas (por separado vs un plan, costo de un cliente que no llega), opcionales (lista y precio con Local SEO), como trabajamos y condiciones, contacto.",
+        "Archivo: dossier/template.html, dossier/content.{es,en}.json, scripts/build-dossier.mjs, receta just dossier.",
+        "Salida: dossier/dist/lorenzoz-agency-dossier-{es,en}.pdf (gitignoreada).",
+        "Sin Digital Business Card ni Review Management como servicio aparte. La primera posicion es un objetivo, no una garantia.",
+        "Verificacion: just dossier, revisar cada pagina renderizada, just validate en verde."
+      ]
+    },
+    {
+      "id": "#T0023",
+      "estado": "hecha",
+      "prioridad": "alta",
+      "tipo": "diseno",
+      "titulo": "Propuesta visual de las secciones del sitio, a revisar antes de implementar",
+      "anotada": "2026-10-08",
+      "hecha": "2026-10-09",
+      "origen": "usuario",
+      "depende": [
+        "#T0022"
+      ],
+      "notas": [
+        "Parada para revision: no se implementa #T0008 hasta aprobar la propuesta.",
+        "2026-10-08: propuesta entregada como HTML estatico en designs/results-model/ (home.html, local-seo.html, proposal.css). EN REVISION por el usuario. No es codigo del sitio: nada de ahi lo lee el build.",
+        "Cada seccion lleva una nota amarilla (que cambia y por que); el boton Notas las oculta.",
+        "Decisiones de la propuesta a validar: seccion nueva #numbers (por separado vs plan, costo del cliente que no llega); #solutions pasa de 3 a 4 tarjetas; #pricing pasa a una tarjeta central mas tres opcionales; la insignia LIMITED TIME OFFER se reemplaza porque el descuento no caduca; se quitan los plazos de 7-14 dias del proceso.",
+        "Pendientes que la propuesta deja a la vista: imagen de #benefits (hoy ai-benefits.webp), plazo real de resultados para la FAQ, valores de cliente reales y precio por separado de contenido y backlinks.",
+        "2026-10-08: el usuario pidio imagenes hiperrealistas en las secciones y un encabezado con animacion ligada al scroll (solo en el encabezado). La propuesta actual lleva recuadros rayados donde iran: se completan cuando se destrabe #T0028.",
+        "2026-10-09: aceptada por el usuario, que pidio implementarla en el sitio alineada con el dossier. Plan de implementacion aprobado; rama feat/results-model."
+      ],
+      "descripcion": [
+        "Objetivo: ver como queda cada seccion de la home y de la pagina Local SEO con el modelo nuevo y ajustar antes de tocar el codigo.",
+        "Mismo diseno actual: fuentes, colores y tarjetas."
+      ]
+    },
+    {
+      "id": "#T0024",
+      "estado": "pendiente",
+      "prioridad": "baja",
+      "tipo": "infra",
+      "titulo": "Integrar metodos de pago: Stripe y Redsys",
+      "anotada": "2026-10-08",
+      "hecha": null,
+      "origen": "TODO.md",
+      "depende": [],
+      "notas": [
+        "Stripe ya esta parcialmente: Payment Links offline en modo test. Redsys no existe en el repo."
+      ],
+      "descripcion": [
+        "Migrada del TODO.md de la raiz."
+      ]
+    },
+    {
+      "id": "#T0025",
+      "estado": "pendiente",
+      "prioridad": "baja",
+      "tipo": "contenido",
+      "titulo": "Mapa (map/)",
+      "anotada": "2026-10-08",
+      "hecha": null,
+      "origen": "TODO.md",
+      "depende": [],
+      "notas": [
+        "El TODO.md original no decia mas que el titulo: falta definir el alcance."
+      ],
+      "descripcion": [
+        "Migrada del TODO.md de la raiz."
+      ]
+    },
+    {
+      "id": "#T0026",
+      "estado": "pendiente",
+      "prioridad": "baja",
+      "tipo": "contenido",
+      "titulo": "Actualizar la seccion LinkedIn Articles",
+      "anotada": "2026-10-08",
+      "hecha": null,
+      "origen": "TODO.md",
+      "depende": [],
+      "notas": [],
+      "descripcion": [
+        "Migrada del TODO.md de la raiz. Componente: components/LinkedInArticles.tsx, namespace articles."
+      ]
+    },
+    {
+      "id": "#T0027",
+      "estado": "pendiente",
+      "prioridad": "baja",
+      "tipo": "contenido",
+      "titulo": "Blog: capa de posts de soporte (reverse silo)",
+      "anotada": "2026-10-08",
+      "hecha": null,
+      "origen": "TODO.md",
+      "depende": [
+        "#T0007"
+      ],
+      "notas": [],
+      "descripcion": [
+        "Migrada del TODO.md de la raiz.",
+        "AGENTS.md ya describe el plan: el tier supporting existe en lib/service-page.ts y esta sin poblar. Local SEO es la pagina pilar natural."
+      ]
+    },
+    {
+      "id": "#T0028",
+      "estado": "bloqueada",
+      "prioridad": "alta",
+      "tipo": "infra",
+      "titulo": "Habilitar la generacion de imagenes y video por API (facturacion de Gemini)",
+      "anotada": "2026-10-08",
+      "hecha": null,
+      "origen": "usuario",
+      "depende": [],
+      "notas": [
+        "Bloqueada el 2026-10-08: GEMINI_API_KEY esta en el plan gratuito. Los modelos existen en la clave (gemini-3-pro-image, veo-3.1-fast-generate-preview) pero todos los de imagen responden 429 con limit: 0. Hay que activar la facturacion del proyecto en Google AI Studio, o generar los activos a mano (ChatGPT, Flow) y dejarlos en assets/.",
+        "Decision del usuario: es su cuenta y su gasto.",
+        "2026-10-09: APARCADA por el usuario para un analisis y rediseno posterior en la rama devel. Referencias: diez videos en designs/videos/<canal>/<id>/ (ignorados por git, con fotogramas en frames/) y designs/premium-scroll-animation-prompt.md. Conceptos que gustaron: el viaje continuo (i5cCiDREi2M), el despiece junto a caracteristicas (3GhfWOnp6Ok, VHJ3yA7aebw) y la lista con resaltado (OdXR1qeSXXE, 5IyBs6z0GKs).",
+        "2026-10-09: verificado en la documentacion de Google que imagen y video son solo de plan pago, y que la cuenta del usuario exige un prepago minimo de 25 EUR. Pendiente de su decision.",
+        "2026-10-09: el analisis y la consolidacion de referencias viven en #T0037."
+      ],
+      "descripcion": [
+        "Objetivo: poder generar las imagenes hiperrealistas y el video del encabezado sin salir del repo.",
+        "Verificacion: una llamada a gemini-3-pro-image devuelve una imagen."
+      ]
+    },
+    {
+      "id": "#T0029",
+      "estado": "pendiente",
+      "prioridad": "alta",
+      "tipo": "diseno",
+      "titulo": "Generar las imagenes hiperrealistas de las secciones",
+      "anotada": "2026-10-08",
+      "hecha": null,
+      "origen": "usuario",
+      "depende": [
+        "#T0028"
+      ],
+      "notas": [
+        "Prompts ya escritos en designs/premium-scroll-animation-prompt.md, seccion 8.",
+        "Las personas generadas por IA son ilustracion: no ponerles nombre, cargo ni cita, y no presentarlas como clientes reales (regla E-E-A-T de AGENTS.md).",
+        "2026-10-09: APARCADA por el usuario para un analisis y rediseno posterior en la rama devel. Referencias: diez videos en designs/videos/<canal>/<id>/ (ignorados por git, con fotogramas en frames/) y designs/premium-scroll-animation-prompt.md. Conceptos que gustaron: el viaje continuo (i5cCiDREi2M), el despiece junto a caracteristicas (3GhfWOnp6Ok, VHJ3yA7aebw) y la lista con resaltado (OdXR1qeSXXE, 5IyBs6z0GKs).",
+        "2026-10-09: el analisis y la consolidacion de referencias viven en #T0037."
+      ],
+      "descripcion": [
+        "Tres imagenes: encabezado de la home (16:9, calle de comercios al anochecer con uno solo iluminado), seccion de beneficios (4:5, sustituye a ai-benefits.webp) y encabezado de la pagina SEO Local (16:9).",
+        "Mas la variante vertical 9:16 del encabezado para movil.",
+        "Sin texto, logos ni interfaz dentro de la imagen.",
+        "Revision del usuario antes de subir nada al CDN."
+      ]
+    },
+    {
+      "id": "#T0030",
+      "estado": "pendiente",
+      "prioridad": "alta",
+      "tipo": "infra",
+      "titulo": "Script de secuencia de fotogramas: video a AVIF y WebP y subida al CDN",
+      "anotada": "2026-10-08",
+      "hecha": null,
+      "origen": "usuario",
+      "depende": [
+        "#T0029"
+      ],
+      "notas": [
+        "scripts/convert-and-map.mjs convierte imagenes sueltas; no despieza un video. Hace falta un script propio con su ledger, siguiendo las convenciones de scripts/.",
+        "2026-10-09: APARCADA por el usuario para un analisis y rediseno posterior en la rama devel. Referencias: diez videos en designs/videos/<canal>/<id>/ (ignorados por git, con fotogramas en frames/) y designs/premium-scroll-animation-prompt.md. Conceptos que gustaron: el viaje continuo (i5cCiDREi2M), el despiece junto a caracteristicas (3GhfWOnp6Ok, VHJ3yA7aebw) y la lista con resaltado (OdXR1qeSXXE, 5IyBs6z0GKs).",
+        "2026-10-09: el analisis y la consolidacion de referencias viven en #T0037."
+      ],
+      "descripcion": [
+        "Generar el video del encabezado desde la imagen fija (un plano continuo, 8 s, sin audio).",
+        "Extraer fotogramas con ffmpeg: unos 150 a 1600 px para escritorio y 75 a 800 px para movil.",
+        "Convertir a AVIF y WebP y subir a cdn.hlorenzoz.com/hlorenzoz.com/hero-sequence/{desktop,mobile}/ con cache inmutable.",
+        "Presupuesto: 6 MB escritorio, 2,5 MB movil."
+      ]
+    },
+    {
+      "id": "#T0031",
+      "estado": "pendiente",
+      "prioridad": "alta",
+      "tipo": "diseno",
+      "titulo": "Encabezado animado de la home: secuencia de imagenes ligada al scroll",
+      "anotada": "2026-10-08",
+      "hecha": null,
+      "origen": "usuario",
+      "depende": [
+        "#T0030",
+        "#T0008"
+      ],
+      "notas": [
+        "SOLO en el encabezado de la home, por pedido del usuario. El resto del sitio usa imagenes fijas.",
+        "Prompt de implementacion completo en designs/premium-scroll-animation-prompt.md, seccion 6.",
+        "El sitio es export estatico: componente cliente, sin servidor.",
+        "2026-10-09: APARCADA por el usuario para un analisis y rediseno posterior en la rama devel. Referencias: diez videos en designs/videos/<canal>/<id>/ (ignorados por git, con fotogramas en frames/) y designs/premium-scroll-animation-prompt.md. Conceptos que gustaron: el viaje continuo (i5cCiDREi2M), el despiece junto a caracteristicas (3GhfWOnp6Ok, VHJ3yA7aebw) y la lista con resaltado (OdXR1qeSXXE, 5IyBs6z0GKs).",
+        "2026-10-09: el analisis y la consolidacion de referencias viven en #T0037."
+      ],
+      "descripcion": [
+        "Canvas dentro de un bloque sticky; el primer fotograma es un <img> real con fetchpriority alto (es el LCP).",
+        "JavaScript propio sin librerias; dibujo en requestAnimationFrame solo cuando cambia el fotograma; scroll nativo.",
+        "Respaldos: prefers-reduced-motion, saveData y sin JavaScript muestran la imagen fija.",
+        "Verificacion: Lighthouse movil 90 o mas, CLS 0, y un test del respaldo de movimiento reducido. just verify."
+      ]
+    },
+    {
+      "id": "#T0032",
+      "estado": "pendiente",
+      "prioridad": "media",
+      "tipo": "contenido",
+      "titulo": "Subir las imagenes fijas al CDN y usarlas en las secciones",
+      "anotada": "2026-10-08",
+      "hecha": null,
+      "origen": "usuario",
+      "depende": [
+        "#T0029",
+        "#T0008"
+      ],
+      "notas": [
+        "2026-10-09: APARCADA por el usuario para un analisis y rediseno posterior en la rama devel. Referencias: diez videos en designs/videos/<canal>/<id>/ (ignorados por git, con fotogramas en frames/) y designs/premium-scroll-animation-prompt.md. Conceptos que gustaron: el viaje continuo (i5cCiDREi2M), el despiece junto a caracteristicas (3GhfWOnp6Ok, VHJ3yA7aebw) y la lista con resaltado (OdXR1qeSXXE, 5IyBs6z0GKs).",
+        "2026-10-09: la home sigue usando ai-benefits.webp con alt neutro (home.benefits.imageAlt). Es provisional.",
+        "2026-10-09: el analisis y la consolidacion de referencias viven en #T0037."
+      ],
+      "descripcion": [
+        "Originales en assets/hlorenzoz.com/ y just images-sync (genera WebP y AVIF y sube a R2).",
+        "Sustituir ai-benefits.webp en app/[locale]/page.tsx y revisar su alt (hoy: Automated Business Growth Dashboard).",
+        "Revisar og-image si cambia el mensaje de la marca."
+      ]
+    },
+    {
+      "id": "#T0033",
+      "estado": "pendiente",
+      "prioridad": "media",
+      "tipo": "contenido",
+      "titulo": "Revisar las cifras sin respaldo en la pagina del Recepcionista de Voz IA",
+      "anotada": "2026-10-09",
+      "hecha": null,
+      "origen": "claude",
+      "depende": [],
+      "notas": [
+        "Detectado al verificar out/ tras implementar el modelo de resultados. No se toco porque no era parte de ese cambio."
+      ],
+      "descripcion": [
+        "La pagina /services/ai-voice-receptionist/ publica Up to 90% First Call Resolution (beneficio y entregable), una cifra que no esta documentada en el repo.",
+        "AGENTS.md pide no publicar especificos no verificables (seccion E-E-A-T).",
+        "Decidir: documentar el origen de la cifra, o reescribir el beneficio sin numero.",
+        "Revisar tambien los tres testimonios de home.testimonials, que solo se usan en esa pagina."
+      ]
+    },
+    {
+      "id": "#T0034",
+      "estado": "pendiente",
+      "prioridad": "alta",
+      "tipo": "infra",
+      "titulo": "Publicar el modelo de resultados: push, merge y despliegue de feat/results-model",
+      "anotada": "2026-10-09",
+      "hecha": null,
+      "origen": "usuario",
+      "depende": [
+        "#T0035"
+      ],
+      "notas": [
+        "main despliega a produccion en cada push (Cloudflare Workers Builds). La rama tiene los commits del modelo nuevo y NO esta subida.",
+        "Decision del usuario: cambia precios publicados. No hacer push ni merge sin su orden expresa.",
+        "Hasta que esto se cierre, el sitio en produccion sigue con el modelo viejo y sus precios, aunque el dossier ya circula con los nuevos."
+      ],
+      "descripcion": [
+        "Subir la rama y abrir el pull request (la base por defecto del repo es devel; confirmar si va a devel o a main).",
+        "Si se publica en una fecha distinta del 2026-10-09, actualizar lastModified en lib/routes.ts (regla Freshness Dates) antes del merge.",
+        "Tras el despliegue: comprobar en produccion los precios, el marcador de impuesto, los 301 de las dos paginas retiradas y que /card/hector sigue vivo."
+      ]
+    },
+    {
+      "id": "#T0035",
+      "estado": "pendiente",
+      "prioridad": "alta",
+      "tipo": "infra",
+      "titulo": "Correr las pruebas de extremo a extremo en Firefox",
+      "anotada": "2026-10-09",
+      "hecha": null,
+      "origen": "claude",
+      "depende": [],
+      "notas": [
+        "El agente no pudo: Firefox no arranca dentro de su entorno aislado (sandbox_extension_issue_file_to_process, Operation not permitted). No es un fallo del sitio, pero quedo sin verificar.",
+        "Chromium, Mobile Chrome, WebKit y Mobile Safari pasan 16 de 16 sobre el export estatico."
+      ],
+      "descripcion": [
+        "Desde una terminal normal: just build-pages y despues just test-e2e-static.",
+        "Si se quiere solo Firefox: bun x playwright test --config playwright.static.config.ts --project=firefox."
+      ]
+    },
+    {
+      "id": "#T0036",
+      "estado": "pendiente",
+      "prioridad": "alta",
+      "tipo": "negocio",
+      "titulo": "Confirmar los datos y supuestos comerciales que el sitio y el dossier publican como provisionales",
+      "anotada": "2026-10-09",
+      "hecha": null,
+      "origen": "usuario",
+      "depende": [],
+      "notas": [
+        "Reune preguntas que estaban repartidas como notas en #T0001, #T0013, #T0022 y #T0023, todas ya cerradas.",
+        "Cada respuesta se aplica en UN lugar: lib/pricing.ts para cifras, messages y dossier/content para texto. Sitio y dossier leen la misma fuente."
+      ],
+      "descripcion": [
+        "Valores de cliente de la tabla del cliente que no llega: hoy 250, 750 y 2500 EUR al ano, de EJEMPLO (EXAMPLE_CUSTOMER_VALUES). Dar valores representativos o confirmar.",
+        "Precio por separado de contenido de autoridad y de backlinks y citaciones: hoy figuran como aparte. Con cifra, la comparacion Por separado es mas fuerte.",
+        "Plazo de resultados de la FAQ: se conserva el 30 a 60 dias que ya publicaba la pagina de SEO Local. Confirmar o corregir.",
+        "Hosting y mantenimiento de 49 EUR/mes en Desarrollo Web: se mantiene como opcional y sin descuento. Confirmar.",
+        "Como se cobra el 50% por adelantado en los servicios mensuales (el texto dice el primer mes). Afecta a terminos y a #T0015.",
+        "Si el 30% de descuento se mantiene mientras SEO Local siga contratado, o solo al contratar.",
+        "Registro del espanol: neutro (tu) en todo el sitio y el dossier, en lugar del voseo anterior. Confirmar."
+      ]
+    },
+    {
+      "id": "#T0037",
+      "estado": "pendiente",
+      "prioridad": "media",
+      "tipo": "diseno",
+      "titulo": "Analisis y rediseno del sitio en la rama devel: consolidar las referencias en una propuesta",
+      "anotada": "2026-10-09",
+      "hecha": null,
+      "origen": "usuario",
+      "depende": [],
+      "notas": [
+        "Aparcado por el usuario el 2026-10-09 hasta terminar la migracion al modelo de resultados.",
+        "Referencias: diez videos en designs/videos/<canal>/<id>/ (ignorados por git, con fotogramas en frames/) y designs/premium-scroll-animation-prompt.md.",
+        "Conceptos que gustaron: el viaje continuo donde la pagina entera es un recorrido (i5cCiDREi2M); el despiece de un objeto junto a sus caracteristicas (3GhfWOnp6Ok, VHJ3yA7aebw); la lista de nombres grandes con resaltado e imagen al pasar (OdXR1qeSXXE, 5IyBs6z0GKs); el estilo de escena 3D (6U3k4H346Es).",
+        "Propuesta del agente sin decidir: protagonista un pin de ubicacion de cristal azul; la camara lo atraviesa y llega a un comercio encendido.",
+        "Decisiones abiertas: animacion solo en el encabezado (pedido original) o tambien en la seccion de pilares; secuencia de imagenes frente a escena 3D real, que pesa mas y complica el objetivo de Lighthouse 90 en movil.",
+        "Encabeza a #T0028, #T0029, #T0030, #T0031 y #T0032: esas son la ejecucion, esta es el analisis previo."
+      ],
+      "descripcion": [
+        "Consolidar las diez referencias en un tablero dentro de designs/premium-scroll-animation-prompt.md: que se toma de cada una y para que seccion.",
+        "Entregar UNA propuesta concreta para aprobar o corregir, como HTML en designs/.",
+        "Trabajar en la rama devel."
+      ]
+    },
+    {
+      "id": "#T0038",
+      "estado": "pendiente",
+      "prioridad": "baja",
+      "tipo": "infra",
+      "titulo": "Decidir si Lighthouse sigue subiendo sus informes a almacenamiento publico",
+      "anotada": "2026-10-09",
+      "hecha": null,
+      "origen": "claude",
+      "depende": [],
+      "notas": [
+        "lighthouserc.json tiene upload.target: temporary-public-storage. Cada just test-lighthouse-static sube los informes a un servidor de Google, con capturas de las paginas.",
+        "El 2026-10-09 se subieron informes de la rama sin publicar, con los precios nuevos. Las direcciones no son adivinables y caducan solas."
+      ],
+      "descripcion": [
+        "Opciones: dejarlo como esta, o cambiar el destino a filesystem para que los informes queden en local.",
+        "Si se cambia, revisar que just verify y la documentacion de CLAUDE.md sigan siendo correctos."
+      ]
+    },
+    {
+      "id": "#T0039",
+      "estado": "hecha",
+      "prioridad": "media",
+      "tipo": "contenido",
+      "titulo": "Seccion /news/: listado y detalle data-driven con NewsArticle y BreadcrumbList",
+      "anotada": "2026-11-24",
+      "hecha": "2026-11-24",
+      "origen": "usuario",
+      "depende": [],
+      "notas": [
+        "No es la capa de posts de soporte de #T0027: news anuncia trabajos nuevos del portafolio, no alimenta un silo.",
+        "Con output export, un [slug] sin entradas rompe el build (Next 16.1.6, build/index.js:1374). Por eso se publica con una primera noticia: masajes-orisha (decision del usuario).",
+        "Verificado: just validate, build, E2E Chromium (Firefox y WebKit no instalados), revision SEO sin bloqueos, Lighthouse dentro de presupuesto. Footer y llms.txt incluidos."
+      ],
+      "descripcion": [
+        "Ruta /{locale}/news/ (listado) y /{locale}/news/{slug}/ (detalle), datos en un JSON como lib/portfolio-data.json.",
+        "Datos estructurados: NewsArticle en cada noticia, ItemList en el listado, BreadcrumbList en ambos.",
+        "Sitemap (xml y humano), llms.txt, navegacion y tests. Verificar con just validate y just verify.",
+        "Home: la seccion Latest Articles pasa a Latest LinkedIn Articles y encima va un carrusel horizontal de noticias."
+      ]
+    },
+    {
+      "id": "#T0040",
+      "estado": "en curso",
+      "prioridad": "media",
+      "tipo": "infra",
+      "titulo": "Comando /website:add-to-portfolio: imagenes avif/webp/jpeg a R2, pagina de portafolio y noticia",
+      "anotada": "2026-11-24",
+      "hecha": null,
+      "origen": "usuario",
+      "depende": [
+        "#T0039"
+      ],
+      "notas": [
+        "scripts/convert-and-map.mjs ya genera jpeg (mozjpeg q80, fondo blanco para PNG con transparencia). Las imagenes ya registradas en assets/mappings.json no tienen jpeg.",
+        "Comando escrito en .claude/commands/website/add-to-portfolio.md. Sin probar de punta a punta: necesita imagenes reales y subir a R2.",
+        "Movido a .claude/commands/website/add-to-portfolio.md (/website:add-to-portfolio). Sigue sin probar de punta a punta.",
+        "convert-and-map.mjs exporta TARGETS y solo ejecuta main() al lanzarse directamente; tests/scripts/convert-and-map.test.ts cubre jpeg y la transparencia."
+      ],
+      "descripcion": [
+        "Comando en .claude/commands/website/add-to-portfolio.md.",
+        "Pide lo que falte: path de imagenes, URL del sitio, llms.txt, contexto.",
+        "Optimiza y sube imagenes, crea el detalle del portafolio, revisa performance y datos estructurados, y crea la noticia en /news/."
+      ]
+    },
+    {
+      "id": "#T0041",
+      "estado": "hecha",
+      "prioridad": "media",
+      "tipo": "schema",
+      "titulo": "Breadcrumb visible en servicios, portafolio y noticias, a juego con su BreadcrumbList",
+      "anotada": "2026-11-24",
+      "hecha": "2026-11-24",
+      "origen": "usuario",
+      "depende": [],
+      "notas": [
+        "Todas esas paginas emiten BreadcrumbList en JSON-LD pero no muestran breadcrumb en pantalla. Google: Don't mark up content that is not visible to readers of the page (developers.google.com/search/docs/appearance/structured-data/sd-policies).",
+        "Verificado: visible y JSON-LD salen del mismo array (tests/seo/visible-breadcrumbs.test.tsx, 13 paginas x 2 idiomas), build y E2E Chromium."
+      ],
+      "descripcion": [
+        "Un componente nav aria-label=breadcrumb que pinte las mismas migas que ya genera el JSON-LD (breadcrumbTrail en lib/routes.ts).",
+        "Usarlo en todas las paginas que emiten BreadcrumbList: servicios (hub y 4), portafolio (listado y detalle), noticias (listado y detalle), legales y sitemap HTML. Verificar con just validate y just test-e2e-static."
+      ]
+    },
+    {
+      "id": "#T0042",
+      "estado": "hecha",
+      "prioridad": "media",
+      "tipo": "contenido",
+      "titulo": "Quitar los guiones de los textos del sitio y prohibirlos con un test",
+      "anotada": "2026-11-24",
+      "hecha": "2026-11-24",
+      "origen": "usuario",
+      "depende": [],
+      "notas": [
+        "Regla en AGENTS.md (No hyphens in site copy either), test tests/i18n/copy-hyphens.test.ts.",
+        "publishedPriceRange usa ' to ' (decision del usuario), asi que el priceRange del JSON-LD tambien cambio.",
+        "No se tocaron fechas lastModified: es un cambio tipografico."
+      ],
+      "descripcion": [
+        "Barrido de messages/en.json, messages/es.json, textos de lib/portfolio-data.json y public/llms.txt."
+      ]
+    },
+    {
+      "id": "#T0043",
+      "estado": "en curso",
+      "prioridad": "media",
+      "tipo": "contenido",
+      "titulo": "Agente linkedin-content-writer y comando /linkedin:create-content",
+      "anotada": "2026-11-24",
+      "hecha": null,
+      "origen": "usuario",
+      "depende": [],
+      "notas": [
+        "Escritos en .claude/agents/ y .claude/commands/linkedin/. Sin ejecutar de punta a punta todavia: se cierra tras el primer contenido real."
+      ],
+      "descripcion": [
+        "Posts, carruseles y articulos que enlazan (backlink) a paginas reales del sitio, con UTM en el enlace compartido."
+      ]
+    },
+    {
+      "id": "#T0044",
+      "estado": "pendiente",
+      "prioridad": "baja",
+      "tipo": "diseno",
+      "titulo": "Orden de encabezados: el h3 del footer sigue al h1 en paginas sin h2",
+      "anotada": "2026-11-24",
+      "hecha": null,
+      "origen": "claude",
+      "depende": [],
+      "notas": [
+        "Lighthouse heading-order falla en las noticias y en /en/services/ (footer h3 tras el h1). Existia antes de #T0039."
+      ],
+      "descripcion": [
+        "Opciones: que los titulos de columna del footer no sean h3 (p o h2 visualmente igual), o asegurar un h2 en cada pagina.",
+        "Verificar con Lighthouse heading-order en /en/news/<slug>/ y /en/services/."
+      ]
+    },
+    {
+      "id": "#T0045",
+      "estado": "pendiente",
+      "prioridad": "baja",
+      "tipo": "diseno",
+      "titulo": "Selector de idioma: el aria-label debe contener el texto visible",
+      "anotada": "2026-11-24",
+      "hecha": null,
+      "origen": "claude",
+      "depende": [],
+      "notas": [
+        "Lighthouse label-content-name-mismatch en paginas /es/: aria-label Open language menu no contiene el texto visible ES (en EN pasa por casualidad)."
+      ],
+      "descripcion": [
+        "button[data-testid=language-switcher]: incluir el idioma visible en el nombre accesible, p. ej. ES, open language menu.",
+        "Verificar con Lighthouse en /es/services/."
+      ]
+    },
+    {
+      "id": "#T0046",
+      "estado": "pendiente",
+      "prioridad": "media",
+      "tipo": "infra",
+      "titulo": "create-payment-links.mjs no ejecuta main() cuando la ruta del repo tiene espacios",
+      "anotada": "2026-11-24",
+      "hecha": null,
+      "origen": "claude",
+      "depende": [],
+      "notas": [
+        "scripts/create-payment-links.mjs:149 compara import.meta.url con file://${process.argv[1]}. import.meta.url codifica los espacios como %20 y argv no, asi que en esta ruta (Lorenzoz Agency) nunca coincide y el script termina sin hacer nada.",
+        "scripts/convert-and-map.mjs ya usa pathToFileURL(process.argv[1]).href, que si coincide."
+      ],
+      "descripcion": [
+        "Cambiar la guarda a pathToFileURL(process.argv[1]).href y comprobar que el script vuelve a ejecutarse (en modo prueba de Stripe)."
+      ]
+    },
+    {
+      "id": "#T0047",
+      "estado": "hecha",
+      "prioridad": "media",
+      "tipo": "contenido",
+      "titulo": "Portafolio: anadir gerp-dj y su noticia",
+      "anotada": "2026-11-24",
+      "hecha": "2026-11-24",
+      "origen": "usuario",
+      "depende": [],
+      "notas": [
+        "Imagenes ya optimizadas y subidas a cdn.hlorenzoz.com/hlorenzoz.com/portfolio/gerp-dj/ (cover, screencapture-home, -bio, -gallery).",
+        "Imagenes subidas a R2 (cover, screencapture-home/bio/gallery en webp, avif y jpeg). Cuenta de Cloudflare verificada contra un objeto ya publicado.",
+        "Verificado: just validate, build, JSON-LD y metadatos en/es (verificador independiente), Lighthouse movil dentro de presupuesto (a11y 0.96 a 0.98, BP 1, SEO 1).",
+        "Corregido tras verificar: la galeria tiene videos de actuaciones y de montajes en casa (no solo actuaciones); el dossier se enlaza desde contratacion.",
+        "BLOQUEADA por decision del usuario: la captura de gerp-dj.com/bio/ muestra el marcador del cliente [Pendiente: citas de prensa reales con medio y fecha]. No se publica hasta que el cliente lo rellene y haya una captura nueva.",
+        "Al recapturar: subir con nombre nuevo (p. ej. screencapture-bio-v2.jpg). El pipeline no sobrescribe fuentes ya registradas en assets/mappings.json, y el CDN no debe sobrescribirse. Los cambios de datos, textos y tests estan sin commit en la rama feat/news-breadcrumbs-content-commands.",
+        "2026-11-24: anadidas las diapositivas speed (PageSpeed Insights movil 99/100/100/100) y data (Rich Results Test: Breadcrumbs, Local business y Organisation validos) con enlaces a las herramientas, texto sobre rendimiento, UX y conversiones y sobre datos estructurados y busqueda semantica, y el resultado en la noticia y en llms.txt. El guard de enlaces ahora solo prohibe enlaces al propio dominio del cliente.",
+        "2026-11-24: bloqueo resuelto. La nueva captura de la bio ya no muestra el marcador del cliente y sustituye a la anterior (screencapture-bio-v2), y la captura de Rich Results se recorto para quitar el avatar de la cuenta (gerp-dj-structured-data-v2).",
+        "Cerrada tras verificar: just validate (974 tests), build, JSON-LD en/es, Lighthouse movil /en y /es portfolio/gerp-dj: a11y 0.96, BP 1, SEO 1 (los fallos restantes son de componentes compartidos, ver #T0045 y #T0048)."
+      ],
+      "descripcion": [
+        "Anadir gerp-dj a lib/portfolio-data.json y messages/{en,es}.json, publicar la noticia gerp-dj-added-to-portfolio en lib/news-data.json, actualizar public/llms.txt y las fechas de lib/routes.ts.",
+        "Verificar con just validate, just build-pages, Lighthouse y JSON-LD de las cuatro paginas."
+      ]
+    },
+    {
+      "id": "#T0048",
+      "estado": "pendiente",
+      "prioridad": "media",
+      "tipo": "diseno",
+      "titulo": "Carrusel movil del portafolio: botones sin nombre accesible y puntos demasiado pequenos",
+      "anotada": "2026-11-24",
+      "hecha": null,
+      "origen": "claude",
+      "depende": [],
+      "notas": [
+        "Lighthouse movil en /en/portfolio/masajes-orisha/: accesibilidad 0.88, por debajo del presupuesto 0.95. button-name en las flechas (div.lg:hidden button.size-11) y en los puntos (button.h-2); target-size en los puntos (24x8 y 8x8 px).",
+        "No lo detecta just verify porque lighthouserc.json no incluye esa URL; afecta a toda ficha que renderice el carrusel movil.",
+        "Tambien en /en/portfolio/vicron-lopez/ (a11y 0.88, 2026-11-24). Mismo informe: color-contrast en p.text-sm text-gray-400 (#99a1af sobre blanco, 2.6:1) dentro de la ficha, y label-content-name-mismatch en el selector de seccion (aria-label Select section: ...)."
+      ],
+      "descripcion": [
+        "Dar aria-label a flechas y puntos (con el numero de slide) y un area tactil de al menos 24x24.",
+        "Verificar con Lighthouse en /en/portfolio/masajes-orisha/."
+      ]
+    },
+    {
+      "id": "#T0049",
+      "estado": "hecha",
+      "prioridad": "media",
+      "tipo": "contenido",
+      "titulo": "Seccion Sobre el negocio en cada ficha Live Site del portafolio",
+      "anotada": "2026-11-24",
+      "hecha": "2026-11-24",
+      "origen": "usuario",
+      "depende": [],
+      "notas": [
+        "Solo fichas type live (lorenzoz-agency, malaga-event-gear, vicron-lopez, masajes-orisha, gerp-dj); las demos quedan fuera por decision del usuario.",
+        "Hechos sacados de la web del cliente y su llms.txt; los de la agencia, de AGENTS.md.",
+        "Verificado: just validate (992 tests), build, E2E portfolio en Chromium (10). Lighthouse a11y: la seccion nueva no aparece en ningun fallo; los fallos restantes son previos (#T0048)."
+      ],
+      "descripcion": [
+        "Nueva seccion en app/[locale]/portfolio/[slug]/page.tsx, solo para type live, con copia en messages (en, es) para las 5 fichas live.",
+        "/website:add-to-portfolio la exige en cada ficha nueva.",
+        "Verificar con just validate, build y E2E."
+      ]
+    },
+    {
+      "id": "#T0050",
+      "estado": "hecha",
+      "prioridad": "alta",
+      "tipo": "schema",
+      "titulo": "JSON-LD: fechas con hora y zona horaria y about como objeto tipado, con guarda en build",
+      "anotada": "2026-11-24",
+      "hecha": "2026-11-24",
+      "origen": "usuario",
+      "depende": [],
+      "notas": [
+        "Rich Results Test en /en/news/gerp-dj-added-to-portfolio/: Invalid datetime value y missing a time zone en datePublished y dateModified; about leido como Thing con la URL como nombre.",
+        "Agentes globales seo-auditor y seo-fixer (~/.claude/agents, fuera del repo) actualizados con la regla el 2026-11-24.",
+        "Verificado: just validate (1024 tests), build, escaneo de las 51 paginas de out/: 20 fechas JSON-LD, 0 sin zona horaria; 4 about, 0 como texto; OpenGraph con zona. Falta el deploy y repasar la URL en Rich Results Test."
+      ],
+      "descripcion": [
+        "Helper unico schemaDateTime (Europe/Madrid, con horario de verano) en los builders y en OpenGraph; about tipado.",
+        "JsonLd valida y falla el build si vuelve a ocurrir. Regla en AGENTS.md y en /website:add-to-portfolio.",
+        "Verificar con just validate, build y escaneo de todo out/."
+      ]
+    },
+    {
+      "id": "#T0051",
+      "estado": "en curso",
+      "prioridad": "alta",
+      "tipo": "infra",
+      "titulo": "Core Web Vitals: corregir lo que lastra el rendimiento movil en todas las paginas",
+      "anotada": "2026-11-24",
+      "hecha": null,
+      "origen": "usuario",
+      "depende": [],
+      "notas": [
+        "PSI movil en produccion, /en/news/gerp-dj-added-to-portfolio/: Performance 83, FCP 1.7 s, LCP 3.9 s, Speed Index 5.1 s, TBT 20 ms, CLS 0. Banner de consentimiento de Cloudflare Zaraz visible en la captura.",
+        "Agente global cwv-optimizer creado el 2026-11-24 (~/.claude/agents/cwv-optimizer.md).",
+        "2026-11-25: hecho el primer arreglo (solo Inter en next/font; Noto Serif y Manrope se precargaban en cada pagina sin uso). El agente se corto dos veces por errores de API (reposo y red) antes de terminar: faltan el resto de hipotesis (FadeInImage y animaciones sobre el LCP, Zaraz, CSS bloqueante, JS sin usar), los asserts de rendimiento en lighthouserc.json y la tabla antes/despues."
+      ],
+      "descripcion": [
+        "Diagnostico con el agente cwv-optimizer (mediana de 3 ejecuciones, produccion y build local), arreglo en los componentes compartidos, guardas en tests y asserts de rendimiento en lighthouserc.json.",
+        "Verificar con just validate, build y Lighthouse antes y despues."
+      ]
+    }
+  ]
+}

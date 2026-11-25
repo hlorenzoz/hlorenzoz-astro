@@ -1,0 +1,18 @@
+---
+/**
+ * Renders a single JSON-LD structured-data block, serialized at build time.
+ *
+ * Validates before serializing: a date without a time zone or a bare-string
+ * `about` throws here, failing the build instead of reaching Search Console.
+ */
+import { assertSchemaInvariants } from '@/lib/schema/datetime';
+
+interface Props {
+    data: object;
+}
+
+const { data } = Astro.props;
+assertSchemaInvariants(data);
+---
+
+<script is:inline type="application/ld+json" set:html={JSON.stringify(data)} />

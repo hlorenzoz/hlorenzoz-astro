@@ -1,0 +1,528 @@
+# Project Agents & Skills
+
+This document tracks the specialized agents (skills) active in this project and their core responsibilities.
+
+## Project Focus
+
+Lorenzoz Agency's bilingual (English / Spanish) marketing site.
+
+This section is the **single versioned source of truth** for the agency's commercial
+facts: positioning, service lines, value ladder, and prices. Copy for the site, schema,
+llms.txt, proposals, and any generated content must be written against it, not against
+memory or against whatever an older page happens to say. The upstream brief it was
+transcribed from is `.agents/context/# Lorenzoz Agency - Website Development .md`.
+
+### Positioning
+
+Lorenzoz Agency builds solutions for local businesses of any size. The mission is to
+create the conditions for clients to generate 1M+ in revenue per year.
+
+The agency sells results, not services: new customers and more business for its clients.
+Everything it offers is organised around that one outcome (see "Agency Services").
+
+The agency has several years of experience delivering this work and the results clients
+hired them for. The promise is a division of labour: the client focuses on delivering
+their own service well, while the agency owns customer acquisition and follow-up for
+their business.
+
+Two notes for anyone writing copy from this:
+
+- "Several years of experience" is the claim the agency makes about itself. Do not
+  inflate it into a specific number of years, a client count, or a revenue figure that
+  is not documented somewhere in this repo. Under Google's E-E-A-T guidance an
+  unverifiable specific is worse than an honest general (see the E-E-A-T section below).
+- The 1M+ figure is a target the agency works toward, not a guarantee or a typical
+  result. Write it as an objective, never as a promise.
+
+### Target markets
+
+The agency serves clients worldwide, but focuses primarily on eight English- and
+Spanish-speaking markets:
+
+- Australia
+- Canada
+- Costa Rica
+- Ireland
+- New Zealand
+- Spain
+- United Kingdom
+- United States
+
+The agency is an **online provider**: physically registered in Xinzo de Limia, but
+delivering worldwide, focused on these countries. So the two facts sit in different
+schema.org fields, and this table is the source of truth for both:
+
+- **`address`** (`lib/site-config.ts`) stays the physical registration: Xinzo de Limia,
+  Ourense, Spain. It is where the business IS, not where it sells.
+- **`ORGANIZATION.areaServed`** is exactly this list, emitted as schema.org `Country`
+  entities. It is where the business DELIVERS. Keep the two in step: editing this table
+  means editing `areaServed`.
+
+Do not collapse the two. The address is one town; the served area is eight countries.
+Putting the town into `areaServed`, or a country into `address`, misstates the business.
+
+### Agency Services
+
+The agency does not sell a menu of services. It sells ONE outcome, new customers for a
+local business, through one core offer, with a few optional services around it.
+
+**Core offer: Local SEO.** Its purpose is to rank a local business at the top of Google
+for the searches its customers make, and to have it recommended by AI engines. It is one
+monthly plan made of four pillars, and all four are included:
+
+- **Authority content**: keyword research, content clusters, content gap analysis and
+  updates to existing content, to establish the business as an authority.
+- **Backlinks and citations**: links from trusted directories and citation websites,
+  strengthening local authority signals across Google and AI engines.
+- **Authority on Google and AI**: the business and its website established as the
+  reference that gets recommended in Google results and AI answers.
+- **Review management**: tracking review growth over time, monitoring customer responses
+  and positive and negative feedback trends, and branded feedback links.
+
+Review management used to be sold as its own service ("Review Management" / "Reputation
+Management"). It is now a pillar of Local SEO and is NOT sold separately.
+
+**Optional services**, each available on its own or alongside Local SEO:
+
+- **Website Development**: high-conversion websites and PWAs.
+- **AI Voice Receptionist**: inbound-call receptionists that answer FAQs and book appointments 24/7.
+- **Software Development / Mobile App Development**: full-stack products (Flutter + backend) across all devices and screens.
+
+**Paused: Digital Business Card.** Not offered since 2026-10-08. It is paused, not
+retired: do not delete its code or copy, and do not advertise it. See "Where the prices
+live in code" for how it is parked.
+
+Two notes for anyone writing copy from this:
+
+- **The first position on Google is a goal, never a guarantee.** Nobody controls
+  Google's ranking, so a promised position is a claim the agency cannot keep. Write what
+  the work aims at, never the result as a certainty. This is the same rule as the 1M+
+  figure above.
+- **Do not single out happy customers for review requests.** Asking only satisfied
+  customers for a review (review gating) is against Google's policies. Feedback links go
+  to every customer.
+
+### Value ladder
+
+| Offer | Role | List price | Alongside Local SEO |
+| :--- | :--- | :--- | :--- |
+| Local SEO | core | 750 EUR / month | n/a |
+| Website Development | optional | 2500 EUR, one-off | 1750 EUR |
+| + hosting and maintenance | optional add-on | 49 EUR / month | not discounted |
+| AI Voice Receptionist | optional | 350 EUR / month | 245 EUR / month |
+| Software / Mobile App Development | optional | from 20000 EUR, one-off | from 14000 EUR |
+| Digital Business Card | paused | not offered | n/a |
+
+Terms that apply to every row: **50% is paid up front** (the first month), to cover the
+cost of the tools and services the work depends on, and **no price includes VAT**.
+
+Five details that are easy to lose when this table is summarised, and each of which is a
+billing dispute if it is:
+
+1. **There is no free trial.** The 15-day trial is gone, replaced by the up-front
+   payment. If you find a trial claimed anywhere in the repo or in generated copy, it is
+   stale and wrong.
+2. **The 30% discount exists only alongside Local SEO.** An optional service bought on
+   its own costs its list price. The discount is not a limited-time offer and must never
+   be written as one.
+3. **20000 EUR is a floor, not a price and not a ceiling.** Software is scoped per
+   project; the figure is where quotes start. Publishing it as "20000 EUR" understates
+   what most clients will pay.
+4. **Every published price is before tax.** Each figure carries a "+ VAT" / "+ IVA"
+   marker beside it, in the copy and in the dossier, and the structured data declares
+   `valueAddedTaxIncluded: false`. A bare figure reads as the final price.
+5. **Review management has no price of its own.** It is inside the 750 EUR. The only
+   place the old 897 and 297 figures may appear is the "bought separately" comparison,
+   where they are stated as the agency's former list prices.
+
+### Where the prices live in code
+
+`lib/pricing.ts` is the executable form of the table above, and the only place a figure
+is written down. The visible copy, the JSON-LD offers, `public/llms.txt`,
+`ORGANIZATION.priceRange` and the commercial dossier (`scripts/build-dossier.mjs`) all
+derive from it.
+
+Changing a price means editing `PRICING` and nothing else. That is deliberate: the same
+number used to be typed into `home.pricing.tiers` (en + es), into six
+`services.*.hero.price` strings (en + es), into llms.txt and into `priceRange`, and
+`offerCatalog()` re-derived it by running a regex over the display string. They drifted,
+and the site advertised prices the agency had stopped charging. `messages/*.json` now
+carries `{price}`, `{bundlePrice}`, `{discount}` and `{monthly}` placeholders instead of
+numbers.
+
+The same file holds the terms, so they cannot drift either: `BUNDLE_DISCOUNT` (30%),
+`UPFRONT_SHARE` (50%), `FORMER_STANDALONE` (the former list prices used in the "bought
+separately" comparison) and `EXAMPLE_CUSTOMER_VALUES` (the illustrative inputs of the
+"cost of a customer who never arrives" table, which are examples and must be labelled as
+such wherever they are shown).
+
+The paused Digital Business Card lives in `PAUSED_PRICING`, outside `PRICING`, so nothing
+that iterates the offers can publish it. Its route is commented out in `lib/routes.ts`
+and its page sits in the private folder `app/[locale]/services/_digital-business-card/`,
+which Next.js does not route. Bringing it back is task #T0021.
+
+### What this site currently implements
+
+Four service pages: **Local SEO** and the three optional services (**Website
+Development**, **AI Voice Receptionist**, **Software Development**). The home page is
+built around Local SEO: its four pillars, the cost comparison, one core pricing card and
+the optional services below it.
+
+`/services/reputation-review-management/` and `/services/digital-business-card/` no
+longer exist; both redirect permanently (`public/_redirects`). `/card/hector` is Hector's
+own digital card, a page and not the service, and stays.
+
+## Active Skills
+
+This file is documentation, not a loader. What the agent actually sees is
+governed by the symlinks in `.claude/skills/` (managed by the skills CLI via
+`skills-lock.json`), NOT by this table. For each symlinked skill, only its
+`name` + `description` is loaded into context at session start (progressive
+disclosure); the full `SKILL.md` body loads on demand, only when that skill is
+invoked.
+
+45 skills are active (symlinked + tracked), grouped by source:
+
+| Source | Count | Skills |
+| :--- | :--- | :--- |
+| `coreyhaines31/marketingskills` | 41 | ad-creative, ads, ai-seo, analytics, cold-email, community-marketing, competitor-profiling, competitors, content-strategy, copy-editing, copywriting, cro, customer-research, emails, free-tools, image, launch, lead-magnets, marketing-council, marketing-ideas, marketing-loops, marketing-plan, marketing-psychology, offers, onboarding, paywalls, popups, pricing, product-marketing, programmatic-seo, prospecting, public-relations, referrals, revops, sales-enablement, schema, seo-audit, signup, site-architecture, sms, social |
+| `chromedevtools/chrome-devtools-mcp` | 1 | chrome-devtools |
+| `zubair-trabzada/geo-seo-claude` | 1 | geo-llmstxt |
+| `bergside/awesome-design-skills` | 1 | glassmorphism |
+| `vercel-labs/skills` | 1 | find-skills |
+
+## Site Architecture: Core 30 and the Reverse Silo
+
+Two names, one tree. **Core 30** is the local-business version: the website's URL hierarchy
+mirrors the client's Google Business Profile (GBP) hierarchy exactly, so Google can align the
+two and build topical relevance. The **Reverse Silo** (PageOptimizer Pro's interlinking model)
+is the same shape stated as pure internal linking, with no GBP naming or NAP: supporting posts
+chain laterally to their adjacent siblings and all funnel link equity DOWN into a target
+(pillar) page that never links back out. A Core 30 tree IS a reverse silo nested two or three
+levels deep.
+
+This distinction matters because this repo uses the tree in a way the GBP framing does not
+cover, spelled out under "How this applies to hlorenzoz.com" below.
+
+This section is the **single versioned source of truth** for the methodology. Do not copy the
+tree below into other files; link to this section instead.
+
+Three globally installed artifacts implement it (they are NOT in this repo; see the layout note
+above). Each is client-agnostic and reads project facts from the open repo when auditing:
+
+| Concern | Command | Sub-agent | Persists under |
+| :--- | :--- | :--- | :--- |
+| GBP URL tree + NAP | `/local-seo:website-structure-review` | `gbp-site-architect` | `gbp-structure/{business-slug}` |
+| Core 30 supporting content | `/local-seo:create-supporting-content` | `local-content-writer` | `gbp-content/{business-slug}/{page-slug}` |
+| Reverse-silo interlinking (content) | `/seo:reverse-silo-review`, `/local-seo:blog-posts-structure-review` | `reverse-silo-architect` | `reverse-silo/{business-slug}` |
+
+Each command is a thin wrapper: it resolves the mode and delegates to its sub-agent, which holds
+the methodology. Every one of those agents must keep `mcp__plugin_engram_engram__mem_save` in its
+`tools:` list, since the audit is persisted under the topic key above; drop it and the
+persistence instruction becomes dead code. The `{slug}` is always derived from the OPEN project,
+never carried over from another client.
+
+Use `gbp-site-architect` / `/local-seo:website-structure-review` for the GBP URL tree and NAP
+concerns; use `reverse-silo-architect` / `/seo:reverse-silo-review` for the post-level
+interlinking (down-link to target, lateral chain to adjacent siblings, target is an equity sink).
+
+### The structure
+
+```
+Homepage - GBP Landing Page            "GBP Primary Category City Name"
+|
++-- GBP Category 1                     "GBP Secondary Category / Service City Name"
+|   +-- GBP Service 3
+|   |   +-- Supporting Content 1       "People Also Ask City Name"
+|   |   +-- Supporting Content 2       "People Also Ask City Name"
+|   +-- GBP Service 4
+|   +-- GBP Service 5
+|
++-- GBP Category 2                     "GBP Secondary Category / Service City Name"
+|   +-- GBP Service 6
+|   +-- GBP Service 7
+|   +-- GBP Service 8
+|
++-- GBP Category 3                     "GBP Secondary Category / Service City Name"
+|   +-- GBP Service 9
+|   +-- GBP Service 10
+|   +-- GBP Service 11
+|
++-- Critical GBP Service 1             (linked directly from the homepage)
++-- Critical GBP Service 2             (linked directly from the homepage)
+|
++-- Locations                          "GBP Primary Category Geo Landmark"
+    +-- Location Page 1
+    +-- Location Page 2
+    +-- Location Page 3
+```
+
+**Homepage** targets the primary GBP category plus the city: "Plumber Houston", "Air
+Conditioning Repair Denver". It is the main ranking target.
+
+**Category pages** cover each secondary GBP category ("Gas Line Installation Service",
+"Drain Cleaning Service"). These are comprehensive pages explaining the full scope of the
+category, not thin one-paragraph pages.
+
+**Service pages** cover each individual service listed under that category on the GBP.
+Under "Drain Cleaning Service": Emergency Drain Cleaning, Main Sewer Line Cleaning,
+Kitchen Drain Cleaning, Bathroom Drain Cleaning, Storm Drain Cleaning.
+
+| Page type | Naming pattern |
+| :--- | :--- |
+| Homepage | GBP Primary Category + City Name |
+| Category page | GBP Secondary Category + City Name |
+| Service page | GBP Service + City Name |
+| Location page | GBP Primary Category + Geo Landmark |
+| Supporting content | People Also Ask question + City Name |
+
+### Internal linking mirror
+
+- **Homepage links to**: all category pages, plus one or two critical services.
+- **Category pages link to**: the homepage (breadcrumb) and all their service pages.
+- **Service pages link to**: their parent category page and the homepage (breadcrumb), AND
+  every supporting-content page beneath them.
+- **Supporting content links to**: its parent service page and the homepage (breadcrumb).
+
+That third rule used to stop at the breadcrumb, and the code matched: a category emitted a
+list of its services and a service emitted nothing, so every supporting post had an inbound
+internal link from precisely nowhere. The mirror is only a mirror if it runs both ways at
+every tier. `KIND_TO_CHILD_TIER` in `lib/service-page.ts` encodes it, and
+`ContentPage.children()` gives the page component the links to render.
+
+Target volume: 1 homepage, 5-10 category pages, 20-30+ service pages.
+
+### When to use which command
+
+For a CLIENT engagement (a real local business with a GBP):
+
+- `/local-seo:website-structure-review` - starting an engagement, auditing an existing client
+  site against Core 30, or confirming where a service or location page belongs, before any
+  content work. Pass a URL or business name.
+- `/local-seo:create-supporting-content` - writing the supporting posts once the tree exists.
+
+For THIS repo's own content (see "How this applies to hlorenzoz.com"):
+
+- `/seo:reverse-silo-review` or `/local-seo:blog-posts-structure-review` - define the silo from a
+  keyword list, or audit the current interlinking. Run with no argument to audit this repo.
+
+### When NOT to use them
+
+| Need | Use instead |
+| :--- | :--- |
+| Copy for a single page | `copywriting` skill |
+| Technical SEO audit (crawl, speed, meta) | `seo-audit` skill |
+| Generating many pages from a template | `programmatic-seo` skill |
+| Structured data / JSON-LD | `schema` skill |
+
+### How this applies to hlorenzoz.com
+
+hlorenzoz.com is NOT a local business. It is a global agency (work already live in Spain and
+Costa Rica) with no single service area, and it does NOT currently have a Google Business Profile.
+So Core 30 does not apply here in its literal GBP form: there is no primary-category-plus-city
+homepage, no city-name naming pattern (`<service>-<city>`), no `location` tier.
+
+What DOES apply is the tree's SHAPE. The plan is to grow an on-site content network as a **reverse
+silo** (the POP model above): pillar pages that must rank, supporting posts chained laterally and
+funnelling equity down into them. This is built gradually, and a GBP will be added eventually, at
+which point the Core 30 naming layers on top of a structure that already has the right shape.
+
+Current state, so an audit reports against reality rather than an assumed GBP tree:
+
+- Route tiers today: `home`, `category` (one hub, `/services`), `service` (four pages), `page`,
+  `legal`. Each service page shares one slug identity across `lib/routes.ts`,
+  `messages/{en,es}.json`'s `services.*` namespace, and its own
+  `app/[locale]/services/<slug>/page.tsx`; there is no string-matched duplication.
+- **There is no blog / posts tier yet.** The `supporting` child tier that
+  `KIND_TO_CHILD_TIER` (`lib/service-page.ts`) already points services at is UNPOPULATED: the
+  reverse-silo scaffolding exists in code, the posts do not. That layer is the future content
+  network described above, added post by post.
+- The interlinking mirror (services down-link to their category, categories to the homepage) is
+  already the reverse silo's down-link rule at the tiers that exist. Extending it to a `supporting`
+  post layer is the next step, not a rewrite.
+
+So: running `/seo:reverse-silo-review` in repo mode today is expected to report the silos as
+having no supporting layer yet, and `/local-seo:website-structure-review` is expected to report a
+missing `location` tier. Both gaps reflect the site's current scope, not a bug in the command.
+Treat the service pages as conversion landing pages for now; treat the reverse silo as the plan
+the content is built toward.
+
+## Skills Location
+
+All skills live under `.agents/skills/`. The skills CLI exposes each tracked
+skill to the agent via a symlink in `.claude/skills/` pointing to
+`.agents/skills/<name>`, and it rewrites that symlink set on every
+`npx skills update`. Do NOT hand-create symlinks: the next update run rewrites
+the set and removes them. Adopt a skill into the lock instead
+(`npx skills add <owner/repo>`).
+
+`.agents/skills/`, `.claude/skills/`, and `.claude/settings.*` are gitignored: they are
+local setup, rewritten by the skills CLI.
+
+The SEO and Local-SEO agents and slash commands are INSTALLED GLOBALLY, not committed here:
+`~/.claude/agents/` (`seo-auditor`, `seo-fixer`, `gbp-site-architect`, `local-content-writer`,
+`reverse-silo-architect`, `cwv-optimizer` for Core Web Vitals and Lighthouse performance) and `~/.claude/commands/` (`/seo:review`, `/seo:fix`,
+`/seo:reverse-silo-review`, `/local-seo:website-structure-review`,
+`/local-seo:create-supporting-content`, `/local-seo:blog-posts-structure-review`). They were
+moved out of the repo so one copy serves every client project instead of being re-forked per
+site. The trade-off is real and worth stating: they do NOT survive a fresh clone, so a new
+machine has to install them separately, and a change to one affects every project at once.
+
+The opposite holds for what is specific to THIS site, which IS committed here:
+
+| Command | What it does | Runs |
+| :--- | :--- | :--- |
+| `/website:add-to-portfolio` (`.claude/commands/website/`) | New portfolio work: images to the CDN, bilingual detail page, Lighthouse and JSON-LD checks, plus its `/news/` post | inline |
+| `/linkedin:create-content` (`.claude/commands/linkedin/`) | LinkedIn post, carousel or article that backlinks to a page of this site; drafts are saved under `.agents/content/linkedin/` | agent `linkedin-content-writer` (`.claude/agents/`) |
+| `/upwork:create-proposal` (`.claude/commands/upwork/`) | Upwork proposals mapped to the agency's services | inline |
+
+`.agents/context/` is split by scope, and the distinction is load-bearing:
+
+- `~/.agents/context/` - **global reference material**, identical for every project. Google's
+  Search Quality Rater Guidelines PDF lives here, alongside the global agents that read it.
+- `.agents/context/` (this repo) - **per-project source material**: Search Console exports,
+  the agency brief, client documents. Committed deliberately, except
+  `.agents/context/**/*.png`. Commercial or SEO source documents dropped in there must be
+  committed, or the next clone reasons from nothing.
+
+`.agents/data/` holds the project's working data, also committed. Today that is one file,
+`.agents/data/TODO.json`: the single backlog for this repo. Its schema and the rules for
+keeping it current are in `CLAUDE.md` under "Task tracking".
+
+## Content Conventions
+
+### E-E-A-T: the official source is on disk (MANDATORY)
+
+`~/.agents/context/google-eeat-guideline/searchqualityevaluatorguidelines.pdf` is Google's
+own **Search Quality Rater Guidelines** (2025 edition, 182 pages). It is the canonical
+definition of E-E-A-T and of what Google rates Lowest. It sits in the GLOBAL context store,
+not in this repo, because every client project reasons from the same copy.
+
+**On any E-E-A-T question, read that PDF before answering.** Not a blog post, not training
+data, not this file. Summaries of E-E-A-T are wrong often enough to matter, and a wrong
+answer here shapes every page produced. If the PDF and any other source disagree, the PDF
+wins, including when the other source is `AGENTS.md` or
+`~/.claude/agents/local-content-writer.md`.
+
+Sections worth going to directly:
+
+| Question | Section |
+| :--- | :--- |
+| What E-E-A-T actually means | 3.4 (p. 26) |
+| Reputation, and what to do when there is none | 3.3.4 - 3.3.5 (p. 25) |
+| Scaled content abuse, AI-generated content | 4.6.5 - 4.6.6 (p. 42) |
+| Copied or paraphrased content | 4.6.6 - 4.6.7 (p. 42-44) |
+| What Lowest quality requires | 4.0 - 4.1 (p. 29-31) |
+| Thin information about the business | 5.5 - 5.6 (p. 63) |
+| What High quality looks like | 7.0 - 7.3 (p. 71-73) |
+
+Three points from it that are routinely stated wrong elsewhere, so do not restate them
+from memory:
+
+1. **Trust is the centre of E-E-A-T, not a fourth peer.** Experience, Expertise and
+   Authoritativeness exist to support the assessment of Trust. "If a page is untrustworthy
+   for any reason, it has low E-E-A-T."
+2. **Authoritativeness means being a go-to source for the topic**, not linking out to
+   authoritative sources. Google's example: a local business is the authoritative source
+   for information about itself.
+3. **Missing reputation is not a negative signal for a small business.** "This is not
+   indicative of high or low quality", and a page "can still receive a High rating without
+   reputation information."
+
+### Freshness Dates (MANDATORY)
+
+EVERY time a page or post's content is created or modified, update its modification date in
+**every** place that carries one, in the same change. Never leave one behind.
+
+**Why this is not bookkeeping.** Freshness is a Trust signal under Google's E-E-A-T
+guidance: a page that states when it was last reviewed is making a checkable claim about
+its own currency, and a stale or absent date on advice that changes over time (pricing,
+regulations, platform behaviour) reads as content nobody maintains. Dates that disagree
+across the sitemap, the structured data, and the visible page are worse than no dates at
+all, because they show the maintenance is not real. One change, every place, same value.
+
+The places, and the order to touch them:
+
+1. **The route's `lastModified` field** (ISO `YYYY-MM-DD`). This is the ONLY place the last
+   content change is recorded. Both `/sitemap.xml` and the human sitemap at
+   `/{locale}/sitemap/` read it, and `defineContentPage` derives the page's schema
+   `dateModified` and OpenGraph `modifiedTime` from it, so one edit updates all four.
+   Which file holds it depends on where the route comes from:
+   - **Hand-written pages** (home, legal, the digital card): `STATIC_ROUTES` in
+     `lib/routes.ts`.
+   - **Data-derived pages**: the data source itself, because that is where the route is
+     defined. Portfolio detail pages live in `lib/portfolio-data.json`, one
+     `lastModified` per entry, alongside the content it describes.
+
+   The rule of thumb: the date lives next to the content, never in a second list that has
+   to be kept in step with it. A content page config has no `dateModified` field at all,
+   deliberately: it used to, and one fact in two files kept in step by this very procedure
+   is what let the schema date drift from the sitemap date.
+2. **The visible byline** - `components/ArticleByline.tsx` renders the same date in a
+   `<time dateTime>` element. Readers and crawlers must see the same value.
+3. **`datePublished`** - set once, on creation. NEVER bump it on an edit. Rewriting the
+   publication date of an existing page to look fresh is a trust problem, not an SEO tactic.
+   This one genuinely lives on the page config: the registry has no equivalent.
+
+**Stored as a date, emitted as a datetime.** Every one of these places stores a plain
+`YYYY-MM-DD`. JSON-LD date properties and OpenGraph `article:published_time` /
+`article:modified_time` emit it through `schemaDateTime` (`lib/schema/datetime.ts`), which
+turns it into midnight in Europe/Madrid with its real offset: `2026-11-24T00:00:00+01:00`.
+Never write a date into a schema builder by hand. Google's Rich Results Test flags a date
+only value as "Invalid datetime value" and "missing a time zone". Sitemaps and the visible
+byline keep the plain date. Likewise `about` and `mentions` are always typed objects
+(`@type`, `@id`, `url`, `name`), never a bare URL string, which Google reads as a Thing named
+after the URL. `components/JsonLd.tsx` asserts both rules on every object it renders, so a
+violation fails the build and the page tests.
+
+Two rules that are easy to get wrong:
+
+- **Do not use a build timestamp.** `lastModified` is hand-maintained on purpose. A
+  `new Date()` at build time claims every page changed on every deploy, which teaches
+  crawlers to ignore the field entirely. `app/sitemap.ts` used to do this; it no longer does.
+- **Bump only on meaningful content change.** A typo fix or a class rename is not a content
+  change. Inflating the date on cosmetic edits devalues the signal exactly like a build
+  timestamp does.
+
+This site is a static export, so a date change only reaches production on redeploy. An
+updated date that has not been deployed is not an updated page.
+
+### No "AI" Typographic Characters (MANDATORY)
+
+NEVER insert AI-tell typographic characters into ANY file (content, code, comments, commits, tests, scripts). Use plain ASCII equivalents:
+
+| Forbidden | Char | Use instead |
+| :--- | :--- | :--- |
+| Em dash | `—` | comma, colon, period, or `(parentheses)` per context; `-` in code/labels |
+| En dash | `–` | `-` (hyphen) or `to` for ranges |
+| Curly single quotes | `‘` `’` | `'` (straight apostrophe) |
+| Curly double quotes | `“` `”` | `"` (straight quote) |
+| Ellipsis | `…` | `...` (three dots) |
+| Non-breaking space | ` ` | normal space |
+
+This applies to `messages/*.json`, `lib/*.json`, all `.tsx/.ts` (copy, JSX, comments), scripts, and commit messages. When choosing a replacement for `—`, pick punctuation that fits the sentence: do not blindly swap for a hyphen in prose.
+
+**No hyphens in site copy either.** Visible text (`messages/*.json`, the text fields of
+`lib/*.json`, `public/llms.txt`, and any copy written into components) never joins words with
+`-` and never uses a spaced ` - ` as a dash. Hyphenated compounds such as "high-performance" or
+"conversion-optimized" read as generated copy on this site. Rewrite them:
+
+| Instead of | Write |
+| :--- | :--- |
+| A compound modifier (`high-performance`, `mobile-first`) | Open form (`high performance`), or rephrase (`built to convert`) when the open form reads badly |
+| A prefix (`multi-device`, `non-commercial`) | Closed form (`multidevice`, `noncommercial`). In Spanish this is also the RAE norm: `multidispositivo`, `multiplataforma` |
+| A range (`7-14 days`) | `7 to 14 days` / `7 a 14 dias` |
+| A spaced dash (`A - B`) | comma, colon, period or parentheses |
+
+Exceptions, where the hyphen is part of the name or the syntax: proper and technical names
+(`JSON-LD`, `Wi-Fi`), URLs, slugs, ids, ISO dates, phone numbers, code, and the leading `- ` of a
+Markdown list item. `tests/i18n/copy-hyphens.test.ts` enforces this; extend its allowlist only for
+a genuine proper or technical name, never to silence a compound.
+
+## Project Ownership
+
+- **Lead Orchestrator**: Antigravity
+- **Methodology**: Test-Driven Development (TDD) + Spec-Driven Development (SDD)
+- **Design System**: Custom Glassmorphism (Vanilla CSS + Tailwind 4)
+- **Tech Stack (this site)**: Next.js 16 (App Router), Bun, Playwright, Cloudflare Workers.
+- **Client delivery stack (Software / Mobile App Development service)**: Flutter (frontend) + full-stack backend, targeting all devices and screens. Not the stack of this repo.

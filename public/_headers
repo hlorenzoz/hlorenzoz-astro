@@ -1,0 +1,19 @@
+/sw.js
+  Content-Type: application/javascript; charset=utf-8
+  Cache-Control: no-cache, no-store, must-revalidate
+
+/manifest.json
+  Content-Type: application/manifest+json; charset=utf-8
+  Cache-Control: public, max-age=3600
+
+/_astro/*
+  Cache-Control: public, max-age=31536000, immutable
+
+# Plain-text crawl-surface files carry no in-band encoding declaration the way
+# HTML does with <meta charset>, so without an explicit charset browsers fall
+# back to windows-1252 and render valid UTF-8 (euro signs, accents) as mojibake.
+/llms.txt
+  Content-Type: text/plain; charset=utf-8
+
+/robots.txt
+  Content-Type: text/plain; charset=utf-8

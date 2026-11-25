@@ -1,0 +1,36 @@
+{
+    "name": "Lorenzoz Agency - Next-Gen AI Automation",
+    "short_name": "Lorenzoz",
+    "description": "Scale your business with next-gen AI automation, website building, and digital business cards.",
+    "start_url": "/en",
+    "display": "standalone",
+    "background_color": "#ffffff",
+    "theme_color": "#000000",
+    "orientation": "portrait-primary",
+    "icons": [
+        {
+            "src": "/icons/icon-192.png",
+            "sizes": "192x192",
+            "type": "image/png",
+            "purpose": "any maskable"
+        },
+        {
+            "src": "/icons/icon-512.png",
+            "sizes": "512x512",
+            "type": "image/png",
+            "purpose": "any maskable"
+        }
+    ],
+    "categories": [
+        "business",
+        "productivity",
+        "technology"
+    ],
+    "shortcuts": [
+        {
+            "name": "Home",
+            "url": "/en",
+            "description": "Lorenzoz Agency Home"
+        }
+    ]
+}

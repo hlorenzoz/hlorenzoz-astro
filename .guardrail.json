@@ -1,0 +1,44 @@
+{
+  "production": [
+    "src/**",
+    "lib/**",
+    "scripts/**"
+  ],
+  "tests": [
+    "tests/**",
+    "**/*.test.ts",
+    "**/*.test.tsx"
+  ],
+  "ignore": [
+    "dist/**",
+    "coverage/**",
+    "public/**"
+  ],
+  "sizeCap": {
+    "files": 8,
+    "lines": 400
+  },
+  "crossView": [],
+  "perturb": {
+    "runners": [
+      {
+        "files": "tests/e2e/**",
+        "command": null
+      },
+      {
+        "files": "**",
+        "command": "bunx vitest run {file}"
+      }
+    ],
+    "max": 12,
+    "timeoutSeconds": 180
+  },
+  "switchedOn": {
+    "registry": ".agents/SWITCHED_ON.md",
+    "triggers": [
+      "wrangler.jsonc",
+      "wrangler.toml"
+    ],
+    "staleDays": 30
+  }
+}

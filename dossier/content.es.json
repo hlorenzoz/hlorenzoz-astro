@@ -1,0 +1,257 @@
+{
+  "meta": {
+    "title": "Lorenzoz Agency | Dossier de servicios",
+    "docLabel": "Dossier de servicios"
+  },
+  "tax": {
+    "suffix": "+ IVA"
+  },
+  "cover": {
+    "badge": "SEO Local para negocios locales",
+    "title": "Más clientes locales",
+    "titleGradient": "desde Google y la IA",
+    "description": "No vendemos servicios sueltos. Trabajamos por un resultado: que quien busca lo que ofrece tu negocio te encuentre a ti primero.",
+    "facts": [
+      { "value": "1", "label": "Plan con todo incluido" },
+      { "value": "4", "label": "Pilares de trabajo" },
+      { "value": "8", "label": "Mercados atendidos" }
+    ],
+    "marketsLabel": "Atendemos negocios en"
+  },
+  "approach": {
+    "eyebrow": "El enfoque",
+    "title": "Resultados, no servicios sueltos",
+    "subtitle": "Una web, unas reseñas o un perfil de Google no traen clientes por separado. Los trae el conjunto, trabajado cada mes con un único objetivo.",
+    "oldWay": {
+      "title": "Comprar servicios",
+      "items": [
+        "Varios proveedores que no se coordinan entre sí",
+        "Entregables que nadie mide contra las ventas",
+        "Una web publicada que nadie encuentra",
+        "Reseñas y directorios sin atender"
+      ]
+    },
+    "newWay": {
+      "title": "Comprar un resultado",
+      "items": [
+        "Un solo responsable de tu captación de clientes",
+        "Todo el trabajo apunta a aparecer primero en tu zona",
+        "Contenido, enlaces, autoridad y reseñas avanzan juntos",
+        "Informe mensual, sin tecnicismos, de lo que se hizo"
+      ]
+    },
+    "problemsTitle": "Lo que hoy le cuesta clientes a un negocio local",
+    "problems": [
+      {
+        "title": "Invisible en Google",
+        "description": "Si tu negocio no aparece cuando alguien busca tu servicio en tu zona, esa llamada la recibe un competidor."
+      },
+      {
+        "title": "Poca reputación visible",
+        "description": "Pocas reseñas, antiguas o sin respuesta, restan confianza justo antes de que el cliente decida."
+      },
+      {
+        "title": "La IA recomienda a otros",
+        "description": "Los asistentes de IA responden con los negocios que reconocen como referencia. Ese lugar hay que ganárselo."
+      }
+    ]
+  },
+  "core": {
+    "eyebrow": "La oferta central",
+    "name": "SEO Local",
+    "title": "Todo lo necesario para posicionar tu negocio",
+    "description": "Un único plan mensual que reúne el trabajo que hace falta para ganar visibilidad en las búsquedas locales de Google y en las respuestas de los motores de IA.",
+    "pillars": [
+      {
+        "title": "Contenido de autoridad",
+        "description": "El contenido que establece a tu negocio como referencia en su sector.",
+        "items": [
+          "Keyword research",
+          "Clústeres de contenido",
+          "Análisis de gaps de contenido",
+          "Actualización del contenido existente"
+        ]
+      },
+      {
+        "title": "Backlinks y citaciones",
+        "description": "Presencia en directorios y sitios de citaciones de confianza.",
+        "items": [
+          "Enlaces desde directorios de confianza",
+          "Citaciones en sitios relevantes",
+          "Señales de autoridad local más fuertes",
+          "Para Google y para los motores de IA"
+        ]
+      },
+      {
+        "title": "Autoridad en Google y en IA",
+        "description": "Tu negocio y tu web como la referencia que se recomienda.",
+        "items": [
+          "Google Business Profile optimizado",
+          "SEO local on-page en tu sitio web",
+          "Datos estructurados de negocio local",
+          "Presencia en resultados de Google y de IA"
+        ]
+      },
+      {
+        "title": "Gestión de reseñas",
+        "description": "Tu reputación, medida y trabajada mes a mes.",
+        "items": [
+          "Seguimiento del crecimiento de reseñas",
+          "Tendencias positivas y negativas",
+          "Monitoreo de las respuestas de clientes",
+          "Enlaces de opinión con tu marca"
+        ]
+      }
+    ],
+    "price": {
+      "label": "SEO Local, todo incluido",
+      "period": "/ mes",
+      "note": "Los cuatro pilares en un solo plan mensual."
+    },
+    "goalTitle": "Nuestro objetivo",
+    "goal": "La primera posición en Google para las búsquedas de tu zona. Ningún proveedor puede garantizar un puesto concreto y no lo prometemos: nos comprometemos con el trabajo que lleva hasta ahí."
+  },
+  "numbers": {
+    "eyebrow": "Las cuentas",
+    "title": "Lo que cuesta, y lo que cuesta no hacerlo",
+    "subtitle": "Dos cuentas sencillas: cuánto costaría contratar este trabajo por partes y cuánto le cuesta a un negocio cada cliente que no llega.",
+    "separate": {
+      "title": "Por separado",
+      "items": [
+        { "label": "SEO Local", "key": "localSeo" },
+        { "label": "Gestión de reseñas", "key": "reviewManagement" },
+        { "label": "Contenido de autoridad", "key": null },
+        { "label": "Backlinks y citaciones", "key": null }
+      ],
+      "perMonth": "/ mes",
+      "unpriced": "aparte",
+      "totalLabel": "Solo dos de los cuatro",
+      "note": "Precios de lista con los que ofrecíamos estos dos servicios por separado. El contenido y los backlinks se presupuestaban aparte."
+    },
+    "plan": {
+      "title": "En un solo plan",
+      "includedLabel": "Los cuatro pilares incluidos",
+      "saving": "{saving}% menos que dos de los pilares contratados por separado, con los otros dos ya incluidos."
+    },
+    "missed": {
+      "title": "Lo que cuesta un cliente que no llega",
+      "description": "El plan cuesta {annual} {tax} al año. Compáralo con lo que deja de ingresar tu negocio por cada cliente que elige a un competidor.",
+      "columns": {
+        "value": "Si un cliente nuevo te deja al año",
+        "cover": "El plan se paga con",
+        "missed": "Un cliente menos al mes te cuesta al año"
+      },
+      "coverClients": "{count} clientes al mes",
+      "coverOne": "1 cliente al mes",
+      "coverMonths": "1 cliente cada {months} meses",
+      "footnote": "Ejemplo ilustrativo con valores de cliente supuestos: haz la cuenta con el tuyo. No es una previsión de resultados."
+    }
+  },
+  "addOns": {
+    "eyebrow": "{discount}% de descuento junto a SEO Local",
+    "title": "Servicios opcionales",
+    "description": "Se suman al plan cuando tu negocio los necesita. Contratados junto a SEO Local tienen un {discount}% de descuento sobre el precio de lista.",
+    "listLabel": "Precio de lista",
+    "bundleLabel": "Con SEO Local",
+    "fromLabel": "desde",
+    "perMonth": "/ mes",
+    "oneOff": "pago único",
+    "items": [
+      {
+        "key": "websiteDevelopment",
+        "name": "Desarrollo Web",
+        "description": "Sitios web y PWA de alta velocidad, diseñados para convertir visitantes en clientes.",
+        "features": [
+          "Landing page o sitio completo de varias páginas",
+          "Diseño mobile-first y Core Web Vitals desde el día uno",
+          "Open Graph y datos estructurados desde el lanzamiento"
+        ]
+      },
+      {
+        "key": "aiVoiceReceptionist",
+        "name": "Recepcionista de Voz IA",
+        "description": "Un agente de voz que atiende tus llamadas, responde preguntas frecuentes y agenda citas, 24/7.",
+        "features": [
+          "Citas agendadas directo en tu calendario",
+          "Voz y guion personalizados según tu marca",
+          "Optimizado para inglés y español"
+        ]
+      },
+      {
+        "key": "softwareDevelopment",
+        "name": "Desarrollo de Software y Apps",
+        "description": "Productos full-stack con frontend en Flutter y backend a medida, para cualquier dispositivo y pantalla.",
+        "features": [
+          "Un solo código para iOS, Android, web y escritorio",
+          "Pruebas automatizadas y pipeline de CI/CD",
+          "Propiedad completa del código fuente al entregarse"
+        ]
+      }
+    ],
+    "footnote": "El precio de Desarrollo de Software y Apps es un punto de partida: el presupuesto final depende de los requerimientos funcionales. Ningún precio incluye IVA."
+  },
+  "process": {
+    "eyebrow": "Cómo trabajamos",
+    "title": "Un proceso claro, mes a mes",
+    "steps": [
+      {
+        "number": "01",
+        "badge": "Auditoría",
+        "title": "Entendemos tu punto de partida",
+        "description": "Revisamos tu presencia actual en Google, tu web, tus reseñas y a quién recomiendan hoy en tu zona."
+      },
+      {
+        "number": "02",
+        "badge": "Construcción",
+        "title": "Trabajamos los cuatro pilares",
+        "description": "Contenido, citaciones, autoridad y reseñas avanzan en paralelo, con un plan que conoces de antemano."
+      },
+      {
+        "number": "03",
+        "badge": "Iteración",
+        "title": "Medimos y ajustamos",
+        "description": "Cada mes recibes un informe sin tecnicismos y ajustamos el trabajo según lo que cambió."
+      }
+    ],
+    "termsTitle": "Condiciones",
+    "terms": [
+      {
+        "title": "{upfront}% por adelantado",
+        "description": "Al contratar se abona el {upfront}% por adelantado (el primer mes). Cubre los gastos de las herramientas y servicios que hacen posible el trabajo."
+      },
+      {
+        "title": "{discount}% en opcionales",
+        "description": "El descuento se aplica sobre el precio de lista de cada servicio opcional contratado junto a SEO Local."
+      },
+      {
+        "title": "Precios sin IVA",
+        "description": "Los importes de este dossier no incluyen impuestos. Los residentes en la UE están sujetos a +21% de IVA."
+      },
+      {
+        "title": "Un objetivo, no una garantía",
+        "description": "Trabajamos para la primera posición. Los resultados dependen también de tu mercado y de tu competencia."
+      }
+    ]
+  },
+  "contact": {
+    "eyebrow": "Contacto",
+    "title": "Hablemos de tu negocio",
+    "description": "Una llamada de 15 minutos alcanza para ver dónde estás hoy y si podemos ayudarte.",
+    "bookingTitle": "Reserva una llamada",
+    "bookingDescription": "Elige el día y la hora que mejor te vengan. Escanea el código o pulsa el botón.",
+    "bookingCta": "Reservar llamada",
+    "channels": {
+      "email": "Email",
+      "phone": "Teléfono",
+      "whatsapp": "WhatsApp",
+      "web": "Sitio web",
+      "linkedin": "LinkedIn",
+      "hours": "Horario"
+    },
+    "hours": "Lunes a viernes, de {opens} a {closes} (hora de España)",
+    "closing": "Tú te concentras en atender bien a tus clientes. Nosotros nos ocupamos de que lleguen."
+  },
+  "footer": {
+    "page": "Página {current} de {total}"
+  }
+}

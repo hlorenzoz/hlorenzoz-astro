@@ -1,0 +1,94 @@
+# Dependencies
+node_modules/
+.pnp
+.pnp.js
+.yarn/install-state.gz
+
+# Testing
+coverage/
+.nyc_output
+cypress/videos
+cypress/screenshots
+playwright-report/
+test-results/
+
+# Astro
+.astro/
+dist/
+.wrangler/
+
+# Production
+.vercel
+.env*.local
+.env.devel
+.env.staging
+.env.production
+
+# Debug
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Local env files
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Turbo
+.turbo
+
+# OS
+.DS_Store
+*.pem
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Lighthouse
+lighthouseci/
+.lighthouseci/
+
+# Misc
+*.tsbuildinfo
+
+# Agent configuration
+.agents/skills/
+.agents/context/**/*.png
+.claude/skills/
+.claude/settings.*
+.atl/
+
+skills-lock.json
+
+# Build artifacts in root
+index.html
+
+# Custom
+assets/*
+!assets/.gitkeep
+# Track the CDN image ledger (reference of what's uploaded), not the binaries
+!assets/mappings.json
+
+# CDN path-migration manifest (local run state, not source)
+scripts/.cdn-migration-manifest.json
+
+.bun-tmp/
+
+# Commercial dossier build output (regenerate with `just dossier`)
+dossier/dist/
+
+# Reference videos downloaded for design research, with their extracted frames
+# (large, third-party content: never commit)
+designs/videos/
+
+upwork/
+
+# The complete output of the last run of each test command (tests/log.sh).
+# Kept on this machine for debugging; rewritten by every run, so not versioned.
+tests/tests_*.txt

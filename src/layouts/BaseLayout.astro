@@ -1,0 +1,146 @@
+---
+/**
+ * Port of `app/[locale]/layout.tsx`: <html>/<head>, the skip link, <main>, the
+ * site-wide widgets and the Organization @graph. Pages render their own Navbar
+ * and Footer inside the slot, as they did under Next.
+ */
+import { Font } from 'astro:assets';
+import Head from '@/src/components/Head.astro';
+import JsonLd from '@/src/components/JsonLd.astro';
+import type { PageMeta } from '@/lib/page-metadata';
+import { getTranslations } from '@/lib/i18n';
+import { organizationGraph } from '@/lib/schema';
+import { absoluteUrl, CDN_URL, languageAlternates, ogLocale, OG_IMAGE, SITE_NAME } from '@/lib/site-config';
+import '@/src/styles/global.css';
+
+interface Props {
+    locale: string;
+    meta?: PageMeta;
+    /** LCP images to preload (next/image `priority`): `srcset` + `sizes`, or a plain `href`. */
+    preloadImages?: { href?: string; srcset?: string; sizes?: string }[];
+}
+
+const { locale, meta, preloadImages = [] } = Astro.props;
+const t = getTranslations(locale, 'home');
+
+// The layout's metadata: what the home page uses and what other pages merge onto.
+const defaults: PageMeta = {
+    title: t('meta.title'),
+    description: t('meta.description'),
+    keywords: [
+        'Local SEO',
+        'Local SEO Agency',
+        'Google Business Profile',
+        'Local Search',
+        'Review Management',
+        'AI Search Visibility',
+        'Website Development',
+        'AI Voice Receptionist',
+        'Software Development',
+    ],
+    openGraph: {
+        title: t('meta.title'),
+        description: t('meta.description'),
+        // Must stay equal to the canonical: any page that omits `openGraph`
+        // inherits this whole block.
+        url: absoluteUrl(locale),
+        siteName: SITE_NAME,
+        images: [{ url: OG_IMAGE, width: 1200, height: 630, alt: 'Lorenzoz Agency - AI & Web Excellence' }],
+        locale: ogLocale(locale),
+        type: 'website',
+    },
+    twitter: {
+        card: 'summary_large_image',
+        title: t('meta.title'),
+        description: t('meta.description'),
+        images: [OG_IMAGE],
+    },
+    alternates: { canonical: absoluteUrl(locale), languages: languageAlternates() },
+};
+---
+
+<!doctype html>
+<html lang={locale}>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
+        {
+            preloadImages.map((img) =>
+                img.srcset ? (
+                    <link rel="preload" as="image" imagesrcset={img.srcset} imagesizes={img.sizes} />
+                ) : (
+                    <link rel="preload" as="image" href={img.href} />
+                )
+            )
+        }
+        <!-- Critical CSS inlined for LCP stabilization -->
+        <style is:inline>
+            :root {
+                --bg-color: #ffffff;
+                --text-color: #000000;
+            }
+            body { margin: 0; padding: 0; font-family: var(--font-inter), system-ui, sans-serif; }
+            .hero-bg-deep {
+                background: #000000 !important;
+                color: #ffffff !important;
+                min-height: 80vh;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+            }
+            .hero-content {
+                padding-top: 8rem;
+                padding-bottom: 5rem;
+                text-align: center;
+                max-width: 1200px;
+                margin: 0 auto;
+            }
+            .text-gradient {
+                color: #3b82f6;
+                background: linear-gradient(135deg, #60a5fa 0%, #3b82f6 100%);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+                background-clip: text;
+            }
+            .no-animations * {
+                animation: none !important;
+                transition: none !important;
+            }
+            /* Minimize LCP shift */
+            h1 { margin: 0; font-weight: 700; }
+            .hero-content h1 {
+                color: #ffffff !important;
+                text-align: center;
+                font-size: 3rem;
+                font-weight: 700;
+                margin: 0;
+                line-height: 1.1;
+            }
+            @media (min-width: 768px) {
+                .hero-content h1 { font-size: 4.5rem; }
+                .hero-bg-deep { padding-top: 12rem; padding-bottom: 9rem; }
+            }
+            .hero-content p { color: #e5e7eb !important; text-align: center; max-width: 42rem; margin-top: 2rem; }
+        </style>
+        <Font cssVariable="--font-inter" preload />
+        <link rel="preconnect" href={CDN_URL} />
+        <link rel="dns-prefetch" href={CDN_URL} />
+        <link rel="icon" href="/favicon.ico" sizes="any" />
+        <meta name="theme-color" content="#000000" />
+        <Head defaults={defaults} meta={meta} />
+    </head>
+    <body class="font-sans antialiased overflow-x-hidden">
+        <a
+            href="#main-content"
+            class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-[999] focus:bg-black focus:text-white focus:px-4 focus:py-2 focus:rounded-md focus:shadow-xl focus:border focus:border-white/20 transition-all outline-none"
+        >
+            {locale === 'es' ? 'Saltar al contenido principal' : 'Skip to main content'}
+        </a>
+        <main id="main-content" tabindex="-1" class="focus:outline-none">
+            <slot />
+        </main>
+        <!-- SITE_WIDGETS: PwaRegistration, CookieBanner, ElevenLabsLoader -->
+        <JsonLd data={organizationGraph({ locale })} />
+    </body>
+</html>

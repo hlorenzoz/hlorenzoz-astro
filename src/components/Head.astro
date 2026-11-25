@@ -1,0 +1,58 @@
+---
+/**
+ * Renders the page head metadata in the order the Next.js build emitted it.
+ *
+ * `defaults` (the layout's metadata) is merged with the page's `meta`
+ * SHALLOWLY, exactly like Next: a page that sets `openGraph` replaces the whole
+ * block. `lib/page-metadata.ts` exists so pages never half-inherit it.
+ */
+import type { PageMeta } from '@/lib/page-metadata';
+
+interface Props {
+    defaults: PageMeta;
+    meta?: PageMeta;
+}
+
+const { defaults, meta = {} } = Astro.props;
+const m: PageMeta = { ...defaults, ...meta };
+const og = m.openGraph;
+const tw = m.twitter;
+const languages = Object.entries(m.alternates?.languages ?? {});
+---
+
+<title>{m.title}</title>
+{m.description && <meta name="description" content={m.description} />}
+<meta name="author" content="Lorenzoz Agency" />
+<link rel="manifest" href="/manifest.json" />
+{m.keywords && <meta name="keywords" content={m.keywords.join(',')} />}
+{m.category && <meta name="category" content={m.category} />}
+{m.alternates?.canonical && <link rel="canonical" href={m.alternates.canonical} />}
+{languages.map(([lang, href]) => <link rel="alternate" hreflang={lang} href={href} />)}
+<meta name="mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-title" content="Lorenzoz Agency" />
+<meta name="apple-mobile-web-app-status-bar-style" content="default" />
+{og?.title && <meta property="og:title" content={og.title} />}
+{og?.description && <meta property="og:description" content={og.description} />}
+{og?.url && <meta property="og:url" content={new URL(og.url, Astro.site).href} />}
+{og?.siteName && <meta property="og:site_name" content={og.siteName} />}
+{og?.locale && <meta property="og:locale" content={og.locale} />}
+{
+    og?.images?.map((img) => (
+        <>
+            <meta property="og:image" content={new URL(img.url, Astro.site).href} />
+            {img.width && <meta property="og:image:width" content={String(img.width)} />}
+            {img.height && <meta property="og:image:height" content={String(img.height)} />}
+            {img.alt && <meta property="og:image:alt" content={img.alt} />}
+        </>
+    ))
+}
+{og?.type && <meta property="og:type" content={og.type} />}
+{og?.publishedTime && <meta property="article:published_time" content={og.publishedTime} />}
+{og?.modifiedTime && <meta property="article:modified_time" content={og.modifiedTime} />}
+{og?.authors?.map((a) => <meta property="article:author" content={a} />)}
+{tw?.card && <meta name="twitter:card" content={tw.card} />}
+{tw?.title && <meta name="twitter:title" content={tw.title} />}
+{tw?.description && <meta name="twitter:description" content={tw.description} />}
+{tw?.images?.map((src) => <meta name="twitter:image" content={new URL(src, Astro.site).href} />)}
+<link rel="icon" href="/icon.svg" />
+<link rel="apple-touch-icon" href="/icons/icon-192.png" />

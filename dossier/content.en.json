@@ -1,0 +1,257 @@
+{
+  "meta": {
+    "title": "Lorenzoz Agency | Services dossier",
+    "docLabel": "Services dossier"
+  },
+  "tax": {
+    "suffix": "+ VAT"
+  },
+  "cover": {
+    "badge": "Local SEO for local businesses",
+    "title": "More local customers",
+    "titleGradient": "from Google and AI",
+    "description": "We do not sell loose services. We work toward one result: when someone searches for what your business offers, they find you first.",
+    "facts": [
+      { "value": "1", "label": "All-inclusive plan" },
+      { "value": "4", "label": "Pillars of work" },
+      { "value": "8", "label": "Markets served" }
+    ],
+    "marketsLabel": "We serve businesses in"
+  },
+  "approach": {
+    "eyebrow": "The approach",
+    "title": "Results, not loose services",
+    "subtitle": "A website, a few reviews or a Google profile do not bring customers on their own. The whole does, worked every month toward a single goal.",
+    "oldWay": {
+      "title": "Buying services",
+      "items": [
+        "Several providers who never coordinate",
+        "Deliverables nobody measures against sales",
+        "A published website nobody finds",
+        "Reviews and directories left unattended"
+      ]
+    },
+    "newWay": {
+      "title": "Buying a result",
+      "items": [
+        "One team accountable for your customer acquisition",
+        "All the work points at showing up first in your area",
+        "Content, links, authority and reviews move together",
+        "A monthly report in plain language of what was done"
+      ]
+    },
+    "problemsTitle": "What costs a local business customers today",
+    "problems": [
+      {
+        "title": "Invisible on Google",
+        "description": "If your business does not show up when someone searches for your service nearby, a competitor takes that call."
+      },
+      {
+        "title": "Little visible reputation",
+        "description": "Few reviews, old ones or unanswered ones erode trust right before the customer decides."
+      },
+      {
+        "title": "AI recommends someone else",
+        "description": "AI assistants answer with the businesses they recognize as the reference. That place has to be earned."
+      }
+    ]
+  },
+  "core": {
+    "eyebrow": "The core offer",
+    "name": "Local SEO",
+    "title": "Everything it takes to rank your business",
+    "description": "One monthly plan that brings together the work needed to gain visibility in local Google searches and in the answers AI engines give.",
+    "pillars": [
+      {
+        "title": "Authority content",
+        "description": "The content that establishes your business as a reference in its field.",
+        "items": [
+          "Keyword research",
+          "Content clusters",
+          "Content gap analysis",
+          "Updates to existing content"
+        ]
+      },
+      {
+        "title": "Backlinks and citations",
+        "description": "Presence on trusted directories and citation websites.",
+        "items": [
+          "Links from trusted directories",
+          "Citations on relevant websites",
+          "Stronger local authority signals",
+          "For Google and for AI engines"
+        ]
+      },
+      {
+        "title": "Authority on Google and AI",
+        "description": "Your business and your website as the reference that gets recommended.",
+        "items": [
+          "Optimized Google Business Profile",
+          "On-page local SEO for your website",
+          "Local business structured data",
+          "Presence in Google and AI results"
+        ]
+      },
+      {
+        "title": "Review management",
+        "description": "Your reputation, measured and worked on month after month.",
+        "items": [
+          "Review growth tracked over time",
+          "Positive and negative feedback trends",
+          "Customer responses monitored",
+          "Branded feedback links"
+        ]
+      }
+    ],
+    "price": {
+      "label": "Local SEO, all included",
+      "period": "/ month",
+      "note": "All four pillars in a single monthly plan."
+    },
+    "goalTitle": "Our goal",
+    "goal": "The first position on Google for searches in your area. No provider can guarantee a specific ranking and we do not promise one: we commit to the work that leads there."
+  },
+  "numbers": {
+    "eyebrow": "The numbers",
+    "title": "What it costs, and what it costs not to",
+    "subtitle": "Two simple sums: what this work would cost bought piece by piece, and what every customer who does not arrive costs a business.",
+    "separate": {
+      "title": "Bought separately",
+      "items": [
+        { "label": "Local SEO", "key": "localSeo" },
+        { "label": "Review management", "key": "reviewManagement" },
+        { "label": "Authority content", "key": null },
+        { "label": "Backlinks and citations", "key": null }
+      ],
+      "perMonth": "/ month",
+      "unpriced": "extra",
+      "totalLabel": "Just two of the four",
+      "note": "List prices at which we offered these two services on their own. Content and backlinks were quoted separately."
+    },
+    "plan": {
+      "title": "In a single plan",
+      "includedLabel": "All four pillars included",
+      "saving": "{saving}% less than two of the pillars bought separately, with the other two already included."
+    },
+    "missed": {
+      "title": "What a customer who never arrives costs",
+      "description": "The plan costs {annual} {tax} a year. Compare it with what your business stops earning for every customer who picks a competitor.",
+      "columns": {
+        "value": "If a new customer brings in, per year",
+        "cover": "The plan is paid for by",
+        "missed": "One customer fewer a month costs you, per year"
+      },
+      "coverClients": "{count} customers a month",
+      "coverOne": "1 customer a month",
+      "coverMonths": "1 customer every {months} months",
+      "footnote": "Illustrative example with assumed customer values: run the sum with your own. It is not a forecast of results."
+    }
+  },
+  "addOns": {
+    "eyebrow": "{discount}% off alongside Local SEO",
+    "title": "Optional services",
+    "description": "They join the plan when your business needs them. Taken alongside Local SEO they carry a {discount}% discount on the list price.",
+    "listLabel": "List price",
+    "bundleLabel": "With Local SEO",
+    "fromLabel": "from",
+    "perMonth": "/ month",
+    "oneOff": "one-off payment",
+    "items": [
+      {
+        "key": "websiteDevelopment",
+        "name": "Website Development",
+        "description": "High-speed websites and PWAs, designed to turn visitors into customers.",
+        "features": [
+          "Landing page or full multi-page website",
+          "Mobile-first design and Core Web Vitals from day one",
+          "Open Graph and structured data shipped at launch"
+        ]
+      },
+      {
+        "key": "aiVoiceReceptionist",
+        "name": "AI Voice Receptionist",
+        "description": "A voice agent that answers your calls, handles frequent questions and books appointments, 24/7.",
+        "features": [
+          "Appointments booked straight into your calendar",
+          "Custom voice and script matched to your brand",
+          "Optimized for English and Spanish"
+        ]
+      },
+      {
+        "key": "softwareDevelopment",
+        "name": "Software and Mobile App Development",
+        "description": "Full-stack products with a Flutter frontend and a custom backend, for every device and screen.",
+        "features": [
+          "One codebase for iOS, Android, web and desktop",
+          "Automated tests and a CI/CD pipeline",
+          "Full source code ownership on delivery"
+        ]
+      }
+    ],
+    "footnote": "The Software and Mobile App Development price is a starting point: the final quote depends on the functional requirements. No price includes VAT."
+  },
+  "process": {
+    "eyebrow": "How we work",
+    "title": "A clear process, month after month",
+    "steps": [
+      {
+        "number": "01",
+        "badge": "Audit",
+        "title": "We learn where you stand",
+        "description": "We review your current presence on Google, your website, your reviews and who gets recommended in your area today."
+      },
+      {
+        "number": "02",
+        "badge": "Build",
+        "title": "We work the four pillars",
+        "description": "Content, citations, authority and reviews move in parallel, on a plan you know in advance."
+      },
+      {
+        "number": "03",
+        "badge": "Iterate",
+        "title": "We measure and adjust",
+        "description": "Every month you get a report in plain language and we adjust the work to what changed."
+      }
+    ],
+    "termsTitle": "Terms",
+    "terms": [
+      {
+        "title": "{upfront}% up front",
+        "description": "On signing, {upfront}% is paid up front (the first month). It covers the cost of the tools and services that make the work possible."
+      },
+      {
+        "title": "{discount}% off add-ons",
+        "description": "The discount applies to the list price of each optional service taken alongside Local SEO."
+      },
+      {
+        "title": "Prices exclude VAT",
+        "description": "The amounts in this dossier do not include taxes. EU residents are subject to +21% VAT."
+      },
+      {
+        "title": "A goal, not a guarantee",
+        "description": "We work toward the first position. Results also depend on your market and your competition."
+      }
+    ]
+  },
+  "contact": {
+    "eyebrow": "Contact",
+    "title": "Let's talk about your business",
+    "description": "A 15-minute call is enough to see where you stand today and whether we can help.",
+    "bookingTitle": "Book a call",
+    "bookingDescription": "Pick the day and time that suit you best. Scan the code or use the button.",
+    "bookingCta": "Book a call",
+    "channels": {
+      "email": "Email",
+      "phone": "Phone",
+      "whatsapp": "WhatsApp",
+      "web": "Website",
+      "linkedin": "LinkedIn",
+      "hours": "Hours"
+    },
+    "hours": "Monday to Friday, {opens} to {closes} (Spain time)",
+    "closing": "You focus on serving your customers well. We take care of bringing them in."
+  },
+  "footer": {
+    "page": "Page {current} of {total}"
+  }
+}

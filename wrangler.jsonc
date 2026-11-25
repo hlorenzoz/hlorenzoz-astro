@@ -1,0 +1,19 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "hlorenzoz",
+  "account_id": "13d0158ca86f44bd9284e29fd158432b",
+  "compatibility_date": "2026-06-18",
+  // Static-assets-only Worker: serves the Astro static build from ./dist.
+  // No `main` script is needed when the Worker only serves assets.
+  "assets": {
+    "directory": "./dist",
+    // Astro builds with trailingSlash: 'always' and build.format: 'directory',
+    // emitting /page/index.html. Serve those as /page/ and fall back to the
+    // 404 page for unknown routes.
+    "html_handling": "auto-trailing-slash",
+    "not_found_handling": "404-page"
+  },
+  "observability": {
+    "enabled": true
+  }
+}
