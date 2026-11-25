@@ -76,6 +76,14 @@ export function ElevenLabsWidget({ locale }: ElevenLabsWidgetProps) {
         }
     });
 
+    // The SDK only echoes voice input (user_transcript) through onMessage; typed text is sent as
+    // user_message and never comes back, so it joins the transcript here, when it is sent.
+    const sendText = (text: string) => {
+        setMessages((prev) => [...prev, { role: 'user', text }]);
+        conversation.sendUserMessage(text);
+        setInputValue('');
+    };
+
     // All hooks must run before this guard - never call a hook after an early return.
     if (!mounted) return null;
 
@@ -197,15 +205,13 @@ export function ElevenLabsWidget({ locale }: ElevenLabsWidgetProps) {
                                                     connectionType: 'websocket',
                                                     textOnly: true,
                                                 });
-                                                conversation.sendUserMessage(inputValue);
-                                                setInputValue('');
+                                                sendText(inputValue);
                                             } catch (err: unknown) {
                                                 console.error("Failed to start text conversation:", err);
                                                 setError("Could not start the chat. Please try again.");
                                             }
                                         } else {
-                                            conversation.sendUserMessage(inputValue);
-                                            setInputValue('');
+                                            sendText(inputValue);
                                         }
                                     }
                                 }}

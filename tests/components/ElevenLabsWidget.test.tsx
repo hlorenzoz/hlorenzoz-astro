@@ -102,6 +102,51 @@ describe('ElevenLabsWidget - text vs voice decoupling', () => {
         expect(navigator.mediaDevices.getUserMedia).not.toHaveBeenCalled();
     });
 
+    // The SDK only echoes VOICE input (user_transcript) through onMessage; typed text goes out as
+    // user_message and never comes back, so the widget must add it to the transcript itself.
+    it('shows a typed message in the transcript over an open connection', async () => {
+        mockConversation.status = 'connected';
+        render(<ElevenLabsWidget locale="en" />);
+
+        const input = await screen.findByPlaceholderText('Or send a message');
+        fireEvent.change(input, { target: { value: 'What do you offer?' } });
+        fireEvent.click(screen.getByRole('button', { name: /send message/i }));
+
+        const log = await screen.findByRole('log');
+        expect(log).toHaveTextContent('What do you offer?');
+        expect(screen.getByText('What do you offer?').className).toContain('self-end');
+    });
+
+    it('shows the first typed message once a text session starts, in order before the reply', async () => {
+        render(<ElevenLabsWidget locale="en" />);
+
+        const input = await screen.findByPlaceholderText('Or send a message');
+        fireEvent.change(input, { target: { value: 'Hola' } });
+        fireEvent.click(screen.getByRole('button', { name: /send message/i }));
+
+        await waitFor(() => expect(mockConversation.sendUserMessage).toHaveBeenCalledWith('Hola'));
+        act(() => {
+            mockConversation.options.onMessage({ message: 'Hola, en que puedo ayudarte?', source: 'ai', role: 'agent' });
+        });
+        const log = await screen.findByRole('log');
+        const bubbles = [...log.children].map((el) => el.textContent).filter(Boolean);
+        expect(bubbles).toEqual(['Hola', 'Hola, en que puedo ayudarte?']);
+    });
+
+    it('does not show a typed message when the text session fails to start', async () => {
+        mockConversation.startSession.mockRejectedValueOnce(new Error('network'));
+        vi.spyOn(console, 'error').mockImplementation(() => {});
+        render(<ElevenLabsWidget locale="en" />);
+
+        const input = await screen.findByPlaceholderText('Or send a message');
+        fireEvent.change(input, { target: { value: 'Lost message' } });
+        fireEvent.click(screen.getByRole('button', { name: /send message/i }));
+
+        await waitFor(() => expect(mockConversation.startSession).toHaveBeenCalled());
+        expect(screen.queryByRole('log')).toBeNull();
+        expect(mockConversation.sendUserMessage).not.toHaveBeenCalled();
+    });
+
     it('renders incoming messages (user and agent) in a transcript', async () => {
         mockConversation.status = 'connected';
         render(<ElevenLabsWidget locale="en" />);
