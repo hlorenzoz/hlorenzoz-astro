@@ -89,7 +89,7 @@ describe('news data source', () => {
     });
 
     it('seeds the masajes-orisha announcement', () => {
-        const seed = getNewsItemBySlug('masajes-orisha-in-portfolio');
+        const seed = getNewsItemBySlug('masajes-orisha-portfolio');
         expect(seed).toMatchObject({
             portfolioId: 'masajes-orisha',
             datePublished: '2026-11-24',

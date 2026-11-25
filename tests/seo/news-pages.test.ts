@@ -2,6 +2,7 @@ import { describe, it, expect } from 'vitest';
 import NewsPage from '@/src/pages/[locale]/news/index.astro';
 import NewsPostPage, { getStaticPaths } from '@/src/pages/[locale]/news/[slug]/index.astro';
 import { getNewsItems } from '@/lib/news';
+import { routeLocales } from '@/lib/routes';
 import { getPortfolioItems } from '@/lib/portfolio';
 import { schemaDateTime, isSchemaDateTime, assertSchemaInvariants } from '@/lib/schema/datetime';
 import en from '@/messages/en.json';
@@ -9,7 +10,7 @@ import es from '@/messages/es.json';
 import { headFacts, jsonLdNodes, renderPage } from './render-page';
 import { TECH_LINKS } from '@/lib/tech-links';
 
-const SEED = 'masajes-orisha-in-portfolio';
+const SEED = 'masajes-orisha-portfolio';
 const BASE = 'https://hlorenzoz.com';
 const MESSAGES: Record<string, typeof en> = { en, es };
 
@@ -57,10 +58,10 @@ describe('news post metadata', () => {
         await expect(post('en', 'nope')).rejects.toThrow(/Unknown news slug/);
     });
 
-    it('pre-renders every post in both locales', async () => {
+    it('pre-renders every post in each locale it is published in', async () => {
         const paths = await getStaticPaths();
         const params = paths.map((p) => p.params);
-        expect(params).toHaveLength(getNewsItems().length * 2);
+        expect(params).toHaveLength(getNewsItems().reduce((n, item) => n + routeLocales(`news/${item.slug}`).length, 0));
         expect(params).toContainEqual({ locale: 'es', slug: SEED });
     });
 });

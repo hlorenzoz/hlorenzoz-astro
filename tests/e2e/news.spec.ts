@@ -1,6 +1,7 @@
 import { test, expect } from '@playwright/test';
+import newsData from '../../lib/news-data.json' with { type: 'json' };
 
-const SEED = 'masajes-orisha-in-portfolio';
+const SEED = 'masajes-orisha-portfolio';
 
 test.describe('News', () => {
     test('listing -> post -> portfolio case study (EN)', async ({ page }) => {
@@ -39,11 +40,11 @@ test.describe('News', () => {
         const news = page.locator('#news');
         await news.scrollIntoViewIfNeeded();
         await expect(news.locator(`a[href^="/en/news/${SEED}"]`)).toBeVisible();
-        // Newest first: the GERP DJ post was appended after the seed.
+        // Every post, newest first: lib/news-data.json is appended in publication order.
         const posts = await news.locator('li a[href^="/en/news/"]').evaluateAll((links) =>
             [...new Set(links.map((a) => (a.getAttribute('href') ?? '').replace(/\/$/, '')))]
         );
-        expect(posts).toEqual(['/en/news/gerp-dj-added-to-portfolio', `/en/news/${SEED}`]);
+        expect(posts).toEqual(newsData.slice().reverse().map((item) => `/en/news/${item.slug}`));
         const order = await page.evaluate(() => {
             const n = document.getElementById('news');
             const a = document.getElementById('articles');
