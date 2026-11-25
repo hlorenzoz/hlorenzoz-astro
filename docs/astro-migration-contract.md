@@ -1,5 +1,8 @@
 # Next.js -> Astro migration: writer contract
 
+> Historical record of the 2026-11-25 migration. The SOURCE repo below is archived at
+> github.com/hlorenzoz/hlorenzoz-nextjs and no longer exists locally.
+
 User request (verbatim, Spanish): "La idea es migrar el proyecto hlorenzoz-nextjs a hlorenzoz-astro por completo y dejarlo completamente funcional, manteniendo las mismas funcionalidades, diseño, estilos, etc. Es decir, migrar por completo el sitio a Astro sin que cambie su diseño, comandos, agentes de IA, scripts, etc. Es decir, reutiliza todo lo que puedas. Sigue utilizando Tailwind CSS , Glassmorfismo, Lucide Icons"
 
 Decision taken with the user: Astro-native components (`.astro` + vanilla `<script>`), React ONLY for the ElevenLabs widget island. Goal: near-zero JS, same URLs, same HTML head, same visual design.

@@ -1116,23 +1116,45 @@
     },
     {
       "id": "#T0052",
-      "estado": "en curso",
+      "estado": "hecha",
       "prioridad": "alta",
       "tipo": "infra",
       "titulo": "Migrar el sitio de Next.js a Astro sin cambiar URLs, head, diseno ni tooling",
       "anotada": "2026-11-25",
-      "hecha": null,
+      "hecha": "2026-11-25",
       "origen": "usuario",
       "depende": [],
       "notas": [
         "Decision con el usuario: componentes nativos .astro con <script> vanilla; React solo para la isla de ElevenLabs.",
-        "Codigo origen de referencia: ../hlorenzoz-nextjs (no se edita). Pasos de la migracion en ../CLAUDE.md.",
-        "Relacionada con #T0051: la migracion elimina el runtime de React del camino critico."
+        "Codigo origen de referencia: github.com/hlorenzoz/hlorenzoz-nextjs (archivado, solo lectura). Pasos de la migracion en ../CLAUDE.md.",
+        "Relacionada con #T0051: la migracion elimina el runtime de React del camino critico.",
+        "2026-11-25: migracion cerrada. just validate en verde, paridad de head y JSON-LD en las 48 rutas, accesibilidad 100 en las 48, hlorenzoz.com sirve el build de Astro y el repo de Next.js esta archivado en GitHub."
       ],
       "descripcion": [
         "Paginas en src/pages/[locale]/, componentes en src/components/, lib/ messages/ public/ sin mover.",
         "Paridad contra el build de Next (out/): mismo conjunto de rutas, mismo head (title, description, canonical, hreflang, OG, JSON-LD), sitemap.xml y robots.txt identicos.",
         "Verificar con just validate, just verify y capturas de Playwright de cada ruta en movil y escritorio."
+      ]
+    },
+    {
+      "id": "#T0053",
+      "estado": "en curso",
+      "prioridad": "media",
+      "tipo": "contenido",
+      "titulo": "Noticia extensa (caso de estudio) en /news/ para cada Live Site del portafolio, en y es",
+      "anotada": "2026-11-25",
+      "hecha": null,
+      "origen": "usuario",
+      "depende": [
+        "#T0052"
+      ],
+      "notas": [
+        "Fecha de cada noticia: el dia siguiente a la entrada del proyecto en el portafolio segun git: lorenzoz-agency 2026-04-07, malaga-event-gear 2026-06-19, vicron-lopez 2026-07-24, masajes-orisha 2026-07-24, gerp-dj 2026-11-25. lastModified 2026-11-25.",
+        "Las noticias de anuncio existentes (gerp-dj-added-to-portfolio, masajes-orisha-added-to-portfolio) no se tocan."
+      ],
+      "descripcion": [
+        "lib/news-data.json + messages/{en,es}.json news.items.<id> (intro y sections con imagenes reutilizadas del CDN) + public/llms.txt.",
+        "Verificar con just validate, build, Lighthouse de cada noticia y JSON-LD NewsArticle."
       ]
     }
   ]
