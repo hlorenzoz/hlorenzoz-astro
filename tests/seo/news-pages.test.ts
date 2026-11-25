@@ -7,6 +7,7 @@ import { schemaDateTime, isSchemaDateTime, assertSchemaInvariants } from '@/lib/
 import en from '@/messages/en.json';
 import es from '@/messages/es.json';
 import { headFacts, jsonLdNodes, renderPage } from './render-page';
+import { TECH_LINKS } from '@/lib/tech-links';
 
 const SEED = 'masajes-orisha-in-portfolio';
 const BASE = 'https://hlorenzoz.com';
@@ -162,4 +163,28 @@ describe('long posts with sections', () => {
             }
         }
     );
+});
+
+describe('links to the technologies a post mentions', () => {
+    it.each(getNewsItems().flatMap((item) => (['en', 'es'] as const).map((locale) => [item.slug, locale] as const)))(
+        '%s (%s) links each technology site at most once, followed, in a new tab',
+        async (slug, locale) => {
+            const document = await renderPage(NewsPostPage, { locale, slug }, `/${locale}/news/${slug}/`);
+            const external = [...document.querySelectorAll('article a[target="_blank"], main p a[target="_blank"]')]
+                .map((a) => a as HTMLAnchorElement)
+                .filter((a) => TECH_LINKS.some((t) => t.url === a.getAttribute('href')));
+            const hosts = external.map((a) => new URL(a.getAttribute('href')!).host);
+            expect(hosts.length, 'one link per technology site').toBe(new Set(hosts).size);
+            for (const a of external) {
+                expect(a.getAttribute('rel')).toBe('noopener');
+                expect(a.getAttribute('rel')).not.toContain('nofollow');
+            }
+        }
+    );
+
+    it('links Astro, Next.js and Cloudflare in the Astro rebuild post', async () => {
+        const document = await renderPage(NewsPostPage, { locale: 'en', slug: 'lorenzoz-agency-case-study' }, '/en/news/lorenzoz-agency-case-study/');
+        const hrefs = [...document.querySelectorAll('main p a[target="_blank"]')].map((a) => a.getAttribute('href'));
+        for (const url of ['https://astro.build/', 'https://nextjs.org/', 'https://www.cloudflare.com/']) expect(hrefs).toContain(url);
+    });
 });
