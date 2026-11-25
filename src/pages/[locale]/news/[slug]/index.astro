@@ -40,7 +40,8 @@ const tRoot = getTranslations(locale);
 const title = t(`items.${item.id}.title`);
 const paragraphs = t.raw(`items.${item.id}.paragraphs`) as string[];
 // Long posts add titled sections after the intro, each with an optional image reused from the case study.
-type NewsSection = { heading: string; paragraphs: string[]; image?: string; imageAlt?: string };
+type NewsTable = { caption: string; headers: string[]; rows: string[][] };
+type NewsSection = { heading: string; paragraphs: string[]; image?: string; imageAlt?: string; table?: NewsTable };
 const sections = (t.has(`items.${item.id}.sections`) ? t.raw(`items.${item.id}.sections`) : []) as NewsSection[];
 const pageUrl = absoluteUrl(locale, `news/${item.slug}`);
 const published = formatContentDate(locale, item.datePublished, 'dayMonthYear');
@@ -124,6 +125,23 @@ const sizes = '(max-width: 768px) 100vw, 768px';
                             <div class="space-y-6 text-lg text-gray-900 leading-relaxed">
                                 {section.paragraphs.map((paragraph) => <p>{paragraph}</p>)}
                             </div>
+                            {section.table && (
+                                <div class="mt-8 overflow-x-auto rounded-2xl border border-gray-100">
+                                    <table class="w-full text-left text-base">
+                                        <caption class="caption-bottom pt-3 px-4 pb-4 text-sm text-gray-600 text-left">{section.table.caption}</caption>
+                                        <thead class="bg-gray-50">
+                                            <tr>{section.table.headers.map((h) => <th scope="col" class="px-4 py-3 font-bold text-black">{h}</th>)}</tr>
+                                        </thead>
+                                        <tbody>
+                                            {section.table.rows.map((row) => (
+                                                <tr class="border-t border-gray-100">
+                                                    {row.map((cell, i) => (i === 0 ? <th scope="row" class="px-4 py-3 font-bold text-black">{cell}</th> : <td class="px-4 py-3 text-gray-900">{cell}</td>))}
+                                                </tr>
+                                            ))}
+                                        </tbody>
+                                    </table>
+                                </div>
+                            )}
                         </section>
                     ))
                 }

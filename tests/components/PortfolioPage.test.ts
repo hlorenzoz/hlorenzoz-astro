@@ -6,6 +6,7 @@ import en from '@/messages/en.json';
 import PortfolioPage from '@/src/pages/[locale]/portfolio/index.astro';
 import PortfolioItemPage, { getStaticPaths } from '@/src/pages/[locale]/portfolio/[slug]/index.astro';
 import { getPortfolioItems } from '@/lib/portfolio';
+import { getNewsItems } from '@/lib/news';
 
 /**
  * The pages render against the real data and catalogue (the Next version mocked
@@ -110,5 +111,25 @@ describe('Portfolio Pages', () => {
         expect(paths).toHaveLength(items.length * 2);
         expect(paths[0].params).toHaveProperty('locale');
         expect(paths[0].params).toHaveProperty('slug');
+    });
+});
+
+describe('news about the project', () => {
+    const news = getNewsItems();
+    const withNews = getPortfolioItems().filter((p) => news.some((n) => n.portfolioId === p.id));
+
+    it.each(withNews.map((p) => [p.slug, p.id] as const))('%s links every post about it, newest first', async (slug, id) => {
+        const { document } = await renderItemPage(slug);
+        const section = document.querySelector('#portfolio-news');
+        expect(section, 'news section').not.toBeNull();
+        const hrefs = [...section!.querySelectorAll('h3 a')].map((a) => a.getAttribute('href'));
+        // getNewsItems() is already newest first.
+        expect(hrefs).toEqual(news.filter((n) => n.portfolioId === id).map((n) => `/en/news/${n.slug}/`));
+    });
+
+    it('omits the section for a project with no posts', async () => {
+        const without = getPortfolioItems().find((p) => !news.some((n) => n.portfolioId === p.id))!;
+        const { document } = await renderItemPage(without.slug);
+        expect(document.querySelector('#portfolio-news')).toBeNull();
     });
 });

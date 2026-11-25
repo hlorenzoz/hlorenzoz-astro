@@ -1817,108 +1817,140 @@
         ]
       },
       "lorenzoz-agency-case-study": {
-        "title": "Así construimos la web de Lorenzoz Agency y por qué la migramos a Astro",
-        "description": "Cómo está hecha hlorenzoz.com: web bilingüe estática en Cloudflare Workers, migrada de Next.js 16 a Astro 7, con resultados medidos y sus pruebas.",
+        "title": "Nuestra web, reconstruida en Astro para una visita más rápida y accesible",
+        "description": "Rehicimos hlorenzoz.com en Astro 7 con las mismas URL y el mismo diseño: 0 ms de bloqueo, mucho menos JavaScript y accesibilidad 100. Antes y después, medido.",
         "paragraphs": [
-          "Nuestra propia web ya tiene su caso de estudio en el portafolio. Es el sitio donde el dueño de un negocio local conoce a Lorenzoz Agency, lee lo que vendemos y reserva una llamada, así que tiene que cumplir todo lo que recomendamos a nuestros clientes: páginas rápidas, textos claros en dos idiomas, datos estructurados que los buscadores puedan leer y un proceso de calidad que detecte los errores antes que los visitantes.",
-          "Este artículo cuenta cómo está construida la web hoy, por qué la rehicimos en Astro 7 después de lanzarla con Next.js 16 y qué dicen las mediciones. Cada cifra procede de una prueba que hicimos, con su fecha y las condiciones en las que se midió."
+          "El 25 de noviembre de 2026 pasamos hlorenzoz.com, la web de Lorenzoz Agency, de Next.js 16 a Astro 7. Los visitantes conservan las mismas direcciones, el mismo diseño y el mismo contenido en inglés y en español. Lo que cambió es cuánto trabajo le pide cada página a su móvil: ahora cargan unos pocos kilobytes de JavaScript en lugar de más de medio megabyte, y responden al primer toque sin hacer esperar.",
+          "Este artículo cuenta qué reconstruimos, cómo comprobamos que no se rompiera nada visible y qué supone el cambio para quien visita la web desde un móvil corriente. Cada cifra sale de una prueba nuestra, con su fecha y sus condiciones, y el antes y el después está reunido en una tabla."
         ],
         "sections": [
           {
-            "heading": "Qué tiene que hacer la web",
+            "heading": "De dónde partía la web",
             "paragraphs": [
-              "Lorenzoz Agency crea soluciones para negocios locales de cualquier tamaño y vende un único resultado: nuevos clientes. La oferta principal es el SEO Local, un plan mensual con cuatro pilares (contenido de autoridad, backlinks y citaciones, autoridad en Google y en las respuestas de la IA, y gestión de reseñas). Alrededor hay tres servicios opcionales: desarrollo web, recepcionista de voz con IA y desarrollo de software.",
-              "La web recoge esa oferta de principio a fin. La portada explica el plan, lo que costaría el mismo trabajo contratado por separado y cómo funciona el proceso mes a mes, y sigue con los precios, las preguntas frecuentes, las últimas noticias y la reserva de una llamada de 15 minutos. Cuatro páginas de servicios, un portafolio de casos de estudio, una sección de noticias, las páginas legales, un mapa del sitio en HTML y una tarjeta de visita digital completan las 48 páginas de la web, publicadas en inglés y en español.",
-              "La imagen muestra la portada tal como era en el lanzamiento, en abril de 2026. Desde entonces el texto se ha reescrito en torno al SEO Local, mientras que la identidad visual, una cabecera oscura con tarjetas de cristal esmerilado, se mantiene."
-            ],
-            "image": "https://cdn.hlorenzoz.com/hlorenzoz.com/portfolio/me/cover.webp",
-            "imageAlt": "Portada de Lorenzoz Agency en su lanzamiento en abril de 2026, con cabecera oscura, botón de reserva y tarjetas de cristal esmerilado"
-          },
-          {
-            "heading": "De Next.js 16 a Astro 7",
-            "paragraphs": [
-              "La web se publicó con Next.js 16 como exportación estática, con Tailwind CSS 4, Cloudflare por delante y pruebas en Vitest y Playwright. Funcionaba, pero cada página enviaba al navegador el motor de React para mostrar un contenido que no cambia después de la compilación. En una web comercial, ese JavaScript cuesta tiempo de carga y no aporta nada.",
-              "El 25 de noviembre de 2026 migramos el proyecto completo a Astro 7 con una regla: mismas URL, mismas etiquetas en la cabecera, mismo diseño, mismos comandos, agentes y scripts. Solo cambió el framework. Cada componente pasó a ser un componente de Astro con un pequeño script nativo donde hace falta interacción, como el menú, los carruseles o el acordeón de preguntas. React queda en un único sitio, el widget de voz de ElevenLabs, que se monta solo cuando el visitante hace scroll.",
-              "Astro genera la web como archivos HTML planos, uno por ruta, sin código de servidor en tiempo de ejecución: sin renderizado en servidor, sin middleware y sin base de datos. La ilustración muestra el stack original del lanzamiento; el framework es la única capa que se ha sustituido."
+              "La web se publicó en abril de 2026 con Next.js 16, exportada como archivos estáticos, con Tailwind CSS 4, Cloudflare delante y pruebas en Vitest y Playwright. Esa primera versión tiene su propio artículo.",
+              "Funcionaba, pero cada página arrastraba un entorno de React para volver interactiva una página que no cambia después de la compilación. En una web que sobre todo presenta textos, imágenes y un botón de reserva, ese JavaScript es un coste que el visitante paga en cada visita a cambio de nada. Después de construir la web de GERP DJ en Astro y ver cómo rendía, le dimos a la nuestra el mismo tratamiento."
             ],
             "image": "https://cdn.hlorenzoz.com/hlorenzoz.com/portfolio/me/tech-stack-visual.webp",
-            "imageAlt": "Ilustración del stack original del lanzamiento: Next.js 16, Tailwind CSS 4, Cloudflare, GitHub Actions, Vitest y Playwright"
+            "imageAlt": "Ilustración de las tecnologías con las que se publicó la web en abril de 2026: Next.js 16, Tailwind CSS 4, Cloudflare, GitHub Actions, Vitest y Playwright"
           },
           {
-            "heading": "Lo que cambió con la migración, medido",
+            "heading": "Una sola regla: solo cambia el framework",
             "paragraphs": [
-              "Antes del cambio comparamos ambas versiones página a página el 25 de noviembre de 2026. Cada una se sirvió en local y se midió con Lighthouse en su perfil móvil, tomando la mediana de varias ejecuciones. La puntuación de Rendimiento de la portada en inglés pasó de 77 con Next.js a 89 con Astro. La página del servicio de SEO Local pasó de 89 a 94, y el caso de estudio de GERP DJ, de 72 a 86.",
-              "La razón se ve en dos cifras. El Total Blocking Time, el tiempo en que el hilo principal está demasiado ocupado para responder al visitante, iba de 66 a 83 ms en las páginas de Next.js y es de 0 ms en las de Astro. El JavaScript que carga cada página bajó de entre 534 y 645 KB a entre 2,6 y 8,9 KB.",
-              "No se permitió que nada más cambiara. Las etiquetas de cabecera y el JSON-LD salieron idénticos en las 48 páginas, y las capturas de cada ruta a 390 y 1440 píxeles de ancho difirieron como mucho en un 0,25% de los píxeles, con la misma altura de página. Visitantes y buscadores ven la misma web; simplemente trabaja menos en el navegador."
-            ]
-          },
-          {
-            "heading": "La web en producción, medida con PageSpeed Insights",
-            "image": "https://cdn.hlorenzoz.com/hlorenzoz.com/portfolio/hlorenzoz/lorenzoz-agency-pagespeed-insights.webp",
-            "imageAlt": "Informe de PageSpeed Insights de hlorenzoz.com en móvil, 25 de noviembre de 2026: 98 en Rendimiento y 100 en Accesibilidad, Prácticas recomendadas y SEO",
-            "paragraphs": [
-              "Después del cambio pasamos la portada en inglés, ya en producción, por Google PageSpeed Insights con el perfil móvil. El informe del 25 de noviembre de 2026 a las 15:20 da 98 en Rendimiento y 100 en Accesibilidad, Prácticas recomendadas y SEO.",
-              "PageSpeed Insights ejecuta Lighthouse desde servidores de Google, así que mide la página tal como la recibe un móvil a través de internet, con los servicios de Cloudflare que tiene delante incluidos. Las puntuaciones varían unos puntos de una ejecución a otra, y por eso cada cifra de este artículo lleva la fecha del informe del que sale.",
-              "El panel de datos de usuarios reales aún no muestra datos. Resume lo que vivieron los usuarios de Chrome en los últimos 28 días, y Google solo lo publica cuando una web acumula suficiente tráfico de ese tipo. Las puntuaciones anteriores son mediciones de laboratorio, y el caso de estudio muestra el informe completo."
-            ]
-          },
-          {
-            "heading": "Un diseño hecho una vez y probado en cada pantalla",
-            "paragraphs": [
-              "El aspecto responde a un sistema de diseño de glassmorphism escrito en Tailwind CSS 4: paneles esmerilados con desenfoque de fondo, degradados y una paleta de azules y dorados de la marca. Tailwind 4 se configura en un único archivo CSS, de modo que los valores de diseño viven en un solo lugar y todos los componentes los leen de ahí.",
-              "Los iconos proceden de Lucide y se insertan como SVG al compilar, en lugar de usar una fuente de iconos. La tipografía Inter se sirve desde el propio dominio a través de la API de fuentes de Astro: un único archivo de fuente variable, precargado, con el texto visible desde el primer momento en una fuente de respaldo mientras se descarga.",
-              "Cada diseño se comprueba en móvil, tableta y escritorio. Durante la migración, un rastreo automático con navegador abrió las 48 rutas, la redirección de la raíz y la página 404 en tamaño escritorio y en un Pixel 5 emulado, y todas respondieron sin errores de consola ni peticiones fallidas."
+              "La migración siguió una única regla: mismas URL, mismas etiquetas de cabecera, mismo diseño, mismos comandos, agentes y scripts. Un marcador, un buscador con la página indexada o un enlace compartido hace meses tenían que llevar a la misma página y mostrar lo mismo. Solo podía cambiar el framework.",
+              "Para cumplirla, comparamos la versión nueva con la anterior antes del cambio. Las etiquetas de cabecera y los datos estructurados JSON-LD salieron idénticos en las 48 páginas, en los dos idiomas. Las capturas de cada ruta a 390 y 1440 píxeles de ancho, un ancho de móvil y uno de escritorio, difirieron como mucho en un 0,25% de los píxeles, con la misma altura de página. El mapa del sitio y el archivo robots salieron iguales byte a byte."
             ],
             "image": "https://cdn.hlorenzoz.com/hlorenzoz.com/portfolio/me/multiple-screens.webp",
             "imageAlt": "La portada de Lorenzoz Agency en varios tamaños de pantalla de móvil y en una tableta"
           },
           {
-            "heading": "Bilingüe desde la URL",
+            "heading": "Qué reconstruimos",
             "paragraphs": [
-              "Cada página existe en inglés y en español con su propia ruta, y la versión española de cualquier URL en inglés es la misma ruta bajo el prefijo del español. La dirección raíz redirige a la portada en inglés. Cada página declara su URL canónica y sus alternativas hreflang en los dos idiomas, además de una opción por defecto que apunta al inglés, para que los buscadores muestren a cada visitante su versión.",
-              "El selector de idioma está hecho con enlaces normales, que los buscadores pueden rastrear. Los dos idiomas se redactan de forma nativa a partir de un mismo juego de archivos de traducción, y una prueba automática detiene la compilación si una clave existe en un idioma y falta en el otro, de modo que ninguna página puede publicarse a medio traducir."
+              "Cada componente pasó a ser un componente nativo de Astro. Astro los convierte en HTML plano al compilar, un archivo por página, sin código de servidor en cada visita. Las partes que reaccionan al visitante, como el menú móvil, los carruseles y las preguntas frecuentes, tienen cada una un pequeño script en JavaScript sencillo.",
+              "React queda en un único lugar: el widget de voz de ElevenLabs, con el que el visitante puede hablar con nuestro asistente de IA. Como es la pieza más pesada, queda fuera de la primera carga y se monta solo cuando el visitante baja más allá de media pantalla.",
+              "Las pruebas también se trasladaron, y crecieron. Al terminar la migración, Vitest ejecutaba 1.096 pruebas superadas, que renderizan los componentes con la Container API de Astro y revisan el HTML compilado de cada página, y Playwright ejecutaba 37 pruebas de extremo a extremo superadas en un navegador real. Una prueba nueva revisa cada enlace interno, dirección de imagen, ancla, redirección y entrada de la caché sin conexión de la web compilada, y falla si alguno no lleva a ninguna parte. Lighthouse CI audita 14 URL clave en cada ejecución.",
+              "También quitamos un resto de la versión anterior: en 46 de las 48 páginas pedía al navegador descargar pronto un pequeño icono del pie, compitiendo con el contenido que importa primero. Y el service worker que mantiene la portada disponible sin conexión estrenó nombres de caché, así que las copias guardadas de la web anterior se descartan en el cambio en lugar de mostrar páginas viejas."
             ]
           },
           {
-            "heading": "Búsqueda, datos estructurados y respuestas de la IA",
+            "heading": "El antes y el después, medido",
             "paragraphs": [
-              "El 6 de abril de 2026, la prueba de resultados enriquecidos de Google rastreó la portada y encontró tres elementos válidos: FAQ, Local business y Organisation, con los que puede optar a resultados enriquecidos en la Búsqueda de Google. La captura es ese informe.",
-              "Los datos estructurados de la portada en producción van hoy más allá. Describen la agencia como ProfessionalService con su dirección postal, su horario, sus coordenadas, su punto de contacto y los ocho países en los que trabaja. Enumeran los cuatro servicios con sus ofertas y especificaciones de precio, publican las seis preguntas frecuentes como FAQPage y marcan la página con una especificación speakable. Los precios del texto visible y del JSON-LD salen de un único archivo, así que no pueden contradecirse.",
-              "Para rastreadores y asistentes de IA, la web publica un sitemap con las 48 URL, un archivo robots que lo permite todo y un archivo llms.txt que resume en texto plano la agencia, sus servicios y cada caso de estudio. Todas las páginas llevan además etiquetas OpenGraph y Twitter Card, para que un enlace compartido muestre un título, una descripción y una imagen correctos."
+              "Antes del cambio servimos las dos versiones en local y medimos las mismas páginas con Lighthouse en su perfil móvil, que simula un teléfono modesto con una conexión lenta. Cada cifra es la mediana de varias ejecuciones del 25 de noviembre de 2026. Las puntuaciones de laboratorio varían unos puntos entre ejecuciones, por eso pesan más las medianas.",
+              "Dos filas explican el resto. El Total Blocking Time es el tiempo en que el móvil está demasiado ocupado ejecutando scripts para reaccionar a un toque, y bajó a cero. El JavaScript de cada página se redujo en más de un 98%. Las dos últimas filas prueban que la velocidad no salió de quitar nada: misma cabecera, mismos datos estructurados, misma imagen en pantalla."
             ],
-            "image": "https://cdn.hlorenzoz.com/hlorenzoz.com/portfolio/me/structured-data.webp",
-            "imageAlt": "Informe de la prueba de resultados enriquecidos de Google del 6 de abril de 2026 con elementos válidos de FAQ, Local businesses y Organisation"
+            "table": {
+              "caption": "Versión en Next.js 16 y versión en Astro 7 de hlorenzoz.com, servidas en local y medidas el 25 de noviembre de 2026 (Lighthouse móvil, mediana de varias ejecuciones)",
+              "headers": [
+                "Medida",
+                "Next.js 16",
+                "Astro 7"
+              ],
+              "rows": [
+                [
+                  "Rendimiento, portada en inglés",
+                  "77",
+                  "89"
+                ],
+                [
+                  "Rendimiento, página del servicio de SEO Local",
+                  "89",
+                  "94"
+                ],
+                [
+                  "Rendimiento, caso de estudio de GERP DJ",
+                  "72",
+                  "86"
+                ],
+                [
+                  "Total Blocking Time",
+                  "66 a 83 ms",
+                  "0 ms"
+                ],
+                [
+                  "JavaScript cargado por página",
+                  "534 a 645 KB",
+                  "2,6 a 8,9 KB"
+                ],
+                [
+                  "Cabecera y JSON-LD en 48 páginas",
+                  "Referencia",
+                  "Idénticos"
+                ],
+                [
+                  "Diferencia en capturas a 390 y 1440 px",
+                  "Referencia",
+                  "0,25% de los píxeles o menos"
+                ]
+              ]
+            }
           },
           {
-            "heading": "Imágenes y entrega en el borde",
+            "heading": "Se muestra antes y responde al momento",
             "paragraphs": [
-              "La web es un Worker de Cloudflare de recursos estáticos: el resultado de la compilación se sube como archivos y se sirve desde la red de Cloudflare, cerca de cada visitante y sobre HTTP/3. Los archivos CSS y de script con hash se guardan en caché durante un año como inmutables, mientras que el HTML se revalida en cada petición, de modo que un despliegue nuevo se ve al instante. Cloudflare Workers Builds despliega automáticamente con cada push a la rama principal.",
-              "Las imágenes ni siquiera pasan por la compilación. Están en un bucket de R2 detrás de nuestro propio dominio de CDN y Cloudflare las redimensiona en el borde. Cada imagen tiene un conjunto adaptable de anchos y el formato se negocia con cada navegador, AVIF o WebP según lo que acepte, así que un móvil nunca descarga un archivo pensado para escritorio."
+              "Para el visitante, menos JavaScript significa que la página está lista antes. El navegador tiene que descargar, leer y ejecutar cada script que recibe, y con la versión anterior eso era más de medio megabyte por página. Ahora el HTML llega listo para leer y los scripts que lo acompañan pesan unos pocos kilobytes, y por eso la puntuación de Rendimiento subió en las tres páginas comparadas.",
+              "Responder importa tanto como mostrarse. Con 66 a 83 ms de bloqueo, un toque durante la carga podía quedarse esperando. Con 0 ms, el menú se abre, el acordeón se despliega y el botón de reserva reacciona en cuanto se toca.",
+              "La mejora es mayor justo donde más se necesita. El perfil de laboratorio de estas cifras imita un teléfono modesto con una conexión lenta, la situación de mucha gente que busca un negocio local fuera de casa, con datos móviles o con un Wi-Fi irregular. Una página que pesa poco y exige poco al procesador sigue siendo usable ahí, y gasta menos datos y batería."
             ]
           },
           {
-            "heading": "Controles de calidad antes de publicar nada",
+            "heading": "Una página que no se mueve mientras carga",
             "paragraphs": [
-              "Cada commit pasa por comprobaciones automáticas antes de aceptarse: búsqueda de secretos, mensajes en formato Conventional Commits, linting, la comprobación de tipos de Astro y las pruebas unitarias relacionadas con los archivos modificados. Antes de cada push se ejecuta la batería unitaria completa.",
-              "Las pruebas forman parte del producto. Al terminar la migración, Vitest ejecutó 1.096 pruebas superadas, que renderizan los componentes con la Container API de Astro y revisan el HTML compilado de cada página: etiquetas de cabecera, datos estructurados, enlaces internos y anclas. Playwright ejecutó 37 pruebas de extremo a extremo superadas sobre la web compilada, que cubren la navegación, los carruseles, el aviso de cookies y el cambio de idioma. Lighthouse CI audita 14 URL clave y hace fallar la ejecución si la accesibilidad o el SEO bajan de 95 o las prácticas recomendadas de 90; todas las comprobaciones se superaron.",
-              "Algunas reglas tratan de las palabras y no del código. Una prueba rechaza en el texto visible las palabras unidas con guion, y las reglas del proyecto prohíben los caracteres tipográficos propios del texto generado, porque el texto debe leerse como escrito por personas para personas. La captura muestra una ejecución de pruebas de extremo a extremo del flujo original, en navegadores de escritorio y móviles."
+              "Pocas cosas molestan tanto como una página que salta mientras la lees o vas a pulsar un botón. La web está hecha para evitarlo. Las imágenes declaran su tamaño de antemano, así que el navegador les reserva el espacio. La fuente Inter se sirve desde nuestro dominio como un único archivo, y mientras se descarga el texto usa una fuente de respaldo ajustada al mismo tamaño, de modo que las líneas no se recolocan al llegar la fuente real.",
+              "El aviso de cookies y las respuestas de las preguntas frecuentes están en la página desde el principio, ocultos hasta que hacen falta, en lugar de añadirse después con un script. El aviso aparece a los pocos segundos y flota sobre la parte inferior de la pantalla, sin empujar el contenido.",
+              "La comparación de capturas lo confirmó desde otro ángulo: cada ruta mantuvo exactamente la misma altura de página que en la web anterior, así que el cambio de framework no movió nada en pantalla."
+            ]
+          },
+          {
+            "heading": "Usable con teclado o con lector de pantalla",
+            "paragraphs": [
+              "Después del cambio pasamos la auditoría de accesibilidad de Lighthouse por cada ruta y corregimos cada problema que señaló, hasta que las 48 páginas obtuvieron 100 en móvil. La mayoría de esos problemas venían de antes de la migración; la reconstrucción fue el momento de cerrarlos.",
+              "Las correcciones son concretas. Dos textos en gris claro sin contraste suficiente ahora son más oscuros. Los botones de anterior, siguiente y los puntos de dos carruseles de imágenes tienen nombres que un lector de pantalla anuncia en inglés y en español, y los puntos están separados para poder tocarlos con el dedo. Los títulos del pie, las tarjetas del portafolio y el directorio de servicios ya no saltan del título principal al tercer nivel, así que se puede recorrer cada página por sus títulos con un lector de pantalla. La etiqueta del selector de idioma empieza ahora por el código que se ve en pantalla, para que quien usa control por voz pueda decir lo que ve.",
+              "Algunos comportamientos cambiaron a propósito. El selector de idioma ahora está hecho de enlaces normales, que funcionan con teclado y los buscadores pueden seguir. La tecla Escape cierra el menú móvil. En el carrusel de características solo la cabecera de cada elemento actúa como botón, así que los enlaces de su interior vuelven a comportarse como enlaces."
+            ]
+          },
+          {
+            "heading": "Enlaces que funcionan, acceso sin conexión y privacidad",
+            "paragraphs": [
+              "Después auditamos cada página, cada configuración y cada enlace. Un navegador automatizado abrió las 48 rutas, la raíz y la página 404, en escritorio y en un Pixel 5 emulado, en el servidor de desarrollo y en una copia local del Worker de producción. Todas respondieron correctamente, sin errores en la consola ni peticiones fallidas a la propia web.",
+              "La auditoría encontró pequeños fallos que merecía la pena corregir. Los enlaces del menú y del pie a las secciones de la portada dependían de una redirección y ahora apuntan directamente a la dirección canónica. El manifiesto de instalación y la caché sin conexión apuntan ahora a la portada en inglés en lugar de a la redirección de la raíz. El icono de WhatsApp de la tarjeta de visita digital, roto desde antes de la migración, se volvió a dibujar.",
+              "La privacidad salió ganando sin esfuerzo adicional. La fuente se sirve desde nuestro dominio, así que leer la web no envía peticiones a un servicio externo de fuentes. Las cookies opcionales siguen desactivadas hasta que el visitante decide, con un aviso que ofrece aceptar y rechazar con el mismo peso junto a la política de cookies. El asistente conversacional por voz, que se conecta a ElevenLabs, solo se carga cuando el visitante empieza a desplazarse."
+            ]
+          },
+          {
+            "heading": "La web en producción, en PageSpeed Insights",
+            "paragraphs": [
+              "En cuanto producción sirvió la versión en Astro, analizamos la portada en inglés con Google PageSpeed Insights en móvil. El informe del 25 de noviembre de 2026 a las 15:20 da 98 en Rendimiento y 100 en Accesibilidad, Prácticas recomendadas y SEO.",
+              "PageSpeed Insights ejecuta Lighthouse desde servidores de Google, así que mide la página tal como la recibe un móvil a través de internet, pasando por la red de Cloudflare. Sus condiciones no son las de nuestras pruebas locales, así que su puntuación no es comparable con la mediana local de 89, y cada cifra va con su propia fecha y sus condiciones.",
+              "El panel de datos de usuarios reales aún no muestra datos. Resume lo que vivieron los usuarios de Chrome en los 28 días anteriores, y Google solo lo publica cuando una web acumula suficiente tráfico de ese tipo."
             ],
-            "image": "https://cdn.hlorenzoz.com/hlorenzoz.com/portfolio/me/tests-e2e.webp",
-            "imageAlt": "Registro de una ejecución de pruebas de extremo a extremo superadas en navegadores de escritorio y móviles"
-          },
-          {
-            "heading": "Privacidad, acceso sin conexión y atención por voz",
-            "paragraphs": [
-              "Las cookies opcionales se gestionan con Cloudflare Zaraz. El aviso aparece unos segundos después de cargar la página, para no competir con el contenido principal, y ofrece aceptar y rechazar con el mismo peso junto a un enlace a la política de cookies. La elección se envía a Zaraz y queda recordada.",
-              "La web es además una Progressive Web App. Un manifiesto permite instalarla y un service worker mantiene la portada en inglés disponible sin conexión. El widget de voz de ElevenLabs permite al visitante hablar con un asistente de IA; como es el único código de React de la web, se carga cuando el visitante hace scroll y nunca retrasa la primera vista."
-            ]
+            "image": "https://cdn.hlorenzoz.com/hlorenzoz.com/portfolio/hlorenzoz/lorenzoz-agency-pagespeed-insights.webp",
+            "imageAlt": "Informe de PageSpeed Insights de hlorenzoz.com en móvil, 25 de noviembre de 2026 a las 15:20: 98 en Rendimiento y 100 en Accesibilidad, Prácticas recomendadas y SEO"
           },
           {
             "heading": "Qué significa para un negocio local",
             "paragraphs": [
-              "Todo lo anterior es el estándar que aplicamos a las webs de nuestros clientes. Una web estática servida desde el borde tiene muy poco que pueda caerse o ser atacado, cuesta poco de alojar y carga rápido en las conexiones móviles que usan la mayoría de los clientes locales. Las páginas bilingües con hreflang correcto llegan a los dos públicos sin problemas de contenido duplicado. Los datos estructurados explican a Google y a los asistentes de IA quién es el negocio, dónde trabaja y qué ofrece, de una forma que pueden leer sin adivinar.",
-              "Nada de esto garantiza una posición en Google, y nunca la prometemos. Lo que sí hace es eliminar los motivos técnicos por los que un buen negocio se queda atrás: páginas lentas, datos ilegibles, enlaces rotos y páginas que se ven mal en el móvil.",
-              "El caso de estudio de esta web muestra en detalle el stack, las pruebas, las comprobaciones multidispositivo y el informe de resultados enriquecidos, y la web en producción está a un clic, para que la juzgues por ti mismo."
+              "Todo lo anterior es el estándar que aplicamos a las webs de nuestros clientes. Mucha gente busca un negocio local desde el móvil, a menudo con prisa, y una página que aparece al instante y responde al primer toque es parte del servicio que recibe antes de llamar. Si se puede usar con teclado y lector de pantalla, llega a más clientes.",
+              "También muestra cómo afrontamos un cambio así: una regla escrita antes de empezar, mediciones antes y después, y comprobaciones que demuestran que la web visible no se movió. Nada de esto garantiza una posición en Google, y nunca la prometemos. Quita los motivos técnicos por los que un buen negocio se queda atrás.",
+              "El caso de estudio de esta web muestra el informe de PageSpeed y el resto de las pruebas, y la web en producción está a un clic, para que puedas juzgarla por ti mismo."
             ]
           }
         ]
@@ -2349,7 +2381,112 @@
             ]
           }
         ]
+      },
+      "lorenzoz-agency-launch": {
+        "title": "Lorenzoz Agency estrena su web con Next.js 16",
+        "description": "Así construimos y lanzamos hlorenzoz.com en abril de 2026: web bilingüe estática con Next.js 16 y Tailwind CSS 4, probada en cada push y servida por Cloudflare.",
+        "paragraphs": [
+          "Lorenzoz Agency ya tiene casa propia en internet. Es la web donde el dueño de un negocio nos conoce, ve lo que ofrecemos y reserva una consulta gratuita de 15 minutos, así que la construimos con el nivel que prometemos a nuestros clientes: rápida en el móvil, escrita en dos idiomas, legible para los buscadores y revisada por pruebas automáticas antes de cada publicación.",
+          "Este artículo cuenta cómo se construyó y se lanzó la web en la primera semana de abril de 2026: el framework, el diseño, la forma de publicarla, las pruebas que la protegen y lo que pudimos comprobar en el lanzamiento. Cada resultado que citamos sale de un informe o de una ejecución de pruebas de esa semana, con su fecha."
+        ],
+        "sections": [
+          {
+            "heading": "Qué ofrece la web en su lanzamiento",
+            "paragraphs": [
+              "La primera versión pone por delante nuestro servicio de voz con IA. El titular de la portada promete hacer crecer un negocio con una IA que suena humana, y el texto que lo acompaña explica la ventaja sin rodeos: el negocio atiende 24/7, también fuera de horario y en fin de semana, y sus clientes reciben respuesta al momento. Una única llamada a la acción invita a reservar una consulta gratuita de 15 minutos, y el menú recoge soluciones, ventajas, precios, portafolio y contacto.",
+              "El servicio también está en la propia página. Un asistente conversacional por voz creado con ElevenLabs ocupa una esquina de cada página, y el visitante puede escribirle una pregunta o iniciar una llamada y hablar con él. Antes de reservar nada, el visitante escucha cómo responde una recepcionista con IA.",
+              "Además de la portada, el lanzamiento incluye un portafolio con proyectos conceptuales para una clínica dental, una inmobiliaria de lujo y un estudio de fitness, cada uno con su página de detalle en inglés y en español, una tarjeta de visita digital y las páginas de privacidad, cookies y términos y condiciones. La imagen que abre este artículo es la portada tal como era en el lanzamiento."
+            ]
+          },
+          {
+            "heading": "Construida con Next.js 16 y Tailwind CSS 4",
+            "paragraphs": [
+              "La web es un proyecto de Next.js 16, el framework de React, con estilos en Tailwind CSS 4. Bun instala las dependencias y ejecuta todos los scripts, del linter a las pruebas, de modo que el trabajo en local y el flujo automático usan los mismos comandos.",
+              "Next.js genera toda la web por adelantado como exportación estática. Cada página se convierte en un archivo HTML terminado dentro de una carpeta de salida, y no hay que generar nada en un servidor cuando llega un visitante. Una web comercial solo cambia cuando publicamos, así que los archivos ya están listos y la red solo tiene que entregarlos.",
+              "La ilustración resume el stack del lanzamiento: Next.js 16 y Tailwind CSS 4 para la web, Cloudflare como red en el borde que la aloja, GitHub Actions para la integración continua, Vitest para las pruebas unitarias y Playwright para las pruebas de extremo a extremo en navegadores reales."
+            ],
+            "image": "https://cdn.hlorenzoz.com/hlorenzoz.com/portfolio/me/tech-stack-visual.webp",
+            "imageAlt": "Ilustración del stack del lanzamiento: Next.js 16, Tailwind CSS 4, Cloudflare, GitHub Actions, Vitest y Playwright"
+          },
+          {
+            "heading": "Un diseño de cristal que aguanta en cualquier pantalla",
+            "paragraphs": [
+              "La identidad visual sigue un diseño de glassmorphism: una cabecera oscura, una barra de navegación esmerilada que flota sobre el contenido, tarjetas translúcidas y un azul de marca intenso para las acciones importantes. Los mismos valores de diseño rigen todas las páginas, que se leen como una sola web.",
+              "La mayoría de los visitantes de un negocio local llega desde el móvil, así que los diseños se comprobaron en el navegador con las medidas de un iPhone 14 Pro (393 por 852 píxeles), un Pixel 7 Pro (480 por 1040), un iPhone 14 Pro Max (430 por 932) y un iPad Air 5 (820 por 1180). La captura muestra la misma cabecera en los cuatro: el titular, el texto y el botón de reserva se adaptan al ancho de la pantalla sin cortarse ni solaparse.",
+              "En pantallas pequeñas el menú se recoge tras un único botón, mientras el logotipo y el selector de idioma siguen visibles arriba, de modo que pasar del inglés al español nunca cuesta más de un toque."
+            ],
+            "image": "https://cdn.hlorenzoz.com/hlorenzoz.com/portfolio/me/multiple-screens.webp",
+            "imageAlt": "La portada de Lorenzoz Agency en su lanzamiento en un iPhone 14 Pro, un Pixel 7 Pro, un iPhone 14 Pro Max y un iPad Air 5"
+          },
+          {
+            "heading": "Dos idiomas desde el primer día",
+            "paragraphs": [
+              "Cada página existe en inglés y en español con su propia dirección, en la que el idioma es la primera parte de la ruta. Los textos viven en un archivo de mensajes por idioma y los carga una librería de traducción pensada para Next.js, así que cada página se escribe una vez y se rellena con el texto del idioma que eligió el visitante.",
+              "Las dos versiones se redactan de forma nativa, sin pasar por un traductor. Las pruebas automáticas abren la versión inglesa y la española de la portada y de las páginas de detalle del portafolio, y comprueban que el cambio de idioma lleva al visitante a la misma página en el otro idioma."
+            ]
+          },
+          {
+            "heading": "Publicada como archivos estáticos en Cloudflare",
+            "paragraphs": [
+              "Como la compilación es una carpeta de archivos planos, publicar consiste en copiarlos: el último paso del flujo sube la exportación estática a Cloudflare, que la sirve desde su red, cerca de cada visitante. Las imágenes se entregan a través de la CDN de Cloudflare y no forman parte de la compilación de la web.",
+              "Con este planteamiento hay muy poco que pueda romperse. No hay un proceso de servidor que mantener al día, ni una base de datos que llenar o perder, ni código que se ejecute en cada visita, así que un pico repentino de tráfico solo significa entregar más archivos desde la caché."
+            ]
+          },
+          {
+            "heading": "Cada push pasa por un flujo de comprobaciones",
+            "paragraphs": [
+              "El repositorio ejecuta un flujo de GitHub Actions en cada push y en cada pull request. Tiene cuatro trabajos en un orden fijo, y cada uno espera a que el anterior termine bien: controles de calidad y pruebas unitarias, la compilación de la exportación estática, la verificación con pruebas de extremo a extremo y Lighthouse, y el despliegue en Cloudflare. Un cambio que falla en cualquier paso nunca llega a la web publicada.",
+              "El trabajo de calidad ejecuta ESLint, la comprobación de tipos de TypeScript y las pruebas unitarias con Vitest 4.1.0. En la ejecución de la captura se superaron 73 pruebas en 10 archivos en unos 11 segundos. Cubren las funciones de seguridad y de validación de datos, los datos del portafolio y componentes como los carruseles, la imagen que aparece con un fundido al cargar y los botones.",
+              "Antes incluso de llegar al flujo, unos hooks de pre commit se ejecutan con Bun en el equipo de desarrollo, y la mayoría de los errores se detectan en local en segundos."
+            ],
+            "image": "https://cdn.hlorenzoz.com/hlorenzoz.com/portfolio/me/tests-quality-unit.webp",
+            "imageAlt": "Registro de GitHub Actions del trabajo de calidad: lint, comprobación de tipos y 73 pruebas de Vitest superadas en 10 archivos"
+          },
+          {
+            "heading": "Pruebas de extremo a extremo en cinco navegadores",
+            "paragraphs": [
+              "El trabajo de verificación prueba la propia exportación estática, los mismos archivos que se van a desplegar. Playwright abre la web en cinco perfiles de navegador: Chromium, Firefox y WebKit en escritorio, más Mobile Chrome y Mobile Safari.",
+              "Cada perfil ejecuta los mismos nueve escenarios. En la portada, las pruebas comprueban que carga, que la navegación funciona, que se muestran las ventajas y las cifras, que el diseño se adapta al tamaño de pantalla y que las dos versiones de idioma son accesibles. En el caso de estudio de la clínica dental revisan la página de detalle en inglés y en español y el cambio entre ambas. En la ejecución del 6 de abril de 2026 se superaron las 45 pruebas en 1,9 minutos."
+            ],
+            "image": "https://cdn.hlorenzoz.com/hlorenzoz.com/portfolio/me/tests-e2e.webp",
+            "imageAlt": "Registro de Playwright en GitHub Actions con 45 pruebas de extremo a extremo superadas en Chromium, Firefox, WebKit, Mobile Chrome y Mobile Safari"
+          },
+          {
+            "heading": "Auditorías de Lighthouse en la misma ejecución",
+            "paragraphs": [
+              "En el mismo trabajo, Lighthouse CI sirve la exportación estática en un servidor local y audita siete páginas: la portada en inglés, el portafolio, el caso de estudio de la clínica dental, la tarjeta de visita digital y las tres páginas legales. Los resultados se comparan con los umbrales definidos para el proyecto, y el trabajo solo se supera si se cumplen.",
+              "La ejecución de la captura se superó y publicó sus informes el 6 de abril de 2026. No citamos aquí sus puntuaciones, porque el registro muestra las auditorías superadas y no las cifras de cada una. Lo que sí muestra es que el rendimiento, la accesibilidad y el SEO se revisan en cada cambio, no una sola vez."
+            ],
+            "image": "https://cdn.hlorenzoz.com/hlorenzoz.com/portfolio/me/tests-lighthouse.webp",
+            "imageAlt": "Registro de Lighthouse CI en GitHub Actions con la auditoría de siete páginas de la exportación estática, el 6 de abril de 2026"
+          },
+          {
+            "heading": "Datos estructurados que Google reconoce",
+            "paragraphs": [
+              "Los buscadores y los asistentes de IA entienden mejor una página cuando esta se describe con datos estructurados. La portada lleva JSON-LD que presenta la agencia como organización y como negocio local, y publica sus preguntas frecuentes en un formato que Google puede leer.",
+              "El 6 de abril de 2026 a las 20:23, la prueba de resultados enriquecidos de Google rastreó la portada y encontró tres elementos válidos: FAQ, Local businesses y Organisation. Los elementos válidos permiten que la página aparezca con resultados enriquecidos en la Búsqueda de Google. La captura es ese informe."
+            ],
+            "image": "https://cdn.hlorenzoz.com/hlorenzoz.com/portfolio/me/structured-data.webp",
+            "imageAlt": "Informe de la prueba de resultados enriquecidos de Google del 6 de abril de 2026 con tres elementos válidos: FAQ, Local businesses y Organisation"
+          },
+          {
+            "heading": "Lo que puede aprovechar un negocio local",
+            "paragraphs": [
+              "Todo lo anterior es el estándar que ofrecemos a nuestros clientes. Una web estática servida desde el borde carga rápido en las conexiones móviles que usa la mayoría de los clientes locales, cuesta poco de alojar y tiene muy poco que pueda caerse. Dos versiones nativas, una por idioma, llegan a los dos públicos. Los datos estructurados le dicen a Google quién es el negocio y qué ofrece sin que tenga que adivinarlo, y un flujo de pruebas detecta una página rota antes de que la vea un cliente.",
+              "Nada de esto garantiza una posición en Google, y nunca la prometemos. Lo que sí hace es eliminar los motivos técnicos por los que un buen negocio se queda atrás: páginas lentas, datos ilegibles y diseños que se rompen en el móvil."
+            ]
+          },
+          {
+            "heading": "Lo que vino después",
+            "paragraphs": [
+              "En noviembre de 2026 rehicimos la web con Astro, con las mismas direcciones, el mismo diseño y el mismo contenido, pero enviando mucho menos JavaScript al navegador. Un artículo aparte cuenta esa migración y sus resultados medidos."
+            ]
+          }
+        ]
       }
+    },
+    "related": {
+      "title": "Noticias sobre este proyecto"
     }
   }
 }

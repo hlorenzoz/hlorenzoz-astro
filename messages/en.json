@@ -1817,108 +1817,140 @@
         ]
       },
       "lorenzoz-agency-case-study": {
-        "title": "How we built the Lorenzoz Agency website, and why we moved it to Astro",
-        "description": "The build behind hlorenzoz.com: a bilingual static site on Cloudflare Workers, moved from Next.js 16 to Astro 7, with measured results and its tests.",
+        "title": "Our website, rebuilt on Astro for a faster and more accessible visit",
+        "description": "We rebuilt hlorenzoz.com on Astro 7 with the same URLs and design: 0 ms blocking time, far less JavaScript and accessibility 100. Before and after, measured.",
         "paragraphs": [
-          "Our own website now has its own case study in the portfolio. It is the site where a local business owner first meets Lorenzoz Agency, reads what we sell and books a call, so it has to practise everything we recommend to clients: fast pages, clear copy in two languages, structured data that search engines can read, and a quality process that catches mistakes before visitors do.",
-          "This article explains how the site is built today, why we rebuilt it on Astro 7 after launching it on Next.js 16, and what the measurements say. Every figure below comes from a test we ran, stated with its date and the conditions it was measured in."
+          "On November 25, 2026 we moved hlorenzoz.com, the website of Lorenzoz Agency, from Next.js 16 to Astro 7. Visitors kept the same addresses, the same design and the same content in English and Spanish. What changed is how much work each page asks of their phone: the pages now load a few kilobytes of JavaScript instead of more than half a megabyte, and they respond to the first tap without waiting.",
+          "This article covers what we rebuilt, how we checked that nothing visible broke, and what the change means for someone visiting the site on an ordinary phone. Every figure comes from a test we ran, with its date and conditions, and the before and after comparison sits in one table."
         ],
         "sections": [
           {
-            "heading": "What the site has to do",
+            "heading": "Where the site started",
             "paragraphs": [
-              "Lorenzoz Agency builds solutions for local businesses of any size and sells one outcome: new customers. The core offer is Local SEO, a single monthly plan with four pillars (authority content, backlinks and citations, authority on Google and in AI answers, and review management). Website development, an AI voice receptionist and software development sit around it as optional services.",
-              "The site carries that offer end to end. The home page explains the plan, what the same work would cost bought separately and how the process runs month after month, followed by pricing, frequently asked questions, the latest news and a 15 minute call booking. Four service pages, a portfolio of case studies, a news section, legal pages, an HTML sitemap and a digital business card complete the 48 pages of the site, published in English and Spanish.",
-              "The picture shows the home page as it looked at launch in April 2026. The copy has since been rewritten around Local SEO, while the visual identity, a dark hero with frosted glass cards, has stayed."
-            ],
-            "image": "https://cdn.hlorenzoz.com/hlorenzoz.com/portfolio/me/cover.webp",
-            "imageAlt": "The Lorenzoz Agency home page at launch in April 2026, with a dark hero, a booking button and frosted glass cards"
-          },
-          {
-            "heading": "From Next.js 16 to Astro 7",
-            "paragraphs": [
-              "The site went live on Next.js 16 as a static export, with Tailwind CSS 4, Cloudflare in front of it and tests in Vitest and Playwright. It worked, but every page shipped a React runtime to render content that never changes after the build. On a marketing site, that JavaScript costs load time and buys nothing.",
-              "On November 25, 2026 we migrated the whole project to Astro 7 under one rule: same URLs, same head tags, same design, same commands, agents and scripts. Only the framework changed. Every component became an Astro component with a small vanilla script where it needs interaction, such as the menu, the carousels and the FAQ accordion. React remains in exactly one place, the ElevenLabs voice widget, which mounts only once the visitor scrolls.",
-              "Astro builds the site as plain HTML files, one per route, with no server code at runtime: no server rendering, no middleware, no database. The illustration shows the original stack from the launch; the framework is the only layer that was replaced."
+              "The site launched in April 2026 on Next.js 16, exported as static files, with Tailwind CSS 4, Cloudflare in front of it and tests in Vitest and Playwright. A separate article tells the story of that first build.",
+              "It worked, but every page carried a React runtime to make interactive a page that never changes after the build. On a site that mostly presents text, images and a booking button, that JavaScript is a cost the visitor pays on every visit and gets nothing back for. After building the GERP DJ site on Astro and seeing how it performed, we gave our own site the same treatment."
             ],
             "image": "https://cdn.hlorenzoz.com/hlorenzoz.com/portfolio/me/tech-stack-visual.webp",
-            "imageAlt": "Illustration of the original stack at launch: Next.js 16, Tailwind CSS 4, Cloudflare, GitHub Actions, Vitest and Playwright"
+            "imageAlt": "Illustration of the stack the site launched with in April 2026: Next.js 16, Tailwind CSS 4, Cloudflare, GitHub Actions, Vitest and Playwright"
           },
           {
-            "heading": "What the migration changed, measured",
+            "heading": "One rule: only the framework changes",
             "paragraphs": [
-              "Before switching, we compared both builds page by page on November 25, 2026. Each build was served locally and measured with Lighthouse in its mobile profile, taking the median of several runs. The Performance score of the English home page went from 77 on Next.js to 89 on Astro. The Local SEO service page went from 89 to 94, and the GERP DJ case study from 72 to 86.",
-              "The reason is visible in two numbers. Total Blocking Time, the time the main thread is too busy to respond to the visitor, was between 66 and 83 ms on the Next.js pages and 0 ms on the Astro pages. The JavaScript each page loads fell from between 534 and 645 KB to between 2.6 and 8.9 KB.",
-              "Nothing else was allowed to move. The head tags and JSON-LD came out identical on all 48 pages, and screenshots of every route at 390 and 1440 pixels wide differed by 0.25% of pixels or less, with identical page heights. Visitors and search engines see the same site; it simply does less work in the browser."
-            ]
-          },
-          {
-            "heading": "The live site, measured with PageSpeed Insights",
-            "image": "https://cdn.hlorenzoz.com/hlorenzoz.com/portfolio/hlorenzoz/lorenzoz-agency-pagespeed-insights.webp",
-            "imageAlt": "PageSpeed Insights report for hlorenzoz.com on mobile, November 25, 2026: 98 Performance and 100 Accessibility, Best Practices and SEO",
-            "paragraphs": [
-              "After the switch we ran the live English home page through Google PageSpeed Insights with its mobile profile. The report from November 25, 2026 at 3:20 PM gives 98 for Performance and 100 for Accessibility, Best Practices and SEO.",
-              "PageSpeed Insights runs Lighthouse from Google servers, so it measures the page the way a phone receives it over the internet, with the Cloudflare services in front of it included. Scores move by a few points from one run to the next, which is why every figure in this article carries the date of the report it comes from.",
-              "The panel for real user data shows no data yet. It summarises what Chrome users experienced over the last 28 days, and Google only publishes it once a site has enough of that traffic. The scores above are lab measurements, and the case study shows the full report."
-            ]
-          },
-          {
-            "heading": "Design built once, tested on every screen",
-            "paragraphs": [
-              "The look is a glassmorphism design system written in Tailwind CSS 4: frosted panels with backdrop blur, gradients and a palette of brand blues and golds. Tailwind 4 is configured in a single CSS file, so the design tokens live in one place and every component reads from them.",
-              "Icons come from Lucide, rendered as inline SVG at build time instead of an icon font. The Inter typeface is self hosted through Astro's Fonts API: one variable font file, preloaded, with text shown immediately in a fallback font while it loads.",
-              "Every layout is checked on phones, tablets and desktop. During the migration, an automated browser crawl opened all 48 routes, the root redirect and the 404 page at desktop size and on an emulated Pixel 5, and every one answered without console errors or failed requests."
+              "The migration followed a single rule: same URLs, same head tags, same design, same commands, agents and scripts. A visitor with a bookmark, a search engine with the page in its index and a link shared months ago all had to land on the same page and see the same thing. Only the framework underneath was allowed to change.",
+              "To hold ourselves to it, we compared the new build with the old one before switching. The head tags and the JSON-LD structured data came out identical on all 48 pages, in both languages. Screenshots of every route at 390 and 1440 pixels wide, a phone width and a desktop width, differed by 0.25% of pixels or less, with identical page heights. The sitemap and the robots file came out byte for byte the same."
             ],
             "image": "https://cdn.hlorenzoz.com/hlorenzoz.com/portfolio/me/multiple-screens.webp",
             "imageAlt": "The Lorenzoz Agency home page rendered on several phone screen sizes and a tablet"
           },
           {
-            "heading": "Bilingual from the URL up",
+            "heading": "What we rebuilt",
             "paragraphs": [
-              "Every page exists in English and in Spanish under its own path, and the Spanish version of any English URL is the same path under the Spanish prefix. The root address redirects to the English home. Each page declares its canonical URL and hreflang alternates for both languages, plus a default that points to English, so search engines show each visitor the right version.",
-              "The language switcher is made of ordinary links, which search engines can crawl. Both languages are written natively from one set of translation files, and an automated test fails the build if a key exists in one language and not in the other, so a page can never go live half translated."
+              "Every component of the site became a native Astro component. Astro turns them into plain HTML at build time, one file per page, with no server code running when someone visits. The parts that react to the visitor, such as the mobile menu, the carousels and the frequently asked questions, each got a small script in plain JavaScript that does that one job.",
+              "React stays in exactly one place: the ElevenLabs voice widget, which lets a visitor talk to our AI assistant. As the heaviest piece of the site, it is left out of the first load and mounts only once the visitor scrolls past half the screen.",
+              "The tests moved too, and grew. At the end of the migration Vitest ran 1,096 passing tests, rendering components through Astro's Container API and checking the built HTML of every page, and Playwright ran 37 passing end to end tests in a real browser. A new test checks every internal link, image address, anchor, redirect and offline cache entry in the built site, and fails if any of them points nowhere. Lighthouse CI audits 14 key URLs on every run.",
+              "We also dropped a leftover of the old build: on 46 of the 48 pages it told the browser to fetch a small footer icon early, competing with the content that matters first. And the service worker that keeps the home page available offline got new cache names, so copies stored from the old site are discarded at the switch instead of showing stale pages."
             ]
           },
           {
-            "heading": "Search, structured data and AI answers",
+            "heading": "Before and after, measured",
             "paragraphs": [
-              "On April 6, 2026, Google's Rich Results Test crawled the home page and found three valid items: FAQ, Local business and Organisation, which makes them eligible for rich results in Google Search. The screenshot is that report.",
-              "The structured data on the live home page today goes further. It describes the agency as a ProfessionalService with its postal address, opening hours, geographic coordinates, contact point and the eight countries it serves. It lists the four services with their offers and price specifications, publishes the six frequently asked questions as an FAQPage, and marks the page with a speakable specification. Prices in the visible copy and in the JSON-LD come from one source file, so they cannot disagree.",
-              "For crawlers and AI assistants the site publishes a sitemap with all 48 URLs, a robots file that allows everything, and an llms.txt file that summarises the agency, its services and every case study in plain text. Every page also carries OpenGraph and Twitter card tags, so a shared link shows a proper title, description and image."
+              "Before switching, we served both builds locally and measured the same pages with Lighthouse in its mobile profile, which simulates a modest phone on a slow mobile connection. Each figure is the median of several runs, measured on November 25, 2026. Lab scores move by a few points between runs, so the medians matter more than any single number.",
+              "Two rows explain the rest. Total Blocking Time is how long the phone is too busy running scripts to react to a tap or a scroll, and it fell to zero. The JavaScript each page loads fell by more than 98%, from over half a megabyte to a few kilobytes. The last two rows are the proof that the speed did not come from removing anything: same head, same structured data, same picture on screen."
             ],
-            "image": "https://cdn.hlorenzoz.com/hlorenzoz.com/portfolio/me/structured-data.webp",
-            "imageAlt": "Google Rich Results Test report from April 6, 2026 showing valid FAQ, Local businesses and Organisation items"
+            "table": {
+              "caption": "Next.js 16 build and Astro 7 build of hlorenzoz.com, served locally and measured on November 25, 2026 (Lighthouse mobile, median of several runs)",
+              "headers": [
+                "Measure",
+                "Next.js 16",
+                "Astro 7"
+              ],
+              "rows": [
+                [
+                  "Performance, English home page",
+                  "77",
+                  "89"
+                ],
+                [
+                  "Performance, Local SEO service page",
+                  "89",
+                  "94"
+                ],
+                [
+                  "Performance, GERP DJ case study",
+                  "72",
+                  "86"
+                ],
+                [
+                  "Total Blocking Time",
+                  "66 to 83 ms",
+                  "0 ms"
+                ],
+                [
+                  "JavaScript loaded per page",
+                  "534 to 645 KB",
+                  "2.6 to 8.9 KB"
+                ],
+                [
+                  "Head tags and JSON-LD on 48 pages",
+                  "Reference",
+                  "Identical"
+                ],
+                [
+                  "Screenshot difference at 390 and 1440 px",
+                  "Reference",
+                  "0.25% of pixels or less"
+                ]
+              ]
+            }
           },
           {
-            "heading": "Images and delivery at the edge",
+            "heading": "Faster to show, quicker to respond",
             "paragraphs": [
-              "The site is a static assets Cloudflare Worker: the build output is uploaded as files and served from Cloudflare's network, close to each visitor, over HTTP/3. Hashed CSS and script files are cached for a year as immutable, while HTML is revalidated on every request, so a new deploy is visible at once. Cloudflare Workers Builds deploys automatically on every push to the main branch.",
-              "Images do not travel through the build at all. They live in an R2 bucket behind our own CDN domain and are resized by Cloudflare at the edge. Each image gets a responsive set of widths, and the format is negotiated per browser, AVIF or WebP depending on what the browser accepts, so a phone never downloads a desktop sized file."
+              "For the visitor, less JavaScript means the page is ready sooner. A browser has to download, read and run every script it receives, and with the old build that was more than half a megabyte on every page. Now the HTML arrives ready to read and the scripts that follow weigh a few kilobytes, which is why the Performance score rose on all three pages we compared.",
+              "Response matters as much as appearance. With 66 to 83 ms of blocking time, a tap during the load could wait for scripts to finish before anything happened. At 0 ms, the menu opens, the accordion unfolds and the booking button reacts the moment it is touched.",
+              "The gain is largest where visitors need it most. The lab profile behind these numbers imitates a modest phone on a slow connection, which is the situation of many people who look up a local business while out, on mobile data or patchy Wi-Fi. A page that weighs little and asks little of the processor stays usable there, and it uses less of the visitor's data and battery."
             ]
           },
           {
-            "heading": "Quality gates before anything ships",
+            "heading": "A page that stays still while it loads",
             "paragraphs": [
-              "Every commit passes through automated checks before it is accepted: a secret scan, Conventional Commit messages, linting, Astro's type check and the unit tests related to the files that changed. The full unit suite runs before every push.",
-              "The test suite is part of the product. At the end of the migration, Vitest ran 1,096 passing tests, rendering components through Astro's Container API and checking the built HTML of every page: head tags, structured data, internal links and fragment targets. Playwright ran 37 passing end to end tests against the built site, covering navigation, carousels, the cookie banner and the language switch. Lighthouse CI audits 14 key URLs and fails the run if accessibility or SEO drop below 95 or best practices below 90; all assertions passed.",
-              "Some rules are about the words, not the code. A test rejects hyphenated compounds in visible copy, and the project rules ban the typographic characters typical of generated text, because the copy should read as written by people for people. The screenshot shows an end to end run from the original pipeline, across desktop and mobile browsers."
+              "Few things are as annoying as a page that jumps while you read it or reach for a button. The site is built so that does not happen. Images declare their size in advance, so the browser reserves their space before they arrive. The Inter typeface is self hosted and loaded as a single file, and while it downloads the text is shown in a fallback font adjusted to the same size, so lines do not rewrap when the real font appears.",
+              "The cookie banner and the answers to the frequently asked questions are part of the page from the start, hidden until they are needed, instead of being added later by a script. The banner appears a few seconds after the page loads and floats over the bottom of the screen rather than pushing the content down.",
+              "The screenshot comparison confirmed it from another angle: every route kept exactly the same page height as on the old site, so the change of framework moved nothing on screen."
+            ]
+          },
+          {
+            "heading": "Usable with a keyboard or a screen reader",
+            "paragraphs": [
+              "After the switch we ran the Lighthouse accessibility audit on every route and fixed each issue it raised, until all 48 pages scored 100 on mobile. Most of those issues predated the migration; the rebuild was the moment to close them.",
+              "The fixes are concrete. Two pieces of light gray text without enough contrast are now darker. The previous, next and dot buttons of two image carousels have names a screen reader announces in English and Spanish, and the dots are spaced so each one is a target a finger can hit. Footer titles, portfolio cards and the services directory no longer jump from the main heading straight to the third level, so screen reader users can move through each page by its headings. The label of the language switcher now starts with the language code shown on screen, so voice control users can say what they see.",
+              "A few behaviours changed on purpose. The language switcher is now made of ordinary links, which work with a keyboard and can be followed by search engines. The Escape key closes the mobile menu. In the feature carousel only the header of each item acts as a button, so the links inside it behave like links again."
+            ]
+          },
+          {
+            "heading": "Links that work, offline access and privacy",
+            "paragraphs": [
+              "We then audited every page, setting and link. An automated browser opened all 48 routes, the root address and the 404 page, at desktop size and on an emulated Pixel 5, both on the development server and on a local copy of the production Worker. Every page answered correctly, with no console errors and no failed requests to the site itself.",
+              "The audit caught small faults worth fixing. Links from the menu and footer to sections of the home page relied on a redirect and now point straight at the canonical address. The install manifest and the offline cache now point at the English home page instead of the root redirect. The WhatsApp icon on the digital business card, broken since before the migration, was redrawn.",
+              "Privacy came along without extra effort. The typeface is served from our own domain, so reading the site sends no request to an external font service. Optional cookies stay off until the visitor decides, through a banner that offers accept and reject with equal weight next to a link to the cookie policy. The voice assistant, which connects to ElevenLabs, loads only after the visitor starts scrolling, so someone who only glances at the first screen never loads it."
+            ]
+          },
+          {
+            "heading": "The live site in PageSpeed Insights",
+            "paragraphs": [
+              "Once production served the Astro build, we tested the live English home page with Google PageSpeed Insights on mobile. The report from November 25, 2026 at 3:20 PM gives 98 for Performance and 100 for Accessibility, Best Practices and SEO.",
+              "PageSpeed Insights runs Lighthouse from Google servers, so it measures the page as a phone receives it over the internet, through the Cloudflare network in front of the site. Its setup differs from our local lab runs, so its score is not comparable with the local median of 89, and each figure is reported with its own date and conditions.",
+              "The panel for real user data shows no data yet. It summarises what Chrome users experienced over the previous 28 days, and Google publishes it only once a site has enough of that traffic."
             ],
-            "image": "https://cdn.hlorenzoz.com/hlorenzoz.com/portfolio/me/tests-e2e.webp",
-            "imageAlt": "Log of an end to end test run passing across desktop and mobile browsers"
-          },
-          {
-            "heading": "Privacy, offline access and the voice assistant",
-            "paragraphs": [
-              "Optional cookies are handled by Cloudflare Zaraz. A banner appears a few seconds after the page loads, so it never competes with the main content, and it offers accept and reject with equal weight next to a link to the cookie policy. The choice is passed to Zaraz and remembered.",
-              "The site is also a Progressive Web App. A web app manifest lets visitors install it, and a service worker keeps the English home page available offline. The ElevenLabs voice widget lets a visitor talk to an AI assistant; because it is the only React code on the site, it loads after the visitor scrolls and never delays the first view."
-            ]
+            "image": "https://cdn.hlorenzoz.com/hlorenzoz.com/portfolio/hlorenzoz/lorenzoz-agency-pagespeed-insights.webp",
+            "imageAlt": "PageSpeed Insights report for hlorenzoz.com on mobile, November 25, 2026 at 3:20 PM: 98 Performance and 100 Accessibility, Best Practices and SEO"
           },
           {
             "heading": "What this means for a local business",
             "paragraphs": [
-              "Everything above is the standard we apply to client sites. A static site served from the edge has very little that can go down or be attacked, costs little to host, and loads quickly on the mobile connections most local customers use. Bilingual pages with correct hreflang reach both audiences without duplicate content problems. Structured data tells Google and AI assistants who the business is, where it works and what it offers, in a form they can read without guessing.",
-              "None of this guarantees a position in Google, and we never promise one. What it does is remove the technical reasons a good business gets passed over: slow pages, unreadable data, broken links and pages that look wrong on a phone.",
-              "The case study for this site shows the stack, the tests, the multidevice checks and the Rich Results report in detail, and the live site is one click away, so you can judge it for yourself."
+              "Everything here is the standard we apply to client sites. Many people look for a local business on a phone, often on the move, and a page that appears at once and reacts to the first tap is part of the service they receive before they ever call. A page that keyboard and screen reader users can use is open to more customers.",
+              "It also shows how we handle a change like this: one rule written down before starting, measurements before and after, and checks that prove the visible site did not move. None of this guarantees a position in Google, and we never promise one. It removes the technical reasons a good business gets passed over.",
+              "The case study for this site shows the PageSpeed report and the rest of the evidence, and the live site is one click away, so you can judge it for yourself."
             ]
           }
         ]
@@ -2349,7 +2381,112 @@
             ]
           }
         ]
+      },
+      "lorenzoz-agency-launch": {
+        "title": "Lorenzoz Agency launches its website on Next.js 16",
+        "description": "How we built and launched hlorenzoz.com in April 2026: a bilingual static site on Next.js 16 and Tailwind CSS 4, tested on every push, served by Cloudflare.",
+        "paragraphs": [
+          "Lorenzoz Agency now has a home of its own on the web. This is the site where a business owner first meets us, sees what we offer and books a free 15 minute consultation, so we built it to the standard we promise our clients: fast on a phone, written in two languages, readable for search engines and checked by automated tests before every release.",
+          "This article explains how the site was built and launched in the first week of April 2026: the framework, the design, the way it is published, the tests that guard it and what we could verify at launch. Every result quoted below comes from a report or a test run of that week, with its date."
+        ],
+        "sections": [
+          {
+            "heading": "What the site offers at launch",
+            "paragraphs": [
+              "The launch version leads with our AI voice service. The headline on the home page promises to scale a business with AI that sounds human, and the copy under it explains the benefit in plain terms: the business is available 24/7, including after hours and at weekends, and its customers get an answer at once. A single call to action invites the visitor to book a free 15 minute consultation, and the navigation covers solutions, benefits, prices, the portfolio and contact.",
+              "The service is also on the page itself. A voice assistant built with ElevenLabs sits in the corner of every page, where a visitor can type a question or start a call and talk to it. It is the most direct demonstration we could give of the product we sell: before booking anything, a visitor can hear how an AI receptionist answers.",
+              "Around the home page, the launch includes a portfolio with concept projects for a dental clinic, a luxury real estate agency and a fitness studio, each with its own detail page in English and Spanish, a digital business card, and the privacy policy, cookie policy and terms and conditions. The picture at the top of this article is the home page as it looked at launch."
+            ]
+          },
+          {
+            "heading": "Built on Next.js 16 and Tailwind CSS 4",
+            "paragraphs": [
+              "The site is a Next.js 16 project, the React framework, styled with Tailwind CSS 4. Bun installs the dependencies and runs every script, from the linter to the tests, which keeps local work and the automated pipeline on the same commands.",
+              "Next.js builds the whole site ahead of time as a static export. Every page becomes a finished HTML file in an output folder, and nothing has to be generated on a server when a visitor arrives. A marketing site only changes when we publish, not when someone opens it, so there is no reason to run a server for each request: the files are ready, and the network only has to deliver them.",
+              "The illustration sums up the stack at launch: Next.js 16 and Tailwind CSS 4 for the site, Cloudflare as the edge network that hosts it, GitHub Actions for continuous integration, Vitest for unit tests and Playwright for end to end tests in real browsers."
+            ],
+            "image": "https://cdn.hlorenzoz.com/hlorenzoz.com/portfolio/me/tech-stack-visual.webp",
+            "imageAlt": "Illustration of the launch stack: Next.js 16, Tailwind CSS 4, Cloudflare, GitHub Actions, Vitest and Playwright"
+          },
+          {
+            "heading": "A glass design that holds on every screen",
+            "paragraphs": [
+              "The visual identity is a glassmorphism design: a dark hero, a frosted navigation bar that floats above the content, translucent cards and a bright brand blue for the actions that matter. The same tokens drive every page, so the portfolio, the legal pages and the business card all read as one site.",
+              "Most visitors to a local business arrive on a phone, so the layouts were checked in the browser at the sizes of an iPhone 14 Pro (393 by 852 pixels), a Pixel 7 Pro (480 by 1040), an iPhone 14 Pro Max (430 by 932) and an iPad Air 5 (820 by 1180). The screenshot shows the same hero on all four: the headline, the copy and the booking button reflow to the width of the screen without being cut or overlapping.",
+              "On small screens the menu folds behind a single button, while the logo and the language selector stay visible at the top, so switching between English and Spanish never takes more than one tap."
+            ],
+            "image": "https://cdn.hlorenzoz.com/hlorenzoz.com/portfolio/me/multiple-screens.webp",
+            "imageAlt": "The Lorenzoz Agency home page at launch on an iPhone 14 Pro, a Pixel 7 Pro, an iPhone 14 Pro Max and an iPad Air 5"
+          },
+          {
+            "heading": "Two languages from day one",
+            "paragraphs": [
+              "Every page exists in English and in Spanish under its own address, with the language as the first part of the path. Translations live in one message file per language and are loaded by a translation library made for Next.js, so a page is written once and filled with the text of the language the visitor chose.",
+              "Both versions are written natively, not passed through a translator. The automated tests open the English and Spanish versions of the home page and of the portfolio detail pages, and check that the language switch takes the visitor to the same page in the other language."
+            ]
+          },
+          {
+            "heading": "Published as static files on Cloudflare",
+            "paragraphs": [
+              "Because the build is a folder of plain files, publishing is a copy: the last step of the pipeline uploads the static export to Cloudflare, which serves it from its network close to each visitor. Images are delivered through the Cloudflare CDN rather than from the site build.",
+              "This setup has very little that can break. There is no server process to keep up to date, no database to fill or to lose, and no code running for each visit, so a sudden spike in traffic only means more files delivered from a cache. Hosting costs stay low for the same reason."
+            ]
+          },
+          {
+            "heading": "Every push goes through a pipeline",
+            "paragraphs": [
+              "The repository runs a GitHub Actions pipeline on every push and pull request. It has four jobs in a fixed order, and each one waits for the previous one to pass: quality checks and unit tests, the build of the static export, verification with end to end tests and Lighthouse, and the deploy to Cloudflare. A change that fails at any step never reaches the live site.",
+              "The quality job runs ESLint, a TypeScript type check and the unit tests in Vitest 4.1.0. In the run shown, 10 test files and 73 tests passed in about 11 seconds. They cover the security and input validation helpers, the portfolio data and components such as the carousels, the image that fades in on load and the buttons.",
+              "Before code even reaches the pipeline, pre commit hooks run on the developer's machine with Bun, so most mistakes are caught locally in seconds instead of minutes later in the pipeline."
+            ],
+            "image": "https://cdn.hlorenzoz.com/hlorenzoz.com/portfolio/me/tests-quality-unit.webp",
+            "imageAlt": "GitHub Actions log of the quality job: lint, type check and 73 Vitest tests passing in 10 files"
+          },
+          {
+            "heading": "End to end tests in five browsers",
+            "paragraphs": [
+              "The verification job tests the static export itself, the same files that are about to be deployed. Playwright opens the site in five browser profiles: Chromium, Firefox and WebKit on desktop, plus Mobile Chrome and Mobile Safari.",
+              "Each profile runs the same nine scenarios. On the home page the tests check that it loads, that the navigation works, that the features and the stats are shown, that the layout responds to the screen size and that both language versions are accessible. On the dental clinic case study they check the English and the Spanish detail pages and the switch between them. In the run of April 6, 2026 all 45 tests passed in 1.9 minutes."
+            ],
+            "image": "https://cdn.hlorenzoz.com/hlorenzoz.com/portfolio/me/tests-e2e.webp",
+            "imageAlt": "Playwright log in GitHub Actions with 45 end to end tests passing in Chromium, Firefox, WebKit, Mobile Chrome and Mobile Safari"
+          },
+          {
+            "heading": "Lighthouse audits in the same run",
+            "paragraphs": [
+              "In the same job, Lighthouse CI serves the static export on a local server and audits seven pages: the English home page, the portfolio, the dental clinic case study, the digital business card and the three legal pages. The results are checked against the assertions set for the project, and the job only passes if they hold.",
+              "The run in the screenshot passed and uploaded its reports on April 6, 2026. We do not quote scores from it here, because the log shows the audits passing rather than the individual numbers. What it shows is the habit that matters: performance, accessibility and SEO are checked on every change, not once before launch."
+            ],
+            "image": "https://cdn.hlorenzoz.com/hlorenzoz.com/portfolio/me/tests-lighthouse.webp",
+            "imageAlt": "Lighthouse CI log in GitHub Actions auditing seven pages of the static export, run on April 6, 2026"
+          },
+          {
+            "heading": "Structured data recognised by Google",
+            "paragraphs": [
+              "Search engines and AI assistants read a page more reliably when it describes itself in structured data. The home page carries JSON-LD that presents the agency as an organisation and a local business and publishes its frequently asked questions in a form Google can read.",
+              "On April 6, 2026 at 20:23, Google's Rich Results Test crawled the home page and found three valid items: FAQ, Local businesses and Organisation. Valid items make the page eligible for rich results in Google Search. The screenshot is that report."
+            ],
+            "image": "https://cdn.hlorenzoz.com/hlorenzoz.com/portfolio/me/structured-data.webp",
+            "imageAlt": "Google Rich Results Test report from April 6, 2026 with three valid items: FAQ, Local businesses and Organisation"
+          },
+          {
+            "heading": "What a local business can take from it",
+            "paragraphs": [
+              "Everything above is the standard we offer to clients. A static site served from the edge loads quickly on the mobile connections most local customers use, costs little to host and has very little that can go down. Two native language versions reach both audiences. Structured data tells Google who the business is and what it offers without guessing, and a pipeline of tests means a broken page is caught before a customer sees it.",
+              "None of this guarantees a position in Google, and we never promise one. What it does is remove the technical reasons a good business gets passed over: slow pages, unreadable data and layouts that break on a phone."
+            ]
+          },
+          {
+            "heading": "What came next",
+            "paragraphs": [
+              "In November 2026 we rebuilt the site on Astro, keeping the same addresses, design and content while sending far less JavaScript to the browser. A separate post covers that migration and its measured results."
+            ]
+          }
+        ]
       }
+    },
+    "related": {
+      "title": "News about this project"
     }
   }
 }

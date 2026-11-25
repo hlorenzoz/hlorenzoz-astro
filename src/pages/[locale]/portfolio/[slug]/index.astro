@@ -11,6 +11,9 @@ import VerticalFeatureCarousel from '@/src/components/VerticalFeatureCarousel.as
 import FullScreenshotCarousel from '@/src/components/FullScreenshotCarousel.astro';
 import { getTranslations } from '@/lib/i18n';
 import { getPortfolioItemBySlugAction, getPortfolioItemsAction } from '@/lib/actions/portfolio';
+import { getNewsItemsAction } from '@/lib/actions/news';
+import { formatContentDate } from '@/lib/dates';
+import { localeHref } from '@/lib/routing';
 import { portfolioDetail } from '@/lib/schema';
 import { imageSrcSet } from '@/lib/image';
 import { cn } from '@/lib/utils/cn';
@@ -31,6 +34,9 @@ const item = await getPortfolioItemBySlugAction(slug);
 if (!item) throw new Error(`Unknown portfolio slug: ${slug}`);
 
 const t = getTranslations(locale, `portfolio.${item.id}`);
+const tNews = getTranslations(locale, 'news');
+// Posts about this project, newest first (getNewsItemsAction already orders them).
+const projectNews = (await getNewsItemsAction()).filter((post) => post.portfolioId === item.id);
 const tNav = getTranslations(locale, 'navigation');
 
 const pageUrl = absoluteUrl(locale, `portfolio/${item.slug}`);
@@ -244,6 +250,29 @@ const preloadImages = [
                                     />
                                 )}
                             </div>
+                        </div>
+                    </section>
+                )
+            }
+
+            {
+                projectNews.length > 0 && (
+                    <section id="portfolio-news" class="py-24 px-6 bg-white">
+                        <div class="max-w-5xl mx-auto">
+                            <h2 class="text-3xl md:text-5xl font-bold text-black mb-12 tracking-tight">{tNews('related.title')}</h2>
+                            <ul class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                {projectNews.map((post) => (
+                                    <li class="p-8 rounded-[2rem] bg-gray-50 border border-gray-100">
+                                        <time datetime={post.datePublished} class="text-sm font-bold text-gray-600">
+                                            {formatContentDate(locale, post.datePublished, 'dayMonthYear')}
+                                        </time>
+                                        <h3 class="text-xl font-bold text-black mt-3 mb-3 leading-snug">
+                                            <a href={localeHref(locale, `news/${post.slug}`)} class="hover:text-blue-700 transition-colors">{tNews(`items.${post.id}.title`)}</a>
+                                        </h3>
+                                        <p class="text-gray-900 line-clamp-3">{tNews(`items.${post.id}.description`)}</p>
+                                    </li>
+                                ))}
+                            </ul>
                         </div>
                     </section>
                 )
