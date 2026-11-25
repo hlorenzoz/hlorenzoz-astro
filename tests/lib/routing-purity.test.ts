@@ -6,7 +6,7 @@
  * cannot prove safe to drop, so anything importing ANY symbol from that module
  * pulls the entire JSON along.
  *
- * That shipped under Next.js: `components/Navbar.tsx` was a client component
+ * That shipped once: the Navbar was a client component
  * present on every route, it imported `localeHref` from the registry, and the
  * built bundle for /en/privacy-policy/ - a page with no portfolio content
  * whatsoever - carried the full portfolio payload including `fullScreenshot`

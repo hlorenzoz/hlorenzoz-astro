@@ -64,7 +64,7 @@ const structuredData = collectionPage({
 });
 
 const sizes = '(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 400px';
-// The first three cards are `priority`, so they are preloaded like next/image did.
+// The first three cards are `priority`, so they are preloaded.
 const preloadImages = items.slice(0, 3).map((item) => ({ srcset: imageSrcSet(item.image, { sizes }), sizes }));
 ---
 

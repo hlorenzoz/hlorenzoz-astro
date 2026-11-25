@@ -131,8 +131,8 @@ describe('XML sitemap', () => {
      * `lastmod` is the whole value of the file.
      *
      * Asserting the exact key set, rather than just that the two fields are
-     * present, is the point: nothing else stops a contributor or a Next.js
-     * scaffold from quietly putting the ignored fields back, since every other
+     * present, is the point: nothing else stops a contributor or a framework
+     * default from quietly putting the ignored fields back, since every other
      * test here reads only `url` and `lastModified`.
      */
     it('emits only loc and lastmod, never the fields crawlers ignore', () => {

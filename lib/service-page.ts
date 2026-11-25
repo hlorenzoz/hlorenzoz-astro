@@ -18,7 +18,7 @@
  * compiling cleanly and all dropped at build time with no warning. Every such
  * combination is now a type error.
  */
-import { pageMetadata, type Metadata } from '@/lib/page-metadata';
+import { pageMetadata, type PageMeta } from '@/lib/page-metadata';
 import { breadcrumbTrail, childRoutes, findRoute } from '@/lib/routes';
 import {
     ROUTE_PATH_PATTERN,
@@ -384,20 +384,20 @@ function assertValidContentPage(registry: RouteRegistry, cfg: ContentPageConfig)
 /**
  * Validates a page config once and returns its builders.
  *
- * Next calls `generateMetadata` and the page component separately, so a page
- * that called the two free functions revalidated the same config on every one:
+ * A page needs both its metadata and its body, so a page that called the two
+ * free functions revalidated the same config on every call:
  * the regex, the grapheme count, the registry lookup and both date parses, per
  * page per locale. Defining the page once at module scope validates once and
  * fails at import time, before any half-built page renders.
  *
  * ```ts
  * const page = defineContentPage({ path: 'local-seo', kind: 'category', ... });
- * export const generateMetadata = ({ params }) => page.metadata(locale);
+ * // in the .astro frontmatter: <BaseLayout meta={page.metadata(locale)}>
  * ```
  */
 export interface ContentPage {
     readonly config: ContentPageConfig;
-    metadata(locale: string): Metadata;
+    metadata(locale: string): PageMeta;
     schema(locale: string, translate: TranslateFn): JsonLdObject;
     /**
      * The pages one tier below this one, for the component to render as real
@@ -437,7 +437,7 @@ export function defineContentPage(
     };
 }
 
-function buildMetadata(locale: string, cfg: ContentPageConfig, route: ValidatedRoute): Metadata {
+function buildMetadata(locale: string, cfg: ContentPageConfig, route: ValidatedRoute): PageMeta {
     return pageMetadata({
         locale,
         path: cfg.path,

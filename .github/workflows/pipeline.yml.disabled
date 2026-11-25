@@ -54,14 +54,14 @@
 #       - name: Setup project
 #         uses: ./.github/actions/setup
 #
-#       - name: 💾 Cache Next.js build
+#       - name: 💾 Cache Astro build
 #         uses: actions/cache@v5
 #         with:
 #           path: |
-#             ${{ github.workspace }}/.next/cache
-#           key: ${{ runner.os }}-nextjs-${{ hashFiles('**/bun.lock', '**/package.json') }}-${{ hashFiles('**/*.js', '**/*.jsx', '**/*.ts', '**/*.tsx') }}
+#             ${{ github.workspace }}/node_modules/.astro
+#           key: ${{ runner.os }}-astro-${{ hashFiles('**/bun.lock', '**/package.json') }}-${{ hashFiles('**/*.js', '**/*.jsx', '**/*.ts', '**/*.tsx', '**/*.astro') }}
 #           restore-keys: |
-#             ${{ runner.os }}-nextjs-${{ hashFiles('**/bun.lock', '**/package.json') }}-
+#             ${{ runner.os }}-astro-${{ hashFiles('**/bun.lock', '**/package.json') }}-
 #
 #       - name: 🏗️ Build for Pages
 #         run: bun run build:pages
@@ -70,7 +70,7 @@
 #         uses: actions/upload-artifact@v7
 #         with:
 #           name: production-bundle
-#           path: out/
+#           path: dist/
 #           retention-days: 1
 #
 #   verify:
@@ -88,7 +88,7 @@
 #         uses: actions/download-artifact@v7
 #         with:
 #           name: production-bundle
-#           path: out/
+#           path: dist/
 #
 #       - name: 💾 Cache Playwright browsers
 #         uses: actions/cache@v5
@@ -134,14 +134,14 @@
 #         uses: actions/download-artifact@v7
 #         with:
 #           name: production-bundle
-#           path: out/
+#           path: dist/
 #
 #       - name: 🚀 Deploy to Cloudflare Pages
 #         uses: cloudflare/wrangler-action@v3
 #         with:
 #           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
 #           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
-#           command: pages deploy out --project-name=hlorenzoz --branch=${{ github.ref_name }} --commit-dirty=true
+#           command: pages deploy dist --project-name=hlorenzoz --branch=${{ github.ref_name }} --commit-dirty=true
 #           gitHubToken: ${{ secrets.GITHUB_TOKEN }}
 #           packageManager: bun
 #           wranglerVersion: 'latest'

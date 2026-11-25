@@ -2,8 +2,8 @@
  * Article dates are bare `YYYY-MM-DD`, so `new Date()` reads them as UTC
  * midnight, and a formatter without a pinned `timeZone` renders the previous
  * day for every reader west of UTC. On `2026-07-01` that is a different
- * *month*: the Next build shipped "Jul 2026", browsers in the Americas
- * re-rendered "Jun 2026" and React threw hydration error #418.
+ * *month*: the build once shipped "Jul 2026" while browsers in the Americas
+ * re-rendered "Jun 2026" (a hydration mismatch).
  *
  * The Astro component formats at build time only, but the build machine's zone
  * must not leak into the month either, so this file pins TZ to a zone west of

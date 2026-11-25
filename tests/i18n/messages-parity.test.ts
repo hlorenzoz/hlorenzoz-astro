@@ -1,8 +1,8 @@
 /**
  * Key-tree parity between the locale message files.
  *
- * next-intl does not fail a build on a missing key. Its default behaviour is
- * to render the key path itself, so a page translated in `en` but not `es`
+ * A production build does not fail on a missing key: the translator renders
+ * the key's last segment instead, so a page translated in `en` but not `es`
  * ships visible text like "services.localSeo.title" to users and to Google.
  * Nothing else in the pipeline catches that: lint passes, types pass, the
  * static export succeeds, and the broken copy only shows up if a human loads

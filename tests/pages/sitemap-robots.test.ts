@@ -8,7 +8,7 @@ import { LOCALES, absoluteUrl } from '@/lib/site-config';
 const ctx = {} as Parameters<typeof sitemapGET>[0];
 
 describe('/robots.txt', () => {
-    it('allows everything and points at the sitemap, in the exact Next.js format', async () => {
+    it('allows everything and points at the sitemap, in the exact published format', async () => {
         const res = await robotsGET(ctx);
         expect(await res.text()).toBe('User-Agent: *\nAllow: /\n\nSitemap: https://hlorenzoz.com/sitemap.xml\n');
     });

@@ -269,7 +269,7 @@ describe('portfolio data - every item', () => {
      *
      * For those, no deep link INTO the client's own site is safe. `bookingUrl` and
      * `slide.link` are single strings handed verbatim to `bookingHref` (see
-     * app/[locale]/portfolio/[slug]/page.tsx), with no locale awareness, so an /en/
+     * src/pages/[locale]/portfolio/[slug]/index.astro), with no locale awareness, so an /en/
      * link strands every Spanish visitor on the English page, contradicting the very
      * bilingual claim these entries are built to demonstrate. Links to third party
      * tools that test the site, such as PageSpeed Insights and the Rich Results
@@ -335,7 +335,7 @@ describe('portfolio data - every item', () => {
     });
 
     /*
-     * `description` is the meta description: generateMetadata passes it straight into
+     * `description` is the meta description: the page metadata passes it straight into
      * `description`, `openGraph.description` and `twitter.description`, and the index
      * card renders it under `line-clamp-2`. Google renders roughly 160 characters, so
      * anything past that is written for nobody.
@@ -494,9 +494,9 @@ describe('portfolio data - every item', () => {
 
 /*
  * Every real client site gets an "About the business" section on its detail page
- * (app/[locale]/portfolio/[slug]/page.tsx renders it for `type: 'live'` only).
- * next-intl renders a missing key as its path, so a live entry without this copy
- * would ship "portfolio.<id>.business.title" as visible text. Demos describe no
+ * (src/pages/[locale]/portfolio/[slug]/index.astro renders it for `type: 'live'` only).
+ * A missing key renders as its last path segment in production, so a live entry
+ * without this copy would ship "title" as visible text. Demos describe no
  * real business and are not required to carry it.
  */
 describe('portfolio data - live entries describe their business', () => {

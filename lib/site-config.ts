@@ -3,8 +3,8 @@
  *
  * Everything that used to be hardcoded across the layout, sitemap, and page
  * files lives here. Consuming URLs through `absoluteUrl()` guarantees they
- * always match the canonical form Next.js emits (`/{locale}{path}/`,
- * trailingSlash: true) — which is what prevented the sitemap from drifting.
+ * always match the canonical form the build emits (`/{locale}{path}/`,
+ * trailingSlash: 'always') — which is what prevented the sitemap from drifting.
  */
 import { publishedPriceRange } from '@/lib/pricing';
 
@@ -174,7 +174,7 @@ export function metaDescription(text: string, max = 160): string {
 
 /**
  * Maps an app locale to the `og:locale` value OpenGraph expects
- * (`language_TERRITORY`). Kept here so every `generateMetadata` agrees rather
+ * (`language_TERRITORY`). Kept here so every page's metadata agrees rather
  * than each page inlining its own `locale === 'es' ? ... : ...` ternary.
  */
 export function ogLocale(locale: string): string {

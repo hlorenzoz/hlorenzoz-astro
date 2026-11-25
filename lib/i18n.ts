@@ -1,9 +1,8 @@
 /**
  * Build-time translations for Astro pages and components.
  *
- * Runs on `createTranslator` from `use-intl/core`, the engine next-intl is
- * built on, so `messages/*.json` (ICU syntax, `t.raw()`, rich tags) keeps
- * working unchanged. `t.rich()` returns React nodes; in `.astro` files use
+ * Runs on `createTranslator` from `use-intl/core`, so `messages/*.json` (ICU
+ * syntax, `t.raw()`, rich tags) is read as-is. `t.rich()` returns React nodes; in `.astro` files use
  * `t.markup()` and render it with `set:html`.
  */
 import {

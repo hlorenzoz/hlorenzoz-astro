@@ -3,7 +3,7 @@ import { imageFallbackSrc, imageSrcSet } from '@/lib/image';
 const SRC = 'https://cdn.hlorenzoz.com/hlorenzoz.com/portfolio/gerp-dj/cover.webp';
 const firstWidth = (srcset: string) => srcset.split(', ')[0].split(' ')[1];
 
-describe('imageSrcSet matches next/image getWidths', () => {
+describe('imageSrcSet candidate widths', () => {
     it('starts at the smallest vw ratio of the device sizes', () => {
         expect(firstWidth(imageSrcSet(SRC, { sizes: '(max-width: 768px) 100vw, 681px' }))).toBe('640w');
         expect(firstWidth(imageSrcSet(SRC, { sizes: '(max-width: 1280px) 50vw, 640px' }))).toBe('384w');

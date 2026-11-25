@@ -46,7 +46,7 @@ self.addEventListener('fetch', (event) => {
         return;
     }
 
-    // Skip external APIs, analytics, Zaraz (/cdn-cgi), and Next.js /api/ routes
+    // Skip external APIs, analytics, Zaraz (/cdn-cgi) and /api/ routes
     const url = new URL(request.url);
     if (!url.origin.includes(self.location.hostname) || url.pathname.startsWith('/api/') || url.pathname.startsWith('/cdn-cgi/')) {
         return;

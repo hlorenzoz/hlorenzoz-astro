@@ -22,7 +22,7 @@ import {
 
 /**
  * The subset of head metadata this site emits, rendered by
- * `src/components/Head.astro`. Field names follow the Next.js `Metadata` shape
+ * `src/components/Head.astro`. Field names follow the common `Metadata` object shape
  * the builders were written against, so they carried over unchanged.
  */
 export interface OgImage {
@@ -55,9 +55,6 @@ export interface PageMeta {
     twitter?: { card?: string; title?: string; description?: string; images?: string[] };
 }
 
-/** Alias: the builders were written against Next's `Metadata` name. */
-export type Metadata = PageMeta;
-
 export interface PageMetadataInput {
     locale: string;
     /** Route path relative to the locale root, e.g. 'privacy-policy'. */
@@ -89,7 +86,7 @@ export function pageMetadata({
     type = 'website',
     publishedTime,
     modifiedTime,
-}: PageMetadataInput): Metadata {
+}: PageMetadataInput): PageMeta {
     const url = absoluteUrl(locale, path);
 
     return {

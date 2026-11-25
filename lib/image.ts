@@ -1,11 +1,11 @@
 /**
- * Cloudflare Image Resizing URLs, ported from the Next.js custom loader.
+ * Cloudflare Image Resizing URLs for `<img src/srcset>`.
  * Images live on the R2-backed CDN and are transformed at the edge, so the
  * build never processes them.
  */
 const CDN = 'https://cdn.hlorenzoz.com/';
 
-/** Same breakpoints the Next.js build used (deviceSizes + imageSizes). */
+/** Candidate widths: device breakpoints + smaller fixed-size image widths. */
 export const DEVICE_SIZES = [640, 750, 828, 1080, 1200, 1920, 2048, 3840];
 export const IMAGE_SIZES = [16, 32, 48, 64, 96, 128, 256, 384, 450, 512, 600, 700, 720];
 const ALL_SIZES = [...IMAGE_SIZES, ...DEVICE_SIZES].sort((a, b) => a - b);
@@ -22,7 +22,7 @@ export function imageUrl(src: string, width: number, quality = 50): string {
 type SrcSetOptions = { sizes?: string; width?: number; quality?: number };
 
 /**
- * Candidate widths, ported from next/image `getWidths`: with `sizes`, every
+ * Candidate widths: with `sizes`, every
  * breakpoint at or above the smallest viewport ratio it mentions (`vw`); with a
  * fixed `width`, the deduped 1x and 2x candidates; otherwise the device sizes.
  */
@@ -40,7 +40,7 @@ function getWidths({ sizes, width }: SrcSetOptions): { widths: number[]; kind: '
     return { widths: [...new Set([width, width * 2].map(pick))], kind: 'x' };
 }
 
-/** `srcset` exactly as next/image emitted it. */
+/** Responsive `srcset` (`w` descriptors with `sizes`, `x` with a fixed width). */
 export function imageSrcSet(src: string, opts: SrcSetOptions): string {
     const { widths, kind } = getWidths(opts);
     return widths
@@ -48,7 +48,7 @@ export function imageSrcSet(src: string, opts: SrcSetOptions): string {
         .join(', ');
 }
 
-/** The `src` fallback next/image emitted: the last (largest) candidate. */
+/** The `src` fallback: the last (largest) candidate. */
 export function imageFallbackSrc(src: string, opts: SrcSetOptions): string {
     const { widths } = getWidths(opts);
     return imageUrl(src, widths[widths.length - 1], opts.quality);

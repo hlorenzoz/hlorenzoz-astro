@@ -4,8 +4,7 @@
  * are. `renderAstro()` wraps output in a <body>, which is right for components
  * but would scatter a page's <head> into the body.
  *
- * Used by the SEO suites that used to call Next's `generateMetadata` and render
- * the page component: in Astro the metadata is computed in the page frontmatter,
+ * Used by the SEO suites: the metadata is computed in the page frontmatter,
  * so the rendered head IS the metadata.
  */
 import { experimental_AstroContainer as AstroContainer } from 'astro/container';

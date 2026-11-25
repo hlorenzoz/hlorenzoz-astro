@@ -14,7 +14,7 @@ import en from '@/messages/en.json';
  */
 const mockSlides: PortfolioSlide[] = [
     { id: '1', image: '/1.webp', title: 'Visibility', badge: 'SEO', description: 'Test' },
-    { id: '2', image: '/2.webp', title: 'Tech Stack', badge: 'NextJS', description: 'Test' },
+    { id: '2', image: '/2.webp', title: 'Tech Stack', badge: 'Astro', description: 'Test' },
     { id: '3', image: ['/3a.webp', '/3b.webp'], title: 'GBP Optimization', badge: 'GBP', description: 'Test' },
 ];
 
@@ -45,7 +45,7 @@ describe('VerticalFeatureCarousel', () => {
         const screen = await render();
         expect(slideButtons(screen).map((b) => b.getAttribute('aria-label'))).toEqual([
             'Select section: SEO',
-            'Select section: NextJS',
+            'Select section: Astro',
             'Select section: GBP',
         ]);
     });

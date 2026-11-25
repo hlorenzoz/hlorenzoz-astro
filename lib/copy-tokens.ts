@@ -3,7 +3,7 @@
  *
  * `messages/*.json` never carries a figure (see AGENTS.md, "Where the prices
  * live in code"). Most price-bearing strings are single messages interpolated
- * by next-intl, but FAQ items are read with `t.raw` as plain data and handed to
+ * by the translator (`lib/i18n.ts`), but FAQ items are read with `t.raw` as plain data and handed to
  * both the accordion and the JSON-LD, so they need the same substitution done
  * by hand. This is that substitution, with the values coming from
  * `lib/pricing.ts`.

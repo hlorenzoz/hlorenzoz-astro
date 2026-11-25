@@ -75,7 +75,7 @@ describe('Portfolio Pages', () => {
     it('falls back to the local contact section when no bookingUrl is set', async () => {
         const { document } = await renderItemPage('dental-clinic-1');
         const ctaLink = document.querySelector('#portfolio-cta a');
-        // What the Next build emitted in out/en/portfolio/dental-clinic-1/.
+        // The published href for /en/portfolio/dental-clinic-1/.
         expect(ctaLink?.getAttribute('href')).toBe('/en/#contact');
         expect(ctaLink?.getAttribute('target')).toBeNull();
     });

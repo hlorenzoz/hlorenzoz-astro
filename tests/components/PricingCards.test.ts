@@ -71,7 +71,7 @@ describe('CorePlanCard', () => {
         expect(screen.getByRole('link', { name: 'Book a call' })).toHaveAttribute('href', '#contact');
         const more = screen.getByTestId('pricing-learn-more');
         // A plain <a>: the trailing-slash href reaches the page as given, as
-        // next/link did in the static export (trailingSlash: true).
+        // the build emits with trailingSlash: 'always'.
         expect(more).toHaveAttribute('href', '/en/services/local-seo/');
         // The visible label is short; the sr-only span carries the offer name so
         // the link is not a bare "Learn more" to a screen reader or a crawler.

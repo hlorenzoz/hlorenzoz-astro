@@ -1,7 +1,7 @@
 ---
 /**
- * Port of `app/[locale]/page.tsx`: the home page. It passes no `meta`, so the
- * layout's default metadata is the page's metadata, as it was under Next.
+ * The home page. It passes no `meta`, so the
+ * layout's default metadata is the page's metadata.
  */
 import {
     ArrowRight,
@@ -96,7 +96,7 @@ const problemTitle = t.markup('problem.title', {
     br: () => '<br/>',
 });
 
-// A plain next/image <Image> (no fade wrapper) in the Next page, so a plain <img>.
+// A plain <img> (no fade wrapper).
 const BENEFITS_IMAGE = {
     src: 'https://cdn.hlorenzoz.com/hlorenzoz.com/ai-benefits.webp',
     width: 1000,

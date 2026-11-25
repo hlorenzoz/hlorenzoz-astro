@@ -1,6 +1,6 @@
 ---
 /**
- * Port of `components/FadeInImage.tsx`: emits the same `<img>` next/image did
+ * Responsive CDN `<img>` (srcset/sizes via `lib/image.ts`)
  * (srcset/sizes through the Cloudflare loader in `lib/image.ts`, `data-nimg`,
  * fill styles, lazy or high fetch priority) and keeps the blur-to-sharp fade.
  *
@@ -29,7 +29,7 @@ const { src, alt, fill, width, height, sizes, priority, fetchPriority, quality, 
 // We maintain 'relative' as the default for non-fill cases
 const wrapperClass = fill ? 'absolute inset-0 overflow-hidden' : `relative overflow-hidden ${containerClassName || ''}`;
 
-// next/image: without `sizes` or a fixed width it offers device widths and
+// Without `sizes` or a fixed width it offers device widths and
 // declares `sizes="100vw"`; with only a fixed width it uses 1x/2x and no sizes.
 const resolvedSizes = sizes ?? (width && !fill ? undefined : '100vw');
 const opts = { sizes, width: fill ? undefined : width, quality };

@@ -229,7 +229,7 @@ export function monthlyAddOn(offer: ServiceOffer): PriceComponent | undefined {
  * One helper for every service page, which each use a different subset.
  * Hand-written value objects per page would be as many chances to forget one
  * and render a literal "{bundlePrice}" to a visitor. Extra values are ignored by
- * next-intl, so passing the full set everywhere is safe and keeps the call
+ * the translator, so passing the full set everywhere is safe and keeps the call
  * sites identical.
  *
  * `bundlePrice` is absent for the core offer: it is what the discount hangs on,

@@ -78,7 +78,7 @@ const screenshots = Array.isArray(item.fullScreenshot) ? item.fullScreenshot : [
 const multiShot = Array.isArray(item.fullScreenshot) && item.fullScreenshot.length > 1;
 const liveDemoLabel = t('liveDemoButton') || 'Live Demo';
 
-// next/image `priority` images, preloaded in the same order Next emitted them.
+// `priority` images, preloaded in page order.
 const heroSizes = '(max-width: 768px) 100vw, 681px';
 const firstSlideImage = item.slides?.[0]?.map ? undefined : item.slides?.[0]?.image;
 const preloadImages = [

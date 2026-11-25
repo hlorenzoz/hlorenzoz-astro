@@ -6,7 +6,7 @@
  */
 import { getTranslations } from '@/lib/i18n';
 import { webPage, type JsonLdObject } from '@/lib/schema';
-import { pageMetadata, type Metadata } from '@/lib/page-metadata';
+import { pageMetadata, type PageMeta } from '@/lib/page-metadata';
 import { absoluteUrl, metaDescription, SITE_NAME } from '@/lib/site-config';
 
 export interface LegalPageConfig {
@@ -18,7 +18,7 @@ export interface LegalPageConfig {
     contentKey: string;
 }
 
-export async function legalMetadata(locale: string, cfg: LegalPageConfig): Promise<Metadata> {
+export async function legalMetadata(locale: string, cfg: LegalPageConfig): Promise<PageMeta> {
     const t = getTranslations(locale);
     return pageMetadata({
         locale,

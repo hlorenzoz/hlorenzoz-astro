@@ -1,6 +1,5 @@
 /**
- * Per-page canonical + OpenGraph. Under Next these were `generateMetadata`
- * exports; in Astro the page frontmatter builds the `PageMeta` and BaseLayout
+ * Per-page canonical + OpenGraph. The page frontmatter builds the `PageMeta` and BaseLayout
  * renders it, so the pages are rendered and their <head> is read.
  */
 import { describe, it, expect } from 'vitest';

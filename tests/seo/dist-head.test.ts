@@ -4,8 +4,7 @@
  * The per-page suites (metadata, news-pages, service-pages-config) render a
  * page or call its builders; this one checks the artifact, for EVERY route,
  * so a page added later is covered without anyone remembering to list it.
- * Under Next the same facts were spread across `generateMetadata` exports; in
- * Astro the frontmatter computes them and BaseLayout renders them, so the built
+ * The page frontmatter computes them and BaseLayout renders them, so the built
  * HTML is the single place they can all be seen together.
  *
  * It needs a build at least as new as the sources, and SKIPS otherwise: `bun

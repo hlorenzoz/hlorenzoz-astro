@@ -1,7 +1,7 @@
 /**
  * Crawl-all, which is what Google asks for.
  *
- * This used to disallow `/api/`, `/_next/` and `/static/`. Blocking the assets
+ * This used to disallow `/api/`, the framework asset folder and `/static/`. Blocking the assets
  * a page needs to render "directly harms how well our algorithms render and
  * index your content" (Google). Nothing on this site needs crawl-blocking:
  * every route is public. Keeping a page OUT of the index is a job for

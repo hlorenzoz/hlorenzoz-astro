@@ -11,7 +11,7 @@
  * bundle of every page, including the legal pages that render none of it.
  * `tests/lib/routing-purity.test.ts` guards the separation.
  *
- * Rule of thumb: if a client component needs it, it belongs here.
+ * Rule of thumb: if a client script needs it, it belongs here.
  */
 
 /**
@@ -180,7 +180,7 @@ export function tryParseFreshnessDate(value: string): Date | null {
 /**
  * A route that has passed validation, carrying its already-parsed date.
  *
- * The parsed value is kept so consumers do not re-parse: `app/sitemap.ts` needs
+ * The parsed value is kept so consumers do not re-parse: `src/pages/sitemap.xml.ts` needs
  * a Date, and having it parse the same string a second time split one
  * responsibility across two files, where forgetting either half degrades
  * silently (no validation, or no error context).

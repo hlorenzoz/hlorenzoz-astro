@@ -4,7 +4,7 @@ import react from '@astrojs/react';
 import tailwindcss from '@tailwindcss/vite';
 
 // Static build served as assets by a Cloudflare Worker (see wrangler.jsonc).
-// URLs keep the Next.js export shape: /{locale}/{path}/index.html.
+// URLs take the form /{locale}/{path}/, emitted as /{locale}/{path}/index.html.
 export default defineConfig({
   site: 'https://hlorenzoz.com',
   output: 'static',

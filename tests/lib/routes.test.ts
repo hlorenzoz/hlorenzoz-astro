@@ -122,7 +122,7 @@ describe('assertValidRoute enforces the contract at the boundary', () => {
         const validated = assertValidRoute(VALID, 'test');
         expect(validated.lastModifiedDate).toBeInstanceOf(Date);
         expect(validated.lastModifiedDate.toISOString()).toBe('2026-07-10T00:00:00.000Z');
-        // Every registry route carries it, which is what lets app/sitemap.ts
+        // Every registry route carries it, which is what lets src/pages/sitemap.xml.ts
         // drop its own parseFreshnessDate call.
         for (const route of ALL_ROUTES) {
             expect(route.lastModifiedDate.toISOString().slice(0, 10)).toBe(route.lastModified);

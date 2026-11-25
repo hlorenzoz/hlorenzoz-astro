@@ -8,7 +8,7 @@ const CDN_SRC = 'https://cdn.hlorenzoz.com/hlorenzoz.com/ai-benefits.webp';
 /**
  * The fade-in itself (skeleton removed on load, blur cleared, 500 ms fallback)
  * runs in the component's client script and is covered by Playwright. These
- * pin the server-rendered initial state and the next/image attributes.
+ * pin the server-rendered initial state and the responsive image attributes.
  */
 describe('FadeInImage', () => {
     it('renders the image with a skeleton initially', async () => {
@@ -23,7 +23,7 @@ describe('FadeInImage', () => {
         expect(screen.getByAltText('Test image')).toHaveClass('object-cover', 'w-full', 'h-full', 'custom-class');
     });
 
-    it('emits the lazy next/image attributes for a fixed-size image', async () => {
+    it('emits the lazy responsive image attributes for a fixed-size image', async () => {
         const opts = { sizes: '(max-width: 768px) 100vw, 576px' };
         const screen = await renderAstro(FadeInImage, { src: CDN_SRC, alt: 'Dashboard', width: 1000, height: 1000, ...opts });
         const img = screen.getByAltText('Dashboard');
@@ -51,7 +51,7 @@ describe('FadeInImage', () => {
         expect(screen.body.querySelector('.border-blue-500\\/10')).toBeNull();
     });
 
-    it('defaults sizes to 100vw for a fill image without sizes, like next/image', async () => {
+    it('defaults sizes to 100vw for a fill image without sizes', async () => {
         const screen = await renderAstro(FadeInImage, { src: CDN_SRC, alt: 'Fill', fill: true });
         const img = screen.getByAltText('Fill');
         expect(img).toHaveAttribute('sizes', '100vw');

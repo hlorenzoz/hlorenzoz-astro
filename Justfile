@@ -19,23 +19,23 @@ setup:
 
 # --- Dev / build ---------------------------------------------------------
 
-# Start the Next.js dev server
+# Start the Astro dev server
 dev:
-    bun next dev
+    bun run dev
 
-# Production build (Next.js)
+# Production build (Astro, into ./dist)
 build:
-    bun next build
+    bun run build
 
-# Static export build for Cloudflare Workers (./out)
+# Static build for Cloudflare Workers (./dist)
 build-pages:
     bun run build:pages
 
 # Serve the production build locally
 start:
-    bun next start
+    bun run start
 
-# Build for Pages and preview with Wrangler
+# Build and preview ./dist with Wrangler
 preview:
     bun run preview
 
@@ -125,6 +125,6 @@ dossier *locales:
 
 # Production deploys run AUTOMATICALLY on every push via Cloudflare Workers
 # Builds (the Worker is linked to the GitHub repo). This recipe is only for a
-# manual out-of-band deploy: build the static export and `wrangler deploy`.
+# manual out-of-band deploy: build ./dist and `wrangler deploy`.
 deploy:
     bun run deploy

@@ -1,6 +1,6 @@
 # Lorenzoz Agency - Website Development | Local SEO | Review Management | AI Voice Receptionist | Software Development / Mobile App Development
 
-Production-grade Next.js 16 website and PWA for Lorenzoz Agency, a full-service growth
+Production-grade Astro website and PWA for Lorenzoz Agency, a full-service growth
 partner for local businesses covering website development, local SEO, review management,
 AI voice receptionists, and custom software / mobile app development.
 
@@ -61,72 +61,47 @@ built around Local SEO. See
 
 ## 🚀 Tech Stack
 
-- **Framework**: Next.js 16 with App Router + Turbopack
+- **Framework**: Astro 7, static output (`dist/`), no server code at runtime
 - **Language**: TypeScript (strict mode)
-- **Styling**: Tailwind CSS with Glassmorphism design system
-- **Animations**: GSAP
-- **Fonts**: Inter & Outfit (Google Fonts)
-- **Internationalization**: next-intl (English, Spanish)
-- **Testing**: Vitest, Cypress, Playwright, Lighthouse CI
-- **Deployment**: Cloudflare Workers (static assets, serving `out/`)
+- **Styling**: Tailwind CSS v4 (CSS-first, `src/styles/global.css`) with a glassmorphism design system
+- **Icons**: Lucide (`@lucide/astro`)
+- **Interactivity**: vanilla `<script>` in `.astro` components; React only for the ElevenLabs voice widget island, loaded on scroll
+- **Fonts**: Inter, self-hosted through the Astro Fonts API
+- **Internationalization**: `use-intl` translator over `messages/{en,es}.json` (`lib/i18n.ts`)
+- **Testing**: Vitest (Astro Container API), Playwright, Lighthouse CI
+- **Deployment**: Cloudflare Workers (static assets, serving `dist/`)
 - **Package Manager**: Bun
 
 > This is the stack of THIS marketing site. The agency's Software Development /
 > Mobile App Development service uses a separate stack for client deliverables:
 > Flutter (frontend) + a full-stack backend, targeting all devices and screens.
 
-## ⚠️ Setup Instructions
-
-### 1. Fix Package Manager Permissions
-
-Before installing dependencies, you need to fix npm/Bun permissions:
+## ⚙️ Setup
 
 ```bash
-# Fix npm cache permissions
-sudo chown -R $(whoami) "/Users/hlorenzoz/.npm"
-
-# OR check Bun temp directory permissions
-echo $TMPDIR
+just setup   # bun install + pre-commit install
+just dev     # Astro dev server at http://localhost:4321
 ```
 
-### 2. Install Dependencies
-
-```bash
-# Using Bun (recommended)
-bun install
-
-# OR using npm
-npm install
-```
-
-### 3. Run Development Server
-
-```bash
-# Start development server with Turbopack
-bun dev
-
-# Server will be available at http://localhost:3000
-```
+Run `just` to list every recipe.
 
 ## 📁 Project Structure
 
 ```
-ai-agency-hlorenzoz/
-├── app/                    # Next.js App Router
-│   ├── layout.tsx         # Root layout with fonts & SEO
-│   ├── page.tsx           # Home page with glassmorphism
-│   └── globals.css        # Global styles & utilities
-├── components/            # Reusable UI components (TBD)
-├── lib/                   # Utilities & business logic (TBD)
-│   ├── security/         # Security utilities (TBD)
-│   └── design-system/    # Design tokens (TBD)
-├── public/               # Static assets
-│   ├── manifest.json     # PWA manifest
-│   └── icons/            # App icons
-├── tests/            # Test suites (TBD)
-├── next.config.ts        # Next.js configuration
-├── tailwind.config.ts    # Tailwind configuration
-└── package.json          # Dependencies & scripts
+hlorenzoz-astro/
+├── src/
+│   ├── pages/[locale]/   # Routes: /en/... and /es/..., one index.astro per page
+│   ├── layouts/          # BaseLayout: <head>, skip link, site-wide widgets
+│   ├── components/       # .astro components (vanilla scripts for interactivity)
+│   ├── islands/          # React island: ElevenLabs voice widget
+│   └── styles/           # global.css (Tailwind v4)
+├── lib/                  # Data, pricing, routes, SEO metadata and JSON-LD builders
+├── messages/             # en.json, es.json
+├── public/               # Static assets, _redirects, _headers, llms.txt, sw.js
+├── tests/                # Vitest suites mirroring the source tree; tests/e2e for Playwright
+├── scripts/              # CDN image sync, Stripe links, commercial dossier
+├── astro.config.mjs      # Astro configuration
+└── wrangler.jsonc        # Cloudflare Worker (static assets from dist/)
 ```
 
 ## 🎨 Design System
@@ -162,140 +137,40 @@ The project uses a **glassmorphism** design pattern with:
 
 ## 🧪 Testing Strategy
 
-### Local Development & Validation
-
-Before pushing changes, run the validation suite:
-
 ```bash
-bun run validate
+just validate   # lint + astro check + Vitest with coverage (same as the pre-commit hook)
+just verify     # build + validate + Playwright E2E + Lighthouse CI against dist/
 ```
 
-This will run linting, type-checking, and tests.
-
-### Unit Tests (Vitest)
-```bash
-bun run test:unit
-```
-
-### Component Tests (Cypress)
-```bash
-bun run test:component
-```
-
-### E2E Tests (Playwright)
-```bash
-bun run test:e2e
-```
-
-### Security Tests
-```bash
-bun run test:security
-```
-
-### Lighthouse CI
-```bash
-bun run lighthouse:local
-```
+- **Unit and component tests (Vitest)**: `.astro` components render with the Container API
+  (`tests/helpers/render.ts`); `tests/seo/dist-head.test.ts` checks the head of every built page.
+- **E2E (Playwright)**: `just test-e2e-static` runs against `dist/`, including the client scripts.
+- **Lighthouse CI**: `just test-lighthouse-static`.
 
 ## 🌍 Internationalization
 
-Supports:
-- English (default)
-- Spanish
-
-Locale structure:
-```
-messages/
-├── en.json
-└── es.json
-```
+English (default) and Spanish, every page under `/{locale}/`. Copy lives in
+`messages/en.json` and `messages/es.json`; `tests/i18n/messages-parity.test.ts` keeps them in step.
 
 ## 📦 Build & Deploy
 
-### Build for Production
 ```bash
-bun run build
+just build-pages   # static build into dist/
+just preview       # build and serve dist/ with Wrangler
 ```
 
-### Cloudflare Workers Deployment
+Deployed as a static-assets Cloudflare Worker (`wrangler.jsonc`, serving `dist/`). Deploys
+run **automatically on every push** via Cloudflare Workers Builds once the Worker is linked
+to this GitHub repo. Manual deploy: `just deploy`.
 
-Deployed as a static-assets Cloudflare Worker (`wrangler.jsonc`, serving `out/`).
-Deploys run **automatically on every push** via Cloudflare Workers Builds (the
-Worker is linked to this GitHub repo). Manual deploy: `bun run deploy` or `just deploy`.
-From the workspace root, `just deploy website` runs the same manual deploy after a typed
-confirmation. The global `just deploy` never includes the website: it relies on the
-push deploy.
-
-> Previously, CI/CD and deploys ran on a **GitHub Actions** pipeline. That
-> workflow is now disabled (`.github/workflows/pipeline.yml`, commented out),
-> with quality gates moved to pre-commit and deploys to Cloudflare Workers Builds.
-
-The project includes:
-- Static asset optimization
-- Image optimization (AVIF, WebP)
-- Security headers
-- PWA support
+> CI/CD previously ran on a **GitHub Actions** pipeline. That workflow is disabled
+> (`.github/workflows/pipeline.yml.disabled`), with quality gates in pre-commit and
+> deploys on Cloudflare Workers Builds.
 
 ## 🔧 Environment Variables
 
-Copy `.env.example` to `.env.local` and configure:
-
-```env
-# Application
-NEXT_PUBLIC_APP_URL=http://localhost:3000
-NEXT_PUBLIC_API_URL=http://localhost:3000/api
-
-# Cloudflare
-CLOUDFLARE_ACCOUNT_ID=
-CLOUDFLARE_API_TOKEN=
-
-# Security
-RATE_LIMIT_MAX_REQUESTS=100
-RATE_LIMIT_WINDOW_MS=60000
-```
-
-## 🚧 What's Next?
-
-The following features are planned:
-
-### Phase 2: Design System
-- [ ] Design tokens
-- [ ] Core UI components (Button, Card, Input)
-- [ ] GSAP animations integration
-
-### Phase 3: Internationalization
-- [ ] Configure next-intl
-- [ ] Create translation files
-- [ ] Implement language switcher
-
-### Phase 4: Security
-- [ ] Rate limiting middleware
-- [ ] Bot detection
-- [ ] Input validation
-- [ ] Form protection
-
-### Phase 5: Testing
-- [ ] Set up all test frameworks
-- [ ] Write initial tests (TDD/TDS)
-
-### Phase 6: CI/CD
-- [ ] GitHub Actions workflows
-- [x] Cloudflare Workers deployment (completed - live via Workers Builds)
-
-## 📝 Scripts Reference
-
-| Script | Description |
-|--------|-------------|
-| `bun dev` | Start development server with Turbopack |
-| `bun build` | Build for production |
-| `bun start` | Start production server |
-| `bun lint` | Run ESLint |
-| `bun type-check` | Run TypeScript type checking |
-| `bun test:unit` | Run unit tests |
-| `bun test:component` | Run component tests |
-| `bun test:e2e` | Run E2E tests |
-| `bun test:security` | Run security tests |
-| `bun lighthouse:local` | Run Lighthouse CI locally |
+Copy `.env.example` to `.env` and fill in the values. Only scripts read them (Cloudflare
+uploads, Stripe payment links); the built site has no runtime environment.
 
 ## 🤝 Contributing
 

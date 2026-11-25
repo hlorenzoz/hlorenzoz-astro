@@ -7,14 +7,14 @@
  *
  * Static first render, vanilla script after. Every slide's details and media
  * are rendered; all but the active one carry `hidden`, so the shipped HTML
- * shows exactly what the React version's first render showed. Only the first
+ * shows exactly what the previous version's first render showed. Only the first
  * slide's media is `priority`; the others are lazy, so a hidden image costs no
  * download until its slide is shown. Lightbox images are filled in on open.
  *
  * The horizontal carousel is the second component of the original file. It is
  * rendered through `Astro.self` with the `hic` prop so it stays in this file.
  *
- * The React version's `motion-preset-*` / `intersect:` classes are dropped: the
+ * The previous version's `motion-preset-*` / `intersect:` classes are dropped: the
  * plugins behind them were never registered, so they produced no CSS.
  */
 import { ArrowLeft, ArrowRight, ChevronLeft, ChevronRight, ExternalLink, Maximize2, Plus, X } from '@lucide/astro';
@@ -402,7 +402,7 @@ const hicDotOff = cn(hicDotBase, 'bg-white/40 hover:bg-white/60 w-2');
         let index = 0;
         let timer: ReturnType<typeof setInterval> | undefined;
 
-        // Active while its slide is the visible one (the React version only mounted it then).
+        // Active while its slide is the visible one (the previous version only mounted it then).
         const isActive = () => !root.parentElement!.closest('[hidden]');
 
         const show = (next: number) => {
@@ -427,7 +427,7 @@ const hicDotOff = cn(hicDotBase, 'bg-white/40 hover:bg-white/60 w-2');
             restartTimer();
         };
 
-        // The React version remounted (back to the first image) each time its slide became active.
+        // The previous version remounted (back to the first image) each time its slide became active.
         root.addEventListener('hic:reset', () => {
             show(0);
             restartTimer();

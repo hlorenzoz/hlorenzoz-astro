@@ -1,5 +1,5 @@
 /**
- * /sitemap.xml, byte-compatible with what the Next.js build emitted.
+ * /sitemap.xml: every route x locale with its hand-maintained `lastModified`.
  *
  * One entry per route x locale using `absoluteUrl`, so every URL matches the
  * page's `alternates.canonical` exactly (locale prefix + trailing slash).

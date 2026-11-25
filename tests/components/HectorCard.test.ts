@@ -32,7 +32,7 @@ describe('HectorCard', () => {
         const screen = await renderAstro(HectorCard, { locale: 'en' });
         expect(screen.getByRole('heading', { level: 1, name: en.card.hector.name })).toBeInTheDocument();
         expect(screen.getByRole('button', { name: en.card.hector.addContacts })).toBeInTheDocument();
-        // What the Next build emitted in out/en/card/hector/.
+        // The vCard and QR values the live card has always published.
         expect(screen.getByRole('link', { name: en.card.hector.bookCall })).toHaveAttribute('href', '/en/#contact');
         for (const label of ['LinkedIn', 'WhatsApp', 'Email', 'Phone']) {
             expect(screen.getByRole('link', { name: label })).toHaveAttribute('target', '_blank');

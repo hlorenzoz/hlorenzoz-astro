@@ -1,6 +1,6 @@
 ---
 /**
- * Port of `components/LinkedInArticles.tsx`. The server renders the initial
+ * The server renders the initial
  * state (article 0 active, "previous" disabled); the script below keeps the
  * pagination dots and arrow buttons in step with the scroll position, and maps
  * the ArrowLeft / ArrowRight keys to one article.
@@ -131,7 +131,7 @@ const t = getTranslations(locale, 'articles');
 }
 
 <script>
-    // One subscription per carousel for its whole life: the React version once
+    // One subscription per carousel for its whole life: the previous version once
     // rebuilt the ResizeObserver and scroll listener on every step, dropping
     // scroll events mid-gesture and leaving the dots and buttons stale.
     document.querySelectorAll<HTMLElement>('#articles[data-carousel]').forEach((root) => {

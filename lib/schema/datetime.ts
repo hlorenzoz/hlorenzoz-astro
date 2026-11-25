@@ -67,7 +67,7 @@ function keyPath(path: string, key: string): string {
 /**
  * Throws, naming the property path, when a JSON-LD payload carries a date
  * without a time zone or an `about` / `mentions` that is not a typed node.
- * `components/JsonLd.tsx` runs it on every block, so a regression fails the
+ * `src/components/JsonLd.astro` runs it on every block, so a regression fails the
  * build and every page-rendering test instead of reaching Search Console.
  */
 export function assertSchemaInvariants(data: unknown, path = '$'): void {

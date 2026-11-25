@@ -5,7 +5,7 @@ import type { PortfolioItem } from '@/lib/portfolio';
  *
  * This is its own module, NOT part of `lib/portfolio.ts`, for the reason spelled
  * out at the top of `lib/routes.ts`: `lib/portfolio.ts` imports
- * `portfolio-data.json` at module scope, so a client component reaching in for a
+ * `portfolio-data.json` at module scope, so a client script reaching in for a
  * style token would drag the whole catalogue into the browser bundle. Only the
  * `PortfolioItem` TYPE is imported here, which erases at compile time.
  *

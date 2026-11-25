@@ -18,9 +18,9 @@ describe('CalBooking', () => {
     });
 
     /**
-     * Static markup: no state, no handler. It once carried `'use client'`,
+     * Static markup: no state, no handler. It once shipped as client code,
      * which only pushed static markup into the client bundle of every page
-     * that rendered it. The Astro port must stay script-free too.
+     * that rendered it. It must stay script-free.
      */
     it('ships no client JS: no script, no hydration directive', () => {
         expect(SOURCE).not.toMatch(/<script/);

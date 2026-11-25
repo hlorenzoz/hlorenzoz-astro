@@ -1,39 +1,29 @@
-# Next.js 16+ Static Export on Cloudflare Workers
+# Astro Static Build on Cloudflare Workers
 
-This document outlines the mandatory requirements and architectural constraints for deploying this high-performance Next.js 16 application to Cloudflare Workers (static assets) using **Static HTML Export**.
+How this site is built and served, and the constraints that come with serving pure static assets.
 
-## 1. Core Configuration
-The `next.config.ts` must be strictly configured for static delivery:
--   **`output: 'export'`**: Mandatory for generating the `out/` directory.
--   **`trailingSlash: true`**: Recommended to ensure clean URLs and correct indexing of subfolders at the edge.
--   **`images.unoptimized: true`**: (Optional but recommended) If not using a specialized image proxy, this ensures Next.js doesn't attempt server-side image optimization.
+## 1. Core configuration
+`astro.config.mjs` is set up for static delivery:
+-   **`output: 'static'`**: every page is pre-rendered into `dist/`. There is no server at runtime.
+-   **`trailingSlash: 'always'`** + **`build.format: 'directory'`**: each page is emitted as `/{locale}/{path}/index.html` and linked with a trailing slash, the canonical form used in the sitemap, hreflang and JSON-LD.
 
-## 2. Dynamic Routing (The Static Param Rule)
-For a Static Export, every dynamic route (e.g., `/[locale]`, `/[slug]`) **MUST** implement `generateStaticParams()`.
--   This function informs the build engine which paths to pre-render.
--   Failure to implement this results in a build-time error for `output: 'export'`.
+## 2. Dynamic routes
+Every dynamic route (`[locale]`, `[slug]`) exports `getStaticPaths()`, which lists the paths to pre-render (locales from `LOCALES` in `lib/site-config.ts`, slugs from the data in `lib/`). A path not returned there does not exist in `dist/`.
 
-## 3. Metadata & Configuration Files
-Metadata files in dynamic segments require special handling:
--   **Favicons/Icons**: Move to the root `app/icon.svg` or `public/` to avoid dynamic parameter requirements.
--   **`robots.txt` & `sitemap.xml`**: Must export `const dynamic = 'force-static';` if handled via `robots.ts` or `sitemap.ts`.
+## 3. Generated files
+-   **`/sitemap.xml`** and **`/robots.txt`** are static endpoints (`src/pages/sitemap.xml.ts`, `src/pages/robots.txt.ts`) rendered at build time.
+-   **Icons, `manifest.json`, `sw.js`, `llms.txt`** live in `public/` and are copied as-is.
 
-## 4. Unsupported Features (Static Constraints)
-The following features are **NOT** supported in Static Export mode:
--   **Server Actions (`"use server"`)**: No server exists to execute the action. Pivot to client-side `fetch` or third-party services.
--   **API Routes (`app/api/`)**: These are not exported. Use a dedicated **Cloudflare Worker** for server-side logic.
--   **Middleware**: Use **Cloudflare Workers** or **Proxy** patterns at the edge instead.
+## 4. Unsupported features (static constraints)
+-   **No SSR routes, Astro Actions or middleware**: nothing runs on request. Server-side logic belongs in a dedicated Cloudflare Worker.
+-   **Images** are not processed at build time: they live on the R2-backed CDN and are resized by Cloudflare Image Resizing (`lib/image.ts`).
 
-## 5. Edge-Side Routing
-Redirects and Headers in `next.config.js` are ignored during Static Export. Use the official Cloudflare configuration files in the `public/` directory:
--   **`public/_headers`**: Controls CSP, HSTS, and PWA caching.
--   **`public/_redirects`**: Manages SEO redirects and path mappings.
+## 5. Edge-side routing
+Redirects and headers are Cloudflare configuration files in `public/`:
+-   **`public/_headers`**: cache rules (`/_astro/*` is immutable), PWA files and text charsets.
+-   **`public/_redirects`**: the `/` to `/en/` 301, legacy paths and SEO redirects.
 
-## 6. Build & Deployment
--   **Build Command**: `next build` (run as `bun run build:pages`; with `output: 'export'` this emits `out/`).
--   **Deployment Target**: A static-assets Cloudflare **Worker** (`wrangler.jsonc`, `name: hlorenzoz`) that serves `./out`. Not Cloudflare Pages.
--   **Deployment Strategy**: Automatic on every push via **Cloudflare Workers Builds** (the Worker is linked to the GitHub repo). Manual fallback: `bun run deploy` (`build:pages` + `wrangler deploy`) or `just deploy`.
--   **Previously**: CI/CD and deploys ran on a **GitHub Actions** pipeline (using `wrangler pages deploy`). That workflow is now disabled (commented out) and superseded by Cloudflare Workers Builds.
-
----
-**Status**: SUCCESS. This architecture provides the fastest possible TTFB by serving pure static assets from the global Cloudflare edge.
+## 6. Build & deployment
+-   **Build command**: `astro build` (`bun run build` / `just build-pages`), emitting `dist/`.
+-   **Deployment target**: a static-assets Cloudflare **Worker** (`wrangler.jsonc`, `name: hlorenzoz`) serving `./dist` with `html_handling: auto-trailing-slash` and `not_found_handling: 404-page` (`dist/404.html`). Not Cloudflare Pages.
+-   **Deployment strategy**: automatic on every push via **Cloudflare Workers Builds** once the Worker is linked to this GitHub repo. Manual fallback: `just deploy` (`astro build` + `wrangler deploy`).

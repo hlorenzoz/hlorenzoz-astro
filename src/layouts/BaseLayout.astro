@@ -1,8 +1,8 @@
 ---
 /**
- * Port of `app/[locale]/layout.tsx`: <html>/<head>, the skip link, <main>, the
+ * Page shell: <html>/<head>, the skip link, <main>, the
  * site-wide widgets and the Organization @graph. Pages render their own Navbar
- * and Footer inside the slot, as they did under Next.
+ * and Footer inside the slot.
  */
 import { Font } from 'astro:assets';
 import Head from '@/src/components/Head.astro';
@@ -19,7 +19,7 @@ import '@/src/styles/global.css';
 interface Props {
     locale: string;
     meta?: PageMeta;
-    /** LCP images to preload (next/image `priority`): `srcset` + `sizes`, or a plain `href`. */
+    /** LCP (`priority`) images to preload: `srcset` + `sizes`, or a plain `href`. */
     preloadImages?: { href?: string; srcset?: string; sizes?: string }[];
 }
 
