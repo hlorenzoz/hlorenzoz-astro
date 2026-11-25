@@ -513,6 +513,564 @@
       "openShowcase": "Abrir o escaparate de {title}",
       "fullScreenshotAlt": "Captura completa de {title}",
       "exploreLivePlatform": "Explorar a plataforma en directo"
+    },
+    "list": {
+      "title": "Portfolio de webs premium",
+      "subtitle": "Descubre a nosa colección de webs de alto rendemento, pensadas para converter e feitas para empresas modernas.",
+      "cta": "Ver detalles",
+      "filters": {
+        "all": "Todos os proxectos",
+        "label": "Filtrar proxectos por tipo",
+        "showing": "Mostrando {count} de {total} proxectos"
+      }
+    },
+    "malaga-event-gear": {
+      "title": "Malaga Event Gear",
+      "description": "Aluguer de equipos audiovisuais premium para eventos en Málaga e na Costa do Sol: son nítido e iluminación espectacular para vodas, eventos de empresa e festas exclusivas.",
+      "badge": "Aluguer audiovisual",
+      "liveDemoButton": "Visitar a web",
+      "heroTitle": "Aluguer de equipos audiovisuais premium en Málaga",
+      "heroSubtitle": "Son nítido e iluminación espectacular para vodas, eventos de empresa e festas exclusivas na Costa do Sol.",
+      "showcaseTitle": "Unha ollada de preto",
+      "showcaseDescription": "Desde a experiencia de reserva ata o catálogo de equipos: explora <meg>Malaga Event Gear (MEG)</meg>, a plataforma que migramos desde WordPress e reconstruímos para gañar velocidade, seguridade, novas funcionalidades e unha mellor experiencia de usuario.",
+      "ctaTitle": "Organizas un evento en Málaga?",
+      "ctaDescription": "Equipémolo con son e iluminación premium. Recibe un orzamento á medida en minutos.",
+      "ctaButton": "Pedir orzamento",
+      "features_carousel": {
+        "title": "Construída para a excelencia técnica",
+        "description": "Reconstruímos a web de WordPress como unha plataforma rápida e accesible, totalmente estruturada para os buscadores.",
+        "slides": {
+          "speed": {
+            "badge": "Rendemento",
+            "title": "Rendemento",
+            "description": "PageSpeed Insights: 93 en móbil, limitado só polos scripts de seguridade que inxecta Cloudflare, con 100 en Accesibilidade, Boas prácticas e SEO.",
+            "cta": "Probar en PageSpeed Insights"
+          },
+          "data": {
+            "badge": "Rich Results",
+            "title": "Datos estruturados para Rich Results",
+            "description": "Esquemas válidos de Breadcrumbs, Local Business e Organisation, confirmados pola proba de Rich Results de Google.",
+            "cta": "Probar Rich Results"
+          }
+        }
+      },
+      "business": {
+        "title": "Sobre Malaga Event Gear",
+        "paragraphs": [
+          "Malaga Event Gear (MEG) aluga equipos audiovisuais para eventos en Málaga e na Costa do Sol: son, iluminación, proxectores e pantallas, micrófonos e unha máquina de fume, xunto cos técnicos que os manexan. Traballa con vodas, eventos de empresa e congresos, e festas privadas.",
+          "O equipo contrátase en paquetes de prezo pechado, sen custos ocultos, e cada un inclúe a entrega, a montaxe e a recollida. Non hai tenda física nin recollida pola conta do cliente: o material sempre viaxa ata o lugar do evento, e os packs Wedding e MICE inclúen un técnico. A atención ao cliente é en inglés e en español."
+        ]
+      }
+    },
+    "fitness-studio-pro": {
+      "title": "Fitness Studio Pro",
+      "description": "Demo dinámica e enérxica para ximnasios, adestradores persoais e centros de benestar que queren crear comunidade.",
+      "badge": "Fitness e benestar",
+      "liveDemoButton": "Demo en directo",
+      "heroTitle": "Leva o teu adestramento a outro nivel",
+      "heroSubtitle": "Inspira os teus socios cunha plataforma rotunda e profesional que impulsa resultados.",
+      "features": [
+        "Páxinas de perfil dos adestradores",
+        "Blog e motivación integrados"
+      ],
+      "showcaseTitle": "Escaparate do estudio",
+      "showcaseDescription": "Mira como creamos unha experiencia de comunidade chea de enerxía para os teus socios.",
+      "ctaTitle": "Listo para adestrar?",
+      "ctaDescription": "Transforma a presenza dixital do teu estudio cunha plataforma de alto rendemento.",
+      "ctaButton": "Quero a demo do estudio"
+    },
+    "demo-massages": {
+      "title": "Demo Massage",
+      "description": "Demo dun estudio de masaxe terapéutica en Richmond, Londres. Deseño editorial escuro, un menú de tratamentos claro e unha reserva sen fricción, pensada para o corpo e non para vender máis.",
+      "badge": "Benestar e terapia",
+      "liveDemoButton": "Demo en directo",
+      "heroTitle": "O corpo lembra o que a mente esquece",
+      "heroSubtitle": "Un estudio de masaxe terapéutica que traballa ao teu ritmo, cunha técnica manual profunda que devolve mobilidade, descanso e equilibrio.",
+      "showcaseTitle": "Percorrido completo pola web",
+      "showcaseDescription": "Explora a maquetación completa, desde a portada e o menú de tratamentos ata o proceso de reserva, na demo en directo.",
+      "ctaTitle": "Diriges unha marca de benestar serena e seria?",
+      "ctaDescription": "Adaptamos esta demo ao teu estudio, aos teus tratamentos e á túa voz en tempo récord.",
+      "ctaButton": "Comeza o teu proxecto",
+      "features_carousel": {
+        "title": "Deseñada para a calma e a conversión",
+        "description": "Cada sección está pensada para transmitir calma mentres guía suavemente a persoa visitante cara a unha reserva.",
+        "slides": {
+          "design": {
+            "badge": "Deseño",
+            "title": "Unha marca tranquila e editorial",
+            "description": "Dirección de arte escura e sobria, con títulos serif e moito espazo. O deseño transmite traballo corporal serio, non un modelo xenérico de spa."
+          },
+          "craft": {
+            "badge": "Oficio",
+            "title": "Poucos xestos, efecto profundo",
+            "description": "Técnica manual, traballo profundo, ritmo sen présas e un estudio privado. O contido xira arredor da terapia, non das vendas adicionais."
+          },
+          "treatments": {
+            "badge": "Tratamentos",
+            "title": "Sesións á medida do teu corpo",
+            "description": "Un menú de tratamentos filtrable (relaxante, descontracturante, pedras quentes, aromaterapia) con duracións e prezos claros, en sesións de 60 a 90 minutos."
+          },
+          "booking": {
+            "badge": "Reserva",
+            "title": "Reservar sen fricción",
+            "description": "Escolle tratamento, duración, data e hora, consulta o investimento estimado e solicita o teu oco. Sen contas, sen funís, sen ruído."
+          },
+          "journal": {
+            "badge": "Contido",
+            "title": "Un diario que gaña buscas",
+            "description": "Artigos extensos sobre terapia manual, fisioloxía do descanso e coidado do corpo. Contido real que constrúe autoridade e atrae tráfico orgánico."
+          },
+          "speed": {
+            "badge": "Rendemento",
+            "title": "Rendemento e calidade",
+            "description": "PageSpeed Insights: 81 en móbil, con 100 en Accesibilidade, Boas prácticas e SEO.",
+            "cta": "Probar en PageSpeed Insights"
+          }
+        }
+      }
+    },
+    "dental-clinic-1": {
+      "title": "Ecladent Dental Clinic",
+      "description": "Demo dunha clínica dental boutique dirixida por mulleres, centrada no benestar emocional, a excelencia clínica e unha estética de benestar de alta gama.",
+      "badge": "Saúde e benestar",
+      "liveDemoButton": "Demo en directo",
+      "heroTitle": "Recupera a túa confianza",
+      "heroSubtitle": "Atención dental de primeiro nivel nun refuxio privado pensado para a túa comodidade e tranquilidade.",
+      "features": [
+        "Experiencia do paciente boutique",
+        "Arquitectura dixital do sorriso",
+        "Refuxio dental minimalista",
+        "Precisión clínica e coidado artesanal",
+        "Suite privada de benestar",
+        "Saúde integral e lonxevidade"
+      ],
+      "techStack": "Next.js, React, Tailwind CSS, aloxamento en Vercel, CDN de Cloudflare",
+      "seoOptimization": "Esquema JSON-LD, Twitter Cards, puntuación Lighthouse de 95 ou máis",
+      "showcaseTitle": "Percorrido completo pola web",
+      "showcaseDescription": "Explora a maquetación completa e a solidez estrutural da demo deste refuxio dental.",
+      "ctaTitle": "Listo para lanzar a túa clínica?",
+      "ctaDescription": "Adaptamos esta demo á túa consulta en tempo récord.",
+      "ctaButton": "Comeza o teu proxecto",
+      "features_carousel": {
+        "title": "Construída para a excelencia técnica",
+        "description": "O noso proceso de desenvolvemento integra os estándares web máis recentes para que a túa presenza non sexa só bonita, senón tecnicamente superior.",
+        "slides": {
+          "gmb": {
+            "badge": "Optimización de GBP",
+            "title": "Dominio do Google Business Profile",
+            "description": "Contido creado e optimizado a partir do perfil de Google My Business."
+          },
+          "tech": {
+            "badge": "Tecnoloxías",
+            "title": "Tecnoloxías e procedementos",
+            "description": "NextJS 16. Tailwind 4. CDN. Probas: funcionais e e2e. Control de calidade. CI/CD."
+          },
+          "screens": {
+            "badge": "Multidispositivo",
+            "title": "Probada en todos os dispositivos",
+            "description": "Perfecta ao píxel en móbil, tableta e escritorio. Cada deseño, cada interacción e cada tamaño de pantalla, probados e verificados antes do lanzamento para que os teus pacientes teñan sempre unha primeira impresión impecable."
+          },
+          "seo": {
+            "badge": "SEO",
+            "title": "SEO / AEO / GEO",
+            "description": "Estratexia de visibilidade en buscas en varias capas. Optimizamos para a busca tradicional, as respostas de IA e os resultados xeográficos para lograr unha cobertura total."
+          },
+          "speed": {
+            "badge": "Rendemento",
+            "title": "Rendemento",
+            "description": "Proba feita con Google PageSpeed Insights, cun rendemento do 95% ou máis.",
+            "cta": "Probar en PageSpeed Insights"
+          },
+          "pwa": {
+            "badge": "Experiencia PWA",
+            "title": "Progressive Web App",
+            "description": "Lista para calquera conexión. Accede á presenza dixital da túa clínica ao instante en calquera dispositivo, mesmo sen conexión. Unha experiencia rápida, fiable e inmersiva que se sente como unha app, sen descargar nada."
+          },
+          "og": {
+            "badge": "Redes sociais",
+            "title": "OpenGraph",
+            "description": "Identidade social premium. Configuracións de metadatos personalizadas para que a túa marca se vexa profesional en todas as plataformas."
+          },
+          "data": {
+            "badge": "Rich Results",
+            "title": "Datos estruturados para Rich Results",
+            "description": "Fala a linguaxe dos buscadores. Implementación avanzada de esquemas JSON-LD para mellorar a visibilidade e a taxa de clics.",
+            "cta": "Probar Rich Results"
+          }
+        }
+      }
+    },
+    "real-estate": {
+      "title": "Inmobiliaria de luxo",
+      "description": "Demo exclusiva para anuncios de propiedades de alta gama e inmobiliarias que buscan unha identidade visual premium.",
+      "badge": "Inmobiliaria",
+      "liveDemoButton": "Demo en directo",
+      "heroTitle": "Espazos exclusivos para vivir",
+      "heroSubtitle": "Presenta as túas propiedades de luxo cunha experiencia dixital elegante e inmersiva.",
+      "features": [
+        "Formularios de captación de contactos",
+        "Filtros de busca avanzados"
+      ],
+      "showcaseTitle": "Escaparate de propiedades",
+      "showcaseDescription": "Unha ollada de preto a como presentamos propiedades premium a clientes exclusivos.",
+      "ctaTitle": "Vendes luxo?",
+      "ctaDescription": "Cativa o teu público cunha web tan exclusiva como os teus inmobles.",
+      "ctaButton": "Crea a web da túa inmobiliaria",
+      "features_carousel": {
+        "title": "Construída para a excelencia técnica",
+        "description": "O noso proceso de desenvolvemento integra os estándares web máis recentes para que a túa presenza non sexa só bonita, senón tecnicamente superior.",
+        "slides": {
+          "gmb": {
+            "badge": "Optimización de GBP",
+            "title": "Dominio do Google Business Profile",
+            "description": "Contido creado e optimizado a partir do perfil de Google My Business."
+          },
+          "tech": {
+            "badge": "Tecnoloxías",
+            "title": "Tecnoloxías e procedementos",
+            "description": "NextJS 16. Tailwind 4. CDN. Probas: funcionais e e2e. Control de calidade. CI/CD."
+          },
+          "tests": {
+            "badge": "Probas",
+            "title": "Probas funcionais e QA",
+            "description": "Vitest para probas funcionais e de compoñentes, Playwright para probas e2e e Lighthouse para as Core Web Vitals."
+          },
+          "screens": {
+            "badge": "Multidispositivo",
+            "title": "Probada en todos os dispositivos",
+            "description": "Perfecta ao píxel en móbil, tableta e escritorio. Cada deseño, cada interacción e cada tamaño de pantalla, probados e verificados antes do lanzamento."
+          },
+          "seo": {
+            "badge": "Visibilidade",
+            "title": "SEO / AEO / GEO",
+            "description": "Estratexia de visibilidade en buscas en varias capas. Optimizamos para a busca tradicional, as respostas de IA e os resultados xeográficos para lograr unha cobertura total."
+          },
+          "speed": {
+            "badge": "Rendemento",
+            "title": "Rendemento",
+            "description": "Proba feita con Google PageSpeed Insights, cun rendemento do 95% ou máis.",
+            "cta": "Probar en PageSpeed Insights"
+          },
+          "pwa": {
+            "badge": "Experiencia PWA",
+            "title": "Progressive Web App",
+            "description": "Accede á presenza dixital da túa inmobiliaria ao instante en calquera dispositivo, mesmo sen conexión. Unha experiencia rápida, fiable e inmersiva que se sente como unha app."
+          },
+          "og": {
+            "badge": "Redes sociais",
+            "title": "OpenGraph",
+            "description": "Identidade social premium. Configuracións de metadatos personalizadas para que a túa marca se vexa profesional en todas as plataformas."
+          },
+          "data": {
+            "badge": "Rich Results",
+            "title": "Datos estruturados para Rich Results",
+            "description": "Fala a linguaxe dos buscadores. Implementación avanzada de esquemas JSON-LD para mellorar a visibilidade.",
+            "cta": "Probar Rich Results"
+          }
+        }
+      }
+    },
+    "masajes-orisha": {
+      "title": "Masajes Orisha",
+      "description": "Un estudio de masaxe terapéutica en San Rafael de Heredia, Costa Rica. Bilingüe, en modo claro e escuro, cun menú de tratamentos filtrable e reserva en catro pasos.",
+      "badge": "Estudio de masaxe terapéutica",
+      "liveDemoButton": "Visitar a web",
+      "heroTitle": "Masaxe terapéutica en Costa Rica",
+      "heroSubtitle": "Un estudio privado en San Rafael de Heredia, en liña en español e inglés, onde a persoa visitante escolle o tratamento, ve o que custa e solicita a hora sen facer nin unha soa chamada.",
+      "showcaseTitle": "Unha ollada de preto",
+      "showcaseDescription": "Desde o menú de tratamentos e a solicitude de reserva ata o diario e o propio estudio: explora <meg>Masajes Orisha</meg>, feita para un terapeuta local cuxa axenda depende de que descoñecidos confíen nel antes de chegar.",
+      "ctaTitle": "Tes un estudio ou unha clínica?",
+      "ctaDescription": "Poñamos en liña os teus tratamentos, os teus prezos e a túa axenda, nos teus idiomas e na túa localidade.",
+      "ctaButton": "Pedir orzamento",
+      "features_carousel": {
+        "title": "Feita para un terapeuta local cuxa axenda é o negocio",
+        "description": "Cada sección responde unha pregunta que, doutro xeito, o cliente tería que facer por teléfono.",
+        "slides": {
+          "design": {
+            "badge": "Deseño",
+            "title": "Calma editorial, en claro e escuro",
+            "description": "Títulos serif, unha paleta cálida de area e moito espazo, co mesmo carácter nos dous temas. Lese como un estudio privado con personalidade propia, non como outro modelo de spa."
+          },
+          "treatments": {
+            "badge": "Tratamentos",
+            "title": "Un menú curto, filtrado cun toque",
+            "description": "Catro tratamentos de autor repartidos entre calma e benestar por un lado e terapéutico e recuperación polo outro, con cada tarxeta indicando a súa duración e o seu enfoque. Curto a propósito: menos opcións, decisión máis rápida."
+          },
+          "booking": {
+            "badge": "Reserva",
+            "title": "Un formulario de reserva que calcula o prezo",
+            "description": "Tratamento, duración, día e hora en catro pasos, cunha estimación que se actualiza segundo escolle o cliente. Sen conta nin pasarela de pagamento, só unha solicitude que o terapeuta confirma por correo, protexida contra bots."
+          },
+          "journal": {
+            "badge": "Contido",
+            "title": "Artigos que traen o tráfico de busca",
+            "description": "Textos extensos sobre terapia manual, a fisioloxía do descanso e a recuperación muscular. Contido co que un estudio de masaxe pode posicionar de verdade, publicado nos dous idiomas."
+          }
+        }
+      },
+      "business": {
+        "title": "Sobre Masajes Orisha",
+        "paragraphs": [
+          "Masajes Orisha é un estudio de masaxe terapéutica en San Rafael de Heredia, Costa Rica, dirixido polo seu fundador e terapeuta, Sergio Zaldívar Guillén. Ofrece masaxe relaxante, descontracturante, con pedras quentes e de aromaterapia, en sesións de 60 a 90 minutos que combinan técnica manual con aceites naturais.",
+          "O enfoque é sen présas: a presión e o ritmo adáptanse a cada persoa, sen protocolos ríxidos. As sesións teñen lugar nun estudio privado, nunha sala insonorizada con luz regulable, cun só cliente cada vez. O nome inspírase nos orixás iorubás, entendidos como unha filosofía de respecto polo corpo."
+        ]
+      }
+    },
+    "gerp-dj": {
+      "title": "GERP DJ: web de DJ para festas e vodas en Ourense",
+      "description": "Web de GERP DJ, DJ para festas, vodas e eventos en Ourense. En castelán e galego, cunha solicitude de data que abre WhatsApp listo para enviar.",
+      "badge": "DJ para eventos",
+      "liveDemoButton": "Visitar a web",
+      "heroTitle": "Un DJ para cada celebración en Galicia",
+      "heroSubtitle": "Un DJ de Ourense con equipo propio de son e iluminación, que toca en festas populares, vodas, festas privadas e eventos de empresa por toda Galicia. A web fala castelán e galego, e abondan tres datos para pedir unha data sen facer unha chamada.",
+      "showcaseTitle": "Unha ollada de preto",
+      "showcaseDescription": "Desde a solicitude de data e a galería de vídeos ata a biografía e o seu dossier de prensa: explora <meg>GERP DJ</meg>, feita para un DJ cuxas contratacións comezan cunha pregunta: tes libre esa data?",
+      "ctaTitle": "Animas vodas, festas ou eventos?",
+      "ctaDescription": "Poñamos en liña os teus servizos, os teus vídeos e as túas solicitudes de data, nos teus idiomas e na túa comarca.",
+      "ctaButton": "Pedir orzamento",
+      "features_carousel": {
+        "title": "Construída arredor da primeira pregunta de cada cliente",
+        "description": "Se a data está libre, como é unha actuación e quen está detrás da mesa: cada sección responde unha delas antes da primeira mensaxe. Por baixo, unha páxina que carga ao momento, porque a velocidade retén as visitas e trae as súas solicitudes, e datos estruturados que axudan os buscadores a entender o negocio.",
+        "slides": {
+          "design": {
+            "badge": "Deseño",
+            "title": "O vídeo primeiro, en claro ou escuro",
+            "description": "A portada ábrese cun vídeo de fondo que a persoa visitante pode pausar, cun tema claro e outro escuro e un selector de castelán e galego na cabeceira."
+          },
+          "speed": {
+            "badge": "Rendemento",
+            "title": "99 en móbil, unha páxina que responde ao momento",
+            "description": "PageSpeed Insights en móbil, 24 de novembro de 2026: 99 en Rendemento e 100 en Accesibilidade, Boas prácticas e SEO. A velocidade forma parte da experiencia: unha páxina que carga e responde rápido mantén a persoa visitante nela, e quen fica é quen envía a solicitude de data.",
+            "cta": "Probar en PageSpeed Insights"
+          },
+          "data": {
+            "badge": "Rich Results",
+            "title": "Datos estruturados que Google pode ler",
+            "description": "Proba de Rich Results de Google, 24 de novembro de 2026: tres elementos válidos, Breadcrumbs, Local business e Organisation, de xeito que a portada pode optar a resultados enriquecidos na Busca de Google. Os datos estruturados dan aos buscadores pistas explícitas sobre quen é o negocio e como encaixan as súas páxinas, o que axuda a busca semántica a entender a web e reforza o seu SEO.",
+            "cta": "Probar Rich Results"
+          },
+          "booking": {
+            "badge": "Reserva",
+            "title": "Unha solicitude de data que chega a WhatsApp",
+            "description": "Data, localidade e tipo de evento, e a solicitude ábrese en WhatsApp lista para enviar. Sen formulario no servidor nin conta, só unha mensaxe que a persoa visitante envía ao momento."
+          },
+          "gallery": {
+            "badge": "Galería",
+            "title": "Dez vídeos de actuacións e montaxes",
+            "description": "A galería reúne dez vídeos con lenda, gravados nas súas actuacións e co seu propio equipo, para que unha parella ou quen organiza un evento poida sentir o ambiente antes de pedir unha data."
+          },
+          "bio": {
+            "badge": "Biografía",
+            "title": "Unha biografía co seu dossier de prensa",
+            "description": "Quen está detrás da mesa, con fotos e un dossier de prensa para descargar en PDF en castelán e en galego."
+          }
+        }
+      },
+      "business": {
+        "title": "Sobre GERP DJ",
+        "paragraphs": [
+          "GERP DJ é un DJ con base en Ourense que toca en festas populares, vodas, festas privadas e eventos de empresa por toda Galicia. As contratacións fanse por WhatsApp.",
+          "Todo o equipo de son e iluminación é propio: unha cabina co nome de GERP DJ, altofalantes, iluminación LED e un controlador Denon DJ. Móntase igual nunha praza de aldea, nunha terraza ou nun salón."
+        ]
+      }
+    },
+    "investep-app": {
+      "title": "Investep App",
+      "description": "Unha plataforma de xestión de carteiras para o alumnado de Investep Academy. Segue varios brokers, proxecta rendibilidades en cada prazo e mapea activos apalancados, cun único código Flutter en Cloudflare.",
+      "badge": "Plataforma fintech",
+      "liveDemoButton": "Demo en directo",
+      "heroTitle": "Todas as carteiras, nun centro de mando claro",
+      "heroSubtitle": "O alumnado de Investep Academy segue os seus brokers, operacións e plans de investimento nun só lugar, con rendibilidades proxectadas por día, semana, mes e ano.",
+      "showcaseTitle": "Percorrido completo pola plataforma",
+      "showcaseDescription": "Explora o panel, as proxeccións de rendemento, o mapa de activos, a academia e a consola de administración na <meg>demo en directo</meg>.",
+      "ctaTitle": "Estás a crear unha plataforma para a túa comunidade?",
+      "ctaDescription": "Consegue unha aplicación como Investep, dispoñible en todas as plataformas e rápida no edge, adaptada ao teu produto e aos teus usuarios.",
+      "ctaButton": "Comeza o teu proxecto",
+      "features_carousel": {
+        "title": "Feita para investidores, pensada para escalar",
+        "description": "Cada pantalla converte a complexidade dunha carteira nunha experiencia tranquila e guiada, hoxe na web e mañá en nativo.",
+        "slides": {
+          "dashboard": {
+            "badge": "Panel",
+            "title": "Toda a túa carteira dunha ollada",
+            "description": "Saldo consolidado de todos os brokers, un gráfico de distribución en directo e o reparto entre accións e opcións, todo nun centro de control tranquilo."
+          },
+          "brokers": {
+            "badge": "Brokers",
+            "title": "Varios brokers, varias contas",
+            "description": "Xestiona varios brokers con varias contas en cada un, para accións e opcións, cada unha co seu propio capital e os seus obxectivos mensuais e diarios."
+          },
+          "performance": {
+            "badge": "Rendemento",
+            "title": "Rendibilidades proxectadas en cada prazo",
+            "description": "Rendibilidade proxectada por día, semana, mes e ano segundo o tipo de plan e a clase de activo, cun diario de operacións que segue cada posición aberta e pechada."
+          },
+          "assets": {
+            "badge": "Activos",
+            "title": "Apalancados e inversos, ben mapeados",
+            "description": "Cada activo principal ligado aos seus ETF apalancados (x2, x3) e aos seus pares inversos, con busca e favoritos ao alcance, para que a relación completa se vexa dunha ollada."
+          },
+          "academy": {
+            "badge": "Academia",
+            "title": "Construída arredor da comunidade",
+            "description": "Plans de membresía de Investep, unha tenda con libros e merchandising e unha biblioteca seleccionada de audiolibros, todo conectado para apoiar o alumnado de Investep Academy."
+          },
+          "admin": {
+            "badge": "Administración",
+            "title": "Control total desde unha consola",
+            "description": "Xestiona os plans de membresía e os prezos, os usuarios e os roles, e os catálogos de brokers, activos, produtos da tenda e libros desde un único panel de administración."
+          },
+          "platform": {
+            "badge": "Multiplataforma",
+            "title": "Un só código, todos os dispositivos",
+            "description": "Hoxe na web e lista para publicarse en nativo en Windows, macOS, Linux, Android e iOS, con temas claro e escuro e español e inglés integrados."
+          },
+          "tech": {
+            "badge": "Tecnoloxías",
+            "title": "Flutter, Hono, Cloudflare",
+            "description": "Unha interface Flutter para web e nativo, unha API Hono en Cloudflare Workers, e datos e recursos servidos desde o edge para un rendemento instantáneo e global."
+          }
+        }
+      }
+    },
+    "lorenzoz-agency": {
+      "title": "Lorenzoz Agency",
+      "description": "A nosa propia identidade dixital. Un portfolio de axencia de alto rendemento, centrado na conversión, que demostra as nosas capacidades técnicas e creativas.",
+      "badge": "A nosa axencia",
+      "liveDemoButton": "Visitar a web",
+      "heroTitle": "Creando o futuro dos negocios dixitais",
+      "heroSubtitle": "Combinamos unha intelixencia artificial que soa humana cun deseño premium para escalar as túas operacións as 24 horas, os 7 días da semana.",
+      "features": [
+        "Interface dinámica con glassmorphism",
+        "Astro 7 e Tailwind 4",
+        "Despregamentos automáticos con Cloudflare Workers Builds",
+        "QA automatizado e probas E2E",
+        "Optimización de Lighthouse e Core Web Vitals",
+        "PWA e funcionamento sen conexión"
+      ],
+      "techStack": "Astro 7, Tailwind 4, Bun, Vitest, Playwright, Lighthouse CI, Cloudflare Workers",
+      "seoOptimization": "JSON-LD, GEO, AEO, SEO tradicional, Rich Results",
+      "showcaseTitle": "Escaparate da axencia",
+      "showcaseDescription": "Descubre como aplicamos os nosos propios estándares na nosa sede dixital.",
+      "ctaTitle": "Listo para escalar?",
+      "ctaDescription": "Construamos xuntos o teu negocio de alto rendemento.",
+      "ctaButton": "Contacta connosco",
+      "features_carousel": {
+        "title": "Construída para a excelencia técnica",
+        "description": "O noso proceso de desenvolvemento integra os estándares web máis recentes para que a túa presenza non sexa só bonita, senón tecnicamente superior.",
+        "slides": {
+          "tech": {
+            "badge": "Tecnoloxías",
+            "title": "Tecnoloxías e procedementos",
+            "description": "Astro 7 e Tailwind 4, servidos como ficheiros estáticos por Cloudflare Workers, coas imaxes no CDN Cloudflare R2. Migrada de Next.js 16 a Astro o 25 de novembro de 2026. Vitest, Playwright e Lighthouse CI vixían cada cambio, e cada push a main desprégase a través de Cloudflare Workers Builds."
+          },
+          "tests": {
+            "badge": "Probas",
+            "title": "Probas funcionais e QA",
+            "description": "Vitest para probas funcionais e de compoñentes, Playwright para probas e2e e Lighthouse para as Core Web Vitals."
+          },
+          "screens": {
+            "badge": "Multidispositivo",
+            "title": "Probada en todos os dispositivos",
+            "description": "Perfecta ao píxel en móbil, tableta e escritorio. Cada deseño, cada interacción e cada tamaño de pantalla, probados e verificados antes do lanzamento."
+          },
+          "seo": {
+            "badge": "SEO",
+            "title": "SEO / AEO / GEO",
+            "description": "Estratexia de visibilidade en buscas en varias capas. Optimizamos para a busca tradicional, as respostas de IA e os resultados xeográficos para lograr unha cobertura total."
+          },
+          "speed": {
+            "badge": "Rendemento",
+            "title": "Rendemento",
+            "description": "PageSpeed Insights en móbil, 25 de novembro de 2026, despois da migración a Astro: 98 en Rendemento e 100 en Accesibilidade, Boas prácticas e SEO.",
+            "cta": "Probar en PageSpeed Insights"
+          },
+          "pwa": {
+            "badge": "Experiencia PWA",
+            "title": "Progressive Web App",
+            "description": "Instala a web en calquera dispositivo e ábrea ao instante, mesmo sen conexión. Unha experiencia rápida e fiable que se sente como unha app."
+          },
+          "og": {
+            "badge": "Redes sociais",
+            "title": "OpenGraph",
+            "description": "Identidade social premium. Configuracións de metadatos personalizadas para que a túa marca se vexa profesional en todas as plataformas."
+          },
+          "data": {
+            "badge": "Rich Results",
+            "title": "Datos estruturados para Rich Results",
+            "description": "Fala a linguaxe dos buscadores. Implementación avanzada de esquemas JSON-LD para mellorar a visibilidade.",
+            "cta": "Probar Rich Results"
+          }
+        }
+      },
+      "business": {
+        "title": "Sobre Lorenzoz Agency",
+        "paragraphs": [
+          "Lorenzoz Agency crea solucións para negocios locais de calquera tamaño, e o que vendemos é un único resultado: novos clientes. Todo descansa nunha única oferta central, o SEO local, que traballa en catro frontes á vez: contido de autoridade, backlinks e citas, autoridade en Google e nas respostas de IA, e xestión de reseñas.",
+          "Arredor dese núcleo hai tres servizos opcionais, dispoñibles por separado ou xunto co SEO local: desenvolvemento web, un recepcionista de voz con IA e desenvolvemento de software. Estamos rexistrados en Xinzo de Limia (Ourense, España) e traballamos en liña con clientes de todo o mundo, con foco en Australia, Canadá, Costa Rica, Irlanda, Nova Zelandia, España, o Reino Unido e os Estados Unidos. O reparto do traballo é sinxelo: o cliente céntrase en prestar ben o seu propio servizo, e nós encargámonos de gañarlle clientes e de facerlles seguimento."
+        ]
+      }
+    },
+    "vicron-lopez": {
+      "title": "Vicron Lopez",
+      "description": "Aluguer de coches de luxo e deportivos en Ourense, Galicia. Unha web bilingüe cunha frota filtrable, fichas de vehículo que responden cada dúbida antes da reserva e os sinais locais que un negocio de aluguer precisa para que o atopen na súa cidade.",
+      "badge": "Aluguer de coches de luxo",
+      "liveDemoButton": "Visitar a web",
+      "heroTitle": "Aluguer de coches de luxo en Ourense",
+      "heroSubtitle": "Unha experiencia digna dun concesionario, en español e inglés, onde cada vehículo se explora, se entende e se reserva sen necesidade de chamar antes.",
+      "showcaseTitle": "Unha ollada de preto",
+      "showcaseDescription": "Da frota e as fichas de vehículo ao contacto e ás seccións legais: explora <meg>Vicron Lopez</meg>, feita para un negocio local que aluga vehículos de alto valor a visitantes e residentes de Ourense.",
+      "ctaTitle": "Tes un negocio de aluguer?",
+      "ctaDescription": "Poñamos a túa frota en liña coa mesma claridade, nos teus idiomas e na túa cidade.",
+      "ctaButton": "Pedir orzamento",
+      "features_carousel": {
+        "title": "Feita para un negocio local que aluga vehículos de alto valor",
+        "description": "Cada sección elimina un motivo para dubidar, desde a primeira busca ata a solicitude de reserva.",
+        "slides": {
+          "design": {
+            "badge": "Deseño",
+            "title": "Unha marca, en claro e escuro",
+            "description": "Unha portada digna dun concesionario que mantén a mesma sensación premium en modo claro e escuro, coa frota, os servizos e as opinións dos clientes dispostos para quen decide en segundos."
+          },
+          "inventory": {
+            "badge": "Inventario",
+            "title": "A frota, con busca e filtros",
+            "description": "Busca en directo e filtros por tipo, prezo e categoría, coa tarifa diaria en cada tarxeta. O catálogo crece co negocio sen tocar nin unha liña da maquetación."
+          },
+          "vehicle": {
+            "badge": "Ficha do vehículo",
+            "title": "Cada dúbida resolta antes de reservar",
+            "description": "Especificacións, o que inclúe o prezo, fianza, métodos de pagamento aceptados e un selector de datas de recollida e devolución, que remata coa reserva por correo ou WhatsApp."
+          },
+          "local": {
+            "badge": "Presenza local",
+            "title": "Ancorada en Ourense",
+            "description": "Enderezo, teléfono, horario, licenza municipal e un mapa con indicacións. Os sinais que un negocio local precisa para que o atopen e confíen nel en Galicia."
+          },
+          "about": {
+            "badge": "Confianza",
+            "title": "As persoas detrás das chaves",
+            "description": "Historia da empresa, valores, traxectoria e equipo directivo. Información real sobre o negocio, que é o que xera confianza nun aluguer de alto importe."
+          },
+          "legal": {
+            "badge": "Cumprimento",
+            "title": "O RGPD, ben resolto",
+            "description": "Política de privacidade, condicións do servizo e un panel de cookies detallado onde a analítica e o marketing se poden rexeitar un por un. O consentimento é real, non un aviso que só di aceptar."
+          },
+          "bilingual": {
+            "badge": "SEO bilingüe",
+            "title": "Español e inglés, indexados como unha soa web",
+            "description": "Cada páxina existe nos dous idiomas con URL traducidas e pares hreflang, ademais dun mapa do sitio HTML para que visitantes e rastrexadores cheguen a todo o catálogo."
+          }
+        }
+      },
+      "business": {
+        "title": "Sobre Vicron Lopez",
+        "paragraphs": [
+          "Vicron Lopez aluga coches de luxo e deportivos en Ourense, en Galicia (España), tanto para alugueres de curta como de longa duración. Os prezos son transparentes, sen cargos ocultos, e o coche pódese entregar no domicilio do cliente e recollerse alí despois.",
+          "Todos os alugueres teñen seguro, con plans que van do básico ao todo risco, e o mantemento e as revisións fanse na propia empresa. A compañía resume os seus valores en excelencia, transparencia e o cliente primeiro."
+        ]
+      }
     }
   },
   "services": {

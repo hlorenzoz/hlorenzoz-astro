@@ -475,6 +475,510 @@
     "cta": "Pay securely online"
   },
   "portfolio": {
+    "type": {
+      "live": "Live site",
+      "demo": "Concept demo"
+    },
+    "list": {
+      "title": "Premium website portfolio",
+      "subtitle": "Browse our collection of high performance websites, built to convert and designed for modern businesses.",
+      "cta": "See details",
+      "filters": {
+        "all": "All projects",
+        "label": "Filter projects by type",
+        "showing": "Showing {count} of {total} projects"
+      }
+    },
+    "malaga-event-gear": {
+      "title": "Malaga Event Gear",
+      "description": "Premium audiovisual equipment hire for events across Málaga and the Costa del Sol: crystal clear sound and striking lighting for weddings, corporate events and exclusive parties.",
+      "badge": "AV hire",
+      "liveDemoButton": "Visit site",
+      "heroTitle": "Premium Audiovisual Equipment Hire in Málaga",
+      "heroSubtitle": "Crystal clear sound and striking lighting for weddings, corporate events and exclusive parties on the Costa del Sol.",
+      "showcaseTitle": "A closer look",
+      "showcaseDescription": "From the booking experience to the equipment catalogue: explore <meg>Malaga Event Gear (MEG)</meg>, the platform we migrated from WordPress and rebuilt for speed, security, new features and a better user experience.",
+      "ctaTitle": "Planning an event in Málaga?",
+      "ctaDescription": "Let's kit it out with premium sound and lighting. Get a tailored quote in minutes.",
+      "ctaButton": "Get a quote",
+      "features_carousel": {
+        "title": "Built for technical excellence",
+        "description": "We rebuilt the WordPress site as a fast, accessible platform, fully structured for search.",
+        "slides": {
+          "speed": {
+            "badge": "Performance",
+            "title": "Performance",
+            "description": "PageSpeed Insights: 93 on mobile, held back only by the security scripts Cloudflare injects, with 100 in Accessibility, Best Practices and SEO.",
+            "cta": "Test on PageSpeed Insights"
+          },
+          "data": {
+            "badge": "Rich results",
+            "title": "Structured data for rich results",
+            "description": "Valid Breadcrumbs, Local Business and Organisation schemas, confirmed by Google's Rich Results Test.",
+            "cta": "Test rich results"
+          }
+        }
+      },
+      "business": {
+        "title": "About Malaga Event Gear",
+        "paragraphs": [
+          "Malaga Event Gear (MEG) hires out audiovisual equipment for events in Malaga and on the Costa del Sol: sound, lighting, projectors and screens, microphones and a smoke machine, together with the technicians who run them. It works with weddings, corporate events and conferences, and private parties.",
+          "The equipment comes in fixed price packages with no hidden fees, and delivery, setup and collection are included in every one. There is no shop front and no customer collection: the kit always travels to the venue, and the Wedding and MICE packs include a technician. Customer service is in English and Spanish."
+        ]
+      }
+    },
+    "lorenzoz-agency": {
+      "title": "Lorenzoz Agency",
+      "description": "Our own digital identity. A high performance agency portfolio, focused on conversion, that shows what we can do technically and creatively.",
+      "badge": "Our agency",
+      "liveDemoButton": "Visit site",
+      "heroTitle": "Crafting the Future of Digital Business",
+      "heroSubtitle": "We combine AI that feels human with premium design to scale your operations 24/7.",
+      "features": [
+        "Dynamic glassmorphism UI",
+        "Astro 7 & Tailwind 4",
+        "Automatic deploys on Cloudflare Workers Builds",
+        "Automated QA & E2E testing",
+        "Lighthouse & Core Web Vitals optimisation",
+        "PWA & offline capability"
+      ],
+      "techStack": "Astro 7, Tailwind 4, Bun, Vitest, Playwright, Lighthouse CI, Cloudflare Workers",
+      "seoOptimization": "JSON-LD, GEO, AEO, traditional SEO, rich results",
+      "showcaseTitle": "Agency showcase",
+      "showcaseDescription": "See how we apply our own standards to our digital headquarters.",
+      "ctaTitle": "Ready to scale?",
+      "ctaDescription": "Let's build your high performance business together.",
+      "ctaButton": "Contact us",
+      "features_carousel": {
+        "title": "Built for technical excellence",
+        "description": "Our development process brings in the latest web standards so your presence is not just beautiful, but technically superior.",
+        "slides": {
+          "tech": {
+            "badge": "Tech stack",
+            "title": "Technologies and procedures",
+            "description": "Astro 7 and Tailwind 4, served as static files by Cloudflare Workers with images on the Cloudflare R2 CDN. Moved from Next.js 16 to Astro on 25 November 2026. Vitest, Playwright and Lighthouse CI guard every change, and every push to main deploys through Cloudflare Workers Builds."
+          },
+          "tests": {
+            "badge": "Tests",
+            "title": "Functional tests & QA",
+            "description": "Vitest for functional and component tests, Playwright for e2e tests, and Lighthouse for Core Web Vitals."
+          },
+          "screens": {
+            "badge": "Multidevice",
+            "title": "Tested across every device",
+            "description": "Pixel perfect on mobile, tablet and desktop. Every layout, every interaction, every screen size, tested and verified before launch."
+          },
+          "seo": {
+            "badge": "SEO",
+            "title": "SEO / AEO / GEO",
+            "description": "A multilayered search visibility strategy. We optimise for traditional search, AI answers and geographical results to ensure total coverage."
+          },
+          "speed": {
+            "badge": "Performance",
+            "title": "Performance",
+            "description": "PageSpeed Insights on mobile, 25 November 2026, after the move to Astro: 98 for Performance and 100 for Accessibility, Best Practices and SEO.",
+            "cta": "Test on PageSpeed Insights"
+          },
+          "pwa": {
+            "badge": "PWA experience",
+            "title": "Progressive Web App",
+            "description": "Install the site on any device and open it instantly, even offline. A fast and reliable experience that feels like an app."
+          },
+          "og": {
+            "badge": "Social",
+            "title": "OpenGraph",
+            "description": "A premium social identity. Custom metadata settings that make sure your brand looks professional on every platform."
+          },
+          "data": {
+            "badge": "Rich results",
+            "title": "Structured data for rich results",
+            "description": "Speak the search engine's language. Advanced JSON-LD schema implementation for greater visibility.",
+            "cta": "Test rich results"
+          }
+        }
+      },
+      "business": {
+        "title": "About Lorenzoz Agency",
+        "paragraphs": [
+          "Lorenzoz Agency builds solutions for local businesses of any size, and what we sell is one outcome: new customers. Everything rests on a single core offer, Local SEO, which works on four fronts at once: authority content, backlinks and citations, authority on Google and in AI answers, and review management.",
+          "Around that core sit three optional services, each available on its own or alongside Local SEO: Website Development, an AI Voice Receptionist and Software Development. We are registered in Xinzo de Limia (Ourense, Spain) and work online with clients worldwide, with a focus on Australia, Canada, Costa Rica, Ireland, New Zealand, Spain, the United Kingdom and the United States. The division of labour is simple: the client focuses on delivering their own service well, and we take care of winning their customers and following them up."
+        ]
+      }
+    },
+    "dental-clinic-1": {
+      "title": "Ecladent Dental Clinic",
+      "description": "A demo of a boutique dental clinic owned by women, focused on emotional wellbeing, clinical excellence and high end wellness aesthetics.",
+      "badge": "Health & wellness",
+      "liveDemoButton": "Live demo",
+      "heroTitle": "Restore Your Confidence",
+      "heroSubtitle": "Elite dental care in a private sanctuary designed for your comfort and peace of mind.",
+      "features": [
+        "Boutique patient journey",
+        "Digital smile architecture",
+        "Minimalist dental sanctuary",
+        "Clinical precision & artisanal care",
+        "Private wellness suite",
+        "Holistic health & longevity"
+      ],
+      "techStack": "Next.js, React, Tailwind CSS, Vercel Hosting, Cloudflare CDN",
+      "seoOptimization": "JSON-LD schema, Twitter Cards, 95+ Lighthouse score",
+      "showcaseTitle": "Full site showcase",
+      "showcaseDescription": "Explore the complete layout and structural quality of the sanctuary demo.",
+      "ctaTitle": "Ready to launch your clinic?",
+      "ctaDescription": "Get this demo customised for your practice in record time.",
+      "ctaButton": "Start your project",
+      "features_carousel": {
+        "title": "Built for technical excellence",
+        "description": "Our development process brings in the latest web standards so your presence is not just beautiful, but technically superior.",
+        "slides": {
+          "gmb": {
+            "badge": "GBP optimisation",
+            "title": "Google Business Profile mastery",
+            "description": "Content created and optimised around the Google Business Profile."
+          },
+          "tech": {
+            "badge": "Tech stack",
+            "title": "Technologies and procedures",
+            "description": "Next.js 16. Tailwind 4. CDN. Tests: functional and e2e tests. Quality assurance. CI/CD."
+          },
+          "screens": {
+            "badge": "Multidevice",
+            "title": "Tested across every device",
+            "description": "Pixel perfect on mobile, tablet and desktop. Every layout, every interaction, every screen size, tested and verified before launch so your patients always get a flawless first impression."
+          },
+          "seo": {
+            "badge": "SEO",
+            "title": "SEO / AEO / GEO",
+            "description": "A multilayered search visibility strategy. We optimise for traditional search, AI answers and geographical results to ensure total coverage."
+          },
+          "speed": {
+            "badge": "Performance",
+            "title": "Performance",
+            "description": "Tested with Google PageSpeed Insights, scoring 95%+ for performance.",
+            "cta": "Test on PageSpeed Insights"
+          },
+          "pwa": {
+            "badge": "PWA experience",
+            "title": "Progressive Web App",
+            "description": "Ready for any connection. Open your clinic's digital presence instantly on any device, even offline. A fast, reliable and immersive experience that feels like an app, with nothing to download."
+          },
+          "og": {
+            "badge": "Social",
+            "title": "OpenGraph",
+            "description": "A premium social identity. Custom metadata settings that make sure your brand looks professional on every platform."
+          },
+          "data": {
+            "badge": "Rich results",
+            "title": "Structured data for rich results",
+            "description": "Speak the search engine's language. Advanced JSON-LD schema implementation for greater visibility and click through rates.",
+            "cta": "Test rich results"
+          }
+        }
+      }
+    },
+    "demo-massages": {
+      "title": "Demo Massage",
+      "description": "A therapeutic massage studio demo set in Richmond, London. Dark editorial design, a clear treatment menu and a smooth booking flow built around the body, not the upsell.",
+      "badge": "Wellness & bodywork",
+      "liveDemoButton": "Live demo",
+      "heroTitle": "The body remembers what the mind forgets",
+      "heroSubtitle": "A therapeutic massage studio that works at your pace, with deep manual technique that restores mobility, rest and balance.",
+      "showcaseTitle": "Full site showcase",
+      "showcaseDescription": "Explore the complete layout, from the home page and treatment menu to the booking flow, in the live demo.",
+      "ctaTitle": "Running a calm, serious wellness brand?",
+      "ctaDescription": "Get this demo tailored to your studio, your treatments and your voice in record time.",
+      "ctaButton": "Start your project",
+      "features_carousel": {
+        "title": "Built for calm and conversion",
+        "description": "Every section is designed to feel unhurried while quietly guiding visitors towards a booking.",
+        "slides": {
+          "design": {
+            "badge": "Design",
+            "title": "A calm, editorial brand",
+            "description": "Dark, restrained art direction with serif headings and generous space. The design says serious bodywork, not a generic spa template."
+          },
+          "craft": {
+            "badge": "Craft",
+            "title": "Few gestures, deep effect",
+            "description": "Manual technique, deep work, an unhurried pace and a private studio. The content is built around the therapy, not upsells."
+          },
+          "treatments": {
+            "badge": "Treatments",
+            "title": "Sessions shaped around your body",
+            "description": "A filterable treatment menu (relaxing, deep tissue, hot stone, aromatherapy) with clear durations and prices, in sessions of 60 to 90 minutes."
+          },
+          "booking": {
+            "badge": "Booking",
+            "title": "Booking without friction",
+            "description": "Choose the treatment, duration, date and time, see the estimated cost and request your slot. No accounts, no funnels, no noise."
+          },
+          "journal": {
+            "badge": "Content",
+            "title": "A journal that earns its place in search",
+            "description": "Long form notes on manual therapy, the physiology of rest and body care. Real content that builds authority and brings in organic traffic."
+          },
+          "speed": {
+            "badge": "Performance",
+            "title": "Performance and quality",
+            "description": "PageSpeed Insights: 81 on mobile, with 100 in Accessibility, Best Practices and SEO.",
+            "cta": "Test on PageSpeed Insights"
+          }
+        }
+      }
+    },
+    "investep-app": {
+      "title": "Investep App",
+      "description": "A portfolio management platform for Investep Academy students. Track multiple brokers, project returns across every timeframe and map leveraged assets, from a single Flutter codebase on Cloudflare.",
+      "badge": "Fintech platform",
+      "liveDemoButton": "Live demo",
+      "heroTitle": "Every portfolio, one clear command centre",
+      "heroSubtitle": "Investep Academy students follow their brokers, trades and investment plans in one place, with returns projected daily, weekly, monthly and annually.",
+      "showcaseTitle": "Full platform showcase",
+      "showcaseDescription": "Explore the dashboard, performance projections, asset map, academy and admin console in the <meg>live demo</meg>.",
+      "ctaTitle": "Building a platform for your community?",
+      "ctaDescription": "Get an application like Investep, available on every platform and fast at the edge, tailored to your product and your users.",
+      "ctaButton": "Start your project",
+      "features_carousel": {
+        "title": "Built for investors, engineered for scale",
+        "description": "Every screen turns portfolio complexity into a calm, guided experience, on the web today and native tomorrow.",
+        "slides": {
+          "dashboard": {
+            "badge": "Dashboard",
+            "title": "Your whole portfolio at a glance",
+            "description": "A consolidated balance across every broker, a live distribution chart and the split between stocks and options, all in one calm control centre."
+          },
+          "brokers": {
+            "badge": "Brokers",
+            "title": "Multiple brokers, multiple accounts",
+            "description": "Run several brokers with multiple accounts each, for stocks and options, every one with its own capital and its own monthly and daily targets."
+          },
+          "performance": {
+            "badge": "Performance",
+            "title": "Returns projected across every timeframe",
+            "description": "Profitability projected daily, weekly, monthly and annually by plan type and asset class, with a trade journal tracking every open and closed position."
+          },
+          "assets": {
+            "badge": "Assets",
+            "title": "Leveraged and inverse, mapped",
+            "description": "Each core asset linked to its leveraged ETFs (x2, x3) and inverse pairs, searchable and easy to favourite, so the full relationship is clear at a glance."
+          },
+          "academy": {
+            "badge": "Academy",
+            "title": "Built around the community",
+            "description": "Investep membership plans, a shop with books and merch, and a curated audiobook library, all set up to support Investep Academy students."
+          },
+          "admin": {
+            "badge": "Administration",
+            "title": "Full control from one console",
+            "description": "Manage membership plans and pricing, users and roles, and the catalogues of brokers, assets, shop products and books from a single admin panel."
+          },
+          "platform": {
+            "badge": "Multiplatform",
+            "title": "One codebase, every device",
+            "description": "On the web today and ready to ship natively to Windows, macOS, Linux, Android and iOS, with light and dark themes and Spanish and English built in."
+          },
+          "tech": {
+            "badge": "Tech stack",
+            "title": "Flutter, Hono, Cloudflare",
+            "description": "A Flutter front end for web and native, a Hono API on Cloudflare Workers, and data and assets served from the edge for instant performance worldwide."
+          }
+        }
+      }
+    },
+    "vicron-lopez": {
+      "title": "Vicron Lopez",
+      "description": "Luxury and sports car hire in Ourense, Galicia. A bilingual site with a filterable fleet, vehicle pages that answer every question before booking, and the local signals a hire business needs to be found in its own city.",
+      "badge": "Luxury car hire",
+      "liveDemoButton": "Visit site",
+      "heroTitle": "Luxury Car Hire in Ourense",
+      "heroSubtitle": "A showroom grade experience in Spanish and English, where every vehicle can be browsed, understood and booked without needing a single phone call first.",
+      "showcaseTitle": "A closer look",
+      "showcaseDescription": "From the fleet and the vehicle pages to the contact and legal sections: explore <meg>Vicron Lopez</meg>, built for a local business that hires out high value vehicles to visitors and residents of Ourense.",
+      "ctaTitle": "Run a hire business?",
+      "ctaDescription": "Let's put your fleet online with the same clarity, in your languages and your city.",
+      "ctaButton": "Get a quote",
+      "features_carousel": {
+        "title": "Built for a local business that hires out high value vehicles",
+        "description": "Every section removes one reason to hesitate, from the first search to the booking request.",
+        "slides": {
+          "design": {
+            "badge": "Design",
+            "title": "One brand, light and dark",
+            "description": "A showroom grade home page with the same premium feel in light and dark mode, with the fleet, the services and the client reviews laid out for a visitor who decides in seconds."
+          },
+          "inventory": {
+            "badge": "Inventory",
+            "title": "The fleet, searchable and filterable",
+            "description": "Live search plus filters by type, price and category, with the daily rate on every card. The catalogue grows with the business without touching a line of layout."
+          },
+          "vehicle": {
+            "badge": "Vehicle page",
+            "title": "Every question answered before booking",
+            "description": "Specifications, what the price includes, deposit, accepted payment methods and a collection and return date picker, finishing with booking by email or WhatsApp."
+          },
+          "local": {
+            "badge": "Local presence",
+            "title": "Anchored in Ourense",
+            "description": "Address, phone, opening hours, city council licence and a map with directions. The signals a local business needs to be found and trusted in Galicia."
+          },
+          "about": {
+            "badge": "Trust",
+            "title": "The people behind the keys",
+            "description": "Company story, values, timeline and the leadership team. Real information about the business, which is what earns trust for a high ticket hire."
+          },
+          "legal": {
+            "badge": "Compliance",
+            "title": "GDPR handled properly",
+            "description": "Privacy policy, terms of service and a granular cookie panel where analytics and marketing can be rejected one by one. Consent is real, not a banner that only says accept."
+          },
+          "bilingual": {
+            "badge": "Bilingual SEO",
+            "title": "Spanish and English, indexed as one site",
+            "description": "Every page exists in both languages with translated URLs and hreflang pairs, plus an HTML sitemap so visitors and crawlers reach the whole catalogue."
+          }
+        }
+      },
+      "business": {
+        "title": "About Vicron Lopez",
+        "paragraphs": [
+          "Vicron Lopez hires out luxury and sports cars in Ourense, in Galicia (Spain), for both short and long term hire. Prices are transparent, with no hidden charges, and the car can be delivered to the customer's home and collected from there afterwards.",
+          "Every hire is insured, with plans ranging from basic to full cover, and maintenance and servicing are done in house. The company sums up its values as excellence, transparency and putting the customer first."
+        ]
+      }
+    },
+    "masajes-orisha": {
+      "title": "Masajes Orisha",
+      "description": "A therapeutic massage studio in San Rafael de Heredia, Costa Rica. Bilingual, light and dark, with a filterable treatment menu and booking in four steps.",
+      "badge": "Therapeutic massage studio",
+      "liveDemoButton": "Visit site",
+      "heroTitle": "Therapeutic Massage in Costa Rica",
+      "heroSubtitle": "A private studio in San Rafael de Heredia, online in Spanish and English, where a visitor chooses the treatment, sees what it costs and requests a time slot without a single phone call.",
+      "showcaseTitle": "A closer look",
+      "showcaseDescription": "From the treatment menu and the booking request to the journal and the studio itself: explore <meg>Masajes Orisha</meg>, built for a local therapist whose diary depends on strangers trusting him before they arrive.",
+      "ctaTitle": "Run a studio or a clinic?",
+      "ctaDescription": "Let's put your treatments, your prices and your diary online, in your languages and your town.",
+      "ctaButton": "Get a quote",
+      "features_carousel": {
+        "title": "Built for a local therapist whose diary is the business",
+        "description": "Each section answers a question the client would otherwise have to ask over the phone.",
+        "slides": {
+          "design": {
+            "badge": "Design",
+            "title": "Editorial calm, in light and dark",
+            "description": "Serif headings, a warm sand palette and generous space, keeping the same character in both themes. It reads as a private studio with a point of view, not as another spa template."
+          },
+          "treatments": {
+            "badge": "Treatments",
+            "title": "A short menu, filtered in one tap",
+            "description": "Four signature treatments split between Calm & Wellness and Therapeutic & Recovery, each card showing its duration and its focus. Short on purpose: fewer choices, quicker decisions."
+          },
+          "booking": {
+            "badge": "Booking",
+            "title": "A booking form that prices itself",
+            "description": "Treatment, duration, day and time in four steps, with a running estimate that updates as the client chooses. No account and no payment gateway, just a request the therapist confirms by email, protected against bots."
+          },
+          "journal": {
+            "badge": "Content",
+            "title": "Notes that bring in search traffic",
+            "description": "Long form pieces on manual therapy, the physiology of rest and muscle recovery. Content a massage studio can genuinely rank for, published in both languages."
+          }
+        }
+      },
+      "business": {
+        "title": "About Masajes Orisha",
+        "paragraphs": [
+          "Masajes Orisha is a therapeutic massage studio in San Rafael de Heredia, Costa Rica, led by its founder and therapist, Sergio Zaldívar Guillén. It offers relaxing, deep tissue, hot stone and aromatherapy massage, in sessions of 60 to 90 minutes that combine manual technique with natural oils.",
+          "The approach is unhurried: pressure and rhythm adapt to each person, with no rigid protocols. Sessions take place in a private studio, in a soundproofed room with dimmable lighting, one client at a time. The name is inspired by the Yoruba Orishas, taken as a philosophy of respect for the body."
+        ]
+      }
+    },
+    "real-estate": {
+      "title": "Luxury Property",
+      "description": "An exclusive demo for high end property listings and estate agents looking for a premium visual identity.",
+      "badge": "Property",
+      "liveDemoButton": "Live demo",
+      "heroTitle": "Exclusive Living Spaces",
+      "heroSubtitle": "Showcase your luxury properties with an elegant and immersive digital experience.",
+      "features": [
+        "Lead generation forms",
+        "Advanced search filters"
+      ],
+      "showcaseTitle": "Property showcase",
+      "showcaseDescription": "A closer look at how we present premium properties to exclusive clients.",
+      "ctaTitle": "Selling luxury homes?",
+      "ctaDescription": "Captivate your audience with a website as exclusive as your listings.",
+      "ctaButton": "Build your agency site",
+      "features_carousel": {
+        "title": "Built for technical excellence",
+        "description": "Our development process brings in the latest web standards so your presence is not just beautiful, but technically superior.",
+        "slides": {
+          "gmb": {
+            "badge": "GBP optimisation",
+            "title": "Google Business Profile mastery",
+            "description": "Content created and optimised around the Google Business Profile."
+          },
+          "tech": {
+            "badge": "Tech stack",
+            "title": "Technologies and procedures",
+            "description": "Next.js 16. Tailwind 4. CDN. Tests: functional and e2e tests. Quality assurance. CI/CD."
+          },
+          "tests": {
+            "badge": "Tests",
+            "title": "Functional tests & QA",
+            "description": "Vitest for functional and component tests, Playwright for e2e tests, and Lighthouse for Core Web Vitals."
+          },
+          "screens": {
+            "badge": "Multidevice",
+            "title": "Tested across every device",
+            "description": "Pixel perfect on mobile, tablet and desktop. Every layout, every interaction, every screen size, tested and verified before launch."
+          },
+          "seo": {
+            "badge": "Visibility",
+            "title": "SEO / AEO / GEO",
+            "description": "A multilayered search visibility strategy. We optimise for traditional search, AI answers and geographical results to ensure total coverage."
+          },
+          "speed": {
+            "badge": "Performance",
+            "title": "Performance",
+            "description": "Tested with Google PageSpeed Insights, scoring 95%+ for performance.",
+            "cta": "Test on PageSpeed Insights"
+          },
+          "pwa": {
+            "badge": "PWA experience",
+            "title": "Progressive Web App",
+            "description": "Open your agency's digital presence instantly on any device, even offline. A fast, reliable and immersive experience that feels like an app."
+          },
+          "og": {
+            "badge": "Social",
+            "title": "OpenGraph",
+            "description": "A premium social identity. Custom metadata settings that make sure your brand looks professional on every platform."
+          },
+          "data": {
+            "badge": "Rich results",
+            "title": "Structured data for rich results",
+            "description": "Speak the search engine's language. Advanced JSON-LD schema implementation for greater visibility.",
+            "cta": "Test rich results"
+          }
+        }
+      }
+    },
+    "fitness-studio-pro": {
+      "title": "Fitness Studio Pro",
+      "description": "A dynamic, energetic demo for gyms, personal trainers and wellness centres looking to build a community.",
+      "badge": "Fitness & wellness",
+      "liveDemoButton": "Live demo",
+      "heroTitle": "Take Your Fitness Journey Further",
+      "heroSubtitle": "Inspire your members with a bold, professional platform built to get results.",
+      "features": [
+        "Trainer profile pages",
+        "Integrated blog & motivation"
+      ],
+      "showcaseTitle": "Studio showcase",
+      "showcaseDescription": "See how we build a high energy community experience for your members.",
+      "ctaTitle": "Ready to train?",
+      "ctaDescription": "Transform your studio's digital reach with a high performance platform.",
+      "ctaButton": "Get the studio demo"
+    },
     "portfolioCarousel": {
       "title": "Built for excellence",
       "subtitle": "Explore our premium portfolio of high performance websites and live production projects.",
@@ -500,9 +1004,63 @@
       "prevFeature": "Previous feature",
       "nextFeature": "Next feature"
     },
-    "type": {
-      "live": "Live site",
-      "demo": "Concept demo"
+    "gerp-dj": {
+      "title": "GERP DJ: DJ Website for Parties and Weddings in Ourense",
+      "description": "Website for GERP DJ, a party, wedding and event DJ in Ourense. In Spanish and Galician, with a date request that opens WhatsApp ready to send.",
+      "badge": "Event DJ",
+      "liveDemoButton": "Visit site",
+      "heroTitle": "A DJ for Every Celebration in Galicia",
+      "heroSubtitle": "A DJ from Ourense with their own sound and lighting kit, playing village festivals, weddings, private parties and company events across Galicia. The site speaks Spanish and Galician, and three details are enough to ask for a date without a phone call.",
+      "showcaseTitle": "A closer look",
+      "showcaseDescription": "From the date request and the video gallery to the bio and its press pack: explore <meg>GERP DJ</meg>, built for a DJ whose bookings start with one question: are you free on that date?",
+      "ctaTitle": "Entertain at weddings, parties or events?",
+      "ctaDescription": "Let's put your services, your videos and your date requests online, in your languages and your region.",
+      "ctaButton": "Get a quote",
+      "features_carousel": {
+        "title": "Built around the question every client asks first",
+        "description": "Whether the date is free, what a performance looks like and who is behind the decks: each section answers one of them before the first message. Underneath, a page that loads at once, because speed keeps visitors and brings in their requests, and structured data that helps search engines understand the business.",
+        "slides": {
+          "design": {
+            "badge": "Design",
+            "title": "Video first, in light or dark",
+            "description": "The home page opens on a background video the visitor can pause, with a light and a dark theme and a Spanish and Galician switch in the header."
+          },
+          "speed": {
+            "badge": "Performance",
+            "title": "99 on mobile, a page that answers at once",
+            "description": "PageSpeed Insights on mobile, 24 November 2026: 99 in Performance and 100 in Accessibility, Best Practices and SEO. Speed is part of the experience: a page that loads and responds quickly keeps the visitor on it, and the visitor who stays is the one who sends the date request.",
+            "cta": "Test on PageSpeed Insights"
+          },
+          "data": {
+            "badge": "Rich results",
+            "title": "Structured data Google can read",
+            "description": "Google's Rich Results Test, 24 November 2026: three valid items, Breadcrumbs, Local business and Organisation, so the home page is eligible for rich results in Google Search. Structured data gives search engines explicit clues about who the business is and how its pages fit together, which helps semantic search understand the site and supports its SEO.",
+            "cta": "Test rich results"
+          },
+          "booking": {
+            "badge": "Booking",
+            "title": "A date request that lands in WhatsApp",
+            "description": "Date, town and type of event, and the request opens in WhatsApp ready to send. No server form and no account, just a message the visitor sends straight away."
+          },
+          "gallery": {
+            "badge": "Gallery",
+            "title": "Ten clips of performances and setups",
+            "description": "The gallery holds ten captioned video clips, recorded at their performances and with their own kit, so a couple or an event planner can feel the atmosphere before asking for a date."
+          },
+          "bio": {
+            "badge": "Bio",
+            "title": "A bio with its press pack",
+            "description": "Who is behind the decks, with photos and a press pack to download as a PDF in Spanish and in Galician."
+          }
+        }
+      },
+      "business": {
+        "title": "About GERP DJ",
+        "paragraphs": [
+          "GERP DJ is a DJ based in Ourense who plays village festivals, weddings, private parties and company events across Galicia. Bookings are made by WhatsApp.",
+          "All the sound and lighting kit belongs to the DJ: a booth carrying the GERP DJ name, speakers, LED lighting and a Denon DJ controller. It is set up the same way in a village square, on a terrace or in a hall."
+        ]
+      }
     },
     "detail": {
       "liveDemoAria": "{label} for {title}",

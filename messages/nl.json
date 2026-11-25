@@ -933,6 +933,506 @@
             "live": "Live site",
             "demo": "Conceptdemo"
         },
+        "list": {
+            "title": "Portfolio met premium websites",
+            "subtitle": "Ontdek onze collectie snelle, krachtige websites, gebouwd om te converteren en gemaakt voor moderne bedrijven.",
+            "cta": "Details bekijken",
+            "filters": {
+                "all": "Alle projecten",
+                "label": "Projecten filteren op type",
+                "showing": "{count} van {total} projecten weergegeven"
+            }
+        },
+        "malaga-event-gear": {
+            "title": "Malaga Event Gear",
+            "description": "Verhuur van premium audiovisuele apparatuur voor evenementen in Málaga en aan de Costa del Sol: kristalhelder geluid en indrukwekkende verlichting voor bruiloften, bedrijfsevenementen en exclusieve feesten.",
+            "badge": "Audiovisuele verhuur",
+            "liveDemoButton": "Site bezoeken",
+            "heroTitle": "Verhuur van premium audiovisuele apparatuur in Málaga",
+            "heroSubtitle": "Kristalhelder geluid en indrukwekkende verlichting voor bruiloften, bedrijfsevenementen en exclusieve feesten aan de Costa del Sol.",
+            "showcaseTitle": "Een kijkje van dichtbij",
+            "showcaseDescription": "Van de boekingservaring tot de catalogus met apparatuur: ontdek <meg>Malaga Event Gear (MEG)</meg>, het platform dat we van WordPress hebben overgezet en opnieuw hebben gebouwd voor snelheid, veiligheid, nieuwe functies en een betere gebruikerservaring.",
+            "ctaTitle": "Organiseer je een evenement in Málaga?",
+            "ctaDescription": "Laten we het uitrusten met premium geluid en licht. Vraag binnen enkele minuten een offerte op maat aan.",
+            "ctaButton": "Offerte aanvragen",
+            "features_carousel": {
+                "title": "Gebouwd voor technische uitmuntendheid",
+                "description": "We hebben de site in WordPress opnieuw gebouwd als een snel, toegankelijk platform, volledig gestructureerd voor zoekmachines.",
+                "slides": {
+                    "speed": {
+                        "badge": "Prestaties",
+                        "title": "Prestaties",
+                        "description": "PageSpeed Insights: 93 op mobiel, alleen beperkt door de beveiligingsscripts die Cloudflare toevoegt, met 100 voor Toegankelijkheid, Praktische tips en SEO.",
+                        "cta": "Testen op PageSpeed Insights"
+                    },
+                    "data": {
+                        "badge": "Rich results",
+                        "title": "Gestructureerde data voor rich results",
+                        "description": "Geldige schema's voor Breadcrumbs, Local Business en Organisation, bevestigd door de test voor rich results van Google.",
+                        "cta": "Rich results testen"
+                    }
+                }
+            },
+            "business": {
+                "title": "Over Malaga Event Gear",
+                "paragraphs": [
+                    "Malaga Event Gear (MEG) verhuurt audiovisuele apparatuur voor evenementen in Málaga en aan de Costa del Sol: geluid, verlichting, projectoren en schermen, microfoons en een rookmachine, samen met de technici die alles bedienen. Het bedrijf werkt voor bruiloften, bedrijfsevenementen en congressen, en privéfeesten.",
+                    "De apparatuur wordt aangeboden in pakketten met een vaste prijs, zonder verborgen kosten, en levering, opbouw en ophalen zijn bij elk pakket inbegrepen. Er is geen winkel en je kunt niets zelf ophalen: de apparatuur gaat altijd naar de locatie, en bij de pakketten Wedding en MICE hoort een technicus. De klantenservice is in het Engels en het Spaans."
+                ]
+            }
+        },
+        "lorenzoz-agency": {
+            "title": "Lorenzoz Agency",
+            "description": "Onze eigen digitale identiteit. Een snel portfolio van ons bureau, gericht op conversie, dat onze technische en creatieve vaardigheden laat zien.",
+            "badge": "Ons bureau",
+            "liveDemoButton": "Site bezoeken",
+            "heroTitle": "We bouwen aan de toekomst van digitaal ondernemen",
+            "heroSubtitle": "We combineren AI die menselijk aanvoelt met premium design om je bedrijf 24/7 te laten opschalen.",
+            "features": [
+                "Dynamische UI met glassmorphism",
+                "Astro 7 en Tailwind 4",
+                "Automatische deploys met Cloudflare Workers Builds",
+                "Geautomatiseerde QA en E2E tests",
+                "Optimalisatie voor Lighthouse en Core Web Vitals",
+                "PWA en offline gebruik"
+            ],
+            "techStack": "Astro 7, Tailwind 4, Bun, Vitest, Playwright, Lighthouse CI, Cloudflare Workers",
+            "seoOptimization": "JSON-LD, GEO, AEO, klassieke SEO, Rich Results",
+            "showcaseTitle": "Ons bureau in beeld",
+            "showcaseDescription": "Ontdek hoe we onze eigen normen toepassen op ons digitale hoofdkantoor.",
+            "ctaTitle": "Klaar om op te schalen?",
+            "ctaDescription": "Laten we samen bouwen aan een bedrijf dat presteert.",
+            "ctaButton": "Neem contact op",
+            "features_carousel": {
+                "title": "Gebouwd voor technische uitmuntendheid",
+                "description": "Ons ontwikkelproces werkt met de nieuwste webstandaarden, zodat je online aanwezigheid niet alleen mooi is, maar ook technisch superieur.",
+                "slides": {
+                    "tech": {
+                        "badge": "Techstack",
+                        "title": "Technologieën en werkwijze",
+                        "description": "Astro 7 en Tailwind 4, als statische bestanden geleverd door Cloudflare Workers, met afbeeldingen op de Cloudflare R2 CDN. Op 25 november 2026 overgezet van Next.js 16 naar Astro. Vitest, Playwright en Lighthouse CI bewaken elke wijziging, en elke push naar main wordt uitgerold via Cloudflare Workers Builds."
+                    },
+                    "tests": {
+                        "badge": "Tests",
+                        "title": "Functionele tests en QA",
+                        "description": "Vitest voor functionele tests en componenten, Playwright voor e2e tests en Lighthouse voor de Core Web Vitals."
+                    },
+                    "screens": {
+                        "badge": "Multidevice",
+                        "title": "Getest op elk apparaat",
+                        "description": "Pixelperfect op mobiel, tablet en desktop. Elke opmaak, elke interactie, elk schermformaat getest en gecontroleerd voor de lancering."
+                    },
+                    "seo": {
+                        "badge": "SEO",
+                        "title": "SEO / AEO / GEO",
+                        "description": "Een zichtbaarheidsstrategie op meerdere niveaus. We optimaliseren voor klassieke zoekresultaten, antwoorden van AI en geografische resultaten, voor een volledige dekking."
+                    },
+                    "speed": {
+                        "badge": "Prestaties",
+                        "title": "Prestaties",
+                        "description": "PageSpeed Insights op mobiel, 25 november 2026, na de overstap naar Astro: 98 voor Prestaties en 100 voor Toegankelijkheid, Praktische tips en SEO.",
+                        "cta": "Testen op PageSpeed Insights"
+                    },
+                    "pwa": {
+                        "badge": "Werkt als een app",
+                        "title": "Progressive Web App",
+                        "description": "Installeer de site op elk apparaat en open hem direct, zelfs offline. Een snelle en betrouwbare ervaring die aanvoelt als een app."
+                    },
+                    "og": {
+                        "badge": "Social",
+                        "title": "OpenGraph",
+                        "description": "Een verzorgde uitstraling op sociale media. Metadata op maat zorgt ervoor dat je merk er op elk platform professioneel uitziet."
+                    },
+                    "data": {
+                        "badge": "Rich results",
+                        "title": "Gestructureerde data voor rich results",
+                        "description": "Spreek de taal van de zoekmachine. Een geavanceerde implementatie van JSON-LD schema's voor meer zichtbaarheid.",
+                        "cta": "Rich results testen"
+                    }
+                }
+            },
+            "business": {
+                "title": "Over Lorenzoz Agency",
+                "paragraphs": [
+                    "Lorenzoz Agency bouwt oplossingen voor lokale bedrijven van elke omvang, en wat we verkopen is één resultaat: nieuwe klanten. Alles rust op één kernaanbod, Lokale SEO, dat op vier fronten tegelijk werkt: autoriteitscontent, backlinks en vermeldingen, autoriteit in Google en in antwoorden van AI, en reviewbeheer.",
+                    "Rond die kern staan drie optionele diensten, elk los af te nemen of samen met Lokale SEO: websiteontwikkeling, een telefoonreceptionist met AI en softwareontwikkeling. We staan ingeschreven in Xinzo de Limia (Ourense, Spanje) en werken online met klanten over de hele wereld, met de focus op Australië, Canada, Costa Rica, Ierland, Nieuw-Zeeland, Spanje, het Verenigd Koninkrijk en de Verenigde Staten. De taakverdeling is eenvoudig: de klant richt zich op het goed leveren van zijn eigen dienst, en wij zorgen voor het binnenhalen en opvolgen van zijn klanten."
+                ]
+            }
+        },
+        "dental-clinic-1": {
+            "title": "Tandartskliniek Ecladent",
+            "description": "Demo van een boetiektandartskliniek in handen van vrouwen, met de nadruk op emotioneel welzijn, klinische uitmuntendheid en een verfijnde wellnessuitstraling.",
+            "badge": "Gezondheid en wellness",
+            "liveDemoButton": "Live demo",
+            "heroTitle": "Herwin je zelfvertrouwen",
+            "heroSubtitle": "Tandzorg van topniveau in een besloten oase, ingericht voor je comfort en gemoedsrust.",
+            "features": [
+                "Patiëntreis op maat",
+                "Digitaal glimlachontwerp",
+                "Minimalistische tandartspraktijk",
+                "Klinische precisie en zorg met aandacht",
+                "Privé wellnesssuite",
+                "Holistische gezondheid en een lang leven"
+            ],
+            "techStack": "Next.js, React, Tailwind CSS, Vercel Hosting, Cloudflare CDN",
+            "seoOptimization": "JSON-LD Schema, Twitter Cards, Lighthouse score van 95+",
+            "showcaseTitle": "De volledige site in beeld",
+            "showcaseDescription": "Bekijk de complete opbouw en de doordachte structuur van deze demo.",
+            "ctaTitle": "Klaar om je kliniek te lanceren?",
+            "ctaDescription": "Laat deze demo in recordtijd aanpassen aan je praktijk.",
+            "ctaButton": "Start je project",
+            "features_carousel": {
+                "title": "Gebouwd voor technische uitmuntendheid",
+                "description": "Ons ontwikkelproces werkt met de nieuwste webstandaarden, zodat je online aanwezigheid niet alleen mooi is, maar ook technisch superieur.",
+                "slides": {
+                    "gmb": {
+                        "badge": "Optimalisatie van GBP",
+                        "title": "Google Business Profile tot in de puntjes",
+                        "description": "Content gemaakt en geoptimaliseerd op basis van het Google Business Profile."
+                    },
+                    "tech": {
+                        "badge": "Techstack",
+                        "title": "Technologieën en werkwijze",
+                        "description": "NextJS 16. Tailwind 4. CDN. Tests: functionele tests en e2e tests. Kwaliteitsborging. CI/CD."
+                    },
+                    "screens": {
+                        "badge": "Multidevice",
+                        "title": "Getest op elk apparaat",
+                        "description": "Pixelperfect op mobiel, tablet en desktop. Elke opmaak, elke interactie, elk schermformaat getest en gecontroleerd voor de lancering, zodat je patiënten altijd een vlekkeloze eerste indruk krijgen."
+                    },
+                    "seo": {
+                        "badge": "SEO",
+                        "title": "SEO / AEO / GEO",
+                        "description": "Een zichtbaarheidsstrategie op meerdere niveaus. We optimaliseren voor klassieke zoekresultaten, antwoorden van AI en geografische resultaten, voor een volledige dekking."
+                    },
+                    "speed": {
+                        "badge": "Prestaties",
+                        "title": "Prestaties",
+                        "description": "Getest met Google PageSpeed Insights, met een prestatiescore van 95%+.",
+                        "cta": "Testen op PageSpeed Insights"
+                    },
+                    "pwa": {
+                        "badge": "Werkt als een app",
+                        "title": "Progressive Web App",
+                        "description": "Klaar voor elke verbinding. Open de digitale aanwezigheid van je kliniek direct op elk apparaat, zelfs offline. Een snelle, betrouwbare en meeslepende ervaring die aanvoelt als een app, zonder iets te downloaden."
+                    },
+                    "og": {
+                        "badge": "Social",
+                        "title": "OpenGraph",
+                        "description": "Een verzorgde uitstraling op sociale media. Metadata op maat zorgt ervoor dat je merk er op elk platform professioneel uitziet."
+                    },
+                    "data": {
+                        "badge": "Rich results",
+                        "title": "Gestructureerde data voor rich results",
+                        "description": "Spreek de taal van de zoekmachine. Een geavanceerde implementatie van JSON-LD schema's voor meer zichtbaarheid en een hogere doorklikratio.",
+                        "cta": "Rich results testen"
+                    }
+                }
+            }
+        },
+        "demo-massages": {
+            "title": "Demo massagestudio",
+            "description": "Demo van een studio voor therapeutische massage in Richmond, Londen. Donker, redactioneel design, een helder behandelmenu en soepel boeken, gericht op het lichaam en niet op de upsell.",
+            "badge": "Wellness en lichaamswerk",
+            "liveDemoButton": "Live demo",
+            "heroTitle": "Het lichaam onthoudt wat de geest vergeet",
+            "heroSubtitle": "Een studio voor therapeutische massage die in jouw tempo werkt, met diepe manuele technieken die je beweeglijkheid, rust en balans teruggeven.",
+            "showcaseTitle": "De volledige site in beeld",
+            "showcaseDescription": "Bekijk de complete opbouw in de live demo, van de homepage en het behandelmenu tot het boekingsproces.",
+            "ctaTitle": "Heb je een rustig, serieus wellnessmerk?",
+            "ctaDescription": "Laat deze demo in recordtijd afstemmen op je studio, je behandelingen en je eigen toon.",
+            "ctaButton": "Start je project",
+            "features_carousel": {
+                "title": "Gebouwd voor rust en conversie",
+                "description": "Elke sectie voelt onhaastig aan en leidt bezoekers ondertussen ongemerkt naar een boeking.",
+                "slides": {
+                    "design": {
+                        "badge": "Design",
+                        "title": "Een rustig, redactioneel merk",
+                        "description": "Donkere, ingetogen art direction met schreefkoppen en veel witruimte. Het design straalt serieus lichaamswerk uit, geen standaardtemplate voor een spa."
+                    },
+                    "craft": {
+                        "badge": "Vakmanschap",
+                        "title": "Weinig handelingen, diep effect",
+                        "description": "Manuele techniek, diepgaand werk, een rustig tempo en een privéstudio. De content draait om de therapie, niet om upsells."
+                    },
+                    "treatments": {
+                        "badge": "Behandelingen",
+                        "title": "Sessies afgestemd op jouw lichaam",
+                        "description": "Een filterbaar behandelmenu (ontspannend, deep tissue, hot stone, aromatherapie) met duidelijke tijdsduur en prijzen, in sessies van 60 tot 90 minuten."
+                    },
+                    "booking": {
+                        "badge": "Boeken",
+                        "title": "Boeken zonder gedoe",
+                        "description": "Kies behandeling, duur, datum en tijd, bekijk de geschatte investering en vraag je plek aan. Geen accounts, geen funnels, geen ruis."
+                    },
+                    "journal": {
+                        "badge": "Content",
+                        "title": "Een journal dat zoekverkeer oplevert",
+                        "description": "Uitgebreide artikelen over manuele therapie, de fysiologie van rust en lichaamsverzorging. Echte content die autoriteit opbouwt en organisch verkeer binnenbrengt."
+                    },
+                    "speed": {
+                        "badge": "Prestaties",
+                        "title": "Prestaties en kwaliteit",
+                        "description": "PageSpeed Insights: 81 op mobiel, met 100 voor Toegankelijkheid, Praktische tips en SEO.",
+                        "cta": "Testen op PageSpeed Insights"
+                    }
+                }
+            }
+        },
+        "investep-app": {
+            "title": "Investep App",
+            "description": "Een platform voor portefeuillebeheer voor studenten van Investep Academy. Volg meerdere brokers, bereken rendementen voor elke periode en breng activa met hefboom in kaart, vanuit één Flutter codebase op Cloudflare.",
+            "badge": "Fintechplatform",
+            "liveDemoButton": "Live demo",
+            "heroTitle": "Elke portefeuille, één helder commandocentrum",
+            "heroSubtitle": "Studenten van Investep Academy volgen hun brokers, trades en beleggingsplannen op één plek, met rendementsprognoses per dag, week, maand en jaar.",
+            "showcaseTitle": "Het volledige platform in beeld",
+            "showcaseDescription": "Bekijk het dashboard, de rendementsprognoses, de activakaart, de academy en de beheerconsole in de <meg>live demo</meg>.",
+            "ctaTitle": "Bouw je een platform voor je community?",
+            "ctaDescription": "Krijg een applicatie zoals Investep, beschikbaar op elk platform en snel aan de edge, afgestemd op je product en je gebruikers.",
+            "ctaButton": "Start je project",
+            "features_carousel": {
+                "title": "Gebouwd voor beleggers, ontworpen om te schalen",
+                "description": "Elk scherm maakt van complexe portefeuilles een rustige, begeleide ervaring, vandaag op het web en morgen native.",
+                "slides": {
+                    "dashboard": {
+                        "badge": "Dashboard",
+                        "title": "Je hele portefeuille in één oogopslag",
+                        "description": "Geconsolideerd saldo over alle brokers, een live verdelingsgrafiek en de verhouding tussen aandelen en opties, allemaal in één rustig controlecentrum."
+                    },
+                    "brokers": {
+                        "badge": "Brokers",
+                        "title": "Meerdere brokers, meerdere rekeningen",
+                        "description": "Beheer verschillende brokers met elk meerdere rekeningen, voor aandelen en opties, ieder met een eigen kapitaal en eigen doelen per maand en per dag."
+                    },
+                    "performance": {
+                        "badge": "Rendement",
+                        "title": "Rendement geprojecteerd over elke periode",
+                        "description": "Rentabiliteit geprojecteerd per dag, week, maand en jaar, per type plan en activaklasse, met een handelsjournaal dat elke open en gesloten positie bijhoudt."
+                    },
+                    "assets": {
+                        "badge": "Activa",
+                        "title": "Hefboom en invers, in kaart gebracht",
+                        "description": "Elk kernactief gekoppeld aan zijn ETF's met hefboom (x2, x3) en inverse tegenhangers, doorzoekbaar en eenvoudig als favoriet te bewaren, zodat de volledige samenhang in één oogopslag duidelijk is."
+                    },
+                    "academy": {
+                        "badge": "Academy",
+                        "title": "Gebouwd rond de community",
+                        "description": "Lidmaatschappen van Investep, een winkel met boeken en merch en een zorgvuldig samengestelde bibliotheek met luisterboeken, allemaal ingericht om studenten van Investep Academy te ondersteunen."
+                    },
+                    "admin": {
+                        "badge": "Beheer",
+                        "title": "Volledige controle vanuit één console",
+                        "description": "Beheer lidmaatschappen en prijzen, gebruikers en rollen, en de catalogi van brokers, activa, winkelproducten en boeken vanuit één beheerpaneel."
+                    },
+                    "platform": {
+                        "badge": "Multiplatform",
+                        "title": "Eén codebase, elk apparaat",
+                        "description": "Vandaag op het web en klaar om native uit te rollen naar Windows, macOS, Linux, Android en iOS, met een licht en een donker thema en ingebouwde ondersteuning voor Spaans en Engels."
+                    },
+                    "tech": {
+                        "badge": "Techstack",
+                        "title": "Flutter, Hono, Cloudflare",
+                        "description": "Een Flutter frontend voor web en native, een Hono API op Cloudflare Workers, en data en bestanden die vanaf de edge worden geleverd, voor directe prestaties wereldwijd."
+                    }
+                }
+            }
+        },
+        "vicron-lopez": {
+            "title": "Vicron Lopez",
+            "description": "Verhuur van luxe auto's en sportwagens in Ourense, Galicië. Een tweetalige site met een filterbaar wagenpark, voertuigpagina's die elke vraag voor de boeking beantwoorden, en de lokale signalen die een verhuurbedrijf nodig heeft om in zijn eigen stad gevonden te worden.",
+            "badge": "Verhuur van luxe auto's",
+            "liveDemoButton": "Site bezoeken",
+            "heroTitle": "Luxe auto's huren in Ourense",
+            "heroSubtitle": "Een ervaring als in een showroom, in het Spaans en het Engels, waar je elk voertuig bekijkt, begrijpt en boekt zonder eerst te hoeven bellen.",
+            "showcaseTitle": "Een kijkje van dichtbij",
+            "showcaseDescription": "Van het wagenpark en de voertuigpagina's tot de contactpagina en de juridische pagina's: ontdek <meg>Vicron Lopez</meg>, gebouwd voor een lokaal bedrijf dat waardevolle voertuigen verhuurt aan bezoekers en inwoners van Ourense.",
+            "ctaTitle": "Heb je een verhuurbedrijf?",
+            "ctaDescription": "Laten we je wagenpark met dezelfde helderheid online zetten, in jouw talen en jouw stad.",
+            "ctaButton": "Offerte aanvragen",
+            "features_carousel": {
+                "title": "Voor een lokaal bedrijf dat dure voertuigen verhuurt",
+                "description": "Elke sectie neemt een reden tot twijfel weg, van de eerste zoekopdracht tot de boekingsaanvraag.",
+                "slides": {
+                    "design": {
+                        "badge": "Design",
+                        "title": "Eén merk, licht en donker",
+                        "description": "Een homepage met de uitstraling van een showroom, die in de lichte en de donkere modus hetzelfde premium gevoel geeft, met het wagenpark, de diensten en de klantreviews overzichtelijk in beeld voor een bezoeker die in seconden beslist."
+                    },
+                    "inventory": {
+                        "badge": "Aanbod",
+                        "title": "Het wagenpark, doorzoekbaar en filterbaar",
+                        "description": "Live zoeken plus filters op type, prijs en categorie, met de dagprijs op elke kaart. De catalogus groeit mee met het bedrijf zonder dat er een regel aan de opmaak verandert."
+                    },
+                    "vehicle": {
+                        "badge": "Voertuigpagina",
+                        "title": "Elke vraag beantwoord voor het boeken",
+                        "description": "Specificaties, wat er bij de prijs inbegrepen is, borg, geaccepteerde betaalmethoden en een datumkiezer voor ophalen en terugbrengen, afgesloten met boeken per mail of via WhatsApp."
+                    },
+                    "local": {
+                        "badge": "Lokale aanwezigheid",
+                        "title": "Verankerd in Ourense",
+                        "description": "Adres, telefoon, openingstijden, vergunning van de gemeente en een kaart met routebeschrijving. De signalen die een lokaal bedrijf nodig heeft om in Galicië gevonden en vertrouwd te worden."
+                    },
+                    "about": {
+                        "badge": "Vertrouwen",
+                        "title": "De mensen achter de sleutels",
+                        "description": "Bedrijfsgeschiedenis, waarden, tijdlijn en het leidinggevende team. Echte informatie over het bedrijf, en precies dat wekt vertrouwen bij een dure huurauto."
+                    },
+                    "legal": {
+                        "badge": "Regelgeving",
+                        "title": "AVG goed geregeld",
+                        "description": "Privacybeleid, servicevoorwaarden en een gedetailleerd cookiepaneel waarin je analytische en marketingcookies één voor één kunt weigeren. De toestemming is echt, geen banner met alleen een knop om te accepteren."
+                    },
+                    "bilingual": {
+                        "badge": "Tweetalige SEO",
+                        "title": "Spaans en Engels, geïndexeerd als één site",
+                        "description": "Elke pagina bestaat in beide talen, met vertaalde URL's die via hreflang aan elkaar gekoppeld zijn, plus een sitemap in HTML, zodat bezoekers en crawlers de hele catalogus bereiken."
+                    }
+                }
+            },
+            "business": {
+                "title": "Over Vicron Lopez",
+                "paragraphs": [
+                    "Vicron Lopez verhuurt luxe auto's en sportwagens in Ourense, in Galicië (Spanje), voor zowel korte als lange huurperiodes. De prijzen zijn transparant, zonder verborgen kosten, en de auto kan bij de klant thuis worden afgeleverd en daar achteraf weer worden opgehaald.",
+                    "Elke huur is verzekerd, met pakketten van basisdekking tot volledige dekking, en onderhoud en service gebeuren in eigen beheer. Het bedrijf vat zijn waarden samen als uitmuntendheid, transparantie en de klant op de eerste plaats."
+                ]
+            }
+        },
+        "masajes-orisha": {
+            "title": "Masajes Orisha",
+            "description": "Een studio voor therapeutische massage in San Rafael de Heredia, Costa Rica. Tweetalig, licht en donker, met een filterbaar behandelmenu en boeken in vier stappen.",
+            "badge": "Studio voor therapeutische massage",
+            "liveDemoButton": "Site bezoeken",
+            "heroTitle": "Therapeutische massage in Costa Rica",
+            "heroSubtitle": "Een privéstudio in San Rafael de Heredia, online in het Spaans en het Engels, waar een bezoeker de behandeling kiest, ziet wat die kost en het tijdslot aanvraagt zonder één telefoontje.",
+            "showcaseTitle": "Een kijkje van dichtbij",
+            "showcaseDescription": "Van het behandelmenu en de boekingsaanvraag tot het journal en de studio zelf: ontdek <meg>Masajes Orisha</meg>, gebouwd voor een lokale therapeut wiens agenda ervan afhangt dat onbekenden hem vertrouwen voordat ze binnenkomen.",
+            "ctaTitle": "Heb je een studio of een praktijk?",
+            "ctaDescription": "Laten we je behandelingen, je prijzen en je agenda online zetten, in jouw talen en jouw plaats.",
+            "ctaButton": "Offerte aanvragen",
+            "features_carousel": {
+                "title": "Voor een lokale therapeut wiens agenda het bedrijf is",
+                "description": "Elke sectie beantwoordt een vraag die de klant anders telefonisch zou moeten stellen.",
+                "slides": {
+                    "design": {
+                        "badge": "Design",
+                        "title": "Redactionele rust, in licht en donker",
+                        "description": "Schreefkoppen, een warm zandkleurig palet en veel witruimte, met hetzelfde karakter in beide thema's. Het leest als een privéstudio met een eigen visie, niet als de zoveelste spatemplate."
+                    },
+                    "treatments": {
+                        "badge": "Behandelingen",
+                        "title": "Een kort menu, gefilterd met één tik",
+                        "description": "Vier kenmerkende behandelingen, verdeeld over Calm & Wellness en Therapeutic & Recovery, elk op een kaart met de duur en de focus. Bewust kort: minder keuzes, sneller een besluit."
+                    },
+                    "booking": {
+                        "badge": "Boeken",
+                        "title": "Een boekingsformulier dat zelf de prijs berekent",
+                        "description": "Behandeling, duur, dag en tijd in vier stappen, met een schatting die meeloopt terwijl de klant kiest. Geen account en geen betaalomgeving, alleen een aanvraag die de therapeut per mail bevestigt, beveiligd tegen bots."
+                    },
+                    "journal": {
+                        "badge": "Content",
+                        "title": "Artikelen die zoekverkeer opleveren",
+                        "description": "Uitgebreide stukken over manuele therapie, de fysiologie van rust en spierherstel. Content waarop een massagestudio echt gevonden kan worden, gepubliceerd in beide talen."
+                    }
+                }
+            },
+            "business": {
+                "title": "Over Masajes Orisha",
+                "paragraphs": [
+                    "Masajes Orisha is een studio voor therapeutische massage in San Rafael de Heredia, Costa Rica, geleid door oprichter en therapeut Sergio Zaldívar Guillén. De studio biedt ontspanningsmassage, deep tissue massage, hot stone massage en aromatherapiemassage, in sessies van 60 tot 90 minuten die manuele techniek combineren met natuurlijke oliën.",
+                    "De aanpak is onhaastig: druk en ritme worden afgestemd op elke persoon, zonder rigide protocollen. De sessies vinden plaats in een privéstudio, in een geluiddichte ruimte met dimbaar licht, met één cliënt tegelijk. De naam is geïnspireerd op de Orisha's van de Yoruba, opgevat als een filosofie van respect voor het lichaam."
+                ]
+            }
+        },
+        "real-estate": {
+            "title": "Luxe vastgoed",
+            "description": "Exclusieve demo voor luxe woningaanbod en makelaarskantoren die een premium visuele identiteit zoeken.",
+            "badge": "Vastgoed",
+            "liveDemoButton": "Live demo",
+            "heroTitle": "Exclusieve woonruimtes",
+            "heroSubtitle": "Presenteer je luxe woningen met een elegante en meeslepende digitale ervaring.",
+            "features": [
+                "Formulieren voor leadgeneratie",
+                "Geavanceerde zoekfilters"
+            ],
+            "showcaseTitle": "Woningen in beeld",
+            "showcaseDescription": "Een kijkje in hoe we premium woningen presenteren aan exclusieve klanten.",
+            "ctaTitle": "Verkoop je luxevastgoed?",
+            "ctaDescription": "Boei je publiek met een website die net zo exclusief is als je aanbod.",
+            "ctaButton": "Bouw je makelaarssite",
+            "features_carousel": {
+                "title": "Gebouwd voor technische uitmuntendheid",
+                "description": "Ons ontwikkelproces werkt met de nieuwste webstandaarden, zodat je online aanwezigheid niet alleen mooi is, maar ook technisch superieur.",
+                "slides": {
+                    "gmb": {
+                        "badge": "Optimalisatie van GBP",
+                        "title": "Google Business Profile tot in de puntjes",
+                        "description": "Content gemaakt en geoptimaliseerd op basis van het Google Business Profile."
+                    },
+                    "tech": {
+                        "badge": "Techstack",
+                        "title": "Technologieën en werkwijze",
+                        "description": "NextJS 16. Tailwind 4. CDN. Tests: functionele tests en e2e tests. Kwaliteitsborging. CI/CD."
+                    },
+                    "tests": {
+                        "badge": "Tests",
+                        "title": "Functionele tests en QA",
+                        "description": "Vitest voor functionele tests en componenten, Playwright voor e2e tests en Lighthouse voor de Core Web Vitals."
+                    },
+                    "screens": {
+                        "badge": "Multidevice",
+                        "title": "Getest op elk apparaat",
+                        "description": "Pixelperfect op mobiel, tablet en desktop. Elke opmaak, elke interactie, elk schermformaat getest en gecontroleerd voor de lancering."
+                    },
+                    "seo": {
+                        "badge": "Zichtbaarheid",
+                        "title": "SEO / AEO / GEO",
+                        "description": "Een zichtbaarheidsstrategie op meerdere niveaus. We optimaliseren voor klassieke zoekresultaten, antwoorden van AI en geografische resultaten, voor een volledige dekking."
+                    },
+                    "speed": {
+                        "badge": "Prestaties",
+                        "title": "Prestaties",
+                        "description": "Getest met Google PageSpeed Insights, met een prestatiescore van 95%+.",
+                        "cta": "Testen op PageSpeed Insights"
+                    },
+                    "pwa": {
+                        "badge": "Werkt als een app",
+                        "title": "Progressive Web App",
+                        "description": "Open de digitale aanwezigheid van je makelaarskantoor direct op elk apparaat, zelfs offline. Een snelle, betrouwbare en meeslepende ervaring die aanvoelt als een app."
+                    },
+                    "og": {
+                        "badge": "Social",
+                        "title": "OpenGraph",
+                        "description": "Een verzorgde uitstraling op sociale media. Metadata op maat zorgt ervoor dat je merk er op elk platform professioneel uitziet."
+                    },
+                    "data": {
+                        "badge": "Rich results",
+                        "title": "Gestructureerde data voor rich results",
+                        "description": "Spreek de taal van de zoekmachine. Een geavanceerde implementatie van JSON-LD schema's voor meer zichtbaarheid.",
+                        "cta": "Rich results testen"
+                    }
+                }
+            }
+        },
+        "fitness-studio-pro": {
+            "title": "Fitness Studio Pro",
+            "description": "Een dynamische en energieke demo voor sportscholen, personal trainers en wellnesscentra die een community willen opbouwen.",
+            "badge": "Fitness en wellness",
+            "liveDemoButton": "Live demo",
+            "heroTitle": "Breng je training naar een hoger niveau",
+            "heroSubtitle": "Inspireer je leden met een krachtig, professioneel platform dat motiveert om door te zetten.",
+            "features": [
+                "Profielpagina's voor trainers",
+                "Geïntegreerde blog en motivatie"
+            ],
+            "showcaseTitle": "De studio in beeld",
+            "showcaseDescription": "Zie hoe we een energieke communityervaring bouwen voor je leden.",
+            "ctaTitle": "Klaar om te trainen?",
+            "ctaDescription": "Vergroot het digitale bereik van je studio met een snel en krachtig platform.",
+            "ctaButton": "Vraag de studiodemo aan"
+        },
         "portfolioCarousel": {
             "title": "Gebouwd om uit te blinken",
             "subtitle": "Bekijk ons portfolio met snelle websites en projecten die live in productie draaien.",
@@ -957,6 +1457,64 @@
             "nextFeature": "Volgende functie",
             "selectSection": "Sectie kiezen: {name}",
             "interactHint": "Klik of gebruik de pijltjestoetsen ← →"
+        },
+        "gerp-dj": {
+            "title": "GERP DJ: DJ voor feesten en bruiloften in Ourense",
+            "description": "Website voor GERP DJ, een DJ voor feesten, bruiloften en evenementen in Ourense. In het Spaans en Galicisch, met een datumaanvraag die WhatsApp opent, klaar om te verzenden.",
+            "badge": "DJ voor evenementen",
+            "liveDemoButton": "Site bezoeken",
+            "heroTitle": "Een DJ voor elk feest in Galicië",
+            "heroSubtitle": "Een DJ uit Ourense met eigen geluidsapparatuur en verlichting, die draait op dorpsfeesten, bruiloften, privéfeesten en bedrijfsevenementen in heel Galicië. De site is er in het Spaans en het Galicisch, en met drie gegevens vraag je een datum aan zonder te bellen.",
+            "showcaseTitle": "Een kijkje van dichtbij",
+            "showcaseDescription": "Van de datumaanvraag en de videogalerij tot de bio en de bijbehorende persmap: ontdek <meg>GERP DJ</meg>, gebouwd voor een DJ bij wie elke boeking begint met één vraag: ben je vrij op die datum?",
+            "ctaTitle": "Treed je op bij bruiloften, feesten of evenementen?",
+            "ctaDescription": "Laten we je diensten, je video's en je datumaanvragen online zetten, in jouw talen en jouw regio.",
+            "ctaButton": "Offerte aanvragen",
+            "features_carousel": {
+                "title": "Gebouwd rond de vraag die elke klant als eerste stelt",
+                "description": "Of de datum vrij is, hoe een optreden eruitziet en wie er achter de draaitafels staat: elke sectie beantwoordt een van die vragen nog voor het eerste bericht. Daaronder een pagina die meteen laadt, want snelheid houdt bezoekers vast en levert aanvragen op, en gestructureerde data die zoekmachines helpt het bedrijf te begrijpen.",
+                "slides": {
+                    "design": {
+                        "badge": "Design",
+                        "title": "Video voorop, in licht of donker",
+                        "description": "De homepage opent met een achtergrondvideo die de bezoeker kan pauzeren, met een licht en een donker thema en een taalkeuze Spaans en Galicisch in de header."
+                    },
+                    "speed": {
+                        "badge": "Prestaties",
+                        "title": "99 op mobiel, een pagina die meteen reageert",
+                        "description": "PageSpeed Insights op mobiel, 24 november 2026: 99 voor Prestaties en 100 voor Toegankelijkheid, Praktische tips en SEO. Snelheid hoort bij de ervaring: een pagina die snel laadt en reageert, houdt de bezoeker vast, en de bezoeker die blijft, is degene die de datumaanvraag verstuurt.",
+                        "cta": "Testen op PageSpeed Insights"
+                    },
+                    "data": {
+                        "badge": "Rich results",
+                        "title": "Gestructureerde data die Google kan lezen",
+                        "description": "Test voor rich results van Google, 24 november 2026: drie geldige items, Breadcrumbs, Local business en Organisation, waardoor de homepage in aanmerking komt voor rich results in Google Zoeken. Gestructureerde data geeft zoekmachines expliciete aanwijzingen over wie het bedrijf is en hoe de pagina's samenhangen. Dat helpt semantisch zoeken de site te begrijpen en ondersteunt de SEO.",
+                        "cta": "Rich results testen"
+                    },
+                    "booking": {
+                        "badge": "Boeken",
+                        "title": "Een datumaanvraag die in WhatsApp belandt",
+                        "description": "Datum, plaats en soort evenement, en de aanvraag opent in WhatsApp, klaar om te verzenden. Geen serverformulier en geen account, alleen een bericht dat de bezoeker meteen verstuurt."
+                    },
+                    "gallery": {
+                        "badge": "Galerij",
+                        "title": "Tien clips van optredens en opstellingen",
+                        "description": "De galerij bevat tien videoclips met bijschrift, opgenomen tijdens optredens en met de eigen apparatuur, zodat een bruidspaar of evenementenplanner de sfeer al proeft voordat ze een datum aanvragen."
+                    },
+                    "bio": {
+                        "badge": "Bio",
+                        "title": "Een bio met persmap",
+                        "description": "Wie er achter de draaitafels staat, met foto's en een persmap om als pdf te downloaden, in het Spaans en in het Galicisch."
+                    }
+                }
+            },
+            "business": {
+                "title": "Over GERP DJ",
+                "paragraphs": [
+                    "GERP DJ is een DJ uit Ourense die draait op dorpsfeesten, bruiloften, privéfeesten en bedrijfsevenementen in heel Galicië. Boekingen gaan via WhatsApp.",
+                    "Alle apparatuur voor geluid en licht is van de DJ zelf: een booth met de naam GERP DJ, speakers, ledverlichting en een Denon DJ controller. Alles wordt op dezelfde manier opgebouwd, op een dorpsplein, op een terras of in een zaal."
+                ]
+            }
         },
         "detail": {
             "liveDemoAria": "{label} voor {title}",

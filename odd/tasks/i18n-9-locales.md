@@ -27,7 +27,8 @@ Objective: translate hlorenzoz.com from en/es to 9 locales, page by page, with p
 | T7 | S1, S2 | AI Voice Receptionist page | 7 agents | done | 8ad92df |
 | T8 | S1, S2 | Software Development page | 7 agents | done | hreflang 10, tax marker ok, 0 English-identical strings |
 | T9 | S2 | Gate the portfolio and news indexes on every card's copy (title/badge/description), so an index never shows English cards or links to an unbuilt detail page | inline | done | this commit; RED 2 tests without the routes change |
-| T10.. | S1, S2 | Then one page at a time: each portfolio item, portfolio index, each news post, news index, legal pages, card, HTML sitemap | 7 agents per page | pending | |
+| T10 | S1, S2 | Portfolio index + its 10 project pages, published together (an item needs its parent index; the index needs every card) | 7 agents | done | hreflang 10 on all 11 pages; English-identical strings are brand/demo names and Google product names only |
+| T11.. | S1, S2 | Then: each news post, news index, legal pages, card, HTML sitemap | 7 agents per page | pending | |
 
 ## Log
 
@@ -36,3 +37,4 @@ Objective: translate hlorenzoz.com from en/es to 9 locales, page by page, with p
 - **L3** (2026-11-25, user, verbatim): "Ve página por página (una página a la vez)". A page is published in a locale only once its copy exists there; untranslated pages are not built for that locale and get no hreflang to it.
 - **L4** (2026-11-25, user, verbatim): "Cada vez que termines te traducir una página en todos los idiomas, revísalas, haz el commit, y sube los cambios porfa" and "Revisa los metadatos de las imágenes: description, caption, title, ... y asegúrate de que también estén traducidos porfa, y que cada vez que se procesen nuevas imágenes, se hagan también las respectivas traducciones y referencias. Actualiza las referencias (incluyendo agentes) que lo requieran." T1 done (f7e42a3); gitleaks flagged translation key paths in lib/routes.ts as generic-api-key, annotated gitleaks:allow.
 - **L5** (2026-11-25, evidence): the portfolio and news indexes render every item's card (`portfolio.<id>.title/badge/description`, `news.items.<id>.title/description`) and link to its detail page with `localeHref`, but their copyKeys listed only `portfolio.list`/`news.list`. Fixed in T9; order is now items before their index. The home carousels already filter to items built in the locale (`routeExists`), so home was not affected.
+- **L6** (2026-11-25, evidence): translators flagged a source copy error, the real estate demo's PWA slide said "your clinic's" in en/es; fixed in en, es and gl. Country names keep their own hyphens in fr/nl (Nouvelle-Zélande, Nieuw-Zeeland): proper names, allowed by the glossary.
