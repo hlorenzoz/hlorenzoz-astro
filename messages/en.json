@@ -1262,13 +1262,13 @@
       "heroSubtitle": "We combine AI intelligence that feels human with premium design to scale your operations 24/7.",
       "features": [
         "Dynamic Glassmorphism UI",
-        "Next.js 16 & Tailwind 4",
+        "Astro 7 & Tailwind 4",
         "Enterprise CI/CD Pipelines",
         "Automated QA & E2E Testing",
         "Lighthouse & Core Web Vitals Optimization",
         "PWA & Offline Capability"
       ],
-      "techStack": "Next.js 16, Tailwind 4, Bun, Playwright, Vitest, CI/CD",
+      "techStack": "Astro 7, Tailwind 4, Bun, Playwright, Vitest, CI/CD",
       "seoOptimization": "JSON-LD, GEO, AEO, Traditional SEO, Rich Results",
       "showcaseTitle": "Agency Showcase",
       "showcaseDescription": "Explore how we apply our own standards to our digital headquarters.",
@@ -1282,7 +1282,7 @@
           "tech": {
             "badge": "Tech Stack",
             "title": "Technologies and Procedures",
-            "description": "NextJS 16. Tailwind 4. Cloudflare CDN. Vitest & Playwright: GitHub Actions for CI/CD."
+            "description": "Astro 7. Tailwind 4. Cloudflare CDN. Vitest & Playwright: GitHub Actions for CI/CD."
           },
           "tests": {
             "badge": "Tests",

@@ -9,7 +9,7 @@
 - Serves clients worldwide, with a primary focus on Australia, Canada, Costa Rica, Ireland, New Zealand, Spain, the United Kingdom, and the United States
 - Core offer: Local SEO, one monthly plan made of four pillars (authority content, backlinks and citations, authority on Google and AI, review management)
 - Optional services: website development, AI voice receptionist, software development
-- Tech stack: Next.js, Tailwind CSS, Cloudflare (CDN, Workers, Pages), Vitest, Playwright, Lighthouse CI
+- Tech stack: Astro, Tailwind CSS, Cloudflare (CDN, Workers, Pages), Vitest, Playwright, Lighthouse CI
 - Price range: €350 to €20,000+
 - Pricing terms: no price includes VAT; 50% is paid up front; optional services are 30% off their list price alongside Local SEO; there is no free trial
 - Payment accepted: Bank Transfer, Credit Card, Stripe
@@ -32,7 +32,7 @@
 
 ## Portfolio Case Studies
 
-- [Lorenzoz Agency (this site)](https://hlorenzoz.com/en/portfolio/lorenzoz-agency/): Live project. Next.js 16, Tailwind 4, Cloudflare CDN, Vitest + Playwright CI/CD, 95%+ PageSpeed score, JSON-LD structured data, PWA support.
+- [Lorenzoz Agency (this site)](https://hlorenzoz.com/en/portfolio/lorenzoz-agency/): Live project. Astro 7, Tailwind 4, Cloudflare CDN, Vitest + Playwright CI/CD, 95%+ PageSpeed score, JSON-LD structured data, PWA support.
 - [Dental Clinic Demo](https://hlorenzoz.com/en/portfolio/dental-clinic-1/): Demo project for a dental clinic with Google Business Profile optimization, Next.js 16, full test coverage, 95%+ PageSpeed, PWA and structured data.
 - [Real Estate Demo](https://hlorenzoz.com/en/portfolio/real-estate/): Demo real estate listings site with property/rental browsing, GBP optimization, Next.js 16, full test suite, 95%+ PageSpeed, structured data.
 - [Malaga Event Gear](https://hlorenzoz.com/en/portfolio/malaga-event-gear/): Live client project (malagaeventgear.com) for event equipment rental with online booking, 93+ mobile PageSpeed, Local Business and Organization schema.

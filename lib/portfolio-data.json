@@ -2,7 +2,7 @@
     {
         "id": "lorenzoz-agency",
         "slug": "lorenzoz-agency",
-        "lastModified": "2026-11-24",
+        "lastModified": "2026-11-25",
         "type": "live",
         "image": "https://cdn.hlorenzoz.com/hlorenzoz.com/portfolio/me/cover.webp",
         "fullScreenshot": [
@@ -17,7 +17,7 @@
                 "image": "https://cdn.hlorenzoz.com/hlorenzoz.com/portfolio/me/tech-stack-visual.webp",
                 "badge": "Tech Stack",
                 "title": "Technologies and Procedures",
-                "description": "NextJS 16. Tailwind 4. Cloudflare CDN. Vitest & Playwright: GitHub Actions for CI/CD."
+                "description": "Astro 7. Tailwind 4. Cloudflare CDN. Vitest & Playwright: GitHub Actions for CI/CD."
             },
             {
                 "id": "tests",

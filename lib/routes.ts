@@ -2,21 +2,21 @@
  * The site's route registry: one entry per indexable page, consumed by both
  * sitemaps.
  *
- * Before this existed, `app/sitemap.ts` held a hardcoded `STATIC_ROUTES` array
+ * Before this existed, the XML sitemap held a hardcoded `STATIC_ROUTES` array
  * and there was no HTML sitemap at all. Adding a page meant remembering to
  * touch a list that lived nowhere near the page, which is exactly how a
  * sitemap drifts out of sync with the pages it claims to describe.
  *
  * Routes are declared once here and picked up by:
- *   - `app/sitemap.ts`            -> /sitemap.xml
- *   - `app/[locale]/sitemap/page` -> the human-readable /{locale}/sitemap/
+ *   - `src/pages/sitemap.xml.ts`              -> /sitemap.xml
+ *   - `src/pages/[locale]/sitemap/index.astro` -> the human-readable /{locale}/sitemap/
  *
  * This module is the composition root: it is the one place that knows which
  * concrete data sources contribute routes. That is why it imports
  * `lib/portfolio-data.json` (and `lib/news-data.json`) and why it must NEVER be imported by a client
  * component. Deriving routes is a module-scope call, so a bundler cannot
  * tree-shake it, and importing any symbol from here pulls the whole JSON into
- * the browser bundle. Pure helpers a client component might want (`localeHref`,
+ * the browser bundle. Pure helpers a client script might want (`localeHref`,
  * the date parsers, the tier types) live in `lib/routing.ts` instead.
  */
 import { getPortfolioItems } from '@/lib/portfolio';
@@ -39,7 +39,7 @@ import {
 // the wrong import fail to resolve instead of merely being discouraged.
 
 /**
- * Hand-declared routes: pages that exist as files under `app/[locale]/`.
+ * Hand-declared routes: pages that exist as files under `src/pages/[locale]/`.
  *
  * The dates are a best-effort baseline, NOT an audited content history: they
  * come from `git log -1` on each page file, which reports when that file last
@@ -60,7 +60,7 @@ const STATIC_ROUTES: readonly SiteRoute[] = [
     // The index lists every post, so its date follows the freshest one instead of a second hand-kept date.
     { path: 'news', tier: 'page', labelKey: 'navigation.news', lastModified: latestNewsModified(), parent: '' },
     { path: 'card/hector', tier: 'page', labelKey: 'sitemap.labels.card', lastModified: '2026-07-10', parent: '' },
-    { path: 'sitemap', tier: 'page', labelKey: 'sitemap.labels.sitemap', lastModified: '2026-11-24', parent: '' },
+    { path: 'sitemap', tier: 'page', labelKey: 'sitemap.labels.sitemap', lastModified: '2026-11-25', parent: '' },
     { path: 'privacy-policy', tier: 'legal', labelKey: 'footer.legal.items.0.label', lastModified: '2026-07-10', parent: '' },
     { path: 'terms-conditions', tier: 'legal', labelKey: 'footer.legal.items.1.label', lastModified: '2026-10-09', parent: '' },
     { path: 'cookie-policy', tier: 'legal', labelKey: 'footer.legal.items.2.label', lastModified: '2026-07-10', parent: '' },
