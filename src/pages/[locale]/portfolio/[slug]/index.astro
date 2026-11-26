@@ -104,15 +104,11 @@ const preloadImages = [
         <JsonLd data={structuredData} />
         <Navbar locale={locale} />
 
-        <main class="pt-32 relative">
-            <div class="px-6 mb-6">
-                <Breadcrumbs crumbs={crumbs} label={tNav('breadcrumb')} className="max-w-7xl mx-auto" />
-            </div>
-
+        <main class="relative">
             {/* Hero Section */}
             <section
                 id="portfolio-hero"
-                class="px-6 py-20 bg-black overflow-hidden relative"
+                class="px-6 pt-40 md:pt-48 pb-20 bg-black overflow-hidden relative"
                 style="background-image:radial-gradient(circle at 50% -20%, rgba(59, 130, 246, 0.15) 0%, rgba(0, 0, 0, 0) 60%)"
             >
                 <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center gap-16 relative z-10">
@@ -187,6 +183,10 @@ const preloadImages = [
                     </div>
                 </div>
             </section>
+
+            <div class="px-6 pt-6">
+                <Breadcrumbs crumbs={crumbs} label={tNav('breadcrumb')} className="max-w-7xl mx-auto" />
+            </div>
 
             {/* About the business: who the client is, before the page turns to the website. Real client sites only. */}
             {item.type === 'live' && <PortfolioBusiness title={t('business.title')} paragraphs={t.raw('business.paragraphs') as string[]} />}

@@ -72,6 +72,19 @@ describe.each(['en', 'es'])('visible breadcrumb (%s)', (locale) => {
     });
 });
 
+// Pages that open with a dark hero section show the trail right under it, not above it.
+const HERO_PAGES = PAGES.filter(([name]) => ['portfolio detail', 'services hub', 'local seo', 'website development', 'ai voice receptionist', 'software development'].includes(name));
+
+describe('breadcrumb placement', () => {
+    it.each(HERO_PAGES)('%s shows the trail below its top section', async (_name, Page, slug) => {
+        const document = await renderPage(Page, slug ? { locale: 'en', slug } : { locale: 'en' });
+        const nav = visibleNav(document, 'en')!;
+        const hero = document.querySelector('h1')!.closest('section')!;
+        expect(hero.contains(nav)).toBe(false);
+        expect(hero.compareDocumentPosition(nav) & document.defaultView!.Node.DOCUMENT_POSITION_FOLLOWING).toBeTruthy();
+    });
+});
+
 describe('home page', () => {
     it('renders no visible breadcrumb', async () => {
         const document = await renderPage(HomePage, { locale: 'en' });

@@ -108,11 +108,11 @@ describe.each(PAGES)('$path landing', ({ path, Page, key, sections, links }) => 
         expect(text(hero)).toContain('15 minutes by video call. No obligation.');
     });
 
-    it('keeps the breadcrumb trail above the hero', async () => {
+    it('shows the breadcrumb trail below the hero', async () => {
         const document = await render(Page, path);
         const nav = document.querySelector(`${MAIN} nav[aria-label]`);
         expect(nav?.textContent).toContain('Home');
-        expect(nav!.compareDocumentPosition(document.querySelector(`${MAIN} h1`)!) & 4).toBeTruthy();
+        expect(nav!.compareDocumentPosition(document.querySelector(`${MAIN} h1`)!) & 2).toBeTruthy();
     });
 
     it('offers the dossier as a download in the reader language', async () => {

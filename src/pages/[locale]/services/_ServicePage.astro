@@ -61,15 +61,7 @@ const bookingHref = `${localeHref(locale, path)}#booking`;
         <JsonLd data={page.schema(locale, tRoot)} />
         <Navbar locale={locale} />
 
-        <main class="pt-32">
-            {
-                breadcrumbs && (
-                    <div class="px-6 mb-6">
-                        <Breadcrumbs crumbs={page.crumbs(locale, tRoot)} label={tRoot('navigation.breadcrumb')} className="max-w-3xl mx-auto" />
-                    </div>
-                )
-            }
-
+        <main>
             <ServiceHero
                 eyebrow={t('hero.eyebrow')}
                 title={t('hero.title')}
@@ -84,6 +76,14 @@ const bookingHref = `${localeHref(locale, path)}#booking`;
                 <slot name="hero" />
                 {Astro.slots.has('hero-aside') && <Fragment slot="aside"><slot name="hero-aside" /></Fragment>}
             </ServiceHero>
+
+            {
+                breadcrumbs && (
+                    <div class="px-6 pt-6">
+                        <Breadcrumbs crumbs={page.crumbs(locale, tRoot)} label={tRoot('navigation.breadcrumb')} className="max-w-3xl mx-auto" />
+                    </div>
+                )
+            }
 
             <slot name="after-hero" />
 

@@ -23,7 +23,7 @@ const { eyebrow, title, subtitle, ctaLabel, ctaHref, secondaryLabel, secondaryHr
 const hasAside = Astro.slots.has('aside');
 ---
 
-<section class="relative pt-24 pb-20 md:pb-28 px-6 overflow-hidden hero-bg-deep">
+<section class="relative pt-40 md:pt-48 pb-20 md:pb-28 px-6 overflow-hidden hero-bg-deep">
     {/* w-full: BaseLayout's critical CSS centres `hero-bg-deep` children as flex items, which would shrink them to their content. */}
     <div class={`w-full mx-auto relative z-10 ${hasAside ? 'max-w-6xl grid lg:grid-cols-[minmax(0,1fr)_380px] gap-12 items-center' : 'max-w-3xl'}`}>
         <div class="text-left flex flex-col items-start gap-6 min-w-0">

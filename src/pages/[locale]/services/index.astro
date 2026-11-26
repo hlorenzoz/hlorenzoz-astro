@@ -62,11 +62,7 @@ const items: ServiceDirectoryItem[] = page.children(locale, tRoot).filter((link)
         <JsonLd data={page.schema(locale, tRoot)} />
         <Navbar locale={locale} />
 
-        <main class="pt-32 pb-24">
-            <div class="px-6 mb-6">
-                <Breadcrumbs crumbs={page.crumbs(locale, tRoot)} label={tRoot('navigation.breadcrumb')} className="max-w-3xl mx-auto" />
-            </div>
-
+        <main class="pb-24">
             <ServiceHero
                 eyebrow={t('eyebrow')}
                 title={t('title')}
@@ -74,6 +70,10 @@ const items: ServiceDirectoryItem[] = page.children(locale, tRoot).filter((link)
                 ctaLabel={t('cta')}
                 ctaHref={`${localeHref(locale, 'services')}#directory`}
             />
+
+            <div class="px-6 pt-6">
+                <Breadcrumbs crumbs={page.crumbs(locale, tRoot)} label={tRoot('navigation.breadcrumb')} className="max-w-3xl mx-auto" />
+            </div>
 
             {/*
              * The hub deliberately carries NO booking widget, unlike the
