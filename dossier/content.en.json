@@ -174,11 +174,11 @@
     "terms": [
       {
         "title": "Quoted after the analysis",
-        "description": "We publish no price list. Every solution is quoted after the free needs analysis, according to what your business needs."
+        "description": "We publish no price list beyond the entry price. Every solution is quoted after the free needs analysis, according to what your business needs."
       },
       {
-        "title": "An initial payment, then a monthly fee",
-        "description": "A low initial payment when the services start, then a monthly fee tied to the results we bring you, agreed in the proposal. The new customers the solution brings in are what cover it."
+        "title": "The entry price, then a monthly fee",
+        "description": "You start with a first implementation for {entryPrice} + VAT that commits both sides and takes the first steps. After that, a monthly fee tied to the results we bring you, agreed in the proposal. The new customers the solution brings in are what cover it."
       },
       {
         "title": "Quotes exclude VAT",

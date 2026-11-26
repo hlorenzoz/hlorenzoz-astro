@@ -7,7 +7,8 @@ import {
     renderDossier,
 } from '../../scripts/build-dossier.mjs';
 import { ORGANIZATION, marketNames } from '@/lib/site-config';
-import { SERVICE_KEYS } from '@/lib/pricing';
+import { SERVICE_KEYS, formatEntryPrice } from '@/lib/pricing';
+import { localeInfo } from '@/lib/routing';
 import esContent from '../../dossier/content.es.json';
 import enContent from '../../dossier/content.en.json';
 
@@ -23,7 +24,13 @@ function render(locale: 'es' | 'en') {
         organization: ORGANIZATION,
         markets: marketNames(locale),
         qrSvg: '<svg data-testid="qr"></svg>',
+        entryPrice: formatEntryPrice(localeInfo(locale).intl),
     });
+}
+
+/** The entry price as the dossier prints it: plain spaces, no no-break space. */
+function entryPrice(locale: 'es' | 'en') {
+    return formatEntryPrice(localeInfo(locale).intl).replace(/\s/g, ' ');
 }
 
 /** Key shape of a JSON tree, with array indices collapsed so lengths may differ. */
@@ -36,20 +43,29 @@ function shape(value: unknown, path = ''): string[] {
 }
 
 /**
- * The agency publishes no price: every solution is quoted after a free first
- * call. The dossier is handed to prospects, so it must not print one either.
+ * The agency publishes one figure, the entry price of the first implementation;
+ * everything else is quoted after a free first call. The dossier is handed to
+ * prospects, so it prints that figure, from `lib/pricing.ts`, and no other.
  */
-describe('the dossier prints no price', () => {
-    it.each(['es', 'en'] as const)('shows no amount and no tax marker (%s)', (locale) => {
+describe('the dossier prints the entry price and no other amount', () => {
+    it.each(['es', 'en'] as const)('shows the entry price and no other amount or tax marker (%s)', (locale) => {
         const html = render(locale);
-        expect(html).not.toMatch(/€\s?\d|\d\s?€|EUR\s?\d/);
+        expect(html).toContain(entryPrice(locale));
+        expect(html.split(entryPrice(locale)).join('')).not.toMatch(/€\s?\d|\d\s?€|EUR\s?\d/);
+        expect(html).not.toContain('{entryPrice}');
         expect(html).not.toContain('<span class="tax">');
+    });
+
+    it('keeps the amount out of the copy: it comes from lib/pricing.ts', () => {
+        for (const content of [esContent, enContent]) {
+            expect(JSON.stringify(content)).not.toMatch(/€|EUR|\b500\b/);
+        }
     });
 
     it('says every solution is quoted after the free needs analysis, excluding VAT', () => {
         expect(render('en')).toContain('quoted after the free needs analysis');
         expect(render('en')).toContain('Quotes exclude VAT');
-        expect(render('es')).toContain('se presupuesta tras el análisis de necesidades gratuito');
+        expect(render('es')).toContain('se presupuesta tras el análisis gratuito de necesidades');
         expect(render('es')).toContain('no incluyen IVA');
     });
 
@@ -60,9 +76,11 @@ describe('the dossier prints no price', () => {
         expect(html).not.toMatch(/up front|por adelantado/i);
     });
 
-    it('describes the initial payment and the monthly fee tied to results', () => {
-        expect(render('en')).toContain('A low initial payment when the services start, then a monthly fee tied to the results we bring you');
-        expect(render('es')).toContain('Un pago inicial bajo al comenzar los servicios y, después, una cuota mensual ligada a los resultados');
+    it('describes the entry price, excluding VAT, and the monthly fee tied to results', () => {
+        expect(render('en')).toContain(`You start with a first implementation for ${entryPrice('en')} + VAT`);
+        expect(render('en')).toContain('a monthly fee tied to the results we bring you');
+        expect(render('es')).toContain(`Empiezas con una primera implementación por ${entryPrice('es')} + IVA`);
+        expect(render('es')).toContain('una cuota mensual ligada a los resultados');
     });
 });
 

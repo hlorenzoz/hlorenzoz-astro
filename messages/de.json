@@ -205,7 +205,7 @@
             "items": [
                 {
                     "question": "Was kostet das?",
-                    "answer": "Es gibt keine Preisliste. Jede Lösung wird für Ihr Unternehmen entworfen und nach der kostenlosen Analyse angeboten. Je nach Bedarf können einige Leistungen ohne Aufpreis enthalten sein."
+                    "answer": "Es gibt keine Preisliste. Sie starten mit einer ersten Umsetzung für {entryPrice} zzgl. MwSt.; danach wird jede Lösung für Ihr Unternehmen entworfen und nach der kostenlosen Analyse angeboten. Je nach Bedarf können einige Leistungen ohne Aufpreis enthalten sein."
                 },
                 {
                     "question": "Was passiert bei der kostenlosen Analyse?",
@@ -217,7 +217,7 @@
                 },
                 {
                     "question": "Wie funktionieren Ihre Honorare?",
-                    "answer": "Eine niedrige Anfangszahlung, wenn die Leistungen beginnen, danach eine monatliche Gebühr, die an die Ergebnisse gekoppelt ist, die wir Ihnen bringen, und im Angebot vereinbart wird. Gedeckt wird sie durch die neuen Kunden, die die Lösung bringt. Angebote verstehen sich zzgl. MwSt."
+                    "answer": "Sie starten mit einer ersten Umsetzung für {entryPrice} zzgl. MwSt., die beide Seiten verpflichtet und die ersten Schritte geht. Danach eine monatliche Gebühr, die an die Ergebnisse gekoppelt ist, die wir Ihnen bringen, und im Angebot vereinbart wird. Gedeckt wird sie durch die neuen Kunden, die die Lösung bringt."
                 },
                 {
                     "question": "Brauche ich schon eine Website oder ein Profil bei Google?",
@@ -264,8 +264,8 @@
             "subtitle": "Unsere Honorare werden zu Beginn der Zusammenarbeit auf Grundlage der Analyse festgelegt, damit sie sich an den Ergebnissen orientieren statt an einer Preisliste.",
             "steps": [
                 {
-                    "title": "Eine niedrige Anfangszahlung",
-                    "description": "Zum Start, wenn die Leistungen beginnen. Keine große Investition am Anfang."
+                    "title": "{entryPrice} zzgl. MwSt. zum Start",
+                    "description": "Eine erste Umsetzung, die beide Seiten verpflichtet und die ersten Schritte geht, wenn die Leistungen beginnen."
                 },
                 {
                     "title": "Eine monatliche Gebühr, an Ergebnisse gekoppelt",
@@ -276,6 +276,7 @@
                     "description": "Die Kunden, die unsere automatisierte Kundengewinnung bringt, decken die monatliche Gebühr."
                 }
             ],
+            "offerName": "Erste Umsetzung",
             "cta": "Kostenlose Bedarfsanalyse buchen",
             "vat": "Angebote verstehen sich zzgl. MwSt."
         }
@@ -364,7 +365,7 @@
         "terms": {
             "payment": {
                 "title": "Zahlungen",
-                "description": "Zu Beginn der Leistungen leistet der Kunde eine im Angebot vereinbarte Anfangszahlung. Danach wird eine monatliche Gebühr im Voraus abgerechnet; ihre Höhe ist an die im Angebot vereinbarten Ergebnisse gekoppelt. Angebote verstehen sich zzgl. MwSt."
+                "description": "Zu Beginn der Leistungen zahlt der Kunde {entryPrice} zzgl. MwSt. für eine erste Umsetzung, die beide Seiten verpflichtet und die ersten Schritte geht. Danach wird eine monatliche Gebühr im Voraus abgerechnet; ihre Höhe ist an die im Angebot vereinbarten Ergebnisse gekoppelt. Angebote verstehen sich zzgl. MwSt."
             },
             "marketing": {
                 "title": "Portfolio und Fallstudien",

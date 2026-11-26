@@ -65,8 +65,8 @@ before using an Astro API you have not verified in this repo.
 
 Changes to `lib/site-config.ts`, `lib/routes.ts` or `messages/*.json` ripple into the
 visible copy, the JSON-LD, the sitemap and `public/llms.txt` at once. `lib/pricing.ts` holds
-no price any more (the agency publishes none, see `AGENTS.md`), only the service keys and
-their slug helpers; adding a figure back to it needs plan mode too.
+one price, `ENTRY_PRICE` (500 EUR + VAT, the only figure the agency publishes, see `AGENTS.md`),
+plus the service keys and their slug helpers; changing it or adding a figure needs plan mode too.
 
 ### Task tracking
 

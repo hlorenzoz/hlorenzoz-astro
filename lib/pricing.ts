@@ -1,10 +1,23 @@
 /**
- * The service keys and their slug helpers.
+ * The service keys, their slug helpers and the entry price.
  *
- * The agency publishes no price and no payment figure (see AGENTS.md): every
- * solution is tailored to the client and quoted after a free first call, so no
- * amount lives in code.
+ * The agency publishes one figure only (see AGENTS.md): the entry price of the
+ * first implementation, which commits both sides and takes the first steps.
+ * Everything after it is tailored to the client and quoted after a free first
+ * call, so no other amount lives in code.
  */
+
+/** The only published price: the first implementation, VAT excluded. */
+export const ENTRY_PRICE = { amount: 500, currency: 'EUR', vatIncluded: false } as const;
+
+/** The entry price in the reader's number format (`localeInfo(locale).intl`): "€500", "500 €". */
+export function formatEntryPrice(intlLocale: string): string {
+    return new Intl.NumberFormat(intlLocale, {
+        style: 'currency',
+        currency: ENTRY_PRICE.currency,
+        maximumFractionDigits: 0,
+    }).format(ENTRY_PRICE.amount);
+}
 
 /** Service keys mirror the slugs registered in `lib/routes.ts`, camel-cased. */
 export type ServiceKey =

@@ -27,10 +27,10 @@ import { dossierHref } from '@/lib/dossier';
 import { getPortfolioItemsAction } from '@/lib/actions/portfolio';
 import { getLinkedInArticlesAction } from '@/lib/actions/linkedin';
 import { getNewsItemsAction } from '@/lib/actions/news';
-import { serviceList, faqPage, webPage } from '@/lib/schema';
+import { entryOffer, serviceList, faqPage, webPage } from '@/lib/schema';
 import { SERVICE_DISPLAY_ORDER, SERVICE_KEYS, slugFromServiceKey } from '@/lib/pricing';
-import { copyTokens, resolveFaq } from '@/lib/copy-tokens';
-import { LOCALES, absoluteUrl, marketNames } from '@/lib/site-config';
+import { copyTokens, fillTokens, resolveFaq } from '@/lib/copy-tokens';
+import { LOCALES, absoluteUrl, localeInfo, marketNames } from '@/lib/site-config';
 
 export function getStaticPaths() {
     return routeLocales('').map((locale) => ({ params: { locale } }));
@@ -49,7 +49,7 @@ const portfolioItems = (await getPortfolioItemsAction()).filter((item) => routeE
 const articles = await getLinkedInArticlesAction();
 const news = (await getNewsItemsAction()).filter((item) => routeExists(`news/${item.slug}`, locale));
 
-const tokens = copyTokens();
+const tokens = copyTokens(localeInfo(locale).intl);
 const faqItems = resolveFaq(t.raw('faq.items'), tokens);
 
 const problemTitle = t.markup('problem.title', {
@@ -240,6 +240,14 @@ const PROBLEM_ICONS = [MousePointerClick, Search, Sparkles, PhoneMissed];
                 )}
             />
             <JsonLd data={faqPage(faqItems)} />
+            {/* The entry price, visible in #fees and the FAQ, as an Offer. */}
+            <JsonLd
+                data={entryOffer({
+                    locale,
+                    name: t('fees.offerName'),
+                    description: fillTokens(t.raw('fees.steps.0.description') as string, tokens),
+                })}
+            />
         </main>
 
         <Footer locale={locale} />

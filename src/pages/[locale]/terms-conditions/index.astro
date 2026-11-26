@@ -9,6 +9,8 @@ import Breadcrumbs from '@/src/components/Breadcrumbs.astro';
 import { getTranslations } from '@/lib/i18n';
 import { legalCrumbs, legalMetadata, legalPageSchema, type LegalPageConfig } from '@/lib/legal-page';
 import { routeLocales } from '@/lib/routes';
+import { copyTokens } from '@/lib/copy-tokens';
+import { localeInfo } from '@/lib/site-config';
 
 export function getStaticPaths() {
     return routeLocales('terms-conditions').map((locale) => ({ params: { locale } }));
@@ -21,6 +23,8 @@ const LEGAL: LegalPageConfig = {
 };
 
 const { locale } = Astro.params as { locale: string };
+// Payment terms state the entry price, formatted for the reader.
+const TERMS_TOKENS = copyTokens(localeInfo(locale).intl);
 const t = getTranslations(locale);
 const meta = await legalMetadata(locale, LEGAL);
 
@@ -127,7 +131,7 @@ const pageSchema = await legalPageSchema(locale, LEGAL, crumbs);
                                                     <Icon class="w-6 h-6 text-blue-700" />
                                                     <p class="text-sm font-black uppercase tracking-widest text-black m-0">{t(titleKey)}</p>
                                                 </div>
-                                                <p class="text-sm text-gray-500 font-medium m-0 leading-relaxed">{t(descKey)}</p>
+                                                <p class="text-sm text-gray-500 font-medium m-0 leading-relaxed">{t(descKey, TERMS_TOKENS)}</p>
                                             </div>
                                         );
                                     })}

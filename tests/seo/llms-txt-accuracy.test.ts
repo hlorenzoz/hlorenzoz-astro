@@ -4,7 +4,7 @@ import path from 'path';
 import { ALL_ROUTES } from '@/lib/routes';
 import { getPortfolioItems } from '@/lib/portfolio';
 import { getNewsItems } from '@/lib/news';
-import { SERVICE_KEYS, slugFromServiceKey, type ServiceKey } from '@/lib/pricing';
+import { ENTRY_PRICE, SERVICE_KEYS, slugFromServiceKey, type ServiceKey } from '@/lib/pricing';
 import { marketNames } from '@/lib/site-config';
 import { LOCALES } from '@/lib/routing';
 
@@ -119,13 +119,15 @@ describe('llms.txt: news posts match the data source', () => {
     });
 });
 
-describe('llms.txt: publishes no price', () => {
+describe('llms.txt: publishes the entry price and no other price', () => {
     /** The one line of the Services section that links a given service page. */
     const lineOf = (key: ServiceKey) =>
         SERVICES_SECTION.split('\n').find((line) => line.includes(`/services/${slugFromServiceKey(key)}/`)) ?? '';
 
-    it('quotes no amount anywhere', () => {
-        expect(LLMS_TXT).not.toMatch(/€|\bEUR\b|price range|list price/i);
+    it('quotes no amount but the entry price', () => {
+        const amounts = LLMS_TXT.match(/€\s?\d[\d.,]*|\d[\d.,]*\s?(€|EUR)\b/gi) ?? [];
+        expect(amounts).toEqual([`${ENTRY_PRICE.amount} EUR`]);
+        expect(LLMS_TXT).not.toMatch(/price range|list price/i);
     });
 
     it('says every service is quoted after a free first call', () => {
@@ -134,8 +136,8 @@ describe('llms.txt: publishes no price', () => {
         }
     });
 
-    it('states the fee model: an initial payment, then a monthly fee tied to results, with no share', () => {
-        expect(LLMS_TXT).toMatch(/initial payment when the services start/i);
+    it('states the fee model: the entry price, then a monthly fee tied to results, with no share', () => {
+        expect(LLMS_TXT).toContain(`first implementation for ${ENTRY_PRICE.amount} EUR + VAT`);
         expect(LLMS_TXT).toMatch(/monthly fee tied to the results/i);
         expect(LLMS_TXT).not.toContain('50%');
         expect(LLMS_TXT).not.toMatch(/up front/i);

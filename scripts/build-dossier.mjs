@@ -99,11 +99,15 @@ function checklist(items, mark = ICONS.checkCircle) {
  * @param {object} args.organization  `ORGANIZATION` from `lib/site-config.ts`
  * @param {readonly string[]} args.markets  localized served-market names
  * @param {string} args.qrSvg         inline SVG of the booking QR code
+ * @param {string} args.entryPrice    `formatEntryPrice()` from `lib/pricing.ts` in the
+ *                                    locale's number format; copy reads it as `{entryPrice}`
  */
-export function renderDossier({ locale, content, template, organization, markets, qrSvg }) {
+export function renderDossier({ locale, content, template, organization, markets, qrSvg, entryPrice }) {
     const tokens = {
         opens: organization.openingHoursSpecification.opens,
         closes: organization.openingHoursSpecification.closes,
+        // Intl puts a no-break space in "500 €"; the dossier bans it like every other typographic tell.
+        entryPrice: entryPrice.replace(/\s/g, ' '),
     };
     const text = (value) => escapeHtml(fill(value, tokens));
 
@@ -300,6 +304,8 @@ async function main() {
         },
     });
     const { ORGANIZATION, marketNames } = await import('../lib/site-config.ts');
+    const { formatEntryPrice } = await import('../lib/pricing.ts');
+    const { localeInfo } = await import('../lib/routing.ts');
 
     const { createElement } = await import('react');
     const { renderToStaticMarkup } = await import('react-dom/server');
@@ -321,6 +327,7 @@ async function main() {
                 organization: ORGANIZATION,
                 markets: marketNames(locale),
                 qrSvg,
+                entryPrice: formatEntryPrice(localeInfo(locale).intl),
             });
 
             const base = join(OUT_DIR, `lorenzoz-agency-dossier-${locale}`);

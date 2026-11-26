@@ -174,11 +174,11 @@
     "terms": [
       {
         "title": "Presupuesto tras el análisis",
-        "description": "No publicamos tarifas. Cada solución se presupuesta tras el análisis de necesidades gratuito, según lo que necesita tu negocio."
+        "description": "No publicamos más precio que el de entrada. Cada solución se presupuesta tras el análisis gratuito de necesidades, según lo que necesite tu negocio."
       },
       {
-        "title": "Pago inicial y cuota mensual",
-        "description": "Un pago inicial bajo al comenzar los servicios y, después, una cuota mensual ligada a los resultados que te traemos, acordada en la propuesta. Los clientes nuevos que trae la solución son los que la cubren."
+        "title": "El precio de entrada y una cuota mensual",
+        "description": "Empiezas con una primera implementación por {entryPrice} + IVA que compromete a ambas partes y da los primeros pasos. Después, una cuota mensual ligada a los resultados que te traemos, acordada en la propuesta. Los clientes nuevos que trae la solución son los que la cubren."
       },
       {
         "title": "Presupuestos sin IVA",

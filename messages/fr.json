@@ -205,7 +205,7 @@
       "items": [
         {
           "question": "Combien ça coûte ?",
-          "answer": "Il n'y a pas de grille tarifaire. Chaque solution est conçue pour votre entreprise et fait l'objet d'un devis après l'analyse gratuite. Selon vos besoins, certains services peuvent être inclus sans coût supplémentaire."
+          "answer": "Il n'y a pas de grille tarifaire. Vous commencez par une première mise en place à {entryPrice} HT ; ensuite, chaque solution est conçue pour votre entreprise et fait l'objet d'un devis après l'analyse gratuite. Selon vos besoins, certains services peuvent être inclus sans coût supplémentaire."
         },
         {
           "question": "Comment se déroule l'analyse gratuite ?",
@@ -217,7 +217,7 @@
         },
         {
           "question": "Comment fonctionnent vos honoraires ?",
-          "answer": "Un paiement initial modeste au lancement des services, puis une mensualité liée aux résultats que nous vous apportons, convenue dans la proposition. Ce sont les nouveaux clients apportés par la solution qui la couvrent. Les devis s'entendent hors TVA."
+          "answer": "Vous commencez par une première mise en place à {entryPrice} HT qui engage les deux parties et pose les premières étapes. Ensuite, une mensualité liée aux résultats que nous vous apportons, convenue dans la proposition. Ce sont les nouveaux clients apportés par la solution qui la couvrent."
         },
         {
           "question": "Il me faut déjà un site web ou une fiche Google ?",
@@ -264,8 +264,8 @@
       "subtitle": "Nos honoraires sont fixés au début de notre collaboration, à partir de ce que montre l'analyse, pour qu'ils suivent les résultats et non une grille tarifaire.",
       "steps": [
         {
-          "title": "Un paiement initial modeste",
-          "description": "Pour démarrer, au lancement des services. Pas de gros investissement au départ."
+          "title": "{entryPrice} HT pour démarrer",
+          "description": "Une première mise en place qui engage les deux parties et pose les premières étapes, au lancement des services."
         },
         {
           "title": "Une mensualité liée aux résultats",
@@ -276,6 +276,7 @@
           "description": "Ce sont les clients apportés par notre acquisition automatisée qui couvrent la mensualité."
         }
       ],
+      "offerName": "Première mise en place",
       "cta": "Réserver l'analyse gratuite de vos besoins",
       "vat": "Les devis s'entendent hors TVA."
     }
@@ -364,7 +365,7 @@
     "terms": {
       "payment": {
         "title": "Paiements",
-        "description": "Au lancement des services, le client effectue un paiement initial convenu dans la proposition. Ensuite, une mensualité est facturée à l'avance ; son montant est lié aux résultats convenus dans la proposition. Les devis s'entendent hors TVA."
+        "description": "Au lancement des services, le client règle {entryPrice} HT pour une première mise en place qui engage les deux parties et pose les premières étapes. Ensuite, une mensualité est facturée à l'avance ; son montant est lié aux résultats convenus dans la proposition. Les devis s'entendent hors TVA."
       },
       "marketing": {
         "title": "Portfolio et études de cas",

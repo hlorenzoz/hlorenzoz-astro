@@ -112,7 +112,7 @@
     "terms": {
       "payment": {
         "title": "Pagamentos",
-        "description": "Quando os serviços começam, o cliente faz um pagamento inicial acordado na proposta. A partir daí, é faturada antecipadamente uma mensalidade, cujo valor está ligado aos resultados acordados na proposta. Os orçamentos não incluem IVA."
+        "description": "Quando os serviços começam, o cliente paga {entryPrice} mais IVA por uma primeira implementação que compromete ambas as partes e dá os primeiros passos. A partir daí, é faturada antecipadamente uma mensalidade, cujo valor está ligado aos resultados acordados na proposta. Os orçamentos não incluem IVA."
       },
       "marketing": {
         "title": "Portfolio e casos de estudo",
@@ -426,7 +426,7 @@
       "items": [
         {
           "question": "Quanto custa?",
-          "answer": "Não há tabela de preços. Cada solução é desenhada para o seu negócio e orçamentada depois da análise gratuita. Alguns serviços podem vir incluídos sem custo adicional, consoante aquilo de que precisa."
+          "answer": "Não há tabela de preços. Começa com uma primeira implementação por {entryPrice} + IVA; a partir daí, cada solução é desenhada para o seu negócio e orçamentada depois da análise gratuita. Alguns serviços podem vir incluídos sem custo adicional, consoante aquilo de que precisa."
         },
         {
           "question": "O que acontece na análise gratuita?",
@@ -438,7 +438,7 @@
         },
         {
           "question": "Como funcionam os vossos honorários?",
-          "answer": "Um pagamento inicial baixo quando os serviços começam e, depois, uma mensalidade ligada aos resultados que lhe trazemos, acordada na proposta. São os clientes novos trazidos pela solução que a cobrem. Os orçamentos não incluem IVA."
+          "answer": "Começa com uma primeira implementação por {entryPrice} + IVA que compromete ambas as partes e dá os primeiros passos. Depois, uma mensalidade ligada aos resultados que lhe trazemos, acordada na proposta. São os clientes novos trazidos pela solução que a cobrem."
         },
         {
           "question": "Preciso de já ter um site ou um perfil no Google?",
@@ -485,8 +485,8 @@
       "subtitle": "Os nossos honorários são definidos quando começamos a trabalhar, a partir do que a análise mostra, para que acompanhem os resultados e não uma tabela de preços.",
       "steps": [
         {
-          "title": "Um pagamento inicial baixo",
-          "description": "Para arrancar, quando os serviços começam. Sem um grande investimento à partida."
+          "title": "{entryPrice} + IVA para começar",
+          "description": "Uma primeira implementação que compromete ambas as partes e dá os primeiros passos, quando os serviços começam."
         },
         {
           "title": "Uma mensalidade ligada aos resultados",
@@ -497,6 +497,7 @@
           "description": "Os clientes que a nossa captação automatizada traz são os que cobrem a mensalidade."
         }
       ],
+      "offerName": "Primeira implementação",
       "cta": "Marcar a sua análise gratuita",
       "vat": "Os orçamentos não incluem IVA."
     }

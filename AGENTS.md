@@ -125,27 +125,32 @@ Every engagement follows the same four steps:
 
 Terms, and each one is a billing dispute if it is lost in a summary:
 
-1. **No price is published anywhere.** Not on the site, not in the structured data, not in
-   `public/llms.txt`, not in the dossier, not in a proposal template. Every solution is
-   quoted after the free needs analysis, according to the client's needs, and a service
-   may come included at no extra cost. Never write a figure, a "from" price, a range or a
-   discount.
+1. **The entry price is the only published figure: 500 EUR + VAT.** It pays for a first
+   implementation that commits both sides and takes the first steps (decided 2026-11-26).
+   Everything after it is quoted after the free needs analysis, according to the client's
+   needs, and a service may come included at no extra cost. Never write any other figure,
+   a "from" price, a range or a discount, on the site, in the structured data, in
+   `public/llms.txt`, in the dossier or in a proposal template.
 2. **Quotes exclude VAT.** Say so wherever a quote is mentioned.
-3. **A low initial payment, then a monthly fee tied to results.** When the services
-   start, the client makes an initial payment agreed in the proposal. After that, a monthly
-   fee is billed in advance, its amount tied to the results agreed in the proposal. The new
-   customers the solution brings in are what cover it. Never state the amount of either
-   payment.
+3. **The entry price, then a monthly fee tied to results.** When the services start, the
+   client pays the entry price for the first implementation. After that, a monthly fee is
+   billed in advance, its amount tied to the results agreed in the proposal. The new
+   customers the solution brings in are what cover it. Never state the amount of the
+   monthly fee.
 4. **There is no free trial.** The free part is the needs analysis, nothing else. If you
    find a trial claimed anywhere in the repo or in generated copy, it is stale and wrong.
 5. **There is no bundle discount.** The former 30% "alongside Local SEO" discount is gone
    with the prices; do not mention it.
 
-No price lives in code either. `lib/pricing.ts` keeps only the service keys and their
-slug helpers. `tests/seo/no-published-prices.test.ts` guards the
-rule: it fails on any currency amount or price placeholder in the `services.*`, `home.*`
-and `offer.*` copy of every locale, and on `offers`, `priceRange`, `hasOfferCatalog` or
-`priceSpecification` in the JSON-LD of the home and the service pages.
+One price lives in code: `ENTRY_PRICE` in `lib/pricing.ts`, next to the service keys and
+their slug helpers. Copy never holds the amount: it uses the `{entryPrice}` token, filled
+and formatted per locale by `copyTokens()` (`lib/copy-tokens.ts`). The home marks it up as
+one `Offer` (`entryOffer` in `lib/schema`), and only there, because the same price is
+visible in its fees section and FAQ: Google ignores, and may act against, markup for
+content readers cannot see. `tests/seo/no-published-prices.test.ts` guards the rule: it
+fails on any currency amount or price placeholder in the `services.*`, `home.*` and
+`offer.*` copy of every locale, on any `Offer`, `priceRange` or `priceSpecification` in
+the JSON-LD of the service pages, and on a home Offer other than the visible entry price.
 
 ### What this site currently implements
 

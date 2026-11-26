@@ -1,9 +1,12 @@
 ---
 /**
- * "How our fees work: when you win, we win": the three steps of the fee model,
- * with no figure (the agency publishes no price). Copy: `home.fees`.
+ * "How our fees work: when you win, we win": the three steps of the fee model.
+ * Step 1 shows the entry price (`ENTRY_PRICE`), the only figure the agency
+ * publishes; the home JSON-LD marks up the same Offer. Copy: `home.fees`.
  */
 import { getTranslations } from '@/lib/i18n';
+import { copyTokens, fillTokens } from '@/lib/copy-tokens';
+import { localeInfo } from '@/lib/site-config';
 
 export interface Props {
     locale: string;
@@ -11,7 +14,12 @@ export interface Props {
 
 const { locale } = Astro.props;
 const t = getTranslations(locale, 'home.fees');
-const steps = t.raw('steps') as { title: string; description: string }[];
+// Step 1 states the entry price, the only figure the agency publishes.
+const tokens = copyTokens(localeInfo(locale).intl);
+const steps = (t.raw('steps') as { title: string; description: string }[]).map((step) => ({
+    title: fillTokens(step.title, tokens),
+    description: fillTokens(step.description, tokens),
+}));
 ---
 
 <section id="fees" class="py-32 px-6 bg-[#0b0f19] text-white">

@@ -11,7 +11,7 @@
 - Services: Local SEO (authority content, authority on Google and AI, review management), website development, AI voice receptionist, software development; they are building blocks combined per client, none is a core offer, and a service may come included in the solution at no extra cost
 - Tech stack: Astro, Tailwind CSS, Cloudflare (CDN, Workers, Pages), Vitest, Playwright, Lighthouse CI
 - Pricing: no price is published; every solution is tailored to the business and quoted after the free first call
-- Terms: no quote includes VAT; a low initial payment when the services start, then a monthly fee tied to the results agreed in the proposal, covered by the new customers the solution brings in; no amount is published for either; there is no free trial
+- Terms: no quote includes VAT; the work starts with a first implementation for 500 EUR + VAT that commits both sides and takes the first steps, then a monthly fee tied to the results agreed in the proposal, covered by the new customers the solution brings in; no other price is published; there is no free trial
 - Payment accepted: Bank Transfer, Credit Card, Stripe
 - Languages: nine, every page in each: English (/en/), Spanish (/es/), British English (/en-gb/), Galician (/gl/), Portuguese (/pt/), Italian (/it/), French (/fr/), German (/de/) and Dutch (/nl/); the version of any /en/... URL in another language is the same path under that language's prefix, for example /es/...
 

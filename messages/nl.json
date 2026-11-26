@@ -198,7 +198,7 @@
             "items": [
                 {
                     "question": "Wat kost het?",
-                    "answer": "Er is geen prijslijst. Elke oplossing wordt voor je bedrijf ontworpen en je krijgt een offerte na de gratis analyse. Afhankelijk van wat je nodig hebt, kunnen sommige diensten zonder extra kosten inbegrepen zijn."
+                    "answer": "Er is geen prijslijst. Je begint met een eerste implementatie voor {entryPrice} excl. btw; daarna wordt elke oplossing voor je bedrijf ontworpen en krijg je een offerte na de gratis analyse. Afhankelijk van wat je nodig hebt, kunnen sommige diensten zonder extra kosten inbegrepen zijn."
                 },
                 {
                     "question": "Wat gebeurt er in de gratis analyse?",
@@ -210,7 +210,7 @@
                 },
                 {
                     "question": "Hoe werken jullie tarieven?",
-                    "answer": "Een lage startbetaling wanneer de diensten beginnen, daarna een maandelijks tarief gekoppeld aan de resultaten die we je opleveren, afgesproken in het voorstel. De nieuwe klanten die de oplossing binnenhaalt, zijn wat het dekken. Offertes zijn exclusief btw."
+                    "answer": "Je begint met een eerste implementatie voor {entryPrice} excl. btw die beide partijen verbindt en de eerste stappen zet. Daarna een maandelijks tarief gekoppeld aan de resultaten die we je opleveren, afgesproken in het voorstel. De nieuwe klanten die de oplossing binnenhaalt, zijn wat het dekken."
                 },
                 {
                     "question": "Heb ik al een website of een bedrijfsprofiel op Google nodig?",
@@ -257,8 +257,8 @@
             "subtitle": "Onze tarieven worden vastgesteld als we beginnen, op basis van wat de analyse laat zien, zodat ze de resultaten volgen in plaats van een prijslijst.",
             "steps": [
                 {
-                    "title": "Een lage startbetaling",
-                    "description": "Om te beginnen, wanneer de diensten starten. Geen grote investering vooraf."
+                    "title": "{entryPrice} excl. btw om te starten",
+                    "description": "Een eerste implementatie die beide partijen verbindt en de eerste stappen zet, wanneer de diensten starten."
                 },
                 {
                     "title": "Een maandelijks tarief gekoppeld aan resultaten",
@@ -269,6 +269,7 @@
                     "description": "De klanten die onze geautomatiseerde werving binnenhaalt, zijn wat het maandelijkse tarief dekken."
                 }
             ],
+            "offerName": "Eerste implementatie",
             "cta": "Boek je gratis behoefteanalyse",
             "vat": "Offertes zijn exclusief btw."
         }
@@ -816,7 +817,7 @@
         "terms": {
             "payment": {
                 "title": "Betalingen",
-                "description": "Wanneer de diensten starten, doet de klant een startbetaling die in het voorstel is afgesproken. Daarna wordt elke maand vooraf een maandelijks tarief gefactureerd; het bedrag is gekoppeld aan de resultaten die in het voorstel zijn afgesproken. Offertes zijn exclusief btw."
+                "description": "Wanneer de diensten starten, betaalt de klant {entryPrice} excl. btw voor een eerste implementatie die beide partijen verbindt en de eerste stappen zet. Daarna wordt elke maand vooraf een maandelijks tarief gefactureerd; het bedrag is gekoppeld aan de resultaten die in het voorstel zijn afgesproken. Offertes zijn exclusief btw."
             },
             "marketing": {
                 "title": "Portfolio en case studies",

@@ -205,7 +205,7 @@
       "items": [
         {
           "question": "How much does it cost?",
-          "answer": "There is no price list. Each solution is designed for your business and quoted after the free analysis. Some services may come included at no extra cost, depending on what you need."
+          "answer": "There is no price list. You start with a first implementation for {entryPrice} + VAT; after that, each solution is designed for your business and quoted after the free analysis. Some services may come included at no extra cost, depending on what you need."
         },
         {
           "question": "What happens in the free analysis?",
@@ -217,7 +217,7 @@
         },
         {
           "question": "How do your fees work?",
-          "answer": "A low initial payment when the services start, then a monthly fee linked to the results we bring you, agreed in the proposal. The new customers the solution brings in are what cover it. Quotes exclude VAT."
+          "answer": "You start with a first implementation for {entryPrice} + VAT that commits both sides and takes the first steps. After that, a monthly fee linked to the results we bring you, agreed in the proposal. The new customers the solution brings in are what cover it."
         },
         {
           "question": "Do I need a website or a Google profile already?",
@@ -264,8 +264,8 @@
       "subtitle": "Our fees are set when we start working together, based on what the analysis shows, so they follow the results rather than a price list.",
       "steps": [
         {
-          "title": "A low initial payment",
-          "description": "To get going, when the services begin. No large outlay to start with."
+          "title": "{entryPrice} + VAT to get started",
+          "description": "A first implementation that commits both sides and takes the first steps, when the services begin."
         },
         {
           "title": "A monthly fee linked to results",
@@ -276,6 +276,7 @@
           "description": "The customers our automated acquisition brings in are what cover the monthly fee."
         }
       ],
+      "offerName": "First implementation",
       "cta": "Book your free needs analysis",
       "vat": "Quotes exclude VAT."
     }
@@ -364,7 +365,7 @@
     "terms": {
       "payment": {
         "title": "Payments",
-        "description": "When the services start, the client makes an initial payment agreed in the proposal. After that, a monthly fee is invoiced in advance; its amount is linked to the results agreed in the proposal. Quotes exclude VAT."
+        "description": "When the services start, the client pays {entryPrice} plus VAT for a first implementation that commits both parties and takes the first steps. After that, a monthly fee is invoiced in advance; its amount is linked to the results agreed in the proposal. Quotes exclude VAT."
       },
       "marketing": {
         "title": "Portfolio and Case Studies",

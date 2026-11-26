@@ -198,7 +198,7 @@
       "items": [
         {
           "question": "¿Cuánto cuesta?",
-          "answer": "No hay lista de precios. Cada solución se diseña para tu negocio y se presupuesta tras el análisis gratuito. Según lo que necesites, algunos servicios pueden venir incluidos sin coste adicional."
+          "answer": "No hay lista de precios. Empiezas con una primera implementación por {entryPrice} + IVA; a partir de ahí, cada solución se diseña para tu negocio y se presupuesta tras el análisis gratuito. Algunos servicios pueden venir incluidos sin coste adicional, según lo que necesites."
         },
         {
           "question": "¿Qué pasa en el análisis gratuito?",
@@ -210,7 +210,7 @@
         },
         {
           "question": "¿Cómo funcionan nuestras tarifas?",
-          "answer": "Un pago inicial bajo al comenzar los servicios y, después, una cuota mensual ligada a los resultados que te traemos, acordada en la propuesta. Los clientes nuevos que trae la solución son los que la cubren. Los presupuestos no incluyen el IVA."
+          "answer": "Empiezas con una primera implementación por {entryPrice} + IVA que compromete a ambas partes y da los primeros pasos. Después, una cuota mensual ligada a los resultados que te traemos, acordada en la propuesta. Los clientes nuevos que trae la solución son los que la cubren."
         },
         {
           "question": "¿Necesito tener ya una web o un perfil de Google?",
@@ -257,8 +257,8 @@
       "subtitle": "Nuestras tarifas se fijan al empezar a trabajar, a partir de lo que muestra el análisis, para que sigan a los resultados y no a una lista de precios.",
       "steps": [
         {
-          "title": "Un pago inicial bajo",
-          "description": "Para arrancar, cuando empiezan los servicios. Sin una gran inversión para empezar."
+          "title": "{entryPrice} + IVA para empezar",
+          "description": "Una primera implementación que compromete a ambas partes y da los primeros pasos, cuando empiezan los servicios."
         },
         {
           "title": "Una cuota mensual ligada a resultados",
@@ -269,6 +269,7 @@
           "description": "Los clientes que trae nuestra captación automatizada son los que cubren la cuota mensual."
         }
       ],
+      "offerName": "Primera implementación",
       "cta": "Reserva tu análisis gratuito de necesidades",
       "vat": "Los presupuestos no incluyen el IVA."
     }
@@ -943,7 +944,7 @@
     "terms": {
       "payment": {
         "title": "Pagos",
-        "description": "Al comenzar los servicios, el cliente realiza un pago inicial acordado en la propuesta. Después se factura por adelantado una cuota mensual, cuyo importe está ligado a los resultados acordados en la propuesta. Los presupuestos no incluyen el IVA."
+        "description": "Al comenzar los servicios, el cliente abona {entryPrice} más IVA por una primera implementación que compromete a ambas partes y da los primeros pasos. Después se factura por adelantado una cuota mensual, cuyo importe está ligado a los resultados acordados en la propuesta. Los presupuestos no incluyen el IVA."
       },
       "marketing": {
         "title": "Portafolio y Casos de Éxito",

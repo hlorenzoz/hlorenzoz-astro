@@ -21,12 +21,13 @@ describe('fillTokens', () => {
 });
 
 describe('copyTokens', () => {
-    it('carries no figure: the fee model states no amount', () => {
-        expect(copyTokens()).toEqual({});
+    it('carries the entry price only, formatted for the reader', () => {
+        expect(copyTokens('en-IE')).toEqual({ entryPrice: '€500' });
+        expect(String(copyTokens('es-ES').entryPrice).replace(/\s/g, ' ')).toBe('500 €');
     });
 
     it('makes a leftover {upfront} token fail instead of publishing a stale share', () => {
-        expect(() => fillTokens('{upfront}% up front', copyTokens())).toThrow(/upfront/);
+        expect(() => fillTokens('{upfront}% up front', copyTokens('en-IE'))).toThrow(/upfront/);
     });
 });
 
@@ -41,7 +42,7 @@ describe('resolveFaq', () => {
 
     it('passes copy without tokens through with the real token set', () => {
         const item = { question: 'How do I pay?', answer: 'A low initial payment, then a monthly fee.' };
-        expect(resolveFaq([item], copyTokens())).toEqual([item]);
+        expect(resolveFaq([item], copyTokens('en-IE'))).toEqual([item]);
     });
 
     it('drops anything that is not a question and answer pair', () => {

@@ -18,6 +18,7 @@ import {
     isContinentCode,
 } from '@/lib/site-config';
 import { schemaDateTime } from '@/lib/schema/datetime';
+import { ENTRY_PRICE } from '@/lib/pricing';
 
 /**
  * Canonical URLs for the shared, `@id`-bearing entities. These must stay stable
@@ -174,6 +175,32 @@ export function faqPage(items: { question: string; answer: string }[]): JsonLdOb
             name: item.question,
             acceptedAnswer: { '@type': 'Answer', text: item.answer },
         })),
+    };
+}
+
+/**
+ * The entry price as an Offer: the first implementation, VAT excluded. Emitted
+ * on the home only, where the same figure is visible in `#fees` and the FAQ
+ * (Google ignores, and may act against, markup for content readers cannot see).
+ */
+export function entryOffer({ locale, name, description }: { locale: string; name: string; description: string }): JsonLdObject {
+    const home = absoluteUrl(locale);
+    return {
+        '@context': CONTEXT,
+        '@type': 'Offer',
+        '@id': `${home}#entry-offer`,
+        name,
+        description,
+        url: `${home}#fees`,
+        price: String(ENTRY_PRICE.amount),
+        priceCurrency: ENTRY_PRICE.currency,
+        priceSpecification: {
+            '@type': 'UnitPriceSpecification',
+            price: ENTRY_PRICE.amount,
+            priceCurrency: ENTRY_PRICE.currency,
+            valueAddedTaxIncluded: ENTRY_PRICE.vatIncluded,
+        },
+        offeredBy: { '@id': SCHEMA_IDS.organization },
     };
 }
 

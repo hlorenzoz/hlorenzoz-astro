@@ -69,13 +69,15 @@ test.describe('Homepage E2E Tests', () => {
     await facts.scrollIntoViewIfNeeded();
     await expect(facts.getByText('98 / 100')).toBeVisible({ timeout: 10000 });
     await expect(facts.getByRole('link', { name: 'check it' })).toHaveAttribute('href', /pagespeed\.web\.dev/);
-    // The calculators show the visitor's figures and a dental clinic's market prices, never ours.
+    // The calculator shows the visitor's figures and a dental clinic's market prices, never ours;
+    // the only price of ours on the page is the entry price.
     const outsideCalculators = await page.evaluate(() => {
       const body = document.body.cloneNode(true) as HTMLElement;
       body.querySelectorAll('#cost-of-waiting').forEach((el) => el.remove());
       return body.textContent ?? '';
     });
-    expect(outsideCalculators).not.toMatch(/€\s?\d|\d\s?€/);
+    expect(outsideCalculators).toContain('€500');
+    expect(outsideCalculators.replaceAll('€500', '')).not.toMatch(/€\s?\d|\d\s?€/);
   });
 
   test('should open the How we work section from the hero', async ({ page }) => {

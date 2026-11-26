@@ -1180,7 +1180,7 @@
     },
     {
       "id": "#T0055",
-      "estado": "en curso",
+      "estado": "hecha",
       "prioridad": "alta",
       "tipo": "contenido",
       "titulo": "Precio de entrada de 500 EUR (implementacion previa que compromete a ambas partes), visible en la pagina y en los datos estructurados",
@@ -1190,11 +1190,13 @@
         "#T0054"
       ],
       "notas": [
-        "El usuario eligio visible + JSON-LD: Google no admite marcar precios que no se ven en la pagina."
+        "El usuario eligio visible + JSON-LD: Google no admite marcar precios que no se ven en la pagina.",
+        "2026-11-26: ENTRY_PRICE en lib/pricing.ts, token {entryPrice} en mensajes (9 idiomas), Offer en el JSON-LD de la home (solo alli, visible en #fees y FAQ), terminos, llms.txt, dossier y AGENTS.md. just validate 2069 en verde, Playwright 88 en verde."
       ],
       "descripcion": [
         "Cambia la regla de AGENTS.md de no publicar ningun precio, su test, llms.txt y el dossier."
-      ]
+      ],
+      "hecha": "2026-11-26"
     }
   ]
 }

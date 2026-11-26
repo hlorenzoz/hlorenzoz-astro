@@ -34,9 +34,9 @@ solution, combined per client and sometimes included at no extra cost: **Local S
 (authority content, authority on Google and AI, and review management), **Website Development**, **AI Voice Receptionist** and **Software / Mobile
 App Development**.
 
-No price is published anywhere: every solution is quoted after the free needs analysis,
-quotes exclude VAT, and the client pays a low initial payment when the services start,
-then a monthly fee tied to the results agreed in the proposal. Positioning, services and
+The only published price is the entry price, 500 EUR + VAT for a first implementation that
+commits both sides; after it, a monthly fee tied to the results agreed in the proposal.
+Everything else is quoted after the free needs analysis. Positioning, services and
 terms are versioned in [AGENTS.md](./AGENTS.md#how-we-work) and are not repeated here.
 `tests/seo/no-published-prices.test.ts` fails on any figure in the copy or any offer in
 the JSON-LD.

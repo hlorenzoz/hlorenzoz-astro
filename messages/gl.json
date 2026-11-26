@@ -205,7 +205,7 @@
       "items": [
         {
           "question": "Canto custa?",
-          "answer": "Non hai lista de prezos. Cada solución deséñase para o teu negocio e preséntase con orzamento despois da análise gratuíta. Algúns servizos poden vir incluídos sen custo adicional, segundo o que necesites."
+          "answer": "Non hai lista de prezos. Comezas cunha primeira implementación por {entryPrice} + IVE; a partir de aí, cada solución deséñase para o teu negocio e preséntase con orzamento despois da análise gratuíta. Algúns servizos poden vir incluídos sen custo adicional, segundo o que necesites."
         },
         {
           "question": "Que pasa na análise gratuíta?",
@@ -217,7 +217,7 @@
         },
         {
           "question": "Como funcionan as vosas tarifas?",
-          "answer": "Un pagamento inicial baixo ao comezar os servizos e, despois, unha cota mensual ligada aos resultados que che traemos, acordada na proposta. Os clientes novos que trae a solución son os que a cobren. Os orzamentos non inclúen o IVE."
+          "answer": "Comezas cunha primeira implementación por {entryPrice} + IVE que compromete a ambas as partes e dá os primeiros pasos. Despois, unha cota mensual ligada aos resultados que che traemos, acordada na proposta. Os clientes novos que trae a solución son os que a cobren."
         },
         {
           "question": "Necesito ter xa unha web ou un perfil de Google?",
@@ -264,8 +264,8 @@
       "subtitle": "As nosas tarifas fíxanse ao comezar a traballar, a partir do que amosa a análise, para que sigan os resultados e non unha lista de prezos.",
       "steps": [
         {
-          "title": "Un pagamento inicial baixo",
-          "description": "Para arrancar, cando comezan os servizos. Sen un gran investimento para empezar."
+          "title": "{entryPrice} + IVE para comezar",
+          "description": "Unha primeira implementación que compromete a ambas as partes e dá os primeiros pasos, cando comezan os servizos."
         },
         {
           "title": "Unha cota mensual ligada a resultados",
@@ -276,6 +276,7 @@
           "description": "Os clientes que trae a nosa captación automatizada son os que cobren a cota mensual."
         }
       ],
+      "offerName": "Primeira implementación",
       "cta": "Reserva a túa análise de necesidades gratuíta",
       "vat": "Os orzamentos non inclúen o IVE."
     }
@@ -364,7 +365,7 @@
     "terms": {
       "payment": {
         "title": "Pagamentos",
-        "description": "Ao comezar os servizos, o cliente realiza un pagamento inicial acordado na proposta. Despois factúrase por adiantado unha cota mensual, cuxo importe está ligado aos resultados acordados na proposta. Os orzamentos non inclúen o IVE."
+        "description": "Ao comezar os servizos, o cliente paga {entryPrice} máis IVE por unha primeira implementación que compromete a ambas as partes e dá os primeiros pasos. Despois factúrase por adiantado unha cota mensual, cuxo importe está ligado aos resultados acordados na proposta. Os orzamentos non inclúen o IVE."
       },
       "marketing": {
         "title": "Portfolio e casos de estudo",

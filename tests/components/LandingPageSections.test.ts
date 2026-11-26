@@ -138,14 +138,16 @@ describe('HomePage: partner positioning landing', () => {
         expect(section.querySelector('[data-example-footnote]')).toHaveTextContent('27 November 2024. One lost patient');
     });
 
-    it('explains how the fees work in three steps, without a figure for our fees', () => {
+    it('explains how the fees work in three steps, the first one with the entry price', () => {
         const section = $('#fees')!;
         expect(section.querySelector('h2')).toHaveTextContent(home.fees.title);
         expect(section.querySelector('form, input')).toBeNull();
         const steps = section.querySelectorAll('ol > li');
         expect(steps).toHaveLength(3);
-        home.fees.steps.forEach((step, i) => expect(steps[i]).toHaveTextContent(step.title));
+        home.fees.steps.forEach((step, i) => expect(steps[i]).toHaveTextContent(step.title.replace('{entryPrice}', '€500')));
+        expect(steps[0]).toHaveTextContent('€500 + VAT to get started');
         expect(section).toHaveTextContent(home.fees.vat);
+        expect(section.textContent).not.toContain('{entryPrice}');
     });
 
     it('renders the CalBooking component in the contact section instead of an inline iframe', () => {
@@ -159,8 +161,9 @@ describe('HomePage: partner positioning landing', () => {
     it('answers the five FAQ questions, with the fee model and no up front share', () => {
         const faq = $('#faq')!;
         expect(faq.querySelectorAll('button[aria-controls]')).toHaveLength(5);
-        expect(faq).toHaveTextContent(home.faq.items[3].answer);
+        expect(faq).toHaveTextContent(home.faq.items[3].answer.replace('{entryPrice}', '€500'));
         expect(faq).toHaveTextContent('monthly fee tied to the results');
+        expect(faq.textContent).not.toContain('{entryPrice}');
         expect(faq.textContent).not.toMatch(/\{upfront\}|50%|up front/);
     });
 
@@ -181,13 +184,14 @@ describe('HomePage: partner positioning landing', () => {
         ]);
     });
 
-    it('publishes no price of ours, no pricing section and no free trial', () => {
+    it('publishes the entry price and no other price of ours, no pricing section and no free trial', () => {
         expect($('#pricing')).toBeNull();
         expect($('#numbers')).toBeNull();
         // The calculators show the visitor's figures and a dental clinic's market prices: never ours.
         const body = document.body.cloneNode(true) as HTMLElement;
         body.querySelectorAll('#cost-of-waiting [data-output], #cost-of-waiting table').forEach((el) => el.remove());
-        expect(body.textContent).not.toMatch(/€\s?\d|\d\s?€/);
+        expect(body.textContent).toContain('€500');
+        expect(body.textContent!.replaceAll('€500', '')).not.toMatch(/€\s?\d|\d\s?€/);
         expect(document.body.textContent).not.toMatch(/trial|limited time/i);
     });
 
@@ -200,12 +204,13 @@ describe('HomePage: partner positioning landing', () => {
 
     it('emits the page JSON-LD in order, the FAQ from the rewritten copy, then the organization graph', () => {
         const blocks = Array.from($$('script[type="application/ld+json"]')).map((s) => JSON.parse(s.textContent!));
-        expect(blocks).toHaveLength(4);
+        expect(blocks).toHaveLength(5);
         expect(blocks[0]['@graph'][0]['@type']).toBe('WebPage');
         expect(blocks[1]['@type']).toBe('ItemList');
         expect(blocks[2]['@type']).toBe('FAQPage');
         expect(blocks[2].mainEntity.map((q: { name: string }) => q.name)).toEqual(home.faq.items.map((i) => i.question));
-        expect(blocks[3]['@graph'][0]['@id']).toBe('https://hlorenzoz.com/#organization');
+        expect(blocks[3]).toMatchObject({ '@type': 'Offer', '@id': 'https://hlorenzoz.com/en/#entry-offer', price: '500', priceCurrency: 'EUR' });
+        expect(blocks[4]['@graph'][0]['@id']).toBe('https://hlorenzoz.com/#organization');
         expect(JSON.stringify(blocks)).not.toMatch(/"offers"|"priceRange"/);
     });
 });

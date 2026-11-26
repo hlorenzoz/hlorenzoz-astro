@@ -198,7 +198,7 @@
       "items": [
         {
           "question": "Quanto costa?",
-          "answer": "Non esiste un listino prezzi. Ogni soluzione è progettata per la tua attività e riceve un preventivo dopo l'analisi gratuita. Alcuni servizi possono essere inclusi senza costi aggiuntivi, in base a ciò di cui hai bisogno."
+          "answer": "Non esiste un listino prezzi. Si parte con una prima implementazione a {entryPrice} + IVA; da lì, ogni soluzione è progettata per la tua attività e riceve un preventivo dopo l'analisi gratuita. Alcuni servizi possono essere inclusi senza costi aggiuntivi, in base a ciò di cui hai bisogno."
         },
         {
           "question": "Cosa succede nell'analisi gratuita?",
@@ -210,7 +210,7 @@
         },
         {
           "question": "Come funzionano i vostri compensi?",
-          "answer": "Un pagamento iniziale contenuto quando partono i servizi, poi un canone mensile legato ai risultati che ti portiamo, concordato nella proposta. Sono i nuovi clienti portati dalla soluzione a coprirlo. I preventivi si intendono IVA esclusa."
+          "answer": "Si parte con una prima implementazione a {entryPrice} + IVA che impegna entrambe le parti e muove i primi passi. Poi un canone mensile legato ai risultati che ti portiamo, concordato nella proposta. Sono i nuovi clienti portati dalla soluzione a coprirlo."
         },
         {
           "question": "Devo avere già un sito web o un profilo Google?",
@@ -257,8 +257,8 @@
       "subtitle": "I nostri compensi si definiscono quando iniziamo a lavorare, in base a ciò che mostra l'analisi, così seguono i risultati e non un listino prezzi.",
       "steps": [
         {
-          "title": "Un pagamento iniziale contenuto",
-          "description": "Per partire, quando iniziano i servizi. Nessun grande investimento all'inizio."
+          "title": "{entryPrice} + IVA per iniziare",
+          "description": "Una prima implementazione che impegna entrambe le parti e muove i primi passi, quando iniziano i servizi."
         },
         {
           "title": "Un canone mensile legato ai risultati",
@@ -269,6 +269,7 @@
           "description": "Sono i clienti portati dalla nostra acquisizione automatizzata a coprire il canone mensile."
         }
       ],
+      "offerName": "Prima implementazione",
       "cta": "Prenota l'analisi gratuita delle tue esigenze",
       "vat": "I preventivi si intendono IVA esclusa."
     }
@@ -816,7 +817,7 @@
     "terms": {
       "payment": {
         "title": "Pagamenti",
-        "description": "Quando iniziano i servizi, il cliente versa un pagamento iniziale concordato nella proposta. Successivamente si fattura in anticipo un canone mensile, il cui importo è legato ai risultati concordati nella proposta. I preventivi si intendono IVA esclusa."
+        "description": "Quando iniziano i servizi, il cliente versa {entryPrice} più IVA per una prima implementazione che impegna entrambe le parti e muove i primi passi. Successivamente si fattura in anticipo un canone mensile, il cui importo è legato ai risultati concordati nella proposta. I preventivi si intendono IVA esclusa."
       },
       "marketing": {
         "title": "Portfolio e casi di studio",

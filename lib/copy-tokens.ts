@@ -8,6 +8,8 @@
  * done by hand.
  */
 
+import { formatEntryPrice } from '@/lib/pricing';
+
 export type CopyTokens = Record<string, string | number>;
 
 /**
@@ -23,12 +25,13 @@ export function fillTokens(text: string, values: CopyTokens): string {
 }
 
 /**
- * The values every term-bearing line may use. Empty since the fee model states
- * no figure: a `{token}` left in the copy now fails the build instead of
+ * The values every term-bearing line may use, formatted for the reader
+ * (`localeInfo(locale).intl`). The entry price is the only figure the agency
+ * publishes; any other `{token}` left in the copy fails the build instead of
  * publishing a stale number.
  */
-export function copyTokens(): CopyTokens {
-    return {};
+export function copyTokens(intlLocale: string): CopyTokens {
+    return { entryPrice: formatEntryPrice(intlLocale) };
 }
 
 export interface FaqItem {
