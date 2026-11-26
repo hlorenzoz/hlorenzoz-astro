@@ -3,7 +3,7 @@
         "home": "Startseite",
         "benefits": "Vorteile",
         "solutions": "Lösungen",
-        "price": "Preis",
+        "price": "So arbeiten wir",
         "portfolio": "Portfolio",
         "news": "Neuigkeiten",
         "contact": "Kontakt",
@@ -30,200 +30,187 @@
     },
     "home": {
         "meta": {
-            "title": "Lorenzoz Agency | Lokales SEO für Unternehmen vor Ort",
-            "description": "Mehr Kunden aus Ihrer Region über Google und KI. Ein monatlicher Plan für lokales SEO: Inhalte mit Autorität, Brancheneinträge, Autorität bei Google und KI sowie Bewertungsmanagement.",
+            "title": "Lorenzoz Agency | Wachstumspartner für Unternehmen vor Ort",
+            "description": "In einem kostenlosen ersten Gespräch analysieren wir, was Ihr Unternehmen braucht, und bauen dann die passende Kombination aus lokalem SEO, Website, Telefonassistent mit KI oder individueller Software.",
             "ogImageAlt": "Lorenzoz Agency: Exzellenz in KI und Web",
             "keywords": [
                 "Lokales SEO",
-                "Agentur für lokales SEO",
+                "Wachstumspartner für lokale Unternehmen",
                 "Google Business Profile",
                 "Lokale Suche",
-                "Bewertungsmanagement",
+                "Digitale Lösungen nach Maß",
                 "Sichtbarkeit in der Suche mit KI",
                 "Webentwicklung",
                 "Telefonassistent mit KI",
                 "Softwareentwicklung"
             ],
-            "organizationDescription": "Lokales SEO für lokale Unternehmen: ein monatlicher Plan, der lokale Kunden über Google und KI bringt, optional ergänzt durch Webentwicklung, einen Telefonassistenten mit KI und individuelle Software."
+            "organizationDescription": "Ein Wachstumspartner für lokale Unternehmen: Wir analysieren, was jedes Unternehmen braucht, und setzen dann eine maßgeschneiderte Lösung aus lokalem SEO, Websites, Telefonassistenten mit KI und individueller Software um."
         },
         "hero": {
-            "badge": "Lokales SEO für Unternehmen vor Ort",
-            "title": "Mehr Kunden aus Ihrer Region",
-            "titleGradient": "über Google und KI",
-            "description": "Wir verkaufen keine Einzelleistungen. Wir arbeiten auf ein einziges Ergebnis hin: Wer nach dem sucht, was Ihr Unternehmen anbietet, findet zuerst Sie.",
-            "cta": "Gespräch vereinbaren",
-            "secondaryCta": "So arbeiten wir"
+            "badge": "Ihr Wachstumspartner",
+            "title": "Wir analysieren Ihr Unternehmen und bauen dann, was",
+            "titleGradient": "Ihnen Kunden bringt",
+            "description": "Keine Pakete und keine Preisliste. In einem kostenlosen ersten Gespräch analysieren wir, was Ihr Unternehmen braucht. Dann setzen wir die passende Kombination aus lokalem SEO, Website, Telefonassistent mit KI oder individueller Software um und messen die Ergebnisse gemeinsam mit Ihnen.",
+            "cta": "Kostenlose Bedarfsanalyse buchen",
+            "secondaryCta": "So arbeiten wir",
+            "note": "15 Minuten per Videocall. Unverbindlich."
         },
-        "stats": {
-            "pillars": {
-                "label": "Leistungssäulen"
+        "facts": {
+            "services": {
+                "value": "{count} Leistungen",
+                "label": "zu einer Lösung für Sie kombiniert"
+            },
+            "languages": {
+                "value": "{count} Sprachen",
+                "label": "auf dieser Website"
+            },
+            "pageSpeed": {
+                "value": "98 / 100",
+                "label": "PageSpeed auf dem Smartphone,",
+                "link": "selbst prüfen"
             },
             "markets": {
-                "label": "Betreute Märkte"
+                "value": "Spanien und Costa Rica",
+                "label": "wo Projekte für unsere Kunden heute live sind"
             }
         },
         "markets": {
-            "eyebrow": "Globale Reichweite, lokaler Fokus",
-            "title": "Für Unternehmen weltweit",
-            "subtitle": "Mit Sitz in Spanien und online tätig in den Märkten, in denen unsere Kunden am schnellsten wachsen."
-        },
-        "standard": {
-            "title": "Ergebnisse statt Einzelleistungen",
-            "subtitle": "Eine Website, ein paar Bewertungen oder ein Profil bei Google bringen allein keine Kunden. Das schafft erst das Zusammenspiel, Monat für Monat auf ein einziges Ziel ausgerichtet.",
-            "oldWay": {
-                "title": "Leistungen einkaufen",
-                "items": [
-                    "Mehrere Dienstleister, die sich nie abstimmen",
-                    "Ergebnisse, die niemand am Umsatz misst",
-                    "Eine fertige Website, die niemand findet",
-                    "Bewertungen und Verzeichnisse, um die sich keiner kümmert"
-                ]
-            },
-            "newWay": {
-                "title": "Ein Ergebnis einkaufen",
-                "items": [
-                    "Ein Team, das für Ihre Kundengewinnung verantwortlich ist",
-                    "Die gesamte Arbeit zielt darauf, dass man Sie in Ihrer Region zuerst findet",
-                    "Inhalte, Links, Autorität und Bewertungen greifen ineinander",
-                    "Ein monatlicher Bericht in klarer Sprache über die geleistete Arbeit"
-                ]
-            }
+            "title": "Mit Sitz in Spanien arbeiten wir online mit Unternehmen in diesen Ländern"
         },
         "problem": {
             "badge": "Das Problem",
             "title": "Ihre Kunden <trad>suchen</trad><br></br>und finden jemand anderen",
-            "description": "Die Entscheidung fällt auf der ersten Seite bei Google und immer öfter in der Antwort einer KI. Ein Unternehmen, das dort fehlt, kommt gar nicht erst in die engere Wahl.",
+            "description": "Die Entscheidung fällt auf der ersten Seite bei Google, in der Antwort einer KI oder bei einem Anruf, den niemand annimmt. Jedes Unternehmen verliert Kunden an einer anderen Stelle: Deshalb schauen wir zuerst genau hin.",
             "cards": [
                 {
                     "title": "Unsichtbar bei Google",
-                    "description": "Erscheint Ihr Unternehmen nicht, wenn jemand in der Nähe nach Ihrer Leistung sucht, bekommt ein Wettbewerber den Anruf."
+                    "description": "Erscheinen Sie nicht, wenn jemand in der Nähe sucht, bekommt ein Wettbewerber den Anruf."
                 },
                 {
-                    "title": "Kaum sichtbare Reputation",
-                    "description": "Wenige, alte oder unbeantwortete Bewertungen kosten Vertrauen, genau in dem Moment, in dem sich der Kunde entscheidet."
+                    "title": "Eine Website, die keine Anfragen bringt",
+                    "description": "Langsam, unklar oder nur in einer Sprache: So verliert sie Besucher, bevor diese Kontakt aufnehmen."
+                },
+                {
+                    "title": "Anrufe, die niemand annimmt",
+                    "description": "Außerhalb der Geschäftszeiten oder wenn alle Leitungen besetzt sind, ruft der Kunde einfach beim nächsten Unternehmen an."
                 },
                 {
                     "title": "Die KI empfiehlt jemand anderen",
-                    "description": "Assistenten mit künstlicher Intelligenz nennen die Unternehmen, die sie als Referenz erkennen. Diesen Platz muss man sich erarbeiten."
+                    "description": "Assistenten antworten mit den Namen, die sie kennen. Diesen Platz muss man sich erarbeiten."
                 }
             ]
         },
-        "solutions": {
-            "badge": "Die Lösung",
-            "title": "Ein Plan. Vier Säulen.",
-            "subtitle": "Ein monatlicher Plan, der die gesamte Arbeit bündelt, um in der lokalen Suche bei Google und in den Antworten der KI sichtbar zu werden.",
-            "cta": "Lokales SEO ansehen",
-            "items": [
+        "partner": {
+            "badge": "Warum ein Partner",
+            "title": "Ein Partner für Ihr Wachstum, kein Lieferant einzelner Leistungen",
+            "services": {
+                "title": "Leistungen einkaufen",
+                "items": [
+                    "Ein Paket, ausgewählt aus einer Preisliste",
+                    "Mehrere Anbieter, die nie miteinander sprechen",
+                    "Arbeit, die niemand an Ihrem Umsatz misst",
+                    "Sie zahlen für Dinge, die Sie vielleicht gar nicht brauchen"
+                ]
+            },
+            "partner": {
+                "title": "Mit einem Partner arbeiten",
+                "items": [
+                    "Eine Lösung, entworfen nach der Analyse Ihres Unternehmens",
+                    "Ein Team, das für Ihre Ergebnisse verantwortlich ist",
+                    "Jeder Baustein zielt darauf, Ihnen Kunden zu bringen",
+                    "Nur das, was Sie voranbringt; manche Bausteine können inklusive sein"
+                ]
+            }
+        },
+        "how": {
+            "badge": "So arbeiten wir",
+            "title": "Erst verstehen wir Ihr Unternehmen. Dann bauen wir die Lösung.",
+            "steps": [
                 {
-                    "title": "Inhalte mit Autorität",
-                    "description": "Die Inhalte, die Ihr Unternehmen als Referenz in seiner Branche etablieren.",
-                    "points": [
-                        "Keywordrecherche",
-                        "Themencluster",
-                        "Analyse von Inhaltslücken",
-                        "Aktualisierung bestehender Inhalte"
-                    ]
+                    "title": "Kostenlose Bedarfsanalyse",
+                    "description": "Ein erstes Gespräch, um Ihr Unternehmen, Ihre Kunden und das zu verstehen, was Ihr Wachstum bremst. Kostenlos und unverbindlich."
                 },
                 {
-                    "title": "Backlinks und Brancheneinträge",
-                    "description": "Präsenz in vertrauenswürdigen Verzeichnissen und auf Branchenportalen.",
-                    "points": [
-                        "Links aus vertrauenswürdigen Verzeichnissen",
-                        "Erwähnungen auf relevanten Websites",
-                        "Stärkere lokale Autoritätssignale",
-                        "Für Google und für die KI"
-                    ]
+                    "title": "Eine Lösung, auf Sie zugeschnitten",
+                    "description": "Wir schlagen die Kombination von Leistungen vor, die zu Ihren Zielen passt, mit klarem Umfang und Angebot. Je nach Bedarf können einige Leistungen ohne Aufpreis enthalten sein."
                 },
                 {
-                    "title": "Autorität bei Google und KI",
-                    "description": "Ihr Unternehmen und Ihre Website als die Referenz, die empfohlen wird.",
-                    "points": [
-                        "Optimiertes Google Business Profile",
-                        "Lokale Onpageoptimierung Ihrer Website",
-                        "Strukturierte Daten für lokale Unternehmen",
-                        "Präsenz in den Ergebnissen von Google und KI"
-                    ]
+                    "title": "Umsetzung",
+                    "description": "Wir bauen und starten sie: Ihre Website, Ihre lokale Präsenz, Ihren Telefonassistenten oder Ihre Software, getestet, bevor alles live geht."
                 },
                 {
-                    "title": "Bewertungsmanagement",
-                    "description": "Ihre Reputation, gemessen und gepflegt, Monat für Monat.",
-                    "points": [
-                        "Entwicklung Ihrer Bewertungen im Zeitverlauf",
-                        "Trends bei positivem und negativem Feedback",
-                        "Kundenantworten immer im Blick",
-                        "Feedbacklinks mit Ihrer Marke"
-                    ]
+                    "title": "Gemeinsam gemessen",
+                    "description": "Wir verfolgen, was für Ihr Unternehmen zählt, berichten in klarer Sprache und passen die Arbeit an, während Sie wachsen."
                 }
-            ]
+            ],
+            "note": "Es gibt keine Preisliste: Jede Lösung wird nach der kostenlosen Analyse angeboten. Angebote verstehen sich zzgl. MwSt."
+        },
+        "solutions": {
+            "badge": "Lösungen",
+            "title": "Die Bausteine, die wir für Sie kombinieren",
+            "subtitle": "Jedes Unternehmen braucht etwas anderes. Das sind die Bausteine Ihrer Lösung; Sie bekommen nur, was Ihr Unternehmen voranbringt.",
+            "cta": "Mehr erfahren",
+            "items": {
+                "localSeo": "Bei Google und in den Antworten der KI gefunden werden, wenn Menschen in der Nähe nach Ihrem Angebot suchen.",
+                "websiteDevelopment": "Schnelle, mehrsprachige Websites, die Suchmaschinen und KI verstehen, gebaut, um aus Besuchen Anrufe zu machen.",
+                "aiVoiceReceptionist": "Jeder Anruf wird angenommen, Tag und Nacht: Fragen, Terminbuchungen und Nachrichten, erledigt mit natürlicher Stimme.",
+                "softwareDevelopment": "Ihre eigene App für Smartphone, Tablet, Web und Desktop, wenn fertige Tools nicht ausreichen."
+            }
         },
         "benefits": {
             "title": "Was sich für Ihr Unternehmen ändert,",
-            "titleGradient": "wenn man Sie findet",
+            "titleGradient": "wenn man Sie finden kann",
             "imageAlt": "Dashboard zum Unternehmenswachstum",
             "items": [
                 {
                     "title": "Sichtbar, wo die Entscheidung fällt",
-                    "description": "Ihr Unternehmen in der lokalen Suche und auf der Karte von Google, genau dort, wo Ihre Kunden entscheiden, wen sie anrufen."
+                    "description": "In der lokalen Suche, auf der Karte und in den Antworten der KI, genau dort, wo Ihre Kunden entscheiden, wen sie anrufen."
                 },
                 {
-                    "title": "Eine Reputation, die für Sie arbeitet",
-                    "description": "Bewertungen, die stetig wachsen, und ein klarer Blick darauf, was Ihre Kunden sagen."
+                    "title": "Keine Anfrage geht verloren",
+                    "description": "Eine Website, die aus Besuchen Kontakte macht, und Anrufe, die angenommen werden, auch wenn Sie selbst nicht rangehen können."
                 },
                 {
-                    "title": "Empfohlen von Google und KI",
-                    "description": "Inhalte und Autorität, damit Suchmaschinen und Assistenten Sie als Referenz in Ihrer Region erkennen."
+                    "title": "Ein Team, das dahintersteht",
+                    "description": "Ein Partner, der Ihr Unternehmen kennt, misst, was zählt, und die Arbeit gemeinsam mit Ihnen anpasst."
                 }
             ]
         },
-        "process": {
-            "title": "Ein klarer Ablauf, Monat für Monat",
-            "steps": [
-                {
-                    "number": "01",
-                    "badge": "Analyse",
-                    "title": "Wir ermitteln, wo Sie stehen",
-                    "description": "Wir prüfen Ihre aktuelle Präsenz bei Google, Ihre Website, Ihre Bewertungen und wer heute in Ihrer Region empfohlen wird."
-                },
-                {
-                    "number": "02",
-                    "badge": "Aufbau",
-                    "title": "Wir bearbeiten die vier Säulen",
-                    "description": "Inhalte, Brancheneinträge, Autorität und Bewertungen laufen parallel, nach einem Plan, den Sie vorab kennen."
-                },
-                {
-                    "number": "03",
-                    "badge": "Optimierung",
-                    "title": "Wir messen und steuern nach",
-                    "description": "Jeden Monat erhalten Sie einen Bericht in klarer Sprache, und wir passen die Arbeit an das an, was sich verändert hat."
-                }
-            ]
+        "dossier": {
+            "title": "Laden Sie unser Dossier herunter",
+            "body": "Wie wir arbeiten, was wir bauen und die Projekte dahinter, in einem PDF, das Sie später lesen oder mit Ihrem Team teilen können.",
+            "cta": "Dossier herunterladen (PDF)"
         },
         "pricing": {
-            "title": "Einfache, transparente Preise"
+            "title": "Zahlungsbedingungen"
         },
         "contact": {
-            "badge": "Kontakt",
-            "title": "Sprechen wir über Ihr Unternehmen.",
-            "subtitle": "Buchen Sie ein Gespräch von 15 Minuten."
+            "title": "Fangen wir mit Ihrem Unternehmen an, nicht mit einem Paket",
+            "subtitle": "Sagen Sie uns, wo Sie wachsen möchten. In 15 Minuten analysieren wir, was Sie brauchen und was wir dafür tun würden.",
+            "note": "Kostenlos. Per Videocall. Unverbindlich."
         },
         "faq": {
             "title": "Häufige Fragen",
             "items": [
                 {
-                    "question": "Garantieren Sie Platz eins bei Google?",
-                    "answer": "Nein, und seien Sie vorsichtig bei jedem, der das tut: Niemand kontrolliert das Ranking von Google. Platz eins ist das Ziel, auf das wir jeden Monat hinarbeiten, und ein Bericht in klarer Sprache zeigt Ihnen, was getan wurde und wie sich Ihre Sichtbarkeit entwickelt."
+                    "question": "Was kostet das?",
+                    "answer": "Es gibt keine Preisliste. Jede Lösung wird für Ihr Unternehmen entworfen und nach der kostenlosen Analyse angeboten. Je nach Bedarf können einige Leistungen ohne Aufpreis enthalten sein."
                 },
                 {
-                    "question": "Wie lange dauert es, bis ich Ergebnisse im lokalen Ranking sehe?",
-                    "answer": "Die meisten Kunden sehen innerhalb von 30 bis 60 Tagen spürbare Bewegung im lokalen Kartenbereich von Google (Local Pack), in umkämpften Märkten kann es länger dauern."
+                    "question": "Was passiert bei der kostenlosen Analyse?",
+                    "answer": "Ein Videocall von 15 Minuten über Ihr Unternehmen, Ihre Kunden und Ihre Ziele. Danach haben Sie eine klare Vorstellung davon, was wir tun würden, ganz unverbindlich."
+                },
+                {
+                    "question": "Garantieren Sie Platz eins bei Google?",
+                    "answer": "Nein, und ehrlicherweise kann das niemand: Google entscheidet selbst über sein Ranking. Wir arbeiten darauf hin und sagen Ihnen, was in Ihrem Markt realistisch ist."
                 },
                 {
                     "question": "Warum wird ein Teil im Voraus bezahlt?",
-                    "answer": "Bei Vertragsabschluss werden {upfront}% im Voraus gezahlt. Damit decken wir die Tools und Dienste, die wir vom ersten Tag an für die Arbeit beauftragen."
+                    "answer": "{upfront}% des vereinbarten Angebots werden zu Beginn gezahlt, um die Tools und Dienste zu decken, von denen die Arbeit abhängt."
                 },
                 {
                     "question": "Brauche ich schon eine Website oder ein Profil bei Google?",
-                    "answer": "Nein. Wenn Sie noch kein Google Business Profile haben, erstellen und verifizieren wir es auf Ihren Namen, und eine Website lässt sich als Zusatzleistung ergänzen."
+                    "answer": "Nein. Wenn Sie eines davon brauchen, wird es Teil Ihrer Lösung."
                 }
             ]
         }
@@ -247,8 +234,8 @@
                     "href": "/news"
                 },
                 {
-                    "label": "Preise",
-                    "href": "#process"
+                    "label": "So arbeiten wir",
+                    "href": "#how"
                 },
                 {
                     "label": "Kontakt",

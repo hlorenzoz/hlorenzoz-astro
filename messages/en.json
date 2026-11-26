@@ -3,7 +3,7 @@
     "home": "Home",
     "benefits": "Benefits",
     "solutions": "Solutions",
-    "price": "Price",
+    "price": "How we work",
     "portfolio": "Portfolio",
     "news": "News",
     "contact": "Contact",
@@ -23,200 +23,187 @@
   },
   "home": {
     "meta": {
-      "title": "Lorenzoz Agency | Local SEO for Local Businesses",
-      "description": "More local customers from Google and AI. One monthly Local SEO plan: authority content, citations, authority on Google and AI, and review management.",
+      "title": "Lorenzoz Agency | Growth Partner for Local Businesses",
+      "description": "We analyze what your business needs in a free first call, then build the right mix of local SEO, website, AI voice receptionist or custom software.",
       "ogImageAlt": "Lorenzoz Agency: AI & Web Excellence",
       "keywords": [
         "Local SEO",
-        "Local SEO Agency",
+        "Growth Partner for Local Businesses",
         "Google Business Profile",
         "Local Search",
-        "Review Management",
+        "Tailored Digital Solutions",
         "AI Search Visibility",
         "Website Development",
         "AI Voice Receptionist",
         "Software Development"
       ],
-      "organizationDescription": "Local SEO for local businesses: one monthly plan that brings local customers from Google and AI, with optional website development, AI voice receptionist and custom software."
+      "organizationDescription": "A growth partner for local businesses: we analyze what each business needs, then implement a tailored solution of local SEO, websites, AI voice receptionists and custom software."
     },
     "hero": {
-      "badge": "Local SEO for local businesses",
-      "title": "More local customers",
-      "titleGradient": "from Google and AI",
-      "description": "We do not sell loose services. We work toward one result: when someone searches for what your business offers, they find you first.",
-      "cta": "Book a call",
-      "secondaryCta": "See how we work"
+      "badge": "Your growth partner",
+      "title": "We study your business, then build what",
+      "titleGradient": "brings you customers",
+      "description": "No packages and no price list. In a free first call we analyze what your business needs. Then we implement the right mix of local SEO, website, AI voice receptionist or custom software, and measure the results with you.",
+      "cta": "Book your free needs analysis",
+      "secondaryCta": "How we work",
+      "note": "15 minutes by video call. No obligation."
     },
-    "stats": {
-      "pillars": {
-        "label": "Pillars of work"
+    "facts": {
+      "services": {
+        "value": "{count} services",
+        "label": "combined into one solution for you"
+      },
+      "languages": {
+        "value": "{count} languages",
+        "label": "on this site"
+      },
+      "pageSpeed": {
+        "value": "98 / 100",
+        "label": "PageSpeed on mobile,",
+        "link": "check it"
       },
       "markets": {
-        "label": "Markets served"
+        "value": "Spain and Costa Rica",
+        "label": "where our client work is live today"
       }
     },
     "markets": {
-      "eyebrow": "Global Reach, Local Focus",
-      "title": "Serving businesses worldwide",
-      "subtitle": "Based in Spain, delivering online across the markets where our clients grow fastest."
-    },
-    "standard": {
-      "title": "Results, not loose services",
-      "subtitle": "A website, a few reviews or a Google profile do not bring customers on their own. The whole does, worked every month toward a single goal.",
-      "oldWay": {
-        "title": "Buying services",
-        "items": [
-          "Several providers who never coordinate",
-          "Deliverables nobody measures against sales",
-          "A published website nobody finds",
-          "Reviews and directories left unattended"
-        ]
-      },
-      "newWay": {
-        "title": "Buying a result",
-        "items": [
-          "One team accountable for your customer acquisition",
-          "All the work points at showing up first in your area",
-          "Content, links, authority and reviews move together",
-          "A monthly report in plain language of what was done"
-        ]
-      }
+      "title": "Based in Spain, working online with businesses in these countries"
     },
     "problem": {
       "badge": "The problem",
-      "title": "Your customers <trad>search</trad><br></br>and find someone else",
-      "description": "The decision is made on the first screen of Google and, more and more, in the answer of an AI assistant. A business that is not there never enters the comparison.",
+      "title": "Your customers <trad>search</trad>,<br></br>and find someone else",
+      "description": "The decision is made on the first screen of Google, in an AI assistant's answer or in a phone call nobody picks up. Each business loses customers in a different place: that is why we look first.",
       "cards": [
         {
           "title": "Invisible on Google",
-          "description": "If your business does not show up when someone searches for your service nearby, a competitor takes that call."
+          "description": "If you do not show up when someone searches nearby, a competitor gets that call."
         },
         {
-          "title": "Little visible reputation",
-          "description": "Few reviews, old ones or unanswered ones erode trust right before the customer decides."
+          "title": "A website that does not convert",
+          "description": "Slow, unclear or only in one language, it loses visitors before they get in touch."
+        },
+        {
+          "title": "Calls nobody answers",
+          "description": "Out of hours or with every line busy, the customer simply calls the next business."
         },
         {
           "title": "AI recommends someone else",
-          "description": "AI assistants answer with the businesses they recognize as the reference. That place has to be earned."
+          "description": "Assistants answer with the names they recognize. That place has to be earned."
         }
       ]
+    },
+    "partner": {
+      "badge": "Why a partner",
+      "title": "A partner in your growth, not a supplier of services",
+      "services": {
+        "title": "Buying services",
+        "items": [
+          "A package chosen from a price list",
+          "Several suppliers who never talk to each other",
+          "Work nobody measures against your sales",
+          "You pay for things you may not need"
+        ]
+      },
+      "partner": {
+        "title": "Working with a partner",
+        "items": [
+          "A solution designed after analyzing your business",
+          "One team accountable for your results",
+          "Every piece aimed at winning you customers",
+          "Only what moves you forward; some pieces may come included"
+        ]
+      }
+    },
+    "how": {
+      "badge": "How we work",
+      "title": "First we understand your business. Then we build the solution.",
+      "steps": [
+        {
+          "title": "Free needs analysis",
+          "description": "A first call to understand your business, your customers and what is holding back your growth. No cost and no obligation."
+        },
+        {
+          "title": "A solution designed for you",
+          "description": "We propose the mix of services that fits your goals, with a clear scope and quote. Some services may come included at no extra cost, depending on what you need."
+        },
+        {
+          "title": "Implementation",
+          "description": "We build and launch it: your website, your local presence, your voice receptionist or your software, tested before it goes live."
+        },
+        {
+          "title": "Measured together",
+          "description": "We track what matters to your business, report in plain language and adjust the work as you grow."
+        }
+      ],
+      "note": "There is no price list: every solution is quoted after the free analysis. Quotes exclude VAT."
     },
     "solutions": {
-      "badge": "The solution",
-      "title": "One plan. Four pillars.",
-      "subtitle": "One monthly plan that brings together the work needed to gain visibility in local Google searches and in the answers AI engines give.",
-      "cta": "See Local SEO",
-      "items": [
-        {
-          "title": "Authority content",
-          "description": "The content that establishes your business as a reference in its field.",
-          "points": [
-            "Keyword research",
-            "Content clusters",
-            "Content gap analysis",
-            "Updates to existing content"
-          ]
-        },
-        {
-          "title": "Backlinks and citations",
-          "description": "Presence on trusted directories and citation websites.",
-          "points": [
-            "Links from trusted directories",
-            "Citations on relevant websites",
-            "Stronger local authority signals",
-            "For Google and for AI engines"
-          ]
-        },
-        {
-          "title": "Authority on Google and AI",
-          "description": "Your business and your website as the reference that gets recommended.",
-          "points": [
-            "Optimized Google Business Profile",
-            "On page local SEO for your website",
-            "Local business structured data",
-            "Presence in Google and AI results"
-          ]
-        },
-        {
-          "title": "Review management",
-          "description": "Your reputation, measured and worked on month after month.",
-          "points": [
-            "Review growth tracked over time",
-            "Positive and negative feedback trends",
-            "Customer responses monitored",
-            "Branded feedback links"
-          ]
-        }
-      ]
+      "badge": "Solutions",
+      "title": "The pieces we combine for you",
+      "subtitle": "Every business needs something different. These are the building blocks of your solution; you only get what moves your business forward.",
+      "cta": "Learn more",
+      "items": {
+        "localSeo": "Be found on Google and in AI answers when people nearby search for what you offer.",
+        "websiteDevelopment": "Fast, multilingual websites that search engines and AI understand, built to turn visits into calls.",
+        "aiVoiceReceptionist": "Every call answered, day and night: questions, bookings and messages handled in a natural voice.",
+        "softwareDevelopment": "Your own app for phones, tablets, the web and desktop when ready made tools fall short."
+      }
     },
     "benefits": {
-      "title": "What changes in your business",
-      "titleGradient": "when you get found",
+      "title": "What changes for your business",
+      "titleGradient": "when people can find you",
       "imageAlt": "Business growth dashboard",
       "items": [
         {
-          "title": "Visibility where the decision is made",
-          "description": "Your business present in local Google searches and on the map, where your customers choose who to call."
+          "title": "Visible where the decision is made",
+          "description": "In local searches, on the map and in AI answers, where your customers choose who to call."
         },
         {
-          "title": "A reputation that works for you",
-          "description": "Reviews that grow steadily, and a clear view of what your customers are saying."
+          "title": "Every inquiry handled",
+          "description": "A website that turns visits into contacts, and calls answered even when you cannot pick up."
         },
         {
-          "title": "Recommended by Google and AI",
-          "description": "Content and authority so that search engines and assistants recognize you as the reference in your area."
+          "title": "One team behind it",
+          "description": "One partner who knows your business, measures what matters and adjusts the work with you."
         }
       ]
     },
-    "process": {
-      "title": "A clear process, month after month",
-      "steps": [
-        {
-          "number": "01",
-          "badge": "Audit",
-          "title": "We learn where you stand",
-          "description": "We review your current presence on Google, your website, your reviews and who gets recommended in your area today."
-        },
-        {
-          "number": "02",
-          "badge": "Build",
-          "title": "We work the four pillars",
-          "description": "Content, citations, authority and reviews move in parallel, on a plan you know in advance."
-        },
-        {
-          "number": "03",
-          "badge": "Iterate",
-          "title": "We measure and adjust",
-          "description": "Every month you get a report in plain language and we adjust the work to what changed."
-        }
-      ]
+    "dossier": {
+      "title": "Download our dossier",
+      "body": "How we work, what we build and the projects behind it, in one PDF you can read later or share with your team.",
+      "cta": "Download the dossier (PDF)"
     },
     "pricing": {
-      "title": "Simple, transparent pricing"
+      "title": "Payment terms"
     },
     "contact": {
-      "badge": "Contact",
-      "title": "Let's talk about your business.",
-      "subtitle": "Book a 15 minute call."
+      "title": "Let us start with your business, not with a package",
+      "subtitle": "Tell us where you want to grow. In 15 minutes we analyze what you need and what we would do about it.",
+      "note": "Free. Video call. No obligation."
     },
     "faq": {
       "title": "Frequently asked questions",
       "items": [
         {
-          "question": "Do you guarantee the first position on Google?",
-          "answer": "No, and be wary of anyone who does: nobody controls Google's ranking. The first position is the goal we work toward every month, and a plain language report shows you what was done and how your visibility is moving."
+          "question": "How much does it cost?",
+          "answer": "There is no price list. Each solution is designed for your business and quoted after the free analysis. Some services may come included at no extra cost, depending on what you need."
         },
         {
-          "question": "How long until I see results in local search rankings?",
-          "answer": "Most clients see meaningful movement in the local map pack within 30 to 60 days, though competitive markets can take longer."
+          "question": "What happens in the free analysis?",
+          "answer": "A 15 minute video call about your business, your customers and your goals. You leave with a clear idea of what we would do, with no obligation."
+        },
+        {
+          "question": "Do you guarantee the first position on Google?",
+          "answer": "No, and nobody honestly can: Google decides its rankings. We work toward it and tell you what is realistic for your market."
         },
         {
           "question": "Why is part of it paid up front?",
-          "answer": "On signing, {upfront}% is paid up front. It covers the tools and services we contract to do the work from the first day."
+          "answer": "{upfront}% of the agreed quote is paid at the start to cover the tools and services the work depends on."
         },
         {
           "question": "Do I need a website or a Google profile already?",
-          "answer": "No. If you have no Google Business Profile we create it and verify it in your name, and a website can be added as an optional service."
+          "answer": "No. If you need either, it becomes part of your solution."
         }
       ]
     }
@@ -840,8 +827,8 @@
           "href": "/news"
         },
         {
-          "label": "Pricing",
-          "href": "#process"
+          "label": "How we work",
+          "href": "#how"
         },
         {
           "label": "Contact",

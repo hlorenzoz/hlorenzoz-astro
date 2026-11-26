@@ -3,7 +3,7 @@
         "home": "Home",
         "benefits": "Voordelen",
         "solutions": "Oplossingen",
-        "price": "Prijs",
+        "price": "Zo werken we",
         "portfolio": "Portfolio",
         "news": "Nieuws",
         "contact": "Contact",
@@ -23,200 +23,187 @@
     },
     "home": {
         "meta": {
-            "title": "Lorenzoz Agency | Lokale SEO voor lokale bedrijven",
-            "description": "Meer klanten uit je regio via Google en AI. Eén maandelijks plan voor lokale SEO: autoriteitscontent, vermeldingen, autoriteit in Google en AI, en reviewbeheer.",
+            "title": "Lorenzoz Agency | Groeipartner voor lokale bedrijven",
+            "description": "In een gratis eerste gesprek analyseren we wat je bedrijf nodig heeft. Daarna bouwen we de juiste mix van lokale SEO, website, telefoonreceptionist met AI of software op maat.",
             "ogImageAlt": "Lorenzoz Agency: uitmuntend in AI en web",
             "keywords": [
                 "Lokale SEO",
-                "Bureau voor lokale SEO",
+                "Groeipartner voor lokale bedrijven",
                 "Google Business Profile",
                 "Lokaal zoeken",
-                "Reviewbeheer",
+                "Digitale oplossingen op maat",
                 "Zichtbaarheid in zoekmachines met AI",
                 "Websiteontwikkeling",
                 "Telefoonreceptionist met AI",
                 "Softwareontwikkeling"
             ],
-            "organizationDescription": "Lokale SEO voor lokale bedrijven: één maandelijks abonnement dat lokale klanten via Google en AI oplevert, met optioneel websiteontwikkeling, een telefoonreceptionist met AI en software op maat."
+            "organizationDescription": "Een groeipartner voor lokale bedrijven: we analyseren wat elk bedrijf nodig heeft en zetten daarna een oplossing op maat in, met lokale SEO, websites, telefoonreceptionisten met AI en software op maat."
         },
         "hero": {
-            "badge": "Lokale SEO voor lokale bedrijven",
-            "title": "Meer klanten uit je regio",
-            "titleGradient": "via Google en AI",
-            "description": "Wij verkopen geen losse diensten. Wij werken naar één resultaat toe: wie zoekt wat jouw bedrijf aanbiedt, vindt jou als eerste.",
-            "cta": "Plan een gesprek",
-            "secondaryCta": "Bekijk hoe we werken"
+            "badge": "Je groeipartner",
+            "title": "Eerst leren we je bedrijf kennen, dan bouwen we wat",
+            "titleGradient": "je klanten oplevert",
+            "description": "Geen pakketten en geen prijslijst. In een gratis eerste gesprek analyseren we wat je bedrijf nodig heeft. Daarna zetten we de juiste mix in van lokale SEO, een website, een telefoonreceptionist met AI of software op maat, en meten we samen met jou de resultaten.",
+            "cta": "Plan je gratis behoefteanalyse",
+            "secondaryCta": "Zo werken we",
+            "note": "15 minuten via videogesprek. Vrijblijvend."
         },
-        "stats": {
-            "pillars": {
-                "label": "Pijlers van ons werk"
+        "facts": {
+            "services": {
+                "value": "{count} diensten",
+                "label": "gecombineerd tot één oplossing voor jou"
+            },
+            "languages": {
+                "value": "{count} talen",
+                "label": "op deze website"
+            },
+            "pageSpeed": {
+                "value": "98 / 100",
+                "label": "PageSpeed op mobiel,",
+                "link": "controleer het zelf"
             },
             "markets": {
-                "label": "Markten die we bedienen"
+                "value": "Spanje en Costa Rica",
+                "label": "waar ons werk voor klanten nu al live staat"
             }
         },
         "markets": {
-            "eyebrow": "Wereldwijd bereik, lokale focus",
-            "title": "Voor bedrijven over de hele wereld",
-            "subtitle": "Gevestigd in Spanje, online actief in de markten waar onze klanten het snelst groeien."
-        },
-        "standard": {
-            "title": "Resultaat, geen losse diensten",
-            "subtitle": "Een website, een paar reviews of een profiel op Google leveren op zichzelf geen klanten op. Het geheel doet dat, als je er elke maand aan werkt met één doel voor ogen.",
-            "oldWay": {
-                "title": "Diensten inkopen",
-                "items": [
-                    "Meerdere leveranciers die nooit met elkaar afstemmen",
-                    "Opleveringen die niemand naast de omzet legt",
-                    "Een website die online staat maar die niemand vindt",
-                    "Reviews en bedrijvengidsen waar niemand naar omkijkt"
-                ]
-            },
-            "newWay": {
-                "title": "Een resultaat inkopen",
-                "items": [
-                    "Eén team dat verantwoordelijk is voor je klantenwerving",
-                    "Al het werk is erop gericht dat je als eerste verschijnt in je regio",
-                    "Content, links, autoriteit en reviews gaan hand in hand",
-                    "Elke maand een rapport in gewone taal over wat er is gedaan"
-                ]
-            }
+            "title": "Vanuit Spanje werken we online voor bedrijven in deze landen"
         },
         "problem": {
             "badge": "Het probleem",
             "title": "Je klanten <trad>zoeken</trad><br></br>en vinden je concurrent",
-            "description": "De keuze valt op het eerste scherm van Google en steeds vaker in het antwoord dat AI geeft. Een bedrijf dat daar niet staat, komt niet eens in aanmerking.",
+            "description": "De keuze valt op het eerste scherm van Google, in het antwoord van een assistent met AI of bij een telefoontje dat niemand opneemt. Elk bedrijf verliest klanten op een andere plek: daarom kijken we eerst.",
             "cards": [
                 {
                     "title": "Onvindbaar op Google",
-                    "description": "Verschijnt je bedrijf niet als iemand in de buurt naar jouw dienst zoekt, dan gaat dat telefoontje naar een concurrent."
+                    "description": "Verschijn je niet als iemand in de buurt zoekt, dan gaat dat telefoontje naar een concurrent."
                 },
                 {
-                    "title": "Weinig zichtbare reputatie",
-                    "description": "Weinig reviews, oude reviews of reviews zonder reactie ondermijnen het vertrouwen precies op het moment dat de klant beslist."
+                    "title": "Een website die niet converteert",
+                    "description": "Traag, onduidelijk of maar in één taal: zo verlies je bezoekers voordat ze contact opnemen."
+                },
+                {
+                    "title": "Telefoontjes die niemand opneemt",
+                    "description": "Buiten kantooruren of met alle lijnen bezet belt de klant gewoon het volgende bedrijf."
                 },
                 {
                     "title": "AI raadt een ander aan",
-                    "description": "Assistenten met AI noemen de bedrijven die zij als toonaangevend herkennen. Die plek moet je verdienen."
+                    "description": "Assistenten noemen de namen die ze herkennen. Die plek moet je verdienen."
                 }
             ]
+        },
+        "partner": {
+            "badge": "Waarom een partner",
+            "title": "Een partner in je groei, geen leverancier van diensten",
+            "services": {
+                "title": "Diensten inkopen",
+                "items": [
+                    "Een pakket gekozen uit een prijslijst",
+                    "Meerdere leveranciers die nooit met elkaar praten",
+                    "Werk dat niemand naast je omzet legt",
+                    "Je betaalt voor dingen die je misschien niet nodig hebt"
+                ]
+            },
+            "partner": {
+                "title": "Werken met een partner",
+                "items": [
+                    "Een oplossing die we ontwerpen na een analyse van je bedrijf",
+                    "Eén team dat verantwoordelijk is voor je resultaten",
+                    "Elk onderdeel gericht op nieuwe klanten voor jou",
+                    "Alleen wat je verder helpt; sommige onderdelen kunnen inbegrepen zijn"
+                ]
+            }
+        },
+        "how": {
+            "badge": "Zo werken we",
+            "title": "Eerst begrijpen we je bedrijf. Dan bouwen we de oplossing.",
+            "steps": [
+                {
+                    "title": "Gratis behoefteanalyse",
+                    "description": "Een eerste gesprek om je bedrijf, je klanten en wat je groei afremt te begrijpen. Kosteloos en vrijblijvend."
+                },
+                {
+                    "title": "Een oplossing op maat",
+                    "description": "We stellen de mix van diensten voor die bij je doelen past, met een duidelijke afbakening en offerte. Afhankelijk van wat je nodig hebt, kunnen sommige diensten zonder extra kosten inbegrepen zijn."
+                },
+                {
+                    "title": "Implementatie",
+                    "description": "We bouwen en lanceren het: je website, je lokale aanwezigheid, je telefoonreceptionist of je software, getest voordat het live gaat."
+                },
+                {
+                    "title": "Samen meten",
+                    "description": "We volgen wat voor je bedrijf telt, rapporteren in gewone taal en sturen het werk bij terwijl je groeit."
+                }
+            ],
+            "note": "Er is geen prijslijst: elke oplossing krijgt een offerte na de gratis analyse. Offertes zijn exclusief btw."
         },
         "solutions": {
-            "badge": "De oplossing",
-            "title": "Eén plan. Vier pijlers.",
-            "subtitle": "Eén maandelijks plan dat al het werk bundelt om zichtbaar te worden in lokale zoekopdrachten op Google en in de antwoorden van AI.",
-            "cta": "Bekijk Lokale SEO",
-            "items": [
-                {
-                    "title": "Autoriteitscontent",
-                    "description": "Content die je bedrijf neerzet als dé referentie in je vakgebied.",
-                    "points": [
-                        "Zoekwoordonderzoek",
-                        "Contentclusters",
-                        "Analyse van ontbrekende content",
-                        "Updates van bestaande content"
-                    ]
-                },
-                {
-                    "title": "Backlinks en vermeldingen",
-                    "description": "Aanwezigheid in betrouwbare bedrijvengidsen en op websites die bedrijven vermelden.",
-                    "points": [
-                        "Links uit betrouwbare bedrijvengidsen",
-                        "Vermeldingen op relevante websites",
-                        "Sterkere lokale autoriteitssignalen",
-                        "Voor Google en voor AI"
-                    ]
-                },
-                {
-                    "title": "Autoriteit in Google en AI",
-                    "description": "Je bedrijf en je website als de referentie die wordt aanbevolen.",
-                    "points": [
-                        "Geoptimaliseerd Google Business Profile",
-                        "Lokale onpage SEO voor je website",
-                        "Gestructureerde gegevens voor lokale bedrijven",
-                        "Zichtbaar in de resultaten van Google en AI"
-                    ]
-                },
-                {
-                    "title": "Reviewbeheer",
-                    "description": "Je reputatie, maand na maand gemeten en verbeterd.",
-                    "points": [
-                        "Groei van je reviews door de tijd gevolgd",
-                        "Trends in positieve en negatieve feedback",
-                        "Reacties van klanten gemonitord",
-                        "Feedbacklinks in je eigen huisstijl"
-                    ]
-                }
-            ]
+            "badge": "Oplossingen",
+            "title": "De onderdelen die we voor je combineren",
+            "subtitle": "Elk bedrijf heeft iets anders nodig. Dit zijn de bouwstenen van je oplossing; je krijgt alleen wat je bedrijf verder helpt.",
+            "cta": "Meer informatie",
+            "items": {
+                "localSeo": "Gevonden worden op Google en in antwoorden van AI als mensen in de buurt zoeken naar wat jij aanbiedt.",
+                "websiteDevelopment": "Snelle, meertalige websites die zoekmachines en AI begrijpen, gebouwd om bezoeken om te zetten in telefoontjes.",
+                "aiVoiceReceptionist": "Elk telefoontje beantwoord, dag en nacht: vragen, afspraken en berichten afgehandeld met een natuurlijke stem.",
+                "softwareDevelopment": "Je eigen app voor telefoon, tablet, web en desktop, als standaardtools tekortschieten."
+            }
         },
         "benefits": {
-            "title": "Wat er verandert in je bedrijf",
-            "titleGradient": "als je gevonden wordt",
+            "title": "Wat er verandert voor je bedrijf",
+            "titleGradient": "als mensen je kunnen vinden",
             "imageAlt": "Dashboard met de groei van een bedrijf",
             "items": [
                 {
                     "title": "Zichtbaar waar de keuze valt",
-                    "description": "Je bedrijf in de lokale zoekresultaten van Google en op de kaart, precies waar je klanten kiezen wie ze bellen."
+                    "description": "In lokale zoekresultaten, op de kaart en in antwoorden van AI, precies waar je klanten kiezen wie ze bellen."
                 },
                 {
-                    "title": "Een reputatie die voor je werkt",
-                    "description": "Reviews die gestaag groeien, en helder inzicht in wat je klanten over je zeggen."
+                    "title": "Elke aanvraag opgevolgd",
+                    "description": "Een website die bezoekers omzet in contacten, en telefoontjes die worden beantwoord, ook als jij niet kunt opnemen."
                 },
                 {
-                    "title": "Aanbevolen door Google en AI",
-                    "description": "Content en autoriteit, zodat zoekmachines en assistenten jou herkennen als dé referentie in je regio."
+                    "title": "Eén team achter alles",
+                    "description": "Eén partner die je bedrijf kent, meet wat telt en het werk samen met jou bijstuurt."
                 }
             ]
         },
-        "process": {
-            "title": "Een helder proces, maand na maand",
-            "steps": [
-                {
-                    "number": "01",
-                    "badge": "Audit",
-                    "title": "We brengen in kaart waar je staat",
-                    "description": "We bekijken je huidige aanwezigheid op Google, je website, je reviews en wie er vandaag in jouw regio wordt aanbevolen."
-                },
-                {
-                    "number": "02",
-                    "badge": "Opbouw",
-                    "title": "We werken aan de vier pijlers",
-                    "description": "Content, vermeldingen, autoriteit en reviews lopen tegelijk, volgens een plan dat je vooraf kent."
-                },
-                {
-                    "number": "03",
-                    "badge": "Bijsturen",
-                    "title": "We meten en sturen bij",
-                    "description": "Elke maand krijg je een rapport in gewone taal en passen we het werk aan op wat er is veranderd."
-                }
-            ]
+        "dossier": {
+            "title": "Download ons dossier",
+            "body": "Hoe we werken, wat we bouwen en de projecten erachter, in één pdf die je later kunt lezen of met je team kunt delen.",
+            "cta": "Download het dossier (pdf)"
         },
         "pricing": {
-            "title": "Eenvoudige, transparante prijzen"
+            "title": "Betalingsvoorwaarden"
         },
         "contact": {
-            "badge": "Contact",
-            "title": "Laten we het over je bedrijf hebben.",
-            "subtitle": "Plan een gesprek van 15 minuten."
+            "title": "We beginnen bij je bedrijf, niet bij een pakket",
+            "subtitle": "Vertel ons waar je wilt groeien. In 15 minuten analyseren we wat je nodig hebt en wat wij eraan zouden doen.",
+            "note": "Gratis. Videogesprek. Vrijblijvend."
         },
         "faq": {
             "title": "Veelgestelde vragen",
             "items": [
                 {
-                    "question": "Garanderen jullie de eerste positie op Google?",
-                    "answer": "Nee, en wees op je hoede voor wie dat wel doet: niemand heeft de rangschikking van Google in de hand. De eerste positie is het doel waar we elke maand naartoe werken, en een rapport in gewone taal laat je zien wat er is gedaan en hoe je zichtbaarheid zich ontwikkelt."
+                    "question": "Wat kost het?",
+                    "answer": "Er is geen prijslijst. Elke oplossing wordt voor je bedrijf ontworpen en je krijgt een offerte na de gratis analyse. Afhankelijk van wat je nodig hebt, kunnen sommige diensten zonder extra kosten inbegrepen zijn."
                 },
                 {
-                    "question": "Hoe lang duurt het voordat ik resultaat zie in de lokale zoekresultaten?",
-                    "answer": "De meeste klanten zien binnen 30 tot 60 dagen duidelijke beweging in de lokale kaartresultaten van Google, al kan het in concurrerende markten langer duren."
+                    "question": "Wat gebeurt er in de gratis analyse?",
+                    "answer": "Een videogesprek van 15 minuten over je bedrijf, je klanten en je doelen. Je houdt er een helder beeld aan over van wat wij zouden doen, zonder enige verplichting."
+                },
+                {
+                    "question": "Garanderen jullie de eerste positie op Google?",
+                    "answer": "Nee, en eerlijk gezegd kan niemand dat: Google bepaalt zelf de rangschikking. We werken ernaartoe en vertellen je wat realistisch is in jouw markt."
                 },
                 {
                     "question": "Waarom betaal ik een deel vooraf?",
-                    "answer": "Bij ondertekening betaal je {upfront}% vooraf. Daarmee dekken we de tools en diensten die we vanaf de eerste dag inzetten voor het werk."
+                    "answer": "Bij de start betaal je {upfront}% van de afgesproken offerte. Daarmee dekken we de tools en diensten waar het werk op draait."
                 },
                 {
                     "question": "Heb ik al een website of een bedrijfsprofiel op Google nodig?",
-                    "answer": "Nee. Heb je nog geen Google Business Profile, dan maken we het aan en verifiëren we het op jouw naam. Een website kun je als aanvullende dienst toevoegen."
+                    "answer": "Nee. Heb je een van beide nodig, dan wordt het onderdeel van je oplossing."
                 }
             ]
         }
@@ -713,8 +700,8 @@
                     "href": "/news"
                 },
                 {
-                    "label": "Prijzen",
-                    "href": "#process"
+                    "label": "Zo werken we",
+                    "href": "#how"
                 },
                 {
                     "label": "Contact",

@@ -3,7 +3,7 @@
     "home": "Inicio",
     "benefits": "Beneficios",
     "solutions": "Solucións",
-    "price": "Prezo",
+    "price": "Como traballamos",
     "portfolio": "Portfolio",
     "news": "Novas",
     "contact": "Contacto",
@@ -30,200 +30,187 @@
   },
   "home": {
     "meta": {
-      "title": "Lorenzoz Agency | SEO local para negocios locais",
-      "description": "Máis clientes locais desde Google e a IA. Un único plan mensual de SEO local: contido de autoridade, citacións, autoridade en Google e na IA, e xestión de recensións.",
+      "title": "Lorenzoz Agency | Socio de crecemento para negocios locais",
+      "description": "Analizamos o que necesita o teu negocio nunha primeira chamada gratuíta e despois creamos a combinación axeitada de SEO local, web, recepcionista de voz con IA ou software á medida.",
       "ogImageAlt": "Lorenzoz Agency: excelencia en IA e web",
       "keywords": [
         "SEO local",
-        "Axencia de SEO local",
+        "Socio de crecemento para negocios locais",
         "Google Business Profile",
         "Busca local",
-        "Xestión de recensións",
+        "Solucións dixitais á medida",
         "Visibilidade nas buscas con IA",
         "Desenvolvemento web",
         "Recepcionista de voz con IA",
         "Desenvolvemento de software"
       ],
-      "organizationDescription": "SEO local para negocios locais: un plan mensual que atrae clientes locais desde Google e a IA, con desenvolvemento web, recepcionista de voz con IA e software á medida como servizos opcionais."
+      "organizationDescription": "Un socio de crecemento para negocios locais: analizamos o que necesita cada negocio e despois implantamos unha solución personalizada de SEO local, webs, recepcionistas de voz con IA e software á medida."
     },
     "hero": {
-      "badge": "SEO local para negocios locais",
-      "title": "Máis clientes locais",
-      "titleGradient": "desde Google e a IA",
-      "description": "Non vendemos servizos soltos. Traballamos por un único resultado: que quen busca o que ofrece o teu negocio te atope a ti primeiro.",
-      "cta": "Reservar unha chamada",
-      "secondaryCta": "Ver como traballamos"
+      "badge": "O teu socio de crecemento",
+      "title": "Estudamos o teu negocio e despois creamos o que",
+      "titleGradient": "che trae clientes",
+      "description": "Sen paquetes nin lista de prezos. Nunha primeira chamada gratuíta analizamos o que necesita o teu negocio. Despois implantamos a combinación axeitada de SEO local, web, recepcionista de voz con IA ou software á medida, e medimos os resultados contigo.",
+      "cta": "Reserva a túa análise de necesidades gratuíta",
+      "secondaryCta": "Como traballamos",
+      "note": "15 minutos por videochamada. Sen compromiso."
     },
-    "stats": {
-      "pillars": {
-        "label": "Piares de traballo"
+    "facts": {
+      "services": {
+        "value": "{count} servizos",
+        "label": "combinados nunha única solución para ti"
+      },
+      "languages": {
+        "value": "{count} idiomas",
+        "label": "neste sitio web"
+      },
+      "pageSpeed": {
+        "value": "98 / 100",
+        "label": "en PageSpeed para móbil,",
+        "link": "compróbao"
       },
       "markets": {
-        "label": "Mercados atendidos"
+        "value": "España e Costa Rica",
+        "label": "onde hoxe funcionan os proxectos dos nosos clientes"
       }
     },
     "markets": {
-      "eyebrow": "Alcance global, foco local",
-      "title": "Traballamos con negocios de todo o mundo",
-      "subtitle": "Con sede en Galicia, traballamos en liña nos mercados onde os nosos clientes medran máis rápido."
-    },
-    "standard": {
-      "title": "Resultados, non servizos soltos",
-      "subtitle": "Unha web, unhas cantas recensións ou un perfil de Google non traen clientes por si sós. Tráeos o conxunto, traballado cada mes cun único obxectivo.",
-      "oldWay": {
-        "title": "Comprar servizos",
-        "items": [
-          "Varios provedores que non se coordinan entre si",
-          "Entregables que ninguén mide fronte ás vendas",
-          "Unha web publicada que ninguén atopa",
-          "Recensións e directorios desatendidos"
-        ]
-      },
-      "newWay": {
-        "title": "Comprar un resultado",
-        "items": [
-          "Un único equipo responsable da túa captación de clientes",
-          "Todo o traballo apunta a aparecer primeiro na túa zona",
-          "Contido, ligazóns, autoridade e recensións avanzan xuntos",
-          "Un informe mensual, sen tecnicismos, do que se fixo"
-        ]
-      }
+      "title": "Con sede en España, traballamos en liña con negocios destes países"
     },
     "problem": {
       "badge": "O problema",
-      "title": "Os teus clientes <trad>búscante</trad><br></br>e atopan a outro",
-      "description": "A decisión tómase na primeira pantalla de Google e, cada vez máis, na resposta dun asistente de IA. Quen non está aí non entra na comparación.",
+      "title": "Os teus clientes <trad>búscante</trad>,<br></br>pero atopan a outro",
+      "description": "A decisión tómase na primeira pantalla de Google, na resposta dun asistente de IA ou nunha chamada que ninguén atende. Cada negocio perde clientes nun sitio distinto: por iso empezamos por mirar.",
       "cards": [
         {
           "title": "Invisible en Google",
-          "description": "Se o teu negocio non aparece cando alguén busca o teu servizo preto de onde está, esa chamada lévaa a competencia."
+          "description": "Se non apareces cando alguén busca preto, esa chamada lévaa a competencia."
         },
         {
-          "title": "Pouca reputación visible",
-          "description": "Poucas recensións, antigas ou sen resposta, restan confianza xusto antes de que o cliente decida."
+          "title": "Unha web que non converte",
+          "description": "Lenta, pouco clara ou nun só idioma, perde as visitas antes de que se poñan en contacto."
+        },
+        {
+          "title": "Chamadas que ninguén atende",
+          "description": "Fóra de horario ou coas liñas ocupadas, o cliente chama sen máis ao seguinte negocio."
         },
         {
           "title": "A IA recomenda a outros",
-          "description": "Os asistentes de IA responden cos negocios que recoñecen como referencia. Ese lugar hai que gañalo."
+          "description": "Os asistentes responden cos nomes que recoñecen. Ese lugar hai que gañalo."
         }
       ]
+    },
+    "partner": {
+      "badge": "Por que un socio",
+      "title": "Un socio no teu crecemento, non un provedor de servizos",
+      "services": {
+        "title": "Comprar servizos",
+        "items": [
+          "Un paquete escollido dunha lista de prezos",
+          "Varios provedores que nunca falan entre si",
+          "Traballo que ninguén mide fronte ás túas vendas",
+          "Pagas por cousas que quizais non necesitas"
+        ]
+      },
+      "partner": {
+        "title": "Traballar cun socio",
+        "items": [
+          "Unha solución deseñada despois de analizar o teu negocio",
+          "Un único equipo responsable dos teus resultados",
+          "Cada peza pensada para gañarche clientes",
+          "Só o que te fai avanzar; algunhas pezas poden vir incluídas"
+        ]
+      }
+    },
+    "how": {
+      "badge": "Como traballamos",
+      "title": "Primeiro entendemos o teu negocio. Despois creamos a solución.",
+      "steps": [
+        {
+          "title": "Análise de necesidades gratuíta",
+          "description": "Unha primeira chamada para entender o teu negocio, os teus clientes e o que está a frear o teu crecemento. Sen custo e sen compromiso."
+        },
+        {
+          "title": "Unha solución deseñada para ti",
+          "description": "Propoñémosche a combinación de servizos que encaixa cos teus obxectivos, cun alcance e un orzamento claros. Algúns servizos poden vir incluídos sen custo adicional, segundo o que necesites."
+        },
+        {
+          "title": "Implantación",
+          "description": "Construímolo e poñémolo en marcha: a túa web, a túa presenza local, o teu recepcionista de voz ou o teu software, todo probado antes de publicalo."
+        },
+        {
+          "title": "Medimos xuntos",
+          "description": "Seguimos o que importa ao teu negocio, informámoste sen tecnicismos e axustamos o traballo a medida que medras."
+        }
+      ],
+      "note": "Non hai lista de prezos: cada solución preséntase con orzamento despois da análise gratuíta. Os orzamentos non inclúen o IVE."
     },
     "solutions": {
-      "badge": "A solución",
-      "title": "Un plan. Catro piares.",
-      "subtitle": "Un único plan mensual que reúne o traballo necesario para gañar visibilidade nas buscas locais de Google e nas respostas dos motores de IA.",
-      "cta": "Ver SEO local",
-      "items": [
-        {
-          "title": "Contido de autoridade",
-          "description": "O contido que fai do teu negocio unha referencia no seu sector.",
-          "points": [
-            "Investigación de palabras clave",
-            "Clústeres de contido",
-            "Análise das lagoas de contido",
-            "Actualización do contido existente"
-          ]
-        },
-        {
-          "title": "Backlinks e citacións",
-          "description": "Presenza en directorios e webs de citacións de confianza.",
-          "points": [
-            "Ligazóns desde directorios de confianza",
-            "Citacións en webs relevantes",
-            "Sinais de autoridade local máis fortes",
-            "Para Google e para os motores de IA"
-          ]
-        },
-        {
-          "title": "Autoridade en Google e na IA",
-          "description": "O teu negocio e a túa web como a referencia que se recomenda.",
-          "points": [
-            "Google Business Profile optimizado",
-            "SEO local nas páxinas da túa web",
-            "Datos estruturados de negocio local",
-            "Presenza nos resultados de Google e da IA"
-          ]
-        },
-        {
-          "title": "Xestión de recensións",
-          "description": "A túa reputación, medida e traballada mes a mes.",
-          "points": [
-            "Seguimento do crecemento das recensións",
-            "Tendencias de opinións positivas e negativas",
-            "Control das respostas dos clientes",
-            "Ligazóns de valoración coa túa marca"
-          ]
-        }
-      ]
+      "badge": "Solucións",
+      "title": "As pezas que combinamos para ti",
+      "subtitle": "Cada negocio necesita algo distinto. Estes son os alicerces da túa solución; só recibes o que fai avanzar o teu negocio.",
+      "cta": "Saber máis",
+      "items": {
+        "localSeo": "Que te atopen en Google e nas respostas da IA cando alguén preto de ti busca o que ofreces.",
+        "websiteDevelopment": "Webs rápidas e multilingües que os buscadores e a IA entenden, feitas para converter visitas en chamadas.",
+        "aiVoiceReceptionist": "Todas as chamadas atendidas, día e noite: preguntas, reservas e mensaxes resoltas cunha voz natural.",
+        "softwareDevelopment": "A túa propia aplicación para móbiles, tabletas, a web e o escritorio cando as ferramentas xa feitas non chegan."
+      }
     },
     "benefits": {
-      "title": "O que cambia no teu negocio",
-      "titleGradient": "cando te atopan",
+      "title": "O que cambia para o teu negocio",
+      "titleGradient": "cando te poden atopar",
       "imageAlt": "Panel de crecemento do negocio",
       "items": [
         {
-          "title": "Visibilidade onde se decide",
-          "description": "O teu negocio presente nas buscas locais de Google e no mapa, onde os teus clientes escollen a quen chamar."
+          "title": "Visible onde se toma a decisión",
+          "description": "Nas buscas locais, no mapa e nas respostas da IA, onde os teus clientes escollen a quen chamar."
         },
         {
-          "title": "Unha reputación que traballa por ti",
-          "description": "Recensións que medran de forma constante e unha visión clara do que din os teus clientes."
+          "title": "Cada consulta atendida",
+          "description": "Unha web que converte visitas en contactos, e chamadas atendidas mesmo cando ti non podes coller o teléfono."
         },
         {
-          "title": "Recomendado por Google e pola IA",
-          "description": "Contido e autoridade para que buscadores e asistentes te recoñezan como a referencia da túa zona."
+          "title": "Un único equipo detrás",
+          "description": "Un socio que coñece o teu negocio, mide o que importa e axusta o traballo contigo."
         }
       ]
     },
-    "process": {
-      "title": "Un proceso claro, mes a mes",
-      "steps": [
-        {
-          "number": "01",
-          "badge": "Auditoría",
-          "title": "Coñecemos o teu punto de partida",
-          "description": "Revisamos a túa presenza actual en Google, a túa web, as túas recensións e a quen se recomenda hoxe na túa zona."
-        },
-        {
-          "number": "02",
-          "badge": "Construción",
-          "title": "Traballamos os catro piares",
-          "description": "Contido, citacións, autoridade e recensións avanzan en paralelo, cun plan que coñeces de antemán."
-        },
-        {
-          "number": "03",
-          "badge": "Iteración",
-          "title": "Medimos e axustamos",
-          "description": "Cada mes recibes un informe sen tecnicismos e axustamos o traballo segundo o que cambiou."
-        }
-      ]
+    "dossier": {
+      "title": "Descarga o noso dossier",
+      "body": "Como traballamos, o que creamos e os proxectos que hai detrás, nun PDF para ler máis tarde ou compartir co teu equipo.",
+      "cta": "Descargar o dossier (PDF)"
     },
     "pricing": {
-      "title": "Prezos claros e transparentes"
+      "title": "Condicións de pagamento"
     },
     "contact": {
-      "badge": "Contacto",
-      "title": "Falemos do teu negocio.",
-      "subtitle": "Reserva unha chamada de 15 minutos."
+      "title": "Empecemos polo teu negocio, non por un paquete",
+      "subtitle": "Cóntanos onde queres medrar. En 15 minutos analizamos o que necesitas e o que fariamos para conseguilo.",
+      "note": "Gratis. Por videochamada. Sen compromiso."
     },
     "faq": {
       "title": "Preguntas frecuentes",
       "items": [
         {
-          "question": "Garantides a primeira posición en Google?",
-          "answer": "Non, e desconfía de quen o garanta: ninguén controla o algoritmo de Google. A primeira posición é o obxectivo polo que traballamos cada mes, e un informe sen tecnicismos móstrache o que se fixo e como evoluciona a túa visibilidade."
+          "question": "Canto custa?",
+          "answer": "Non hai lista de prezos. Cada solución deséñase para o teu negocio e preséntase con orzamento despois da análise gratuíta. Algúns servizos poden vir incluídos sen custo adicional, segundo o que necesites."
         },
         {
-          "question": "Canto tempo pasa ata que se ven resultados no posicionamento local?",
-          "answer": "A maioría dos clientes notan un movemento significativo no mapa local entre os 30 e os 60 días, aínda que nos mercados máis competitivos pode levar máis tempo."
+          "question": "Que pasa na análise gratuíta?",
+          "answer": "Unha videochamada de 15 minutos sobre o teu negocio, os teus clientes e os teus obxectivos. Saes cunha idea clara do que fariamos, sen ningún compromiso."
+        },
+        {
+          "question": "Garantides a primeira posición en Google?",
+          "answer": "Non, e ninguén pode facelo con honestidade: é Google quen decide a súa clasificación. Traballamos para conseguila e dicímosche que é realista no teu mercado."
         },
         {
           "question": "Por que se paga unha parte por adiantado?",
-          "answer": "Ao contratar, abónase por adiantado o {upfront}%. Cobre as ferramentas e os servizos que contratamos para facer o traballo desde o primeiro día."
+          "answer": "Ao comezo abónase o {upfront}% do orzamento acordado para cubrir as ferramentas e os servizos dos que depende o traballo."
         },
         {
           "question": "Necesito ter xa unha web ou un perfil de Google?",
-          "answer": "Non. Se non tes Google Business Profile, creámolo e verificámolo ao teu nome, e a web pódese engadir como servizo opcional."
+          "answer": "Non. Se necesitas algunha das dúas cousas, pasa a formar parte da túa solución."
         }
       ]
     }
@@ -247,8 +234,8 @@
           "href": "/news"
         },
         {
-          "label": "Prezos",
-          "href": "#process"
+          "label": "Como traballamos",
+          "href": "#how"
         },
         {
           "label": "Contacto",

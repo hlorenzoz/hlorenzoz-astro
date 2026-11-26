@@ -1,0 +1,51 @@
+---
+/**
+ * Verifiable facts under the home hero, then the markets the agency serves.
+ * Strings in: the page resolves the copy and the counts.
+ */
+export interface Fact {
+    value: string;
+    label: string;
+    /** A public page where the reader can check the fact. */
+    link?: { href: string; text: string };
+}
+
+export interface Props {
+    facts: Fact[];
+    marketsTitle: string;
+    markets: readonly string[];
+}
+
+const { facts, marketsTitle, markets } = Astro.props;
+---
+
+<section id="facts" class="relative z-20 py-16 px-6 bg-white border-b border-gray-100">
+    <div class="max-w-6xl mx-auto flex flex-col gap-10">
+        <dl class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+            {
+                facts.map((fact) => (
+                    <div class="flex flex-col gap-1">
+                        <dt class="text-3xl font-black text-black tracking-tight">{fact.value}</dt>
+                        <dd class="text-sm text-gray-700 font-medium">
+                            {fact.label}
+                            {fact.link && (
+                                <>
+                                    {' '}
+                                    <a href={fact.link.href} target="_blank" rel="noopener noreferrer" class="text-blue-800 font-bold underline">
+                                        {fact.link.text}
+                                    </a>
+                                </>
+                            )}
+                        </dd>
+                    </div>
+                ))
+            }
+        </dl>
+        <div class="flex flex-wrap items-center gap-3 border-t border-gray-100 pt-8">
+            <p class="text-xs font-bold uppercase tracking-[0.15em] text-gray-700 mr-2">{marketsTitle}</p>
+            <ul class="flex flex-wrap gap-3">
+                {markets.map((name) => <li data-market class="px-4 py-2 rounded-full bg-gray-50 border border-gray-200 text-sm font-bold text-black">{name}</li>)}
+            </ul>
+        </div>
+    </div>
+</section>

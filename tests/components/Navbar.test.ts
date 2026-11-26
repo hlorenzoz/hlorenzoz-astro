@@ -29,9 +29,9 @@ describe('Navbar (pre-existing behavior, must not regress)', () => {
         for (const link of links) expect(link.closest('a')).toHaveAttribute('href', '/en/portfolio/');
     });
 
-    it('resolves price/contact to locale-prefixed hashes on a non-home page', async () => {
+    it('resolves how we work/contact to locale-prefixed hashes on a non-home page', async () => {
         const screen = await renderAt('/en/portfolio/');
-        for (const link of screen.getAllByText('Price')) expect(link.closest('a')).toHaveAttribute('href', '/en/#process');
+        for (const link of screen.getAllByText('How we work')) expect(link.closest('a')).toHaveAttribute('href', '/en/#how');
         for (const link of screen.getAllByText('Contact')) expect(link.closest('a')).toHaveAttribute('href', '/en/#contact');
     });
 
@@ -42,9 +42,9 @@ describe('Navbar (pre-existing behavior, must not regress)', () => {
 });
 
 describe('Navbar (home page, pre-existing behavior, must not regress)', () => {
-    it('resolves price/contact to bare hashes on the home page', async () => {
+    it('resolves how we work/contact to bare hashes on the home page', async () => {
         const screen = await renderAt('/en/');
-        for (const link of screen.getAllByText('Price')) expect(link.closest('a')).toHaveAttribute('href', '#process');
+        for (const link of screen.getAllByText('How we work')) expect(link.closest('a')).toHaveAttribute('href', '#how');
         for (const link of screen.getAllByText('Book Consultation')) expect(link.closest('a')).toHaveAttribute('href', '#contact');
     });
 });

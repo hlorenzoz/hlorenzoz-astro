@@ -19,8 +19,8 @@ test.describe('Homepage E2E Tests', () => {
     await expect(page).toHaveTitle(/Lorenzoz Agency/);
 
     // Check hero section (allow more time for dev server compilation)
-    await expect(page.getByRole('heading', { name: /More local customers/i })).toBeVisible({ timeout: 15000 });
-    await expect(page.getByText(/from Google and AI/i).first()).toBeVisible();
+    await expect(page.getByRole('heading', { name: /We study your business/i })).toBeVisible({ timeout: 15000 });
+    await expect(page.getByRole('link', { name: 'Book your free needs analysis' })).toBeVisible();
   });
 
   test('should display navigation', async ({ page }) => {
@@ -47,28 +47,37 @@ test.describe('Homepage E2E Tests', () => {
     await expect(contactLink.first()).toBeAttached({ timeout: 15000 });
   });
 
-  test('should display features', async ({ page }) => {
+  test('should display the four solutions, each linking to its service page', async ({ page }) => {
     await page.goto('/', { waitUntil: 'domcontentloaded' });
 
-    // Check feature cards
     const solutionsSection = page.locator('section#solutions');
     await solutionsSection.scrollIntoViewIfNeeded();
-    // The four pillars of the one core offer.
-    await expect(solutionsSection.getByText(/Authority content/i).first()).toBeVisible({ timeout: 10000 });
-    await expect(solutionsSection.getByText(/Backlinks and citations/i).first()).toBeVisible();
-    await expect(solutionsSection.getByText(/Authority on Google and AI/i).first()).toBeVisible();
-    await expect(solutionsSection.getByText(/Review management/i).first()).toBeVisible();
+    for (const [name, slug] of [
+      ['Local SEO', 'local-seo'],
+      ['Website Development', 'website-development'],
+      ['AI Voice Receptionist', 'ai-voice-receptionist'],
+      ['Software Development', 'software-development'],
+    ]) {
+      await expect(solutionsSection.getByRole('link', { name: new RegExp(name) })).toHaveAttribute('href', `/en/services/${slug}/`);
+    }
   });
 
-  test('should display stats', async ({ page }) => {
+  test('should display verifiable facts and no price', async ({ page }) => {
     await page.goto('/', { waitUntil: 'domcontentloaded' });
 
-    // Check stats section
-    const stats = page.locator('section#stats');
-    await stats.scrollIntoViewIfNeeded();
-    // The two counts. The home page publishes no price.
-    await expect(stats.getByText(/Pillars of work/i)).toBeVisible({ timeout: 10000 });
-    await expect(stats.getByText(/€\s?\d|\d\s?€/)).toHaveCount(0);
+    const facts = page.locator('section#facts');
+    await facts.scrollIntoViewIfNeeded();
+    await expect(facts.getByText('98 / 100')).toBeVisible({ timeout: 10000 });
+    await expect(facts.getByRole('link', { name: 'check it' })).toHaveAttribute('href', /pagespeed\.web\.dev/);
+    await expect(page.locator('body')).not.toContainText(/€\s?\d|\d\s?€/);
+  });
+
+  test('should open the How we work section from the hero', async ({ page }) => {
+    await page.goto('/', { waitUntil: 'domcontentloaded' });
+
+    await page.locator('#home').getByRole('link', { name: 'How we work' }).click();
+    await expect(page).toHaveURL(/#how$/);
+    await expect(page.locator('section#how')).toBeInViewport();
   });
 
   test('should be responsive', async ({ page }) => {
@@ -77,7 +86,7 @@ test.describe('Homepage E2E Tests', () => {
     await page.goto('/', { waitUntil: 'domcontentloaded' });
 
     // Check main heading is visible even in mobile
-    await expect(page.getByRole('heading', { name: /More local customers/i })).toBeVisible({ timeout: 10000 });
+    await expect(page.getByRole('heading', { name: /We study your business/i })).toBeVisible({ timeout: 10000 });
   });
 
   test('should have accessible multi-language versions', async ({ page }) => {
@@ -90,7 +99,8 @@ test.describe('Homepage E2E Tests', () => {
     await page.goto('/es/', { waitUntil: 'domcontentloaded' });
     await expect(page.locator('html')).toHaveAttribute('lang', 'es', { timeout: 10000 });
 
-    // Check for Spanish content
-    await expect(page.locator('body')).toContainText(/Más clientes locales/i, { timeout: 10000 });
+    // The Spanish hero is translated, not the English copy.
+    await expect(page.locator('h1')).toBeVisible({ timeout: 10000 });
+    await expect(page.locator('h1')).not.toContainText(/We study your business/i);
   });
 });
