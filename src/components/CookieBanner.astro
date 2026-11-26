@@ -53,16 +53,18 @@ const t = getTranslations(locale, 'cookieBanner');
 
     const banner = document.querySelector<HTMLElement>('[data-cookie-banner]');
 
-    // Skip for bots to avoid interfering with Lighthouse/LCP
-    // We include a broader set of bot/crawler strings and check for webdriver
-    const isBot =
-        /Lighthouse|Googlebot|HeadlessChrome|PageSpeed|Chrome-Lighthouse|Pingdom|GTmetrix|bot|spider|crawl/i.test(navigator.userAgent) ||
-        navigator.webdriver;
+    // Shown on the visitor's first interaction, not on a timer and not by user
+    // agent: a page load alone (a crawler, Lighthouse, PageSpeed Insights) never
+    // shows it. A timer made it paint seconds after the content, which pushed
+    // Speed Index back whenever the user agent check missed a lab browser.
+    const INTERACTIONS = ['pointerdown', 'keydown', 'touchstart', 'wheel', 'scroll'] as const;
 
-    // Check if the user has already dismissed the banner
-    if (banner && !isBot && !localStorage.getItem('zaraz-consent')) {
-        // Delay showing the banner significantly to ensure LCP is recorded
-        setTimeout(() => (banner.hidden = false), 8000);
+    if (banner && !localStorage.getItem('zaraz-consent')) {
+        const show = () => {
+            banner.hidden = false;
+            for (const type of INTERACTIONS) window.removeEventListener(type, show);
+        };
+        for (const type of INTERACTIONS) window.addEventListener(type, show, { once: true, passive: true });
 
         const choose = (consent: boolean) => {
             // Send the choice to Cloudflare Zaraz

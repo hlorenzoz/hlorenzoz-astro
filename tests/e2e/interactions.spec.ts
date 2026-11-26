@@ -132,52 +132,46 @@ test.describe('language switcher', () => {
 });
 
 test.describe('cookie banner', () => {
-    // The banner skips bots, and Playwright looks like one (HeadlessChrome UA,
-    // navigator.webdriver). Present as an ordinary browser for this test.
-    test.use({
-        userAgent:
-            'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36',
-    });
+    // It waits for the visitor's first interaction: a page load alone (a
+    // crawler, Lighthouse, PageSpeed Insights) never shows it, so it cannot
+    // paint late and push Speed Index back. No user agent sniffing.
+    test.beforeEach(async ({ page }) => page.clock.install());
 
-    test.beforeEach(async ({ page }) => {
-        await page.addInitScript(() => Object.defineProperty(navigator, 'webdriver', { get: () => false }));
-        await page.clock.install();
-    });
-
-    test('appears only after its delay and stores the choice in zaraz-consent', async ({ page }) => {
+    test('stays hidden until the first interaction, then stores the choice in zaraz-consent', async ({ page }) => {
         await page.goto('/en/', { waitUntil: 'load' });
         const banner = page.locator('[data-cookie-banner]');
 
-        // Delayed so it never competes with the LCP element.
-        await page.clock.runFor(7000);
+        await page.clock.runFor(10000);
         await expect(banner).toBeHidden();
-        await page.clock.runFor(1500);
+
+        await page.mouse.wheel(0, 400);
         await expect(banner).toBeVisible();
 
         await page.getByTestId('cookie-accept').click();
         await expect(banner).toBeHidden();
         expect(await page.evaluate(() => localStorage.getItem('zaraz-consent'))).toBe('true');
 
-        // A stored choice keeps it away on the next visit.
+        // A stored choice keeps it away on the next visit, even after interacting.
         await page.reload({ waitUntil: 'load' });
-        await page.clock.runFor(9000);
+        await page.keyboard.press('Tab');
+        await page.clock.runFor(1000);
         await expect(banner).toBeHidden();
     });
 
     test('stores a rejection as false', async ({ page }) => {
         await page.goto('/en/', { waitUntil: 'load' });
-        await page.clock.runFor(8500);
+        await page.keyboard.press('Tab');
         await page.getByTestId('cookie-reject').click();
         await expect(page.locator('[data-cookie-banner]')).toBeHidden();
         expect(await page.evaluate(() => localStorage.getItem('zaraz-consent'))).toBe('false');
     });
 
-    test('stays hidden for a bot user agent', async ({ browser }) => {
-        const context = await browser.newContext({ userAgent: 'Mozilla/5.0 (compatible; Googlebot/2.1)' });
+    test('never appears for a load without interaction, whatever the user agent', async ({ browser }) => {
+        const context = await browser.newContext({ userAgent: 'Mozilla/5.0 (Linux; Android 11; moto g power (2022)) Chrome/157.0 Mobile Safari/537.36' });
         const page = await context.newPage();
         await page.clock.install();
         await page.goto('/en/', { waitUntil: 'load' });
-        await page.clock.runFor(9000);
+        await page.clock.runFor(15000);
         await expect(page.locator('[data-cookie-banner]')).toBeHidden();
         await context.close();
     });

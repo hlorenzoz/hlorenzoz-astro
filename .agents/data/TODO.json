@@ -1197,6 +1197,26 @@
         "Cambia la regla de AGENTS.md de no publicar ningun precio, su test, llms.txt y el dossier."
       ],
       "hecha": "2026-11-26"
+    },
+    {
+      "id": "#T0056",
+      "estado": "hecha",
+      "prioridad": "media",
+      "tipo": "rendimiento",
+      "titulo": "Speed Index de la home: banner de cookies al primer gesto e CSS en linea",
+      "anotada": "2026-11-26",
+      "hecha": "2026-11-26",
+      "origen": "usuario",
+      "depende": [],
+      "notas": [
+        "PageSpeed movil: Performance 94, Speed Index 5.6 s y CSS que bloquea el render. Causa: el banner de cookies salia a los 8 s porque Lighthouse emula un user agent Moto G que el filtro de bots no detecta.",
+        "Lighthouse local (mediana de 3): produccion Speed Index 3.46 s y Performance 97; con los cambios Speed Index 0.90 s, FCP 0.90 s, Performance 100. El HTML de /en/ crece de 171 a 270 KB sin comprimir por el CSS en linea.",
+        "just validate 2165 en verde, Playwright 88 en verde."
+      ],
+      "descripcion": [
+        "src/components/CookieBanner.astro: aparece con el primer gesto (pointerdown, keydown, touchstart, wheel, scroll), sin temporizador ni user agent.",
+        "astro.config.mjs: build.inlineStylesheets always."
+      ]
     }
   ]
 }

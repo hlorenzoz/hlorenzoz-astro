@@ -144,13 +144,15 @@ Terms, and each one is a billing dispute if it is lost in a summary:
 
 One price lives in code: `ENTRY_PRICE` in `lib/pricing.ts`, next to the service keys and
 their slug helpers. Copy never holds the amount: it uses the `{entryPrice}` token, filled
-and formatted per locale by `copyTokens()` (`lib/copy-tokens.ts`). The home marks it up as
-one `Offer` (`entryOffer` in `lib/schema`), and only there, because the same price is
-visible in its fees section and FAQ: Google ignores, and may act against, markup for
-content readers cannot see. `tests/seo/no-published-prices.test.ts` guards the rule: it
-fails on any currency amount or price placeholder in the `services.*`, `home.*` and
-`offer.*` copy of every locale, on any `Offer`, `priceRange` or `priceSpecification` in
-the JSON-LD of the service pages, and on a home Offer other than the visible entry price.
+and formatted per locale by `copyTokens()` (`lib/copy-tokens.ts`). The home and the four
+service landings mark it up as one `Offer` each (`entryOffer` in `lib/schema`), and only
+where the same price is visible: the home's fees section and FAQ, each service's price FAQ
+(the package panel on Website Development). The services hub shows it in its hero but
+emits no Offer. Google ignores, and may act against, markup for content readers cannot
+see. `tests/seo/no-published-prices.test.ts` guards the rule: it fails on any currency
+amount or price placeholder in the `services.*`, `home.*` and `offer.*` copy of every
+locale, on a `priceRange` or `hasOfferCatalog`, and on any Offer other than the entry price
+or one whose price the page does not show.
 
 ### What this site currently implements
 
@@ -158,8 +160,9 @@ The home page and four service pages (**Local SEO**, **Website Development**, **
 Receptionist**, **Software Development**), each built as a landing page around the partner
 model: the free needs analysis as the call to action, the service as one building block of
 a tailored solution, and the dossier as a download (`public/dossier/`, built by
-`just dossier`). There is no pricing section and no price on any page; the home keeps the
-news, LinkedIn and other relevant sections below the landing.
+`just dossier`, one PDF per site locale). There is no price list: the only figure is the
+entry price, stated where the fees or the price question come up; the home keeps the news,
+LinkedIn and other relevant sections below the landing.
 
 `/services/reputation-review-management/` and `/services/digital-business-card/` no
 longer exist; both redirect permanently (`public/_redirects`). `/card/hector` is Hector's

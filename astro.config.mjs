@@ -10,7 +10,9 @@ export default defineConfig({
   site: 'https://hlorenzoz.com',
   output: 'static',
   trailingSlash: 'always',
-  build: { format: 'directory' },
+  // Inline the stylesheet in every page: one shared CSS file was the only
+  // render-blocking request PageSpeed reported. Costs about 16 KiB per HTML.
+  build: { format: 'directory', inlineStylesheets: 'always' },
   // React only renders the ElevenLabs island and the build-time QR code.
   // trailingSlashRedirect: `astro dev` redirects /en to /en/ like the Worker does.
   integrations: [react(), trailingSlashRedirect()],
