@@ -19,11 +19,11 @@ Objective: reposition the agency as a partner that analyses each client's needs 
 | :--- | :--- | :--- | :--- | :--- | :--- |
 | T1 | S3, S4, S6 | English copy and designs: Home landing + 4 service landings, for approval | inline (canvas) | done | approved 2026-11-26; canvas https://claude.ai/artifact/7PNuXPACkPbz7ahwusFPTq; sources in scratchpad `wd-design/canvas/project/*.dc.html` |
 | T2 | S5, S7 | Remove the price machinery (lib/pricing, numbers, offer notes, payment links, pricing cards, JSON-LD offers and priceRange) | delegated writer (context backstop: parent session past ~150k) | done | guard `tests/seo/no-published-prices.test.ts` RED 14/14 at base, GREEN 14/14; validate green; dist tests 555 passed on a fresh build |
-| T3 | S1, S4 | Landing section components and the four service pages | inline | pending | |
-| T4 | S6 | English copy into messages/en.json | inline | pending | |
-| T5 | S2 | Translate into es, en-gb, gl, pt, it, fr, de, nl | 8 agents, one per locale | pending | |
-| T6 | S5, S6 | AGENTS.md, README, glossary, llms.txt, dossier, agent and command docs | inline | pending | |
-| T7 | all | Validate, build, Lighthouse, e2e; push after go-ahead | inline | pending | |
+| T3 | S1, S4 | Landing section components and the four service pages | delegated writer (context backstop) | done | b06068a; calendar e2e at 1440/390px; Lighthouse 100/100/100/100 |
+| T4 | S6 | Home landing + English copy | delegated writer in a worktree (parallel) | done | 4ac36ba, merged in 8e93adc with the dossier block |
+| T5 | S2 | Translate into es, en-gb, gl, pt, it, fr, de, nl | 16 agents (8 home, 8 services) | done | shipped in the same commits as the pages |
+| T6 | S5, S6 | AGENTS.md, README, glossary, llms.txt, dossier, agent and command docs | delegated writer in a worktree (parallel) | done | 5fac7a2; PDFs en/es ~150 KB in public/dossier/ |
+| T7 | all | Validate, build, Lighthouse, e2e; push after go-ahead | inline | done except push | validate 2030 passed; build 272 pages, 0 MISSING_MESSAGE; e2e chromium 41 passed; Lighthouse 0 assertion failures |
 
 ## Log
 
@@ -34,3 +34,6 @@ Objective: reposition the agency as a partner that analyses each client's needs 
 - **L5** (2026-11-26, evidence): claims left out of the designs because nothing in the repo backs them: "Up to 90% first call resolution" (AI Voice Receptionist) and "from a published starting price" (Software Development). The AI Voice design uses the site's own live ElevenLabs assistant as its proof; its sample dialogue is labelled illustrative.
 - **L6** (2026-11-26, user, verbatim): "Approve them" (the five designs). Implementation starts; writers are delegated for the context backstop, one unit at a time (units share `messages/*.json`, `lib/routes.ts` and the home page, so they are sequential).
 - **L7** (2026-11-26, evidence): T2 left stale, non price copy for T4: "Local SEO is the core offer" (hub subtitle, llms.txt), `home.pricing.title` "Simple, transparent pricing" (now only the terms section heading), the terms item "Prices exclude VAT", the nav "Price" and footer "Pricing" labels (both now point to `#process`); `.env.example` still documents `STRIPE_SECRET_KEY`. The `dist-*` tests skip when `dist/` is older than the sources: rebuild before trusting a validate count.
+- **L8** (2026-11-26, evidence): an English only copy change cannot ship: a route is built only where its parent is and every chain ends at the home, so the home and service copy went out with all 8 translations in the same commit. User asked "Usa múltiples agentes de ser posible": home, services and docs ran as parallel writers (two in worktrees), then 8 + 8 translators.
+- **L9** (2026-11-26, user, verbatim): "Porfa, arregla el calendario en la página de servicio del sitio web". Root cause: the new dark booking close reused `.hero-bg-deep`, whose critical CSS in `BaseLayout` is a centered flex column, shrinking the Cal.com iframe to 342px; fixed with its own background, pinned by `tests/e2e/service-booking-calendar.spec.ts`. The dossier 404 the user saw was the PDFs living on the unmerged docs branch.
+- **L10** (2026-11-26, evidence): fixes applied at merge from translator reports: unbacked "Up to 90% first call resolution" replaced in 9 locales; "Ongoing growth is the Local SEO plan" rewritten (A1); markets title made a full sentence where country names need articles; meta keywords and the "9 languages" fact aligned with the model; es uses "la prueba de resultados enriquecidos de Google". Vitest now excludes `.claude/**` and `.gitignore` ignores `.claude/worktrees/` after agent worktrees were picked up by the suite and briefly staged.
