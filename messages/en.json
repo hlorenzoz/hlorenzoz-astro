@@ -36,7 +36,8 @@
         "Website Development",
         "AI Voice Receptionist",
         "Software Development"
-      ]
+      ],
+      "organizationDescription": "Local SEO for local businesses: one monthly plan that brings local customers from Google and AI, with optional website development, AI voice receptionist and custom software."
     },
     "hero": {
       "badge": "Local SEO for local businesses",
@@ -899,7 +900,9 @@
     "from": "Starting price: the final quote depends on the functional requirements.",
     "bundleDiscount": "{discount}% off the list price when taken alongside {name}.",
     "upfront": "{upfront}% is paid up front.",
-    "beforeTax": "The price does not include VAT."
+    "beforeTax": "The price does not include VAT.",
+    "catalogName": "Lorenzoz Agency services",
+    "optionalCharge": "Optional recurring charge"
   },
   "tax": {
     "suffix": "+ VAT"

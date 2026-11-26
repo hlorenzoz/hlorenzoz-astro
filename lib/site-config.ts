@@ -63,8 +63,6 @@ export const ORGANIZATION = {
     name: SITE_NAME,
     legalName: 'Lorenzoz Agency',
     logo: `${BASE_URL}/icons/icon-512.png`,
-    description:
-        'Local SEO for local businesses: one monthly plan that brings local customers from Google and AI, with optional website development, AI voice receptionist and custom software.',
     email: 'contact@hlorenzoz.com',
     supportEmail: 'privacy@hlorenzoz.com',
     telephone: '+34643844720',

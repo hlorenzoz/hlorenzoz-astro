@@ -43,7 +43,8 @@
                 "Webentwicklung",
                 "Telefonassistent mit KI",
                 "Softwareentwicklung"
-            ]
+            ],
+            "organizationDescription": "Lokales SEO für lokale Unternehmen: ein monatlicher Plan, der lokale Kunden über Google und KI bringt, optional ergänzt durch Webentwicklung, einen Telefonassistenten mit KI und individuelle Software."
         },
         "hero": {
             "badge": "Lokales SEO für Unternehmen vor Ort",
@@ -1311,7 +1312,9 @@
         "from": "Einstiegspreis: Das endgültige Angebot hängt von den funktionalen Anforderungen ab.",
         "bundleDiscount": "{discount}% Rabatt auf den Listenpreis bei Buchung zusammen mit {name}.",
         "upfront": "{upfront}% werden im Voraus gezahlt.",
-        "beforeTax": "Der Preis versteht sich zzgl. MwSt."
+        "beforeTax": "Der Preis versteht sich zzgl. MwSt.",
+        "catalogName": "Leistungen von Lorenzoz Agency",
+        "optionalCharge": "Optionale wiederkehrende Gebühr"
     },
     "articles": {
         "eyebrow": "VON LINKEDIN",

@@ -43,7 +43,8 @@
         "Création de sites web",
         "Réceptionniste vocal IA",
         "Développement logiciel"
-      ]
+      ],
+      "organizationDescription": "SEO local pour les entreprises locales : un forfait mensuel qui apporte des clients locaux depuis Google et l'IA, avec en option la création de sites web, un réceptionniste vocal IA et des logiciels sur mesure."
     },
     "hero": {
       "badge": "SEO local pour les entreprises de proximité",
@@ -1311,7 +1312,9 @@
     "from": "Prix de départ : le devis final dépend des besoins fonctionnels.",
     "bundleDiscount": "{discount} % de remise sur le prix catalogue en complément de {name}.",
     "upfront": "{upfront} % est réglé d'avance.",
-    "beforeTax": "Le prix n'inclut pas la TVA."
+    "beforeTax": "Le prix n'inclut pas la TVA.",
+    "catalogName": "Services de Lorenzoz Agency",
+    "optionalCharge": "Frais récurrents optionnels"
   },
   "articles": {
     "eyebrow": "SUR LINKEDIN",

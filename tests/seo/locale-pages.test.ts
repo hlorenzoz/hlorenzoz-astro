@@ -13,7 +13,7 @@
  * those, and no internal link points at a page not built in its locale.
  */
 import { describe, it, expect } from 'vitest';
-import { headFacts, renderPage } from './render-page';
+import { headFacts, jsonLdNodes, renderPage } from './render-page';
 import { ALL_ROUTES, routeAlternates, routeExists } from '@/lib/routes';
 import { LOCALE_INFO, LOCALES } from '@/lib/site-config';
 import HomePage from '@/src/pages/[locale]/index.astro';
@@ -103,5 +103,17 @@ describe('page copy comes from the locale messages, never from the template', ()
     it('the default meta keywords are translated', async () => {
         const document = await renderPage(HomePage, { locale: 'es' }, '/es/');
         expect(document.querySelector('meta[name="keywords"]')?.getAttribute('content')).toBe(es.home.meta.keywords.join(','));
+    });
+
+    it('the structured data text is translated', async () => {
+        const document = await renderPage(HomePage, { locale: 'es' }, '/es/');
+        const nodes = jsonLdNodes(document);
+        const org = nodes.find((n) => n['@type'] === 'ProfessionalService' && n.description);
+        expect(org?.description).toBe(es.home.meta.organizationDescription);
+        const catalog = nodes.flatMap((n) => (n.hasOfferCatalog ? [n.hasOfferCatalog as Record<string, unknown>] : []))[0];
+        expect(catalog?.name).toBe(es.offer.catalogName);
+        const html = document.documentElement.outerHTML;
+        expect(html).not.toContain('Optional recurring charge');
+        expect(html).toContain(es.offer.optionalCharge);
     });
 });

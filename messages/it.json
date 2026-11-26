@@ -36,7 +36,8 @@
         "Sviluppo web",
         "Receptionist vocale con IA",
         "Sviluppo software"
-      ]
+      ],
+      "organizationDescription": "SEO locale per attività locali: un piano mensile che porta clienti locali da Google e dall'IA, con sviluppo web, receptionist vocale con IA e software su misura come servizi opzionali."
     },
     "hero": {
       "badge": "SEO locale per attività locali",
@@ -771,7 +772,9 @@
     "from": "Prezzo di partenza: il preventivo finale dipende dai requisiti funzionali.",
     "bundleDiscount": "{discount}% di sconto sul prezzo di listino se abbinato a {name}.",
     "upfront": "Il {upfront}% si paga in anticipo.",
-    "beforeTax": "Il prezzo non include l'IVA."
+    "beforeTax": "Il prezzo non include l'IVA.",
+    "catalogName": "Servizi di Lorenzoz Agency",
+    "optionalCharge": "Addebito ricorrente opzionale"
   },
   "tax": {
     "suffix": "+ IVA"

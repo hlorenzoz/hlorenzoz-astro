@@ -566,7 +566,9 @@ const PROCESS_ICONS = [ChartColumn, Layers, Repeat];
                         description: tRoot(`services.${key}.meta.description`),
                         offer: PRICING[key],
                         notes: offerNotes(PRICING[key], tRoot),
-                    }))
+                        optionalCharge: tRoot('offer.optionalCharge'),
+                    })),
+                    tRoot('offer.catalogName')
                 )}
             />
             <JsonLd data={faqPage(faqItems)} />

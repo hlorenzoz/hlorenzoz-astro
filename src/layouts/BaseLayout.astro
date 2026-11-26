@@ -140,6 +140,6 @@ const defaults: PageMeta = {
         <PwaRegistration />
         <CookieBanner locale={locale} />
         <ElevenLabsLoader locale={locale} />
-        <JsonLd data={organizationGraph({ locale })} />
+        <JsonLd data={organizationGraph({ locale, description: t('meta.organizationDescription') })} />
     </body>
 </html>

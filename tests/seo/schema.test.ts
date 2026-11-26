@@ -95,7 +95,7 @@ describe('sitemap ↔ canonical parity (regression)', () => {
 
 describe('JSON-LD builders', () => {
     it('organizationGraph links Organization, WebSite and Person by @id', () => {
-        const graph = organizationGraph({ locale: 'en' }) as { '@graph': Array<Record<string, unknown>> };
+        const graph = organizationGraph({ locale: 'en', description: 'An agency.' }) as { '@graph': Array<Record<string, unknown>> };
         const nodes = graph['@graph'];
         const org = nodes.find((n) => n['@type'] === 'ProfessionalService');
         const site = nodes.find((n) => n['@type'] === 'WebSite');
@@ -109,7 +109,7 @@ describe('JSON-LD builders', () => {
     });
 
     it('declares the served markets as Country entities, not the local address', () => {
-        const graph = organizationGraph({ locale: 'en' }) as { '@graph': Array<Record<string, unknown>> };
+        const graph = organizationGraph({ locale: 'en', description: 'An agency.' }) as { '@graph': Array<Record<string, unknown>> };
         const org = graph['@graph'].find((n) => n['@type'] === 'ProfessionalService');
         const areas = org?.areaServed as Array<Record<string, unknown>>;
 
@@ -130,8 +130,8 @@ describe('JSON-LD builders', () => {
     });
 
     it('shared @id entities keep a stable (default-locale) url regardless of page locale', () => {
-        const en = organizationGraph({ locale: 'en' }) as { '@graph': Array<Record<string, unknown>> };
-        const es = organizationGraph({ locale: 'es' }) as { '@graph': Array<Record<string, unknown>> };
+        const en = organizationGraph({ locale: 'en', description: 'An agency.' }) as { '@graph': Array<Record<string, unknown>> };
+        const es = organizationGraph({ locale: 'es', description: 'Una agencia.' }) as { '@graph': Array<Record<string, unknown>> };
         const orgUrl = (g: typeof en) => g['@graph'].find((n) => n['@type'] === 'ProfessionalService')?.url;
         const personUrl = (g: typeof en) => g['@graph'].find((n) => n['@type'] === 'Person')?.url;
         // Same @id must not advertise a different url across locales.
@@ -144,7 +144,7 @@ describe('JSON-LD builders', () => {
     type Spec = Record<string, unknown>;
     /** The priceSpecification of a one-entry catalogue, single or array as emitted. */
     const specOf = (offer: ServiceOffer, extra: Partial<CatalogEntry> = {}) =>
-        (offerCatalog([{ name: 'X', offer, ...extra }]) as { itemListElement: Array<Record<string, unknown>> })
+        (offerCatalog([{ name: 'X', offer, ...extra }], 'Catalog') as { itemListElement: Array<Record<string, unknown>> })
             .itemListElement[0];
 
     it('offerCatalog emits a one-time base as an exact EUR PriceSpecification', () => {
@@ -211,7 +211,7 @@ describe('JSON-LD builders', () => {
             role: 'addOn',
             base: { amount: 2500, recurrence: 'once' },
             addOns: [{ amount: 49, recurrence: 'month', optional: true }],
-        }).priceSpecification as Spec[];
+        }, { optionalCharge: 'Cargo recurrente opcional' }).priceSpecification as Spec[];
         expect(Array.isArray(specs)).toBe(true);
 
         const setup = specs.find((s) => s['@type'] === 'PriceSpecification');
@@ -220,7 +220,7 @@ describe('JSON-LD builders', () => {
         expect(monthly?.price).toBe('49');
         expect(monthly?.priceCurrency).toBe('EUR');
         expect((monthly?.referenceQuantity as Spec).unitCode).toBe('MON');
-        expect(String(monthly?.description ?? '')).toMatch(/optional/i);
+        expect(monthly?.description).toBe('Cargo recurrente opcional');
     });
 
     it('offerCatalog does not flag a mandatory recurring charge as optional', () => {
@@ -271,7 +271,7 @@ describe('JSON-LD builders', () => {
     it('organizationOffers attaches the OfferCatalog to the #organization node', () => {
         const node = organizationOffers([
             { name: 'X', offer: { role: 'addOn', base: { amount: 100, recurrence: 'once' } } },
-        ]) as Record<string, unknown>;
+        ], 'Catalog') as Record<string, unknown>;
         expect(node['@id']).toBe(SCHEMA_IDS.organization);
         expect((node.hasOfferCatalog as Record<string, unknown>)['@type']).toBe('OfferCatalog');
     });
@@ -538,10 +538,10 @@ describe('no builder fabricates review signals', () => {
                 url: 'https://hlorenzoz.com/en/n/', crumbs: CRUMBS,
                 datePublished: '2026-07-01', dateModified: '2026-07-20',
             }),
-            organizationGraph({ locale: 'en' }),
+            organizationGraph({ locale: 'en', description: 'An agency.' }),
             organizationOffers([
                 { name: 'Tier', offer: { role: 'addOn', base: { amount: 2499, recurrence: 'once' } } },
-            ]),
+            ], 'Catalog'),
         ];
         for (const graph of graphs) {
             const serialized = JSON.stringify(graph);

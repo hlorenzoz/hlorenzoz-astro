@@ -73,6 +73,8 @@ export interface CatalogEntry {
      * node declaring `inLanguage: es`.
      */
     notes?: string[];
+    /** Localized description for an optional add-on charge, such as hosting. */
+    optionalCharge?: string;
 }
 
 /**
@@ -90,7 +92,7 @@ export interface CatalogEntry {
  * - Every figure is before tax, so `valueAddedTaxIncluded` is `false` on all of
  *   them. Omitting it leaves a consumer to assume the number is what is paid.
  */
-function priceSpec(component: PriceComponent): JsonLdObject {
+function priceSpec(component: PriceComponent, optionalCharge?: string): JsonLdObject {
     const amount = schemaAmount(component.amount);
     const figure = component.from ? { minPrice: amount } : { price: amount };
 
@@ -106,7 +108,7 @@ function priceSpec(component: PriceComponent): JsonLdObject {
                 unitCode: 'MON',
                 unitText: 'MONTH',
             },
-            ...(component.optional ? { description: 'Optional recurring charge' } : {}),
+            ...(component.optional && optionalCharge ? { description: optionalCharge } : {}),
         };
     }
 
@@ -126,7 +128,7 @@ function priceSpec(component: PriceComponent): JsonLdObject {
 export function serviceOffer(entry: CatalogEntry): JsonLdObject {
     const { offer } = entry;
 
-    const specs: JsonLdObject[] = [priceSpec(offer.base), ...(offer.addOns ?? []).map(priceSpec)];
+    const specs: JsonLdObject[] = [priceSpec(offer.base), ...(offer.addOns ?? []).map((addOn) => priceSpec(addOn, entry.optionalCharge))];
 
     const descriptions = [
         ...(entry.description ? [entry.description] : []),
@@ -159,10 +161,10 @@ export function serviceOffer(entry: CatalogEntry): JsonLdObject {
  * advertised one euro for a thousand-euro service, and nothing caught it
  * because the visible page was correct.
  */
-export function offerCatalog(entries: CatalogEntry[]): JsonLdObject {
+export function offerCatalog(entries: CatalogEntry[], name: string): JsonLdObject {
     return {
         '@type': 'OfferCatalog',
-        name: `${SITE_NAME} Services`,
+        name,
         itemListElement: entries.map(serviceOffer),
     };
 }
@@ -174,7 +176,7 @@ export function offerCatalog(entries: CatalogEntry[]): JsonLdObject {
  * OfferCatalog is intentionally NOT attached here — it belongs to the home
  * page only (see `organizationOffers`) so it doesn't bloat every page.
  */
-export function organizationGraph({ locale }: { locale: string }): JsonLdObject {
+export function organizationGraph({ locale, description }: { locale: string; description: string }): JsonLdObject {
     const organization: JsonLdObject = {
         '@type': 'ProfessionalService',
         '@id': SCHEMA_IDS.organization,
@@ -182,7 +184,7 @@ export function organizationGraph({ locale }: { locale: string }): JsonLdObject 
         url: ENTITY_URLS.site,
         logo: ORGANIZATION.logo,
         image: [...ORGANIZATION.image],
-        description: ORGANIZATION.description,
+        description,
         address: {
             '@type': 'PostalAddress',
             ...ORGANIZATION.address,
@@ -254,12 +256,12 @@ export function organizationGraph({ locale }: { locale: string }): JsonLdObject 
  * on the home page (where pricing lives) — Google merges this into the global
  * #organization node without repeating the catalog on every page.
  */
-export function organizationOffers(entries: CatalogEntry[]): JsonLdObject {
+export function organizationOffers(entries: CatalogEntry[], catalogName: string): JsonLdObject {
     return {
         '@context': CONTEXT,
         '@type': 'ProfessionalService',
         '@id': SCHEMA_IDS.organization,
-        hasOfferCatalog: offerCatalog(entries),
+        hasOfferCatalog: offerCatalog(entries, catalogName),
     };
 }
 

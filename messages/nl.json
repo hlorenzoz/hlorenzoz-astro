@@ -36,7 +36,8 @@
                 "Websiteontwikkeling",
                 "Telefoonreceptionist met AI",
                 "Softwareontwikkeling"
-            ]
+            ],
+            "organizationDescription": "Lokale SEO voor lokale bedrijven: één maandelijks abonnement dat lokale klanten via Google en AI oplevert, met optioneel websiteontwikkeling, een telefoonreceptionist met AI en software op maat."
         },
         "hero": {
             "badge": "Lokale SEO voor lokale bedrijven",
@@ -771,7 +772,9 @@
         "from": "Vanafprijs: de uiteindelijke offerte hangt af van de functionele eisen.",
         "bundleDiscount": "{discount}% korting op de standaardprijs als je het samen met {name} afneemt.",
         "upfront": "{upfront}% betaal je vooraf.",
-        "beforeTax": "De prijs is exclusief btw."
+        "beforeTax": "De prijs is exclusief btw.",
+        "catalogName": "Diensten van Lorenzoz Agency",
+        "optionalCharge": "Optionele terugkerende kosten"
     },
     "tax": {
         "suffix": "excl. btw"
