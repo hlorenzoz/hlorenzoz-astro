@@ -71,6 +71,12 @@ describe('Portfolio Pages', () => {
         expect(screen.getByRole('heading', { level: 1, name: en.portfolio['dental-clinic-1'].heroTitle })).toBeInTheDocument();
     });
 
+    it('dates each related news post as readable text', async () => {
+        const { document } = await renderItemPage('lorenzoz-agency');
+        const time = document.querySelector('time[datetime="2026-04-07"]');
+        expect(time?.textContent?.trim()).toBe('April 7, 2026');
+    });
+
     it('points the quote CTAs to the external bookingUrl when provided', async () => {
         const { document } = await renderItemPage('malaga-event-gear');
 
