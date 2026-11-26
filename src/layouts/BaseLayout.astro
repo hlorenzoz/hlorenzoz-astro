@@ -34,17 +34,7 @@ const htmlLang = localeInfo(locale).tag;
 const defaults: PageMeta = {
     title: t('meta.title'),
     description: t('meta.description'),
-    keywords: [
-        'Local SEO',
-        'Local SEO Agency',
-        'Google Business Profile',
-        'Local Search',
-        'Review Management',
-        'AI Search Visibility',
-        'Website Development',
-        'AI Voice Receptionist',
-        'Software Development',
-    ],
+    keywords: t.raw('meta.keywords') as string[],
     openGraph: {
         title: t('meta.title'),
         description: t('meta.description'),

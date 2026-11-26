@@ -25,7 +25,18 @@
         "meta": {
             "title": "Lorenzoz Agency | Lokale SEO voor lokale bedrijven",
             "description": "Meer klanten uit je regio via Google en AI. Eén maandelijks plan voor lokale SEO: autoriteitscontent, vermeldingen, autoriteit in Google en AI, en reviewbeheer.",
-            "ogImageAlt": "Lorenzoz Agency: uitmuntend in AI en web"
+            "ogImageAlt": "Lorenzoz Agency: uitmuntend in AI en web",
+            "keywords": [
+                "Lokale SEO",
+                "Bureau voor lokale SEO",
+                "Google Business Profile",
+                "Lokaal zoeken",
+                "Reviewbeheer",
+                "Zichtbaarheid in zoekmachines met AI",
+                "Websiteontwikkeling",
+                "Telefoonreceptionist met AI",
+                "Softwareontwikkeling"
+            ]
         },
         "hero": {
             "badge": "Lokale SEO voor lokale bedrijven",
@@ -928,6 +939,7 @@
         "copyright": "© 2026 Lorenzoz Agency. Alle rechten voorbehouden.",
         "privacyPage": {
             "lastUpdated": "Laatst bijgewerkt: 26 november 2026",
+            "intro": "Bij Lorenzoz Agency is transparantie niet alleen een wettelijke plicht, maar de basis van onze relatie met jou.",
             "sections": {
                 "introduction": {
                     "title": "Inleiding",
@@ -973,6 +985,7 @@
         },
         "termsPage": {
             "lastUpdated": "Laatst bijgewerkt: 26 november 2026",
+            "intro": "Lees deze voorwaarden zorgvuldig voordat je onze diensten gebruikt. Door Lorenzoz Agency te bezoeken, ga je akkoord met deze voorwaarden.",
             "sections": {
                 "terms": {
                     "title": "Voorwaarden",
@@ -1023,6 +1036,7 @@
         },
         "cookiePage": {
             "lastUpdated": "Laatst bijgewerkt: 26 november 2026",
+            "intro": "We gebruiken cookies om je een soepelere, snellere en persoonlijkere ervaring op onze website te bieden.",
             "sections": {
                 "whatAre": {
                     "title": "Wat zijn cookies?",

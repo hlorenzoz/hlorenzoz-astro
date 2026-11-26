@@ -32,7 +32,18 @@
     "meta": {
       "title": "Lorenzoz Agency | Local SEO for Local Businesses",
       "description": "More local customers from Google and AI. One monthly Local SEO plan: authority content, citations, authority on Google and AI, and review management.",
-      "ogImageAlt": "Lorenzoz Agency: AI & Web Excellence"
+      "ogImageAlt": "Lorenzoz Agency: AI & Web Excellence",
+      "keywords": [
+        "Local SEO",
+        "Local SEO Agency",
+        "Google Business Profile",
+        "Local Search",
+        "Review Management",
+        "AI Search Visibility",
+        "Website Development",
+        "AI Voice Receptionist",
+        "Software Development"
+      ]
     },
     "hero": {
       "badge": "Local SEO for local businesses",
@@ -426,6 +437,7 @@
     },
     "privacyPage": {
       "lastUpdated": "Last updated: 26 November 2026",
+      "intro": "At Lorenzoz Agency, transparency isn't just a legal requirement. It's the core of our relationship with you.",
       "sections": {
         "introduction": {
           "title": "Introduction",
@@ -471,6 +483,7 @@
     },
     "termsPage": {
       "lastUpdated": "Last updated: 26 November 2026",
+      "intro": "Please read these terms carefully before using our services. By accessing Lorenzoz Agency, you agree to be bound by these conditions.",
       "sections": {
         "terms": {
           "title": "Terms",
@@ -521,6 +534,7 @@
     },
     "cookiePage": {
       "lastUpdated": "Last updated: 26 November 2026",
+      "intro": "We use cookies to provide you with a smoother, faster and more personalised experience on our platform.",
       "sections": {
         "whatAre": {
           "title": "What are Cookies?",

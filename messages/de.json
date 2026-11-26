@@ -32,7 +32,18 @@
         "meta": {
             "title": "Lorenzoz Agency | Lokales SEO für Unternehmen vor Ort",
             "description": "Mehr Kunden aus Ihrer Region über Google und KI. Ein monatlicher Plan für lokales SEO: Inhalte mit Autorität, Brancheneinträge, Autorität bei Google und KI sowie Bewertungsmanagement.",
-            "ogImageAlt": "Lorenzoz Agency: Exzellenz in KI und Web"
+            "ogImageAlt": "Lorenzoz Agency: Exzellenz in KI und Web",
+            "keywords": [
+                "Lokales SEO",
+                "Agentur für lokales SEO",
+                "Google Business Profile",
+                "Lokale Suche",
+                "Bewertungsmanagement",
+                "Sichtbarkeit in der Suche mit KI",
+                "Webentwicklung",
+                "Telefonassistent mit KI",
+                "Softwareentwicklung"
+            ]
         },
         "hero": {
             "badge": "Lokales SEO für Unternehmen vor Ort",
@@ -426,6 +437,7 @@
         },
         "privacyPage": {
             "lastUpdated": "Zuletzt aktualisiert: 26. November 2026",
+            "intro": "Bei Lorenzoz Agency ist Transparenz nicht nur eine gesetzliche Pflicht, sondern die Grundlage unserer Beziehung zu Ihnen.",
             "sections": {
                 "introduction": {
                     "title": "Einleitung",
@@ -471,6 +483,7 @@
         },
         "termsPage": {
             "lastUpdated": "Zuletzt aktualisiert: 26. November 2026",
+            "intro": "Bitte lesen Sie diese Bedingungen sorgfältig, bevor Sie unsere Leistungen nutzen. Mit dem Zugriff auf Lorenzoz Agency erklären Sie sich mit diesen Bedingungen einverstanden.",
             "sections": {
                 "terms": {
                     "title": "Bedingungen",
@@ -521,6 +534,7 @@
         },
         "cookiePage": {
             "lastUpdated": "Zuletzt aktualisiert: 26. November 2026",
+            "intro": "Wir verwenden Cookies, um Ihnen ein flüssigeres, schnelleres und persönlicheres Erlebnis auf unserer Website zu bieten.",
             "sections": {
                 "whatAre": {
                     "title": "Was sind Cookies?",

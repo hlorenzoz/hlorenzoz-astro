@@ -121,6 +121,7 @@
     },
     "privacyPage": {
       "lastUpdated": "Última atualização: 26 de novembro de 2026",
+      "intro": "Na Lorenzoz Agency, a transparência não é apenas uma obrigação legal: é a base da nossa relação consigo.",
       "sections": {
         "introduction": {
           "title": "Introdução",
@@ -166,6 +167,7 @@
     },
     "termsPage": {
       "lastUpdated": "Última atualização: 26 de novembro de 2026",
+      "intro": "Leia estes termos com atenção antes de utilizar os nossos serviços. Ao aceder à Lorenzoz Agency, aceita ficar vinculado a estas condições.",
       "sections": {
         "terms": {
           "title": "Termos",
@@ -216,6 +218,7 @@
     },
     "cookiePage": {
       "lastUpdated": "Última atualização: 26 de novembro de 2026",
+      "intro": "Utilizamos cookies para lhe proporcionar uma experiência mais fluida, rápida e personalizada no nosso site.",
       "sections": {
         "whatAre": {
           "title": "O que são cookies?",
@@ -254,7 +257,18 @@
     "meta": {
       "title": "Lorenzoz Agency | SEO local para negócios locais",
       "description": "Mais clientes locais vindos do Google e da IA. Um único plano mensal de SEO local: conteúdo de autoridade, citações, autoridade no Google e na IA e gestão de avaliações.",
-      "ogImageAlt": "Lorenzoz Agency: excelência em IA e web"
+      "ogImageAlt": "Lorenzoz Agency: excelência em IA e web",
+      "keywords": [
+        "SEO local",
+        "Agência de SEO local",
+        "Google Business Profile",
+        "Pesquisa local",
+        "Gestão de avaliações",
+        "Visibilidade nas pesquisas com IA",
+        "Desenvolvimento web",
+        "Rececionista de voz com IA",
+        "Desenvolvimento de software"
+      ]
     },
     "hero": {
       "badge": "SEO local para negócios locais",

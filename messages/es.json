@@ -25,7 +25,18 @@
     "meta": {
       "title": "Lorenzoz Agency | SEO Local para negocios locales",
       "description": "Más clientes locales desde Google y la IA. Un único plan mensual de SEO Local: contenido de autoridad, citaciones, autoridad en Google y en IA, y gestión de reseñas.",
-      "ogImageAlt": "Lorenzoz Agency: excelencia en IA y web"
+      "ogImageAlt": "Lorenzoz Agency: excelencia en IA y web",
+      "keywords": [
+        "SEO Local",
+        "Agencia de SEO Local",
+        "Google Business Profile",
+        "Búsqueda local",
+        "Gestión de reseñas",
+        "Visibilidad en búsquedas con IA",
+        "Desarrollo Web",
+        "Recepcionista de Voz IA",
+        "Desarrollo de Software"
+      ]
     },
     "hero": {
       "badge": "SEO Local para negocios locales",
@@ -1056,6 +1067,7 @@
     "copyright": "© 2026 Lorenzoz Agency. Todos los derechos reservados.",
     "termsPage": {
       "lastUpdated": "Última actualización: 26 de noviembre de 2026",
+      "intro": "Lea estas condiciones con atención antes de utilizar nuestros servicios. Al acceder a Lorenzoz Agency, acepta quedar vinculado por ellas.",
       "sections": {
         "terms": {
           "title": "Términos",
@@ -1106,6 +1118,7 @@
     },
     "privacyPage": {
       "lastUpdated": "Última actualización: 26 de noviembre de 2026",
+      "intro": "En Lorenzoz Agency, la transparencia no es solo una obligación legal: es la base de nuestra relación con usted.",
       "sections": {
         "introduction": {
           "title": "Introducción",
@@ -1151,6 +1164,7 @@
     },
     "cookiePage": {
       "lastUpdated": "Última actualización: 26 de noviembre de 2026",
+      "intro": "Usamos cookies para ofrecerle una experiencia más fluida, rápida y personalizada en nuestro sitio.",
       "sections": {
         "whatAre": {
           "title": "¿Qué son las Cookies?",

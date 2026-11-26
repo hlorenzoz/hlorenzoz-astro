@@ -31,6 +31,7 @@ import SitemapPage from '@/src/pages/[locale]/sitemap/index.astro';
 import PrivacyPage from '@/src/pages/[locale]/privacy-policy/index.astro';
 import TermsPage from '@/src/pages/[locale]/terms-conditions/index.astro';
 import CookiePage from '@/src/pages/[locale]/cookie-policy/index.astro';
+import es from '@/messages/es.json';
 
 const STATIC_PAGES: Record<string, unknown> = {
     '': HomePage,
@@ -85,5 +86,22 @@ describe('every page in every locale it is published in', () => {
             if (!match) continue;
             expect(routeExists(match[2], match[1]), `${href} on /${locale}/${path} links to an unbuilt page`).toBe(true);
         }
+    });
+});
+
+describe('page copy comes from the locale messages, never from the template', () => {
+    it.each([
+        ['privacy-policy', es.footer.privacyPage.intro],
+        ['terms-conditions', es.footer.termsPage.intro],
+        ['cookie-policy', es.footer.cookiePage.intro],
+    ])('the %s intro is translated', async (path, intro) => {
+        const { Page, params } = pageFor(path, 'es');
+        const document = await renderPage(Page, params, `/es/${path}/`);
+        expect(document.querySelector('h1 + p')?.textContent?.trim()).toBe(intro);
+    });
+
+    it('the default meta keywords are translated', async () => {
+        const document = await renderPage(HomePage, { locale: 'es' }, '/es/');
+        expect(document.querySelector('meta[name="keywords"]')?.getAttribute('content')).toBe(es.home.meta.keywords.join(','));
     });
 });
