@@ -1,31 +1,44 @@
 ---
 /**
- * Asymmetric benefits list for a service page.
- *
- * NOT a grid of equal cards: the first item spans the full row and the rest
- * pair up beneath it, per `landing-page-conversion-framework`'s ban on
- * repeating the homepage's three-equal-card pattern.
+ * The benefits of a service as a grid of cards, numbered 01, 02... unless
+ * `numbered` is false. The grid uses as many columns as there are items (up
+ * to four), so it never leaves an empty cell at the end of a row.
  */
 export interface Props {
+    id?: string;
+    eyebrow?: string;
     title: string;
+    subtitle?: string;
     items: { title: string; description: string }[];
+    numbered?: boolean;
 }
 
-const { title, items } = Astro.props;
+const { id, eyebrow, title, subtitle, items, numbered = true } = Astro.props;
+
+// Static strings so Tailwind keeps them.
+const GRID_COLS: Record<number, string> = { 1: '', 2: 'md:grid-cols-2', 3: 'md:grid-cols-3', 4: 'sm:grid-cols-2 lg:grid-cols-4' };
+const cols = GRID_COLS[items.length] ?? 'md:grid-cols-2 lg:grid-cols-3';
 ---
 
-<section class="py-24 px-6 bg-white">
-    <div class="max-w-5xl mx-auto">
-        <h2 class="text-3xl md:text-5xl font-bold text-black mb-16 tracking-tight leading-tight max-w-2xl">
-            {title}
-        </h2>
+<section id={id} class="py-24 px-6 bg-[#f9f9f9] scroll-mt-24">
+    <div class="max-w-6xl mx-auto flex flex-col gap-10">
+        <div class="flex flex-col gap-3 max-w-3xl">
+            {eyebrow && <span class="text-xs font-bold uppercase tracking-[0.18em] text-blue-900">{eyebrow}</span>}
+            <h2 class="text-3xl md:text-5xl font-extrabold tracking-tight leading-[1.1] text-black">{title}</h2>
+            {subtitle && <p class="text-lg leading-relaxed text-gray-700">{subtitle}</p>}
+        </div>
 
-        <div class="grid md:grid-cols-2 gap-x-12 gap-y-12">
+        <div class={`grid gap-5 ${cols}`}>
             {
                 items.map((item, i) => (
-                    <div data-testid={i === 0 ? 'benefit-featured' : undefined} class={i === 0 ? 'md:col-span-2 border-b border-gray-100 pb-10' : ''}>
-                        <h3 class="text-xl font-bold text-black mb-3 tracking-tight">{item.title}</h3>
-                        <p class="text-gray-900 font-medium leading-relaxed">{item.description}</p>
+                    <div class="bg-white rounded-[1.75rem] p-8 flex flex-col gap-3 border border-gray-100">
+                        {numbered && (
+                            <span class="text-3xl font-extrabold text-blue-900" aria-hidden="true">
+                                {String(i + 1).padStart(2, '0')}
+                            </span>
+                        )}
+                        <h3 class="text-[1.3rem] font-extrabold text-black tracking-tight">{item.title}</h3>
+                        <p class="text-base leading-relaxed text-gray-700">{item.description}</p>
                     </div>
                 ))
             }

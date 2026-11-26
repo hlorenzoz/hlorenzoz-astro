@@ -228,33 +228,33 @@
             "subtitle": "Lokale SEO is ons kernaanbod: één maandelijks plan dat klanten uit je regio oplevert via Google en AI. Websiteontwikkeling, Telefoonreceptionist met AI en Softwareontwikkeling zijn optioneel.",
             "cta": "Bekijk de diensten"
         },
-        "quoted": "Op maat van je bedrijf, met een offerte na een gratis eerste gesprek.",
+        "quoted": "Offerte op maat van je project",
         "websiteDevelopment": {
             "name": "Websiteontwikkeling",
             "meta": {
-                "description": "Snelle websites op maat die bezoekers omzetten in klanten. Geoptimaliseerd voor SEO en mobiel, gebouwd volgens moderne prestatienormen.",
-                "title": "Website laten maken voor je bedrijf"
+                "title": "Website laten maken voor je bedrijf",
+                "description": "Snelle websites die gevonden worden door Google en assistenten met AI en bezoeken omzetten in telefoontjes, met een offerte op maat na een gratis behoefteanalyse."
             },
             "hero": {
                 "eyebrow": "Websiteontwikkeling",
-                "title": "Websites die bezoekers omzetten in klanten",
-                "subtitle": "Snelle websites op maat die bezoekers omzetten in klanten. Geoptimaliseerd voor SEO en voor mobiel.",
-                "cta": "Plan een gratis kennismaking van 15 minuten"
+                "title": "Websites die snel laden, gevonden worden en klanten winnen",
+                "subtitle": "De meeste bezoekers beoordelen een bedrijf in een paar seconden, meestal op hun telefoon. Wij bouwen sites die meteen openen, de taal van je klanten spreken en Google en assistenten met AI precies vertellen wat je doet. En we laten je de scores zien.",
+                "cta": "Plan je gratis behoefteanalyse"
             },
             "benefits": {
-                "title": "Wat je krijgt",
+                "title": "Wat elke site bevat",
                 "items": [
                     {
-                        "title": "Ontworpen voor mobiel",
-                        "description": "Elke layout bouwen en testen we eerst op de telefoon, zodat je site er op elk scherm strak uitziet en snel laadt."
+                        "title": "Snel op elke telefoon",
+                        "description": "Eerst ontworpen voor het kleine scherm en voor de lancering getest op telefoons, tablets en desktops."
                     },
                     {
-                        "title": "Voldoet aan de Core Web Vitals",
-                        "description": "We bouwen je site zo dat hij de prestatienormen van Google haalt. Dat beschermt je posities in Google en de ervaring van je bezoekers."
+                        "title": "Begrepen door Google en AI",
+                        "description": "Gestructureerde data, previews voor sociale media en een bestand llms.txt vanaf dag één, zodat machines je bedrijf goed lezen."
                     },
                     {
-                        "title": "SEO en gestructureerde data",
-                        "description": "Open Graph tags en gestructureerde data zitten er vanaf dag één in, zodat zoekmachines je site begrijpen zodra hij live staat."
+                        "title": "Gemaakt om bezoeken om te zetten in telefoontjes",
+                        "description": "Eén duidelijke belofte, één duidelijke volgende stap, en een knop om te boeken of contact op te nemen altijd binnen handbereik."
                     }
                 ]
             },
@@ -265,19 +265,19 @@
                         "label": "Prestaties en beveiliging",
                         "items": [
                             "Een landingspagina of een complete website met meerdere pagina's",
-                            "Ontworpen voor mobiel en getest op elk schermformaat",
-                            "Vanaf dag één gebouwd volgens de Core Web Vitals",
-                            "Installeerbare PWA met pagina's die ook offline werken",
-                            "Beveiliging op zakelijk niveau bij elke release"
+                            "Eerst ontworpen voor telefoons, getest op elk schermformaat",
+                            "Core Web Vitals vanaf dag één ingebouwd",
+                            "Installeerbare PWA, belangrijke pagina's offline",
+                            "Beveiliging bij elke release"
                         ]
                     },
                     {
-                        "label": "SEO en infrastructuur",
+                        "label": "Zoeken en AI",
                         "items": [
-                            "Open Graph en gestructureerde data vanaf de lancering",
-                            "Geschikt voor AI agents en crawlers die zelfstandig browsen",
-                            "Beveiligde verbinding (SSL) en CDN inbegrepen",
-                            "Hosting en infrastructuur beheren wij voor je",
+                            "Gestructureerde data en previews voor sociale media",
+                            "llms.txt voor assistenten met AI",
+                            "Sitemaps en hreflang per taal",
+                            "SSL en CDN inbegrepen",
                             "Optioneel: tagging aan de serverkant"
                         ]
                     },
@@ -285,8 +285,8 @@
                         "label": "Kwaliteit en oplevering",
                         "items": [
                             "Automatische tests bij elke build",
-                            "Standaard kwaliteitscontrole voor elke lancering",
-                            "CI/CD pipeline (DevOpsSec)",
+                            "Kwaliteitscontrole op elk schermformaat voor de lancering",
+                            "Vertalingen in de talen die je nodig hebt",
                             "Binnen 7 tot 14 dagen live"
                         ]
                     }
@@ -298,22 +298,22 @@
                     {
                         "number": "01",
                         "title": "Plannen",
-                        "description": "Plan een gratis kennismaking om je doelen te bespreken."
+                        "description": "Een gratis gesprek van 15 minuten over je doelen."
                     },
                     {
                         "number": "02",
-                        "title": "Kennismaken",
-                        "description": "We brengen in kaart wat je nodig hebt en stemmen de aanpak samen af."
+                        "title": "Opzet",
+                        "description": "We spreken de pagina's, talen en content samen af."
                     },
                     {
                         "number": "03",
                         "title": "Bouwen",
-                        "description": "We bouwen je website op maat, helemaal in de stijl van je merk."
+                        "description": "We ontwerpen en bouwen je site, getest op elk scherm."
                     },
                     {
                         "number": "04",
-                        "title": "Opleveren",
-                        "description": "We zetten je site live en dragen de volledige documentatie aan je over, meestal binnen 7 tot 14 dagen."
+                        "title": "Lancering",
+                        "description": "Binnen 7 tot 14 dagen live, met gemeten scores."
                     }
                 ]
             },
@@ -321,16 +321,24 @@
                 "title": "Veelgestelde vragen",
                 "items": [
                     {
-                        "question": "Zit SEO bij het pakket voor websiteontwikkeling inbegrepen, of betaal ik daar extra voor?",
-                        "answer": "Het zit erbij. Elk pakket voor websiteontwikkeling bevat vanaf dag één de technische basis voor SEO, waaronder geoptimaliseerde gestructureerde data en Open Graph tags, zodat zoekmachines je site goed kunnen lezen."
+                        "question": "Komt mijn nieuwe site als eerste in Google?",
+                        "answer": "Niemand kan een positie beloven: Google beslist. Wij nemen de technische redenen weg waardoor een site achterblijft (snelheid, structuur, ontbrekende data) en geven hem de basis om mee te doen."
                     },
                     {
-                        "question": "Van wie is de website als het project klaar is?",
-                        "answer": "Zodra het project officieel is afgerond en betaald, is alles 100% van jou: de broncode van de website, de ontwerpen en de documentatie."
+                        "question": "Kan ik de scores zelf controleren?",
+                        "answer": "Ja. PageSpeed Insights en de Rich Results Test zijn gratis tools van Google; we delen de links bij de lancering."
                     },
                     {
-                        "question": "Welke ondersteuning krijg ik als er na de lancering een technisch probleem is?",
-                        "answer": "We bieden technische ondersteuning tijdens kantooruren (maandag tot en met vrijdag). Elk probleem pakken we snel op, zodat je systemen blijven draaien."
+                        "question": "Wat is llms.txt en heb ik het nodig?",
+                        "answer": "Een korte samenvatting van je bedrijf voor assistenten met AI. Toevoegen kost niets en we nemen het op in elke site."
+                    },
+                    {
+                        "question": "Zit SEO erbij, of betaal ik daar extra voor?",
+                        "answer": "Technische SEO zit erbij: gestructureerde data, previews voor sociale media, sitemaps en snelle pagina's. Wil je bedrijf ook groeien in lokale zoekresultaten, dan kan lokale SEO deel uitmaken van je oplossing."
+                    },
+                    {
+                        "question": "Van wie is de website als hij klaar is?",
+                        "answer": "Van jou: de code, de ontwerpen en de documentatie, zodra het project is afgerond en betaald."
                     }
                 ]
             }
@@ -339,28 +347,28 @@
             "name": "Telefoonreceptionist met AI",
             "meta": {
                 "title": "Telefoonreceptionist met AI, dag en nacht",
-                "description": "Telefoonreceptionisten met AI die 24/7 veelgestelde vragen beantwoorden, afspraken inplannen en elke lead vastleggen, zodat geen telefoontje onbeantwoord blijft."
+                "description": "Een telefoonreceptionist met AI die 24/7 vragen beantwoordt, afspraken inplant en berichten aanneemt, ontworpen na een gratis analyse van hoe je telefoontjes nu verlopen."
             },
             "hero": {
                 "eyebrow": "Telefoonreceptionist met AI",
-                "title": "Nooit meer een gemist telefoontje",
-                "subtitle": "Spraakassistenten die natuurlijke taal begrijpen en gesprekken voeren zoals een mens. Ze plannen afspraken in en beantwoorden veelgestelde vragen, 24/7.",
-                "cta": "Consult boeken"
+                "title": "Elk telefoontje beantwoord, dag en nacht",
+                "subtitle": "Een spraakassistent die 24/7 vragen beantwoordt, afspraken inplant en berichten aanneemt, met een natuurlijke stem die bij je merk past. We ontwerpen hem na een gratis analyse van hoe je telefoontjes nu verlopen.",
+                "cta": "Plan je gratis behoefteanalyse"
             },
             "benefits": {
-                "title": "Wat je krijgt",
+                "title": "De telefoontjes die je nu mist, worden klanten",
                 "items": [
                     {
-                        "title": "24/7 slimme antwoorden op veelgestelde vragen",
-                        "description": "Je receptionist met AI beantwoordt veelgestelde vragen direct, dag en nacht, zodat leads nooit op een terugbelverzoek hoeven te wachten."
+                        "title": "Beantwoordt vragen",
+                        "description": "Openingstijden, diensten, locatie, hoe het werkt: de vragen die je elke dag hoort, op elk uur beantwoord."
                     },
                     {
-                        "title": "Afspraken inplannen",
-                        "description": "Bellers boeken tijdens het gesprek direct in je agenda, zonder heen en weer mailen."
+                        "title": "Plant afspraken in",
+                        "description": "Direct in je agenda, zonder heen en weer terugbellen."
                     },
                     {
-                        "title": "Tot 90% opgelost bij het eerste gesprek",
-                        "description": "De meeste telefoontjes worden in één keer volledig afgehandeld. Dat scheelt wachttijd en geeft je team meer ruimte."
+                        "title": "Legt elke lead vast",
+                        "description": "Naam, vraag en contactgegevens van elke beller, klaar om op te volgen. Ook buiten kantooruren en als alle lijnen bezet zijn."
                     }
                 ]
             },
@@ -373,7 +381,7 @@
                             "24/7 slimme antwoorden op veelgestelde vragen",
                             "Afspraken direct in je agenda ingepland",
                             "Leads vastleggen in een natuurlijk gesprek, bij elk telefoontje",
-                            "Tot 90% opgelost bij het eerste gesprek"
+                            "Berichten naar jou als een gesprek een mens nodig heeft"
                         ]
                     },
                     {
@@ -397,27 +405,27 @@
                 ]
             },
             "process": {
-                "title": "Zo werkt het",
+                "title": "Van eerste gesprek tot eerste beantwoorde telefoontje",
                 "steps": [
                     {
                         "number": "01",
-                        "title": "Plannen",
-                        "description": "Plan een gratis kennismaking om je belstromen door te nemen."
+                        "title": "Gratis analyse",
+                        "description": "Hoe je telefoontjes nu verlopen en wat je misloopt als niemand opneemt."
                     },
                     {
                         "number": "02",
-                        "title": "Kennismaken",
-                        "description": "We brengen in kaart wat je nodig hebt en stemmen script en aanpak samen af."
+                        "title": "Script en stem",
+                        "description": "We spreken af wat hij zegt, inplant en doorgeeft, en kiezen zijn stem."
                     },
                     {
                         "number": "03",
-                        "title": "Bouwen",
-                        "description": "We bouwen je spraakassistent met AI en het bijbehorende script op maat."
+                        "title": "Bouwen en testen",
+                        "description": "Gekoppeld aan je telefoon en agenda, getest met echte gesprekken."
                     },
                     {
                         "number": "04",
-                        "title": "Opleveren",
-                        "description": "Je assistent gaat live, meestal binnen 7 tot 14 dagen."
+                        "title": "Live",
+                        "description": "Meestal binnen 7 tot 14 dagen, en elke maand verbeterd."
                     }
                 ]
             },
@@ -425,16 +433,20 @@
                 "title": "Veelgestelde vragen",
                 "items": [
                     {
-                        "question": "Kan de telefoonreceptionist met AI koppelen met mijn bestaande CRM?",
-                        "answer": "Ja. Onze telefoonreceptionist met AI kan koppelen met je bestaande CRM omgeving (bijvoorbeeld HubSpot, Salesforce of GoHighLevel). Daarvoor hebben we de technische specificaties en API toegang van je nodig."
+                        "question": "Weten bellers dat ze met AI praten?",
+                        "answer": "Hij praat natuurlijk, en we spreken met je af hoe hij zich voorstelt. Daar open over zijn wekt vertrouwen bij je klanten."
                     },
                     {
-                        "question": "Welke talen ondersteunt de telefoonreceptionist met AI?",
-                        "answer": "De telefoonreceptionist met AI ondersteunt meerdere wereldtalen. Onze systemen zijn wel specifiek getest en geoptimaliseerd voor Engels en Spaans, voor gesprekken van de hoogste kwaliteit."
+                        "question": "Kan hij koppelen met mijn CRM?",
+                        "answer": "Ja: HubSpot, Salesforce en GoHighLevel, zodra je ons toegang tot de API geeft."
                     },
                     {
-                        "question": "Hoe wordt de telefoonreceptionist met AI gefactureerd?",
-                        "answer": "De telefoonreceptionist met AI wordt gefactureerd met een terugkerende maandelijkse betaling. Die dekt doorlopend de proactieve ondersteuning, updates van de kennisbank, tests van het systeem en je maandelijkse belminuten."
+                        "question": "Welke talen spreekt hij?",
+                        "answer": "Hij is geoptimaliseerd voor Engels en Spaans. Vertel ons in de analyse welke andere talen je nodig hebt."
+                    },
+                    {
+                        "question": "Wat kost het?",
+                        "answer": "Dat hangt af van hoeveel er gebeld wordt en wat hij moet doen. We maken een offerte na de gratis analyse, vaak als onderdeel van een bredere oplossing."
                     }
                 ]
             }
@@ -442,25 +454,33 @@
         "localSeo": {
             "name": "Lokale SEO",
             "meta": {
-                "description": "Eén maandelijks plan voor lokale SEO: autoriteitscontent, backlinks en vermeldingen, autoriteit in Google en AI, en reviewbeheer, zodat klanten in de buurt jou als eerste vinden.",
-                "title": "Lokale SEO voor ondernemers in je regio"
+                "title": "Lokale SEO voor ondernemers in je regio",
+                "description": "Wees het bedrijf dat mensen vinden als ze in de buurt zoeken, in Google en in antwoorden van AI. Het begint met een gratis analyse van je markt."
             },
             "hero": {
                 "eyebrow": "Lokale SEO",
-                "title": "Eerder gevonden dan je concurrent",
-                "subtitle": "Eén maandelijks plan met al het werk dat nodig is om zichtbaar te worden in lokale zoekresultaten op Google en in de antwoorden van AI.",
-                "cta": "Plan een gesprek"
+                "title": "Wees het bedrijf dat mensen vinden als ze in de buurt zoeken",
+                "subtitle": "Zoekt iemand in de buurt naar wat jij aanbiedt, in Google of door het aan een assistent met AI te vragen, dan hoort jouw bedrijf in het antwoord te staan. We beginnen met een gratis analyse van je markt en bouwen daarna de lokale aanwezigheid die je daar brengt.",
+                "cta": "Plan je gratis behoefteanalyse"
             },
             "benefits": {
-                "title": "Waarom één plan",
+                "title": "Vier fronten die samen vooruitgaan",
                 "items": [
                     {
-                        "title": "Je koopt een resultaat, geen takenlijst",
-                        "description": "Content, links, autoriteit en reviews dienen hetzelfde doel. Los van elkaar, bij verschillende leveranciers, is geen van allen genoeg. In één plan versterken ze elkaar."
+                        "title": "Autoriteitscontent",
+                        "description": "Zoekwoordonderzoek per locatie, contentclusters, analyse van ontbrekende content en updates van wat je al hebt, zodat je de referentie wordt in je vakgebied."
                     },
                     {
-                        "title": "Je weet elke maand wat er is gedaan",
-                        "description": "Elke maand een rapport in gewone taal: waaraan is gewerkt, hoe je zichtbaarheid zich ontwikkelt en wat de volgende stap is."
+                        "title": "Backlinks en vermeldingen",
+                        "description": "Links vanuit betrouwbare bedrijvengidsen en vermeldingen op relevante websites: de lokale autoriteitssignalen waar Google en AI op vertrouwen."
+                    },
+                    {
+                        "title": "Autoriteit in Google en AI",
+                        "description": "Je Google Business Profile geoptimaliseerd, lokale SEO op je website, gestructureerde gegevens voor lokale bedrijven en ondersteuning voor meer dan één vestiging."
+                    },
+                    {
+                        "title": "Reviewbeheer",
+                        "description": "De groei van je reviews door de tijd gevolgd, trends en reacties in de feedback in de gaten gehouden, en feedbacklinks in je eigen huisstijl voor elke klant."
                     }
                 ]
             },
@@ -506,27 +526,27 @@
                 ]
             },
             "process": {
-                "title": "Zo werken we",
+                "title": "Zo werken we samen",
                 "steps": [
                     {
                         "number": "01",
-                        "title": "Kennismakingsgesprek",
-                        "description": "15 minuten om je bedrijf, je regio en je doelgroep te leren kennen."
+                        "title": "Gratis analyse",
+                        "description": "Je markt, je profiel en je concurrenten, in een eerste gesprek."
                     },
                     {
                         "number": "02",
-                        "title": "Audit",
-                        "description": "We bekijken je huidige aanwezigheid op Google, je website, je reviews en wie er vandaag in je regio wordt aanbevolen."
+                        "title": "Jouw plan",
+                        "description": "Wat we gaan doen, in welke volgorde, en de offerte."
                     },
                     {
                         "number": "03",
-                        "title": "We werken aan de vier pijlers",
-                        "description": "Content, vermeldingen, autoriteit en reviews lopen tegelijk, volgens een plan dat je vooraf kent."
+                        "title": "Het werk",
+                        "description": "Content, vermeldingen, autoriteit en reviews gaan tegelijk vooruit."
                     },
                     {
                         "number": "04",
-                        "title": "Maandrapport en bijsturing",
-                        "description": "Elke maand krijg je een rapport in gewone taal en sturen we het werk bij op wat er is veranderd."
+                        "title": "Rapport en bijsturing",
+                        "description": "Elke maand de resultaten in gewone taal en de volgende stappen."
                     }
                 ]
             },
@@ -535,23 +555,23 @@
                 "items": [
                     {
                         "question": "Garanderen jullie de eerste positie op Google?",
-                        "answer": "Nee, en wees op je hoede voor wie dat wel doet: niemand heeft de ranking van Google in handen. De eerste positie is het doel waar we elke maand naartoe werken, en een rapport in gewone taal laat je zien wat er is gedaan en hoe je zichtbaarheid zich ontwikkelt."
+                        "answer": "Nee, en eerlijk gezegd kan niemand dat: Google bepaalt zijn eigen ranking. We werken naar de bovenste posities toe en nemen weg wat je tegenhoudt, en in de analyse vertellen we wat realistisch is voor je markt."
                     },
                     {
-                        "question": "Hoe lang duurt het voordat ik resultaat zie in de lokale zoekresultaten?",
-                        "answer": "De meeste klanten zien binnen 30 tot 60 dagen duidelijke beweging in de lokale kaartresultaten van Google, al kan het in concurrerende markten langer duren."
+                        "question": "Wat kost het?",
+                        "answer": "Dat hangt af van je markt en van wat je bedrijf nodig heeft. We maken een offerte na de gratis analyse, vaak als onderdeel van een bredere oplossing."
+                    },
+                    {
+                        "question": "Hoe lang duurt het voordat ik resultaat zie?",
+                        "answer": "Lokale SEO bouw je op in maanden, niet in dagen. De analyse laat zien waar je begint, en het maandrapport hoe het zich ontwikkelt."
                     },
                     {
                         "question": "Moet ik al een Google Business Profile hebben?",
-                        "answer": "Nee. Heb je er nog geen, dan maken en verifiëren we het voor je als onderdeel van de onboarding."
+                        "answer": "Nee. Heb je er nog geen, dan hoort het goed inrichten ervan bij het werk."
                     },
                     {
                         "question": "Werkt dit ook voor meer dan één vestiging?",
-                        "answer": "Ja. Bedrijven met meerdere vestigingen worden ondersteund: elke vestiging krijgt een eigen geoptimaliseerd profiel en eigen lokale content."
-                    },
-                    {
-                        "question": "Welke reviewplatforms houden jullie in de gaten?",
-                        "answer": "Google Business Profile is het belangrijkste kanaal, naast Facebook en elke site die specifiek is voor jouw branche en relevant voor je bedrijf. Groeien je behoeften, dan kunnen we meer bronnen toevoegen."
+                        "answer": "Ja. Elke vestiging krijgt een eigen profiel en eigen lokale signalen."
                     },
                     {
                         "question": "Hoe krijgen jullie meer reviews?",
@@ -563,29 +583,29 @@
         "softwareDevelopment": {
             "name": "Softwareontwikkeling",
             "meta": {
-                "description": "Complete producten voor web en mobiel, gebouwd voor elk apparaat en elk schermformaat, van eerste prototype tot lancering in productie.",
-                "title": "Softwareontwikkeling op maat"
+                "title": "Softwareontwikkeling op maat",
+                "description": "Software op maat, gebouwd rond de manier waarop je bedrijf werkt: één Flutter app voor telefoons, tablets, het web en desktop, op een backend gebouwd voor productie."
             },
             "hero": {
                 "eyebrow": "Softwareontwikkeling",
-                "title": "Software op maat, klaar om te groeien",
-                "subtitle": "Complete fullstack producten met een Flutter frontend en een robuuste backend, gebouwd voor elk apparaat en elk schermformaat.",
-                "cta": "Plan een gratis kennismaking van 15 minuten"
+                "title": "Software gebouwd rond de manier waarop je bedrijf werkt",
+                "subtitle": "Schieten standaardtools tekort, dan bouwen we je eigen software: één Flutter app voor telefoons, tablets, het web en desktop, op een backend gebouwd voor productie. Het begint met een gratis analyse van wat je wilt oplossen.",
+                "cta": "Plan je gratis behoefteanalyse"
             },
             "benefits": {
-                "title": "Wat je krijgt",
+                "title": "Gebouwd als product, niet als prototype",
                 "items": [
                     {
                         "title": "Vanaf dag één op elk platform",
-                        "description": "Eén Flutter codebase draait op iOS, Android, het web, macOS, Windows en Linux. Zo bereik je elk apparaat zonder je budget te verdrievoudigen."
+                        "description": "Eén Flutter codebase voor iOS, Android, het web en desktop: overal dezelfde interface, native prestaties, responsief op elk scherm."
                     },
                     {
-                        "title": "Een backend klaar voor productie",
-                        "description": "Een backend gebouwd voor echt verkeer, met automatische tests en CI/CD, geen kwetsbaar prototype dat zich voordoet als product."
+                        "title": "Klaar voor productie",
+                        "description": "Een backend ontworpen voor je product, automatische tests vanaf dag één, veilige releases via een CI/CD pipeline en infrastructuur die meegroeit."
                     },
                     {
-                        "title": "De volledige stack is van jou",
-                        "description": "Broncode, infrastructuur en documentatie zijn volledig van jou zodra het project is opgeleverd."
+                        "title": "Helemaal van jou",
+                        "description": "De broncode, volledige technische documentatie en de overdracht van infrastructuur en deployment, zodra het project is opgeleverd."
                     }
                 ]
             },
@@ -621,27 +641,27 @@
                 ]
             },
             "process": {
-                "title": "Zo werkt het",
+                "title": "Van idee tot product",
                 "steps": [
                     {
                         "number": "01",
-                        "title": "Plannen",
-                        "description": "Plan een gratis kennismaking om te bespreken wat je wilt bouwen."
+                        "title": "Gratis analyse",
+                        "description": "Wat je wilt oplossen, voor wie, en of software op maat het juiste antwoord is."
                     },
                     {
                         "number": "02",
-                        "title": "Kennismaken",
-                        "description": "We brengen je eisen in kaart en stemmen samen de technische aanpak af."
+                        "title": "Scope en offerte",
+                        "description": "Functies, technische aanpak en planning, schriftelijk vastgelegd."
                     },
                     {
                         "number": "03",
-                        "title": "Ontwikkelen",
-                        "description": "We bouwen de frontend en backend van je product op maat."
+                        "title": "Bouwen",
+                        "description": "Frontend en backend vanaf nul, met tests en regelmatige demo's."
                     },
                     {
                         "number": "04",
-                        "title": "Opleveren",
-                        "description": "Je product gaat live, met een planning die per project wordt bepaald op basis van de omvang."
+                        "title": "Lancering en overdracht",
+                        "description": "Live in de stores en op het web, met code en documentatie in jouw handen."
                     }
                 ]
             },
@@ -650,15 +670,15 @@
                 "items": [
                     {
                         "question": "Voor welke platforms kunnen jullie bouwen?",
-                        "answer": "iOS, Android, het web, macOS, Windows en Linux, vanuit één Flutter codebase, met daarachter een backend die speciaal voor de behoeften van je product wordt gebouwd."
+                        "answer": "iOS, Android, het web, macOS, Windows en Linux, vanuit één Flutter codebase."
                     },
                     {
-                        "question": "Hoe wordt de prijs van een softwareproject op maat bepaald?",
-                        "answer": "Elk project wordt apart afgebakend op basis van functies en complexiteit. De offerte volgt na een gratis eerste gesprek, het is geen vast pakket."
+                        "question": "Hoe wordt een project geprijsd?",
+                        "answer": "Elk product is anders, dus maken we een offerte na de gratis analyse, zodra de scope duidelijk is."
                     },
                     {
-                        "question": "Is de broncode van mij als het project klaar is?",
-                        "answer": "Ja. De volledige broncode, de inrichting van de infrastructuur en de documentatie zijn van jou zodra het project is opgeleverd en volledig betaald."
+                        "question": "Ben ik eigenaar van de broncode?",
+                        "answer": "Ja, van alles, samen met de documentatie, zodra het project is opgeleverd en betaald."
                     }
                 ]
             }
@@ -2292,6 +2312,309 @@
             "by": "Geschreven door",
             "updated": "Bijgewerkt",
             "readTime": "{min} min leestijd"
+        }
+    },
+    "landing": {
+        "shared": {
+            "microcopy": "15 minuten via videogesprek. Vrijblijvend.",
+            "closeMicrocopy": "Videogesprek. Vrijblijvend.",
+            "caseStudy": "Lees de case study",
+            "dossier": {
+                "title": "Liever alles in één document?",
+                "text": "Ons dossier legt in één pdf uit hoe we werken en wat we bouwen.",
+                "cta": "Download het dossier (pdf)"
+            }
+        },
+        "websiteDevelopment": {
+            "hero": {
+                "secondary": "Bekijk eerst het bewijs",
+                "note": "Elke site krijgt een offerte op maat van je bedrijf, na een gratis eerste gesprek over wat je nodig hebt."
+            },
+            "scores": {
+                "labels": [
+                    "Prestaties",
+                    "Toegankelijkheid",
+                    "Praktische tips",
+                    "SEO"
+                ],
+                "caption": "Deze website, PageSpeed Insights op mobiel, 25 november 2026",
+                "link": "Doe de test zelf"
+            },
+            "portfolio": {
+                "eyebrow": "Portfolio",
+                "title": "Echte bedrijven, live sites die je vandaag nog kunt openen",
+                "subtitle": "Elk project hieronder staat online en is gedocumenteerd, met de scores en de keuzes erachter.",
+                "all": "Bekijk het volledige portfolio"
+            },
+            "performance": {
+                "eyebrow": "Prestaties",
+                "title": "Snelheid is het eerste wat je klanten merken",
+                "text": "Veel mensen zoeken een lokaal bedrijf op hun telefoon, vaak onderweg. Een pagina die meteen verschijnt en op de eerste tik reageert, houdt ze aan het lezen. Een pagina die blijft hangen, stuurt ze terug naar de zoekresultaten, en naar je concurrenten.",
+                "points": [
+                    {
+                        "title": "Sneller klaar om te lezen.",
+                        "text": "Pagina's komen binnen als afgewerkte HTML, met nauwelijks JavaScript om te downloaden."
+                    },
+                    {
+                        "title": "Reageert meteen.",
+                        "text": "0 ms blokkeertijd op deze site in onze labtests: menu's en knoppen reageren op de eerste tik."
+                    },
+                    {
+                        "title": "Staat stil tijdens het laden.",
+                        "text": "Afbeeldingen houden hun plek vrij, zodat er niets verspringt onder de vinger van de lezer."
+                    }
+                ],
+                "cta": "Controleer het op PageSpeed Insights",
+                "note": "Scores verschillen een beetje per meting.",
+                "alt": "Rapport van PageSpeed Insights voor hlorenzoz.com op mobiel, 25 november 2026: 98 voor Prestaties en 100 voor Toegankelijkheid, Praktische tips en SEO",
+                "caption": "PageSpeed Insights voor hlorenzoz.com op mobiel, 25 november 2026."
+            },
+            "structuredData": {
+                "eyebrow": "Gestructureerde data",
+                "title": "Google leest je bedrijf, niet alleen je woorden",
+                "paragraphs": [
+                    "Elke pagina bevat een korte, machineleesbare beschrijving van je bedrijf: wie je bent, waar je werkt, je openingstijden, je diensten en je antwoorden op veelgestelde vragen.",
+                    "Geldige gestructureerde data maken je pagina's geschikt voor uitgebreide resultaten in Google Zoeken, zoals bedrijfsgegevens en veelgestelde vragen, en geven assistenten met AI een duidelijke bron om je te beschrijven. Google beslist wat het toont; wij zorgen dat je in aanmerking komt."
+                ],
+                "cta": "Test het in de Rich Results Test van Google",
+                "alt": "Rich Results Test van Google voor hlorenzoz.com: 3 geldige items gevonden, veelgestelde vragen, lokale bedrijven en organisatie",
+                "caption": "De Rich Results Test van Google voor hlorenzoz.com: drie geldige items."
+            },
+            "pwa": {
+                "eyebrow": "Progressive Web App",
+                "title": "Je eigen app op de telefoon van je klanten, zonder app store",
+                "text": "Je klanten zetten je site in twee tikken op hun startscherm, met jouw icoon en jouw naam. Hij opent meteen, net als een app, en de belangrijkste pagina's blijven werken bij een zwak signaal of zelfs zonder bereik.",
+                "tiles": [
+                    {
+                        "title": "Installeerbaar",
+                        "text": "Vanuit de browser, zonder store"
+                    },
+                    {
+                        "title": "Werkt offline",
+                        "text": "Belangrijke pagina's blijven beschikbaar"
+                    },
+                    {
+                        "title": "Eén codebase",
+                        "text": "Telefoon, tablet en desktop"
+                    }
+                ],
+                "alt": "Installatievenster op een demosite van een tandartspraktijk: toevoegen aan het startscherm, direct toegang, zelfs offline",
+                "caption": "Het installatievenster op onze demo voor een tandartspraktijk."
+            },
+            "translations": {
+                "eyebrow": "Vertalingen",
+                "title": "Spreek je klanten aan in hun eigen taal",
+                "paragraphs": [
+                    "Deze site is gepubliceerd in negen talen. Elke taal heeft eigen URL's, een eigen sitemap en vertaalde beschrijvingen van afbeeldingen, en elke pagina vertelt Google welke versie het in welk land moet tonen.",
+                    "Een toerist in Málaga, een gezin in Dublin of een klant in Lyon vindt je pagina in de taal waarin hij zoekt, met je prijzen en voorwaarden speciaal voor hem geschreven."
+                ],
+                "liveIn": "hlorenzoz.com is live in",
+                "stats": {
+                    "languages": "talen",
+                    "sitemaps": "sitemaps, één per taal",
+                    "hreflang": "hreflang tags op onze homepage"
+                },
+                "switch": "Bekijk deze pagina in {language}"
+            },
+            "llms": {
+                "eyebrow": "llms.txt",
+                "title": "Een briefing speciaal voor assistenten met AI",
+                "paragraphs": [
+                    "Steeds meer mensen vragen ChatGPT, Claude, Gemini of Perplexity welk bedrijf ze moeten bellen. llms.txt is een tekstbestand in de hoofdmap van je site dat samenvat wie je bent, wat je aanbiedt en waar elke pagina staat, in een vorm die taalmodellen makkelijk lezen.",
+                    "Het is een opkomende conventie, geen officiële standaard, en geen enkele dienst met AI belooft het te gebruiken. Daarom voegen we het toe naast gestructureerde data en heldere content, nooit in plaats daarvan."
+                ],
+                "cta": "Lees de onze op hlorenzoz.com/llms.txt",
+                "file": "hlorenzoz.com/llms.txt"
+            },
+            "package": {
+                "label": "Jouw prijs",
+                "details": [
+                    "Pagina's, talen en functies verschillen per bedrijf, dus bepalen we de prijs samen in een gratis eerste gesprek.",
+                    "Na het gesprek weet je wat je krijgt, wanneer en voor welk bedrag. Vrijblijvend."
+                ]
+            },
+            "close": {
+                "title": "Een website die zichzelf bewijst, binnen twee weken live",
+                "subtitle": "Snel, vindbaar via Google en AI, installeerbaar en in de talen van je klanten. Vertel ons over je bedrijf in een gratis gesprek van 15 minuten."
+            }
+        },
+        "localSeo": {
+            "hero": {
+                "secondary": "Waar we aan werken",
+                "proof": [
+                    {
+                        "value": "100",
+                        "text": "Score voor SEO op onze eigen site"
+                    },
+                    {
+                        "value": "Geldig",
+                        "text": "Gegevens als lokaal bedrijf in de Rich Results Test van Google"
+                    }
+                ],
+                "check": "controleer het",
+                "disclaimer": "We beloven nooit een positie in Google: niemand heeft de ranking in handen."
+            },
+            "analysis": {
+                "eyebrow": "Stap één, gratis",
+                "title": "We bekijken je markt voordat we iets aanraken",
+                "text": "In het gratis eerste gesprek zien we waar je nu staat en wat klanten ervan weerhoudt je te vinden. Pas daarna stellen we voor wat we gaan doen, en of lokale SEO überhaupt het juiste onderdeel voor je is.",
+                "items": [
+                    "Je Google Business Profile",
+                    "Je website en hoe Google die leest",
+                    "Je reviews en hoe je erop reageert",
+                    "Wie Google vandaag in je regio aanbeveelt",
+                    "Wat assistenten met AI over je branche zeggen",
+                    "De zoekopdrachten die je klanten echt doen"
+                ]
+            },
+            "pillars": {
+                "eyebrow": "Het werk",
+                "subtitle": "We werken aan de fronten die volgens je analyse het meest tellen, volgens een plan dat je vooraf kent."
+            },
+            "structuredData": {
+                "eyebrow": "Gestructureerde data",
+                "title": "Geef Google feiten, geen gissingen",
+                "text": "Je naam, adres, telefoonnummer, openingstijden, diensten en werkgebied, geschreven in het formaat dat zoekmachines lezen. Zo komen je pagina's in aanmerking voor uitgebreide resultaten en blijven je gegevens overal gelijk, waar Google en assistenten met AI ook kijken.",
+                "cta": "Test het in de Rich Results Test van Google",
+                "alt": "Rich Results Test van Google voor hlorenzoz.com: 3 geldige items gevonden, veelgestelde vragen, lokale bedrijven en organisatie",
+                "caption": "De Rich Results Test van Google voor onze eigen site: geldige gegevens als lokaal bedrijf."
+            },
+            "ai": {
+                "eyebrow": "Zoeken met AI",
+                "title": "Aanbevolen in antwoorden van AI, niet alleen in Google",
+                "text": "Steeds meer mensen vragen ChatGPT, Gemini of Perplexity welk bedrijf ze moeten bellen. Die assistenten bouwen hun antwoord op uit wat het web over je zegt: je site, je profielen, je vermeldingen en je reviews. Wij zorgen dat dat allemaal duidelijk, consistent en makkelijk leesbaar voor ze is, inclusief een samenvatting van je bedrijf in llms.txt.",
+                "tiles": [
+                    {
+                        "title": "Consistente gegevens",
+                        "text": "Overal dezelfde naam, hetzelfde adres en telefoonnummer"
+                    },
+                    {
+                        "title": "Heldere content",
+                        "text": "Antwoorden op de vragen die mensen stellen"
+                    },
+                    {
+                        "title": "Betrouwbare vermeldingen",
+                        "text": "Op sites waar tools met AI op vertrouwen"
+                    }
+                ],
+                "llms": {
+                    "title": "llms.txt",
+                    "text": "Bekijk de onze"
+                }
+            },
+            "reviews": {
+                "eyebrow": "Reviews",
+                "title": "Meer reviews, op de juiste manier verzameld",
+                "text": "Reviews behoren tot de sterkste lokale signalen. We geven elke klant een makkelijke manier om er een achter te laten en volgen hoe je reputatie groeit. We selecteren nooit wie we het vragen: alleen tevreden klanten vragen is in strijd met de regels van Google en brengt je profiel in gevaar.",
+                "report": {
+                    "title": "Elke maand weet je",
+                    "items": [
+                        "Wat er is gedaan, en waarom",
+                        "Hoe je zichtbaarheid en reviews zich ontwikkelden",
+                        "Wat we volgende maand bijsturen"
+                    ],
+                    "note": "Een maandrapport in gewone taal, zonder jargon."
+                }
+            },
+            "close": {
+                "title": "Ontdek waar je staat in je regio",
+                "subtitle": "In een gratis gesprek van 15 minuten bekijken we je lokale aanwezigheid en vertellen we wat wij eraan zouden doen."
+            }
+        },
+        "aiVoiceReceptionist": {
+            "hero": {
+                "secondary": "Praat eerst met de onze"
+            },
+            "tryIt": {
+                "title": "Probeer het nu",
+                "text": "Deze site heeft een eigen assistent met AI. Stel hem vragen over onze diensten, zoals een klant ze aan jou zou stellen.",
+                "button": "Start een gesprek",
+                "note": "Gebruikt je microfoon. Werkt met ElevenLabs."
+            },
+            "whatItDoes": {
+                "eyebrow": "Wat hij doet",
+                "subtitle": "Terwijl je bij een klant bent, 's avonds gesloten bent of het gewoon druk hebt, blijft de telefoon gaan. Je receptionist neemt elke keer op."
+            },
+            "example": {
+                "eyebrow": "Klinkt als je eigen team",
+                "title": "Jouw stem, jouw script, jouw manier van werken",
+                "paragraphs": [
+                    "Het script schrijven we samen met jou op basis van de analyse: wat hij zegt, wat hij inplant en wanneer hij een gesprek doorverbindt met een mens. Hij werkt met je bestaande telefoonsysteem, en met je CRM (HubSpot, Salesforce of GoHighLevel) zodra je ons toegang tot de API geeft.",
+                    "Geoptimaliseerd voor Engels en Spaans."
+                ],
+                "label": "Voorbeeldgesprek, ter illustratie",
+                "caller": "Beller",
+                "receptionist": "Receptionist",
+                "lines": [
+                    "Hallo, ik wil graag een gebitsreiniging inplannen voor volgende week.",
+                    "Natuurlijk. Ik heb dinsdag om 10:00 of donderdag om 16:30. Wat komt je het beste uit?",
+                    "Donderdag, graag.",
+                    "Staat genoteerd voor donderdag om 16:30. Je krijgt een bevestiging per sms."
+                ]
+            },
+            "care": {
+                "title": "We blijven erbij na de lancering",
+                "tiles": [
+                    {
+                        "title": "Scriptupdates",
+                        "text": "Nieuwe diensten, nieuwe openingstijden, nieuwe vragen: we houden zijn antwoorden elke maand actueel."
+                    },
+                    {
+                        "title": "Regelmatig getest",
+                        "text": "We bellen hem zelf en nemen gesprekken door om te zien wat hij beter moet afhandelen."
+                    },
+                    {
+                        "title": "Zorgvuldig met gegevens",
+                        "text": "Gegevens van bellers verwerkt in lijn met de AVG."
+                    }
+                ],
+                "bigger": {
+                    "title": "Onderdeel van een grotere oplossing",
+                    "text": "Hij werkt het best naast een website die converteert en een lokale aanwezigheid die de telefoontjes oplevert. Na de analyse stellen we de combinatie voor die bij je past; sommige onderdelen kunnen inbegrepen zijn.",
+                    "cta": "Bekijk hoe we werken"
+                }
+            },
+            "close": {
+                "title": "Mis geen telefoontjes meer, vanaf deze maand",
+                "subtitle": "Vertel ons hoe je telefoon nu werkt. In 15 minuten laten we zien wat je receptionist zou doen."
+            }
+        },
+        "softwareDevelopment": {
+            "hero": {
+                "secondary": "Bekijk een product dat we bouwden",
+                "platforms": [
+                    "iOS",
+                    "Android",
+                    "Web",
+                    "macOS",
+                    "Windows",
+                    "Linux"
+                ],
+                "platformsNote": "vanuit één codebase"
+            },
+            "case": {
+                "eyebrow": "Door ons gebouwd",
+                "title": "Investep App: één codebase, elk scherm",
+                "text": "Een platform voor portfoliobeheer voor studenten van Investep Academy: volg meerdere brokers, bereken verwachte rendementen over elke gewenste periode en breng activa met hefboom in kaart. Eén Flutter codebase op Cloudflare, met een licht en een donker thema.",
+                "demo": "Open de live demo",
+                "darkAlt": "Dashboard van Investep App in donker thema: totaal saldo, verdeling per broker en soort rekening",
+                "darkCaption": "Dashboard, donker thema.",
+                "lightAlt": "Dashboard van Investep App in licht thema, met het beheergedeelte",
+                "lightCaption": "Hetzelfde scherm, licht thema."
+            },
+            "why": {
+                "eyebrow": "Waarom het loont"
+            },
+            "article": {
+                "eyebrow": "Van onze LinkedIn",
+                "title": "Zo schaal je één codebase naar elk apparaat",
+                "text": "Een kijkje in de architectuur die één codebase naar web, mobiel en desktop brengt, zonder dubbel werk.",
+                "cta": "Lees het artikel"
+            },
+            "close": {
+                "title": "Vertel ons wat je wilt bouwen",
+                "subtitle": "In een gratis gesprek van 15 minuten bekijken we het probleem en vertellen we hoe wij het zouden oplossen."
+            }
         }
     }
 }

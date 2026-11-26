@@ -18,9 +18,22 @@ describe('BenefitsList', () => {
         }
     });
 
-    it('renders an asymmetric layout: the first item is featured, the rest are not', async () => {
+    it('numbers the items 01, 02, 03 by default, each with an h3', async () => {
         const screen = await renderAstro(BenefitsList, { title: 'Why it works', items });
-        expect(screen.getByTestId('benefit-featured')).toHaveTextContent(items[0].title);
-        expect(screen.queryAllByTestId('benefit-featured')).toHaveLength(1);
+        expect(screen.getAllByRole('heading', { level: 3 }).map((h) => h.textContent)).toEqual(items.map((i) => i.title));
+        expect(screen.getByText('01')).toBeInTheDocument();
+        expect(screen.getByText('03')).toBeInTheDocument();
+    });
+
+    it('renders the eyebrow and subtitle, and drops the numbers when asked', async () => {
+        const screen = await renderAstro(BenefitsList, { title: 'Why it works', items, eyebrow: 'What it does', subtitle: 'Every call answered.', numbered: false });
+        expect(screen.getByText('What it does')).toBeInTheDocument();
+        expect(screen.getByText('Every call answered.')).toBeInTheDocument();
+        expect(screen.queryByText('01')).toBeNull();
+    });
+
+    it('takes an id so the hero can link to it', async () => {
+        const { body } = await renderAstro(BenefitsList, { title: 'Why it works', items, id: 'pillars' });
+        expect(body.querySelector('section#pillars')).not.toBeNull();
     });
 });

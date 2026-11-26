@@ -3,6 +3,11 @@
  * Mounts the ElevenLabs React island
  * once the visitor scrolls past half the viewport (an engagement signal). React
  * is only downloaded at that point, through the dynamic import below.
+ *
+ * A click on any `[data-assistant-open]` button (the AI Voice Receptionist
+ * page's "Start a conversation") is an explicit request: it mounts the island
+ * at once, expands it if it is shrunk and focuses its start button. The
+ * microphone is only asked for when the visitor presses that button.
  */
 import { getTranslations } from '@/lib/i18n';
 
@@ -18,6 +23,8 @@ const labels = getTranslations(locale).raw('assistant');
 <div data-elevenlabs data-locale={locale} data-labels={JSON.stringify(labels)}></div>
 
 <script>
+    import type { AssistantLabels } from '../islands/ElevenLabsWidget';
+
     const container = document.querySelector<HTMLElement>('[data-elevenlabs]');
 
     // Skip for bots to ensure clean LCP/Performance scores
@@ -25,14 +32,35 @@ const labels = getTranslations(locale).raw('assistant');
         /Lighthouse|Googlebot|HeadlessChrome|PageSpeed|Chrome-Lighthouse|Pingdom|GTmetrix|bot|spider|crawl/i.test(navigator.userAgent) ||
         navigator.webdriver;
 
-    if (container && !isBot) {
-        // Mount as soon as the user scrolls below the fold (engagement signal).
-        const handleScroll = () => {
-            if (window.scrollY > window.innerHeight * 0.5) {
-                window.removeEventListener('scroll', handleScroll);
-                import('../islands/mount-elevenlabs').then(({ mount }) => mount(container, container.dataset.locale ?? 'en', JSON.parse(container.dataset.labels!)));
-            }
+    if (container) {
+        const labels = JSON.parse(container.dataset.labels!) as AssistantLabels;
+        let mounted: Promise<void> | undefined;
+        const mountAssistant = () =>
+            (mounted ??= import('../islands/mount-elevenlabs').then(({ mount }) => mount(container, container.dataset.locale ?? 'en', labels)));
+
+        // The island renders after its own effects run, so poll a few frames for its buttons.
+        const openAssistant = (frames = 120) => {
+            const buttons = [...container.querySelectorAll('button')];
+            buttons.find((b) => b.getAttribute('aria-label') === labels.expand)?.click();
+            const start = buttons.find((b) => b.textContent?.trim() === labels.startCall);
+            if (start) return start.focus();
+            if (frames > 0) requestAnimationFrame(() => openAssistant(frames - 1));
         };
-        window.addEventListener('scroll', handleScroll, { passive: true });
+
+        document.addEventListener('click', (event) => {
+            if (!(event.target as Element | null)?.closest?.('[data-assistant-open]')) return;
+            mountAssistant().then(() => openAssistant());
+        });
+
+        if (!isBot) {
+            // Mount as soon as the user scrolls below the fold (engagement signal).
+            const handleScroll = () => {
+                if (window.scrollY > window.innerHeight * 0.5) {
+                    window.removeEventListener('scroll', handleScroll);
+                    mountAssistant();
+                }
+            };
+            window.addEventListener('scroll', handleScroll, { passive: true });
+        }
     }
 </script>

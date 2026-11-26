@@ -18,7 +18,9 @@
         "http://localhost:45723/en/sitemap/",
         "http://localhost:45723/en/services/",
         "http://localhost:45723/en/services/website-development/",
-        "http://localhost:45723/en/services/local-seo/"
+        "http://localhost:45723/en/services/local-seo/",
+        "http://localhost:45723/en/services/ai-voice-receptionist/",
+        "http://localhost:45723/en/services/software-development/"
       ],
       "numberOfRuns": 1,
       "settings": {

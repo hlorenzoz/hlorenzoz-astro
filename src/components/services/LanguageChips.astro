@@ -1,0 +1,42 @@
+---
+/**
+ * The languages this site is published in, a few counts that back the claim,
+ * and a link to the current page in another language when one exists.
+ */
+export interface Props {
+    heading: string;
+    languages: string[];
+    stats: { value: string; label: string }[];
+    /** A locale-prefixed href (`/es/...`), so its language is its first segment. */
+    switchLink?: { label: string; href: string };
+}
+
+const { heading, languages, stats, switchLink } = Astro.props;
+const switchLang = switchLink?.href.split('/')[1];
+---
+
+<div data-language-chips class="bg-white rounded-[1.75rem] border border-gray-100 p-8 flex flex-col gap-5">
+    <p class="text-[13px] font-bold uppercase tracking-[0.08em] text-gray-600">{heading}</p>
+    <ul class="flex flex-wrap gap-2.5">
+        {languages.map((name) => <li class="px-4 py-2.5 rounded-full bg-blue-50 text-blue-900 font-bold text-[15px]">{name}</li>)}
+    </ul>
+    {
+        stats.length > 0 && (
+            <dl class="grid grid-cols-[repeat(auto-fit,minmax(140px,1fr))] gap-3 border-t border-gray-100 pt-5">
+                {stats.map((stat) => (
+                    <div class="flex flex-col-reverse">
+                        <dt class="text-sm text-gray-700">{stat.label}</dt>
+                        <dd class="text-[1.75rem] font-extrabold text-black">{stat.value}</dd>
+                    </div>
+                ))}
+            </dl>
+        )
+    }
+    {
+        switchLink && (
+            <a href={switchLink.href} hreflang={switchLang} class="self-start text-[15px] font-bold text-blue-700 underline underline-offset-4">
+                {switchLink.label}
+            </a>
+        )
+    }
+</div>

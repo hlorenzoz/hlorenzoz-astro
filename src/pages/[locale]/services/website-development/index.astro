@@ -1,19 +1,142 @@
 ---
 import ServicePage from '../_ServicePage.astro';
 import { contentPageFor, serviceContentPagesByKey } from '../_service-content';
-import { type Locale } from '@/lib/site-config';
-import { routeLocales } from '@/lib/routes';
+import ScoreStrip from '@/src/components/services/ScoreStrip.astro';
+import LiveSitesGrid from '@/src/components/services/LiveSitesGrid.astro';
+import FeatureSection from '@/src/components/services/FeatureSection.astro';
+import ProofFigure from '@/src/components/services/ProofFigure.astro';
+import TileGrid from '@/src/components/services/TileGrid.astro';
+import LanguageChips from '@/src/components/services/LanguageChips.astro';
+import { LLMS_TXT_PATH, PAGESPEED_SCORES, PAGESPEED_URL, PROOF_IMAGES, RICH_RESULTS_URL } from '@/src/components/services/proof';
+import llmsTxt from '@/public/llms.txt?raw';
+import { LOCALES, type Locale } from '@/lib/site-config';
+import { LIVE_SITE_CASE_STUDIES, routeExists, routeHref, routeLocales } from '@/lib/routes';
+import { LOCALE_INFO, localeHref } from '@/lib/routing';
+import { getTranslations } from '@/lib/i18n';
+
+const PATH = 'services/website-development';
 
 export function getStaticPaths() {
     return routeLocales('services/website-development').map((locale) => ({ params: { locale } }));
 }
 
 const { locale } = Astro.params as { locale: Locale };
+const t = getTranslations(locale, 'landing.websiteDevelopment');
+const tShared = getTranslations(locale, 'landing.shared');
+const tPortfolio = getTranslations(locale, 'portfolio');
+
+const scoreLabels: string[] = t.raw('scores.labels');
+const scores = scoreLabels.map((label, i) => ({ label, value: PAGESPEED_SCORES[i] }));
+
+const sites = LIVE_SITE_CASE_STUDIES.filter(({ post }) => routeExists(`news/${post.slug}`, locale)).map(({ item, post }) => ({
+    title: tPortfolio(`${item.id}.title`),
+    badge: tPortfolio(`${item.id}.badge`),
+    image: item.image,
+    href: localeHref(locale, `news/${post.slug}`),
+}));
+
+// Where the site itself is published: the home page's locales.
+const siteLocales = routeLocales('');
+// This page in another language: Spanish, or English for a Spanish reader.
+const other = (['es', 'en'] as const).find((l) => l !== locale && routeExists(PATH, l));
+const switchLink = other && { label: t('translations.switch', { language: LOCALE_INFO[other].name }), href: localeHref(other, PATH) };
+const stats = [
+    { value: String(siteLocales.length), label: t('translations.stats.languages') },
+    { value: String(routeLocales('sitemap').length), label: t('translations.stats.sitemaps') },
+    // One hreflang per language plus x-default.
+    { value: String(siteLocales.length + 1), label: t('translations.stats.hreflang') },
+];
+
+// The real file, trimmed to its opening lines: what the panel shows cannot drift from what we publish.
+const llmsExcerpt = `${llmsTxt.split('\n').slice(0, 9).join('\n').trimEnd()}\n...`;
+const points: { title: string; text: string }[] = t.raw('performance.points');
 ---
 
 <ServicePage
     locale={locale}
     namespace="services.websiteDevelopment"
-    path="services/website-development"
+    landing="landing.websiteDevelopment"
+    path={PATH}
     page={contentPageFor(serviceContentPagesByKey.websiteDevelopment, locale)}
-></ServicePage>
+    deliverables
+    hero={{ secondaryLabel: t('hero.secondary'), secondaryHref: '#proof', note: t('hero.note') }}
+>
+    <ScoreStrip slot="hero" scores={scores} caption={t('scores.caption')} linkLabel={t('scores.link')} href={PAGESPEED_URL} />
+
+    <LiveSitesGrid
+        slot="after-hero"
+        id="proof"
+        eyebrow={t('portfolio.eyebrow')}
+        title={t('portfolio.title')}
+        subtitle={t('portfolio.subtitle')}
+        cardCta={tShared('caseStudy')}
+        allLabel={t('portfolio.all')}
+        allHref={routeHref(locale, 'portfolio')}
+        sites={sites}
+    />
+
+    <Fragment slot="after-benefits">
+        <FeatureSection
+            eyebrow={t('performance.eyebrow')}
+            title={t('performance.title')}
+            paragraphs={[t('performance.text')]}
+            link={{ label: t('performance.cta'), href: PAGESPEED_URL }}
+            note={t('performance.note')}
+        >
+            <ul class="flex flex-col gap-3.5">
+                {
+                    points.map((point) => (
+                        <li class="text-base leading-relaxed">
+                            <strong class="text-black">{point.title}</strong> <span class="text-gray-700">{point.text}</span>
+                        </li>
+                    ))
+                }
+            </ul>
+            <ProofFigure slot="media" {...PROOF_IMAGES.pagespeed} alt={t('performance.alt')} caption={t('performance.caption')} />
+        </FeatureSection>
+
+        <FeatureSection
+            tone="gray"
+            reverse
+            eyebrow={t('structuredData.eyebrow')}
+            title={t('structuredData.title')}
+            paragraphs={t.raw('structuredData.paragraphs')}
+            link={{ label: t('structuredData.cta'), href: RICH_RESULTS_URL }}
+        >
+            <ProofFigure slot="media" {...PROOF_IMAGES.richResults} alt={t('structuredData.alt')} caption={t('structuredData.caption')} />
+        </FeatureSection>
+
+        <FeatureSection eyebrow={t('pwa.eyebrow')} title={t('pwa.title')} paragraphs={[t('pwa.text')]}>
+            <TileGrid items={t.raw('pwa.tiles')} />
+            <ProofFigure slot="media" {...PROOF_IMAGES.pwa} alt={t('pwa.alt')} caption={t('pwa.caption')} />
+        </FeatureSection>
+
+        <FeatureSection tone="gray" eyebrow={t('translations.eyebrow')} title={t('translations.title')} paragraphs={t.raw('translations.paragraphs')}>
+            <LanguageChips
+                slot="media"
+                heading={t('translations.liveIn')}
+                languages={LOCALES.filter((l) => siteLocales.includes(l)).map((l) => LOCALE_INFO[l].name)}
+                stats={stats}
+                switchLink={switchLink}
+            />
+        </FeatureSection>
+
+        <FeatureSection
+            tone="dark"
+            eyebrow={t('llms.eyebrow')}
+            title={t('llms.title')}
+            paragraphs={t.raw('llms.paragraphs')}
+            link={{ label: t('llms.cta'), href: LLMS_TXT_PATH }}
+        >
+            <div slot="media" class="rounded-3xl bg-[#0b0f19] border border-white/10 overflow-hidden">
+                <div class="flex items-center gap-2 px-[18px] py-3.5 border-b border-white/10">
+                    <span aria-hidden="true" class="size-3 rounded-full bg-gray-700"></span>
+                    <span aria-hidden="true" class="size-3 rounded-full bg-gray-700"></span>
+                    <span aria-hidden="true" class="size-3 rounded-full bg-gray-700"></span>
+                    <span class="ml-2 text-[13px] text-gray-400">{t('llms.file')}</span>
+                </div>
+                <pre class="m-0 p-6 font-mono text-sm leading-[1.7] text-gray-200 whitespace-pre-wrap break-words">{llmsExcerpt}</pre>
+            </div>
+        </FeatureSection>
+    </Fragment>
+</ServicePage>

@@ -11,7 +11,8 @@ export default getViteConfig({
     globals: true,
     setupFiles: ['./vitest.setup.ts'],
     testTimeout: 15000,
-    exclude: ['node_modules/', 'dist/', 'coverage/', '**/*.config.{ts,js}', '**/*.d.ts', '**/tests/e2e/**'],
+    // Agent worktrees live under .claude/ with their own copy of the repo and its node_modules.
+    exclude: ['**/node_modules/**', 'dist/', 'coverage/', '.claude/**', '**/*.config.{ts,js}', '**/*.d.ts', '**/tests/e2e/**'],
     coverage: {
       provider: 'v8',
       reporter: ['text', 'json', 'html'],

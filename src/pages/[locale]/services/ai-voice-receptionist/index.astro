@@ -1,19 +1,68 @@
 ---
 import ServicePage from '../_ServicePage.astro';
 import { contentPageFor, serviceContentPagesByKey } from '../_service-content';
+import FeatureSection from '@/src/components/services/FeatureSection.astro';
+import TileGrid from '@/src/components/services/TileGrid.astro';
+import TryAssistant from '@/src/components/services/TryAssistant.astro';
 import { type Locale } from '@/lib/site-config';
-import { routeLocales } from '@/lib/routes';
+import { routeHref, routeLocales } from '@/lib/routes';
+import { getTranslations } from '@/lib/i18n';
 
 export function getStaticPaths() {
     return routeLocales('services/ai-voice-receptionist').map((locale) => ({ params: { locale } }));
 }
 
 const { locale } = Astro.params as { locale: Locale };
+const t = getTranslations(locale, 'landing.aiVoiceReceptionist');
+
+// The sample call alternates: the caller speaks first.
+const lines: string[] = t.raw('example.lines');
 ---
 
 <ServicePage
     locale={locale}
     namespace="services.aiVoiceReceptionist"
+    landing="landing.aiVoiceReceptionist"
     path="services/ai-voice-receptionist"
     page={contentPageFor(serviceContentPagesByKey.aiVoiceReceptionist, locale)}
-></ServicePage>
+    hero={{ secondaryLabel: t('hero.secondary'), secondaryHref: '#try' }}
+    benefits={{ eyebrow: t('whatItDoes.eyebrow'), subtitle: t('whatItDoes.subtitle'), numbered: false }}
+>
+    <TryAssistant slot="hero-aside" id="try" title={t('tryIt.title')} text={t('tryIt.text')} label={t('tryIt.button')} note={t('tryIt.note')} />
+
+    <Fragment slot="after-benefits">
+        <FeatureSection eyebrow={t('example.eyebrow')} title={t('example.title')} paragraphs={t.raw('example.paragraphs')}>
+            <figure slot="media" class="rounded-[1.75rem] bg-[#f5f5f7] p-7 flex flex-col gap-3">
+                <figcaption class="text-xs font-bold uppercase tracking-[0.12em] text-gray-600">{t('example.label')}</figcaption>
+                <ol class="flex flex-col gap-3">
+                    {
+                        lines.map((line, i) =>
+                            i % 2 === 0 ? (
+                                <li class="self-end max-w-[85%] rounded-2xl rounded-br-sm bg-blue-900 text-white px-4 py-3 text-[15px] leading-relaxed">
+                                    <span class="sr-only">{t('example.caller')}: </span>
+                                    {line}
+                                </li>
+                            ) : (
+                                <li class="self-start max-w-[85%] rounded-2xl rounded-bl-sm bg-white border border-gray-200 text-black px-4 py-3 text-[15px] leading-relaxed">
+                                    <span class="sr-only">{t('example.receptionist')}: </span>
+                                    {line}
+                                </li>
+                            )
+                        )
+                    }
+                </ol>
+            </figure>
+        </FeatureSection>
+
+        <FeatureSection tone="gray" title={t('care.title')}>
+            <TileGrid tone="white" items={t.raw('care.tiles')} />
+            <div class="rounded-[1.75rem] bg-black text-white p-8 flex flex-wrap items-center justify-between gap-6">
+                <div class="flex flex-col gap-2 flex-[1_1_420px] min-w-0">
+                    <strong class="text-xl font-extrabold">{t('care.bigger.title')}</strong>
+                    <p class="text-base leading-relaxed text-gray-300">{t('care.bigger.text')}</p>
+                </div>
+                <a href={`${routeHref(locale, '')}#process`} class="bg-white text-black text-[15px] font-bold px-6 py-3.5 rounded-full hover:bg-gray-200">{t('care.bigger.cta')}</a>
+            </div>
+        </FeatureSection>
+    </Fragment>
+</ServicePage>

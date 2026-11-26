@@ -1,9 +1,10 @@
 ---
 /**
- * Shared hero for the services hub and the service pages.
+ * Shared hero for the services hub and the service pages: left-aligned on the
+ * dark background, never the homepage's centred hero.
  *
- * Props-only, and per the layout-diversity requirement NOT a centered hero on
- * a dark mesh (the homepage already is one): this one is left-aligned.
+ * The default slot holds the proof under the calls to action (scores, checks,
+ * platforms); the `aside` slot a card beside the text on wide screens.
  */
 export interface Props {
     eyebrow?: string;
@@ -11,31 +12,56 @@ export interface Props {
     subtitle: string;
     ctaLabel: string;
     ctaHref: string;
+    secondaryLabel?: string;
+    secondaryHref?: string;
+    /** Small print right under the calls to action. */
+    microcopy?: string;
+    note?: string;
 }
 
-const { eyebrow, title, subtitle, ctaLabel, ctaHref } = Astro.props;
+const { eyebrow, title, subtitle, ctaLabel, ctaHref, secondaryLabel, secondaryHref, microcopy, note } = Astro.props;
+const hasAside = Astro.slots.has('aside');
 ---
 
 <section class="relative pt-24 pb-20 md:pb-28 px-6 overflow-hidden hero-bg-deep">
-    <div class="max-w-3xl mx-auto text-left flex flex-col items-start gap-6 relative z-10">
-        {
-            eyebrow && (
-                <span class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-400 text-[10px] font-bold tracking-[0.2em] uppercase">
-                    {eyebrow}
-                </span>
-            )
-        }
+    {/* w-full: BaseLayout's critical CSS centres `hero-bg-deep` children as flex items, which would shrink them to their content. */}
+    <div class={`w-full mx-auto relative z-10 ${hasAside ? 'max-w-6xl grid lg:grid-cols-[minmax(0,1fr)_380px] gap-12 items-center' : 'max-w-3xl'}`}>
+        <div class="text-left flex flex-col items-start gap-6 min-w-0">
+            {
+                eyebrow && (
+                    <span class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-400 text-[10px] font-bold tracking-[0.2em] uppercase">
+                        {eyebrow}
+                    </span>
+                )
+            }
 
-        <h1 class="text-4xl md:text-6xl font-bold tracking-tight text-white leading-[1.05]">
-            {title}
-        </h1>
+            <h1 class="text-4xl md:text-6xl font-bold tracking-tight text-white leading-[1.05]">
+                {title}
+            </h1>
 
-        <p class="text-lg md:text-xl text-gray-200 max-w-2xl font-medium leading-relaxed">
-            {subtitle}
-        </p>
+            <p class="text-lg md:text-xl text-gray-200 max-w-2xl font-medium leading-relaxed">
+                {subtitle}
+            </p>
 
-        <a href={ctaHref} class="bg-blue-900 text-white text-base font-bold px-10 py-4 rounded-full shadow-glow hover:bg-blue-800">
-            {ctaLabel}
-        </a>
+            <div class="flex flex-wrap items-center gap-5">
+                <a href={ctaHref} class="bg-blue-900 text-white text-base font-bold px-10 py-4 rounded-full shadow-glow hover:bg-blue-800">
+                    {ctaLabel}
+                </a>
+                {
+                    secondaryLabel && secondaryHref && (
+                        <a href={secondaryHref} class="text-white text-base font-semibold underline underline-offset-4 hover:text-blue-200">
+                            {secondaryLabel}
+                        </a>
+                    )
+                }
+            </div>
+
+            {microcopy && <p class="-mt-2 text-sm text-gray-400">{microcopy}</p>}
+            {note && <p class="text-[15px] text-gray-300">{note}</p>}
+
+            <slot />
+        </div>
+
+        <slot name="aside" />
     </div>
 </section>

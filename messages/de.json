@@ -1785,29 +1785,37 @@
             "subtitle": "Lokales SEO ist unser Kernangebot: ein monatlicher Plan, der Ihnen Kunden aus Ihrer Region über Google und KI bringt. Webentwicklung, Telefonassistent mit KI und Softwareentwicklung sind optional.",
             "cta": "Leistungen ansehen"
         },
-        "quoted": "Auf Ihr Unternehmen zugeschnitten, mit Angebot nach einem kostenlosen Erstgespräch.",
+        "quoted": "Individuelles Angebot für Ihr Projekt",
         "localSeo": {
             "name": "Lokales SEO",
             "meta": {
-                "description": "Ein monatlicher Plan für lokales SEO: Inhalte mit Autorität, Backlinks und Brancheneinträge, Autorität bei Google und KI sowie Bewertungsmanagement, damit Kunden in der Nähe zuerst Sie finden.",
-                "title": "Lokales SEO für Unternehmen vor Ort"
+                "title": "Lokales SEO für Unternehmen vor Ort",
+                "description": "Werden Sie gefunden, wenn Menschen in Ihrer Nähe suchen, bei Google und in den Antworten von KI. Am Anfang steht eine kostenlose Analyse Ihres Marktes."
             },
             "hero": {
                 "eyebrow": "Lokales SEO",
-                "title": "Vor Ihrer Konkurrenz gefunden werden",
-                "subtitle": "Ein monatlicher Plan mit der gesamten Arbeit, die es braucht, um in der lokalen Suche bei Google und in den Antworten von KI sichtbar zu werden.",
-                "cta": "Gespräch vereinbaren"
+                "title": "Werden Sie gefunden, wenn in Ihrer Nähe gesucht wird",
+                "subtitle": "Wenn jemand in Ihrer Nähe nach dem sucht, was Sie anbieten, bei Google oder im Gespräch mit einem Assistenten mit KI, sollte Ihr Unternehmen in der Antwort stehen. Wir beginnen mit einer kostenlosen Analyse Ihres Marktes und bauen dann die lokale Präsenz auf, die Sie dorthin bringt.",
+                "cta": "Kostenlose Bedarfsanalyse buchen"
             },
             "benefits": {
-                "title": "Warum ein einziger Plan",
+                "title": "Vier Bereiche, die gemeinsam vorankommen",
                 "items": [
                     {
-                        "title": "Sie kaufen ein Ergebnis, keine Aufgabenliste",
-                        "description": "Inhalte, Links, Autorität und Bewertungen dienen demselben Ziel. Getrennt bearbeitet, von verschiedenen Anbietern, reicht keiner dieser Bausteine aus. In einem Plan treibt jeder die anderen voran."
+                        "title": "Inhalte mit Autorität",
+                        "description": "Keywordrecherche nach Standort, Themencluster, Analyse von Inhaltslücken und Aktualisierung Ihrer bestehenden Inhalte, damit Sie zur Referenz für Ihr Thema werden."
                     },
                     {
-                        "title": "Sie wissen jeden Monat, was getan wurde",
-                        "description": "Ein monatlicher Bericht in klarer Sprache: woran gearbeitet wurde, wie sich Ihre Sichtbarkeit entwickelt und was als Nächstes kommt."
+                        "title": "Backlinks und Brancheneinträge",
+                        "description": "Links aus vertrauenswürdigen Verzeichnissen und Erwähnungen auf relevanten Websites: die lokalen Autoritätssignale, auf die sich Google und KI stützen."
+                    },
+                    {
+                        "title": "Autorität bei Google und KI",
+                        "description": "Ihr Google Business Profile optimiert, lokales SEO auf Ihrer Website, strukturierte Daten für lokale Unternehmen und Betreuung mehrerer Standorte."
+                    },
+                    {
+                        "title": "Bewertungsmanagement",
+                        "description": "Die Entwicklung Ihrer Bewertungen im Zeitverlauf, Trends und Antworten im Blick und Feedbacklinks mit Ihrer Marke für jeden Kunden."
                     }
                 ]
             },
@@ -1853,27 +1861,27 @@
                 ]
             },
             "process": {
-                "title": "So arbeiten wir",
+                "title": "So arbeiten wir zusammen",
                 "steps": [
                     {
                         "number": "01",
-                        "title": "Erstes Gespräch",
-                        "description": "15 Minuten, um Ihr Unternehmen, Ihre Region und Ihre Zielgruppe kennenzulernen."
+                        "title": "Kostenlose Analyse",
+                        "description": "Ihr Markt, Ihr Profil und Ihre Wettbewerber, in einem ersten Gespräch."
                     },
                     {
                         "number": "02",
-                        "title": "Analyse",
-                        "description": "Wir prüfen Ihre aktuelle Präsenz bei Google, Ihre Website, Ihre Bewertungen und wer heute in Ihrer Region empfohlen wird."
+                        "title": "Ihr Plan",
+                        "description": "Was wir tun, in welcher Reihenfolge, und das Angebot."
                     },
                     {
                         "number": "03",
-                        "title": "Wir bearbeiten die vier Säulen",
-                        "description": "Inhalte, Brancheneinträge, Autorität und Bewertungen laufen parallel, nach einem Plan, den Sie vorab kennen."
+                        "title": "Die Umsetzung",
+                        "description": "Inhalte, Brancheneinträge, Autorität und Bewertungen kommen parallel voran."
                     },
                     {
                         "number": "04",
-                        "title": "Monatsbericht und Anpassung",
-                        "description": "Jeden Monat erhalten Sie einen Bericht in klarer Sprache, und wir passen die Arbeit an das an, was sich verändert hat."
+                        "title": "Bericht und Anpassung",
+                        "description": "Jeden Monat die Ergebnisse in klarer Sprache und die nächsten Schritte."
                     }
                 ]
             },
@@ -1882,23 +1890,23 @@
                 "items": [
                     {
                         "question": "Garantieren Sie Platz eins bei Google?",
-                        "answer": "Nein, und seien Sie vorsichtig bei jedem, der das tut: Niemand kontrolliert das Ranking von Google. Platz eins ist das Ziel, auf das wir jeden Monat hinarbeiten, und ein Bericht in klarer Sprache zeigt Ihnen, was getan wurde und wie sich Ihre Sichtbarkeit entwickelt."
+                        "answer": "Nein, und ehrlich kann das niemand: Google entscheidet über sein Ranking. Wir arbeiten auf die vorderen Plätze hin, beseitigen, was Sie bremst, und sagen Ihnen in der Analyse, was in Ihrem Markt realistisch ist."
                     },
                     {
-                        "question": "Wie lange dauert es, bis ich Ergebnisse im lokalen Ranking sehe?",
-                        "answer": "Die meisten Kunden sehen innerhalb von 30 bis 60 Tagen spürbare Bewegung im lokalen Kartenbereich von Google (Local Pack), in umkämpften Märkten kann es länger dauern."
+                        "question": "Was kostet das?",
+                        "answer": "Das hängt von Ihrem Markt ab und davon, was Ihr Unternehmen braucht. Sie erhalten ein Angebot nach der kostenlosen Analyse, oft als Teil einer umfassenderen Lösung."
+                    },
+                    {
+                        "question": "Wie lange dauert es, bis ich Ergebnisse sehe?",
+                        "answer": "Lokales SEO wächst über Monate, nicht über Tage. Die Analyse zeigt, wo Sie starten, und der monatliche Bericht zeigt, wie es sich entwickelt."
                     },
                     {
                         "question": "Brauche ich bereits ein Google Business Profile?",
-                        "answer": "Nein. Wenn Sie noch keines haben, erstellen und verifizieren wir es im Rahmen des Einstiegs für Sie."
+                        "answer": "Nein. Wenn Sie noch keines haben, gehört die richtige Einrichtung zur Arbeit dazu."
                     },
                     {
                         "question": "Gilt das auch für mehrere Standorte?",
-                        "answer": "Ja. Unternehmen mit mehreren Standorten werden unterstützt, jeder Standort erhält ein eigenes optimiertes Profil und eigene lokale Inhalte."
-                    },
-                    {
-                        "question": "Welche Bewertungsplattformen beobachten Sie?",
-                        "answer": "Google Business Profile ist der wichtigste Kanal, dazu kommen Facebook und jede branchenspezifische Plattform, die für Ihr Unternehmen relevant ist. Weitere Quellen können wir ergänzen, wenn Ihr Bedarf wächst."
+                        "answer": "Ja. Jeder Standort erhält ein eigenes Profil und eigene lokale Signale."
                     },
                     {
                         "question": "Wie bekommen Sie mehr Bewertungen?",
@@ -1910,29 +1918,29 @@
         "websiteDevelopment": {
             "name": "Webentwicklung",
             "meta": {
-                "description": "Individuelle, schnelle Websites, die Besucher zu Kunden machen. Für SEO optimiert, auf jedem Mobilgerät gut lesbar und nach modernen Leistungsstandards gebaut.",
-                "title": "Unternehmenswebsite erstellen lassen"
+                "title": "Unternehmenswebsite erstellen lassen",
+                "description": "Schnelle Websites, die Google und Assistenten mit KI finden und die aus Besuchen Anrufe machen, mit einem Angebot für Ihr Unternehmen nach einer kostenlosen Bedarfsanalyse."
             },
             "hero": {
                 "eyebrow": "Webentwicklung",
-                "title": "Websites, die Besucher zu Kunden machen",
-                "subtitle": "Individuelle, schnelle Websites, die Besucher zu Kunden machen. Für SEO optimiert und auf jedem Mobilgerät gut lesbar.",
-                "cta": "Kostenlose Beratung von 15 Minuten buchen"
+                "title": "Websites, die schnell laden, gefunden werden und Kunden gewinnen",
+                "subtitle": "Die meisten Besucher beurteilen ein Unternehmen in Sekunden, meist auf dem Smartphone. Wir bauen Websites, die sofort öffnen, die Sprache Ihrer Kunden sprechen und Google sowie Assistenten mit KI genau sagen, was Sie tun. Und wir zeigen Ihnen die Werte.",
+                "cta": "Kostenlose Bedarfsanalyse buchen"
             },
             "benefits": {
-                "title": "Was Sie bekommen",
+                "title": "Was jede Website mitbringt",
                 "items": [
                     {
-                        "title": "Zuerst für das Smartphone gestaltet",
-                        "description": "Jedes Layout wird zuerst für Smartphones gebaut und getestet, damit Ihre Website auf jedem Bildschirm scharf aussieht und schnell lädt."
+                        "title": "Schnell auf jedem Smartphone",
+                        "description": "Zuerst für den kleinen Bildschirm gestaltet und vor dem Start auf Smartphones, Tablets und Desktops getestet."
                     },
                     {
-                        "title": "Core Web Vitals erfüllt",
-                        "description": "Unsere Websites sind darauf ausgelegt, die Leistungswerte von Google zu bestehen. Das schützt Ihre Sichtbarkeit in der Suche und das Erlebnis Ihrer Besucher."
+                        "title": "Verständlich für Google und KI",
+                        "description": "Strukturierte Daten, Vorschauen für soziale Netzwerke und eine Datei llms.txt vom ersten Tag an, damit Maschinen Ihr Unternehmen richtig lesen."
                     },
                     {
-                        "title": "SEO & strukturierte Daten",
-                        "description": "Tags für Open Graph und strukturierte Daten sind vom ersten Tag an dabei, damit Suchmaschinen Ihre Website schon zum Start verstehen."
+                        "title": "Gebaut, um aus Besuchen Anrufe zu machen",
+                        "description": "Ein klares Versprechen, ein klarer nächster Schritt und ein Button zum Buchen oder für den Kontakt, der immer in Reichweite ist."
                     }
                 ]
             },
@@ -1940,31 +1948,31 @@
                 "title": "Das Komplettpaket",
                 "groups": [
                     {
-                        "label": "Leistung & Sicherheit",
+                        "label": "Leistung und Sicherheit",
                         "items": [
                             "Landingpage oder vollständige Website mit mehreren Seiten",
-                            "Zuerst für das Smartphone gestaltet und auf jeder Bildschirmgröße getestet",
+                            "Zuerst für Smartphones gestaltet, auf jeder Bildschirmgröße getestet",
                             "Core Web Vitals vom ersten Tag an berücksichtigt",
-                            "Installierbare PWA mit Seiten, die auch offline funktionieren",
-                            "Sicherheit auf Unternehmensniveau bei jeder Veröffentlichung"
+                            "Installierbare PWA, wichtige Seiten auch offline",
+                            "Sicherheit bei jeder Veröffentlichung"
                         ]
                     },
                     {
-                        "label": "SEO & Infrastruktur",
+                        "label": "Suche und KI",
                         "items": [
-                            "Open Graph und strukturierte Daten schon zum Start",
-                            "Unterstützung für Agentic Browsing durch KI Agenten und Crawler",
-                            "Zertifikate für SSL und CDN inklusive",
-                            "Hosting und Infrastruktur werden für Sie verwaltet",
+                            "Strukturierte Daten und Vorschauen für soziale Netzwerke",
+                            "llms.txt für Assistenten mit KI",
+                            "Sitemaps und hreflang für jede Sprache",
+                            "SSL und CDN inklusive",
                             "Optionales serverseitiges Tagging"
                         ]
                     },
                     {
-                        "label": "Qualität & Auslieferung",
+                        "label": "Qualität und Auslieferung",
                         "items": [
                             "Automatisierte Tests bei jedem Build",
-                            "Standardmäßige Qualitätssicherung vor jedem Livegang",
-                            "Pipeline für CI/CD (DevOpsSec)",
+                            "Qualitätssicherung auf jeder Bildschirmgröße vor dem Start",
+                            "Übersetzungen in die Sprachen, die Sie brauchen",
                             "Online in 7 bis 14 Tagen"
                         ]
                     }
@@ -1976,22 +1984,22 @@
                     {
                         "number": "01",
                         "title": "Termin buchen",
-                        "description": "Vereinbaren Sie eine kostenlose Beratung, um über Ihre Ziele zu sprechen."
+                        "description": "Ein kostenloses Gespräch von 15 Minuten über Ihre Ziele."
                     },
                     {
                         "number": "02",
-                        "title": "Gespräch",
-                        "description": "Wir analysieren Ihren Bedarf und stimmen die Strategie mit Ihnen ab."
+                        "title": "Planung",
+                        "description": "Wir legen gemeinsam Seiten, Sprachen und Inhalte fest."
                     },
                     {
                         "number": "03",
-                        "title": "Entwicklung",
-                        "description": "Wir entwickeln Ihre Website individuell und passend zu Ihrer Marke."
+                        "title": "Umsetzung",
+                        "description": "Wir gestalten und bauen sie, getestet auf jedem Bildschirm."
                     },
                     {
                         "number": "04",
-                        "title": "Übergabe",
-                        "description": "Wir bringen Ihre Website online und übergeben Ihnen die vollständige Dokumentation, in der Regel innerhalb von 7 bis 14 Tagen."
+                        "title": "Start",
+                        "description": "Online in 7 bis 14 Tagen, mit gemessenen Werten."
                     }
                 ]
             },
@@ -1999,16 +2007,24 @@
                 "title": "Häufige Fragen",
                 "items": [
                     {
-                        "question": "Ist SEO im Paket für Webentwicklung enthalten, oder kostet es extra?",
-                        "answer": "Es ist enthalten. Jedes Paket für Webentwicklung umfasst vom ersten Tag an die technischen Grundlagen für SEO, darunter optimierte strukturierte Daten und Tags für Open Graph, damit Suchmaschinen Ihre Website gut verstehen."
+                        "question": "Steht meine neue Website bei Google auf Platz eins?",
+                        "answer": "Niemand kann eine Position versprechen: Google entscheidet. Wir beseitigen die technischen Gründe, aus denen eine Website zurückfällt (Geschwindigkeit, Struktur, fehlende Daten), und geben ihr die Grundlagen, um mitzuhalten."
                     },
                     {
-                        "question": "Wem gehört die Website, wenn das Projekt abgeschlossen ist?",
-                        "answer": "Unseren Kunden gehören alle Ergebnisse zu 100%, einschließlich Quellcode der Website, Designs und Dokumentation, sobald das Projekt offiziell abgeschlossen und bezahlt ist."
+                        "question": "Kann ich die Werte selbst prüfen?",
+                        "answer": "Ja. PageSpeed Insights und der Rich Results Test sind kostenlose Tools von Google; wir schicken Ihnen die Links zum Start."
                     },
                     {
-                        "question": "Welche Unterstützung bekomme ich, wenn nach dem Start ein technisches Problem auftritt?",
-                        "answer": "Wir bieten technischen Support zu den üblichen Geschäftszeiten (Montag bis Freitag). Alle Probleme werden zügig bearbeitet, damit Ihre Systeme einsatzbereit bleiben."
+                        "question": "Was ist llms.txt, und brauche ich das?",
+                        "answer": "Eine kurze Zusammenfassung Ihres Unternehmens für Assistenten mit KI. Sie kostet nichts zusätzlich, und wir bauen sie in jede Website ein."
+                    },
+                    {
+                        "question": "Ist SEO enthalten, oder kostet es extra?",
+                        "answer": "Technisches SEO ist enthalten: strukturierte Daten, Vorschauen für soziale Netzwerke, Sitemaps und schnelle Seiten. Wenn Ihr Unternehmen auch in der lokalen Suche wachsen soll, kann lokales SEO Teil Ihrer Lösung sein."
+                    },
+                    {
+                        "question": "Wem gehört die Website, wenn sie fertig ist?",
+                        "answer": "Ihnen: der Code, die Designs und die Dokumentation, sobald das Projekt abgeschlossen und bezahlt ist."
                     }
                 ]
             }
@@ -2016,29 +2032,29 @@
         "aiVoiceReceptionist": {
             "name": "Telefonassistent mit KI",
             "meta": {
-                "description": "Telefonassistenten mit KI, rund um die Uhr: Sie beantworten häufige Fragen, buchen Termine und erfassen jede Anfrage, damit kein Anruf unbeantwortet bleibt.",
-                "title": "Telefonassistent mit KI rund um die Uhr"
+                "title": "Telefonassistent mit KI rund um die Uhr",
+                "description": "Ein Telefonassistent mit KI, der rund um die Uhr Fragen beantwortet, Termine bucht und Nachrichten aufnimmt, gestaltet nach einer kostenlosen Analyse Ihrer Anrufe."
             },
             "hero": {
                 "eyebrow": "Telefonassistent mit KI",
-                "title": "Nie wieder einen Anruf verpassen",
-                "subtitle": "Sprachassistenten mit KI, die Anrufe so natürlich führen wie ein Mensch. Sie vereinbaren Termine und beantworten häufige Fragen, rund um die Uhr.",
-                "cta": "Beratung buchen"
+                "title": "Jeder Anruf angenommen, bei Tag und bei Nacht",
+                "subtitle": "Ein Sprachassistent, der rund um die Uhr Fragen beantwortet, Termine bucht und Nachrichten aufnimmt, mit einer natürlichen Stimme, die zu Ihrer Marke passt. Wir gestalten ihn nach einer kostenlosen Analyse, wie Ihre Anrufe heute laufen.",
+                "cta": "Kostenlose Bedarfsanalyse buchen"
             },
             "benefits": {
-                "title": "Was Sie bekommen",
+                "title": "Aus den Anrufen, die Sie heute verpassen, werden Kunden",
                 "items": [
                     {
-                        "title": "Antworten auf häufige Fragen, rund um die Uhr",
-                        "description": "Ihr Telefonassistent beantwortet typische Fragen sofort, bei Tag und bei Nacht. So wartet kein Interessent auf einen Rückruf."
+                        "title": "Beantwortet Fragen",
+                        "description": "Öffnungszeiten, Leistungen, Anfahrt, Abläufe: die Fragen, die Sie jeden Tag hören, beantwortet zu jeder Stunde."
                     },
                     {
-                        "title": "Terminvereinbarung",
-                        "description": "Anrufer buchen ihren Termin direkt während des Gesprächs in Ihrem Kalender, ganz ohne langes Hin und Her per Mail."
+                        "title": "Bucht Termine",
+                        "description": "Direkt in Ihren Kalender, ohne das Hin und Her von Rückrufen."
                     },
                     {
-                        "title": "Bis zu 90% beim ersten Anruf gelöst",
-                        "description": "Die meisten Anliegen werden schon beim ersten Anruf vollständig geklärt. Das verkürzt Wartezeiten und entlastet Ihr Team."
+                        "title": "Erfasst jede Anfrage",
+                        "description": "Name, Anliegen und Kontaktdaten jedes Anrufers, bereit für Ihre Rückmeldung. Auch außerhalb der Geschäftszeiten und wenn alle Leitungen belegt sind."
                     }
                 ]
             },
@@ -2051,7 +2067,7 @@
                             "Antworten auf häufige Fragen, rund um die Uhr",
                             "Terminvereinbarung direkt in Ihrem Kalender",
                             "Erfassung von Anfragen im Gespräch, bei jedem Anruf",
-                            "Bis zu 90% der Anliegen beim ersten Anruf gelöst"
+                            "Nachrichten an Sie, wenn ein Anruf eine Person braucht"
                         ]
                     },
                     {
@@ -2075,27 +2091,27 @@
                 ]
             },
             "process": {
-                "title": "So funktioniert es",
+                "title": "Vom ersten Gespräch zum ersten angenommenen Anruf",
                 "steps": [
                     {
                         "number": "01",
-                        "title": "Termin buchen",
-                        "description": "Vereinbaren Sie eine kostenlose Beratung, um Ihre Anrufabläufe gemeinsam durchzugehen."
+                        "title": "Kostenlose Analyse",
+                        "description": "Wie Ihre Anrufe heute laufen und was Ihnen entgeht, wenn niemand abnimmt."
                     },
                     {
                         "number": "02",
-                        "title": "Gespräch",
-                        "description": "Wir analysieren Ihren Bedarf und stimmen Gesprächsleitfaden und Strategie mit Ihnen ab."
+                        "title": "Leitfaden und Stimme",
+                        "description": "Wir legen fest, was er sagt, bucht und weiterleitet, und wählen seine Stimme."
                     },
                     {
                         "number": "03",
-                        "title": "Entwicklung",
-                        "description": "Wir entwickeln Ihren Sprachassistenten mit KI und seinen Leitfaden individuell für Sie."
+                        "title": "Aufbau und Test",
+                        "description": "Verbunden mit Ihrem Telefon und Ihrem Kalender, getestet mit echten Anrufen."
                     },
                     {
                         "number": "04",
-                        "title": "Übergabe",
-                        "description": "Ihr Assistent geht live, in der Regel innerhalb von 7 bis 14 Tagen."
+                        "title": "Im Einsatz",
+                        "description": "Meist innerhalb von 7 bis 14 Tagen, und jeden Monat verbessert."
                     }
                 ]
             },
@@ -2103,16 +2119,20 @@
                 "title": "Häufige Fragen",
                 "items": [
                     {
-                        "question": "Lässt sich der Telefonassistent mit KI an mein bestehendes CRM anbinden?",
-                        "answer": "Ja. Unser Telefonassistent mit KI lässt sich in Ihr bestehendes CRM einbinden (zum Beispiel HubSpot, Salesforce, GoHighLevel). Dafür benötigen wir die technischen Spezifikationen und einen Zugang zur API."
+                        "question": "Merken Anrufer, dass sie mit einer KI sprechen?",
+                        "answer": "Er spricht natürlich, und wir legen mit Ihnen fest, wie er sich vorstellt. Offenheit schafft Vertrauen bei Ihren Kunden."
                     },
                     {
-                        "question": "Welche Sprachen unterstützt der Telefonassistent mit KI?",
-                        "answer": "Der Telefonassistent mit KI unterstützt zahlreiche Sprachen weltweit. Gründlich getestet und gezielt optimiert sind unsere Systeme jedoch für Englisch und Spanisch, damit die Gespräche dort die höchste Qualität erreichen."
+                        "question": "Funktioniert er mit meinem CRM?",
+                        "answer": "Ja: mit HubSpot, Salesforce und GoHighLevel, sobald Sie uns Zugang zur API geben."
                     },
                     {
-                        "question": "Wie wird der Telefonassistent mit KI abgerechnet?",
-                        "answer": "Der Telefonassistent mit KI wird über eine wiederkehrende monatliche Zahlung abgerechnet. Sie deckt laufend den proaktiven Support, die Aktualisierung des Wissens, die Systemtests und Ihr monatliches Minutenkontingent ab."
+                        "question": "Welche Sprachen spricht er?",
+                        "answer": "Er ist für Englisch und Spanisch optimiert. Erzählen Sie uns in der Analyse von weiteren Sprachen."
+                    },
+                    {
+                        "question": "Was kostet das?",
+                        "answer": "Das hängt von Ihrem Anrufvolumen ab und davon, was er leisten soll. Sie erhalten ein Angebot nach der kostenlosen Analyse, oft als Teil einer umfassenderen Lösung."
                     }
                 ]
             }
@@ -2120,29 +2140,29 @@
         "softwareDevelopment": {
             "name": "Softwareentwicklung",
             "meta": {
-                "description": "Komplette Produkte über den gesamten Stack, für Web und Mobilgeräte, auf jedem Gerät und jeder Bildschirmgröße, vom ersten Prototyp bis zum Livegang.",
-                "title": "Individuelle Softwareentwicklung"
+                "title": "Individuelle Softwareentwicklung",
+                "description": "Individuelle Software, gebaut für die Arbeitsweise Ihres Unternehmens: eine App in Flutter für Smartphones, Tablets, das Web und den Desktop, mit einem Backend für den Echtbetrieb."
             },
             "hero": {
                 "eyebrow": "Softwareentwicklung",
-                "title": "Individuelle Software, die mit Ihnen wächst",
-                "subtitle": "Komplette Produkte mit einem Frontend in Flutter und einem robusten Backend, gebaut für jedes Gerät und jede Bildschirmgröße.",
-                "cta": "Kostenlose Beratung von 15 Minuten buchen"
+                "title": "Software, gebaut für die Arbeitsweise Ihres Unternehmens",
+                "subtitle": "Wenn fertige Tools nicht ausreichen, bauen wir Ihre eigenen: eine App in Flutter für Smartphones, Tablets, das Web und den Desktop, mit einem Backend für den Echtbetrieb. Am Anfang steht eine kostenlose Analyse dessen, was Sie lösen möchten.",
+                "cta": "Kostenlose Bedarfsanalyse buchen"
             },
             "benefits": {
-                "title": "Was Sie bekommen",
+                "title": "Gebaut wie ein Produkt, nicht wie ein Prototyp",
                 "items": [
                     {
                         "title": "Vom ersten Tag an auf jeder Plattform",
-                        "description": "Eine einzige Codebasis in Flutter läuft auf iOS, Android, im Web, auf macOS, Windows und Linux. So erreichen Sie jedes Gerät, ohne das Budget zu verdreifachen."
+                        "description": "Eine Codebasis in Flutter für iOS, Android, das Web und den Desktop: überall dieselbe Oberfläche, native Leistung, responsiv auf jedem Bildschirm."
                     },
                     {
-                        "title": "Ein Backend für den Echtbetrieb",
-                        "description": "Ein Backend für echten Datenverkehr, mit automatisierten Tests und CI/CD, statt eines wackeligen Prototyps, der sich als Produkt ausgibt."
+                        "title": "Bereit für den Echtbetrieb",
+                        "description": "Ein Backend, entworfen für Ihr Produkt, automatisierte Tests vom ersten Tag an, sichere Releases über eine Pipeline für CI/CD und eine Infrastruktur, die mitwächst."
                     },
                     {
-                        "title": "Der gesamte Stack gehört Ihnen",
-                        "description": "Quellcode, Infrastruktur und Dokumentation gehören nach der Übergabe des Projekts vollständig Ihnen."
+                        "title": "Vollständig in Ihrer Hand",
+                        "description": "Der Quellcode, die vollständige technische Dokumentation und die Übergabe von Infrastruktur und Deployment, sobald das Projekt ausgeliefert ist."
                     }
                 ]
             },
@@ -2178,27 +2198,27 @@
                 ]
             },
             "process": {
-                "title": "So entsteht Ihre Software",
+                "title": "Von der Idee zum Produkt",
                 "steps": [
                     {
                         "number": "01",
-                        "title": "Termin buchen",
-                        "description": "Vereinbaren Sie eine kostenlose Beratung, um über Ihr Vorhaben zu sprechen."
+                        "title": "Kostenlose Analyse",
+                        "description": "Was Sie lösen möchten, für wen, und ob individuelle Software die richtige Antwort ist."
                     },
                     {
                         "number": "02",
-                        "title": "Gespräch",
-                        "description": "Wir analysieren Ihre Anforderungen und stimmen den technischen Ansatz mit Ihnen ab."
+                        "title": "Umfang und Angebot",
+                        "description": "Funktionen, technischer Ansatz und Zeitplan, schriftlich vereinbart."
                     },
                     {
                         "number": "03",
                         "title": "Entwicklung",
-                        "description": "Wir entwickeln Frontend und Backend Ihres Produkts individuell für Sie."
+                        "description": "Frontend und Backend von Grund auf, mit Tests und regelmäßigen Demos."
                     },
                     {
                         "number": "04",
-                        "title": "Übergabe",
-                        "description": "Ihr Produkt geht live. Den Zeitplan legen wir für jedes Projekt je nach Umfang fest."
+                        "title": "Start und Übergabe",
+                        "description": "Verfügbar in den App Stores und im Web, mit Code und Dokumentation in Ihren Händen."
                     }
                 ]
             },
@@ -2207,15 +2227,15 @@
                 "items": [
                     {
                         "question": "Für welche Plattformen entwickeln Sie?",
-                        "answer": "Für iOS, Android, das Web, macOS, Windows und Linux, aus einer einzigen Codebasis in Flutter. Dahinter steht ein individuelles Backend, das genau auf die Anforderungen Ihres Produkts zugeschnitten ist."
+                        "answer": "Für iOS, Android, das Web, macOS, Windows und Linux, aus einer einzigen Codebasis in Flutter."
                     },
                     {
-                        "question": "Wie wird ein individuelles Softwareprojekt berechnet?",
-                        "answer": "Jedes Projekt wird einzeln nach Funktionen und Komplexität geplant. Das Angebot folgt nach einem kostenlosen Erstgespräch, es gibt kein festes Paket."
+                        "question": "Wie wird ein Projekt berechnet?",
+                        "answer": "Jedes Produkt ist anders. Deshalb erstellen wir das Angebot nach der kostenlosen Analyse, sobald der Umfang klar ist."
                     },
                     {
-                        "question": "Gehört mir der Quellcode, wenn das Projekt abgeschlossen ist?",
-                        "answer": "Ja. Ihnen gehören der vollständige Quellcode, die Einrichtung der Infrastruktur und die Dokumentation, sobald das Projekt übergeben und vollständig bezahlt ist."
+                        "question": "Gehört mir der Quellcode?",
+                        "answer": "Ja, vollständig, zusammen mit der Dokumentation, sobald das Projekt übergeben und bezahlt ist."
                     }
                 ]
             }
@@ -2292,6 +2312,309 @@
             "by": "Geschrieben von",
             "updated": "Aktualisiert",
             "readTime": "{min} Min. Lesezeit"
+        }
+    },
+    "landing": {
+        "shared": {
+            "microcopy": "15 Minuten per Videoanruf. Unverbindlich.",
+            "closeMicrocopy": "Per Videoanruf. Unverbindlich.",
+            "caseStudy": "Fallstudie lesen",
+            "dossier": {
+                "title": "Lieber alles in einem Dokument?",
+                "text": "Unser Dossier erklärt in einem PDF, wie wir arbeiten und was wir bauen.",
+                "cta": "Dossier herunterladen (PDF)"
+            }
+        },
+        "websiteDevelopment": {
+            "hero": {
+                "secondary": "Zuerst die Nachweise ansehen",
+                "note": "Jede Website erhält ein Angebot, das zu Ihrem Unternehmen passt, nach einem kostenlosen ersten Gespräch über Ihren Bedarf."
+            },
+            "scores": {
+                "labels": [
+                    "Leistung",
+                    "Barrierefreiheit",
+                    "Best Practices",
+                    "SEO"
+                ],
+                "caption": "Diese Website, PageSpeed Insights auf Mobilgeräten, 25. November 2026",
+                "link": "Selbst testen"
+            },
+            "portfolio": {
+                "eyebrow": "Portfolio",
+                "title": "Echte Unternehmen, Websites, die Sie heute öffnen können",
+                "subtitle": "Jedes Projekt hier ist online und dokumentiert, mit seinen Werten und den Entscheidungen dahinter.",
+                "all": "Ganzes Portfolio ansehen"
+            },
+            "performance": {
+                "eyebrow": "Leistung",
+                "title": "Geschwindigkeit bemerken Ihre Kunden zuerst",
+                "text": "Viele Menschen suchen ein lokales Unternehmen auf dem Smartphone, oft unterwegs. Eine Seite, die sofort erscheint und auf das erste Tippen reagiert, hält sie beim Lesen. Eine Seite, die hängt, schickt sie zurück zu den Suchergebnissen und zu Ihren Wettbewerbern.",
+                "points": [
+                    {
+                        "title": "Schneller lesbar.",
+                        "text": "Seiten kommen als fertiges HTML an, fast ohne JavaScript, das geladen werden muss."
+                    },
+                    {
+                        "title": "Reagiert sofort.",
+                        "text": "0 ms Blockierzeit auf dieser Website in unseren Labortests: Menüs und Buttons reagieren auf das erste Tippen."
+                    },
+                    {
+                        "title": "Bleibt beim Laden ruhig.",
+                        "text": "Bilder reservieren ihren Platz, damit nichts unter dem Finger des Lesers verrutscht."
+                    }
+                ],
+                "cta": "Bei PageSpeed Insights prüfen",
+                "note": "Die Werte schwanken leicht von Messung zu Messung.",
+                "alt": "Bericht von PageSpeed Insights für hlorenzoz.com auf Mobilgeräten, 25. November 2026: 98 bei Leistung und 100 bei Barrierefreiheit, Best Practices und SEO",
+                "caption": "PageSpeed Insights für hlorenzoz.com auf Mobilgeräten, 25. November 2026."
+            },
+            "structuredData": {
+                "eyebrow": "Strukturierte Daten",
+                "title": "Google liest Ihr Unternehmen, nicht nur Ihre Worte",
+                "paragraphs": [
+                    "Jede Seite enthält eine kurze, maschinenlesbare Beschreibung Ihres Unternehmens: wer Sie sind, wo Sie arbeiten, Ihre Öffnungszeiten, Ihre Leistungen und Ihre Antworten auf häufige Fragen.",
+                    "Gültige strukturierte Daten machen Ihre Seiten zu Kandidaten für Rich Results in der Google Suche, etwa Unternehmensangaben und FAQs, und geben Assistenten mit KI eine klare Quelle, um Sie zu beschreiben. Google entscheidet, was angezeigt wird; wir sorgen dafür, dass Sie die Voraussetzungen erfüllen."
+                ],
+                "cta": "Im Rich Results Test von Google prüfen",
+                "alt": "Rich Results Test von Google für hlorenzoz.com: 3 gültige Elemente erkannt, FAQ, lokale Unternehmen und Organisation",
+                "caption": "Rich Results Test von Google für hlorenzoz.com: drei gültige Elemente."
+            },
+            "pwa": {
+                "eyebrow": "Progressive Web App",
+                "title": "Ihre eigene App auf den Smartphones Ihrer Kunden, ganz ohne App Store",
+                "text": "Ihre Website lässt sich mit zwei Tippern auf dem Startbildschirm installieren, mit Ihrem Symbol und Ihrem Namen. Sie öffnet sofort wie eine App, und die wichtigsten Seiten funktionieren auch bei schwachem Empfang oder ganz ohne Netz.",
+                "tiles": [
+                    {
+                        "title": "Installierbar",
+                        "text": "Direkt aus dem Browser, ohne Store"
+                    },
+                    {
+                        "title": "Funktioniert offline",
+                        "text": "Wichtige Seiten bleiben erreichbar"
+                    },
+                    {
+                        "title": "Eine Codebasis",
+                        "text": "Smartphone, Tablet und Desktop"
+                    }
+                ],
+                "alt": "Installationshinweis auf einer Demowebsite für eine Zahnarztpraxis: Zum Startbildschirm hinzufügen, sofortiger Zugriff, auch offline",
+                "caption": "Der Installationshinweis auf unserer Demo für eine Zahnarztpraxis."
+            },
+            "translations": {
+                "eyebrow": "Übersetzungen",
+                "title": "Sprechen Sie jeden Kunden in seiner eigenen Sprache an",
+                "paragraphs": [
+                    "Diese Website erscheint in neun Sprachen. Jede hat ihre eigenen Adressen, ihre eigene Sitemap und übersetzte Bildbeschreibungen, und jede Seite sagt Google, welche Version in welchem Land angezeigt werden soll.",
+                    "Ein Tourist in Málaga, eine Familie in Dublin oder ein Kunde in Lyon findet Ihre Seite in der Sprache, in der er sucht, mit Ihren Preisen und Bedingungen, für ihn geschrieben."
+                ],
+                "liveIn": "hlorenzoz.com gibt es auf",
+                "stats": {
+                    "languages": "Sprachen",
+                    "sitemaps": "Sitemaps, eine pro Sprache",
+                    "hreflang": "hreflang Angaben auf unserer Startseite"
+                },
+                "switch": "Diese Seite auf {language} anzeigen"
+            },
+            "llms": {
+                "eyebrow": "llms.txt",
+                "title": "Ein Briefing, geschrieben für Assistenten mit KI",
+                "paragraphs": [
+                    "Immer mehr Menschen fragen ChatGPT, Claude, Gemini oder Perplexity, welches Unternehmen sie anrufen sollen. llms.txt ist eine reine Textdatei im Stammverzeichnis Ihrer Website. Sie fasst zusammen, wer Sie sind, was Sie anbieten und wo welche Seite zu finden ist, in einer Form, die Sprachmodelle leicht lesen.",
+                    "Sie ist eine junge Konvention, kein offizieller Standard, und kein Tool mit KI sagt zu, sie zu nutzen. Deshalb ergänzen wir sie zu strukturierten Daten und klaren Inhalten, nie als Ersatz dafür."
+                ],
+                "cta": "Unsere lesen unter hlorenzoz.com/llms.txt",
+                "file": "hlorenzoz.com/llms.txt"
+            },
+            "package": {
+                "label": "Ihr Preis",
+                "details": [
+                    "Seiten, Sprachen und Funktionen unterscheiden sich von Unternehmen zu Unternehmen. Deshalb legen wir den Preis gemeinsam in einem kostenlosen ersten Gespräch fest.",
+                    "Nach dem Gespräch wissen Sie, was Sie bekommen, wann und zu welchem Preis. Unverbindlich."
+                ]
+            },
+            "close": {
+                "title": "Eine Website, die sich selbst beweist, online in zwei Wochen",
+                "subtitle": "Schnell, gefunden von Google und KI, installierbar und in den Sprachen Ihrer Kunden. Erzählen Sie uns in einem kostenlosen Gespräch von 15 Minuten von Ihrem Unternehmen."
+            }
+        },
+        "localSeo": {
+            "hero": {
+                "secondary": "Woran wir arbeiten",
+                "proof": [
+                    {
+                        "value": "100",
+                        "text": "Punkte bei SEO auf unserer eigenen Website"
+                    },
+                    {
+                        "value": "Gültig",
+                        "text": "Daten für lokale Unternehmen im Rich Results Test von Google"
+                    }
+                ],
+                "check": "prüfen",
+                "disclaimer": "Wir versprechen nie eine Position bei Google: Niemand kontrolliert das Ranking."
+            },
+            "analysis": {
+                "eyebrow": "Schritt eins, kostenlos",
+                "title": "Wir sehen uns Ihren Markt an, bevor wir etwas anfassen",
+                "text": "Im kostenlosen ersten Gespräch sehen wir, wo Sie heute stehen und was Kunden davon abhält, Sie zu finden. Erst dann schlagen wir vor, was zu tun ist, und ob lokales SEO überhaupt der richtige Baustein für Sie ist.",
+                "items": [
+                    "Ihr Google Business Profile",
+                    "Ihre Website und wie Google sie liest",
+                    "Ihre Bewertungen und wie Sie darauf antworten",
+                    "Wen Google heute in Ihrer Region empfiehlt",
+                    "Was Assistenten mit KI über Ihre Branche sagen",
+                    "Wonach Ihre Kunden tatsächlich suchen"
+                ]
+            },
+            "pillars": {
+                "eyebrow": "Die Umsetzung",
+                "subtitle": "Wir arbeiten an den Bereichen, die sich in Ihrer Analyse als die wichtigsten zeigen, nach einem Plan, den Sie vorab kennen."
+            },
+            "structuredData": {
+                "eyebrow": "Strukturierte Daten",
+                "title": "Geben Sie Google Fakten statt Vermutungen",
+                "text": "Ihr Name, Ihre Adresse, Telefonnummer, Öffnungszeiten, Leistungen und Einzugsgebiete, in dem Format, das Suchmaschinen lesen. So kommen Ihre Seiten für Rich Results infrage, und Ihre Angaben bleiben überall gleich, wo Google und Assistenten mit KI nachsehen.",
+                "cta": "Im Rich Results Test von Google prüfen",
+                "alt": "Rich Results Test von Google für hlorenzoz.com: 3 gültige Elemente erkannt, FAQ, lokale Unternehmen und Organisation",
+                "caption": "Rich Results Test von Google für unsere eigene Website: gültige Daten für lokale Unternehmen."
+            },
+            "ai": {
+                "eyebrow": "Suche mit KI",
+                "title": "Empfohlen in Antworten von KI, nicht nur bei Google",
+                "text": "Immer mehr Menschen fragen ChatGPT, Gemini oder Perplexity, welches Unternehmen sie anrufen sollen. Diese Assistenten bauen ihre Antworten aus dem, was das Web über Sie sagt: Ihre Website, Ihre Profile, Ihre Brancheneinträge und Ihre Bewertungen. Wir sorgen dafür, dass all das klar, einheitlich und für sie leicht lesbar ist, einschließlich einer Zusammenfassung Ihres Unternehmens in llms.txt.",
+                "tiles": [
+                    {
+                        "title": "Einheitliche Angaben",
+                        "text": "Überall derselbe Name, dieselbe Adresse und Telefonnummer"
+                    },
+                    {
+                        "title": "Klare Inhalte",
+                        "text": "Antworten auf die Fragen, die Menschen stellen"
+                    },
+                    {
+                        "title": "Vertrauenswürdige Erwähnungen",
+                        "text": "Nennungen auf Websites, auf die sich KI stützt"
+                    }
+                ],
+                "llms": {
+                    "title": "llms.txt",
+                    "text": "Unsere ansehen"
+                }
+            },
+            "reviews": {
+                "eyebrow": "Bewertungen",
+                "title": "Mehr Bewertungen, auf dem richtigen Weg gesammelt",
+                "text": "Bewertungen gehören zu den stärksten lokalen Signalen. Wir geben jedem Kunden eine einfache Möglichkeit, eine Bewertung abzugeben, und verfolgen, wie Ihr Ruf wächst. Wir filtern nie, wer gefragt wird: Nur zufriedene Kunden zu fragen, verstößt gegen die Regeln von Google und gefährdet Ihr Profil.",
+                "report": {
+                    "title": "Jeden Monat wissen Sie",
+                    "items": [
+                        "Was getan wurde, und warum",
+                        "Wie sich Ihre Sichtbarkeit und Ihre Bewertungen entwickelt haben",
+                        "Was wir im nächsten Monat anpassen"
+                    ],
+                    "note": "Ein monatlicher Bericht in klarer Sprache, ohne Fachjargon."
+                }
+            },
+            "close": {
+                "title": "Finden Sie heraus, wo Sie in Ihrer Region stehen",
+                "subtitle": "In einem kostenlosen Gespräch von 15 Minuten sehen wir uns Ihre lokale Präsenz an und sagen Ihnen, was wir tun würden."
+            }
+        },
+        "aiVoiceReceptionist": {
+            "hero": {
+                "secondary": "Sprechen Sie zuerst mit unserem"
+            },
+            "tryIt": {
+                "title": "Jetzt ausprobieren",
+                "text": "Diese Website hat ihren eigenen Assistenten mit KI. Fragen Sie ihn nach unseren Leistungen, so wie ein Kunde Sie fragen würde.",
+                "button": "Gespräch starten",
+                "note": "Nutzt Ihr Mikrofon. Technik von ElevenLabs."
+            },
+            "whatItDoes": {
+                "eyebrow": "Was er leistet",
+                "subtitle": "Während Sie bei einem Kunden sind, abends geschlossen haben oder einfach beschäftigt sind, klingelt das Telefon weiter. Ihr Telefonassistent nimmt jedes Mal ab."
+            },
+            "example": {
+                "eyebrow": "Klingt wie Ihr Team",
+                "title": "Ihre Stimme, Ihr Leitfaden, Ihre Art zu arbeiten",
+                "paragraphs": [
+                    "Wir schreiben seinen Leitfaden gemeinsam mit Ihnen auf Basis der Analyse: was er sagt, was er bucht, wann er einen Anruf an einen Menschen weitergibt. Er funktioniert mit Ihrer bestehenden Telefonanlage und mit Ihrem CRM (HubSpot, Salesforce oder GoHighLevel), sobald Sie uns Zugang zur API geben.",
+                    "Optimiert für Englisch und Spanisch."
+                ],
+                "label": "Beispielgespräch, zur Veranschaulichung",
+                "caller": "Anrufer",
+                "receptionist": "Telefonassistent",
+                "lines": [
+                    "Guten Tag, ich möchte für nächste Woche eine Zahnreinigung buchen.",
+                    "Gern. Ich habe Dienstag um 10:00 Uhr oder Donnerstag um 16:30 Uhr. Was passt Ihnen besser?",
+                    "Donnerstag, bitte.",
+                    "Gebucht für Donnerstag um 16:30 Uhr. Sie erhalten eine Bestätigung per SMS."
+                ]
+            },
+            "care": {
+                "title": "Wir bleiben auch nach dem Start dran",
+                "tiles": [
+                    {
+                        "title": "Aktueller Leitfaden",
+                        "text": "Neue Leistungen, neue Zeiten, neue Fragen: Wir halten seine Antworten jeden Monat aktuell."
+                    },
+                    {
+                        "title": "Regelmäßige Tests",
+                        "text": "Wir rufen selbst an und prüfen Gespräche, um zu erkennen, was er besser lösen sollte."
+                    },
+                    {
+                        "title": "Sorgfältiger Umgang mit Daten",
+                        "text": "Daten der Anrufer werden im Einklang mit der DSGVO verarbeitet."
+                    }
+                ],
+                "bigger": {
+                    "title": "Teil einer größeren Lösung",
+                    "text": "Er wirkt am besten zusammen mit einer Website, die überzeugt, und einer lokalen Präsenz, die die Anrufe bringt. Nach der Analyse schlagen wir die passende Kombination vor; manche Bausteine können bereits inbegriffen sein.",
+                    "cta": "So arbeiten wir"
+                }
+            },
+            "close": {
+                "title": "Verlieren Sie ab diesem Monat keine Anrufe mehr",
+                "subtitle": "Erzählen Sie uns, wie Ihr Telefon heute läuft. In 15 Minuten zeigen wir Ihnen, was Ihr Telefonassistent tun würde."
+            }
+        },
+        "softwareDevelopment": {
+            "hero": {
+                "secondary": "Ein Produkt von uns ansehen",
+                "platforms": [
+                    "iOS",
+                    "Android",
+                    "Web",
+                    "macOS",
+                    "Windows",
+                    "Linux"
+                ],
+                "platformsNote": "aus einer Codebasis"
+            },
+            "case": {
+                "eyebrow": "Von uns gebaut",
+                "title": "Investep App: eine Codebasis, jeder Bildschirm",
+                "text": "Eine Plattform zur Portfolioverwaltung für Studierende der Investep Academy: mehrere Broker verfolgen, Renditen über beliebige Zeiträume hochrechnen und gehebelte Anlagen abbilden. Eine Codebasis in Flutter auf Cloudflare, mit hellem und dunklem Design.",
+                "demo": "Livedemo öffnen",
+                "darkAlt": "Dashboard der Investep App im dunklen Design: Gesamtsaldo, Verteilung nach Broker und Kontotyp",
+                "darkCaption": "Dashboard, dunkles Design.",
+                "lightAlt": "Dashboard der Investep App im hellen Design mit dem Adminbereich",
+                "lightCaption": "Derselbe Bildschirm, helles Design."
+            },
+            "why": {
+                "eyebrow": "Warum es sich lohnt"
+            },
+            "article": {
+                "eyebrow": "Von unserem LinkedIn",
+                "title": "Wie eine einzige Codebasis jedes Gerät erreicht",
+                "text": "Ein Blick in die Architektur, die eine Codebasis ohne doppelte Arbeit ins Web, auf Mobilgeräte und auf den Desktop bringt.",
+                "cta": "Artikel lesen"
+            },
+            "close": {
+                "title": "Erzählen Sie uns, was Sie bauen möchten",
+                "subtitle": "In einem kostenlosen Gespräch von 15 Minuten sehen wir uns das Problem an und sagen Ihnen, wie wir es lösen würden."
+            }
         }
     }
 }

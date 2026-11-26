@@ -1,19 +1,81 @@
 ---
 import ServicePage from '../_ServicePage.astro';
 import { contentPageFor, serviceContentPagesByKey } from '../_service-content';
+import FeatureSection from '@/src/components/services/FeatureSection.astro';
+import ProofFigure from '@/src/components/services/ProofFigure.astro';
+import TileGrid from '@/src/components/services/TileGrid.astro';
+import { LLMS_TXT_PATH, PAGESPEED_URL, PROOF_IMAGES, RICH_RESULTS_URL } from '@/src/components/services/proof';
 import { type Locale } from '@/lib/site-config';
 import { routeLocales } from '@/lib/routes';
+import { getTranslations } from '@/lib/i18n';
 
 export function getStaticPaths() {
     return routeLocales('services/local-seo').map((locale) => ({ params: { locale } }));
 }
 
 const { locale } = Astro.params as { locale: Locale };
+const t = getTranslations(locale, 'landing.localSeo');
+
+// The hero's checks, each next to the Google test that proves it.
+const proof: { value: string; text: string }[] = t.raw('hero.proof');
+const proofLinks = [PAGESPEED_URL, RICH_RESULTS_URL];
+const aiTiles = [...t.raw('ai.tiles'), { ...t.raw('ai.llms'), href: LLMS_TXT_PATH }];
+const analysis: string[] = t.raw('analysis.items');
+const report: string[] = t.raw('reviews.report.items');
 ---
 
 <ServicePage
     locale={locale}
     namespace="services.localSeo"
+    landing="landing.localSeo"
     path="services/local-seo"
     page={contentPageFor(serviceContentPagesByKey.localSeo, locale)}
-></ServicePage>
+    hero={{ secondaryLabel: t('hero.secondary'), secondaryHref: '#pillars' }}
+    benefits={{ id: 'pillars', eyebrow: t('pillars.eyebrow'), subtitle: t('pillars.subtitle') }}
+>
+    <ul slot="hero" class="mt-4 w-full flex flex-col gap-3 border-t border-white/10 pt-6 text-[15px] text-gray-300">
+        {
+            proof.map((item, i) => (
+                <li>
+                    <strong class="text-white">{item.value}</strong> {item.text},{' '}
+                    <a href={proofLinks[i]} class="font-bold text-blue-300 underline underline-offset-4 hover:text-blue-200">
+                        {t('hero.check')}
+                    </a>
+                </li>
+            ))
+        }
+        <li class="text-gray-400">{t('hero.disclaimer')}</li>
+    </ul>
+
+    <FeatureSection slot="after-hero" eyebrow={t('analysis.eyebrow')} title={t('analysis.title')} paragraphs={[t('analysis.text')]}>
+        <ul slot="media" class="grid sm:grid-cols-2 gap-3">
+            {analysis.map((item) => <li class="rounded-[1.25rem] bg-[#f5f5f7] px-5 py-4 text-base font-semibold text-black">{item}</li>)}
+        </ul>
+    </FeatureSection>
+
+    <Fragment slot="after-benefits">
+        <FeatureSection
+            reverse
+            eyebrow={t('structuredData.eyebrow')}
+            title={t('structuredData.title')}
+            paragraphs={[t('structuredData.text')]}
+            link={{ label: t('structuredData.cta'), href: RICH_RESULTS_URL }}
+        >
+            <ProofFigure slot="media" {...PROOF_IMAGES.richResults} alt={t('structuredData.alt')} caption={t('structuredData.caption')} />
+        </FeatureSection>
+
+        <FeatureSection tone="gray" eyebrow={t('ai.eyebrow')} title={t('ai.title')} paragraphs={[t('ai.text')]}>
+            <div slot="media"><TileGrid tone="white" items={aiTiles} /></div>
+        </FeatureSection>
+
+        <FeatureSection eyebrow={t('reviews.eyebrow')} title={t('reviews.title')} paragraphs={[t('reviews.text')]}>
+            <div slot="media" class="rounded-[1.75rem] bg-black text-white p-8 flex flex-col gap-4">
+                <p class="text-xl font-extrabold">{t('reviews.report.title')}</p>
+                <ul class="flex flex-col gap-2.5 text-base text-gray-200">
+                    {report.map((item) => <li>{item}</li>)}
+                </ul>
+                <p class="text-sm text-gray-400">{t('reviews.report.note')}</p>
+            </div>
+        </FeatureSection>
+    </Fragment>
+</ServicePage>

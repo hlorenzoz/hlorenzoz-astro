@@ -1,0 +1,24 @@
+---
+/**
+ * A screenshot that proves a claim (a test report, an install prompt), with its
+ * caption. `width`/`height` are the image's intrinsic size: they reserve its
+ * space so nothing shifts while it loads.
+ */
+import FadeInImage from '@/src/components/FadeInImage.astro';
+
+export interface Props {
+    src: string;
+    alt: string;
+    caption: string;
+    width: number;
+    height: number;
+    sizes?: string;
+}
+
+const { src, alt, caption, width, height, sizes = '(max-width: 1024px) 100vw, 560px' } = Astro.props;
+---
+
+<figure class="flex flex-col gap-3">
+    <FadeInImage src={src} alt={alt} width={width} height={height} sizes={sizes} containerClassName="rounded-3xl border border-gray-200 shadow-[0_8px_32px_rgba(0,0,0,0.06)]" />
+    <figcaption class="text-[13px] text-gray-600">{caption}</figcaption>
+</figure>

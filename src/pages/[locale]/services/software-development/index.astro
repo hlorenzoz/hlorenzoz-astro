@@ -1,19 +1,76 @@
 ---
 import ServicePage from '../_ServicePage.astro';
 import { contentPageFor, serviceContentPagesByKey } from '../_service-content';
+import FeatureSection from '@/src/components/services/FeatureSection.astro';
+import ProofFigure from '@/src/components/services/ProofFigure.astro';
+import { PROOF_IMAGES } from '@/src/components/services/proof';
 import { type Locale } from '@/lib/site-config';
-import { routeLocales } from '@/lib/routes';
+import { routeExists, routeLocales } from '@/lib/routes';
+import { localeHref } from '@/lib/routing';
+import { getTranslations } from '@/lib/i18n';
+import { getPortfolioItemBySlug } from '@/lib/portfolio';
+import { getLinkedInArticles } from '@/lib/linkedin';
 
 export function getStaticPaths() {
     return routeLocales('services/software-development').map((locale) => ({ params: { locale } }));
 }
 
 const { locale } = Astro.params as { locale: Locale };
+const t = getTranslations(locale, 'landing.softwareDevelopment');
+const tShared = getTranslations(locale, 'landing.shared');
+
+const investep = getPortfolioItemBySlug('investep-app')!;
+const caseStudyPath = `portfolio/${investep.slug}`;
+const article = getLinkedInArticles().find((a) => a.id === 'scale-single-codebase-every-device')!;
+const platforms: string[] = t.raw('hero.platforms');
+const sizes = '(max-width: 1024px) 100vw, 580px';
 ---
 
 <ServicePage
     locale={locale}
     namespace="services.softwareDevelopment"
+    landing="landing.softwareDevelopment"
     path="services/software-development"
     page={contentPageFor(serviceContentPagesByKey.softwareDevelopment, locale)}
-></ServicePage>
+    hero={{ secondaryLabel: t('hero.secondary'), secondaryHref: '#case' }}
+    benefits={{ eyebrow: t('why.eyebrow') }}
+>
+    <ul slot="hero" class="mt-2 flex flex-wrap items-center gap-2.5">
+        {platforms.map((name) => <li class="px-3.5 py-2 rounded-full bg-white/5 border border-white/15 text-sm font-semibold text-gray-200">{name}</li>)}
+        <li class="text-sm text-gray-400">{t('hero.platformsNote')}</li>
+    </ul>
+
+    <section slot="after-hero" id="case" class="py-24 md:py-28 px-6 bg-white scroll-mt-24">
+        <div class="max-w-6xl mx-auto flex flex-col gap-12">
+            <div class="flex flex-wrap items-end justify-between gap-8">
+                <div class="flex flex-col gap-5 max-w-3xl">
+                    <span class="text-xs font-bold uppercase tracking-[0.18em] text-blue-900">{t('case.eyebrow')}</span>
+                    <h2 class="text-3xl md:text-[2.875rem] font-extrabold tracking-tight leading-[1.1] text-black">{t('case.title')}</h2>
+                    <p class="text-lg leading-relaxed text-gray-700">{t('case.text')}</p>
+                </div>
+                <div class="flex flex-wrap items-center gap-4">
+                    <a href={investep.url} class="bg-black text-white text-[15px] font-bold px-6 py-3.5 rounded-full hover:bg-gray-800">{t('case.demo')}</a>
+                    {
+                        routeExists(caseStudyPath, locale) && (
+                            <a href={localeHref(locale, caseStudyPath)} class="text-[15px] font-bold text-blue-700 underline underline-offset-4">
+                                {tShared('caseStudy')}
+                            </a>
+                        )
+                    }
+                </div>
+            </div>
+            <div class="grid lg:grid-cols-2 gap-6">
+                <ProofFigure {...PROOF_IMAGES.investepDark} sizes={sizes} alt={t('case.darkAlt')} caption={t('case.darkCaption')} />
+                <ProofFigure {...PROOF_IMAGES.investepLight} sizes={sizes} alt={t('case.lightAlt')} caption={t('case.lightCaption')} />
+            </div>
+        </div>
+    </section>
+
+    <FeatureSection
+        slot="after-benefits"
+        eyebrow={t('article.eyebrow')}
+        title={t('article.title')}
+        paragraphs={[t('article.text')]}
+        link={{ label: t('article.cta'), href: article.url }}
+    />
+</ServicePage>

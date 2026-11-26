@@ -1,0 +1,55 @@
+---
+/**
+ * Live client sites as cards, each linking to its case study. The page builds
+ * the list (`liveSiteCaseStudies` in `lib/routes.ts`) and translates it; this
+ * component only lays it out.
+ */
+import FadeInImage from '@/src/components/FadeInImage.astro';
+
+export interface LiveSite {
+    title: string;
+    badge: string;
+    image: string;
+    href: string;
+}
+
+export interface Props {
+    id?: string;
+    eyebrow: string;
+    title: string;
+    subtitle: string;
+    cardCta: string;
+    allLabel: string;
+    allHref: string;
+    sites: LiveSite[];
+}
+
+const { id, eyebrow, title, subtitle, cardCta, allLabel, allHref, sites } = Astro.props;
+---
+
+<section id={id} class="py-24 px-6 bg-white scroll-mt-24">
+    <div class="max-w-6xl mx-auto flex flex-col gap-10">
+        <div class="flex flex-col gap-3 max-w-3xl">
+            <span class="text-xs font-bold uppercase tracking-[0.18em] text-blue-900">{eyebrow}</span>
+            <h2 class="text-3xl md:text-5xl font-extrabold tracking-tight leading-[1.1] text-black">{title}</h2>
+            <p class="text-lg leading-relaxed text-gray-700">{subtitle}</p>
+        </div>
+        <ul class="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+            {
+                sites.map((site) => (
+                    <li>
+                        <a href={site.href} class="group h-full flex flex-col rounded-[1.75rem] overflow-hidden bg-[#f5f5f7] border border-gray-100 text-black hover:border-gray-300">
+                            <div class="relative aspect-[16/10]">
+                                <FadeInImage src={site.image} alt={site.title} fill sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 300px" />
+                            </div>
+                            <span class="px-5 pt-5 pb-1.5 text-lg font-extrabold">{site.title}</span>
+                            <span class="px-5 text-sm text-gray-700">{site.badge}</span>
+                            <span class="mt-auto px-5 pt-3.5 pb-5 text-sm font-bold text-blue-700 group-hover:underline underline-offset-4">{cardCta}</span>
+                        </a>
+                    </li>
+                ))
+            }
+        </ul>
+        <a href={allHref} class="self-start text-base font-bold text-blue-700 underline underline-offset-4">{allLabel}</a>
+    </div>
+</section>

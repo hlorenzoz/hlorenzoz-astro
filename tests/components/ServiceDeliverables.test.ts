@@ -63,6 +63,17 @@ describe('ServiceDeliverables', () => {
         expect(grid?.className).not.toContain('grid-cols-3');
     });
 
+    it('labels the quote panel and lists its details when given', async () => {
+        const screen = await renderAstro(ServiceDeliverables, {
+            ...base,
+            label: 'Your price',
+            details: ['Pages and languages change.', 'No obligation.'],
+        });
+        expect(screen.getByText('Your price')).toBeInTheDocument();
+        expect(screen.getByText('Pages and languages change.')).toBeInTheDocument();
+        expect(screen.getByText('No obligation.')).toBeInTheDocument();
+    });
+
     it('never renders an em dash or en dash', async () => {
         const { body } = await renderAstro(ServiceDeliverables, base);
         expect(body.textContent).not.toMatch(/[–—]/);

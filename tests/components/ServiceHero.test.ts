@@ -36,4 +36,30 @@ describe('ServiceHero', () => {
         });
         expect(screen.body.querySelector('span')).toBeNull();
     });
+
+    it('renders the secondary link, the microcopy and the note when provided', async () => {
+        const screen = await renderAstro(ServiceHero, {
+            title: 'T',
+            subtitle: 'S',
+            ctaLabel: 'Book your free needs analysis',
+            ctaHref: '#booking',
+            secondaryLabel: 'See the proof first',
+            secondaryHref: '#proof',
+            microcopy: '15 minutes by video call. No obligation.',
+            note: 'Every site is quoted to fit your business.',
+        });
+        expect(screen.getByRole('link', { name: 'See the proof first' })).toHaveAttribute('href', '#proof');
+        expect(screen.getByText('15 minutes by video call. No obligation.')).toBeInTheDocument();
+        expect(screen.getByText('Every site is quoted to fit your business.')).toBeInTheDocument();
+    });
+
+    it('renders the proof slot under the calls to action and the aside slot beside them', async () => {
+        const { body } = await renderAstro(
+            ServiceHero,
+            { title: 'T', subtitle: 'S', ctaLabel: 'C', ctaHref: '#booking' },
+            { default: '<div data-proof>proof</div>', aside: '<div data-aside>aside</div>' }
+        );
+        expect(body.querySelector('[data-proof]')).not.toBeNull();
+        expect(body.querySelector('[data-aside]')).not.toBeNull();
+    });
 });

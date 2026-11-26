@@ -228,33 +228,33 @@
       "subtitle": "La SEO locale è l'offerta principale: un unico piano mensile che porta clienti della tua zona da Google e dall'IA. Sviluppo web, Receptionist vocale con IA e Sviluppo software sono servizi facoltativi.",
       "cta": "Scopri i servizi"
     },
-    "quoted": "Su misura per la tua attività, con preventivo dopo una prima chiamata gratuita.",
+    "quoted": "Preventivo su misura per il tuo progetto",
     "websiteDevelopment": {
       "name": "Sviluppo web",
       "meta": {
         "title": "Realizzazione siti web per la tua attività",
-        "description": "Siti web su misura e veloci, pensati per trasformare i visitatori in clienti. Ottimizzati per la SEO, responsive su mobile e realizzati secondo i moderni standard di prestazioni."
+        "description": "Siti web veloci che Google e gli assistenti IA trovano e che trasformano le visite in chiamate, con un preventivo su misura per la tua attività dopo un'analisi gratuita delle tue esigenze."
       },
       "hero": {
         "eyebrow": "Sviluppo web",
-        "title": "Siti web pensati per convertire",
-        "subtitle": "Siti web su misura e veloci, pensati per trasformare i visitatori in clienti. Ottimizzati per la SEO e responsive su mobile.",
-        "cta": "Prenota una consulenza gratuita di 15 minuti"
+        "title": "Siti web che si caricano in fretta, si fanno trovare e conquistano clienti",
+        "subtitle": "La maggior parte dei visitatori giudica un'attività in pochi secondi, di solito dal telefono. Realizziamo siti che si aprono all'istante, parlano la lingua dei tuoi clienti e spiegano a Google e agli assistenti IA esattamente cosa fai. E ti mostriamo i punteggi.",
+        "cta": "Prenota l'analisi gratuita delle tue esigenze"
       },
       "benefits": {
-        "title": "Cosa ottieni",
+        "title": "Cosa include ogni sito",
         "items": [
           {
-            "title": "Design mobile first",
-            "description": "Ogni layout è progettato e testato prima di tutto per lo smartphone, così il tuo sito si vede bene e si carica in fretta su qualsiasi schermo."
+            "title": "Veloce su ogni telefono",
+            "description": "Progettato prima di tutto per lo schermo piccolo e testato su telefoni, tablet e desktop prima del lancio."
           },
           {
-            "title": "Conformità ai Core Web Vitals",
-            "description": "I siti sono progettati per superare i parametri di prestazione di Google, a tutela del tuo posizionamento nelle ricerche e dell'esperienza dei tuoi utenti."
+            "title": "Compreso da Google e dall'IA",
+            "description": "Dati strutturati, anteprime social e un file llms.txt fin dal primo giorno, perché le macchine leggano correttamente la tua attività."
           },
           {
-            "title": "SEO e dati strutturati",
-            "description": "Tag Open Graph e dati strutturati sono presenti fin dal primo giorno, così i motori di ricerca capiscono il tuo sito già al lancio."
+            "title": "Pensato per trasformare le visite in chiamate",
+            "description": "Una promessa chiara, un passo successivo chiaro e un pulsante per prenotare o contattarti sempre a portata di mano."
           }
         ]
       },
@@ -265,19 +265,19 @@
             "label": "Prestazioni e sicurezza",
             "items": [
               "Landing page o sito web completo con più pagine",
-              "Design mobile first testato su ogni dimensione di schermo",
-              "Conformità ai Core Web Vitals integrata fin dal primo giorno",
-              "PWA installabile con pagine che funzionano anche offline",
-              "Sicurezza di livello enterprise a ogni rilascio"
+              "Progettato prima per il telefono, testato su ogni dimensione di schermo",
+              "Core Web Vitals curati fin dal primo giorno",
+              "PWA installabile, pagine principali disponibili offline",
+              "Sicurezza a ogni rilascio"
             ]
           },
           {
-            "label": "SEO e infrastruttura",
+            "label": "Ricerca e IA",
             "items": [
-              "Open Graph e dati strutturati attivi già al lancio",
-              "Supporto alla navigazione agentica per agenti IA e crawler",
-              "Certificati SSL e CDN inclusi",
-              "Hosting e infrastruttura gestiti da noi",
+              "Dati strutturati e anteprime social",
+              "llms.txt per gli assistenti IA",
+              "Sitemap e hreflang per ogni lingua",
+              "SSL e CDN inclusi",
               "Tagging lato server facoltativo"
             ]
           },
@@ -285,8 +285,8 @@
             "label": "Qualità e consegna",
             "items": [
               "Test automatici a ogni build",
-              "Controllo qualità standard prima di ogni lancio",
-              "Pipeline CI/CD (DevOpsSec)",
+              "Controllo qualità su ogni dimensione di schermo prima del lancio",
+              "Traduzioni nelle lingue che ti servono",
               "Online tra i 7 e i 14 giorni"
             ]
           }
@@ -298,22 +298,22 @@
           {
             "number": "01",
             "title": "Prenotazione",
-            "description": "Fissa una consulenza gratuita per parlare dei tuoi obiettivi."
+            "description": "Una chiamata gratuita di 15 minuti sui tuoi obiettivi."
           },
           {
             "number": "02",
-            "title": "Incontro",
-            "description": "Analizziamo le tue esigenze e definiamo insieme la strategia."
+            "title": "Pianificazione",
+            "description": "Concordiamo pagine, lingue e contenuti."
           },
           {
             "number": "03",
             "title": "Sviluppo",
-            "description": "Realizziamo su misura il tuo sito web, in linea con il tuo brand."
+            "description": "Lo progettiamo e lo realizziamo, testato su ogni schermo."
           },
           {
             "number": "04",
-            "title": "Consegna",
-            "description": "Mettiamo online il tuo sito e ti consegniamo la documentazione completa, di solito tra i 7 e i 14 giorni."
+            "title": "Lancio",
+            "description": "Online tra i 7 e i 14 giorni, con i suoi punteggi misurati."
           }
         ]
       },
@@ -321,16 +321,24 @@
         "title": "Domande frequenti",
         "items": [
           {
-            "question": "La SEO è inclusa nel pacchetto Sviluppo web o è un costo aggiuntivo?",
-            "answer": "È inclusa. Ogni pacchetto Sviluppo web comprende fin dal primo giorno la SEO tecnica di base, con dati strutturati e tag Open Graph ottimizzati perché i motori di ricerca capiscano e apprezzino il tuo sito."
+            "question": "Il mio nuovo sito sarà primo su Google?",
+            "answer": "Nessuno può promettere una posizione: decide Google. Eliminiamo i motivi tecnici per cui un sito resta indietro (velocità, struttura, dati mancanti) e gli diamo le basi per competere."
           },
           {
-            "question": "Di chi è il sito una volta concluso il progetto?",
-            "answer": "Tuo, al 100%. Una volta concluso e saldato il progetto, i nostri clienti sono proprietari di ogni elemento realizzato, compresi il codice sorgente del sito, i design e la documentazione."
+            "question": "Posso verificare i punteggi da solo?",
+            "answer": "Sì. PageSpeed Insights e il Test dei risultati avanzati sono strumenti gratuiti di Google; ti condividiamo i link al lancio."
           },
           {
-            "question": "Che tipo di assistenza è disponibile se ho un problema tecnico dopo il lancio?",
-            "answer": "Offriamo assistenza tecnica dedicata durante il normale orario di lavoro (dal lunedì al venerdì). Ogni problema viene gestito tempestivamente, così i tuoi sistemi restano operativi."
+            "question": "Cos'è llms.txt e mi serve?",
+            "answer": "Un breve riassunto della tua attività per gli assistenti IA. Aggiungerlo non costa nulla e lo includiamo in ogni sito."
+          },
+          {
+            "question": "La SEO è inclusa o è un costo aggiuntivo?",
+            "answer": "La SEO tecnica è inclusa: dati strutturati, anteprime social, sitemap e pagine veloci. Se la tua attività ha bisogno anche di crescere nelle ricerche locali, la SEO locale può far parte della tua soluzione."
+          },
+          {
+            "question": "Di chi è il sito una volta terminato?",
+            "answer": "Tuo: il codice, i design e la documentazione, una volta concluso e saldato il progetto."
           }
         ]
       }
@@ -338,29 +346,29 @@
     "aiVoiceReceptionist": {
       "name": "Receptionist vocale con IA",
       "meta": {
-        "description": "Receptionist vocali con IA attivi 24/7 che rispondono alle domande frequenti, fissano appuntamenti e raccolgono ogni contatto, così nessuna chiamata resta senza risposta.",
-        "title": "Receptionist vocale con IA 24/7"
+        "title": "Receptionist vocale con IA 24/7",
+        "description": "Un receptionist vocale con IA che risponde alle domande, fissa appuntamenti e prende messaggi 24/7, progettato dopo un'analisi gratuita di come funzionano le tue chiamate."
       },
       "hero": {
         "eyebrow": "Receptionist vocale con IA",
-        "title": "Non perdere mai più una chiamata",
-        "subtitle": "Agenti vocali basati sull'elaborazione del linguaggio naturale che gestiscono le chiamate come farebbe una persona. Fissano appuntamenti e rispondono alle domande frequenti, 24 ore su 24, 7 giorni su 7.",
-        "cta": "Prenota una consulenza"
+        "title": "Ogni chiamata ha una risposta, di giorno e di notte",
+        "subtitle": "Un assistente vocale che risponde alle domande, fissa appuntamenti e prende messaggi 24/7, con una voce naturale in linea con il tuo brand. Lo progettiamo dopo un'analisi gratuita di come gestisci oggi le chiamate.",
+        "cta": "Prenota l'analisi gratuita delle tue esigenze"
       },
       "benefits": {
-        "title": "Cosa ottieni",
+        "title": "Le chiamate che perdi oggi diventano clienti",
         "items": [
           {
-            "title": "Risposte alle domande frequenti 24/7",
-            "description": "Il tuo receptionist con IA risponde subito alle domande più comuni, di giorno e di notte, così nessun potenziale cliente resta in attesa di essere richiamato."
+            "title": "Risponde alle domande",
+            "description": "Orari, servizi, indirizzo, come funzionano le cose: le domande che senti ogni giorno, con una risposta a qualsiasi ora."
           },
           {
-            "title": "Prenotazione degli appuntamenti",
-            "description": "Chi chiama prenota direttamente nel tuo calendario durante la telefonata, senza scambi di email."
+            "title": "Fissa appuntamenti",
+            "description": "Direttamente nella tua agenda, senza dover richiamare nessuno."
           },
           {
-            "title": "Fino al 90% delle chiamate risolte al primo contatto",
-            "description": "La maggior parte delle chiamate si chiude al primo tentativo: meno attese in linea e più tempo libero per il tuo team."
+            "title": "Raccoglie ogni contatto",
+            "description": "Nome, esigenza e recapiti di ogni persona che chiama, pronti perché tu possa ricontattarla. Fuori orario e quando tutte le linee sono occupate."
           }
         ]
       },
@@ -373,7 +381,7 @@
               "Risposte intelligenti alle domande frequenti, 24/7",
               "Appuntamenti fissati direttamente nel tuo calendario",
               "Raccolta dei contatti in modo naturale durante ogni chiamata",
-              "Fino al 90% delle chiamate risolte al primo contatto"
+              "Messaggi inoltrati a te quando una chiamata richiede una persona"
             ]
           },
           {
@@ -397,27 +405,27 @@
         ]
       },
       "process": {
-        "title": "Come funziona",
+        "title": "Dalla prima telefonata alla prima chiamata gestita",
         "steps": [
           {
             "number": "01",
-            "title": "Prenotazione",
-            "description": "Fissa una consulenza gratuita per analizzare insieme come gestisci le chiamate."
+            "title": "Analisi gratuita",
+            "description": "Come funzionano oggi le tue chiamate e cosa perdi quando nessuno risponde."
           },
           {
             "number": "02",
-            "title": "Incontro",
-            "description": "Valutiamo le tue esigenze e definiamo insieme copione e strategia."
+            "title": "Copione e voce",
+            "description": "Concordiamo cosa dice, cosa prenota e cosa inoltra, e scegliamo la sua voce."
           },
           {
             "number": "03",
-            "title": "Sviluppo",
-            "description": "Realizziamo su misura il tuo agente vocale con IA e il suo copione."
+            "title": "Sviluppo e test",
+            "description": "Collegato al tuo telefono e alla tua agenda, testato con chiamate reali."
           },
           {
             "number": "04",
-            "title": "Consegna",
-            "description": "Il tuo agente entra in funzione, di solito tra i 7 e i 14 giorni."
+            "title": "Online",
+            "description": "Di solito tra i 7 e i 14 giorni, e migliorato ogni mese."
           }
         ]
       },
@@ -425,16 +433,20 @@
         "title": "Domande frequenti",
         "items": [
           {
-            "question": "Il Receptionist vocale con IA si integra con il CRM che uso già?",
-            "answer": "Sì. Il nostro Receptionist vocale con IA può integrarsi con il CRM che già utilizzi (ad esempio HubSpot, Salesforce, GoHighLevel). Servono le specifiche tecniche e gli accessi API."
+            "question": "Chi chiama capirà di parlare con un'IA?",
+            "answer": "Parla in modo naturale, e decidiamo con te come si presenta. Essere trasparenti su questo crea fiducia con i tuoi clienti."
           },
           {
-            "question": "Quali lingue supporta il Receptionist vocale con IA?",
-            "answer": "Il Receptionist vocale con IA supporta molte lingue. I nostri sistemi, però, sono testati in modo rigoroso e ottimizzati in particolare per l'inglese e lo spagnolo, per garantire la migliore qualità di interazione."
+            "question": "Può funzionare con il mio CRM?",
+            "answer": "Sì: HubSpot, Salesforce e GoHighLevel, una volta che ci dai l'accesso API."
           },
           {
-            "question": "Come viene fatturato il servizio di Receptionist vocale con IA?",
-            "answer": "Il servizio di Receptionist vocale con IA prevede un pagamento mensile ricorrente. Questo pagamento copre in modo continuativo il supporto proattivo, gli aggiornamenti delle informazioni, i test del sistema e i minuti di chiamata inclusi ogni mese."
+            "question": "Quali lingue parla?",
+            "answer": "È ottimizzato per inglese e spagnolo. Parlaci di altre lingue durante l'analisi."
+          },
+          {
+            "question": "Quanto costa?",
+            "answer": "Dipende dal volume di chiamate e da cosa deve fare. Ti facciamo il preventivo dopo l'analisi gratuita, spesso come parte di una soluzione più ampia."
           }
         ]
       }
@@ -443,24 +455,32 @@
       "name": "SEO locale",
       "meta": {
         "title": "Servizio di SEO locale per la tua attività",
-        "description": "Un unico piano mensile di SEO locale: contenuti autorevoli, backlink e citazioni, autorevolezza su Google e IA e gestione delle recensioni, perché i clienti della tua zona trovino te per primo."
+        "description": "Diventa l'attività che le persone trovano quando cercano nella tua zona, su Google e nelle risposte dell'IA. Si parte da un'analisi gratuita del tuo mercato."
       },
       "hero": {
         "eyebrow": "SEO locale",
-        "title": "Fatti trovare prima dei tuoi concorrenti",
-        "subtitle": "Un unico piano mensile con tutto il lavoro necessario per guadagnare visibilità nelle ricerche locali su Google e nelle risposte dei motori di IA.",
-        "cta": "Prenota una chiamata"
+        "title": "Diventa l'attività che trovano quando cercano nella tua zona",
+        "subtitle": "Quando qualcuno nelle vicinanze cerca ciò che offri, su Google o chiedendo a un assistente IA, la tua attività dovrebbe essere nella risposta. Partiamo da un'analisi gratuita del tuo mercato, poi costruiamo la presenza locale che ti porta lì.",
+        "cta": "Prenota l'analisi gratuita delle tue esigenze"
       },
       "benefits": {
-        "title": "Perché un unico piano",
+        "title": "Quattro fronti che avanzano insieme",
         "items": [
           {
-            "title": "Compri un risultato, non una lista di compiti",
-            "description": "Contenuti, link, autorevolezza e recensioni sono parti dello stesso obiettivo. Gestiti separatamente, da fornitori diversi, nessuno basta da solo. In un unico piano, ognuno dà forza agli altri."
+            "title": "Contenuti autorevoli",
+            "description": "Ricerca delle parole chiave per località, cluster di contenuti, analisi delle lacune e aggiornamento di ciò che hai già, perché tu diventi il punto di riferimento nel tuo settore."
           },
           {
-            "title": "Ogni mese sai cosa è stato fatto",
-            "description": "Un report mensile in parole semplici: su cosa abbiamo lavorato, come si sta muovendo la tua visibilità e quali sono i prossimi passi."
+            "title": "Backlink e citazioni",
+            "description": "Link da directory affidabili e citazioni su siti pertinenti: i segnali di autorevolezza locale su cui si basano Google e i motori di IA."
+          },
+          {
+            "title": "Autorevolezza su Google e IA",
+            "description": "Il tuo Google Business Profile ottimizzato, SEO locale sul tuo sito, dati strutturati per attività locali e supporto per più sedi."
+          },
+          {
+            "title": "Gestione delle recensioni",
+            "description": "Crescita delle recensioni monitorata nel tempo, andamento dei feedback e risposte sotto controllo, e link per il feedback con il tuo brand per ogni cliente."
           }
         ]
       },
@@ -506,27 +526,27 @@
         ]
       },
       "process": {
-        "title": "Come lavoriamo",
+        "title": "Come lavoriamo insieme",
         "steps": [
           {
             "number": "01",
-            "title": "Prima chiamata",
-            "description": "15 minuti per conoscere la tua attività, la tua zona e i clienti che vuoi raggiungere."
+            "title": "Analisi gratuita",
+            "description": "Il tuo mercato, il tuo profilo e i tuoi concorrenti, in una prima chiamata."
           },
           {
             "number": "02",
-            "title": "Audit",
-            "description": "Analizziamo la tua presenza attuale su Google, il tuo sito, le tue recensioni e chi viene consigliato oggi nella tua zona."
+            "title": "Il tuo piano",
+            "description": "Cosa faremo, in che ordine, e il preventivo."
           },
           {
             "number": "03",
-            "title": "Lavoriamo sui quattro pilastri",
-            "description": "Contenuti, citazioni, autorevolezza e recensioni avanzano in parallelo, secondo un piano che conosci in anticipo."
+            "title": "Il lavoro",
+            "description": "Contenuti, citazioni, autorevolezza e recensioni avanzano in parallelo."
           },
           {
             "number": "04",
-            "title": "Report mensile e aggiustamenti",
-            "description": "Ogni mese ricevi un report in parole semplici e adattiamo il lavoro a ciò che è cambiato."
+            "title": "Report e aggiustamenti",
+            "description": "Ogni mese, i risultati in parole semplici e i prossimi passi."
           }
         ]
       },
@@ -535,23 +555,23 @@
         "items": [
           {
             "question": "Garantite la prima posizione su Google?",
-            "answer": "No, e diffida di chi lo fa: nessuno controlla il posizionamento di Google. La prima posizione è l'obiettivo per cui lavoriamo ogni mese, e un report in parole semplici ti mostra cosa è stato fatto e come si sta muovendo la tua visibilità."
+            "answer": "No, e nessuno può farlo onestamente: il posizionamento lo decide Google. Lavoriamo per raggiungere le prime posizioni ed eliminiamo ciò che ti frena, e nell'analisi ti diciamo cosa è realistico nel tuo mercato."
           },
           {
-            "question": "Quanto tempo serve per vedere risultati nel posizionamento locale?",
-            "answer": "La maggior parte dei clienti nota movimenti significativi nel local pack della mappa tra 30 e 60 giorni, anche se nei mercati più competitivi può volerci di più."
+            "question": "Quanto costa?",
+            "answer": "Dipende dal tuo mercato e da ciò di cui ha bisogno la tua attività. Ti facciamo il preventivo dopo l'analisi gratuita, spesso come parte di una soluzione più ampia."
+          },
+          {
+            "question": "Quanto tempo serve per vedere i risultati?",
+            "answer": "La SEO locale cresce nell'arco di mesi, non di giorni. L'analisi ci dice da dove parti e il report mensile mostra come si muovono le cose."
           },
           {
             "question": "Devo avere già un Google Business Profile?",
-            "answer": "No. Se non ne hai ancora uno, lo creiamo e lo verifichiamo per te nella fase di avvio del servizio."
+            "answer": "No. Se non ne hai uno, crearlo nel modo giusto fa parte del lavoro."
           },
           {
             "question": "Il servizio copre più di una sede?",
-            "answer": "Sì. Le attività con più sedi sono supportate: ogni sede ha il proprio profilo ottimizzato e i propri contenuti locali."
-          },
-          {
-            "question": "Quali piattaforme di recensioni monitorate?",
-            "answer": "Il canale principale è il Google Business Profile, insieme a Facebook e a qualsiasi sito specifico del tuo settore e rilevante per la tua attività. Possiamo aggiungere altre fonti man mano che le tue esigenze crescono."
+            "answer": "Sì. Ogni sede ha il proprio profilo e i propri segnali locali."
           },
           {
             "question": "Come ottenete più recensioni?",
@@ -564,28 +584,28 @@
       "name": "Sviluppo software",
       "meta": {
         "title": "Sviluppo software su misura",
-        "description": "Prodotti full stack, web e mobile, pensati per funzionare su ogni dispositivo e dimensione di schermo, dal primo prototipo al lancio in produzione."
+        "description": "Software su misura costruito intorno al modo in cui lavora la tua attività: un'unica app Flutter per telefoni, tablet, web e desktop, su un backend pronto per la produzione."
       },
       "hero": {
         "eyebrow": "Sviluppo software",
-        "title": "Software su misura, pensato per crescere",
-        "subtitle": "Prodotti full stack con frontend in Flutter e un backend solido, pensati per funzionare su ogni dispositivo e dimensione di schermo.",
-        "cta": "Prenota una consulenza gratuita di 15 minuti"
+        "title": "Software costruito intorno al modo in cui lavora la tua attività",
+        "subtitle": "Quando gli strumenti già pronti non bastano, realizziamo i tuoi: un'unica app Flutter per telefoni, tablet, web e desktop, su un backend pronto per la produzione. Si parte da un'analisi gratuita di ciò che devi risolvere.",
+        "cta": "Prenota l'analisi gratuita delle tue esigenze"
       },
       "benefits": {
-        "title": "Cosa ottieni",
+        "title": "Costruito come un prodotto, non come un prototipo",
         "items": [
           {
-            "title": "Su ogni piattaforma fin dal primo giorno",
-            "description": "Un'unica base di codice Flutter arriva su iOS, Android, web, macOS, Windows e Linux, così raggiungi ogni dispositivo senza triplicare il budget."
+            "title": "Ogni piattaforma fin dal primo giorno",
+            "description": "Un'unica base di codice Flutter per iOS, Android, web e desktop: la stessa interfaccia ovunque, prestazioni native, responsive su ogni schermo."
           },
           {
-            "title": "Un backend pronto per la produzione",
-            "description": "Un backend costruito per il traffico reale, con test automatici e CI/CD, non un prototipo fragile spacciato per prodotto."
+            "title": "Pronto per la produzione",
+            "description": "Un backend progettato per il tuo prodotto, test automatici fin dal primo giorno, rilasci sicuri con una pipeline CI/CD e un'infrastruttura che scala."
           },
           {
-            "title": "L'intero stack è tuo",
-            "description": "Codice sorgente, infrastruttura e documentazione diventano interamente tuoi alla consegna del progetto."
+            "title": "Completamente tuo",
+            "description": "Il codice sorgente, la documentazione tecnica completa e il passaggio di consegne di infrastruttura e deployment, alla consegna del progetto."
           }
         ]
       },
@@ -621,27 +641,27 @@
         ]
       },
       "process": {
-        "title": "Come funziona",
+        "title": "Dall'idea al prodotto",
         "steps": [
           {
             "number": "01",
-            "title": "Prenotazione",
-            "description": "Fissa una consulenza gratuita per parlare di ciò che vuoi realizzare."
+            "title": "Analisi gratuita",
+            "description": "Cosa devi risolvere, per chi, e se un software su misura è la risposta giusta."
           },
           {
             "number": "02",
-            "title": "Incontro",
-            "description": "Analizziamo i tuoi requisiti e concordiamo l'approccio tecnico."
+            "title": "Ambito e preventivo",
+            "description": "Funzionalità, approccio tecnico e tempi, concordati per iscritto."
           },
           {
             "number": "03",
             "title": "Sviluppo",
-            "description": "Sviluppiamo su misura il frontend e il backend del tuo prodotto."
+            "description": "Frontend e backend da zero, con test e demo regolari."
           },
           {
             "number": "04",
-            "title": "Consegna",
-            "description": "Il tuo prodotto va online, con tempi definiti per ogni progetto in base alla sua portata."
+            "title": "Lancio e consegna",
+            "description": "Online negli store e sul web, con codice e documentazione nelle tue mani."
           }
         ]
       },
@@ -650,15 +670,15 @@
         "items": [
           {
             "question": "Per quali piattaforme potete sviluppare?",
-            "answer": "iOS, Android, web, macOS, Windows e Linux da un'unica base di codice Flutter, affiancata da un backend su misura costruito per le esigenze specifiche del tuo prodotto."
+            "answer": "iOS, Android, web, macOS, Windows e Linux, da un'unica base di codice Flutter."
           },
           {
-            "question": "Come si definisce il prezzo di un progetto software su misura?",
-            "answer": "Ogni progetto viene valutato singolarmente in base a funzionalità e complessità. Il preventivo arriva dopo una prima chiamata gratuita, non da un pacchetto fisso."
+            "question": "Come si definisce il prezzo di un progetto?",
+            "answer": "Ogni prodotto è diverso, per questo ti facciamo il preventivo dopo l'analisi gratuita, quando l'ambito è chiaro."
           },
           {
-            "question": "Il codice sorgente diventa mio a progetto concluso?",
-            "answer": "Sì. Il codice sorgente completo, la configurazione dell'infrastruttura e la documentazione sono tuoi una volta che il progetto è stato consegnato e saldato per intero."
+            "question": "Il codice sorgente è mio?",
+            "answer": "Sì, tutto, insieme alla documentazione, una volta consegnato e saldato il progetto."
           }
         ]
       }
@@ -2292,6 +2312,309 @@
       "by": "Scritto da",
       "updated": "Aggiornato il",
       "readTime": "{min} min di lettura"
+    }
+  },
+  "landing": {
+    "shared": {
+      "microcopy": "15 minuti in videochiamata. Senza impegno.",
+      "closeMicrocopy": "In videochiamata. Senza impegno.",
+      "caseStudy": "Leggi il caso di studio",
+      "dossier": {
+        "title": "Vuoi tutto in un solo documento?",
+        "text": "Il nostro dossier spiega come lavoriamo e cosa realizziamo, in un unico PDF.",
+        "cta": "Scarica il dossier (PDF)"
+      }
+    },
+    "websiteDevelopment": {
+      "hero": {
+        "secondary": "Guarda prima le prove",
+        "note": "Ogni sito ha un preventivo su misura per la tua attività, dopo una prima chiamata gratuita su ciò che ti serve."
+      },
+      "scores": {
+        "labels": [
+          "Prestazioni",
+          "Accessibilità",
+          "Best practice",
+          "SEO"
+        ],
+        "caption": "Questo sito, PageSpeed Insights su mobile, 25 novembre 2026",
+        "link": "Fai il test tu stesso"
+      },
+      "portfolio": {
+        "eyebrow": "Portfolio",
+        "title": "Attività reali, siti online che puoi aprire oggi stesso",
+        "subtitle": "Ogni progetto qui sotto è online e documentato, con i suoi punteggi e le scelte che ci stanno dietro.",
+        "all": "Guarda tutto il portfolio"
+      },
+      "performance": {
+        "eyebrow": "Prestazioni",
+        "title": "La velocità è la prima cosa che notano i tuoi clienti",
+        "text": "Molte persone cercano un'attività locale dal telefono, spesso mentre sono in giro. Una pagina che compare subito e risponde al primo tocco le tiene a leggere. Una pagina che si blocca le rimanda ai risultati di ricerca, e dritte dai tuoi concorrenti.",
+        "points": [
+          {
+            "title": "Pronta da leggere prima.",
+            "text": "Le pagine arrivano come HTML già completo, con pochissimo JavaScript da scaricare."
+          },
+          {
+            "title": "Risponde subito.",
+            "text": "0 ms di tempo di blocco su questo sito nei nostri test di laboratorio: menu e pulsanti rispondono al primo tocco."
+          },
+          {
+            "title": "Resta ferma mentre si carica.",
+            "text": "Le immagini riservano il loro spazio, così niente salta sotto il dito di chi legge."
+          }
+        ],
+        "cta": "Verificalo su PageSpeed Insights",
+        "note": "I punteggi variano leggermente da un test all'altro.",
+        "alt": "Report di PageSpeed Insights per hlorenzoz.com su mobile, 25 novembre 2026: 98 in Prestazioni e 100 in Accessibilità, Best practice e SEO",
+        "caption": "PageSpeed Insights per hlorenzoz.com su mobile, 25 novembre 2026."
+      },
+      "structuredData": {
+        "eyebrow": "Dati strutturati",
+        "title": "Google legge la tua attività, non solo le tue parole",
+        "paragraphs": [
+          "Ogni pagina contiene una breve descrizione della tua attività leggibile dalle macchine: chi sei, dove lavori, i tuoi orari, i tuoi servizi e le risposte alle domande più comuni.",
+          "Dati strutturati validi rendono le tue pagine idonee ai risultati avanzati nella Ricerca Google, come i dettagli dell'attività e le FAQ, e offrono agli assistenti IA una fonte chiara da cui descriverti. Cosa mostrare lo decide Google; noi ci assicuriamo che tu abbia i requisiti."
+        ],
+        "cta": "Provalo nel Test dei risultati avanzati di Google",
+        "alt": "Test dei risultati avanzati di Google per hlorenzoz.com: 3 elementi validi rilevati, FAQ, Attività locali e Organizzazione",
+        "caption": "Il Test dei risultati avanzati di Google per hlorenzoz.com: tre elementi validi."
+      },
+      "pwa": {
+        "eyebrow": "Progressive Web App",
+        "title": "La tua app sul telefono dei tuoi clienti, senza passare da uno store",
+        "text": "Il tuo sito si installa sulla schermata Home in due tocchi, con la tua icona e il tuo nome. Si apre all'istante, come un'app, e le pagine principali funzionano anche con poco segnale o senza connessione.",
+        "tiles": [
+          {
+            "title": "Installabile",
+            "text": "Dal browser, senza store"
+          },
+          {
+            "title": "Funziona offline",
+            "text": "Le pagine principali restano disponibili"
+          },
+          {
+            "title": "Un'unica base di codice",
+            "text": "Telefono, tablet e desktop"
+          }
+        ],
+        "alt": "Richiesta di installazione sul sito demo di una clinica dentale: Aggiungi alla schermata Home, accesso immediato, anche offline",
+        "caption": "La richiesta di installazione sulla nostra demo per una clinica dentale."
+      },
+      "translations": {
+        "eyebrow": "Traduzioni",
+        "title": "Parla a ogni cliente nella sua lingua",
+        "paragraphs": [
+          "Questo sito è pubblicato in nove lingue. Ognuna ha i propri indirizzi, la propria sitemap e le descrizioni delle immagini tradotte, e ogni pagina indica a Google quale versione mostrare in ciascun paese.",
+          "Un turista a Málaga, una famiglia a Dublino o un cliente a Lione trova la tua pagina nella lingua in cui cerca, con prezzi e condizioni scritti per lui."
+        ],
+        "liveIn": "hlorenzoz.com è online in",
+        "stats": {
+          "languages": "lingue",
+          "sitemaps": "sitemap, una per lingua",
+          "hreflang": "tag hreflang nella nostra home page"
+        },
+        "switch": "Leggi questa pagina in {language}"
+      },
+      "llms": {
+        "eyebrow": "llms.txt",
+        "title": "Una scheda scritta per gli assistenti IA",
+        "paragraphs": [
+          "Sempre più persone chiedono a ChatGPT, Claude, Gemini o Perplexity quale attività chiamare. llms.txt è un file di testo semplice nella radice del tuo sito che riassume chi sei, cosa offri e dove si trova ogni pagina, in una forma che i modelli linguistici leggono facilmente.",
+          "È una convenzione emergente, non uno standard ufficiale, e nessuno strumento di IA garantisce di usarlo. Per questo lo aggiungiamo accanto ai dati strutturati e a contenuti chiari, mai al loro posto."
+        ],
+        "cta": "Leggi il nostro su hlorenzoz.com/llms.txt",
+        "file": "hlorenzoz.com/llms.txt"
+      },
+      "package": {
+        "label": "Il tuo prezzo",
+        "details": [
+          "Pagine, lingue e funzionalità cambiano da un'attività all'altra, per questo definiamo il prezzo insieme in una prima chiamata gratuita.",
+          "Alla fine della chiamata sai cosa ottieni, quando e a quale prezzo. Senza impegno."
+        ]
+      },
+      "close": {
+        "title": "Un sito che dimostra quanto vale, online in due settimane",
+        "subtitle": "Veloce, trovato da Google e dall'IA, installabile e nelle lingue dei tuoi clienti. Raccontaci della tua attività in una chiamata gratuita di 15 minuti."
+      }
+    },
+    "localSeo": {
+      "hero": {
+        "secondary": "Su cosa lavoriamo",
+        "proof": [
+          {
+            "value": "100",
+            "text": "di punteggio SEO sul nostro sito"
+          },
+          {
+            "value": "Validi",
+            "text": "i dati di attività locale nel Test dei risultati avanzati di Google"
+          }
+        ],
+        "check": "verificalo",
+        "disclaimer": "Non promettiamo mai una posizione su Google: nessuno controlla il suo posizionamento."
+      },
+      "analysis": {
+        "eyebrow": "Primo passo, gratuito",
+        "title": "Studiamo il tuo mercato prima di toccare qualsiasi cosa",
+        "text": "Nella prima chiamata gratuita vediamo a che punto sei oggi e cosa impedisce ai clienti di trovarti. Solo dopo ti proponiamo cosa fare, e se la SEO locale è davvero il tassello giusto per te.",
+        "items": [
+          "Il tuo Google Business Profile",
+          "Il tuo sito e come lo legge Google",
+          "Le tue recensioni e come rispondi",
+          "Chi consiglia oggi Google nella tua zona",
+          "Cosa dicono gli assistenti IA del tuo settore",
+          "Le ricerche che fanno davvero i tuoi clienti"
+        ]
+      },
+      "pillars": {
+        "eyebrow": "Il lavoro",
+        "subtitle": "Lavoriamo sui fronti che la tua analisi indica come più importanti, seguendo un piano che conosci in anticipo."
+      },
+      "structuredData": {
+        "eyebrow": "Dati strutturati",
+        "title": "Dai a Google fatti, non supposizioni",
+        "text": "Nome, indirizzo, telefono, orari, servizi e zone servite, scritti nel formato che leggono i motori di ricerca. Le tue pagine diventano idonee ai risultati avanzati e i tuoi dati restano coerenti ovunque guardino Google e gli assistenti IA.",
+        "cta": "Provalo nel Test dei risultati avanzati di Google",
+        "alt": "Test dei risultati avanzati di Google per hlorenzoz.com: 3 elementi validi rilevati, FAQ, Attività locali e Organizzazione",
+        "caption": "Il Test dei risultati avanzati di Google per il nostro sito: dati di attività locale validi."
+      },
+      "ai": {
+        "eyebrow": "Ricerca con l'IA",
+        "title": "Consigliato nelle risposte dell'IA, non solo su Google",
+        "text": "Sempre più persone chiedono a ChatGPT, Gemini o Perplexity quale attività chiamare. Questi assistenti costruiscono le risposte con ciò che il web dice di te: il tuo sito, i tuoi profili, le tue citazioni e le tue recensioni. Ci assicuriamo che tutto sia chiaro, coerente e facile da leggere per loro, compreso un riepilogo llms.txt della tua attività.",
+        "tiles": [
+          {
+            "title": "Dati coerenti",
+            "text": "Stesso nome, indirizzo e telefono ovunque"
+          },
+          {
+            "title": "Contenuti chiari",
+            "text": "Risposte alle domande che le persone fanno"
+          },
+          {
+            "title": "Citazioni affidabili",
+            "text": "Menzioni sui siti di cui si fidano gli strumenti di IA"
+          }
+        ],
+        "llms": {
+          "title": "llms.txt",
+          "text": "Guarda il nostro"
+        }
+      },
+      "reviews": {
+        "eyebrow": "Recensioni",
+        "title": "Più recensioni, raccolte nel modo giusto",
+        "text": "Le recensioni sono uno dei segnali locali più forti. Diamo a ogni cliente un modo semplice per lasciarne una e seguiamo come cresce la tua reputazione. Non scegliamo mai a chi chiederla: chiederla solo ai clienti soddisfatti viola le norme di Google e mette a rischio il tuo profilo.",
+        "report": {
+          "title": "Ogni mese sai",
+          "items": [
+            "Cosa è stato fatto, e perché",
+            "Come si sono mosse la tua visibilità e le tue recensioni",
+            "Cosa aggiustiamo il mese prossimo"
+          ],
+          "note": "Un report mensile in parole semplici, senza gergo."
+        }
+      },
+      "close": {
+        "title": "Scopri a che punto sei nella tua zona",
+        "subtitle": "In una chiamata gratuita di 15 minuti esaminiamo la tua presenza locale e ti diciamo cosa faremmo."
+      }
+    },
+    "aiVoiceReceptionist": {
+      "hero": {
+        "secondary": "Parla prima con il nostro"
+      },
+      "tryIt": {
+        "title": "Provalo ora",
+        "text": "Questo sito ha il suo assistente IA. Fagli domande sui nostri servizi come te le farebbe un cliente.",
+        "button": "Inizia una conversazione",
+        "note": "Usa il tuo microfono. Con tecnologia ElevenLabs."
+      },
+      "whatItDoes": {
+        "eyebrow": "Cosa fa",
+        "subtitle": "Mentre sei con un cliente, di notte quando hai chiuso o semplicemente quando hai da fare, il telefono continua a squillare. Il tuo receptionist risponde sempre."
+      },
+      "example": {
+        "eyebrow": "Parla come il tuo team",
+        "title": "La tua voce, il tuo copione, il tuo modo di lavorare",
+        "paragraphs": [
+          "Scriviamo il suo copione con te a partire dall'analisi: cosa dice, cosa prenota, quando passa la chiamata a una persona. Funziona con il tuo sistema telefonico attuale e con il tuo CRM (HubSpot, Salesforce o GoHighLevel) una volta che ci dai l'accesso API.",
+          "Ottimizzato per inglese e spagnolo."
+        ],
+        "label": "Conversazione di esempio, a scopo illustrativo",
+        "caller": "Cliente",
+        "receptionist": "Receptionist",
+        "lines": [
+          "Buongiorno, vorrei prenotare una pulizia dei denti per la settimana prossima.",
+          "Certo. Ho martedì alle 10:00 o giovedì alle 16:30. Quale preferisce?",
+          "Giovedì, grazie.",
+          "Prenotato per giovedì alle 16:30. Riceverà una conferma via SMS."
+        ]
+      },
+      "care": {
+        "title": "Restiamo al tuo fianco dopo il lancio",
+        "tiles": [
+          {
+            "title": "Aggiornamenti del copione",
+            "text": "Nuovi servizi, nuovi orari, nuove domande: teniamo aggiornate le sue risposte ogni mese."
+          },
+          {
+            "title": "Test periodici",
+            "text": "Lo chiamiamo noi stessi e rivediamo le conversazioni per capire cosa dovrebbe gestire meglio."
+          },
+          {
+            "title": "Dati trattati con cura",
+            "text": "I dati di chi chiama sono trattati nel rispetto del GDPR."
+          }
+        ],
+        "bigger": {
+          "title": "Parte di una soluzione più ampia",
+          "text": "Rende al meglio accanto a un sito che converte e a una presenza locale che porta le chiamate. Dopo l'analisi ti proponiamo la combinazione adatta; alcuni elementi possono essere inclusi.",
+          "cta": "Scopri come lavoriamo"
+        }
+      },
+      "close": {
+        "title": "Smetti di perdere chiamate, già da questo mese",
+        "subtitle": "Raccontaci come funziona oggi il tuo telefono. In 15 minuti ti mostriamo cosa farebbe il tuo receptionist."
+      }
+    },
+    "softwareDevelopment": {
+      "hero": {
+        "secondary": "Guarda un prodotto che abbiamo realizzato",
+        "platforms": [
+          "iOS",
+          "Android",
+          "Web",
+          "macOS",
+          "Windows",
+          "Linux"
+        ],
+        "platformsNote": "da un'unica base di codice"
+      },
+      "case": {
+        "eyebrow": "Realizzato da noi",
+        "title": "Investep App: un'unica base di codice, ogni schermo",
+        "text": "Una piattaforma di gestione del portafoglio per gli studenti di Investep Academy: segue più broker, proietta i rendimenti su qualsiasi orizzonte temporale e mappa gli asset con leva. Un'unica base di codice Flutter su Cloudflare, con tema chiaro e tema scuro.",
+        "demo": "Apri la demo online",
+        "darkAlt": "Dashboard di Investep App con tema scuro: saldo totale, distribuzione per broker e per tipo di conto",
+        "darkCaption": "Dashboard, tema scuro.",
+        "lightAlt": "Dashboard di Investep App con tema chiaro e la sezione di amministrazione",
+        "lightCaption": "La stessa schermata, tema chiaro."
+      },
+      "why": {
+        "eyebrow": "Perché conviene"
+      },
+      "article": {
+        "eyebrow": "Dal nostro LinkedIn",
+        "title": "Come portare un'unica base di codice su ogni dispositivo",
+        "text": "Dentro l'architettura che porta un'unica base di codice su web, mobile e desktop senza duplicare il lavoro.",
+        "cta": "Leggi l'articolo"
+      },
+      "close": {
+        "title": "Raccontaci cosa devi realizzare",
+        "subtitle": "In una chiamata gratuita di 15 minuti analizziamo il problema e ti diciamo come lo risolveremmo."
+      }
     }
   }
 }

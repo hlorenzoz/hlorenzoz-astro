@@ -1,0 +1,54 @@
+---
+/**
+ * One landing section: text on one side (eyebrow, h2, paragraphs, extra
+ * content, a verification link) and media on the other (a screenshot, a code
+ * panel, a card). `reverse` puts the media first on wide screens; on phones
+ * the text always comes first.
+ */
+export interface Props {
+    id?: string;
+    eyebrow?: string;
+    title: string;
+    paragraphs?: string[];
+    link?: { label: string; href: string };
+    /** Small print beside the link. */
+    note?: string;
+    reverse?: boolean;
+    tone?: 'white' | 'gray' | 'dark';
+}
+
+const { id, eyebrow, title, paragraphs = [], link, note, reverse = false, tone = 'white' } = Astro.props;
+const dark = tone === 'dark';
+const background = { white: 'bg-white', gray: 'bg-[#f9f9f9]', dark: 'bg-black text-white' }[tone];
+const hasMedia = Astro.slots.has('media');
+---
+
+<section id={id} class={`py-24 md:py-28 px-6 scroll-mt-24 ${background}`}>
+    <div class={`max-w-6xl mx-auto grid gap-14 items-center ${hasMedia ? 'lg:grid-cols-2' : ''}`}>
+        <div class={`flex flex-col gap-5 min-w-0 ${reverse ? 'lg:order-2' : ''}`}>
+            {eyebrow && <span class={`text-xs font-bold uppercase tracking-[0.18em] ${dark ? 'text-blue-300' : 'text-blue-900'}`}>{eyebrow}</span>}
+            <h2 class={`text-3xl md:text-[2.875rem] font-extrabold tracking-tight leading-[1.1] ${dark ? 'text-white' : 'text-black'}`}>{title}</h2>
+            {paragraphs.map((p) => <p class={`text-lg leading-relaxed ${dark ? 'text-gray-300' : 'text-gray-700'}`}>{p}</p>)}
+            <slot />
+            {
+                (link || note) && (
+                    <div class="flex flex-wrap items-center gap-4 mt-2">
+                        {link && (
+                            <a href={link.href} class={`text-[15px] font-bold px-6 py-3.5 rounded-full ${dark ? 'bg-white text-black hover:bg-gray-200' : 'bg-black text-white hover:bg-gray-800'}`}>
+                                {link.label}
+                            </a>
+                        )}
+                        {note && <p class={`text-[13px] ${dark ? 'text-gray-400' : 'text-gray-600'}`}>{note}</p>}
+                    </div>
+                )
+            }
+        </div>
+        {
+            hasMedia && (
+                <div class={`min-w-0 ${reverse ? 'lg:order-1' : ''}`}>
+                    <slot name="media" />
+                </div>
+            )
+        }
+    </div>
+</section>

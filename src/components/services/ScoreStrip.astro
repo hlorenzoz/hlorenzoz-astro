@@ -1,0 +1,31 @@
+---
+/**
+ * PageSpeed Insights scores of this site, with the date they were measured and
+ * a link to run the test again. Sits inside the dark service hero.
+ */
+export interface Props {
+    scores: { label: string; value: string }[];
+    caption: string;
+    linkLabel: string;
+    href: string;
+}
+
+const { scores, caption, linkLabel, href } = Astro.props;
+---
+
+<div class="mt-6 w-full p-6 rounded-[1.75rem] bg-white/5 border border-white/10 flex flex-wrap items-center justify-between gap-6">
+    <ul class="flex flex-wrap gap-7">
+        {
+            scores.map((score) => (
+                <li class="flex items-center gap-3">
+                    <span class="size-14 rounded-full border-4 border-green-500 flex items-center justify-center font-extrabold text-lg text-green-400">{score.value}</span>
+                    <span class="text-sm font-semibold text-gray-200">{score.label}</span>
+                </li>
+            ))
+        }
+    </ul>
+    <div class="flex flex-col gap-1.5 max-w-xs">
+        <p class="text-[13px] text-gray-400">{caption}</p>
+        <a href={href} class="text-sm font-bold text-blue-300 underline underline-offset-4 hover:text-blue-200">{linkLabel}</a>
+    </div>
+</div>

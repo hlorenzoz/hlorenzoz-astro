@@ -1783,24 +1783,32 @@
       "name": "Local SEO",
       "meta": {
         "title": "Local SEO Services for Local Businesses",
-        "description": "One monthly Local SEO plan: authority content, backlinks and citations, authority on Google and AI, and review management, so nearby customers find you first."
+        "description": "Be the business people find when they search near you, on Google and in AI answers. It starts with a free analysis of your market."
       },
       "hero": {
         "eyebrow": "Local SEO",
-        "title": "Get Found Before Your Competitors",
-        "subtitle": "One monthly plan covering all the work it takes to become visible in local Google searches and in the answers AI engines give.",
-        "cta": "Book a call"
+        "title": "Be the business people find when they search near you",
+        "subtitle": "When someone nearby searches for what you offer, on Google or by asking an AI assistant, your business should be in the answer. We start with a free analysis of your market, then build the local presence that gets you there.",
+        "cta": "Book your free needs analysis"
       },
       "benefits": {
-        "title": "Why a single plan",
+        "title": "Four fronts, moving forward together",
         "items": [
           {
-            "title": "You buy a result, not a list of tasks",
-            "description": "Content, links, authority and reviews all serve the same goal. Handled separately, by different suppliers, none of them is enough on its own. In one plan, each one strengthens the others."
+            "title": "Authority content",
+            "description": "Keyword research by location, content clusters, gap analysis and updates to what you already have, so you become the reference on your topic."
           },
           {
-            "title": "You know what was done every month",
-            "description": "A monthly report in plain English: what was worked on, how your visibility is moving and what comes next."
+            "title": "Backlinks and citations",
+            "description": "Links from trusted directories and citations on relevant websites, the local authority signals Google and AI engines rely on."
+          },
+          {
+            "title": "Authority on Google and AI",
+            "description": "Your Google Business Profile optimised, local SEO on your website, local business structured data, and support for more than one location."
+          },
+          {
+            "title": "Review management",
+            "description": "Review growth tracked over time, feedback trends and responses monitored, and branded feedback links for every customer."
           }
         ]
       },
@@ -1846,27 +1854,27 @@
         ]
       },
       "process": {
-        "title": "How we work",
+        "title": "How we work together",
         "steps": [
           {
             "number": "01",
-            "title": "First call",
-            "description": "15 minutes to get to know your business, your area and the customers you want to reach."
+            "title": "Free analysis",
+            "description": "Your market, your profile and your competitors, in a first call."
           },
           {
             "number": "02",
-            "title": "Audit",
-            "description": "We review your current presence on Google, your website, your reviews and who is being recommended in your area today."
+            "title": "Your plan",
+            "description": "What we will do, in what order, and the quote."
           },
           {
             "number": "03",
-            "title": "We work on the four pillars",
-            "description": "Content, citations, authority and reviews move forward in parallel, following a plan you know in advance."
+            "title": "The work",
+            "description": "Content, citations, authority and reviews move forward in parallel."
           },
           {
             "number": "04",
-            "title": "Monthly report and adjustments",
-            "description": "Every month you get a report in plain English and we adjust the work to whatever has changed."
+            "title": "Report and adjust",
+            "description": "Every month, results in plain language and the next steps."
           }
         ]
       },
@@ -1875,23 +1883,23 @@
         "items": [
           {
             "question": "Do you guarantee the first position on Google?",
-            "answer": "No, and be wary of anyone who does: nobody controls Google's rankings. The first position is the goal we work towards every month, and a plain English report shows you what was done and how your visibility is moving."
+            "answer": "No, and nobody honestly can: Google decides its rankings. We work towards the top positions and remove what holds you back, and we tell you in the analysis what is realistic for your market."
           },
           {
-            "question": "How long before I see results in local search rankings?",
-            "answer": "Most clients see meaningful movement in the local map pack within 30 to 60 days, though competitive markets can take longer."
+            "question": "How much does it cost?",
+            "answer": "It depends on your market and on what your business needs. We quote it after the free analysis, often as part of a wider solution."
+          },
+          {
+            "question": "How long before I see results?",
+            "answer": "Local SEO builds over months, not days. The analysis tells us where you start, and the monthly report shows how things move."
           },
           {
             "question": "Do I need a Google Business Profile already?",
-            "answer": "No. If you don't have one yet, we set it up and verify it for you as part of onboarding."
+            "answer": "No. If you do not have one, setting it up properly is part of the work."
           },
           {
-            "question": "Does this cover more than one location?",
-            "answer": "Yes. Businesses with several locations are supported, and each location gets its own optimised profile and local content."
-          },
-          {
-            "question": "Which review platforms do you monitor?",
-            "answer": "Google Business Profile is the main channel, alongside Facebook and any site specific to your sector that matters for your business. We can add more sources as your needs grow."
+            "question": "Does it cover more than one location?",
+            "answer": "Yes. Each location gets its own profile and local signals."
           },
           {
             "question": "How do you get more reviews?",
@@ -1903,105 +1911,113 @@
     "websiteDevelopment": {
       "name": "Website Development",
       "meta": {
-        "description": "Bespoke, fast websites designed to turn visitors into clients. SEO optimised and mobile responsive, built to modern performance standards.",
-        "title": "Business Website Design and Development"
+        "title": "Business Website Design and Development",
+        "description": "Fast websites that get found by Google and AI assistants and turn visits into calls, quoted for your business after a free needs analysis."
       },
       "hero": {
         "eyebrow": "Website Development",
-        "title": "Websites Built to Convert",
-        "subtitle": "Bespoke, fast websites designed to turn visitors into clients. SEO optimised and mobile responsive.",
-        "cta": "Book a free 15 minute consultation"
+        "title": "Websites that load fast, get found and win customers",
+        "subtitle": "Most visitors judge a business in seconds, usually on a phone. We build sites that open at once, speak your customers' language and tell Google and AI assistants exactly what you do. And we show you the scores.",
+        "cta": "Book your free needs analysis"
       },
       "benefits": {
-        "title": "What You Get",
+        "title": "What every site includes",
         "items": [
           {
-            "title": "Mobile First Design",
-            "description": "Every layout is built and tested for phones first, so your site looks sharp and loads quickly on any screen."
+            "title": "Fast on every phone",
+            "description": "Designed for the small screen first and tested on phones, tablets and desktops before launch."
           },
           {
-            "title": "Core Web Vitals Compliance",
-            "description": "Sites are engineered to pass Google's performance benchmarks, protecting your search visibility and the experience of every visitor."
+            "title": "Understood by Google and AI",
+            "description": "Structured data, social previews and an llms.txt file from day one, so machines read your business correctly."
           },
           {
-            "title": "SEO & Structured Data",
-            "description": "Open Graph tags and structured data ship from day one, so search engines understand your site from launch."
+            "title": "Built to turn visits into calls",
+            "description": "One clear promise, one clear next step, and a booking or contact button always within reach."
           }
         ]
       },
       "deliverables": {
-        "title": "The Complete Package",
+        "title": "The complete package",
         "groups": [
           {
-            "label": "Performance & Security",
+            "label": "Performance and security",
             "items": [
               "Landing page or full multipage website",
-              "Mobile first design tested on every screen size",
-              "Core Web Vitals compliance built in from day one",
-              "Installable PWA with pages that work offline",
-              "Enterprise grade security on every deployment"
+              "Designed for phones first, tested on every screen size",
+              "Core Web Vitals built in from day one",
+              "Installable PWA, key pages offline",
+              "Security on every deploy"
             ]
           },
           {
-            "label": "SEO & Infrastructure",
+            "label": "Search and AI",
             "items": [
-              "Open Graph and structured data in place at launch",
-              "Agentic browsing support for AI agents and crawlers",
-              "SSL certificates and CDN included",
-              "Hosting and infrastructure managed for you",
+              "Structured data and social previews",
+              "llms.txt for AI assistants",
+              "Sitemaps and hreflang per language",
+              "SSL and CDN included",
               "Optional server side tagging"
             ]
           },
           {
-            "label": "Quality & Delivery",
+            "label": "Quality and delivery",
             "items": [
               "Automated tests on every build",
-              "Standard QA before every launch",
-              "CI/CD pipeline (DevOpsSec)",
+              "QA on every screen size before launch",
+              "Translations into the languages you need",
               "Live in 7 to 14 days"
             ]
           }
         ]
       },
       "process": {
-        "title": "How We Build Your Site",
+        "title": "How we build your site",
         "steps": [
           {
             "number": "01",
             "title": "Book",
-            "description": "Arrange a free consultation to talk through your goals."
+            "description": "A free 15 minute call about your goals."
           },
           {
             "number": "02",
-            "title": "Meet",
-            "description": "We assess your needs and agree on the strategy."
+            "title": "Plan",
+            "description": "We agree the pages, languages and content."
           },
           {
             "number": "03",
-            "title": "Develop",
-            "description": "We build your website from scratch, tailored to your brand."
+            "title": "Build",
+            "description": "We design and build it, tested on every screen."
           },
           {
             "number": "04",
-            "title": "Deliver",
-            "description": "We launch your site and hand over full documentation, usually within 7 to 14 days."
+            "title": "Launch",
+            "description": "Live in 7 to 14 days, with its scores measured."
           }
         ]
       },
       "faq": {
-        "title": "Frequently Asked Questions",
+        "title": "Frequently asked questions",
         "items": [
           {
-            "question": "Is SEO included in the Website Development package, or does it cost extra?",
-            "answer": "It is included. Every Website Development package comes with foundational technical SEO from day one, including optimised Structured Data and Open Graph tags so search engines can read and understand your site properly."
+            "question": "Will my new site rank first on Google?",
+            "answer": "Nobody can promise a position: Google decides. We remove the technical reasons a site falls behind (speed, structure, missing data) and give it the foundations to compete."
           },
           {
-            "question": "Who owns the website once the project is completed?",
-            "answer": "Our clients own every artefact, including the website source code, designs and documentation, 100% once the project is officially completed and paid for."
+            "question": "Can I check the scores myself?",
+            "answer": "Yes. PageSpeed Insights and the Rich Results Test are free Google tools; we share the links at launch."
           },
           {
-            "question": "What support is available if I run into a technical issue after launch?",
-            "answer": "We provide dedicated technical support during standard working hours (Monday to Friday). Every issue is dealt with promptly to keep your systems up and running."
+            "question": "What is llms.txt and do I need it?",
+            "answer": "A short summary of your business for AI assistants. It costs nothing to add and we include it in every site."
+          },
+          {
+            "question": "Is SEO included, or is it an extra cost?",
+            "answer": "Technical SEO is included: structured data, social previews, sitemaps and fast pages. If your business also needs to grow in local search, local SEO can be part of your solution."
+          },
+          {
+            "question": "Who owns the website once it is finished?",
+            "answer": "You do: the code, the designs and the documentation, once the project is completed and paid."
           }
         ]
       }
@@ -2010,28 +2026,28 @@
       "name": "AI Voice Receptionist",
       "meta": {
         "title": "AI Voice Receptionist",
-        "description": "24/7 AI voice receptionists that answer FAQs, book appointments and capture every lead, so no call goes unanswered."
+        "description": "An AI voice receptionist that answers questions, books appointments and takes messages 24/7, designed after a free analysis of how your calls work."
       },
       "hero": {
         "eyebrow": "AI Voice Receptionist",
-        "title": "Never Miss a Call Again",
-        "subtitle": "Natural language processing agents that handle calls just as a person would. They book appointments and answer FAQs, 24/7.",
-        "cta": "Book a consultation"
+        "title": "Every call answered, day and night",
+        "subtitle": "A voice assistant that answers questions, books appointments and takes messages 24/7, in a natural voice matched to your brand. We design it after a free analysis of how your calls work today.",
+        "cta": "Book your free needs analysis"
       },
       "benefits": {
-        "title": "What You Get",
+        "title": "The calls you miss today become customers",
         "items": [
           {
-            "title": "24/7 Smart FAQ Responses",
-            "description": "Your AI receptionist answers common questions instantly, day or night, so leads never wait for a callback."
+            "title": "Answers questions",
+            "description": "Opening hours, services, location, how things work: the questions you hear every day, answered at any hour."
           },
           {
-            "title": "Appointment Booking",
-            "description": "Callers book straight into your diary during the call, with no back and forth by email."
+            "title": "Books appointments",
+            "description": "Straight into your diary, without the back and forth of calling people back."
           },
           {
-            "title": "Up to 90% First Call Resolution",
-            "description": "Most calls are fully resolved first time, cutting waiting times and freeing up your team."
+            "title": "Captures every lead",
+            "description": "Name, need and contact details from each caller, ready for you to follow up. Out of hours and when every line is busy."
           }
         ]
       },
@@ -2044,7 +2060,7 @@
               "24/7 smart FAQ responses",
               "Appointment booking straight into your diary",
               "Conversational lead capture on every call",
-              "Up to 90% first call resolution"
+              "Messages passed on to you when a call needs a person"
             ]
           },
           {
@@ -2068,44 +2084,48 @@
         ]
       },
       "process": {
-        "title": "How It Works",
+        "title": "From first call to first answered call",
         "steps": [
           {
             "number": "01",
-            "title": "Book",
-            "description": "Arrange a free consultation to talk through your call flows."
+            "title": "Free analysis",
+            "description": "How your calls work today and what you lose when nobody answers."
           },
           {
             "number": "02",
-            "title": "Meet",
-            "description": "We assess your needs and agree on the script and strategy."
+            "title": "Script and voice",
+            "description": "We agree what it says, books and passes on, and choose its voice."
           },
           {
             "number": "03",
-            "title": "Develop",
-            "description": "We build your AI voice agent and its script to measure."
+            "title": "Build and test",
+            "description": "Connected to your phone and diary, tested with real calls."
           },
           {
             "number": "04",
-            "title": "Deliver",
-            "description": "Your agent goes live, usually within 7 to 14 days."
+            "title": "Live",
+            "description": "Usually within 7 to 14 days, and improved every month."
           }
         ]
       },
       "faq": {
-        "title": "Frequently Asked Questions",
+        "title": "Frequently asked questions",
         "items": [
           {
-            "question": "Can the AI Voice Receptionist integrate with my existing CRM?",
-            "answer": "Yes. Our AI Voice Receptionist can integrate with your existing CRM (for example HubSpot, Salesforce or GoHighLevel). You will need to provide the technical specifications and API access."
+            "question": "Will callers know they are talking to an AI?",
+            "answer": "It speaks naturally, and we agree with you how it introduces itself. Being open about it builds trust with your customers."
           },
           {
-            "question": "Which languages does the AI Voice Receptionist support?",
-            "answer": "The AI Voice Receptionist supports many languages worldwide. However, our systems are rigorously tested and optimised specifically for English and Spanish to ensure the highest quality conversations."
+            "question": "Can it work with my CRM?",
+            "answer": "Yes: HubSpot, Salesforce and GoHighLevel, once you give us API access."
           },
           {
-            "question": "How is the AI Voice Receptionist service billed?",
-            "answer": "The AI Voice Receptionist service is billed as a recurring monthly payment. It covers ongoing proactive support, knowledge updates, system testing and your monthly allowance of call minutes."
+            "question": "Which languages does it speak?",
+            "answer": "It is optimised for English and Spanish. Tell us about other languages in the analysis."
+          },
+          {
+            "question": "How much does it cost?",
+            "answer": "It depends on your call volume and on what it needs to do. We quote it after the free analysis, often as part of a wider solution."
           }
         ]
       }
@@ -2113,29 +2133,29 @@
     "softwareDevelopment": {
       "name": "Software Development",
       "meta": {
-        "description": "Full stack products, web and mobile, built to run on every device and screen size, from first prototype to production launch.",
-        "title": "Bespoke Software Development"
+        "title": "Bespoke Software Development",
+        "description": "Custom software built around the way your business works: one Flutter app for phones, tablets, the web and desktop, on a backend built for production."
       },
       "hero": {
         "eyebrow": "Software Development",
-        "title": "Bespoke Software, Built to Scale",
-        "subtitle": "Full stack products with a Flutter frontend and a robust backend, built to run on every device and screen size.",
-        "cta": "Book a free 15 minute consultation"
+        "title": "Software built around the way your business works",
+        "subtitle": "When ready made tools fall short, we build your own: one Flutter app for phones, tablets, the web and desktop, on a backend built for production. It starts with a free analysis of what you need to solve.",
+        "cta": "Book your free needs analysis"
       },
       "benefits": {
-        "title": "What You Get",
+        "title": "Built like a product, not a prototype",
         "items": [
           {
-            "title": "On Every Platform From Day One",
-            "description": "One Flutter codebase runs on iOS, Android, the web, macOS, Windows and Linux, so you reach every device without tripling the budget."
+            "title": "Every platform from day one",
+            "description": "One Flutter codebase for iOS, Android, the web and desktop: the same interface everywhere, native performance, responsive on every screen."
           },
           {
-            "title": "Production Grade Backend",
-            "description": "A backend built for real traffic, with automated tests and CI/CD, not a fragile prototype dressed up as a product."
+            "title": "Ready for production",
+            "description": "A backend designed for your product, automated tests from day one, safe releases through a CI/CD pipeline and infrastructure that scales."
           },
           {
-            "title": "You Own the Full Stack",
-            "description": "Source code, infrastructure and documentation are entirely yours once the project is delivered."
+            "title": "Yours, completely",
+            "description": "The source code, full technical documentation and the handover of infrastructure and deployment, once the project is delivered."
           }
         ]
       },
@@ -2171,44 +2191,44 @@
         ]
       },
       "process": {
-        "title": "How It Works",
+        "title": "From idea to product",
         "steps": [
           {
             "number": "01",
-            "title": "Book",
-            "description": "Arrange a free consultation to talk through what you are building."
+            "title": "Free analysis",
+            "description": "What you need to solve, for whom, and whether custom software is the right answer."
           },
           {
             "number": "02",
-            "title": "Meet",
-            "description": "We assess your requirements and agree on the technical approach."
+            "title": "Scope and quote",
+            "description": "Features, technical approach and timescales, agreed in writing."
           },
           {
             "number": "03",
-            "title": "Develop",
-            "description": "We build your product's frontend and backend from scratch."
+            "title": "Build",
+            "description": "Frontend and backend from scratch, with tests and regular demos."
           },
           {
             "number": "04",
-            "title": "Deliver",
-            "description": "Your product goes live, with timescales set per project according to its scope."
+            "title": "Launch and handover",
+            "description": "Live in the stores and on the web, with code and documentation in your hands."
           }
         ]
       },
       "faq": {
-        "title": "Frequently Asked Questions",
+        "title": "Frequently asked questions",
         "items": [
           {
             "question": "Which platforms can you build for?",
-            "answer": "iOS, Android, the web, macOS, Windows and Linux from a single Flutter codebase, backed by a bespoke backend built specifically for your product's needs."
+            "answer": "iOS, Android, the web, macOS, Windows and Linux, from one Flutter codebase."
           },
           {
-            "question": "How is a bespoke software project priced?",
-            "answer": "Every project is scoped individually according to its features and complexity. The quote follows a free first call, not a fixed package."
+            "question": "How is a project priced?",
+            "answer": "Every product is different, so we quote it after the free analysis, once the scope is clear."
           },
           {
-            "question": "Do I own the source code once the project is finished?",
-            "answer": "Yes. You own the complete source code, infrastructure set up and documentation once the project has been delivered and paid in full."
+            "question": "Do I own the source code?",
+            "answer": "Yes, all of it, together with the documentation, once the project is delivered and paid."
           }
         ]
       }
@@ -2219,7 +2239,7 @@
       "subtitle": "Local SEO is the core offer: one monthly plan that brings in local customers from Google and AI. Website Development, AI Voice Receptionist and Software Development are optional.",
       "cta": "Browse the services"
     },
-    "quoted": "Tailored to your business and quoted after a free first call."
+    "quoted": "Quoted for your project"
   },
   "assistant": {
     "expand": "Expand assistant",
@@ -2292,6 +2312,309 @@
       "by": "Written by",
       "updated": "Updated",
       "readTime": "{min} min read"
+    }
+  },
+  "landing": {
+    "shared": {
+      "microcopy": "15 minutes by video call. No obligation.",
+      "closeMicrocopy": "Video call. No obligation.",
+      "caseStudy": "Read the case study",
+      "dossier": {
+        "title": "Want it all in one document?",
+        "text": "Our dossier explains how we work and what we build, in one PDF.",
+        "cta": "Download the dossier (PDF)"
+      }
+    },
+    "websiteDevelopment": {
+      "hero": {
+        "secondary": "See the proof first",
+        "note": "Every site is quoted to fit your business, after a free first call about what you need."
+      },
+      "scores": {
+        "labels": [
+          "Performance",
+          "Accessibility",
+          "Best Practices",
+          "SEO"
+        ],
+        "caption": "This website, PageSpeed Insights on mobile, 25 November 2026",
+        "link": "Run the test yourself"
+      },
+      "portfolio": {
+        "eyebrow": "Portfolio",
+        "title": "Real businesses, live sites you can open today",
+        "subtitle": "Every project below is online and documented, with its scores and the decisions behind it.",
+        "all": "See the full portfolio"
+      },
+      "performance": {
+        "eyebrow": "Performance",
+        "title": "Speed is the first thing your customers notice",
+        "text": "Many people look for a local business on their phone, often on the move. A page that appears at once and reacts to the first tap keeps them reading. A page that stalls sends them back to the search results, and to your competitors.",
+        "points": [
+          {
+            "title": "Ready to read sooner.",
+            "text": "Pages arrive as finished HTML with almost no JavaScript to download."
+          },
+          {
+            "title": "Reacts at once.",
+            "text": "0 ms of blocking time on this site in our lab tests: menus and buttons answer the first tap."
+          },
+          {
+            "title": "Stays still while it loads.",
+            "text": "Images reserve their space, so nothing jumps under the reader's finger."
+          }
+        ],
+        "cta": "Check it on PageSpeed Insights",
+        "note": "Scores vary slightly from run to run.",
+        "alt": "PageSpeed Insights report for hlorenzoz.com on mobile, 25 November 2026: 98 Performance and 100 for Accessibility, Best Practices and SEO",
+        "caption": "PageSpeed Insights for hlorenzoz.com on mobile, 25 November 2026."
+      },
+      "structuredData": {
+        "eyebrow": "Structured data",
+        "title": "Google reads your business, not just your words",
+        "paragraphs": [
+          "Every page carries a short, machine readable description of your business: who you are, where you work, your opening hours, your services and your answers to common questions.",
+          "Valid structured data makes your pages eligible for rich results in Google Search, such as business details and FAQs, and gives AI assistants a clear source to describe you from. Google decides what it shows; we make sure you qualify."
+        ],
+        "cta": "Test it in Google's Rich Results Test",
+        "alt": "Google Rich Results Test for hlorenzoz.com: 3 valid items detected, FAQ, Local businesses and Organisation",
+        "caption": "Google's Rich Results Test for hlorenzoz.com: three valid items."
+      },
+      "pwa": {
+        "eyebrow": "Progressive Web App",
+        "title": "Your own app on your customers' phones, without an app store",
+        "text": "Your site installs on the home screen in two taps, with your icon and your name. It opens instantly, like an app, and the key pages still work with a weak signal or none at all.",
+        "tiles": [
+          {
+            "title": "Installable",
+            "text": "From the browser, no store"
+          },
+          {
+            "title": "Works offline",
+            "text": "Key pages stay available"
+          },
+          {
+            "title": "One codebase",
+            "text": "Phone, tablet and desktop"
+          }
+        ],
+        "alt": "Install prompt on a dental clinic demo site: Add to Home Screen, access instantly, even offline",
+        "caption": "The install prompt on our dental clinic demo."
+      },
+      "translations": {
+        "eyebrow": "Translations",
+        "title": "Speak to every customer in their own language",
+        "paragraphs": [
+          "This site is published in nine languages. Each one has its own addresses, its own sitemap and translated image descriptions, and every page tells Google which version to show in each country.",
+          "A tourist in Málaga, a family in Dublin or a client in Lyon finds your page in the language they search in, with your prices and terms written for them."
+        ],
+        "liveIn": "hlorenzoz.com is live in",
+        "stats": {
+          "languages": "languages",
+          "sitemaps": "sitemaps, one per language",
+          "hreflang": "hreflang tags on our home page"
+        },
+        "switch": "Switch this page to {language}"
+      },
+      "llms": {
+        "eyebrow": "llms.txt",
+        "title": "A briefing written for AI assistants",
+        "paragraphs": [
+          "More and more people ask ChatGPT, Claude, Gemini or Perplexity which business to call. llms.txt is a plain text file at the root of your site that sums up who you are, what you offer and where each page is, in a form language models read easily.",
+          "It is an emerging convention, not an official standard, and no AI tool promises to use it. That is why we add it alongside structured data and clear content, never instead of them."
+        ],
+        "cta": "Read ours at hlorenzoz.com/llms.txt",
+        "file": "hlorenzoz.com/llms.txt"
+      },
+      "package": {
+        "label": "Your price",
+        "details": [
+          "Pages, languages and features change from one business to another, so we set the price together in a free first call.",
+          "You leave the call knowing what you get, when, and for how much. No obligation."
+        ]
+      },
+      "close": {
+        "title": "A website that proves itself, live in two weeks",
+        "subtitle": "Fast, found by Google and AI, installable and in your customers' languages. Tell us about your business in a free 15 minute call."
+      }
+    },
+    "localSeo": {
+      "hero": {
+        "secondary": "What we work on",
+        "proof": [
+          {
+            "value": "100",
+            "text": "SEO score on our own site"
+          },
+          {
+            "value": "Valid",
+            "text": "Local business data in Google's Rich Results Test"
+          }
+        ],
+        "check": "check it",
+        "disclaimer": "We never promise a position on Google: nobody controls its ranking."
+      },
+      "analysis": {
+        "eyebrow": "Step one, free",
+        "title": "We look at your market before we touch anything",
+        "text": "In the free first call we see where you stand today and what is keeping customers from finding you. Only then do we propose what to do, and whether local SEO is the right piece for you at all.",
+        "items": [
+          "Your Google Business Profile",
+          "Your website and how Google reads it",
+          "Your reviews and how you answer them",
+          "Who Google recommends in your area today",
+          "What AI assistants say about your sector",
+          "The searches your customers actually make"
+        ]
+      },
+      "pillars": {
+        "eyebrow": "The work",
+        "subtitle": "We work on the fronts your analysis shows matter most, following a plan you know in advance."
+      },
+      "structuredData": {
+        "eyebrow": "Structured data",
+        "title": "Give Google the facts, not guesses",
+        "text": "Your name, address, phone, opening hours, services and areas served, written in the format search engines read. It makes your pages eligible for rich results and keeps your details consistent everywhere Google and AI assistants look.",
+        "cta": "Test it in Google's Rich Results Test",
+        "alt": "Google Rich Results Test for hlorenzoz.com: 3 valid items detected, FAQ, Local businesses and Organisation",
+        "caption": "Google's Rich Results Test for our own site: valid Local business data."
+      },
+      "ai": {
+        "eyebrow": "Search with AI",
+        "title": "Recommended in AI answers, not only on Google",
+        "text": "More people now ask ChatGPT, Gemini or Perplexity which business to call. These assistants build their answers from what the web says about you: your site, your profiles, your citations and your reviews. We make sure all of it is clear, consistent and easy for them to read, including an llms.txt summary of your business.",
+        "tiles": [
+          {
+            "title": "Consistent details",
+            "text": "Same name, address and phone everywhere"
+          },
+          {
+            "title": "Clear content",
+            "text": "Answers to the questions people ask"
+          },
+          {
+            "title": "Trusted citations",
+            "text": "Mentions on sites AI tools rely on"
+          }
+        ],
+        "llms": {
+          "title": "llms.txt",
+          "text": "See ours"
+        }
+      },
+      "reviews": {
+        "eyebrow": "Reviews",
+        "title": "More reviews, gathered the right way",
+        "text": "Reviews are one of the strongest local signals. We give every customer an easy way to leave one and track how your reputation grows. We never filter who gets asked: asking only happy customers breaks Google's rules and puts your profile at risk.",
+        "report": {
+          "title": "Every month you know",
+          "items": [
+            "What was done, and why",
+            "How your visibility and reviews moved",
+            "What we adjust next month"
+          ],
+          "note": "A monthly report in plain language, no jargon."
+        }
+      },
+      "close": {
+        "title": "Find out where you stand in your area",
+        "subtitle": "In a free 15 minute call we look at your local presence and tell you what we would do about it."
+      }
+    },
+    "aiVoiceReceptionist": {
+      "hero": {
+        "secondary": "Talk to ours first"
+      },
+      "tryIt": {
+        "title": "Try it now",
+        "text": "This site has its own AI assistant. Ask it about our services the way a customer would ask you.",
+        "button": "Start a conversation",
+        "note": "Uses your microphone. Powered by ElevenLabs."
+      },
+      "whatItDoes": {
+        "eyebrow": "What it does",
+        "subtitle": "While you are with a client, closed for the night or simply busy, the phone keeps ringing. Your receptionist picks up every time."
+      },
+      "example": {
+        "eyebrow": "Sounds like your team",
+        "title": "Your voice, your script, your way of doing things",
+        "paragraphs": [
+          "We write its script with you from the analysis: what it says, what it books, when it passes a call to a person. It works with your existing phone system, and with your CRM (HubSpot, Salesforce or GoHighLevel) once you give us API access.",
+          "Optimised for English and Spanish."
+        ],
+        "label": "Example conversation, illustrative",
+        "caller": "Caller",
+        "receptionist": "Receptionist",
+        "lines": [
+          "Hello, I would like to book a hygienist appointment for next week.",
+          "Of course. I have Tuesday at 10:00 or Thursday at 16:30. Which suits you better?",
+          "Thursday, please.",
+          "Booked for Thursday at 16:30. You will get a confirmation by text message."
+        ]
+      },
+      "care": {
+        "title": "We stay with it after launch",
+        "tiles": [
+          {
+            "title": "Script updates",
+            "text": "New services, new hours, new questions: we keep its answers current every month."
+          },
+          {
+            "title": "Regular testing",
+            "text": "We call it ourselves and review conversations to catch what it should handle better."
+          },
+          {
+            "title": "Data handled with care",
+            "text": "Caller data handled in line with GDPR."
+          }
+        ],
+        "bigger": {
+          "title": "Part of a bigger solution",
+          "text": "It works best next to a website that converts and a local presence that brings the calls in. After the analysis we propose the combination that fits; some pieces may come included.",
+          "cta": "See how we work"
+        }
+      },
+      "close": {
+        "title": "Stop losing calls, starting this month",
+        "subtitle": "Tell us how your phone works today. In 15 minutes we show you what your receptionist would do."
+      }
+    },
+    "softwareDevelopment": {
+      "hero": {
+        "secondary": "See a product we built",
+        "platforms": [
+          "iOS",
+          "Android",
+          "Web",
+          "macOS",
+          "Windows",
+          "Linux"
+        ],
+        "platformsNote": "from one codebase"
+      },
+      "case": {
+        "eyebrow": "Built by us",
+        "title": "Investep App: one codebase, every screen",
+        "text": "A portfolio management platform for Investep Academy students: track several brokers, project returns over any timeframe and map leveraged assets. One Flutter codebase on Cloudflare, with a light and a dark theme.",
+        "demo": "Open the live demo",
+        "darkAlt": "Investep App dashboard in dark theme: total balance, distribution by broker and account type",
+        "darkCaption": "Dashboard, dark theme.",
+        "lightAlt": "Investep App dashboard in light theme with the admin section",
+        "lightCaption": "The same screen, light theme."
+      },
+      "why": {
+        "eyebrow": "Why it pays off"
+      },
+      "article": {
+        "eyebrow": "From our LinkedIn",
+        "title": "How to scale a single codebase to every device",
+        "text": "Inside the architecture that ships one codebase to web, mobile and desktop without duplicating work.",
+        "cta": "Read the article"
+      },
+      "close": {
+        "title": "Tell us what you need to build",
+        "subtitle": "In a free 15 minute call we look at the problem and tell you how we would solve it."
+      }
     }
   }
 }

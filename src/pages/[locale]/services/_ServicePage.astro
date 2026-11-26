@@ -1,9 +1,16 @@
 ---
 /**
- * The layout every service page shares: hero, benefits, deliverables with the
- * quote panel, process, FAQ and the booking embed. Pages differ only through
- * the `after-hero` slot (AI Voice Receptionist's social proof) and the
- * `after-deliverables` slot.
+ * The layout every service landing page shares, in the order of the approved
+ * designs: hero, benefits, the complete package (Website Development only),
+ * process, FAQ, the dossier download and the booking close. Pages add their
+ * own sections through slots:
+ *
+ * - `hero`: proof under the hero's calls to action; `hero-aside`: a card beside them.
+ * - `after-hero`, `after-benefits`, `after-deliverables`: whole sections.
+ *
+ * `landing` names the page's `landing.<serviceKey>` namespace (its close and
+ * hero copy) and turns on the shared landing blocks (`landing.shared`). The
+ * paused Digital Business Card passes none and keeps its old shape.
  */
 import BaseLayout from '@/src/layouts/BaseLayout.astro';
 import Navbar from '@/src/components/Navbar.astro';
@@ -16,9 +23,11 @@ import BenefitsList from '@/src/components/services/BenefitsList.astro';
 import ServiceDeliverables from '@/src/components/services/ServiceDeliverables.astro';
 import ProcessTimeline from '@/src/components/services/ProcessTimeline.astro';
 import CalBooking from '@/src/components/services/CalBooking.astro';
+import DossierDownload from '@/src/components/services/DossierDownload.astro';
 import type { ContentPage } from '@/lib/service-page';
 import { getTranslations } from '@/lib/i18n';
 import { localeHref } from '@/lib/routing';
+import { dossierHref } from '@/lib/dossier';
 
 export interface Props {
     locale: string;
@@ -26,13 +35,21 @@ export interface Props {
     namespace: string;
     path: string;
     page: ContentPage;
+    /** `landing.<key>` message namespace of a landing page. */
+    landing?: string;
     /** The paused Digital Business Card page rendered no breadcrumb trail. */
     breadcrumbs?: boolean;
+    /** The complete package with its quote panel; only Website Development's design has one. */
+    deliverables?: boolean;
+    hero?: { secondaryLabel?: string; secondaryHref?: string; note?: string };
+    benefits?: { id?: string; eyebrow?: string; subtitle?: string; numbered?: boolean };
 }
 
-const { locale, namespace, path, page, breadcrumbs = true } = Astro.props;
+const { locale, namespace, path, page, landing, breadcrumbs = true, deliverables = !landing, hero = {}, benefits = {} } = Astro.props;
 const t = getTranslations(locale, namespace);
 const tRoot = getTranslations(locale);
+const tLanding = landing ? getTranslations(locale, landing) : undefined;
+const tShared = landing ? getTranslations(locale, 'landing.shared') : undefined;
 
 // One booking anchor per page: the hero CTA and the deliverables CTA both
 // point here, so the target lives in one place.
@@ -44,7 +61,7 @@ const bookingHref = `${localeHref(locale, path)}#booking`;
         <JsonLd data={page.schema(locale, tRoot)} />
         <Navbar locale={locale} />
 
-        <main class="pt-32 pb-24">
+        <main class="pt-32">
             {
                 breadcrumbs && (
                     <div class="px-6 mb-6">
@@ -53,19 +70,40 @@ const bookingHref = `${localeHref(locale, path)}#booking`;
                 )
             }
 
-            <ServiceHero eyebrow={t('hero.eyebrow')} title={t('hero.title')} subtitle={t('hero.subtitle')} ctaLabel={t('hero.cta')} ctaHref={bookingHref} />
+            <ServiceHero
+                eyebrow={t('hero.eyebrow')}
+                title={t('hero.title')}
+                subtitle={t('hero.subtitle')}
+                ctaLabel={t('hero.cta')}
+                ctaHref={bookingHref}
+                secondaryLabel={hero.secondaryLabel}
+                secondaryHref={hero.secondaryHref}
+                microcopy={tShared?.('microcopy')}
+                note={hero.note}
+            >
+                <slot name="hero" />
+                {Astro.slots.has('hero-aside') && <Fragment slot="aside"><slot name="hero-aside" /></Fragment>}
+            </ServiceHero>
 
             <slot name="after-hero" />
 
-            <BenefitsList title={t('benefits.title')} items={t.raw('benefits.items')} />
+            <BenefitsList title={t('benefits.title')} items={t.raw('benefits.items')} {...benefits} />
 
-            <ServiceDeliverables
-                title={t('deliverables.title')}
-                quote={tRoot('services.quoted')}
-                ctaLabel={t('hero.cta')}
-                ctaHref={bookingHref}
-                groups={t.raw('deliverables.groups')}
-            />
+            <slot name="after-benefits" />
+
+            {
+                deliverables && (
+                    <ServiceDeliverables
+                        title={t('deliverables.title')}
+                        quote={tRoot('services.quoted')}
+                        label={tLanding?.('package.label')}
+                        details={tLanding?.raw('package.details')}
+                        ctaLabel={t('hero.cta')}
+                        ctaHref={bookingHref}
+                        groups={t.raw('deliverables.groups')}
+                    />
+                )
+            }
 
             <slot name="after-deliverables" />
 
@@ -80,13 +118,41 @@ const bookingHref = `${localeHref(locale, path)}#booking`;
                 </div>
             </section>
 
-            <section id="booking" class="py-24 px-6 bg-[#f9f9f9]">
-                <div class="max-w-3xl mx-auto text-center mb-12">
-                    <h2 id="booking-heading" class="text-3xl md:text-5xl font-bold text-black tracking-tight">
-                        {t('hero.cta')}
+            {
+                tShared && (
+                    <DossierDownload
+                        title={tShared('dossier.title')}
+                        text={tShared('dossier.text')}
+                        label={tShared('dossier.cta')}
+                        href={dossierHref(locale)}
+                    />
+                )
+            }
+
+            {/* Not `hero-bg-deep`: BaseLayout's critical CSS makes that class a centred flex column, which shrinks the calendar to its 300px minimum. */}
+            <section
+                id="booking"
+                class={`py-24 px-6 ${tLanding ? 'bg-black bg-[radial-gradient(circle_at_50%_120%,rgba(59,130,246,0.22)_0%,transparent_60%)]' : 'bg-[#f9f9f9]'}`}
+            >
+                <div class="max-w-3xl mx-auto text-center mb-12 flex flex-col items-center gap-5">
+                    <h2 id="booking-heading" class={`text-3xl md:text-5xl font-bold tracking-tight ${tLanding ? 'text-white' : 'text-black'}`}>
+                        {tLanding ? tLanding('close.title') : t('hero.cta')}
                     </h2>
+                    {
+                        tLanding && tShared && (
+                            <>
+                                <p class="text-lg md:text-xl leading-relaxed text-gray-300">{tLanding('close.subtitle')}</p>
+                                <a href="#booking-calendar" class="bg-blue-900 text-white text-base font-bold px-10 py-4 rounded-full shadow-glow hover:bg-blue-800">
+                                    {t('hero.cta')}
+                                </a>
+                                <p class="text-sm text-gray-400">{tShared('closeMicrocopy')}</p>
+                            </>
+                        )
+                    }
                 </div>
-                <CalBooking locale={locale} titleId="booking-heading" />
+                <div id="booking-calendar" class="scroll-mt-28">
+                    <CalBooking locale={locale} titleId="booking-heading" />
+                </div>
             </section>
         </main>
 
