@@ -39,10 +39,10 @@ const t = getTranslations(locale, 'articles');
                 </div>
             </div>
 
-            <div class="relative group/scroll-container">
+            <div class="relative group/scroll-container max-w-7xl mx-auto">
                 <div
                     data-carousel-track
-                    class="flex gap-6 overflow-x-auto snap-x snap-mandatory pb-12 px-[10%] md:px-[20%] cursor-grab active:cursor-grabbing"
+                    class="flex gap-6 overflow-x-auto snap-x snap-mandatory pb-12 px-4 cursor-grab active:cursor-grabbing"
                     style="scrollbar-width:none;-ms-overflow-style:none"
                 >
                     {articles.map((article) => (
@@ -50,14 +50,14 @@ const t = getTranslations(locale, 'articles');
                             href={article.url}
                             target="_blank"
                             rel="noopener noreferrer"
-                            class="min-w-[42vw] md:min-w-[28vw] lg:min-w-[19vw] snap-center bg-white rounded-[1.5rem] border border-gray-100 shadow-[0_20px_60px_rgba(0,0,0,0.05)] overflow-hidden group/card flex flex-col"
+                            class="shrink-0 w-[80%] sm:w-[45%] lg:w-[31%] snap-center bg-white rounded-[1.5rem] border border-gray-100 shadow-[0_20px_60px_rgba(0,0,0,0.05)] overflow-hidden group/card flex flex-col"
                         >
                             <div class="relative aspect-[16/9] bg-zinc-100 overflow-hidden">
                                 <FadeInImage
                                     src={article.image}
                                     alt={article.title}
                                     fill
-                                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 60vw, 38vw"
+                                    sizes="(max-width: 640px) 80vw, (max-width: 1024px) 45vw, 400px"
                                     priority={false}
                                     className="object-cover"
                                 />
