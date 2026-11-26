@@ -4,22 +4,7 @@
  * layout's default metadata is the page's metadata.
  */
 import { findRoute, routeExists, routeHref, routeLocales } from '@/lib/routes';
-import {
-    ArrowRight,
-    Award,
-    ChartColumn,
-    Check,
-    CircleCheckBig,
-    FileText,
-    Globe,
-    Layers,
-    Link2,
-    Repeat,
-    Search,
-    Sparkles,
-    Star,
-    TrendingUp,
-} from '@lucide/astro';
+import { MousePointerClick, Phone, PhoneMissed, Search, Sparkles, Users } from '@lucide/astro';
 import BaseLayout from '@/src/layouts/BaseLayout.astro';
 import Navbar from '@/src/components/Navbar.astro';
 import Footer from '@/src/components/Footer.astro';
@@ -29,31 +14,28 @@ import NewsCarousel from '@/src/components/NewsCarousel.astro';
 import PortfolioCarousel from '@/src/components/PortfolioCarousel.astro';
 import LinkedInArticles from '@/src/components/LinkedInArticles.astro';
 import CalBooking from '@/src/components/services/CalBooking.astro';
+import DossierDownload from '@/src/components/services/DossierDownload.astro';
+import FactsStrip from '@/src/components/home/FactsStrip.astro';
+import PartnerComparison from '@/src/components/home/PartnerComparison.astro';
+import HowWeWork from '@/src/components/home/HowWeWork.astro';
+import SolutionsGrid from '@/src/components/home/SolutionsGrid.astro';
 import { getTranslations } from '@/lib/i18n';
+import { dossierHref } from '@/lib/dossier';
 import { getPortfolioItemsAction } from '@/lib/actions/portfolio';
 import { getLinkedInArticlesAction } from '@/lib/actions/linkedin';
 import { getNewsItemsAction } from '@/lib/actions/news';
 import { serviceList, faqPage, webPage } from '@/lib/schema';
-import { SERVICE_KEYS, slugFromServiceKey, type ServiceKey } from '@/lib/pricing';
+import { SERVICE_KEYS, slugFromServiceKey } from '@/lib/pricing';
 import { copyTokens, resolveFaq } from '@/lib/copy-tokens';
-import { SERVED_MARKETS, absoluteUrl, marketNames } from '@/lib/site-config';
+import { LOCALES, absoluteUrl, marketNames } from '@/lib/site-config';
 import { imageFallbackSrc, imageSrcSet } from '@/lib/image';
 
 export function getStaticPaths() {
     return routeLocales('').map((locale) => ({ params: { locale } }));
 }
 
-/**
- * The four pillars of Local SEO, in the order `home.solutions.items` lists them.
- *
- * The page loops over THIS list, not over the message arrays. The copy can then
- * be reworded freely, but it cannot grow a fifth pillar or lose one without a
- * code change, and each pillar's icon travels with its position.
- */
-const PILLARS = [FileText, Link2, Award, Star] as const;
-
-/** The service the pillars belong to. */
-const CORE: ServiceKey = 'localSeo';
+/** Anyone can rerun the mobile PageSpeed test the facts strip quotes. */
+const PAGESPEED_REPORT = 'https://pagespeed.web.dev/analysis?url=https%3A%2F%2Fhlorenzoz.com%2F';
 
 const { locale } = Astro.params as { locale: string };
 
@@ -66,8 +48,6 @@ const articles = await getLinkedInArticlesAction();
 const news = (await getNewsItemsAction()).filter((item) => routeExists(`news/${item.slug}`, locale));
 
 const tokens = copyTokens();
-// The English page until this locale's translation is published.
-const serviceHref = (key: ServiceKey) => routeHref(locale, `services/${slugFromServiceKey(key)}`);
 const faqItems = resolveFaq(t.raw('faq.items'), tokens);
 
 const problemTitle = t.markup('problem.title', {
@@ -83,9 +63,9 @@ const BENEFITS_IMAGE = {
     sizes: '(max-width: 768px) 100vw, 576px',
 };
 
-const PROBLEM_ICONS = [Search, Star, Sparkles];
-const BENEFIT_ICONS = [Search, Star, TrendingUp];
-const PROCESS_ICONS = [ChartColumn, Layers, Repeat];
+// One icon per `home.problem.cards` / `home.benefits.items` entry, in order.
+const PROBLEM_ICONS = [Search, MousePointerClick, PhoneMissed, Sparkles];
+const BENEFIT_ICONS = [Search, Phone, Users];
 ---
 
 {/* No image preload: Next emitted one for the Footer's Upwork favicon only because React
@@ -118,101 +98,24 @@ const PROCESS_ICONS = [ChartColumn, Layers, Repeat];
                         <a href="#contact" class="bg-blue-900 text-white text-base font-bold px-10 py-4 rounded-full shadow-glow hover:bg-blue-800">
                             {t('hero.cta')}
                         </a>
-                        <a href="#process" class="text-blue-200 text-xs font-extrabold uppercase tracking-[0.2em] hover:text-white">
+                        <a href="#how" class="text-blue-200 text-xs font-extrabold uppercase tracking-[0.2em] hover:text-white">
                             {t('hero.secondaryCta')}
                         </a>
                     </div>
+                    <p class="text-sm text-gray-300 font-medium">{t('hero.note')}</p>
                 </div>
             </section>
 
-            {/* Stats Section. Facts derived from data rather than typed: how
-                many pillars Local SEO has and how many markets are served. They
-                replaced "90% First Call Resolution" and its neighbours, which
-                were figures about one optional service and were not documented
-                anywhere in the repo. */}
-            <section id="stats" class="relative z-20 pb-12 px-6 bg-transparent mt-[-2rem] md:-mt-24">
-                <div class="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <div class="bg-white border border-gray-100 p-10 rounded-[2.5rem] flex flex-col items-center text-center shadow-xl">
-                        <div class="bg-blue-50 text-blue-700 p-4 rounded-full mb-6">
-                            <CircleCheckBig class="w-8 h-8" aria-hidden="true" />
-                        </div>
-                        <p class="text-4xl font-bold text-black mb-1">{PILLARS.length}</p>
-                        <p class="text-[10px] font-bold text-gray-950 uppercase tracking-[0.2em]">{t('stats.pillars.label')}</p>
-                    </div>
-                    <div class="bg-white border border-gray-100 p-10 rounded-[2.5rem] flex flex-col items-center text-center shadow-xl">
-                        <div class="bg-blue-50 text-blue-700 p-4 rounded-full mb-6">
-                            <Globe class="w-8 h-8" aria-hidden="true" />
-                        </div>
-                        <p class="text-4xl font-bold text-black mb-1">{SERVED_MARKETS.length}</p>
-                        <p class="text-[10px] font-bold text-gray-950 uppercase tracking-[0.2em]">{t('stats.markets.label')}</p>
-                    </div>
-                </div>
-            </section>
-
-            {/* Global reach. This band and the JSON-LD `areaServed` both derive
-                from SERVED_MARKETS via `marketNames`, localized per page.
-                `public/llms.txt` states the same list by hand; a test
-                (llms-txt-accuracy) keeps it in step rather than letting the two
-                drift. */}
-            <section id="markets" class="py-16 px-6 bg-white border-y border-gray-100">
-                <div class="max-w-5xl mx-auto text-center">
-                    <p class="text-[11px] font-black uppercase tracking-[0.3em] text-blue-700 mb-4">{t('markets.eyebrow')}</p>
-                    <h2 class="text-2xl md:text-3xl font-bold text-black mb-3 tracking-tight">{t('markets.title')}</h2>
-                    <p class="text-sm text-gray-600 max-w-2xl mx-auto mb-10 font-medium leading-relaxed">{t('markets.subtitle')}</p>
-                    <ul class="flex flex-wrap justify-center gap-3">
-                        {
-                            marketNames(locale).map((name) => (
-                                <li class="px-5 py-2.5 rounded-full bg-gray-50 border border-gray-200 text-sm font-bold text-black shadow-sm">{name}</li>
-                            ))
-                        }
-                    </ul>
-                </div>
-            </section>
-
-            {/* Buying services vs buying a result */}
-            <section id="standard" class="py-24 px-6 bg-[#fafafa]">
-                <div class="max-w-5xl mx-auto">
-                    <div class="text-center mb-16 px-6">
-                        <h2 class="text-4xl md:text-6xl font-bold text-black mb-6 tracking-tight leading-tight">{t('standard.title')}</h2>
-                        <p class="text-lg text-gray-900 max-w-2xl mx-auto font-medium leading-relaxed">{t('standard.subtitle')}</p>
-                    </div>
-                    <div class="grid md:grid-cols-2 gap-8">
-                        <div class="p-10 rounded-[2.5rem] border-2 border-dashed border-gray-100 bg-gray-50/30">
-                            <div class="flex items-center gap-3 mb-8">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-red-500/50" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
-                                <h3 class="text-2xl font-bold text-gray-900">{t('standard.oldWay.title')}</h3>
-                            </div>
-                            <ul class="space-y-5">
-                                {
-                                    (t.raw('standard.oldWay.items') as string[]).map((item) => (
-                                        <li class="flex items-start gap-4 text-gray-900 font-medium">
-                                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-red-600 shrink-0 mt-1" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><path d="m15 9-6 6"></path><path d="m9 9 6 6"></path></svg>
-                                            <span>{item}</span>
-                                        </li>
-                                    ))
-                                }
-                            </ul>
-                        </div>
-                        {/* New Way */}
-                        <div class="p-10 rounded-[2.5rem] border-2 border-blue-500/20 bg-blue-50/10 shadow-lg shadow-blue-500/5">
-                            <div class="flex items-center gap-3 mb-8">
-                                <CircleCheckBig class="w-8 h-8 text-blue-500" aria-hidden="true" />
-                                <h3 class="text-2xl font-bold text-black">{t('standard.newWay.title')}</h3>
-                            </div>
-                            <ul class="space-y-5">
-                                {
-                                    (t.raw('standard.newWay.items') as string[]).map((item) => (
-                                        <li class="flex items-start gap-4 text-black font-bold">
-                                            <Check class="w-5 h-5 text-blue-500 shrink-0 mt-1" aria-hidden="true" />
-                                            <span>{item}</span>
-                                        </li>
-                                    ))
-                                }
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </section>
+            <FactsStrip
+                facts={[
+                    { value: t('facts.services.value', { count: SERVICE_KEYS.length }), label: t('facts.services.label') },
+                    { value: t('facts.languages.value', { count: LOCALES.length }), label: t('facts.languages.label') },
+                    { value: t('facts.pageSpeed.value'), label: t('facts.pageSpeed.label'), link: { href: PAGESPEED_REPORT, text: t('facts.pageSpeed.link') } },
+                    { value: t('facts.markets.value'), label: t('facts.markets.label') },
+                ]}
+                marketsTitle={t('markets.title')}
+                markets={marketNames(locale)}
+            />
 
             {/* Problem Section */}
             <section id="problem" class="py-24 px-6 bg-white">
@@ -228,10 +131,10 @@ const PROCESS_ICONS = [ChartColumn, Layers, Repeat];
                             {t('problem.description')}
                         </p>
                     </div>
-                    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
                         {
                             PROBLEM_ICONS.map((Icon, i) => (
-                                <div class="bg-white p-12 rounded-[4rem] flex flex-col gap-8 border border-gray-100 shadow-[0_20px_60px_rgba(0,0,0,0.05)] shadow-[0_40px_100px_rgba(0,0,0,0.1)] group cursor-default">
+                                <div class="bg-white p-10 rounded-[3rem] flex flex-col gap-8 border border-gray-100 shadow-[0_20px_60px_rgba(0,0,0,0.05)]">
                                     <div class="size-16 rounded-full bg-gray-100 flex items-center justify-center text-black shadow-inner">
                                         <Icon class="w-8 h-8" aria-hidden="true" />
                                     </div>
@@ -246,48 +149,32 @@ const PROCESS_ICONS = [ChartColumn, Layers, Repeat];
                 </div>
             </section>
 
-            {/* The solution: one plan, four pillars. Every card leads to the
-                Local SEO page, because the pillars are parts of that one offer
-                and not services with pages of their own. */}
-            <section id="solutions" class="py-32 px-6 bg-[#f9f9f9]">
-                <div class="max-w-6xl mx-auto">
-                    <div class="flex flex-col md:flex-row justify-between items-end mb-24 gap-8">
-                        <div class="max-w-2xl">
-                            <p class="text-black font-extrabold tracking-[0.2em] uppercase text-[12px] mb-8">{t('solutions.badge')}</p>
-                            <h2 class="text-4xl md:text-6xl font-bold text-black mb-10 tracking-tight leading-tight">{t('solutions.title')}</h2>
-                            <p class="text-lg md:text-xl text-black font-medium leading-relaxed max-w-xl">{t('solutions.subtitle')}</p>
-                        </div>
-                        <a href={serviceHref(CORE)} class="text-blue-800 font-extrabold uppercase text-xs tracking-[0.2em] flex items-center gap-2 group mb-4 hover:gap-3">
-                            {t('solutions.cta')} <ArrowRight class="w-4 h-4" aria-hidden="true" />
-                        </a>
-                    </div>
-                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-                        {
-                            PILLARS.map((Icon, i) => (
-                                <a
-                                    href={serviceHref(CORE)}
-                                    data-testid="solutions-card-link"
-                                    class="bg-white p-9 rounded-[3rem] border border-gray-100 shadow-[0_20px_60px_rgba(0,0,0,0.05)] group block hover:border-blue-200 transition-colors"
-                                >
-                                    <div class="size-14 rounded-full flex items-center justify-center mb-6 shadow-inner bg-blue-50 text-blue-700">
-                                        <Icon class="w-7 h-7" aria-hidden="true" />
-                                    </div>
-                                    <h3 class="text-lg font-bold text-black mb-3 tracking-tight leading-tight">{t(`solutions.items.${i}.title`)}</h3>
-                                    <p class="text-gray-900 leading-relaxed font-medium text-sm mb-5">{t(`solutions.items.${i}.description`)}</p>
-                                    <ul class="space-y-2.5">
-                                        {(t.raw(`solutions.items.${i}.points`) as string[]).map((point) => (
-                                            <li class="flex items-start gap-2.5 text-xs font-bold text-black">
-                                                <CircleCheckBig class="w-4 h-4 shrink-0 text-blue-700" aria-hidden="true" />
-                                                <span>{point}</span>
-                                            </li>
-                                        ))}
-                                    </ul>
-                                </a>
-                            ))
-                        }
-                    </div>
-                </div>
-            </section>
+            <PartnerComparison
+                badge={t('partner.badge')}
+                title={t('partner.title')}
+                services={{ title: t('partner.services.title'), items: t.raw('partner.services.items') as string[] }}
+                partner={{ title: t('partner.partner.title'), items: t.raw('partner.partner.items') as string[] }}
+            />
+
+            <HowWeWork
+                badge={t('how.badge')}
+                title={t('how.title')}
+                steps={t.raw('how.steps') as { title: string; description: string }[]}
+                note={t('how.note')}
+            />
+
+            {/* Every service is a building block of one tailored solution, so each card leads to its own page. */}
+            <SolutionsGrid
+                badge={t('solutions.badge')}
+                title={t('solutions.title')}
+                subtitle={t('solutions.subtitle')}
+                cta={t('solutions.cta')}
+                items={SERVICE_KEYS.map((key) => ({
+                    title: tRoot(`services.${key}.name`),
+                    description: t(`solutions.items.${key}`),
+                    href: routeHref(locale, `services/${slugFromServiceKey(key)}`),
+                }))}
+            />
 
             <PortfolioCarousel portfolioItems={portfolioItems} locale={locale} />
 
@@ -342,45 +229,15 @@ const PROCESS_ICONS = [ChartColumn, Layers, Repeat];
                 </div>
             </section>
 
-            {/* Process: a monthly cycle, with no delivery deadline. Local SEO is
-                ongoing work, so a "live in 7-14 days" promise would describe a
-                website build, not this. */}
-            <section id="process" class="py-32 px-6 bg-white">
-                <div class="max-w-6xl mx-auto text-center flex flex-col items-center">
-                    <div class="w-full">
-                        <h2 class="text-4xl md:text-6xl font-bold text-black mb-24 tracking-tight leading-tight">{t('process.title')}</h2>
-                    </div>
-                    <div class="grid grid-cols-1 md:grid-cols-3 gap-12 text-left w-full">
-                        {
-                            PROCESS_ICONS.map((Icon, i) => (
-                                <div class="flex flex-col items-start gap-8 group">
-                                    <div class="flex items-center gap-6">
-                                        <span class="text-7xl font-black text-gray-600 group-hover:text-gray-900/10">{t(`process.steps.${i}.number`)}</span>
-                                        <div class="size-16 rounded-3xl bg-white border border-gray-100 shadow-sm flex items-center justify-center text-blue-700">
-                                            <Icon class="w-8 h-8" aria-hidden="true" />
-                                        </div>
-                                    </div>
-                                    <div>
-                                        <p class="text-[10px] font-bold tracking-[0.2em] uppercase text-blue-800 mb-3">{t(`process.steps.${i}.badge`)}</p>
-                                        <h3 class="text-2xl font-bold text-black mb-4 tracking-tight">{t(`process.steps.${i}.title`)}</h3>
-                                        <p class="text-black font-medium leading-relaxed">{t(`process.steps.${i}.description`)}</p>
-                                    </div>
-                                </div>
-                            ))
-                        }
-                    </div>
-                </div>
-            </section>
+            <DossierDownload title={t('dossier.title')} text={t('dossier.body')} label={t('dossier.cta')} href={dossierHref(locale)} />
 
             {/* Final CTA Section */}
             <section id="contact" class="py-32 px-6 bg-white relative overflow-hidden">
                 <div class="max-w-6xl mx-auto flex flex-col items-center">
-                    <div class="text-center mb-20">
-                        <p class="text-black font-extrabold tracking-[0.3em] uppercase text-[12px] mb-8">{t('contact.badge')}</p>
-                        <h2 id="contact-heading" class="text-4xl md:text-7xl font-bold tracking-tight mb-8 text-black leading-tight text-center">
-                            <span class="text-black/80">{t('contact.title')}</span> <br />
-                            <span class="text-blue-800">{t('contact.subtitle')}</span>
-                        </h2>
+                    <div class="text-center mb-20 max-w-4xl">
+                        <h2 id="contact-heading" class="text-4xl md:text-6xl font-bold tracking-tight mb-8 text-black leading-tight">{t('contact.title')}</h2>
+                        <p class="text-lg md:text-xl text-gray-900 font-medium leading-relaxed">{t('contact.subtitle')}</p>
+                        <p class="mt-4 text-sm font-bold text-gray-700">{t('contact.note')}</p>
                     </div>
 
                     <CalBooking locale={locale} titleId="contact-heading" />

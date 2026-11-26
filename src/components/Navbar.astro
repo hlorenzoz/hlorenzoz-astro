@@ -35,7 +35,8 @@ const getHref = (key: string) => {
     // a non-canonical form of a page whose own rel=canonical ends in a slash,
     // and the Navbar ships on every route, so the mismatch was sitewide.
     if (key in ROUTE_KEYS) return routeHref(locale, ROUTE_KEYS[key]);
-    const hash = key === 'price' ? 'process' : key;
+    // The `price` key kept its name; it now opens the home's How we work section.
+    const hash = key === 'price' ? 'how' : key;
     return isHomePage ? `#${hash}` : `${routeHref(locale, '')}#${hash}`;
 };
 

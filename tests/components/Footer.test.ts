@@ -30,9 +30,9 @@ describe('Footer services links (fixed, registry-derived hrefs)', () => {
         expect(screen.getByText('Website Development').closest('a')).toHaveAttribute('href', '/en/services/website-development/');
         expect(screen.getByText('Local SEO').closest('a')).toHaveAttribute('href', '/en/services/local-seo/');
         expect(screen.getByText('Software Development').closest('a')).toHaveAttribute('href', '/en/services/software-development/');
-        // Portfolio and Pricing moved to the Agency column; their hrefs are unchanged.
+        // Portfolio and How we work sit in the Agency column.
         expect(screen.getByText('Portfolio').closest('a')).toHaveAttribute('href', '/en/portfolio/');
-        expect(screen.getByText('Pricing').closest('a')).toHaveAttribute('href', '/en/#process');
+        expect(screen.getByText('How we work').closest('a')).toHaveAttribute('href', '/en/#how');
     });
 
     it('lists Local SEO first: it is the core offer', () => {
@@ -100,7 +100,7 @@ describe('Footer agency links', () => {
     it('uses bare hashes on the home page', async () => {
         const screen = await renderAt('/en/');
         expect(screen.getByRole('link', { name: 'Contact' })).toHaveAttribute('href', '#contact');
-        expect(screen.getByRole('link', { name: 'Pricing' })).toHaveAttribute('href', '#process');
+        expect(screen.getByRole('link', { name: 'How we work' })).toHaveAttribute('href', '#how');
     });
 
     it('lists News right after Portfolio in both locales', () => {

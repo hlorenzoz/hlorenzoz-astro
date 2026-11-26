@@ -6,6 +6,8 @@ import { within } from '@testing-library/dom';
 import { JSDOM } from 'jsdom';
 import messages from '@/messages/en.json';
 import Page from '@/src/pages/[locale]/index.astro';
+import { LOCALES } from '@/lib/routing';
+import { SERVED_MARKETS } from '@/lib/site-config';
 
 // Pages are typed with `never` props; the container takes any component factory.
 const HomePage = Page as unknown as Parameters<AstroContainer['renderToString']>[0];
@@ -29,72 +31,80 @@ beforeAll(async () => {
     screen = within(document.body);
 });
 
-describe('HomePage Sections', () => {
-    it('renders the Hero section with correct translations', () => {
+describe('HomePage: partner positioning landing', () => {
+    it('leads with the partner hero, the free needs analysis CTA and its microcopy', () => {
         expect($('h1')).toHaveTextContent(`${home.hero.title} ${home.hero.titleGradient}`);
         expect(screen.getByText(home.hero.description)).toBeInTheDocument();
+        expect(screen.getByRole('link', { name: home.hero.cta })).toHaveAttribute('href', '#contact');
+        expect(screen.getByText(home.hero.note)).toBeInTheDocument();
     });
 
-    it('renders the Solutions section with all cards', () => {
-        expect(screen.getByText(home.solutions.title)).toBeInTheDocument();
-        home.solutions.items.forEach((item) => {
-            expect(screen.getAllByText(item.title).length).toBeGreaterThan(0);
-        });
+    it('offers the dossier as a PDF download in the page language', () => {
+        const link = screen.getByRole('link', { name: home.dossier.cta });
+        expect(link).toHaveAttribute('href', '/dossier/lorenzoz-agency-dossier-en.pdf');
+        expect(link).toHaveAttribute('download');
+        expect(screen.getByText(home.dossier.title)).toBeInTheDocument();
     });
 
-    it('renders the problem title markup: the struck word and the line break', () => {
+    it('points the secondary hero link at the How we work section, which exists', () => {
+        const link = $('#home')!.querySelector('a[href="#how"]');
+        expect(link).toHaveTextContent(home.hero.secondaryCta);
+        expect($('#how')).not.toBeNull();
+    });
+
+    it('states verifiable facts: services and languages counted from data, the checkable PageSpeed score', () => {
+        const facts = $('#facts')!;
+        expect(facts).toHaveTextContent('4 services');
+        expect(facts).toHaveTextContent(`${LOCALES.length} languages`);
+        expect(facts).toHaveTextContent(home.facts.pageSpeed.value);
+        expect(facts).toHaveTextContent(home.facts.markets.value);
+        const verify = within(facts as HTMLElement).getByRole('link', { name: home.facts.pageSpeed.link });
+        expect(verify).toHaveAttribute('href', 'https://pagespeed.web.dev/analysis?url=https%3A%2F%2Fhlorenzoz.com%2F');
+    });
+
+    it('lists every served market beside the facts', () => {
+        expect($$('#facts li[data-market]')).toHaveLength(SERVED_MARKETS.length);
+        expect(screen.getByText(home.markets.title)).toBeInTheDocument();
+    });
+
+    it('renders four problem cards and the problem title markup', () => {
+        expect($$('#problem h3')).toHaveLength(4);
         const title = $('#problem h2')!;
         expect(title.querySelector('span.relative.inline-block > span.bg-red-600')).not.toBeNull();
-        expect(title.querySelector('br')).not.toBeNull();
         expect(title.innerHTML).not.toMatch(/<trad>|&lt;/);
     });
 
-    it('renders the News carousel directly above the LinkedIn articles', () => {
-        const news = $('#news');
-        const articles = $('#articles');
-        expect(news).not.toBeNull();
-        expect(articles).not.toBeNull();
-        expect(news!.nextElementSibling).toBe(articles);
-        expect(news!.querySelectorAll('li a[href^="/en/news/"]').length).toBeGreaterThan(0);
+    it('contrasts buying services with working with a partner', () => {
+        const partner = $('#partner')!;
+        expect(partner.querySelector('h2')).toHaveTextContent(home.partner.title);
+        for (const item of [...home.partner.services.items, ...home.partner.partner.items]) {
+            expect(partner).toHaveTextContent(item);
+        }
     });
 
-    it('renders FAQ section', () => {
-        expect(screen.getByText(home.faq.title)).toBeInTheDocument();
+    it('explains how we work in four numbered steps and states there is no price list', () => {
+        const how = $('#how')!;
+        const steps = how.querySelectorAll('ol > li');
+        expect(steps).toHaveLength(4);
+        expect(steps[0]).toHaveTextContent('01');
+        expect(steps[3]).toHaveTextContent('04');
+        expect(how).toHaveTextContent(home.how.note);
     });
 
-    it('links the solutions CTA to the Local SEO page, not #contact', () => {
-        const cta = screen.getByText(home.solutions.cta).closest('a');
-        // The section presents the four pillars of one offer, so its "see more"
-        // leads to that offer's page. It used to open the services directory,
-        // back when the section listed three separate services. The trailing
-        // slash is what `localeHref` emits and what the static export served.
-        expect(cta).toHaveAttribute('href', '/en/services/local-seo/');
+    it('links each of the four solutions to its own service page', () => {
+        const hrefs = Array.from($$('#solutions a')).map((a) => a.getAttribute('href'));
+        expect(hrefs).toEqual([
+            '/en/services/local-seo/',
+            '/en/services/website-development/',
+            '/en/services/ai-voice-receptionist/',
+            '/en/services/software-development/',
+        ]);
+        expect(screen.getByText(messages.services.aiVoiceReceptionist.name, { selector: '#solutions h3' })).toBeInTheDocument();
     });
 
-    it('renders the four pillars, each linking to the Local SEO page', () => {
-        const cards = $$('[data-testid="solutions-card-link"]');
-        // Four pillars of ONE offer. They are not services with pages of their
-        // own, so every card leads to the same place.
-        expect(cards).toHaveLength(4);
-        cards.forEach((card) => {
-            expect(card).toHaveAttribute('href', '/en/services/local-seo/');
-        });
-    });
-
-    it('never advertises a free trial or a limited-time offer', () => {
-        expect(document.body.textContent).not.toMatch(/trial|limited time/i);
-    });
-
-    it('publishes no price and no pricing section', () => {
-        expect($('#pricing')).toBeNull();
-        expect($('#numbers')).toBeNull();
-        expect(document.body.textContent).not.toMatch(/€\s?\d|\d\s?€/);
-    });
-
-    it('points the secondary hero link at the process section, which exists', () => {
-        const link = screen.getByRole('link', { name: home.hero.secondaryCta });
-        expect(link).toHaveAttribute('href', '#process');
-        expect($('#process')).not.toBeNull();
+    it('keeps the portfolio carousel and the benefits section', () => {
+        expect($('#portfolio')).not.toBeNull();
+        expect($$('#benefits h3')).toHaveLength(home.benefits.items.length);
     });
 
     it('renders the CalBooking component in the contact section instead of an inline iframe', () => {
@@ -102,26 +112,55 @@ describe('HomePage Sections', () => {
         expect(iframe).not.toBeNull();
         expect(iframe).toHaveAttribute('src', 'https://cal.com/hlorenzoz.com/15min?embed=true');
         expect(iframe).toHaveAttribute('loading', 'lazy');
+        expect($('#contact')).toHaveTextContent(home.contact.note);
     });
 
-    it('contains all required section IDs for navigation', () => {
-        const requiredIds = [
-            'home', 'stats', 'markets', 'standard', 'problem',
-            'solutions', 'portfolio', 'benefits', 'process',
-            'contact', 'faq',
-        ];
-
-        requiredIds.forEach((id) => {
-            expect($(`#${id}`), `ID #${id} should exist`).not.toBeNull();
-        });
+    it('answers the five FAQ questions, with the up front share filled in', () => {
+        const faq = $('#faq')!;
+        expect(faq.querySelectorAll('button[aria-controls]')).toHaveLength(5);
+        expect(faq).toHaveTextContent('50% of the agreed quote');
+        expect(faq.textContent).not.toMatch(/\{upfront\}/);
     });
 
-    it('emits the page JSON-LD in the Next order, then the layout organization graph', () => {
+    it('renders the News carousel directly above the LinkedIn articles, below the FAQ', () => {
+        const news = $('#news');
+        const articles = $('#articles');
+        expect(news).not.toBeNull();
+        expect(news!.nextElementSibling).toBe(articles);
+        expect(news!.querySelectorAll('li a[href^="/en/news/"]').length).toBeGreaterThan(0);
+        expect($('#faq')!.compareDocumentPosition(news!) & 4).toBeTruthy();
+    });
+
+    it('orders the sections as the approved design does', () => {
+        const ids = Array.from($$('main > section[id]')).map((s) => s.id);
+        expect(ids).toEqual([
+            'home', 'facts', 'problem', 'partner', 'how', 'solutions',
+            'portfolio', 'benefits', 'contact', 'faq', 'news', 'articles',
+        ]);
+    });
+
+    it('publishes no price, no pricing section and no free trial', () => {
+        expect($('#pricing')).toBeNull();
+        expect($('#numbers')).toBeNull();
+        expect(document.body.textContent).not.toMatch(/€\s?\d|\d\s?€/);
+        expect(document.body.textContent).not.toMatch(/trial|limited time/i);
+    });
+
+    it('never promises a Google position: the FAQ says so plainly', () => {
+        expect(document.body.textContent).not.toMatch(/\bwe guarantee\b|guaranteed (first|top)/i);
+        const answer = home.faq.items.find((item) => /first position on Google/.test(item.question))!.answer;
+        expect(answer).toMatch(/^No\b/);
+        expect($('#faq')).toHaveTextContent(answer);
+    });
+
+    it('emits the page JSON-LD in order, the FAQ from the rewritten copy, then the organization graph', () => {
         const blocks = Array.from($$('script[type="application/ld+json"]')).map((s) => JSON.parse(s.textContent!));
         expect(blocks).toHaveLength(4);
         expect(blocks[0]['@graph'][0]['@type']).toBe('WebPage');
         expect(blocks[1]['@type']).toBe('ItemList');
         expect(blocks[2]['@type']).toBe('FAQPage');
+        expect(blocks[2].mainEntity.map((q: { name: string }) => q.name)).toEqual(home.faq.items.map((i) => i.question));
         expect(blocks[3]['@graph'][0]['@id']).toBe('https://hlorenzoz.com/#organization');
+        expect(JSON.stringify(blocks)).not.toMatch(/"offers"|"priceRange"/);
     });
 });

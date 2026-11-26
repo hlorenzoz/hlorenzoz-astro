@@ -66,7 +66,7 @@ const PAGES = [
             'Want it all in one document?',
             'Stop losing calls, starting this month',
         ],
-        links: ['/en/#process'],
+        links: ['/en/#how'],
     },
     {
         path: 'services/software-development',

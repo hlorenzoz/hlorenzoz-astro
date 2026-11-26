@@ -3,7 +3,7 @@
     "home": "Accueil",
     "benefits": "Avantages",
     "solutions": "Solutions",
-    "price": "Tarifs",
+    "price": "Notre méthode",
     "portfolio": "Portfolio",
     "news": "Actualités",
     "contact": "Contact",
@@ -30,200 +30,187 @@
   },
   "home": {
     "meta": {
-      "title": "Lorenzoz Agency | SEO local pour les entreprises de proximité",
-      "description": "Plus de clients près de chez vous grâce à Google et à l'IA. Un seul forfait mensuel de SEO local : contenu d'autorité, citations, autorité sur Google et l'IA, et gestion des avis.",
+      "title": "Lorenzoz Agency | Partenaire de croissance des entreprises de proximité",
+      "description": "Lors d'un premier appel gratuit, nous analysons les besoins de votre entreprise, puis nous construisons la bonne combinaison de SEO local, site web, réceptionniste vocal IA ou logiciel sur mesure.",
       "ogImageAlt": "Lorenzoz Agency : l'excellence en IA et en web",
       "keywords": [
         "SEO local",
-        "Agence SEO local",
+        "Partenaire de croissance pour entreprises locales",
         "Google Business Profile",
         "Recherche locale",
-        "Gestion des avis",
+        "Solutions digitales sur mesure",
         "Visibilité dans les recherches IA",
         "Création de sites web",
         "Réceptionniste vocal IA",
         "Développement logiciel"
       ],
-      "organizationDescription": "SEO local pour les entreprises locales : un forfait mensuel qui apporte des clients locaux depuis Google et l'IA, avec en option la création de sites web, un réceptionniste vocal IA et des logiciels sur mesure."
+      "organizationDescription": "Un partenaire de croissance pour les entreprises de proximité : nous analysons les besoins de chaque entreprise, puis nous mettons en place une solution adaptée qui combine SEO local, sites web, réceptionnistes vocaux IA et logiciels sur mesure."
     },
     "hero": {
-      "badge": "SEO local pour les entreprises de proximité",
-      "title": "Plus de clients près de chez vous",
-      "titleGradient": "grâce à Google et à l'IA",
-      "description": "Nous ne vendons pas des prestations à la carte. Nous visons un seul résultat : quand quelqu'un cherche ce que propose votre entreprise, c'est vous qu'il trouve en premier.",
-      "cta": "Réserver un appel",
-      "secondaryCta": "Voir notre méthode"
+      "badge": "Votre partenaire de croissance",
+      "title": "Nous étudions votre entreprise, puis nous construisons ce qui",
+      "titleGradient": "vous amène des clients",
+      "description": "Pas de forfaits ni de grille tarifaire. Lors d'un premier appel gratuit, nous analysons les besoins de votre entreprise. Nous mettons ensuite en place la bonne combinaison de SEO local, site web, réceptionniste vocal IA ou logiciel sur mesure, et nous mesurons les résultats avec vous.",
+      "cta": "Réserver l'analyse gratuite de vos besoins",
+      "secondaryCta": "Notre méthode",
+      "note": "15 minutes en visioconférence. Sans engagement."
     },
-    "stats": {
-      "pillars": {
-        "label": "Piliers de travail"
+    "facts": {
+      "services": {
+        "value": "{count} services",
+        "label": "réunis en une seule solution pour vous"
+      },
+      "languages": {
+        "value": "{count} langues",
+        "label": "sur ce site"
+      },
+      "pageSpeed": {
+        "value": "98 / 100",
+        "label": "PageSpeed sur mobile,",
+        "link": "vérifiez ici"
       },
       "markets": {
-        "label": "Marchés desservis"
+        "value": "Espagne et Costa Rica",
+        "label": "où nos réalisations pour des clients sont en ligne aujourd'hui"
       }
     },
     "markets": {
-      "eyebrow": "Portée mondiale, ancrage local",
-      "title": "Au service d'entreprises du monde entier",
-      "subtitle": "Basés en Espagne, nous intervenons en ligne sur les marchés où nos clients se développent le plus vite."
-    },
-    "standard": {
-      "title": "Des résultats, pas des prestations à la carte",
-      "subtitle": "Un site web, quelques avis ou une fiche Google n'amènent pas de clients à eux seuls. C'est l'ensemble qui compte, travaillé chaque mois vers un seul objectif.",
-      "oldWay": {
-        "title": "Acheter des prestations",
-        "items": [
-          "Plusieurs prestataires qui ne se coordonnent jamais",
-          "Des livrables que personne ne compare aux ventes",
-          "Un site en ligne que personne ne trouve",
-          "Des avis et des annuaires laissés à l'abandon"
-        ]
-      },
-      "newWay": {
-        "title": "Acheter un résultat",
-        "items": [
-          "Une seule équipe responsable de l'acquisition de vos clients",
-          "Tout le travail vise à vous faire apparaître en premier dans votre secteur",
-          "Contenu, liens, autorité et avis avancent ensemble",
-          "Un compte rendu mensuel, en termes simples, de ce qui a été fait"
-        ]
-      }
+      "title": "Basés en Espagne, nous travaillons en ligne avec des entreprises de ces pays"
     },
     "problem": {
       "badge": "Le problème",
-      "title": "Vos clients vous <trad>cherchent</trad><br></br>et trouvent quelqu'un d'autre",
-      "description": "La décision se prend sur la première page de Google et, de plus en plus, dans la réponse d'un assistant IA. Une entreprise absente n'entre même pas dans la comparaison.",
+      "title": "Vos clients <trad>cherchent</trad>,<br></br>et trouvent quelqu'un d'autre",
+      "description": "La décision se prend sur la première page de Google, dans la réponse d'un assistant IA ou lors d'un appel auquel personne ne répond. Chaque entreprise perd des clients à un endroit différent : c'est pourquoi nous commençons par analyser.",
       "cards": [
         {
           "title": "Invisible sur Google",
-          "description": "Si votre entreprise n'apparaît pas quand quelqu'un cherche votre service à proximité, c'est un concurrent qui reçoit l'appel."
+          "description": "Si vous n'apparaissez pas quand quelqu'un cherche à proximité, c'est un concurrent qui reçoit l'appel."
         },
         {
-          "title": "Une réputation peu visible",
-          "description": "Peu d'avis, des avis anciens ou restés sans réponse : la confiance s'effrite juste avant que le client se décide."
+          "title": "Un site web qui ne convertit pas",
+          "description": "Lent, peu clair ou dans une seule langue, il perd les visiteurs avant qu'ils ne prennent contact."
+        },
+        {
+          "title": "Des appels sans réponse",
+          "description": "En dehors des horaires ou quand toutes les lignes sont occupées, le client appelle tout simplement l'entreprise suivante."
         },
         {
           "title": "L'IA recommande quelqu'un d'autre",
-          "description": "Les assistants IA citent les entreprises qu'ils reconnaissent comme la référence. Cette place, il faut la gagner."
+          "description": "Les assistants répondent avec les noms qu'ils reconnaissent. Cette place, il faut la gagner."
         }
       ]
     },
-    "solutions": {
-      "badge": "La solution",
-      "title": "Un forfait. Quatre piliers.",
-      "subtitle": "Un forfait mensuel qui réunit tout le travail nécessaire pour gagner en visibilité dans les recherches locales sur Google et dans les réponses des moteurs d'IA.",
-      "cta": "Découvrir le SEO local",
-      "items": [
+    "partner": {
+      "badge": "Pourquoi un partenaire",
+      "title": "Un partenaire de votre croissance, pas un fournisseur de prestations",
+      "services": {
+        "title": "Acheter des prestations",
+        "items": [
+          "Un forfait choisi dans une grille tarifaire",
+          "Plusieurs prestataires qui ne se parlent jamais",
+          "Un travail que personne ne mesure par rapport à vos ventes",
+          "Vous payez des choses dont vous n'avez pas forcément besoin"
+        ]
+      },
+      "partner": {
+        "title": "Travailler avec un partenaire",
+        "items": [
+          "Une solution conçue après l'analyse de votre entreprise",
+          "Une seule équipe responsable de vos résultats",
+          "Chaque élément vise à vous apporter des clients",
+          "Seulement ce qui vous fait avancer ; certains éléments peuvent être inclus"
+        ]
+      }
+    },
+    "how": {
+      "badge": "Notre méthode",
+      "title": "D'abord, nous comprenons votre entreprise. Ensuite, nous construisons la solution.",
+      "steps": [
         {
-          "title": "Contenu d'autorité",
-          "description": "Les contenus qui imposent votre entreprise comme une référence dans son domaine.",
-          "points": [
-            "Recherche de mots clés",
-            "Clusters de contenus",
-            "Analyse des lacunes de contenu",
-            "Mise à jour des contenus existants"
-          ]
+          "title": "Analyse gratuite des besoins",
+          "description": "Un premier appel pour comprendre votre entreprise, vos clients et ce qui freine votre croissance. Sans frais et sans engagement."
         },
         {
-          "title": "Backlinks et citations",
-          "description": "Une présence sur des annuaires et des sites de citation de confiance.",
-          "points": [
-            "Liens depuis des annuaires de confiance",
-            "Citations sur des sites pertinents",
-            "Des signaux d'autorité locale renforcés",
-            "Pour Google et pour les moteurs d'IA"
-          ]
+          "title": "Une solution conçue pour vous",
+          "description": "Nous proposons la combinaison de services adaptée à vos objectifs, avec un périmètre et un devis clairs. Selon vos besoins, certains services peuvent être inclus sans coût supplémentaire."
         },
         {
-          "title": "Autorité sur Google et l'IA",
-          "description": "Votre entreprise et votre site, la référence que l'on recommande.",
-          "points": [
-            "Fiche Google Business Profile optimisée",
-            "Optimisation SEO locale des pages de votre site",
-            "Données structurées d'entreprise locale",
-            "Présence dans les résultats de Google et de l'IA"
-          ]
+          "title": "Mise en place",
+          "description": "Nous la construisons et la lançons : votre site web, votre présence locale, votre réceptionniste vocal ou votre logiciel, testés avant leur mise en ligne."
         },
         {
-          "title": "Gestion des avis",
-          "description": "Votre réputation, mesurée et travaillée mois après mois.",
-          "points": [
-            "Suivi de la progression des avis dans le temps",
-            "Tendances des retours positifs et négatifs",
-            "Veille sur les réponses des clients",
-            "Liens d'avis à vos couleurs"
-          ]
+          "title": "Des résultats mesurés ensemble",
+          "description": "Nous suivons ce qui compte pour votre entreprise, nous rendons compte en termes simples et nous ajustons le travail au fil de votre croissance."
         }
-      ]
+      ],
+      "note": "Il n'y a pas de grille tarifaire : chaque solution fait l'objet d'un devis après l'analyse gratuite. Les devis s'entendent hors TVA."
+    },
+    "solutions": {
+      "badge": "Solutions",
+      "title": "Les briques que nous combinons pour vous",
+      "subtitle": "Chaque entreprise a des besoins différents. Voici les briques de votre solution ; vous n'obtenez que ce qui fait avancer votre entreprise.",
+      "cta": "En savoir plus",
+      "items": {
+        "localSeo": "Soyez trouvé sur Google et dans les réponses de l'IA quand des gens près de chez vous cherchent ce que vous proposez.",
+        "websiteDevelopment": "Des sites web rapides et multilingues, que les moteurs de recherche et l'IA comprennent, conçus pour transformer les visites en appels.",
+        "aiVoiceReceptionist": "Chaque appel reçoit une réponse, jour et nuit : questions, réservations et messages traités avec une voix naturelle.",
+        "softwareDevelopment": "Votre propre application pour téléphone, tablette, web et ordinateur, quand les outils prêts à l'emploi ne suffisent plus."
+      }
     },
     "benefits": {
       "title": "Ce qui change pour votre entreprise",
-      "titleGradient": "quand on vous trouve",
+      "titleGradient": "quand on peut vous trouver",
       "imageAlt": "Tableau de bord de croissance d'une entreprise",
       "items": [
         {
-          "title": "De la visibilité là où se prend la décision",
-          "description": "Votre entreprise présente dans les recherches locales sur Google et sur la carte, là où vos clients choisissent qui appeler."
+          "title": "Visible là où se prend la décision",
+          "description": "Dans les recherches locales, sur la carte et dans les réponses de l'IA, là où vos clients choisissent qui appeler."
         },
         {
-          "title": "Une réputation qui travaille pour vous",
-          "description": "Des avis qui progressent régulièrement, et une vision claire de ce que disent vos clients."
+          "title": "Chaque demande prise en charge",
+          "description": "Un site qui transforme les visites en prises de contact, et des appels traités même quand vous ne pouvez pas décrocher."
         },
         {
-          "title": "Recommandé par Google et l'IA",
-          "description": "Du contenu et de l'autorité pour que moteurs de recherche et assistants vous reconnaissent comme la référence de votre secteur."
+          "title": "Une seule équipe derrière",
+          "description": "Un partenaire qui connaît votre entreprise, mesure ce qui compte et ajuste le travail avec vous."
         }
       ]
     },
-    "process": {
-      "title": "Une méthode claire, mois après mois",
-      "steps": [
-        {
-          "number": "01",
-          "badge": "Audit",
-          "title": "Nous faisons le point sur votre situation",
-          "description": "Nous examinons votre présence actuelle sur Google, votre site, vos avis, et qui est recommandé aujourd'hui dans votre secteur."
-        },
-        {
-          "number": "02",
-          "badge": "Construction",
-          "title": "Nous travaillons les quatre piliers",
-          "description": "Contenu, citations, autorité et avis avancent en parallèle, selon un plan que vous connaissez à l'avance."
-        },
-        {
-          "number": "03",
-          "badge": "Ajustement",
-          "title": "Nous mesurons et ajustons",
-          "description": "Chaque mois, vous recevez un compte rendu en termes simples et nous adaptons le travail à ce qui a changé."
-        }
-      ]
+    "dossier": {
+      "title": "Téléchargez notre dossier",
+      "body": "Notre méthode, ce que nous construisons et les projets qui en témoignent, dans un PDF à lire plus tard ou à partager avec votre équipe.",
+      "cta": "Télécharger le dossier (PDF)"
     },
     "pricing": {
-      "title": "Des tarifs simples et transparents"
+      "title": "Conditions de paiement"
     },
     "contact": {
-      "badge": "Contact",
-      "title": "Parlons de votre entreprise.",
-      "subtitle": "Réservez un appel de 15 minutes."
+      "title": "Commençons par votre entreprise, pas par un forfait",
+      "subtitle": "Partagez avec nous vos objectifs de croissance. En 15 minutes, nous analysons vos besoins et ce que nous ferions pour y répondre.",
+      "note": "Gratuit. En visioconférence. Sans engagement."
     },
     "faq": {
       "title": "Questions fréquentes",
       "items": [
         {
-          "question": "Vous garantissez la première position sur Google ?",
-          "answer": "Non, et prudence face à quiconque le promet : personne ne contrôle le classement de Google. La première position est l'objectif que nous poursuivons chaque mois, et un compte rendu en termes simples vous montre ce qui a été fait et comment évolue votre visibilité."
+          "question": "Combien ça coûte ?",
+          "answer": "Il n'y a pas de grille tarifaire. Chaque solution est conçue pour votre entreprise et fait l'objet d'un devis après l'analyse gratuite. Selon vos besoins, certains services peuvent être inclus sans coût supplémentaire."
         },
         {
-          "question": "Quel délai avant de voir des résultats dans le classement local ?",
-          "answer": "La plupart des clients constatent une progression nette dans le pack local de Google en 30 à 60 jours, mais sur les marchés très concurrentiels cela peut prendre plus de temps."
+          "question": "Comment se déroule l'analyse gratuite ?",
+          "answer": "Un appel vidéo de 15 minutes sur votre entreprise, vos clients et vos objectifs. Vous repartez avec une idée claire de ce que nous ferions, sans engagement."
+        },
+        {
+          "question": "Vous garantissez la première position sur Google ?",
+          "answer": "Non, et personne ne peut honnêtement le faire : c'est Google qui décide de son classement. Nous y travaillons et nous vous disons ce qui est réaliste sur votre marché."
         },
         {
           "question": "Pourquoi une partie est payée d'avance ?",
-          "answer": "À la signature, {upfront} % est réglé d'avance. Ce montant couvre les outils et services que nous souscrivons pour travailler dès le premier jour."
+          "answer": "{upfront} % du devis accepté est réglé au démarrage pour couvrir les outils et services dont dépend le travail."
         },
         {
           "question": "Il me faut déjà un site web ou une fiche Google ?",
-          "answer": "Non. Si vous n'avez pas de fiche Google Business Profile, nous la créons et la validons à votre nom, et un site web peut s'ajouter en service optionnel."
+          "answer": "Non. Si vous avez besoin de l'un ou de l'autre, il fait partie de votre solution."
         }
       ]
     }
@@ -247,8 +234,8 @@
           "href": "/news"
         },
         {
-          "label": "Tarifs",
-          "href": "#process"
+          "label": "Notre méthode",
+          "href": "#how"
         },
         {
           "label": "Contact",
