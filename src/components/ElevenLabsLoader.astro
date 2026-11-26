@@ -22,6 +22,23 @@ const labels = getTranslations(locale).raw('assistant');
 
 <div data-elevenlabs data-locale={locale} data-labels={JSON.stringify(labels)}></div>
 
+{
+    /* Dev only: the island is mounted by a plain script, not a `client:*` directive, so
+       Astro never adds @vitejs/plugin-react's Fast Refresh preamble and the dev import
+       throws "can't detect preamble". Production builds have no preamble to need. */
+    import.meta.env.DEV && (
+        <script
+            type="module"
+            is:inline
+            set:html={`import RefreshRuntime from '/@react-refresh';
+RefreshRuntime.injectIntoGlobalHook(window);
+window.$RefreshReg$ = () => {};
+window.$RefreshSig$ = () => (type) => type;
+window.__vite_plugin_react_preamble_installed__ = true;`}
+        />
+    )
+}
+
 <script>
     import type { AssistantLabels } from '../islands/ElevenLabsWidget';
 
