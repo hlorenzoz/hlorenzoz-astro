@@ -3,9 +3,6 @@
     "title": "Lorenzoz Agency | Services dossier",
     "docLabel": "Services dossier"
   },
-  "tax": {
-    "suffix": "+ VAT"
-  },
   "cover": {
     "badge": "Local SEO for local businesses",
     "title": "More local customers",
@@ -103,59 +100,13 @@
         ]
       }
     ],
-    "price": {
-      "label": "Local SEO, all included",
-      "period": "/ month",
-      "note": "All four pillars in a single monthly plan."
-    },
     "goalTitle": "Our goal",
     "goal": "The first position on Google for searches in your area. No provider can guarantee a specific ranking and we do not promise one: we commit to the work that leads there."
   },
-  "numbers": {
-    "eyebrow": "The numbers",
-    "title": "What it costs, and what it costs not to",
-    "subtitle": "Two simple sums: what this work would cost bought piece by piece, and what every customer who does not arrive costs a business.",
-    "separate": {
-      "title": "Bought separately",
-      "items": [
-        { "label": "Local SEO", "key": "localSeo" },
-        { "label": "Review management", "key": "reviewManagement" },
-        { "label": "Authority content", "key": null },
-        { "label": "Backlinks and citations", "key": null }
-      ],
-      "perMonth": "/ month",
-      "unpriced": "extra",
-      "totalLabel": "Just two of the four",
-      "note": "List prices at which we offered these two services on their own. Content and backlinks were quoted separately."
-    },
-    "plan": {
-      "title": "In a single plan",
-      "includedLabel": "All four pillars included",
-      "saving": "{saving}% less than two of the pillars bought separately, with the other two already included."
-    },
-    "missed": {
-      "title": "What a customer who never arrives costs",
-      "description": "The plan costs {annual} {tax} a year. Compare it with what your business stops earning for every customer who picks a competitor.",
-      "columns": {
-        "value": "If a new customer brings in, per year",
-        "cover": "The plan is paid for by",
-        "missed": "One customer fewer a month costs you, per year"
-      },
-      "coverClients": "{count} customers a month",
-      "coverOne": "1 customer a month",
-      "coverMonths": "1 customer every {months} months",
-      "footnote": "Illustrative example with assumed customer values: run the sum with your own. It is not a forecast of results."
-    }
-  },
   "addOns": {
-    "eyebrow": "{discount}% off alongside Local SEO",
+    "eyebrow": "Quoted after a free first call",
     "title": "Optional services",
-    "description": "They join the plan when your business needs them. Taken alongside Local SEO they carry a {discount}% discount on the list price.",
-    "listLabel": "List price",
-    "bundleLabel": "With Local SEO",
-    "fromLabel": "from",
-    "perMonth": "/ month",
-    "oneOff": "one-off payment",
+    "description": "They join the plan when your business needs them.",
     "items": [
       {
         "key": "websiteDevelopment",
@@ -188,7 +139,7 @@
         ]
       }
     ],
-    "footnote": "The Software and Mobile App Development price is a starting point: the final quote depends on the functional requirements. No price includes VAT."
+    "footnote": "Every service is quoted after a free first call. No quote includes VAT."
   },
   "process": {
     "eyebrow": "How we work",
@@ -220,12 +171,8 @@
         "description": "On signing, {upfront}% is paid up front (the first month). It covers the cost of the tools and services that make the work possible."
       },
       {
-        "title": "{discount}% off add-ons",
-        "description": "The discount applies to the list price of each optional service taken alongside Local SEO."
-      },
-      {
-        "title": "Prices exclude VAT",
-        "description": "The amounts in this dossier do not include taxes. EU residents are subject to +21% VAT."
+        "title": "Quotes exclude VAT",
+        "description": "The quotes do not include taxes. EU residents are subject to +21% VAT."
       },
       {
         "title": "A goal, not a guarantee",

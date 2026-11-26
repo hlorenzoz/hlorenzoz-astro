@@ -66,10 +66,9 @@ test.describe('Homepage E2E Tests', () => {
     // Check stats section
     const stats = page.locator('section#stats');
     await stats.scrollIntoViewIfNeeded();
-    // The plan's price, marked as before tax, and the two counts.
-    await expect(stats.getByText('€750')).toBeVisible({ timeout: 10000 });
-    await expect(stats.getByText('+ VAT')).toBeVisible();
-    await expect(stats.getByText(/Pillars of work/i)).toBeVisible();
+    // The two counts. The home page publishes no price.
+    await expect(stats.getByText(/Pillars of work/i)).toBeVisible({ timeout: 10000 });
+    await expect(stats.getByText(/€\s?\d|\d\s?€/)).toHaveCount(0);
   });
 
   test('should be responsive', async ({ page }) => {

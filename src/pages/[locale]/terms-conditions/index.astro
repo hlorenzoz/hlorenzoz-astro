@@ -1,5 +1,5 @@
 ---
-import { RefreshCw, CreditCard, Percent, Receipt, CircleX, Images, Mail } from '@lucide/astro';
+import { RefreshCw, CreditCard, Receipt, CircleX, Images, Mail } from '@lucide/astro';
 import BaseLayout from '@/src/layouts/BaseLayout.astro';
 import Navbar from '@/src/components/Navbar.astro';
 import Footer from '@/src/components/Footer.astro';
@@ -9,19 +9,18 @@ import Breadcrumbs from '@/src/components/Breadcrumbs.astro';
 import { getTranslations } from '@/lib/i18n';
 import { legalCrumbs, legalMetadata, legalPageSchema, type LegalPageConfig } from '@/lib/legal-page';
 import { routeLocales } from '@/lib/routes';
-import { BUNDLE_DISCOUNT, UPFRONT_SHARE } from '@/lib/pricing';
+import { UPFRONT_SHARE } from '@/lib/pricing';
 
 export function getStaticPaths() {
     return routeLocales('terms-conditions').map((locale) => ({ params: { locale } }));
 }
 
 /**
- * The percentages the legal copy states, from the same source as the pricing
- * section. Typed into the message file they would be a second copy of a term,
- * free to disagree with the first.
+ * The percentage the legal copy states, from `lib/pricing.ts`. Typed into the
+ * message file it would be a second copy of a term, free to disagree with the
+ * first.
  */
 const TERMS_TOKENS = {
-    discount: Math.round(BUNDLE_DISCOUNT * 100),
     upfront: Math.round(UPFRONT_SHARE * 100),
 };
 
@@ -46,10 +45,7 @@ const sections = [
 
 const PRICING_TERMS = [
     { key: 'payment', icon: CreditCard },
-    // The two conditions attached to every published price. They are terms,
-    // not marketing lines: a discount stated without its condition, or a
-    // figure without its tax status, is how an invoice gets disputed.
-    { key: 'discount', icon: Percent, isPageKey: true },
+    // A figure without its tax status is how an invoice gets disputed.
     { key: 'tax', icon: Receipt, isPageKey: true },
     { key: 'subscriptions', icon: RefreshCw, isPageKey: true },
     { key: 'cancellations', icon: CircleX, isPageKey: true },

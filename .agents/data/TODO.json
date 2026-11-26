@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updated": "2026-11-25",
+  "updated": "2026-11-26",
   "tasks": [
     {
       "id": "#T0001",
@@ -472,7 +472,8 @@
         "2026-10-09: pasos para reactivar documentados en el comentario de cabecera de app/[locale]/services/_digital-business-card/page.tsx."
       ],
       "descripcion": [
-        "Deshacer #T0020: descomentar precio y ruta, renombrar la carpeta, quitar la regla 301 y volver a listarlo en hub, footer, llms.txt y dossier."
+        "Deshacer #T0020: descomentar precio y ruta, renombrar la carpeta, quitar la regla 301 y volver a listarlo en hub, footer, llms.txt y dossier.",
+        "2026-11-26: la agencia ya no publica precios (cada solucion se presupuesta tras una primera llamada gratuita) y el codigo dejo de guardar la cifra de la tarjeta. Ultimo precio de lista que tuvo: 150 EUR por tarjeta, pago unico, mas 25 EUR/mes de mantenimiento opcional (sin IVA). Al reactivarla se presupuesta como el resto, sin precio publicado."
       ]
     },
     {

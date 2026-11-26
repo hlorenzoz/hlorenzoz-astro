@@ -1,20 +1,19 @@
 /**
- * Tokens for copy that has to state a price or a term.
+ * Tokens for copy that states a term.
  *
- * `messages/*.json` never carries a figure (see AGENTS.md, "Where the prices
- * live in code"). Most price-bearing strings are single messages interpolated
- * by the translator (`lib/i18n.ts`), but FAQ items are read with `t.raw` as plain data and handed to
- * both the accordion and the JSON-LD, so they need the same substitution done
- * by hand. This is that substitution, with the values coming from
- * `lib/pricing.ts`.
+ * `messages/*.json` never carries a figure: a term such as the up front share
+ * is a `{upfront}` token filled from `lib/pricing.ts`. Most strings are
+ * interpolated by the translator (`lib/i18n.ts`), but FAQ items are read with
+ * `t.raw` as plain data and handed to both the accordion and the JSON-LD, so
+ * they need the same substitution done by hand.
  */
-import { BUNDLE_DISCOUNT, PRICING, UPFRONT_SHARE, formatAmount } from '@/lib/pricing';
+import { UPFRONT_SHARE } from '@/lib/pricing';
 
 export type CopyTokens = Record<string, string | number>;
 
 /**
  * Replaces `{name}` tokens. An unknown token throws: a silent blank in a
- * sentence about money is worse than a failed build, and this runs during the
+ * sentence about terms is worse than a failed build, and this runs during the
  * static export.
  */
 export function fillTokens(text: string, values: CopyTokens): string {
@@ -24,21 +23,9 @@ export function fillTokens(text: string, values: CopyTokens): string {
     });
 }
 
-/**
- * The values every price-bearing line may use, for one locale.
- *
- * `tax` is the "+ VAT" / "+ IVA" marker. It is passed in because it is copy,
- * and this module does not read the message catalogue.
- */
-export function copyTokens(locale: string, tax: string): CopyTokens {
-    const plan = PRICING.localSeo.base.amount;
-    return {
-        price: formatAmount(plan, locale),
-        annual: formatAmount(plan * 12, locale),
-        discount: Math.round(BUNDLE_DISCOUNT * 100),
-        upfront: Math.round(UPFRONT_SHARE * 100),
-        tax,
-    };
+/** The values every term-bearing line may use. */
+export function copyTokens(): CopyTokens {
+    return { upfront: Math.round(UPFRONT_SHARE * 100) };
 }
 
 export interface FaqItem {

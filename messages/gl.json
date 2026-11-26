@@ -52,12 +52,9 @@
       "titleGradient": "desde Google e a IA",
       "description": "Non vendemos servizos soltos. Traballamos por un único resultado: que quen busca o que ofrece o teu negocio te atope a ti primeiro.",
       "cta": "Reservar unha chamada",
-      "secondaryCta": "Ver o plan e os prezos"
+      "secondaryCta": "Ver como traballamos"
     },
     "stats": {
-      "plan": {
-        "label": "Un plan, todo incluído"
-      },
       "pillars": {
         "label": "Piares de traballo"
       },
@@ -202,92 +199,7 @@
       ]
     },
     "pricing": {
-      "badge": "Un plan, todo incluído",
-      "title": "Prezos claros e transparentes",
-      "description": "Un único plan mensual cos catro piares. Os servizos opcionais teñen un {discount}% de desconto se os contratas xunto co SEO local.",
-      "vat": "Ningún prezo inclúe IVE. O IVE engádese cando corresponde, ao tipo que se aplica a cada cliente (21% para clientes en España).",
-      "paymentTerms": "Ao contratar, abónase por adiantado o {upfront}% (o primeiro mes). Cobre o custo das ferramentas e dos servizos que fan posible o traballo.",
-      "perMonth": "/ mes",
-      "oneOff": "pagamento único",
-      "from": "desde",
-      "learnMore": "Máis información",
-      "listLabel": "Prezo de lista",
-      "bundleLabel": "Con SEO local",
-      "core": {
-        "popular": "A oferta principal",
-        "title": "SEO local",
-        "subtitle": "Os catro piares incluídos",
-        "goal": "Obxectivo: a primeira posición en Google nas buscas da túa zona",
-        "cta": "Reservar unha chamada",
-        "groups": [
-          {
-            "label": "Contido de autoridade",
-            "items": [
-              "Investigación de palabras clave",
-              "Clústeres de contido",
-              "Análise das lagoas de contido"
-            ]
-          },
-          {
-            "label": "Backlinks e citacións",
-            "items": [
-              "Ligazóns desde directorios de confianza",
-              "Citacións en webs relevantes",
-              "Sinais de autoridade local máis fortes"
-            ]
-          },
-          {
-            "label": "Autoridade en Google e na IA",
-            "items": [
-              "Google Business Profile optimizado",
-              "SEO local nas páxinas da túa web",
-              "Datos estruturados de negocio local"
-            ]
-          },
-          {
-            "label": "Xestión de recensións",
-            "items": [
-              "Seguimento do crecemento das recensións",
-              "Tendencias de opinións positivas e negativas",
-              "Control das respostas dos clientes"
-            ]
-          }
-        ]
-      },
-      "addOnsTitle": "Servizos opcionais",
-      "addOnsSubtitle": "{discount}% de desconto sobre o prezo de lista se os contratas xunto co SEO local.",
-      "addOns": {
-        "websiteDevelopment": {
-          "title": "Desenvolvemento web",
-          "subtitle": "Webs feitas para conseguir clientes",
-          "features": [
-            "Landing page ou web completa de varias páxinas",
-            "Deseño pensado primeiro para o móbil e Core Web Vitals desde o primeiro día",
-            "Open Graph e datos estruturados desde o lanzamento"
-          ],
-          "cta": "Comezar"
-        },
-        "aiVoiceReceptionist": {
-          "title": "Recepcionista de voz con IA",
-          "subtitle": "Ningunha chamada sen atender",
-          "features": [
-            "Citas reservadas directamente no teu calendario",
-            "Voz e guión personalizados segundo a túa marca",
-            "Optimizado para inglés e español"
-          ],
-          "cta": "Comezar"
-        },
-        "softwareDevelopment": {
-          "title": "Desenvolvemento de software",
-          "subtitle": "Á medida, preparado para escalar",
-          "features": [
-            "Un único código para iOS, Android, web e escritorio",
-            "Probas automatizadas e pipeline de CI/CD",
-            "Propiedade completa do código fonte na entrega"
-          ],
-          "cta": "Pedir orzamento"
-        }
-      }
+      "title": "Prezos claros e transparentes"
     },
     "contact": {
       "badge": "Contacto",
@@ -302,10 +214,6 @@
           "answer": "Non, e desconfía de quen o garanta: ninguén controla o algoritmo de Google. A primeira posición é o obxectivo polo que traballamos cada mes, e un informe sen tecnicismos móstrache o que se fixo e como evoluciona a túa visibilidade."
         },
         {
-          "question": "Que inclúe exactamente o plan?",
-          "answer": "Os catro piares por {price} ao mes {tax}: contido de autoridade, backlinks e citacións, autoridade en Google e na IA, e xestión de recensións. Non se factura nada á parte."
-        },
-        {
           "question": "Canto tempo pasa ata que se ven resultados no posicionamento local?",
           "answer": "A maioría dos clientes notan un movemento significativo no mapa local entre os 30 e os 60 días, aínda que nos mercados máis competitivos pode levar máis tempo."
         },
@@ -315,11 +223,7 @@
         },
         {
           "question": "Necesito ter xa unha web ou un perfil de Google?",
-          "answer": "Non. Se non tes Google Business Profile, creámolo e verificámolo ao teu nome, e a web pódese engadir como servizo opcional cun {discount}% de desconto."
-        },
-        {
-          "question": "Como funciona o desconto nos servizos opcionais?",
-          "answer": "Desenvolvemento web, Recepcionista de voz con IA e Desenvolvemento de software teñen un {discount}% de desconto sobre o seu prezo de lista se os contratas xunto co SEO local. Contratados por separado, custan o prezo de lista."
+          "answer": "Non. Se non tes Google Business Profile, creámolo e verificámolo ao teu nome, e a web pódese engadir como servizo opcional."
         }
       ]
     }
@@ -344,7 +248,7 @@
         },
         {
           "label": "Prezos",
-          "href": "#pricing"
+          "href": "#process"
         },
         {
           "label": "Contacto",
@@ -485,10 +389,6 @@
         },
         "pricing": {
           "intro": "Se desexa adquirir calquera produto ou servizo dispoñible a través do Servizo, é posible que se lle solicite determinada información relevante para a súa Compra.",
-          "discount": {
-            "title": "Desconto nos servizos opcionais",
-            "description": "Desenvolvemento web, Recepcionista de voz con IA e Desenvolvemento de software teñen un {discount}% de desconto sobre o seu prezo de lista cando se contratan xunto co SEO local. Contratados por separado, cóbranse ao prezo de lista. Non hai proba gratuíta."
-          },
           "tax": {
             "title": "Prezos sen IVE",
             "description": "Ningún prezo publicado inclúe o IVE. O IVE engádese na factura cando corresponde, ao tipo que se aplica a cada cliente (21% para clientes en España)."
@@ -1269,53 +1169,6 @@
       "title": "Novas sobre este proxecto"
     }
   },
-  "numbers": {
-    "badge": "As contas",
-    "title": "O que custa, e o que custa non facelo",
-    "subtitle": "Dúas contas sinxelas: canto custaría contratar este traballo por partes e canto lle custa a un negocio cada cliente que non chega.",
-    "perMonth": "/ mes",
-    "separate": {
-      "title": "Por separado",
-      "items": [
-        "SEO local",
-        "Xestión de recensións",
-        "Contido de autoridade",
-        "Backlinks e citacións"
-      ],
-      "unpriced": "á parte",
-      "totalLabel": "Só dous dos catro",
-      "note": "Prezos de lista cos que ofreciamos estes dous servizos por separado. O contido e os backlinks orzamentábanse á parte."
-    },
-    "plan": {
-      "title": "Nun só plan",
-      "includedLabel": "Os catro piares incluídos",
-      "saving": "{saving}% menos que dous dos piares contratados por separado, cos outros dous xa incluídos."
-    },
-    "missed": {
-      "title": "O que custa un cliente que non chega",
-      "description": "O plan custa {annual} {tax} ao ano. Compárao co que deixa de ingresar o teu negocio por cada cliente que escolle a competencia.",
-      "columns": {
-        "value": "Se un cliente novo che deixa ao ano",
-        "cover": "O plan págase con",
-        "missed": "Un cliente menos ao mes cústache ao ano"
-      },
-      "coverClients": "{count} clientes ao mes",
-      "coverOne": "1 cliente ao mes",
-      "coverMonths": "1 cliente cada {months} meses",
-      "footnote": "Exemplo ilustrativo con valores de cliente supostos: fai a conta cos teus. Non é unha previsión de resultados."
-    }
-  },
-  "tax": {
-    "suffix": "+ IVE"
-  },
-  "offer": {
-    "from": "Prezo de partida: o orzamento final depende dos requisitos funcionais.",
-    "bundleDiscount": "{discount}% de desconto sobre o prezo de lista se o contratas xunto con {name}.",
-    "upfront": "Abónase por adiantado o {upfront}%.",
-    "beforeTax": "O prezo non inclúe IVE.",
-    "catalogName": "Servizos de Lorenzoz Agency",
-    "optionalCharge": "Cargo recorrente opcional"
-  },
   "articles": {
     "eyebrow": "DESDE LINKEDIN",
     "title": "Últimos artigos en LinkedIn",
@@ -1325,9 +1178,6 @@
     "prevSlide": "Artigo anterior",
     "nextSlide": "Artigo seguinte",
     "goToSlide": "Ir ao artigo {index}"
-  },
-  "payment": {
-    "cta": "Pagar en liña de forma segura"
   },
   "portfolio": {
     "portfolioCarousel": {
@@ -1939,7 +1789,6 @@
         "eyebrow": "SEO local",
         "title": "Que te atopen antes que á túa competencia",
         "subtitle": "Un único plan mensual con todo o traballo necesario para gañar visibilidade nas buscas locais de Google e nas respostas dos motores de IA.",
-        "price": "{price}/mes {tax}. Os catro piares incluídos, {upfront}% por adiantado.",
         "cta": "Reservar unha chamada"
       },
       "benefits": {
@@ -1948,10 +1797,6 @@
           {
             "title": "Mercas un resultado, non unha lista de tarefas",
             "description": "Contido, ligazóns, autoridade e recensións son pezas do mesmo obxectivo. Traballadas por separado, e por provedores distintos, ningunha chega. Nun só plan, cada unha empurra as demais."
-          },
-          {
-            "title": "Máis económico que contratalo por partes",
-            "description": "Os dous piares que antes vendiamos por separado custaban, xuntos, máis que o plan completo de agora, que ademais inclúe os outros dous. As contas están máis abaixo nesta páxina."
           },
           {
             "title": "Sabes o que se fixo cada mes",
@@ -2065,7 +1910,6 @@
         "eyebrow": "Desenvolvemento web",
         "title": "Webs feitas para gañar clientes",
         "subtitle": "Webs a medida e rápidas, pensadas para converter visitas en clientes. Optimizadas para SEO e adaptadas ao móbil.",
-        "price": "{price} {tax}, pago único. {bundlePrice} xunto co SEO local ({discount}% de desconto). Aloxamento e mantemento opcionais: {monthly}/mes.",
         "cta": "Reservar unha consulta gratuíta de 15 minutos"
       },
       "benefits": {
@@ -2172,7 +2016,6 @@
         "eyebrow": "Recepcionista de voz con IA",
         "title": "Non perdas nin unha chamada máis",
         "subtitle": "Axentes de procesamento da linguaxe natural que atenden as chamadas como o faría unha persoa. Reservan citas e responden as preguntas frecuentes 24/7.",
-        "price": "{price}/mes {tax}, sen custo de alta. {bundlePrice}/mes xunto co SEO local ({discount}% de desconto).",
         "cta": "Reservar consulta"
       },
       "benefits": {
@@ -2277,7 +2120,6 @@
         "eyebrow": "Desenvolvemento de software",
         "title": "Software a medida, preparado para crecer",
         "subtitle": "Produtos full stack cun frontend en Flutter e un backend sólido, feitos para funcionar en calquera dispositivo e tamaño de pantalla.",
-        "price": "Desde {price} {tax}. Desde {bundlePrice} xunto co SEO local ({discount}% de desconto).",
         "cta": "Reservar unha consulta gratuíta de 15 minutos"
       },
       "benefits": {
@@ -2323,8 +2165,7 @@
             "items": [
               "Propiedade completa do código fonte na entrega",
               "Documentación técnica completa",
-              "Traspaso da infraestrutura e do despregamento",
-              "Orzamento por proxecto, a partir dun prezo de saída publicado"
+              "Traspaso da infraestrutura e do despregamento"
             ]
           }
         ]
@@ -2363,7 +2204,7 @@
           },
           {
             "question": "Como se orzamenta un proxecto de software a medida?",
-            "answer": "Cada proxecto valórase de forma individual segundo as súas funcionalidades e a súa complexidade. A cifra publicada é un prezo de saída: o orzamento final chega despois dunha consulta inicial, non é un paquete pechado."
+            "answer": "Cada proxecto valórase de forma individual segundo as súas funcionalidades e a súa complexidade. O orzamento chega despois dunha primeira chamada gratuíta, non é un paquete pechado."
           },
           {
             "question": "O código fonte é meu unha vez rematado o proxecto?",
@@ -2375,9 +2216,10 @@
     "hub": {
       "eyebrow": "Que facemos",
       "title": "Un plan, e o que o acompaña",
-      "subtitle": "O SEO local é a oferta central: un único plan mensual que trae clientes locais desde Google e a IA. Desenvolvemento web, Recepcionista de voz con IA e Desenvolvemento de software son opcionais, cun {discount}% de desconto se os contratas xunto con el.",
+      "subtitle": "O SEO local é a oferta central: un único plan mensual que trae clientes locais desde Google e a IA. Desenvolvemento web, Recepcionista de voz con IA e Desenvolvemento de software son opcionais.",
       "cta": "Ver os servizos"
-    }
+    },
+    "quoted": "Á medida do teu negocio, con orzamento tras unha primeira chamada gratuíta."
   },
   "assistant": {
     "expand": "Abrir o asistente",

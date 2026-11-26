@@ -12,8 +12,7 @@
  * `tests/seo/service-pages-config.test.ts` can exercise the real configs.
  */
 import { defineContentPage, type CategoryPageConfig, type ContentPage } from '@/lib/service-page';
-import { BUNDLE_DISCOUNT, PRICING, slugFromServiceKey, type ServiceKey } from '@/lib/pricing';
-import { fillTokens } from '@/lib/copy-tokens';
+import { slugFromServiceKey, type ServiceKey } from '@/lib/pricing';
 import { LOCALES, type Locale } from '@/lib/site-config';
 import { getMessages } from '@/lib/i18n';
 import { routeLocales } from '@/lib/routes';
@@ -42,9 +41,6 @@ export function contentPageFor(pages: LocaleContentPages, locale: Locale): Conte
     return page;
 }
 
-/** The hub subtitle states the bundle discount, which lives in `lib/pricing.ts`. */
-export const HUB_TOKENS = { discount: Math.round(BUNDLE_DISCOUNT * 100) };
-
 /**
  * Core 30 hub: the category page that groups the service pages beneath it.
  * `kind: 'category'` must agree with `services`' tier in `lib/routes.ts`, or
@@ -56,9 +52,7 @@ function hubConfig(locale: Locale): CategoryPageConfig {
         path: 'services',
         kind: 'category',
         title: hub.title,
-        // Resolved here: this string becomes the meta description, so a raw
-        // "{discount}" would otherwise reach the search result snippet.
-        description: fillTokens(hub.subtitle, HUB_TOKENS),
+        description: hub.subtitle,
     };
 }
 
@@ -75,9 +69,6 @@ function serviceContentPages(key: ServiceKey): LocaleContentPages {
             description: s.meta.description,
             name: s.hero.title,
             faq: s.faq.items,
-            // The published price, from the single source of truth. The page
-            // shows it AND emits it as an Offer from the same object.
-            offer: PRICING[key],
         });
     };
     return pagesFor(path, build);

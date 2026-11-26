@@ -52,12 +52,9 @@
             "titleGradient": "über Google und KI",
             "description": "Wir verkaufen keine Einzelleistungen. Wir arbeiten auf ein einziges Ergebnis hin: Wer nach dem sucht, was Ihr Unternehmen anbietet, findet zuerst Sie.",
             "cta": "Gespräch vereinbaren",
-            "secondaryCta": "Plan und Preise ansehen"
+            "secondaryCta": "So arbeiten wir"
         },
         "stats": {
-            "plan": {
-                "label": "Ein Plan, alles inklusive"
-            },
             "pillars": {
                 "label": "Leistungssäulen"
             },
@@ -202,92 +199,7 @@
             ]
         },
         "pricing": {
-            "badge": "Ein Plan, alles inklusive",
-            "title": "Einfache, transparente Preise",
-            "description": "Ein monatlicher Plan mit allen vier Säulen. Zusatzleistungen erhalten Sie mit {discount}% Rabatt, wenn Sie sie zusammen mit lokalem SEO buchen.",
-            "vat": "Alle Preise verstehen sich zzgl. MwSt. Die Mehrwertsteuer wird berechnet, wo sie anfällt, zum jeweils geltenden Satz (21% für Kunden in Spanien).",
-            "paymentTerms": "Bei Vertragsabschluss werden {upfront}% im Voraus gezahlt (der erste Monat). Damit sind die Kosten für die Tools und Dienste gedeckt, die die Arbeit möglich machen.",
-            "perMonth": "/ Monat",
-            "oneOff": "einmalige Zahlung",
-            "from": "ab",
-            "learnMore": "Mehr erfahren",
-            "listLabel": "Listenpreis",
-            "bundleLabel": "Mit lokalem SEO",
-            "core": {
-                "popular": "Das Kernangebot",
-                "title": "Lokales SEO",
-                "subtitle": "Alle vier Säulen inklusive",
-                "goal": "Ziel: Platz eins bei Google für Suchanfragen in Ihrer Region",
-                "cta": "Gespräch vereinbaren",
-                "groups": [
-                    {
-                        "label": "Inhalte mit Autorität",
-                        "items": [
-                            "Keywordrecherche",
-                            "Themencluster",
-                            "Analyse von Inhaltslücken"
-                        ]
-                    },
-                    {
-                        "label": "Backlinks und Brancheneinträge",
-                        "items": [
-                            "Links aus vertrauenswürdigen Verzeichnissen",
-                            "Erwähnungen auf relevanten Websites",
-                            "Stärkere lokale Autoritätssignale"
-                        ]
-                    },
-                    {
-                        "label": "Autorität bei Google und KI",
-                        "items": [
-                            "Optimiertes Google Business Profile",
-                            "Lokale Onpageoptimierung Ihrer Website",
-                            "Strukturierte Daten für lokale Unternehmen"
-                        ]
-                    },
-                    {
-                        "label": "Bewertungsmanagement",
-                        "items": [
-                            "Entwicklung Ihrer Bewertungen im Zeitverlauf",
-                            "Trends bei positivem und negativem Feedback",
-                            "Kundenantworten immer im Blick"
-                        ]
-                    }
-                ]
-            },
-            "addOnsTitle": "Zusatzleistungen",
-            "addOnsSubtitle": "{discount}% Rabatt auf den Listenpreis bei Buchung zusammen mit lokalem SEO.",
-            "addOns": {
-                "websiteDevelopment": {
-                    "title": "Webentwicklung",
-                    "subtitle": "Websites, die Besucher zu Kunden machen",
-                    "features": [
-                        "Landingpage oder komplette Website mit mehreren Seiten",
-                        "Konsequent für Mobilgeräte gestaltet, Core Web Vitals vom ersten Tag an",
-                        "Open Graph und strukturierte Daten schon zum Start"
-                    ],
-                    "cta": "Jetzt starten"
-                },
-                "aiVoiceReceptionist": {
-                    "title": "Telefonassistent mit KI",
-                    "subtitle": "Kein Anruf bleibt unbeantwortet",
-                    "features": [
-                        "Termine landen direkt in Ihrem Kalender",
-                        "Stimme und Gesprächsleitfaden passend zu Ihrer Marke",
-                        "Optimiert für Englisch und Spanisch"
-                    ],
-                    "cta": "Jetzt starten"
-                },
-                "softwareDevelopment": {
-                    "title": "Softwareentwicklung",
-                    "subtitle": "Individuell und auf Wachstum ausgelegt",
-                    "features": [
-                        "Eine Codebasis für iOS, Android, Web und Desktop",
-                        "Automatisierte Tests und eine Pipeline für CI/CD",
-                        "Volle Rechte am Quellcode bei Übergabe"
-                    ],
-                    "cta": "Angebot anfordern"
-                }
-            }
+            "title": "Einfache, transparente Preise"
         },
         "contact": {
             "badge": "Kontakt",
@@ -302,10 +214,6 @@
                     "answer": "Nein, und seien Sie vorsichtig bei jedem, der das tut: Niemand kontrolliert das Ranking von Google. Platz eins ist das Ziel, auf das wir jeden Monat hinarbeiten, und ein Bericht in klarer Sprache zeigt Ihnen, was getan wurde und wie sich Ihre Sichtbarkeit entwickelt."
                 },
                 {
-                    "question": "Was genau ist im Plan enthalten?",
-                    "answer": "Alle vier Säulen für {price} pro Monat {tax}: Inhalte mit Autorität, Backlinks und Brancheneinträge, Autorität bei Google und KI sowie Bewertungsmanagement. Nichts wird separat berechnet."
-                },
-                {
                     "question": "Wie lange dauert es, bis ich Ergebnisse im lokalen Ranking sehe?",
                     "answer": "Die meisten Kunden sehen innerhalb von 30 bis 60 Tagen spürbare Bewegung im lokalen Kartenbereich von Google (Local Pack), in umkämpften Märkten kann es länger dauern."
                 },
@@ -315,11 +223,7 @@
                 },
                 {
                     "question": "Brauche ich schon eine Website oder ein Profil bei Google?",
-                    "answer": "Nein. Wenn Sie noch kein Google Business Profile haben, erstellen und verifizieren wir es auf Ihren Namen, und eine Website lässt sich als Zusatzleistung mit {discount}% Rabatt ergänzen."
-                },
-                {
-                    "question": "Wie funktioniert der Rabatt auf Zusatzleistungen?",
-                    "answer": "Webentwicklung, Telefonassistent mit KI und Softwareentwicklung erhalten {discount}% Rabatt auf den Listenpreis, wenn Sie sie zusammen mit lokalem SEO buchen. Einzeln gebucht gilt der Listenpreis."
+                    "answer": "Nein. Wenn Sie noch kein Google Business Profile haben, erstellen und verifizieren wir es auf Ihren Namen, und eine Website lässt sich als Zusatzleistung ergänzen."
                 }
             ]
         }
@@ -344,7 +248,7 @@
                 },
                 {
                     "label": "Preise",
-                    "href": "#pricing"
+                    "href": "#process"
                 },
                 {
                     "label": "Kontakt",
@@ -485,10 +389,6 @@
                 },
                 "pricing": {
                     "intro": "Wenn Sie ein über den Dienst angebotenes Produkt oder eine Dienstleistung erwerben möchten, werden Sie möglicherweise gebeten, bestimmte für Ihren Kauf relevante Informationen anzugeben.",
-                    "discount": {
-                        "title": "Rabatt auf optionale Leistungen",
-                        "description": "Webentwicklung, Telefonassistent mit KI und Softwareentwicklung kosten {discount}% weniger als ihr Listenpreis, wenn sie zusammen mit dem Plan für lokales SEO gebucht werden. Einzeln gebucht werden sie zum Listenpreis berechnet. Es gibt keine kostenlose Testphase."
-                    },
                     "tax": {
                         "title": "Preise zzgl. MwSt.",
                         "description": "Kein veröffentlichter Preis enthält die Mehrwertsteuer. Sie wird, wo sie anfällt, zum jeweils geltenden Satz auf der Rechnung hinzugerechnet (21% für Kunden in Spanien)."
@@ -1269,53 +1169,6 @@
             "title": "Neuigkeiten zu diesem Projekt"
         }
     },
-    "numbers": {
-        "badge": "Die Zahlen",
-        "title": "Was es kostet, und was es kostet, darauf zu verzichten",
-        "subtitle": "Zwei einfache Rechnungen: was diese Arbeit kosten würde, wenn man sie Stück für Stück einkauft, und was jeder Kunde, der nicht kommt, ein Unternehmen kostet.",
-        "perMonth": "/ Monat",
-        "separate": {
-            "title": "Einzeln eingekauft",
-            "items": [
-                "Lokales SEO",
-                "Bewertungsmanagement",
-                "Inhalte mit Autorität",
-                "Backlinks und Brancheneinträge"
-            ],
-            "unpriced": "zusätzlich",
-            "totalLabel": "Nur zwei der vier",
-            "note": "Listenpreise, zu denen wir diese beiden Leistungen einzeln angeboten haben. Inhalte und Backlinks wurden separat kalkuliert."
-        },
-        "plan": {
-            "title": "In einem einzigen Plan",
-            "includedLabel": "Alle vier Säulen inklusive",
-            "saving": "{saving}% weniger als zwei der Säulen im Einzelkauf, und die anderen beiden sind schon enthalten."
-        },
-        "missed": {
-            "title": "Was ein Kunde kostet, der nie kommt",
-            "description": "Der Plan kostet {annual} {tax} im Jahr. Vergleichen Sie das mit dem, was Ihrem Unternehmen für jeden Kunden entgeht, der sich für einen Wettbewerber entscheidet.",
-            "columns": {
-                "value": "Wenn ein Neukunde pro Jahr einbringt",
-                "cover": "Der Plan rechnet sich ab",
-                "missed": "Ein Kunde weniger pro Monat kostet Sie pro Jahr"
-            },
-            "coverClients": "{count} Kunden pro Monat",
-            "coverOne": "1 Kunde pro Monat",
-            "coverMonths": "1 Kunde alle {months} Monate",
-            "footnote": "Beispielrechnung mit angenommenen Kundenwerten: Rechnen Sie mit Ihren eigenen Zahlen. Dies ist keine Prognose von Ergebnissen."
-        }
-    },
-    "tax": {
-        "suffix": "zzgl. MwSt."
-    },
-    "offer": {
-        "from": "Einstiegspreis: Das endgültige Angebot hängt von den funktionalen Anforderungen ab.",
-        "bundleDiscount": "{discount}% Rabatt auf den Listenpreis bei Buchung zusammen mit {name}.",
-        "upfront": "{upfront}% werden im Voraus gezahlt.",
-        "beforeTax": "Der Preis versteht sich zzgl. MwSt.",
-        "catalogName": "Leistungen von Lorenzoz Agency",
-        "optionalCharge": "Optionale wiederkehrende Gebühr"
-    },
     "articles": {
         "eyebrow": "VON LINKEDIN",
         "title": "Aktuelle Artikel auf LinkedIn",
@@ -1325,9 +1178,6 @@
         "prevSlide": "Vorheriger Artikel",
         "nextSlide": "Nächster Artikel",
         "goToSlide": "Zu Artikel {index}"
-    },
-    "payment": {
-        "cta": "Sicher online bezahlen"
     },
     "portfolio": {
         "portfolioCarousel": {
@@ -1932,9 +1782,10 @@
         "hub": {
             "eyebrow": "Unsere Leistungen",
             "title": "Ein Plan und alles, was ihn ergänzt",
-            "subtitle": "Lokales SEO ist unser Kernangebot: ein monatlicher Plan, der Ihnen Kunden aus Ihrer Region über Google und KI bringt. Webentwicklung, Telefonassistent mit KI und Softwareentwicklung sind optional. Zusammen mit dem Plan für lokales SEO erhalten Sie sie mit {discount}% Rabatt.",
+            "subtitle": "Lokales SEO ist unser Kernangebot: ein monatlicher Plan, der Ihnen Kunden aus Ihrer Region über Google und KI bringt. Webentwicklung, Telefonassistent mit KI und Softwareentwicklung sind optional.",
             "cta": "Leistungen ansehen"
         },
+        "quoted": "Auf Ihr Unternehmen zugeschnitten, mit Angebot nach einem kostenlosen Erstgespräch.",
         "localSeo": {
             "name": "Lokales SEO",
             "meta": {
@@ -1945,7 +1796,6 @@
                 "eyebrow": "Lokales SEO",
                 "title": "Vor Ihrer Konkurrenz gefunden werden",
                 "subtitle": "Ein monatlicher Plan mit der gesamten Arbeit, die es braucht, um in der lokalen Suche bei Google und in den Antworten von KI sichtbar zu werden.",
-                "price": "{price} pro Monat {tax}. Alle vier Säulen inklusive, {upfront}% werden im Voraus gezahlt.",
                 "cta": "Gespräch vereinbaren"
             },
             "benefits": {
@@ -1954,10 +1804,6 @@
                     {
                         "title": "Sie kaufen ein Ergebnis, keine Aufgabenliste",
                         "description": "Inhalte, Links, Autorität und Bewertungen dienen demselben Ziel. Getrennt bearbeitet, von verschiedenen Anbietern, reicht keiner dieser Bausteine aus. In einem Plan treibt jeder die anderen voran."
-                    },
-                    {
-                        "title": "Günstiger als der Einkauf in Einzelteilen",
-                        "description": "Die beiden Säulen, die wir früher einzeln verkauft haben, kosten zusammen mehr als heute der gesamte Plan, und der Plan enthält zusätzlich die anderen beiden. Die Zahlen finden Sie weiter unten auf dieser Seite."
                     },
                     {
                         "title": "Sie wissen jeden Monat, was getan wurde",
@@ -2071,7 +1917,6 @@
                 "eyebrow": "Webentwicklung",
                 "title": "Websites, die Besucher zu Kunden machen",
                 "subtitle": "Individuelle, schnelle Websites, die Besucher zu Kunden machen. Für SEO optimiert und auf jedem Mobilgerät gut lesbar.",
-                "price": "Einmalig {price} {tax}. Zusammen mit dem Plan für lokales SEO {bundlePrice} ({discount}% Rabatt). Optionales Hosting: {monthly} pro Monat.",
                 "cta": "Kostenlose Beratung von 15 Minuten buchen"
             },
             "benefits": {
@@ -2178,7 +2023,6 @@
                 "eyebrow": "Telefonassistent mit KI",
                 "title": "Nie wieder einen Anruf verpassen",
                 "subtitle": "Sprachassistenten mit KI, die Anrufe so natürlich führen wie ein Mensch. Sie vereinbaren Termine und beantworten häufige Fragen, rund um die Uhr.",
-                "price": "{price} pro Monat {tax}, ohne Einrichtungsgebühr. Zusammen mit dem Plan für lokales SEO {bundlePrice} pro Monat ({discount}% Rabatt).",
                 "cta": "Beratung buchen"
             },
             "benefits": {
@@ -2283,7 +2127,6 @@
                 "eyebrow": "Softwareentwicklung",
                 "title": "Individuelle Software, die mit Ihnen wächst",
                 "subtitle": "Komplette Produkte mit einem Frontend in Flutter und einem robusten Backend, gebaut für jedes Gerät und jede Bildschirmgröße.",
-                "price": "Ab {price} {tax}. Zusammen mit dem Plan für lokales SEO ab {bundlePrice} ({discount}% Rabatt).",
                 "cta": "Kostenlose Beratung von 15 Minuten buchen"
             },
             "benefits": {
@@ -2329,8 +2172,7 @@
                         "items": [
                             "Volle Rechte am Quellcode bei der Übergabe",
                             "Komplette technische Dokumentation",
-                            "Übergabe von Infrastruktur und Deployment",
-                            "Angebot pro Projekt, ausgehend von einem veröffentlichten Einstiegspreis"
+                            "Übergabe von Infrastruktur und Deployment"
                         ]
                     }
                 ]
@@ -2369,7 +2211,7 @@
                     },
                     {
                         "question": "Wie wird ein individuelles Softwareprojekt berechnet?",
-                        "answer": "Jedes Projekt wird einzeln nach Funktionen und Komplexität geplant. Der veröffentlichte Betrag ist ein Einstiegspreis: Das endgültige Angebot folgt nach einem ersten Beratungsgespräch, es gibt kein festes Paket."
+                        "answer": "Jedes Projekt wird einzeln nach Funktionen und Komplexität geplant. Das Angebot folgt nach einem kostenlosen Erstgespräch, es gibt kein festes Paket."
                     },
                     {
                         "question": "Gehört mir der Quellcode, wenn das Projekt abgeschlossen ist?",

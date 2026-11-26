@@ -45,12 +45,9 @@
       "titleGradient": "from Google and AI",
       "description": "We do not sell loose services. We work toward one result: when someone searches for what your business offers, they find you first.",
       "cta": "Book a call",
-      "secondaryCta": "See the plan and pricing"
+      "secondaryCta": "See how we work"
     },
     "stats": {
-      "plan": {
-        "label": "One plan, all included"
-      },
       "pillars": {
         "label": "Pillars of work"
       },
@@ -195,92 +192,7 @@
       ]
     },
     "pricing": {
-      "badge": "One plan, all included",
-      "title": "Simple, transparent pricing",
-      "description": "One monthly plan with all four pillars. Optional services are {discount}% off when taken alongside Local SEO.",
-      "vat": "No price includes VAT. VAT is added where it applies, at the rate that applies to each customer (21% for customers in Spain).",
-      "paymentTerms": "On signing, {upfront}% is paid up front (the first month). It covers the cost of the tools and services that make the work possible.",
-      "perMonth": "/ mo",
-      "oneOff": "one time payment",
-      "from": "from",
-      "learnMore": "Learn more",
-      "listLabel": "List price",
-      "bundleLabel": "With Local SEO",
-      "core": {
-        "popular": "The core offer",
-        "title": "Local SEO",
-        "subtitle": "All four pillars included",
-        "goal": "Goal: the first position on Google for searches in your area",
-        "cta": "Book a call",
-        "groups": [
-          {
-            "label": "Authority content",
-            "items": [
-              "Keyword research",
-              "Content clusters",
-              "Content gap analysis"
-            ]
-          },
-          {
-            "label": "Backlinks and citations",
-            "items": [
-              "Links from trusted directories",
-              "Citations on relevant websites",
-              "Stronger local authority signals"
-            ]
-          },
-          {
-            "label": "Authority on Google and AI",
-            "items": [
-              "Optimized Google Business Profile",
-              "On page local SEO for your website",
-              "Local business structured data"
-            ]
-          },
-          {
-            "label": "Review management",
-            "items": [
-              "Review growth tracked over time",
-              "Positive and negative feedback trends",
-              "Customer responses monitored"
-            ]
-          }
-        ]
-      },
-      "addOnsTitle": "Optional services",
-      "addOnsSubtitle": "{discount}% off the list price when taken alongside Local SEO.",
-      "addOns": {
-        "websiteDevelopment": {
-          "title": "Website Development",
-          "subtitle": "Websites built to convert",
-          "features": [
-            "Landing page or full multipage website",
-            "Mobile first design and Core Web Vitals from day one",
-            "Open Graph and structured data shipped at launch"
-          ],
-          "cta": "Get started"
-        },
-        "aiVoiceReceptionist": {
-          "title": "AI Voice Receptionist",
-          "subtitle": "No call goes unanswered",
-          "features": [
-            "Appointments booked straight into your calendar",
-            "Custom voice and script matched to your brand",
-            "Optimized for English and Spanish"
-          ],
-          "cta": "Get started"
-        },
-        "softwareDevelopment": {
-          "title": "Software Development",
-          "subtitle": "Custom, built to scale",
-          "features": [
-            "One codebase for iOS, Android, web and desktop",
-            "Automated tests and a CI/CD pipeline",
-            "Full source code ownership on delivery"
-          ],
-          "cta": "Request a quote"
-        }
-      }
+      "title": "Simple, transparent pricing"
     },
     "contact": {
       "badge": "Contact",
@@ -295,10 +207,6 @@
           "answer": "No, and be wary of anyone who does: nobody controls Google's ranking. The first position is the goal we work toward every month, and a plain language report shows you what was done and how your visibility is moving."
         },
         {
-          "question": "What exactly does the plan include?",
-          "answer": "All four pillars for {price} a month {tax}: authority content, backlinks and citations, authority on Google and AI, and review management. Nothing is billed separately."
-        },
-        {
           "question": "How long until I see results in local search rankings?",
           "answer": "Most clients see meaningful movement in the local map pack within 30 to 60 days, though competitive markets can take longer."
         },
@@ -308,11 +216,7 @@
         },
         {
           "question": "Do I need a website or a Google profile already?",
-          "answer": "No. If you have no Google Business Profile we create it and verify it in your name, and a website can be added as an optional service at {discount}% off."
-        },
-        {
-          "question": "How does the discount on optional services work?",
-          "answer": "Website Development, AI Voice Receptionist and Software Development are {discount}% off their list price when taken alongside Local SEO. Bought on their own they cost the list price."
+          "answer": "No. If you have no Google Business Profile we create it and verify it in your name, and a website can be added as an optional service."
         }
       ]
     }
@@ -321,9 +225,10 @@
     "hub": {
       "eyebrow": "What We Do",
       "title": "One plan, and what goes around it",
-      "subtitle": "Local SEO is the core offer: one monthly plan that brings local customers from Google and AI. Website Development, AI Voice Receptionist and Software Development are optional, at {discount}% off alongside it.",
+      "subtitle": "Local SEO is the core offer: one monthly plan that brings local customers from Google and AI. Website Development, AI Voice Receptionist and Software Development are optional.",
       "cta": "Browse the services"
     },
+    "quoted": "Tailored to your business and quoted after a free first call.",
     "websiteDevelopment": {
       "name": "Website Development",
       "meta": {
@@ -334,7 +239,6 @@
         "eyebrow": "Website Development",
         "title": "Websites Built to Convert",
         "subtitle": "Custom, high speed websites tailored to convert visitors into clients. SEO optimized and mobile responsive.",
-        "price": "{price} {tax}, one time. {bundlePrice} alongside Local SEO ({discount}% off). Optional hosting: {monthly}/mo.",
         "cta": "Book a Free 15 Minute Consultation"
       },
       "benefits": {
@@ -441,7 +345,6 @@
         "eyebrow": "AI Voice Receptionist",
         "title": "Never Miss a Call Again",
         "subtitle": "Natural language processing agents that handle calls just like a human. Schedule appointments and answer FAQs, 24/7.",
-        "price": "{price}/mo {tax}, no setup fee. {bundlePrice}/mo alongside Local SEO ({discount}% off).",
         "cta": "Book Consultation"
       },
       "benefits": {
@@ -546,7 +449,6 @@
         "eyebrow": "Digital Business Card",
         "title": "Networking, Modernized",
         "subtitle": "NFC technology cards for instant contact sharing. Make a lasting professional impression with a tap.",
-        "price": "{price} per card (+ {monthly}/mo optional maintenance), with volume discounts. The first one is free, maintenance included, with Website Development.",
         "cta": "Get Started"
       },
       "benefits": {
@@ -651,7 +553,6 @@
         "eyebrow": "Local SEO",
         "title": "Get Found Before Your Competitors",
         "subtitle": "One monthly plan with all the work it takes to gain visibility in local Google searches and in the answers AI engines give.",
-        "price": "{price}/mo {tax}. All four pillars included, {upfront}% paid up front.",
         "cta": "Book a call"
       },
       "benefits": {
@@ -660,10 +561,6 @@
           {
             "title": "You buy a result, not a task list",
             "description": "Content, links, authority and reviews are parts of the same goal. Worked separately, by different providers, none of them is enough. In one plan, each one pushes the others."
-          },
-          {
-            "title": "More affordable than buying it in pieces",
-            "description": "The two pillars we used to sell on their own cost more together than the whole plan does now, and the plan includes the other two. The numbers are further down this page."
           },
           {
             "title": "You know what was done every month",
@@ -777,7 +674,6 @@
         "eyebrow": "Software Development",
         "title": "Custom Software, Built to Scale",
         "subtitle": "Full stack products with a Flutter frontend and a robust backend, built to run across every device and screen size.",
-        "price": "From {price} {tax}. From {bundlePrice} alongside Local SEO ({discount}% off).",
         "cta": "Book a Free 15 Minute Consultation"
       },
       "benefits": {
@@ -823,8 +719,7 @@
             "items": [
               "Full source code ownership on delivery",
               "Complete technical documentation",
-              "Infrastructure and deployment handover",
-              "Quoted per project, from a published starting price"
+              "Infrastructure and deployment handover"
             ]
           }
         ]
@@ -863,7 +758,7 @@
           },
           {
             "question": "How is a custom software project priced?",
-            "answer": "Every project is scoped individually based on features and complexity. The published figure is a starting price: the final quote follows an initial consultation, not a fixed package."
+            "answer": "Every project is scoped individually based on features and complexity. The quote follows a free first call, not a fixed package."
           },
           {
             "question": "Do I own the source code once the project is finished?",
@@ -895,56 +790,6 @@
       "updated": "Updated",
       "readTime": "{min} min read"
     }
-  },
-  "offer": {
-    "from": "Starting price: the final quote depends on the functional requirements.",
-    "bundleDiscount": "{discount}% off the list price when taken alongside {name}.",
-    "upfront": "{upfront}% is paid up front.",
-    "beforeTax": "The price does not include VAT.",
-    "catalogName": "Lorenzoz Agency services",
-    "optionalCharge": "Optional recurring charge"
-  },
-  "tax": {
-    "suffix": "+ VAT"
-  },
-  "numbers": {
-    "badge": "The numbers",
-    "title": "What it costs, and what it costs not to",
-    "subtitle": "Two simple sums: what this work would cost bought piece by piece, and what every customer who does not arrive costs a business.",
-    "perMonth": "/ month",
-    "separate": {
-      "title": "Bought separately",
-      "items": [
-        "Local SEO",
-        "Review management",
-        "Authority content",
-        "Backlinks and citations"
-      ],
-      "unpriced": "extra",
-      "totalLabel": "Just two of the four",
-      "note": "List prices at which we offered these two services on their own. Content and backlinks were quoted separately."
-    },
-    "plan": {
-      "title": "In a single plan",
-      "includedLabel": "All four pillars included",
-      "saving": "{saving}% less than two of the pillars bought separately, with the other two already included."
-    },
-    "missed": {
-      "title": "What a customer who never arrives costs",
-      "description": "The plan costs {annual} {tax} a year. Compare it with what your business stops earning for every customer who picks a competitor.",
-      "columns": {
-        "value": "If a new customer brings in, per year",
-        "cover": "The plan is paid for by",
-        "missed": "One customer fewer a month costs you, per year"
-      },
-      "coverClients": "{count} customers a month",
-      "coverOne": "1 customer a month",
-      "coverMonths": "1 customer every {months} months",
-      "footnote": "Illustrative example with assumed customer values: run the sum with your own. It is not a forecast of results."
-    }
-  },
-  "payment": {
-    "cta": "Pay Securely Online"
   },
   "articles": {
     "eyebrow": "FROM LINKEDIN",
@@ -996,7 +841,7 @@
         },
         {
           "label": "Pricing",
-          "href": "#pricing"
+          "href": "#process"
         },
         {
           "label": "Contact",
@@ -1071,10 +916,6 @@
         },
         "pricing": {
           "intro": "If you wish to purchase any product or service made available through the Service, you may be asked to supply certain information relevant to your Purchase.",
-          "discount": {
-            "title": "Discount on optional services",
-            "description": "Website Development, AI Voice Receptionist and Software Development are {discount}% off their list price when taken alongside Local SEO. Bought on their own they are charged at list price. There is no free trial."
-          },
           "tax": {
             "title": "Prices exclude VAT",
             "description": "No published price includes VAT. VAT is added on the invoice where it applies, at the rate that applies to each customer (21% for customers in Spain)."

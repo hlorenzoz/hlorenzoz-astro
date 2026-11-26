@@ -110,10 +110,8 @@ describe('page copy comes from the locale messages, never from the template', ()
         const nodes = jsonLdNodes(document);
         const org = nodes.find((n) => n['@type'] === 'ProfessionalService' && n.description);
         expect(org?.description).toBe(es.home.meta.organizationDescription);
-        const catalog = nodes.flatMap((n) => (n.hasOfferCatalog ? [n.hasOfferCatalog as Record<string, unknown>] : []))[0];
-        expect(catalog?.name).toBe(es.offer.catalogName);
-        const html = document.documentElement.outerHTML;
-        expect(html).not.toContain('Optional recurring charge');
-        expect(html).toContain(es.offer.optionalCharge);
+        const list = JSON.stringify(nodes.find((n) => n['@type'] === 'ItemList'));
+        expect(list).toContain(es.services.localSeo.name);
+        expect(list).not.toContain('"Local SEO"');
     });
 });

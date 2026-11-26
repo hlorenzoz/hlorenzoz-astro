@@ -45,12 +45,9 @@
             "titleGradient": "via Google en AI",
             "description": "Wij verkopen geen losse diensten. Wij werken naar één resultaat toe: wie zoekt wat jouw bedrijf aanbiedt, vindt jou als eerste.",
             "cta": "Plan een gesprek",
-            "secondaryCta": "Bekijk het plan en de prijzen"
+            "secondaryCta": "Bekijk hoe we werken"
         },
         "stats": {
-            "plan": {
-                "label": "Eén plan, alles inbegrepen"
-            },
             "pillars": {
                 "label": "Pijlers van ons werk"
             },
@@ -195,92 +192,7 @@
             ]
         },
         "pricing": {
-            "badge": "Eén plan, alles inbegrepen",
-            "title": "Eenvoudige, transparante prijzen",
-            "description": "Eén maandelijks plan met alle vier de pijlers. Aanvullende diensten krijgen {discount}% korting als je ze samen met Lokale SEO afneemt.",
-            "vat": "Alle prijzen zijn exclusief btw. Btw wordt in rekening gebracht waar die van toepassing is, tegen het tarief dat voor elke klant geldt (21% voor klanten in Spanje).",
-            "paymentTerms": "Bij ondertekening betaal je {upfront}% vooraf (de eerste maand). Daarmee dekken we de kosten van de tools en diensten die het werk mogelijk maken.",
-            "perMonth": "/ mnd",
-            "oneOff": "eenmalige betaling",
-            "from": "vanaf",
-            "learnMore": "Meer informatie",
-            "listLabel": "Standaardprijs",
-            "bundleLabel": "Met Lokale SEO",
-            "core": {
-                "popular": "Ons kernaanbod",
-                "title": "Lokale SEO",
-                "subtitle": "Alle vier de pijlers inbegrepen",
-                "goal": "Doel: de eerste positie op Google voor zoekopdrachten in je regio",
-                "cta": "Plan een gesprek",
-                "groups": [
-                    {
-                        "label": "Autoriteitscontent",
-                        "items": [
-                            "Zoekwoordonderzoek",
-                            "Contentclusters",
-                            "Analyse van ontbrekende content"
-                        ]
-                    },
-                    {
-                        "label": "Backlinks en vermeldingen",
-                        "items": [
-                            "Links uit betrouwbare bedrijvengidsen",
-                            "Vermeldingen op relevante websites",
-                            "Sterkere lokale autoriteitssignalen"
-                        ]
-                    },
-                    {
-                        "label": "Autoriteit in Google en AI",
-                        "items": [
-                            "Geoptimaliseerd Google Business Profile",
-                            "Lokale onpage SEO voor je website",
-                            "Gestructureerde gegevens voor lokale bedrijven"
-                        ]
-                    },
-                    {
-                        "label": "Reviewbeheer",
-                        "items": [
-                            "Groei van je reviews door de tijd gevolgd",
-                            "Trends in positieve en negatieve feedback",
-                            "Reacties van klanten gemonitord"
-                        ]
-                    }
-                ]
-            },
-            "addOnsTitle": "Aanvullende diensten",
-            "addOnsSubtitle": "{discount}% korting op de standaardprijs als je ze samen met Lokale SEO afneemt.",
-            "addOns": {
-                "websiteDevelopment": {
-                    "title": "Websiteontwikkeling",
-                    "subtitle": "Websites die bezoekers omzetten in klanten",
-                    "features": [
-                        "Landingspagina of complete website met meerdere pagina's",
-                        "Ontworpen voor mobiel, met sterke Core Web Vitals vanaf dag één",
-                        "Open Graph en gestructureerde gegevens vanaf de lancering"
-                    ],
-                    "cta": "Aan de slag"
-                },
-                "aiVoiceReceptionist": {
-                    "title": "Telefoonreceptionist met AI",
-                    "subtitle": "Geen enkel telefoontje blijft onbeantwoord",
-                    "features": [
-                        "Afspraken direct in je agenda ingepland",
-                        "Stem en belscript afgestemd op je merk",
-                        "Geoptimaliseerd voor Engels en Spaans"
-                    ],
-                    "cta": "Aan de slag"
-                },
-                "softwareDevelopment": {
-                    "title": "Softwareontwikkeling",
-                    "subtitle": "Op maat, gebouwd om mee te groeien",
-                    "features": [
-                        "Eén codebase voor iOS, Android, web en desktop",
-                        "Geautomatiseerde tests en een pipeline voor CI/CD",
-                        "Volledig eigendom van de broncode bij oplevering"
-                    ],
-                    "cta": "Offerte aanvragen"
-                }
-            }
+            "title": "Eenvoudige, transparante prijzen"
         },
         "contact": {
             "badge": "Contact",
@@ -295,10 +207,6 @@
                     "answer": "Nee, en wees op je hoede voor wie dat wel doet: niemand heeft de rangschikking van Google in de hand. De eerste positie is het doel waar we elke maand naartoe werken, en een rapport in gewone taal laat je zien wat er is gedaan en hoe je zichtbaarheid zich ontwikkelt."
                 },
                 {
-                    "question": "Wat zit er precies in het plan?",
-                    "answer": "Alle vier de pijlers voor {price} per maand {tax}: autoriteitscontent, backlinks en vermeldingen, autoriteit in Google en AI, en reviewbeheer. Er wordt niets apart gefactureerd."
-                },
-                {
                     "question": "Hoe lang duurt het voordat ik resultaat zie in de lokale zoekresultaten?",
                     "answer": "De meeste klanten zien binnen 30 tot 60 dagen duidelijke beweging in de lokale kaartresultaten van Google, al kan het in concurrerende markten langer duren."
                 },
@@ -308,11 +216,7 @@
                 },
                 {
                     "question": "Heb ik al een website of een bedrijfsprofiel op Google nodig?",
-                    "answer": "Nee. Heb je nog geen Google Business Profile, dan maken we het aan en verifiëren we het op jouw naam. Een website kun je als aanvullende dienst toevoegen met {discount}% korting."
-                },
-                {
-                    "question": "Hoe werkt de korting op aanvullende diensten?",
-                    "answer": "Websiteontwikkeling, Telefoonreceptionist met AI en Softwareontwikkeling krijgen {discount}% korting op de standaardprijs als je ze samen met Lokale SEO afneemt. Los afgenomen betaal je de standaardprijs."
+                    "answer": "Nee. Heb je nog geen Google Business Profile, dan maken we het aan en verifiëren we het op jouw naam. Een website kun je als aanvullende dienst toevoegen."
                 }
             ]
         }
@@ -321,9 +225,10 @@
         "hub": {
             "eyebrow": "Wat we doen",
             "title": "Eén plan, en wat eromheen hoort",
-            "subtitle": "Lokale SEO is ons kernaanbod: één maandelijks plan dat klanten uit je regio oplevert via Google en AI. Websiteontwikkeling, Telefoonreceptionist met AI en Softwareontwikkeling zijn optioneel, met {discount}% korting als je ze samen met Lokale SEO afneemt.",
+            "subtitle": "Lokale SEO is ons kernaanbod: één maandelijks plan dat klanten uit je regio oplevert via Google en AI. Websiteontwikkeling, Telefoonreceptionist met AI en Softwareontwikkeling zijn optioneel.",
             "cta": "Bekijk de diensten"
         },
+        "quoted": "Op maat van je bedrijf, met een offerte na een gratis eerste gesprek.",
         "websiteDevelopment": {
             "name": "Websiteontwikkeling",
             "meta": {
@@ -334,7 +239,6 @@
                 "eyebrow": "Websiteontwikkeling",
                 "title": "Websites die bezoekers omzetten in klanten",
                 "subtitle": "Snelle websites op maat die bezoekers omzetten in klanten. Geoptimaliseerd voor SEO en voor mobiel.",
-                "price": "{price} {tax}, eenmalig. {bundlePrice} samen met Lokale SEO ({discount}% korting). Hosting en onderhoud optioneel: {monthly} per maand.",
                 "cta": "Plan een gratis kennismaking van 15 minuten"
             },
             "benefits": {
@@ -441,7 +345,6 @@
                 "eyebrow": "Telefoonreceptionist met AI",
                 "title": "Nooit meer een gemist telefoontje",
                 "subtitle": "Spraakassistenten die natuurlijke taal begrijpen en gesprekken voeren zoals een mens. Ze plannen afspraken in en beantwoorden veelgestelde vragen, 24/7.",
-                "price": "{price} per maand {tax}, zonder opstartkosten. {bundlePrice} per maand samen met Lokale SEO ({discount}% korting).",
                 "cta": "Consult boeken"
             },
             "benefits": {
@@ -546,7 +449,6 @@
                 "eyebrow": "Lokale SEO",
                 "title": "Eerder gevonden dan je concurrent",
                 "subtitle": "Eén maandelijks plan met al het werk dat nodig is om zichtbaar te worden in lokale zoekresultaten op Google en in de antwoorden van AI.",
-                "price": "{price} per maand {tax}. Alle vier de pijlers inbegrepen, {upfront}% vooraf te betalen.",
                 "cta": "Plan een gesprek"
             },
             "benefits": {
@@ -555,10 +457,6 @@
                     {
                         "title": "Je koopt een resultaat, geen takenlijst",
                         "description": "Content, links, autoriteit en reviews dienen hetzelfde doel. Los van elkaar, bij verschillende leveranciers, is geen van allen genoeg. In één plan versterken ze elkaar."
-                    },
-                    {
-                        "title": "Voordeliger dan in losse onderdelen",
-                        "description": "De twee pijlers die we vroeger los verkochten, kostten samen meer dan het hele plan nu, en in het plan zitten ook de andere twee. De bedragen staan verderop op deze pagina."
                     },
                     {
                         "title": "Je weet elke maand wat er is gedaan",
@@ -672,7 +570,6 @@
                 "eyebrow": "Softwareontwikkeling",
                 "title": "Software op maat, klaar om te groeien",
                 "subtitle": "Complete fullstack producten met een Flutter frontend en een robuuste backend, gebouwd voor elk apparaat en elk schermformaat.",
-                "price": "Vanaf {price} {tax}. Vanaf {bundlePrice} samen met Lokale SEO ({discount}% korting).",
                 "cta": "Plan een gratis kennismaking van 15 minuten"
             },
             "benefits": {
@@ -718,8 +615,7 @@
                         "items": [
                             "Volledig eigendom van de broncode bij oplevering",
                             "Complete technische documentatie",
-                            "Overdracht van infrastructuur en deployment",
-                            "Offerte per project, vanaf een gepubliceerde startprijs"
+                            "Overdracht van infrastructuur en deployment"
                         ]
                     }
                 ]
@@ -758,7 +654,7 @@
                     },
                     {
                         "question": "Hoe wordt de prijs van een softwareproject op maat bepaald?",
-                        "answer": "Elk project wordt apart afgebakend op basis van functies en complexiteit. Het gepubliceerde bedrag is een startprijs: de definitieve offerte volgt na een eerste kennismaking, het is geen vast pakket."
+                        "answer": "Elk project wordt apart afgebakend op basis van functies en complexiteit. De offerte volgt na een gratis eerste gesprek, het is geen vast pakket."
                     },
                     {
                         "question": "Is de broncode van mij als het project klaar is?",
@@ -767,56 +663,6 @@
                 ]
             }
         }
-    },
-    "offer": {
-        "from": "Vanafprijs: de uiteindelijke offerte hangt af van de functionele eisen.",
-        "bundleDiscount": "{discount}% korting op de standaardprijs als je het samen met {name} afneemt.",
-        "upfront": "{upfront}% betaal je vooraf.",
-        "beforeTax": "De prijs is exclusief btw.",
-        "catalogName": "Diensten van Lorenzoz Agency",
-        "optionalCharge": "Optionele terugkerende kosten"
-    },
-    "tax": {
-        "suffix": "excl. btw"
-    },
-    "numbers": {
-        "badge": "De cijfers",
-        "title": "Wat het kost, en wat het kost als je niets doet",
-        "subtitle": "Twee eenvoudige sommen: wat dit werk zou kosten als je het los inkoopt, en wat elke klant die niet komt een bedrijf kost.",
-        "perMonth": "/ maand",
-        "separate": {
-            "title": "Los ingekocht",
-            "items": [
-                "Lokale SEO",
-                "Reviewbeheer",
-                "Autoriteitscontent",
-                "Backlinks en vermeldingen"
-            ],
-            "unpriced": "extra",
-            "totalLabel": "Slechts twee van de vier",
-            "note": "Standaardprijzen waarvoor we deze twee diensten los aanboden. Content en backlinks werden apart geoffreerd."
-        },
-        "plan": {
-            "title": "In één plan",
-            "includedLabel": "Alle vier de pijlers inbegrepen",
-            "saving": "{saving}% minder dan twee van de pijlers los ingekocht, terwijl de andere twee al zijn inbegrepen."
-        },
-        "missed": {
-            "title": "Wat een klant kost die nooit komt",
-            "description": "Het plan kost {annual} {tax} per jaar. Zet dat af tegen wat je bedrijf misloopt voor elke klant die voor een concurrent kiest.",
-            "columns": {
-                "value": "Als een nieuwe klant per jaar oplevert",
-                "cover": "Het plan is terugverdiend met",
-                "missed": "Eén klant minder per maand kost je per jaar"
-            },
-            "coverClients": "{count} klanten per maand",
-            "coverOne": "1 klant per maand",
-            "coverMonths": "1 klant om de {months} maanden",
-            "footnote": "Illustratief voorbeeld met aangenomen klantwaarden: maak de som met je eigen cijfers. Dit is geen voorspelling van resultaten."
-        }
-    },
-    "payment": {
-        "cta": "Veilig online betalen"
     },
     "articles": {
         "eyebrow": "VAN LINKEDIN",
@@ -868,7 +714,7 @@
                 },
                 {
                     "label": "Prijzen",
-                    "href": "#pricing"
+                    "href": "#process"
                 },
                 {
                     "label": "Contact",
@@ -989,10 +835,6 @@
                 },
                 "pricing": {
                     "intro": "Als je een product of dienst wilt aanschaffen dat via de Dienst beschikbaar wordt gesteld, kan je worden gevraagd bepaalde informatie te verstrekken die relevant is voor je aankoop.",
-                    "discount": {
-                        "title": "Korting op optionele diensten",
-                        "description": "Websiteontwikkeling, Telefoonreceptionist met AI en Softwareontwikkeling krijgen {discount}% korting op hun catalogusprijs wanneer je ze samen met Lokale SEO afneemt. Los afgenomen worden ze tegen catalogusprijs in rekening gebracht. Er is geen gratis proefperiode."
-                    },
                     "tax": {
                         "title": "Prijzen exclusief btw",
                         "description": "Geen enkele gepubliceerde prijs is inclusief btw. Btw wordt op de factuur toegevoegd waar die van toepassing is, tegen het tarief dat voor elke klant geldt (21% voor klanten in Spanje)."

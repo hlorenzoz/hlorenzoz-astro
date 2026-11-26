@@ -42,10 +42,6 @@ describe('HomePage Sections', () => {
         });
     });
 
-    it('renders the Pricing section', () => {
-        expect(screen.getByText(home.pricing.title)).toBeInTheDocument();
-    });
-
     it('renders the problem title markup: the struck word and the line break', () => {
         const title = $('#problem h2')!;
         expect(title.querySelector('span.relative.inline-block > span.bg-red-600')).not.toBeNull();
@@ -85,75 +81,20 @@ describe('HomePage Sections', () => {
         });
     });
 
-    const OFFER_SLUGS = ['local-seo', 'website-development', 'ai-voice-receptionist', 'software-development'];
-
-    it('prices one core plan and three optional services, each with a learn-more link', () => {
-        const learnMoreLinks = $$('#pricing [data-testid="pricing-learn-more"]');
-        expect(learnMoreLinks).toHaveLength(4);
-        // Core offer first, then the optional services in presentation order.
-        OFFER_SLUGS.forEach((slug, i) => {
-            expect(learnMoreLinks[i]).toHaveAttribute('href', `/en/services/${slug}/`);
-        });
-        // Every card keeps its #contact conversion CTA.
-        expect($$('#pricing a[href="#contact"]')).toHaveLength(4);
-    });
-
-    /**
-     * Asserts the accessible NAME, not the mechanism that produces it.
-     *
-     * This used to require an `aria-label`, alongside an `sr-only` span
-     * carrying the same sentence. `aria-label` overrides descendant text when
-     * the accessible name is computed, so the span was dead weight for
-     * assistive tech while the two strings were free to drift apart. The span
-     * alone now carries the service name: it names the link for a screen
-     * reader AND lands in `textContent`, which is what Lighthouse's
-     * `link-text` audit reads.
-     */
-    it('gives each "Learn more" link a descriptive name, not a bare "Learn more"', () => {
-        const learnMoreLinks = $$('[data-testid="pricing-learn-more"]');
-        expect(learnMoreLinks).toHaveLength(4);
-
-        learnMoreLinks.forEach((link) => {
-            const name = (link.textContent ?? '').trim();
-            expect(name).not.toBe(home.pricing.learnMore);
-            expect(name.length).toBeGreaterThan(home.pricing.learnMore.length);
-            // One source for the name: no aria-label competing with the text.
-            expect(link).not.toHaveAttribute('aria-label');
-        });
-    });
-
-    /**
-     * Every published price is before tax, and the dossier marks each one. A
-     * figure on the home page without the marker would state a different total
-     * for the same offer.
-     */
-    it('marks every price as before tax', () => {
-        const marks = (selector: string) => $$(`${selector} [data-testid="tax-mark"]`);
-        // The plan's price in the stats band.
-        expect(marks('#stats')).toHaveLength(1);
-        // Two former list prices, their total and the plan.
-        expect(marks('#numbers')).toHaveLength(4);
-        // The core plan and the three optional services.
-        expect(marks('#pricing')).toHaveLength(4);
-    });
-
-    it('strikes the list price of each optional service and shows the bundled one', () => {
-        const list = Array.from($$('[data-testid="addon-list-price"]')).map((n) => n.textContent);
-        const bundle = Array.from($$('[data-testid="addon-bundle-price"]')).map((n) => n.textContent);
-        // Straight from PRICING: 2500 / 350 / 20000, and 30% off each.
-        expect(list).toEqual(['€2,500', '€350', '€20,000']);
-        expect(bundle).toEqual(['€1,750', '€245', '€14,000']);
-        // Only software is a floor.
-        expect($$('[data-testid="addon-from"]')).toHaveLength(1);
-    });
-
-    it('shows the plan at its published price', () => {
-        expect($('[data-testid="core-plan-price"]')).toHaveTextContent('€750');
-        expect($('[data-testid="stat-plan-price"]')).toHaveTextContent('€750');
-    });
-
     it('never advertises a free trial or a limited-time offer', () => {
         expect(document.body.textContent).not.toMatch(/trial|limited time/i);
+    });
+
+    it('publishes no price and no pricing section', () => {
+        expect($('#pricing')).toBeNull();
+        expect($('#numbers')).toBeNull();
+        expect(document.body.textContent).not.toMatch(/€\s?\d|\d\s?€/);
+    });
+
+    it('points the secondary hero link at the process section, which exists', () => {
+        const link = screen.getByRole('link', { name: home.hero.secondaryCta });
+        expect(link).toHaveAttribute('href', '#process');
+        expect($('#process')).not.toBeNull();
     });
 
     it('renders the CalBooking component in the contact section instead of an inline iframe', () => {
@@ -166,8 +107,8 @@ describe('HomePage Sections', () => {
     it('contains all required section IDs for navigation', () => {
         const requiredIds = [
             'home', 'stats', 'markets', 'standard', 'problem',
-            'solutions', 'numbers', 'portfolio', 'benefits', 'process',
-            'pricing', 'contact', 'faq',
+            'solutions', 'portfolio', 'benefits', 'process',
+            'contact', 'faq',
         ];
 
         requiredIds.forEach((id) => {
@@ -177,11 +118,10 @@ describe('HomePage Sections', () => {
 
     it('emits the page JSON-LD in the Next order, then the layout organization graph', () => {
         const blocks = Array.from($$('script[type="application/ld+json"]')).map((s) => JSON.parse(s.textContent!));
-        expect(blocks).toHaveLength(5);
+        expect(blocks).toHaveLength(4);
         expect(blocks[0]['@graph'][0]['@type']).toBe('WebPage');
         expect(blocks[1]['@type']).toBe('ItemList');
-        expect(blocks[2]['@id']).toBe('https://hlorenzoz.com/#organization');
-        expect(blocks[3]['@type']).toBe('FAQPage');
-        expect(blocks[4]['@graph'][0]['@id']).toBe('https://hlorenzoz.com/#organization');
+        expect(blocks[2]['@type']).toBe('FAQPage');
+        expect(blocks[3]['@graph'][0]['@id']).toBe('https://hlorenzoz.com/#organization');
     });
 });

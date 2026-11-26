@@ -3,9 +3,6 @@
     "title": "Lorenzoz Agency | Dossier de servicios",
     "docLabel": "Dossier de servicios"
   },
-  "tax": {
-    "suffix": "+ IVA"
-  },
   "cover": {
     "badge": "SEO Local para negocios locales",
     "title": "Más clientes locales",
@@ -103,59 +100,13 @@
         ]
       }
     ],
-    "price": {
-      "label": "SEO Local, todo incluido",
-      "period": "/ mes",
-      "note": "Los cuatro pilares en un solo plan mensual."
-    },
     "goalTitle": "Nuestro objetivo",
     "goal": "La primera posición en Google para las búsquedas de tu zona. Ningún proveedor puede garantizar un puesto concreto y no lo prometemos: nos comprometemos con el trabajo que lleva hasta ahí."
   },
-  "numbers": {
-    "eyebrow": "Las cuentas",
-    "title": "Lo que cuesta, y lo que cuesta no hacerlo",
-    "subtitle": "Dos cuentas sencillas: cuánto costaría contratar este trabajo por partes y cuánto le cuesta a un negocio cada cliente que no llega.",
-    "separate": {
-      "title": "Por separado",
-      "items": [
-        { "label": "SEO Local", "key": "localSeo" },
-        { "label": "Gestión de reseñas", "key": "reviewManagement" },
-        { "label": "Contenido de autoridad", "key": null },
-        { "label": "Backlinks y citaciones", "key": null }
-      ],
-      "perMonth": "/ mes",
-      "unpriced": "aparte",
-      "totalLabel": "Solo dos de los cuatro",
-      "note": "Precios de lista con los que ofrecíamos estos dos servicios por separado. El contenido y los backlinks se presupuestaban aparte."
-    },
-    "plan": {
-      "title": "En un solo plan",
-      "includedLabel": "Los cuatro pilares incluidos",
-      "saving": "{saving}% menos que dos de los pilares contratados por separado, con los otros dos ya incluidos."
-    },
-    "missed": {
-      "title": "Lo que cuesta un cliente que no llega",
-      "description": "El plan cuesta {annual} {tax} al año. Compáralo con lo que deja de ingresar tu negocio por cada cliente que elige a un competidor.",
-      "columns": {
-        "value": "Si un cliente nuevo te deja al año",
-        "cover": "El plan se paga con",
-        "missed": "Un cliente menos al mes te cuesta al año"
-      },
-      "coverClients": "{count} clientes al mes",
-      "coverOne": "1 cliente al mes",
-      "coverMonths": "1 cliente cada {months} meses",
-      "footnote": "Ejemplo ilustrativo con valores de cliente supuestos: haz la cuenta con el tuyo. No es una previsión de resultados."
-    }
-  },
   "addOns": {
-    "eyebrow": "{discount}% de descuento junto a SEO Local",
+    "eyebrow": "Presupuesto tras una primera llamada gratuita",
     "title": "Servicios opcionales",
-    "description": "Se suman al plan cuando tu negocio los necesita. Contratados junto a SEO Local tienen un {discount}% de descuento sobre el precio de lista.",
-    "listLabel": "Precio de lista",
-    "bundleLabel": "Con SEO Local",
-    "fromLabel": "desde",
-    "perMonth": "/ mes",
-    "oneOff": "pago único",
+    "description": "Se suman al plan cuando tu negocio los necesita.",
     "items": [
       {
         "key": "websiteDevelopment",
@@ -188,7 +139,7 @@
         ]
       }
     ],
-    "footnote": "El precio de Desarrollo de Software y Apps es un punto de partida: el presupuesto final depende de los requerimientos funcionales. Ningún precio incluye IVA."
+    "footnote": "Cada servicio se presupuesta tras una primera llamada gratuita. Ningún presupuesto incluye IVA."
   },
   "process": {
     "eyebrow": "Cómo trabajamos",
@@ -220,12 +171,8 @@
         "description": "Al contratar se abona el {upfront}% por adelantado (el primer mes). Cubre los gastos de las herramientas y servicios que hacen posible el trabajo."
       },
       {
-        "title": "{discount}% en opcionales",
-        "description": "El descuento se aplica sobre el precio de lista de cada servicio opcional contratado junto a SEO Local."
-      },
-      {
-        "title": "Precios sin IVA",
-        "description": "Los importes de este dossier no incluyen impuestos. Los residentes en la UE están sujetos a +21% de IVA."
+        "title": "Presupuestos sin IVA",
+        "description": "Los presupuestos no incluyen impuestos. Los residentes en la UE están sujetos a +21% de IVA."
       },
       {
         "title": "Un objetivo, no una garantía",

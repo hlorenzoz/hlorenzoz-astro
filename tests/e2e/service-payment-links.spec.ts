@@ -1,41 +1,23 @@
 import { test, expect } from '@playwright/test';
 
 /**
- * The payment CTA on a service page, when there is one.
- *
- * A page shows "Pay Securely Online" only while `lib/payment-links.json` holds
- * a link that charges the price currently published (see `paymentLinkUrl`).
- * After a price change and before the Stripe sync is rerun, the button is
- * hidden on purpose, so this suite cannot assume it is there. What it asserts
- * is the invariant: a payment CTA, if shown, is a real Stripe Payment Link, and
- * there is never more than one.
- *
- * Deliberately never clicks it. That would leave Cloudflare's static preview
- * and reach Stripe, which this suite must not do.
+ * Service pages publish no price and take no payment: every solution is quoted
+ * after a free first call, so the deliverables panel states that and offers the
+ * booking CTA only.
  */
 const SERVICE_SLUGS = ['local-seo', 'website-development', 'ai-voice-receptionist', 'software-development'];
 
-test.describe('Service page payment CTAs', () => {
+test.describe('Service pages are quoted, not priced', () => {
     for (const slug of SERVICE_SLUGS) {
-        test(`${slug}: any payment CTA shown is a Stripe Payment Link`, async ({ page }) => {
+        test(`${slug}: states the quote, shows no price and no payment CTA`, async ({ page }) => {
             await page.goto(`/en/services/${slug}/`, { waitUntil: 'domcontentloaded' });
 
-            const paymentLinks = page.getByRole('link', { name: 'Pay Securely Online' });
-            const count = await paymentLinks.count();
-            expect(count).toBeLessThanOrEqual(1);
-
-            if (count === 1) {
-                await expect(paymentLinks).toHaveAttribute('href', /^https:\/\/buy\.stripe\.com\//);
-                await expect(paymentLinks).toHaveAttribute('target', '_blank');
-            }
+            await expect(page.getByText('Tailored to your business and quoted after a free first call.')).toBeVisible();
+            await expect(page.getByRole('link', { name: 'Pay Securely Online' })).toHaveCount(0);
+            await expect(page.locator('a[href^="https://buy.stripe.com/"]')).toHaveCount(0);
+            expect(await page.locator('#main-content').innerText()).not.toMatch(/€\s?\d|\d\s?€/);
         });
     }
-
-    test('software-development: never has a payment CTA (its price is a floor)', async ({ page }) => {
-        await page.goto('/en/services/software-development/', { waitUntil: 'domcontentloaded' });
-
-        await expect(page.getByRole('link', { name: 'Pay Securely Online' })).toHaveCount(0);
-    });
 
     for (const slug of ['reputation-review-management', 'digital-business-card']) {
         test(`${slug}: the page no longer exists`, async ({ page }) => {

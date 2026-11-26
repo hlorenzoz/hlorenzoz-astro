@@ -13,7 +13,6 @@
     "start": "astro preview --port 45723",
     "cf-typegen": "wrangler types --env-interface CloudflareEnv cloudflare-env.d.ts",
     "images:sync": "node scripts/convert-and-map.mjs",
-    "stripe:sync-payment-links": "node scripts/create-payment-links.mjs",
     "lint": "eslint .",
     "lint:fix": "bun eslint . --fix",
     "type-check": "astro check",

@@ -15,12 +15,6 @@ import {
     absoluteUrl,
     localeInfo,
 } from '@/lib/site-config';
-import {
-    CURRENCY,
-    schemaAmount,
-    type PriceComponent,
-    type ServiceOffer,
-} from '@/lib/pricing';
 import { schemaDateTime } from '@/lib/schema/datetime';
 
 /**
@@ -58,123 +52,9 @@ export interface SchemaPageRef {
 }
 
 /**
- * One entry in the catalogue: a named service plus the offer that prices it.
- */
-export interface CatalogEntry {
-    name: string;
-    description?: string;
-    offer: ServiceOffer;
-    /**
-     * Localized sentences about the offer's terms, from `lib/offer-notes.ts`.
-     *
-     * Passed in rather than generated here. These builders are free of i18n, and
-     * when this file assembled the wording itself it did so in hardcoded
-     * English: the Spanish pages published "Includes 1 Tarjeta Digital" on a
-     * node declaring `inLanguage: es`.
-     */
-    notes?: string[];
-    /** Localized description for an optional add-on charge, such as hosting. */
-    optionalCharge?: string;
-}
-
-/**
- * Turns a `PriceComponent` into the right schema.org shape.
- *
- * Three distinctions matter, and each was a published error at some point:
- *
- * - A recurring charge is a `UnitPriceSpecification` measured per month
- *   (UN/CEFACT unitCode "MON"); a one-off is a plain `PriceSpecification`. This
- *   used to be decided by which FIELD a number arrived in, with `price` assumed
- *   one-time. A monthly-only service would have been published as a single
- *   charge.
- * - A floor is `minPrice`, never `price`. "From 20000" emitted as `price` states
- *   that every project costs 20000.
- * - Every figure is before tax, so `valueAddedTaxIncluded` is `false` on all of
- *   them. Omitting it leaves a consumer to assume the number is what is paid.
- */
-function priceSpec(component: PriceComponent, optionalCharge?: string): JsonLdObject {
-    const amount = schemaAmount(component.amount);
-    const figure = component.from ? { minPrice: amount } : { price: amount };
-
-    if (component.recurrence === 'month') {
-        return {
-            '@type': 'UnitPriceSpecification',
-            priceCurrency: CURRENCY,
-            ...figure,
-            valueAddedTaxIncluded: false,
-            referenceQuantity: {
-                '@type': 'QuantitativeValue',
-                value: 1,
-                unitCode: 'MON',
-                unitText: 'MONTH',
-            },
-            ...(component.optional && optionalCharge ? { description: optionalCharge } : {}),
-        };
-    }
-
-    return {
-        '@type': 'PriceSpecification',
-        priceCurrency: CURRENCY,
-        ...figure,
-        valueAddedTaxIncluded: false,
-        ...(component.optional ? { description: 'Optional charge' } : {}),
-    };
-}
-
-/**
- * The `Offer` node for one catalogue entry: the base price, any optional
- * add-on charges, and the localized notes on its terms.
- */
-export function serviceOffer(entry: CatalogEntry): JsonLdObject {
-    const { offer } = entry;
-
-    const specs: JsonLdObject[] = [priceSpec(offer.base), ...(offer.addOns ?? []).map((addOn) => priceSpec(addOn, entry.optionalCharge))];
-
-    const descriptions = [
-        ...(entry.description ? [entry.description] : []),
-        ...(entry.notes ?? []),
-    ];
-
-    const node: JsonLdObject = {
-        '@type': 'Offer',
-        itemOffered: {
-            '@type': 'Service',
-            name: entry.name,
-            ...(entry.description ? { description: entry.description } : {}),
-            provider: { '@id': SCHEMA_IDS.organization },
-        },
-    };
-
-    if (descriptions.length) node.description = descriptions.join(' ');
-    node.priceSpecification = specs.length === 1 ? specs[0] : specs;
-
-    return node;
-}
-
-/**
- * OfferCatalog for the live offers, attached to the organization via
- * `hasOfferCatalog`.
- *
- * It consumes `ServiceOffer` objects from `lib/pricing.ts` rather than the
- * display strings it used to parse with a regex. That parser was the reason a
- * Spanish "€1.000" normalized to the numeric string "1.000": the JSON-LD
- * advertised one euro for a thousand-euro service, and nothing caught it
- * because the visible page was correct.
- */
-export function offerCatalog(entries: CatalogEntry[], name: string): JsonLdObject {
-    return {
-        '@type': 'OfferCatalog',
-        name,
-        itemListElement: entries.map(serviceOffer),
-    };
-}
-
-/**
  * The global identity graph: ProfessionalService (a LocalBusiness subtype,
  * good for local rich results) + WebSite + Person, cross-linked by `@id`.
- * Rendered once in the root layout so every page carries it. The pricing
- * OfferCatalog is intentionally NOT attached here — it belongs to the home
- * page only (see `organizationOffers`) so it doesn't bloat every page.
+ * Rendered once in the root layout so every page carries it.
  */
 export function organizationGraph({ locale, description }: { locale: string; description: string }): JsonLdObject {
     const organization: JsonLdObject = {
@@ -191,7 +71,6 @@ export function organizationGraph({ locale, description }: { locale: string; des
         },
         email: ORGANIZATION.email,
         telephone: ORGANIZATION.telephone,
-        priceRange: ORGANIZATION.priceRange,
         hasMap: ORGANIZATION.hasMap,
         currenciesAccepted: ORGANIZATION.currenciesAccepted,
         paymentAccepted: ORGANIZATION.paymentAccepted,
@@ -248,20 +127,6 @@ export function organizationGraph({ locale, description }: { locale: string; des
                 sameAs: [...PERSON.sameAs],
             },
         ],
-    };
-}
-
-/**
- * Attaches the pricing OfferCatalog to the organization by `@id`. Emitted only
- * on the home page (where pricing lives) — Google merges this into the global
- * #organization node without repeating the catalog on every page.
- */
-export function organizationOffers(entries: CatalogEntry[], catalogName: string): JsonLdObject {
-    return {
-        '@context': CONTEXT,
-        '@type': 'ProfessionalService',
-        '@id': SCHEMA_IDS.organization,
-        hasOfferCatalog: offerCatalog(entries, catalogName),
     };
 }
 
@@ -458,8 +323,6 @@ export function servicePage({
     relatedPages,
     datePublished,
     dateModified,
-    offer,
-    offerNotes,
 }: {
     locale: string;
     name: string;
@@ -483,18 +346,6 @@ export function servicePage({
     image?: string;
     datePublished?: string;
     dateModified?: string;
-    /**
-     * The published price, when there is one.
-     *
-     * Every service page shows a price to the reader; until this existed none of
-     * them emitted one, so a crawler saw a page about a service whose cost was
-     * invisible to it. The home page's OfferCatalog covers only the three
-     * featured tiers, which left the rest priced on screen and unpriced in the
-     * graph.
-     */
-    offer?: ServiceOffer;
-    /** Localized sentences about the offer's terms, from `lib/offer-notes.ts`. */
-    offerNotes?: string[];
 }): JsonLdObject {
     // Both nodes describe the same URL, so the Service gets a stable fragment
     // `@id` and the WebPage points at it through `mainEntity`. Without that
@@ -516,18 +367,6 @@ export function servicePage({
     };
     if (areaServed?.length) {
         service.areaServed = areaServed.map((area) => ({ '@type': 'City', name: area }));
-    }
-    if (offer) {
-        // The Service already carries name/description, so the Offer's own
-        // itemOffered would restate them. `serviceOffer` builds the shape once;
-        // only the pricing half of it belongs here. Every live offer has a base
-        // price now, so there is always something to emit.
-        const { itemOffered: _itemOffered, ...pricing } = serviceOffer({
-            name,
-            offer,
-            notes: offerNotes,
-        });
-        service.offers = pricing;
     }
 
     const page: JsonLdObject = {

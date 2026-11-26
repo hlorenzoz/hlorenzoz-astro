@@ -1,11 +1,11 @@
 ---
 /**
- * Deliverables + pricing section for a service page.
+ * Deliverables + quote section for a service page.
  *
  * A DIFFERENT layout family from `BenefitsList` (asymmetric two-column grid)
  * and `ProcessTimeline` (vertical numbered `<ol>`): this renders the concrete
  * deliverables as labelled clusters of checklist items, each its own `<ul>`,
- * next to a sticky pricing panel. A flat `<ul>` of 10-13 items is explicitly
+ * next to a sticky quote panel. A flat `<ul>` of 10-13 items is explicitly
  * the wrong shape per `design-taste-frontend`; grouping into named clusters
  * keeps every deliverable scannable without one giant list.
  *
@@ -20,7 +20,6 @@
  * and `.glass-card`/`.btn-primary` rather than inventing a new palette.
  */
 import { Check } from '@lucide/astro';
-import PaymentLinkButton from './PaymentLinkButton.astro';
 
 export interface ServiceDeliverablesGroup {
     label: string;
@@ -29,13 +28,11 @@ export interface ServiceDeliverablesGroup {
 
 export interface Props {
     title: string;
-    price: string;
+    /** How the work is priced: tailored and quoted after a free first call. */
+    quote: string;
     ctaLabel: string;
     ctaHref: string;
     groups: ServiceDeliverablesGroup[];
-    /** Rendered as a second CTA in the pricing panel only when both are set. */
-    paymentHref?: string;
-    paymentLabel?: string;
 }
 
 /**
@@ -55,7 +52,7 @@ const GROUP_GRID_COLS: Record<number, string> = {
     4: 'sm:grid-cols-2',
 };
 
-const { title, price, ctaLabel, ctaHref, groups, paymentHref, paymentLabel } = Astro.props;
+const { title, quote, ctaLabel, ctaHref, groups } = Astro.props;
 const gridCols = GROUP_GRID_COLS[groups.length] ?? 'sm:grid-cols-2 lg:grid-cols-3';
 ---
 
@@ -85,9 +82,8 @@ const gridCols = GROUP_GRID_COLS[groups.length] ?? 'sm:grid-cols-2 lg:grid-cols-
             </div>
 
             <div class="glass-card rounded-2xl p-8 flex flex-col gap-6 lg:sticky lg:top-28">
-                <p class="text-3xl md:text-4xl font-bold text-black tracking-tight">{price}</p>
+                <p class="text-xl font-bold text-black tracking-tight leading-snug">{quote}</p>
                 <a href={ctaHref} class="btn-primary text-center">{ctaLabel}</a>
-                {paymentHref && paymentLabel && <PaymentLinkButton href={paymentHref} label={paymentLabel} />}
             </div>
         </div>
     </div>

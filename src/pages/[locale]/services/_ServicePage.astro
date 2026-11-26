@@ -1,9 +1,9 @@
 ---
 /**
  * The layout every service page shares: hero, benefits, deliverables with the
- * price, process, FAQ and the booking embed. Pages differ only through the
- * `after-hero` slot (AI Voice Receptionist's social proof) and the
- * `after-deliverables` slot (Local SEO's numbers table).
+ * quote panel, process, FAQ and the booking embed. Pages differ only through
+ * the `after-hero` slot (AI Voice Receptionist's social proof) and the
+ * `after-deliverables` slot.
  */
 import BaseLayout from '@/src/layouts/BaseLayout.astro';
 import Navbar from '@/src/components/Navbar.astro';
@@ -26,14 +26,11 @@ export interface Props {
     namespace: string;
     path: string;
     page: ContentPage;
-    /** The formatted `hero.price` line. */
-    price: string;
-    paymentHref?: string;
     /** The paused Digital Business Card page rendered no breadcrumb trail. */
     breadcrumbs?: boolean;
 }
 
-const { locale, namespace, path, page, price, paymentHref, breadcrumbs = true } = Astro.props;
+const { locale, namespace, path, page, breadcrumbs = true } = Astro.props;
 const t = getTranslations(locale, namespace);
 const tRoot = getTranslations(locale);
 
@@ -64,12 +61,10 @@ const bookingHref = `${localeHref(locale, path)}#booking`;
 
             <ServiceDeliverables
                 title={t('deliverables.title')}
-                price={price}
+                quote={tRoot('services.quoted')}
                 ctaLabel={t('hero.cta')}
                 ctaHref={bookingHref}
                 groups={t.raw('deliverables.groups')}
-                paymentHref={paymentHref}
-                paymentLabel={tRoot('payment.cta')}
             />
 
             <slot name="after-deliverables" />

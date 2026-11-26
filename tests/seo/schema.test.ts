@@ -2,8 +2,6 @@ import { describe, it, expect } from 'vitest';
 import { absoluteUrl, languageAlternates, LOCALES, metaDescription, SCHEMA_IDS } from '@/lib/site-config';
 import {
     organizationGraph,
-    organizationOffers,
-    offerCatalog,
     breadcrumb,
     faqPage,
     serviceList,
@@ -15,9 +13,7 @@ import {
     articlePage,
     newsArticle,
 } from '@/lib/schema';
-import type { CatalogEntry } from '@/lib/schema';
 import { assertSchemaInvariants, schemaDateTime } from '@/lib/schema/datetime';
-import type { ServiceOffer } from '@/lib/pricing';
 import { sitemap } from '@/src/pages/sitemap.xml';
 
 describe('absoluteUrl (canonical URL builder)', () => {
@@ -141,139 +137,11 @@ describe('JSON-LD builders', () => {
         expect(personUrl(en)).toBe('https://hlorenzoz.com/en/card/hector/');
     });
 
-    type Spec = Record<string, unknown>;
-    /** The priceSpecification of a one-entry catalogue, single or array as emitted. */
-    const specOf = (offer: ServiceOffer, extra: Partial<CatalogEntry> = {}) =>
-        (offerCatalog([{ name: 'X', offer, ...extra }], 'Catalog') as { itemListElement: Array<Record<string, unknown>> })
-            .itemListElement[0];
-
-    it('offerCatalog emits a one-time base as an exact EUR PriceSpecification', () => {
-        const spec = specOf({ role: 'addOn', base: { amount: 2500, recurrence: 'once' } }).priceSpecification as Spec;
-        expect(spec['@type']).toBe('PriceSpecification');
-        expect(spec.price).toBe('2500');
-        expect(spec.priceCurrency).toBe('EUR');
-        expect(spec.minPrice).toBeUndefined();
-    });
-
-    /**
-     * The case that forced this builder to stop treating `price` as a one-off.
-     *
-     * The voice receptionist is billed monthly with no setup fee. Under the old
-     * string parser its price string would have produced a single
-     * `PriceSpecification`, publishing a one-time charge for a subscription: a
-     * false price claim in the structured data, and the kind of mismatch
-     * between page and markup that Google treats as a trust problem rather than
-     * a typo.
-     */
-    it('offerCatalog emits a monthly base as a recurring UnitPriceSpecification only', () => {
-        const spec = specOf({ role: 'core', base: { amount: 750, recurrence: 'month' } }).priceSpecification as Spec;
-
-        expect(spec['@type']).toBe('UnitPriceSpecification');
-        expect(spec.price).toBe('750');
-        expect((spec.referenceQuantity as Spec).unitCode).toBe('MON');
-        // Emphatically NOT a one-time charge.
-        expect(Array.isArray(spec)).toBe(false);
-    });
-
-    /**
-     * "From 20000" is where quotes start. Emitted as `price`, the structured
-     * data would state that every project costs exactly 20000.
-     */
-    it('offerCatalog represents a floor as minPrice, not as an exact price', () => {
-        const spec = specOf({ role: 'addOn', base: { amount: 20000, recurrence: 'once', from: true } })
-            .priceSpecification as Spec;
-        expect(spec.minPrice).toBe('20000');
-        expect(spec.price).toBeUndefined();
-    });
-
-    /**
-     * Every published figure is before tax, and the copy marks each one. The
-     * structured data has to say the same, or a consumer assumes the number is
-     * what the client pays.
-     */
-    it('offerCatalog declares every price as excluding VAT', () => {
-        const node = specOf({
-            role: 'addOn',
-            base: { amount: 2500, recurrence: 'once' },
-            addOns: [{ amount: 49, recurrence: 'month', optional: true }],
-        });
-        const specs = node.priceSpecification as Spec[];
-        expect(specs).toHaveLength(2);
-        for (const spec of specs) expect(spec.valueAddedTaxIncluded).toBe(false);
-
-        const floor = specOf({ role: 'addOn', base: { amount: 20000, recurrence: 'once', from: true } })
-            .priceSpecification as Spec;
-        expect(floor.valueAddedTaxIncluded).toBe(false);
-    });
-
-    it('offerCatalog pairs a one-time base with an optional monthly add-on', () => {
-        const specs = specOf({
-            role: 'addOn',
-            base: { amount: 2500, recurrence: 'once' },
-            addOns: [{ amount: 49, recurrence: 'month', optional: true }],
-        }, { optionalCharge: 'Cargo recurrente opcional' }).priceSpecification as Spec[];
-        expect(Array.isArray(specs)).toBe(true);
-
-        const setup = specs.find((s) => s['@type'] === 'PriceSpecification');
-        const monthly = specs.find((s) => s['@type'] === 'UnitPriceSpecification');
-        expect(setup?.price).toBe('2500');
-        expect(monthly?.price).toBe('49');
-        expect(monthly?.priceCurrency).toBe('EUR');
-        expect((monthly?.referenceQuantity as Spec).unitCode).toBe('MON');
-        expect(monthly?.description).toBe('Cargo recurrente opcional');
-    });
-
-    it('offerCatalog does not flag a mandatory recurring charge as optional', () => {
-        const specs = specOf({
-            role: 'addOn',
-            base: { amount: 100, recurrence: 'once' },
-            addOns: [{ amount: 10, recurrence: 'month' }],
-        }).priceSpecification as Spec[];
-        const monthly = specs.find((s) => s['@type'] === 'UnitPriceSpecification');
-        expect(monthly?.description).toBeUndefined();
-    });
-
-    it('offerCatalog keeps priceSpecification a single object when there is no add-on', () => {
-        const node = specOf({ role: 'addOn', base: { amount: 100, recurrence: 'once' } });
-        expect(Array.isArray(node.priceSpecification)).toBe(false);
-    });
-
-    /**
-     * The free trial is gone. `billingStart` was how it reached the structured
-     * data, and a zero-priced `addOn` offer was how the bundled card did. Neither
-     * may come back through this builder.
-     */
-    it('offerCatalog emits no trial delay and no zero-priced bundled offers', () => {
-        const node = specOf({ role: 'core', base: { amount: 750, recurrence: 'month' } });
-        expect((node.priceSpecification as Spec).billingStart).toBeUndefined();
-        expect(node.addOn).toBeUndefined();
-    });
-
-    /**
-     * The wording arrives finished, from `lib/offer-notes.ts`. These builders
-     * assembled it themselves once, in hardcoded English, and the Spanish pages
-     * published "Includes 1 Tarjeta Digital" on a node declaring
-     * `inLanguage: es`.
-     */
-    it('offerCatalog appends the supplied notes to the offer description', () => {
-        const node = specOf(
-            { role: 'core', base: { amount: 750, recurrence: 'month' } },
-            { description: 'Rank in the local pack.', notes: ['El 50% se abona por adelantado.'] }
-        );
-        expect(node.description).toBe('Rank in the local pack. El 50% se abona por adelantado.');
-    });
-
-    it('offerCatalog invents no description when none is supplied', () => {
-        const node = specOf({ role: 'core', base: { amount: 750, recurrence: 'month' } });
-        expect(node.description).toBeUndefined();
-    });
-
-    it('organizationOffers attaches the OfferCatalog to the #organization node', () => {
-        const node = organizationOffers([
-            { name: 'X', offer: { role: 'addOn', base: { amount: 100, recurrence: 'once' } } },
-        ], 'Catalog') as Record<string, unknown>;
-        expect(node['@id']).toBe(SCHEMA_IDS.organization);
-        expect((node.hasOfferCatalog as Record<string, unknown>)['@type']).toBe('OfferCatalog');
+    it('organizationGraph publishes no price range', () => {
+        const graph = organizationGraph({ locale: 'en', description: 'An agency.' }) as { '@graph': Array<Record<string, unknown>> };
+        const org = graph['@graph'].find((n) => n['@type'] === 'ProfessionalService');
+        expect(org).not.toHaveProperty('priceRange');
+        expect(org).not.toHaveProperty('hasOfferCatalog');
     });
 
     it('breadcrumb numbers positions from 1', () => {
@@ -539,9 +407,6 @@ describe('no builder fabricates review signals', () => {
                 datePublished: '2026-07-01', dateModified: '2026-07-20',
             }),
             organizationGraph({ locale: 'en', description: 'An agency.' }),
-            organizationOffers([
-                { name: 'Tier', offer: { role: 'addOn', base: { amount: 2499, recurrence: 'once' } } },
-            ], 'Catalog'),
         ];
         for (const graph of graphs) {
             const serialized = JSON.stringify(graph);

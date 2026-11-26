@@ -10,25 +10,25 @@
 - Core offer: Local SEO, one monthly plan made of four pillars (authority content, backlinks and citations, authority on Google and AI, review management)
 - Optional services: website development, AI voice receptionist, software development
 - Tech stack: Astro, Tailwind CSS, Cloudflare (CDN, Workers, Pages), Vitest, Playwright, Lighthouse CI
-- Price range: €350 to €20,000+
-- Pricing terms: no price includes VAT; 50% is paid up front; optional services are 30% off their list price alongside Local SEO; there is no free trial
+- Pricing: no price is published; every solution is tailored to the business and quoted after a free first call
+- Terms: no quote includes VAT; 50% of the agreed quote is paid up front; there is no free trial
 - Payment accepted: Bank Transfer, Credit Card, Stripe
 - Languages: English and Spanish, with more languages being added page by page; every page is published in English and Spanish today, and the Spanish version of any /en/... URL is the same path under /es/...
 
 ## Docs
 
-- [Home](https://hlorenzoz.com/en/): The offer in one page. Local SEO as a single monthly plan with four pillars, what the same work cost bought separately, what a customer who never arrives costs, and the optional services with their list price and their price alongside Local SEO. It also shows the latest agency news.
+- [Home](https://hlorenzoz.com/en/): The offer in one page. Local SEO as a single monthly plan with four pillars, how the work runs month after month, and the optional services. It also shows the latest agency news.
 - [Portfolio](https://hlorenzoz.com/en/portfolio/): Case studies of live and demo projects, each documented with tech stack, performance scores, structured data, and multidevice testing evidence.
 - [News](https://hlorenzoz.com/en/news/): Agency announcements, such as new work added to the portfolio, each linking to its case study.
 - [Digital Business Card](https://hlorenzoz.com/en/card/hector/): Héctor's NFC enabled digital business card with contact details, "Add to Contacts", call booking, and location on Google Maps.
 
 ## Services
 
-- [Services Hub](https://hlorenzoz.com/en/services/): Directory of all 4 service offerings, each with pricing, process, and FAQ. Local SEO is the core offer; the other three are optional.
-- [Local SEO](https://hlorenzoz.com/en/services/local-seo/): The core offer. One monthly plan with four pillars, all included: authority content, backlinks and citations, authority on Google and AI, and review management. €750/mo plus VAT. The goal is the first position on Google for local searches; no ranking is guaranteed.
-- [Website Development](https://hlorenzoz.com/en/services/website-development/): Custom, high speed websites built to convert visitors into clients, SEO optimized and mobile responsive. €2,500 paid once plus VAT, or €1,750 alongside Local SEO, plus an optional €49/mo for hosting and maintenance.
-- [AI Voice Receptionist](https://hlorenzoz.com/en/services/ai-voice-receptionist/): AI voice agents that answer calls, schedule appointments, and handle FAQs 24/7. €350/mo plus VAT with no setup fee, or €245/mo alongside Local SEO.
-- [Software Development](https://hlorenzoz.com/en/services/software-development/): Full stack products with a Flutter frontend and a robust backend, built for every device. From €20,000 plus VAT, or from €14,000 alongside Local SEO; the final quote depends on the functional requirements.
+- [Services Hub](https://hlorenzoz.com/en/services/): Directory of all 4 service offerings, each with its deliverables, process, and FAQ. Local SEO is the core offer; the other three are optional.
+- [Local SEO](https://hlorenzoz.com/en/services/local-seo/): The core offer. One monthly plan with four pillars, all included: authority content, backlinks and citations, authority on Google and AI, and review management. Quoted after a free first call. The goal is the first position on Google for local searches; no ranking is guaranteed.
+- [Website Development](https://hlorenzoz.com/en/services/website-development/): Custom, high speed websites built to convert visitors into clients, SEO optimized and mobile responsive, with optional hosting and maintenance. Quoted after a free first call.
+- [AI Voice Receptionist](https://hlorenzoz.com/en/services/ai-voice-receptionist/): AI voice agents that answer calls, schedule appointments, and handle FAQs 24/7. Quoted after a free first call.
+- [Software Development](https://hlorenzoz.com/en/services/software-development/): Full stack products with a Flutter frontend and a robust backend, built for every device. Quoted after a free first call; the quote depends on the functional requirements.
 
 ## Portfolio Case Studies
 

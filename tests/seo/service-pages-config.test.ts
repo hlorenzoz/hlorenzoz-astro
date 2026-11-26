@@ -122,18 +122,10 @@ describe.each(SERVICES)('service page: services/$slug', ({ slug, mod }) => {
         expect(node(g, 'FAQPage')).toBeDefined();
     });
 
-    it('emits its price, before tax, on the Service node', () => {
-        // Every live offer has a figure now (software has a floor), so no
-        // service page may ship without one in its structured data.
+    it('emits no offers on the Service node', () => {
+        // Every solution is quoted after a free first call: no figure to publish.
         const g = mod.contentPages.en!.schema('en', T) as Graph;
-        const offer = node(g, 'Service')?.offers as { priceSpecification: unknown } | undefined;
-        expect(offer, `services/${slug} emits no offer`).toBeDefined();
-        const specs = [offer!.priceSpecification].flat() as Record<string, unknown>[];
-        expect(specs.length).toBeGreaterThan(0);
-        for (const spec of specs) {
-            expect(spec.valueAddedTaxIncluded).toBe(false);
-            expect(spec.price ?? spec.minPrice).toBeDefined();
-        }
+        expect(node(g, 'Service')?.offers, `services/${slug} emits an offer`).toBeUndefined();
     });
 
     it('keeps the schema WebPage url identical to the metadata canonical, per locale', () => {

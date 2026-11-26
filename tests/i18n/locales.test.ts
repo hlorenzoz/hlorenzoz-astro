@@ -11,7 +11,6 @@ import { describe, it, expect } from 'vitest';
 import { LOCALES, LOCALE_INFO, languageAlternates, ogLocale, absoluteUrl } from '@/lib/site-config';
 import { SHELL_KEYS, localesWithKeys, pageLocales } from '@/lib/i18n';
 import { ALL_ROUTES, routeAlternates, routeExists, routeHref, routeLocales } from '@/lib/routes';
-import { formatAmount } from '@/lib/pricing';
 import en from '@/messages/en.json';
 import es from '@/messages/es.json';
 
@@ -40,11 +39,6 @@ describe('locale table', () => {
         expect(LOCALES.map((l) => LOCALE_INFO[l].name)).toEqual([
             'English', 'Español', 'English (UK)', 'Galego', 'Português', 'Italiano', 'Français', 'Deutsch', 'Nederlands',
         ]);
-    });
-
-    it('keeps the en and es price formats unchanged', () => {
-        expect(formatAmount(2500, 'en')).toBe('€2,500');
-        expect(formatAmount(2500, 'es')).toBe('2.500 €');
     });
 });
 

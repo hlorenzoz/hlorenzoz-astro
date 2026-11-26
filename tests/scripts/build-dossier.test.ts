@@ -7,7 +7,7 @@ import {
     renderDossier,
 } from '../../scripts/build-dossier.mjs';
 import { ORGANIZATION, marketNames } from '@/lib/site-config';
-import { PRICING, bundledAmount, formatAmount, offersByRole } from '@/lib/pricing';
+import { SERVICE_KEYS } from '@/lib/pricing';
 import esContent from '../../dossier/content.es.json';
 import enContent from '../../dossier/content.en.json';
 
@@ -36,28 +36,19 @@ function shape(value: unknown, path = ''): string[] {
 }
 
 /**
- * The dossier used to carry its own copy of the price list. It reads
- * `lib/pricing.ts` now, the same source the site reads, and these tests are
- * written against that source rather than against literals: change a price
- * there and both the site and the dossier follow, with nothing here to edit.
+ * The agency publishes no price: every solution is quoted after a free first
+ * call. The dossier is handed to prospects, so it must not print one either.
  */
-describe('the dossier prints the prices the site publishes', () => {
-    it.each(['es', 'en'] as const)('shows the core plan at its published price (%s)', (locale) => {
-        expect(render(locale)).toContain(formatAmount(PRICING.localSeo.base.amount, locale));
-    });
-
-    it.each(['es', 'en'] as const)('shows the list and the bundled price of every optional service (%s)', (locale) => {
+describe('the dossier prints no price', () => {
+    it.each(['es', 'en'] as const)('shows no amount and no tax marker (%s)', (locale) => {
         const html = render(locale);
-        for (const key of offersByRole('addOn')) {
-            const { amount } = PRICING[key].base;
-            expect(html, `${key} list price`).toContain(formatAmount(amount, locale));
-            expect(html, `${key} bundled price`).toContain(formatAmount(bundledAmount(amount), locale));
-        }
+        expect(html).not.toMatch(/€\s?\d|\d\s?€|EUR\s?\d/);
+        expect(html).not.toContain('<span class="tax">');
     });
 
-    it('names exactly the live optional services, in the order the site lists them', () => {
+    it('names exactly the optional services, in the order the site lists them', () => {
         for (const content of [esContent, enContent]) {
-            expect(content.addOns.items.map((item) => item.key)).toEqual(offersByRole('addOn'));
+            expect(content.addOns.items.map((item) => item.key)).toEqual(SERVICE_KEYS.slice(1));
         }
     });
 });
@@ -88,8 +79,8 @@ describe('dossier content', () => {
 describe.each(['es', 'en'] as const)('renderDossier(%s)', (locale) => {
     const html = render(locale);
 
-    it('renders seven A4 pages', () => {
-        expect(html.match(/<section class="page[ "]/g)).toHaveLength(7);
+    it('renders six A4 pages', () => {
+        expect(html.match(/<section class="page[ "]/g)).toHaveLength(6);
     });
 
     it('leaves no placeholder unresolved', () => {
@@ -118,62 +109,6 @@ describe.each(['es', 'en'] as const)('renderDossier(%s)', (locale) => {
 
     it('declares the set language', () => {
         expect(html).toContain(`<html lang="${locale}">`);
-    });
-});
-
-describe('prices in the rendered dossier', () => {
-    it('shows list and bundled prices in Spanish form', () => {
-        const html = render('es');
-        for (const figure of ['750 €', '2.500 €', '1.750 €', '350 €', '245 €', '20.000 €', '14.000 €']) {
-            expect(html).toContain(figure);
-        }
-    });
-
-    it('shows list and bundled prices in English form', () => {
-        const html = render('en');
-        for (const figure of ['€750', '€2,500', '€1,750', '€350', '€245', '€20,000', '€14,000']) {
-            expect(html).toContain(figure);
-        }
-    });
-
-    it('quotes the former standalone prices once each, as the comparison, and nowhere else', () => {
-        for (const [locale, figures] of [['es', ['897 €', '297 €', '1.194 €']], ['en', ['€897', '€297', '€1,194']]] as const) {
-            const html = render(locale);
-            for (const figure of figures) expect(html.split(figure)).toHaveLength(2);
-        }
-    });
-
-    it('never prints the retired entry price', () => {
-        for (const locale of ['es', 'en'] as const) {
-            expect(render(locale)).not.toMatch(/\b(1[.,]000 ?€|€1,000)\b/);
-        }
-    });
-
-    it('works the cost of a missed customer out of the plan price', () => {
-        const html = render('es');
-        // 750 a month is 9,000 a year; one 2,500 customer lost a month is 30,000.
-        expect(html).toContain('9.000 €');
-        expect(html).toContain('30.000 €');
-    });
-});
-
-describe('tax marker in the rendered dossier', () => {
-    const MARKER = { es: '+ IVA', en: '+ VAT' } as const;
-
-    // The core band, the plan, three ledger rows and three add-on cards.
-    it.each(['es', 'en'] as const)('tags every quoted price as before tax (%s)', (locale) => {
-        const html = render(locale);
-        expect(html.match(/<span class="tax">/g)).toHaveLength(8);
-        expect(html.split(`<span class="tax">${MARKER[locale]}</span>`)).toHaveLength(9);
-    });
-
-    it('carries the marker into the yearly cost of the plan', () => {
-        expect(render('es')).toContain('9.000 € + IVA');
-        expect(render('en')).toContain('€9,000 + VAT');
-    });
-
-    it('does not leak the Spanish marker into the English dossier', () => {
-        expect(render('en')).not.toContain('IVA');
     });
 });
 

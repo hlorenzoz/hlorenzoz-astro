@@ -6,14 +6,13 @@
  * always match the canonical form the build emits (`/{locale}{path}/`,
  * trailingSlash: 'always') — which is what prevented the sitemap from drifting.
  */
-import { publishedPriceRange } from '@/lib/pricing';
 
 export const BASE_URL = 'https://hlorenzoz.com';
 export const CDN_URL = 'https://cdn.hlorenzoz.com';
 export const SITE_NAME = 'Lorenzoz Agency';
 
-// The locale table lives in the import-free `lib/routing.ts` so `lib/pricing.ts`
-// can read it without an import cycle (this module imports pricing).
+// The locale table lives in the import-free `lib/routing.ts`, so any lib module
+// can read it without an import cycle.
 export { DEFAULT_LOCALE, LOCALES, LOCALE_INFO, localeInfo, type Locale, type LocaleInfo } from '@/lib/routing';
 import { DEFAULT_LOCALE, LOCALES, LOCALE_INFO, localeInfo } from '@/lib/routing';
 
@@ -66,10 +65,6 @@ export const ORGANIZATION = {
     email: 'contact@hlorenzoz.com',
     supportEmail: 'privacy@hlorenzoz.com',
     telephone: '+34643844720',
-    // Derived, not typed. As the literal '€150 - €1,299' it survived a full
-    // repricing untouched, which is how a LocalBusiness ends up advertising a
-    // range it no longer charges.
-    priceRange: publishedPriceRange(DEFAULT_LOCALE),
     currenciesAccepted: 'EUR',
     paymentAccepted: 'Bank Transfer, Credit Card, Stripe',
     openingHours: 'Mo-Fr 09:00-18:00',

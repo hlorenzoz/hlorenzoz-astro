@@ -29,28 +29,13 @@ import NewsCarousel from '@/src/components/NewsCarousel.astro';
 import PortfolioCarousel from '@/src/components/PortfolioCarousel.astro';
 import LinkedInArticles from '@/src/components/LinkedInArticles.astro';
 import CalBooking from '@/src/components/services/CalBooking.astro';
-import TaxMark from '@/src/components/pricing/TaxMark.astro';
-import CorePlanCard from '@/src/components/pricing/CorePlanCard.astro';
-import AddOnCard from '@/src/components/pricing/AddOnCard.astro';
-import CostComparison from '@/src/components/numbers/CostComparison.astro';
-import MissedCustomerTable from '@/src/components/numbers/MissedCustomerTable.astro';
 import { getTranslations } from '@/lib/i18n';
 import { getPortfolioItemsAction } from '@/lib/actions/portfolio';
 import { getLinkedInArticlesAction } from '@/lib/actions/linkedin';
 import { getNewsItemsAction } from '@/lib/actions/news';
-import { serviceList, faqPage, webPage, organizationOffers } from '@/lib/schema';
-import {
-    PRICING,
-    bundledAmount,
-    formatAmount,
-    formatOfferBase,
-    offersByRole,
-    slugFromServiceKey,
-    type ServiceKey,
-} from '@/lib/pricing';
-import { offerNotes } from '@/lib/offer-notes';
+import { serviceList, faqPage, webPage } from '@/lib/schema';
+import { SERVICE_KEYS, slugFromServiceKey, type ServiceKey } from '@/lib/pricing';
 import { copyTokens, resolveFaq } from '@/lib/copy-tokens';
-import { costComparison, missedCustomerTable } from '@/lib/numbers';
 import { SERVED_MARKETS, absoluteUrl, marketNames } from '@/lib/site-config';
 import { imageFallbackSrc, imageSrcSet } from '@/lib/image';
 
@@ -59,8 +44,7 @@ export function getStaticPaths() {
 }
 
 /**
- * The four pillars of the core offer, in the order `home.solutions.items` and
- * `home.pricing.core.groups` list them.
+ * The four pillars of Local SEO, in the order `home.solutions.items` lists them.
  *
  * The page loops over THIS list, not over the message arrays. The copy can then
  * be reworded freely, but it cannot grow a fifth pillar or lose one without a
@@ -68,26 +52,20 @@ export function getStaticPaths() {
  */
 const PILLARS = [FileText, Link2, Award, Star] as const;
 
-/** The one core offer and the optional services, straight from `PRICING`. */
-const CORE: ServiceKey = offersByRole('core')[0];
-const ADD_ONS: ServiceKey[] = offersByRole('addOn');
+/** The service the pillars belong to. */
+const CORE: ServiceKey = 'localSeo';
 
 const { locale } = Astro.params as { locale: string };
 
 const t = getTranslations(locale, 'home');
-// Root translator: service names, the tax marker and the shared "numbers"
-// copy all live outside the `home` namespace.
+// Root translator: service names and the news copy live outside the `home` namespace.
 const tRoot = getTranslations(locale);
 // Carousels show only work and posts whose page exists in this locale: their copy and link must both resolve.
 const portfolioItems = (await getPortfolioItemsAction()).filter((item) => routeExists(`portfolio/${item.slug}`, locale));
 const articles = await getLinkedInArticlesAction();
 const news = (await getNewsItemsAction()).filter((item) => routeExists(`news/${item.slug}`, locale));
 
-// Every figure below comes from `PRICING`. `messages/*.json` carries
-// `{price}` / `{discount}` / `{upfront}` / `{tax}` tokens, never a number.
-const tax = tRoot('tax.suffix');
-const tokens = copyTokens(locale, tax);
-const corePrice = formatOfferBase(PRICING[CORE], locale);
+const tokens = copyTokens();
 // The English page until this locale's translation is published.
 const serviceHref = (key: ServiceKey) => routeHref(locale, `services/${slugFromServiceKey(key)}`);
 const faqItems = resolveFaq(t.raw('faq.items'), tokens);
@@ -140,32 +118,20 @@ const PROCESS_ICONS = [ChartColumn, Layers, Repeat];
                         <a href="#contact" class="bg-blue-900 text-white text-base font-bold px-10 py-4 rounded-full shadow-glow hover:bg-blue-800">
                             {t('hero.cta')}
                         </a>
-                        <a href="#pricing" class="text-blue-200 text-xs font-extrabold uppercase tracking-[0.2em] hover:text-white">
+                        <a href="#process" class="text-blue-200 text-xs font-extrabold uppercase tracking-[0.2em] hover:text-white">
                             {t('hero.secondaryCta')}
                         </a>
                     </div>
                 </div>
             </section>
 
-            {/* Stats Section. Three facts about the offer, each derived from
-                data rather than typed: the plan's price, how many pillars it
-                has and how many markets are served. They replaced "90% First
-                Call Resolution" and its neighbours, which were figures about
-                one optional service and were not documented anywhere in the
-                repo. */}
+            {/* Stats Section. Facts derived from data rather than typed: how
+                many pillars Local SEO has and how many markets are served. They
+                replaced "90% First Call Resolution" and its neighbours, which
+                were figures about one optional service and were not documented
+                anywhere in the repo. */}
             <section id="stats" class="relative z-20 pb-12 px-6 bg-transparent mt-[-2rem] md:-mt-24">
-                <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-6">
-                    <div class="bg-white border border-gray-100 p-10 rounded-[2.5rem] flex flex-col items-center text-center shadow-xl">
-                        <div class="bg-blue-50 text-blue-700 p-4 rounded-full mb-6">
-                            <Layers class="w-8 h-8" aria-hidden="true" />
-                        </div>
-                        <p data-testid="stat-plan-price" class="mb-1 flex flex-wrap items-baseline justify-center gap-x-2 text-black">
-                            <span class="text-4xl font-bold">{corePrice.amount}</span>
-                            <span class="text-xs font-bold uppercase tracking-widest text-gray-600">{t('pricing.perMonth')}</span>
-                            <TaxMark label={tax} className="text-blue-700" />
-                        </p>
-                        <p class="text-[10px] font-bold text-gray-950 uppercase tracking-[0.2em]">{t('stats.plan.label')}</p>
-                    </div>
+                <div class="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div class="bg-white border border-gray-100 p-10 rounded-[2.5rem] flex flex-col items-center text-center shadow-xl">
                         <div class="bg-blue-50 text-blue-700 p-4 rounded-full mb-6">
                             <CircleCheckBig class="w-8 h-8" aria-hidden="true" />
@@ -323,24 +289,6 @@ const PROCESS_ICONS = [ChartColumn, Layers, Repeat];
                 </div>
             </section>
 
-            {/* The numbers: what the work would cost bought separately, and
-                what a customer who never arrives costs. Built by
-                `lib/numbers.ts`, which the Local SEO page uses too, so both
-                pages (and the dossier) show the same arithmetic. */}
-            <section id="numbers" class="py-32 px-6 bg-[#fafafa]">
-                <div class="max-w-5xl mx-auto">
-                    <div class="text-center mb-16">
-                        <p class="text-black font-extrabold tracking-[0.3em] uppercase text-[12px] mb-8">{tRoot('numbers.badge')}</p>
-                        <h2 class="text-4xl md:text-6xl font-bold text-black mb-6 tracking-tight leading-tight">{tRoot('numbers.title')}</h2>
-                        <p class="text-lg text-gray-900 max-w-2xl mx-auto font-medium leading-relaxed">{tRoot('numbers.subtitle')}</p>
-                    </div>
-                    <CostComparison {...costComparison(locale, tRoot, tax)} />
-                    <div class="mt-20">
-                        <MissedCustomerTable {...missedCustomerTable(locale, tRoot, tax)} />
-                    </div>
-                </div>
-            </section>
-
             <PortfolioCarousel portfolioItems={portfolioItems} locale={locale} />
 
             {/* What changes for the business */}
@@ -424,73 +372,6 @@ const PROCESS_ICONS = [ChartColumn, Layers, Repeat];
                 </div>
             </section>
 
-            {/* Pricing: one core plan, then the optional services with their
-                list price and the price alongside the plan. The badge is not
-                "limited time": the discount has no end date, and saying it had
-                one would be false urgency. */}
-            <section
-                id="pricing"
-                class="py-32 px-6 bg-black relative overflow-hidden text-center"
-                style="background-image:radial-gradient(circle at 50% 50%, rgba(59, 130, 246, 0.1) 0%, rgba(0, 0, 0, 0) 70%)"
-            >
-                <div class="max-w-6xl mx-auto relative z-10 text-center">
-                    <div>
-                        <span class="inline-block py-1.5 px-6 rounded-full bg-blue-700 text-white text-[11px] font-black tracking-[0.3em] mb-10 uppercase">{t('pricing.badge')}</span>
-                        <h2 class="text-5xl md:text-7xl font-bold text-white mb-8 tracking-tight leading-tight">{t('pricing.title')}</h2>
-                        <p class="text-lg text-gray-400 max-w-2xl mx-auto mb-8 font-medium">{t('pricing.description', tokens)}</p>
-                        <p class="text-xs text-gray-400 max-w-xl mx-auto mb-3 leading-relaxed italic">{t('pricing.paymentTerms', tokens)}</p>
-                        <p class="text-xs text-gray-400 max-w-xl mx-auto leading-relaxed">{t('pricing.vat')}</p>
-                    </div>
-
-                    <CorePlanCard
-                        popular={t('pricing.core.popular')}
-                        title={t('pricing.core.title')}
-                        subtitle={t('pricing.core.subtitle')}
-                        price={corePrice.amount}
-                        period={t('pricing.perMonth')}
-                        tax={tax}
-                        goal={t('pricing.core.goal')}
-                        ctaLabel={t('pricing.core.cta')}
-                        ctaHref="#contact"
-                        learnMoreLabel={t('pricing.learnMore')}
-                        learnMoreHref={serviceHref(CORE)}
-                        groups={PILLARS.map((_, i) => ({
-                            label: t(`pricing.core.groups.${i}.label`),
-                            items: t.raw(`pricing.core.groups.${i}.items`) as string[],
-                        }))}
-                    />
-
-                    <h3 class="mt-20 mb-3 text-3xl font-bold tracking-tight text-white">{t('pricing.addOnsTitle')}</h3>
-                    <p class="mb-10 font-medium text-gray-400">{t('pricing.addOnsSubtitle', tokens)}</p>
-                    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 items-stretch">
-                        {
-                            ADD_ONS.map((key) => {
-                                const offer = PRICING[key];
-                                const base = formatOfferBase(offer, locale);
-                                return (
-                                    <AddOnCard
-                                        title={t(`pricing.addOns.${key}.title`)}
-                                        subtitle={t(`pricing.addOns.${key}.subtitle`)}
-                                        listPrice={base.amount}
-                                        bundlePrice={formatAmount(bundledAmount(offer.base.amount), locale)}
-                                        listLabel={t('pricing.listLabel')}
-                                        bundleLabel={t('pricing.bundleLabel')}
-                                        fromLabel={base.from ? t('pricing.from') : undefined}
-                                        terms={base.period === 'month' ? t('pricing.perMonth') : t('pricing.oneOff')}
-                                        tax={tax}
-                                        features={t.raw(`pricing.addOns.${key}.features`) as string[]}
-                                        ctaLabel={t(`pricing.addOns.${key}.cta`)}
-                                        ctaHref="#contact"
-                                        learnMoreLabel={t('pricing.learnMore')}
-                                        learnMoreHref={serviceHref(key)}
-                                    />
-                                );
-                            })
-                        }
-                    </div>
-                </div>
-            </section>
-
             {/* Final CTA Section */}
             <section id="contact" class="py-32 px-6 bg-white relative overflow-hidden">
                 <div class="max-w-6xl mx-auto flex flex-col items-center">
@@ -543,32 +424,15 @@ const PROCESS_ICONS = [ChartColumn, Layers, Repeat];
                     dateModified: findRoute('')?.lastModified,
                 })}
             />
-            {/* The list and the catalogue name the OFFERS (Local SEO and the
-                optional services), never the pillars: a pillar is part of one
-                service, and emitting four `Service` nodes for them would tell a
-                crawler the agency sells them separately. */}
+            {/* The list names the SERVICES, never the pillars: a pillar is part
+                of one service, and emitting four `Service` nodes for them would
+                tell a crawler the agency sells them separately. */}
             <JsonLd
                 data={serviceList(
-                    [CORE, ...ADD_ONS].map((key) => ({
+                    SERVICE_KEYS.map((key) => ({
                         title: tRoot(`services.${key}.name`),
                         description: tRoot(`services.${key}.meta.description`),
                     }))
-                )}
-            />
-            {/* Built from PRICING, with only names and descriptions coming from
-                the copy. It used to be handed the raw tiers and re-derive every
-                figure by parsing the display strings, which is how a Spanish
-                "€1.299" could have been published as one euro. */}
-            <JsonLd
-                data={organizationOffers(
-                    [CORE, ...ADD_ONS].map((key) => ({
-                        name: tRoot(`services.${key}.name`),
-                        description: tRoot(`services.${key}.meta.description`),
-                        offer: PRICING[key],
-                        notes: offerNotes(PRICING[key], tRoot),
-                        optionalCharge: tRoot('offer.optionalCharge'),
-                    })),
-                    tRoot('offer.catalogName')
                 )}
             />
             <JsonLd data={faqPage(faqItems)} />

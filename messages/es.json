@@ -45,12 +45,9 @@
       "titleGradient": "desde Google y la IA",
       "description": "No vendemos servicios sueltos. Trabajamos por un resultado: que quien busca lo que ofrece tu negocio te encuentre a ti primero.",
       "cta": "Reservar una llamada",
-      "secondaryCta": "Ver el plan y los precios"
+      "secondaryCta": "Ver cómo trabajamos"
     },
     "stats": {
-      "plan": {
-        "label": "Un plan, todo incluido"
-      },
       "pillars": {
         "label": "Pilares de trabajo"
       },
@@ -195,92 +192,7 @@
       ]
     },
     "pricing": {
-      "badge": "Un plan, todo incluido",
-      "title": "Precio simple y transparente",
-      "description": "Un único plan mensual con los cuatro pilares. Los servicios opcionales tienen un {discount}% de descuento cuando se contratan junto a SEO Local.",
-      "vat": "Ningún precio incluye IVA. El IVA se añade cuando corresponde, al tipo que se aplica a cada cliente (21% para clientes en España).",
-      "paymentTerms": "Al contratar se abona el {upfront}% por adelantado (el primer mes). Cubre los gastos de las herramientas y servicios que hacen posible el trabajo.",
-      "perMonth": "/ mes",
-      "oneOff": "pago único",
-      "from": "desde",
-      "learnMore": "Más información",
-      "listLabel": "Precio de lista",
-      "bundleLabel": "Con SEO Local",
-      "core": {
-        "popular": "La oferta central",
-        "title": "SEO Local",
-        "subtitle": "Los cuatro pilares incluidos",
-        "goal": "Objetivo: la primera posición en Google para las búsquedas de tu zona",
-        "cta": "Reservar una llamada",
-        "groups": [
-          {
-            "label": "Contenido de autoridad",
-            "items": [
-              "Keyword research",
-              "Clústeres de contenido",
-              "Análisis de gaps de contenido"
-            ]
-          },
-          {
-            "label": "Backlinks y citaciones",
-            "items": [
-              "Enlaces desde directorios de confianza",
-              "Citaciones en sitios relevantes",
-              "Señales de autoridad local más fuertes"
-            ]
-          },
-          {
-            "label": "Autoridad en Google y en IA",
-            "items": [
-              "Google Business Profile optimizado",
-              "SEO local en las páginas de tu sitio web",
-              "Datos estructurados de negocio local"
-            ]
-          },
-          {
-            "label": "Gestión de reseñas",
-            "items": [
-              "Seguimiento del crecimiento de reseñas",
-              "Tendencias positivas y negativas",
-              "Monitoreo de las respuestas de clientes"
-            ]
-          }
-        ]
-      },
-      "addOnsTitle": "Servicios opcionales",
-      "addOnsSubtitle": "{discount}% de descuento sobre el precio de lista al contratarlos junto a SEO Local.",
-      "addOns": {
-        "websiteDevelopment": {
-          "title": "Desarrollo Web",
-          "subtitle": "Sitios que convierten",
-          "features": [
-            "Landing page o sitio completo de varias páginas",
-            "Diseño pensado primero para el móvil y Core Web Vitals desde el día uno",
-            "Open Graph y datos estructurados desde el lanzamiento"
-          ],
-          "cta": "Empezar"
-        },
-        "aiVoiceReceptionist": {
-          "title": "Recepcionista de Voz IA",
-          "subtitle": "Ninguna llamada sin atender",
-          "features": [
-            "Citas agendadas directo en tu calendario",
-            "Voz y guion personalizados según tu marca",
-            "Optimizado para inglés y español"
-          ],
-          "cta": "Empezar"
-        },
-        "softwareDevelopment": {
-          "title": "Desarrollo de Software",
-          "subtitle": "A medida, listo para escalar",
-          "features": [
-            "Un solo código para iOS, Android, web y escritorio",
-            "Pruebas automatizadas y pipeline de CI/CD",
-            "Propiedad completa del código fuente al entregarse"
-          ],
-          "cta": "Pedir presupuesto"
-        }
-      }
+      "title": "Precio simple y transparente"
     },
     "contact": {
       "badge": "Contacto",
@@ -295,10 +207,6 @@
           "answer": "No, y conviene desconfiar de quien lo haga: nadie controla el algoritmo de Google. La primera posición es el objetivo por el que trabajamos cada mes, y un informe sin tecnicismos te muestra lo que se hizo y cómo evoluciona tu visibilidad."
         },
         {
-          "question": "¿Qué incluye exactamente el plan?",
-          "answer": "Los cuatro pilares por {price} al mes {tax}: contenido de autoridad, backlinks y citaciones, autoridad en Google y en IA, y gestión de reseñas. Nada se factura aparte."
-        },
-        {
           "question": "¿Cuánto tiempo tarda en verse resultados en el posicionamiento local?",
           "answer": "La mayoría de los clientes ven un movimiento significativo en el mapa local entre 30 y 60 días, aunque en mercados más competitivos puede tardar más."
         },
@@ -308,11 +216,7 @@
         },
         {
           "question": "¿Necesito tener ya una web o un perfil de Google?",
-          "answer": "No. Si no tienes Google Business Profile lo creamos y lo verificamos a tu nombre, y la web se puede sumar como servicio opcional con un {discount}% de descuento."
-        },
-        {
-          "question": "¿Cómo funciona el descuento de los servicios opcionales?",
-          "answer": "Desarrollo Web, Recepcionista de Voz IA y Desarrollo de Software tienen un {discount}% de descuento sobre su precio de lista cuando se contratan junto a SEO Local. Contratados por separado cuestan el precio de lista."
+          "answer": "No. Si no tienes Google Business Profile lo creamos y lo verificamos a tu nombre, y la web se puede sumar como servicio opcional."
         }
       ]
     }
@@ -321,9 +225,10 @@
     "hub": {
       "eyebrow": "Qué hacemos",
       "title": "Un plan, y lo que lo acompaña",
-      "subtitle": "SEO Local es la oferta central: un único plan mensual que trae clientes locales desde Google y la IA. Desarrollo Web, Recepcionista de Voz IA y Desarrollo de Software son opcionales, con un {discount}% de descuento a su lado.",
+      "subtitle": "SEO Local es la oferta central: un único plan mensual que trae clientes locales desde Google y la IA. Desarrollo Web, Recepcionista de Voz IA y Desarrollo de Software son opcionales.",
       "cta": "Ver los servicios"
     },
+    "quoted": "A medida de tu negocio, con presupuesto tras una primera llamada gratuita.",
     "websiteDevelopment": {
       "name": "Desarrollo Web",
       "meta": {
@@ -334,7 +239,6 @@
         "eyebrow": "Desarrollo Web",
         "title": "Sitios Web que Convierten",
         "subtitle": "Sitios web personalizados de alta velocidad diseñados para convertir visitantes en clientes. Optimizados para SEO y adaptables a móviles.",
-        "price": "{price} {tax}, pago único. {bundlePrice} junto a SEO Local ({discount}% de descuento). Hosting opcional: {monthly}/mes.",
         "cta": "Reserva una Consulta Gratis de 15 min"
       },
       "benefits": {
@@ -441,7 +345,6 @@
         "eyebrow": "Recepcionista de Voz IA",
         "title": "No Pierdas Ni Una Llamada",
         "subtitle": "Agentes de procesamiento de lenguaje natural que gestionan llamadas como un humano. Programan citas y responden preguntas frecuentes, 24/7.",
-        "price": "{price}/mes {tax}, sin coste de alta. {bundlePrice}/mes junto a SEO Local ({discount}% de descuento).",
         "cta": "Reservar Consulta"
       },
       "benefits": {
@@ -546,7 +449,6 @@
         "eyebrow": "Tarjeta Digital",
         "title": "Networking Modernizado",
         "subtitle": "Tarjetas con tecnología NFC para compartir contactos al instante. Crea una impresión profesional duradera con un toque.",
-        "price": "{price} por tarjeta (+ {monthly}/mes de mantenimiento opcional), con descuentos por cantidad. La primera va incluida sin cargo, con mantenimiento, al contratar Desarrollo Web.",
         "cta": "Empezar"
       },
       "benefits": {
@@ -651,7 +553,6 @@
         "eyebrow": "SEO Local",
         "title": "Que te encuentren antes que a tu competencia",
         "subtitle": "Un único plan mensual con todo el trabajo que hace falta para ganar visibilidad en las búsquedas locales de Google y en las respuestas de la IA.",
-        "price": "{price}/mes {tax}. Los cuatro pilares incluidos, {upfront}% por adelantado.",
         "cta": "Reservar una llamada"
       },
       "benefits": {
@@ -660,10 +561,6 @@
           {
             "title": "Compras un resultado, no una lista de tareas",
             "description": "Contenido, enlaces, autoridad y reseñas son piezas del mismo objetivo. Trabajadas por separado y por proveedores distintos, ninguna alcanza. En un solo plan, cada una empuja a las otras."
-          },
-          {
-            "title": "Más asequible que contratarlo por partes",
-            "description": "Los dos pilares que antes vendíamos por separado costaban, juntos, más que el plan completo de ahora, que además incluye los otros dos. Las cuentas están más abajo en esta página."
           },
           {
             "title": "Sabes lo que se hizo cada mes",
@@ -777,7 +674,6 @@
         "eyebrow": "Desarrollo de Software",
         "title": "Software a Medida, Listo para Escalar",
         "subtitle": "Productos full stack con frontend en Flutter y un backend robusto, construidos para funcionar en cualquier dispositivo y tamaño de pantalla.",
-        "price": "Desde {price} {tax}. Desde {bundlePrice} junto a SEO Local ({discount}% de descuento).",
         "cta": "Reserva una Consulta Gratis de 15 min"
       },
       "benefits": {
@@ -823,8 +719,7 @@
             "items": [
               "Propiedad completa del código fuente al entregarse",
               "Documentación técnica completa",
-              "Traspaso de infraestructura y despliegue",
-              "Presupuesto por proyecto, desde un precio de partida publicado"
+              "Traspaso de infraestructura y despliegue"
             ]
           }
         ]
@@ -863,7 +758,7 @@
           },
           {
             "question": "¿Cómo se cotiza un proyecto de software a medida?",
-            "answer": "Cada proyecto se dimensiona individualmente según sus funcionalidades y complejidad. La cifra publicada es un precio de partida: el presupuesto final llega tras una consulta inicial, no es un paquete fijo."
+            "answer": "Cada proyecto se dimensiona individualmente según sus funcionalidades y complejidad. El presupuesto llega tras una primera llamada gratuita, no es un paquete fijo."
           },
           {
             "question": "¿Soy dueño del código fuente una vez terminado el proyecto?",
@@ -895,56 +790,6 @@
       "updated": "Actualizado",
       "readTime": "{min} min de lectura"
     }
-  },
-  "offer": {
-    "from": "Precio de partida: el presupuesto final depende de los requerimientos funcionales.",
-    "bundleDiscount": "{discount}% de descuento sobre el precio de lista al contratarlo junto a {name}.",
-    "upfront": "El {upfront}% se abona por adelantado.",
-    "beforeTax": "El precio no incluye IVA.",
-    "catalogName": "Servicios de Lorenzoz Agency",
-    "optionalCharge": "Cargo recurrente opcional"
-  },
-  "tax": {
-    "suffix": "+ IVA"
-  },
-  "numbers": {
-    "badge": "Las cuentas",
-    "title": "Lo que cuesta, y lo que cuesta no hacerlo",
-    "subtitle": "Dos cuentas sencillas: cuánto costaría contratar este trabajo por partes y cuánto le cuesta a un negocio cada cliente que no llega.",
-    "perMonth": "/ mes",
-    "separate": {
-      "title": "Por separado",
-      "items": [
-        "SEO Local",
-        "Gestión de reseñas",
-        "Contenido de autoridad",
-        "Backlinks y citaciones"
-      ],
-      "unpriced": "aparte",
-      "totalLabel": "Solo dos de los cuatro",
-      "note": "Precios de lista con los que ofrecíamos estos dos servicios por separado. El contenido y los backlinks se presupuestaban aparte."
-    },
-    "plan": {
-      "title": "En un solo plan",
-      "includedLabel": "Los cuatro pilares incluidos",
-      "saving": "{saving}% menos que dos de los pilares contratados por separado, con los otros dos ya incluidos."
-    },
-    "missed": {
-      "title": "Lo que cuesta un cliente que no llega",
-      "description": "El plan cuesta {annual} {tax} al año. Compáralo con lo que deja de ingresar tu negocio por cada cliente que elige a un competidor.",
-      "columns": {
-        "value": "Si un cliente nuevo te deja al año",
-        "cover": "El plan se paga con",
-        "missed": "Un cliente menos al mes te cuesta al año"
-      },
-      "coverClients": "{count} clientes al mes",
-      "coverOne": "1 cliente al mes",
-      "coverMonths": "1 cliente cada {months} meses",
-      "footnote": "Ejemplo ilustrativo con valores de cliente supuestos: haz la cuenta con el tuyo. No es una previsión de resultados."
-    }
-  },
-  "payment": {
-    "cta": "Pagar en Línea de Forma Segura"
   },
   "articles": {
     "eyebrow": "DESDE LINKEDIN",
@@ -996,7 +841,7 @@
         },
         {
           "label": "Precios",
-          "href": "#pricing"
+          "href": "#process"
         },
         {
           "label": "Contacto",
@@ -1071,10 +916,6 @@
         },
         "pricing": {
           "intro": "Si desea adquirir cualquier producto o servicio puesto a disposición a través del Servicio, es posible que se le solicite que proporcione cierta información relevante para su Compra.",
-          "discount": {
-            "title": "Descuento en servicios opcionales",
-            "description": "Desarrollo Web, Recepcionista de Voz IA y Desarrollo de Software tienen un {discount}% de descuento sobre su precio de lista cuando se contratan junto a SEO Local. Contratados por separado se cobran al precio de lista. No hay prueba gratuita."
-          },
           "tax": {
             "title": "Precios sin IVA",
             "description": "Ningún precio publicado incluye IVA. El IVA se añade en la factura cuando corresponde, al tipo que se aplica a cada cliente (21% para clientes en España)."

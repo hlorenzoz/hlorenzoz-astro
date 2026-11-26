@@ -9,17 +9,17 @@ const groups = [
 
 const base = {
     title: "What's Included",
-    price: '€1,299',
+    quote: 'Tailored to your business and quoted after a free first call.',
     ctaLabel: 'Book a Free Consultation',
     ctaHref: '/en/services/website-development/#booking',
     groups,
 };
 
 describe('ServiceDeliverables', () => {
-    it('renders the title, price, every group label and every deliverable item', async () => {
+    it('renders the title, the quote line, every group label and every deliverable item', async () => {
         const screen = await renderAstro(ServiceDeliverables, base);
         expect(screen.getByRole('heading', { name: "What's Included" })).toBeInTheDocument();
-        expect(screen.getByText('€1,299')).toBeInTheDocument();
+        expect(screen.getByText('Tailored to your business and quoted after a free first call.')).toBeInTheDocument();
         // The href is emitted as given: the static build kept the slash before the hash.
         expect(screen.getByRole('link', { name: 'Book a Free Consultation' })).toHaveAttribute(
             'href',
@@ -45,26 +45,10 @@ describe('ServiceDeliverables', () => {
         expect(body.querySelectorAll('ul').length).toBeGreaterThan(0);
     });
 
-    it('renders a payment CTA alongside the booking CTA when both payment props are supplied', async () => {
-        const screen = await renderAstro(ServiceDeliverables, {
-            ...base,
-            paymentHref: 'https://buy.stripe.com/test_abc123',
-            paymentLabel: 'Pay Securely Online',
-        });
-        expect(screen.getByRole('link', { name: 'Book a Free Consultation' })).toBeInTheDocument();
-        const paymentLink = screen.getByRole('link', { name: 'Pay Securely Online' });
-        expect(paymentLink).toHaveAttribute('href', 'https://buy.stripe.com/test_abc123');
-        expect(paymentLink).toHaveAttribute('target', '_blank');
-    });
-
-    it('renders exactly one CTA when payment props are omitted (unchanged pre-Stripe behaviour)', async () => {
+    it('renders exactly one CTA: the booking link, with no price and no pay link', async () => {
         const screen = await renderAstro(ServiceDeliverables, base);
         expect(screen.getAllByRole('link')).toHaveLength(1);
-    });
-
-    it('renders exactly one CTA when only the payment label is set (no link to pay)', async () => {
-        const screen = await renderAstro(ServiceDeliverables, { ...base, paymentLabel: 'Pay Securely Online' });
-        expect(screen.getAllByRole('link')).toHaveLength(1);
+        expect(screen.body.textContent).not.toMatch(/€\s?\d|\d\s?€/);
     });
 
     /**
@@ -73,7 +57,7 @@ describe('ServiceDeliverables', () => {
      */
     it('lays four groups out two by two, never three plus one', async () => {
         const four = ['One', 'Two', 'Three', 'Four'].map((label) => ({ label, items: ['x'] }));
-        const { body } = await renderAstro(ServiceDeliverables, { title: 'T', price: 'P', ctaLabel: 'C', ctaHref: '#x', groups: four });
+        const { body } = await renderAstro(ServiceDeliverables, { title: 'T', quote: 'Q', ctaLabel: 'C', ctaHref: '#x', groups: four });
         const grid = body.querySelector('.lg\\:col-span-2');
         expect(grid?.className).toContain('sm:grid-cols-2');
         expect(grid?.className).not.toContain('grid-cols-3');

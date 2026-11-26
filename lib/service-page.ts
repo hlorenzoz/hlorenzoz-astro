@@ -35,8 +35,6 @@ import {
     type SchemaPageRef,
 } from '@/lib/schema';
 import { absoluteUrl, metaDescription, SITE_NAME } from '@/lib/site-config';
-import type { ServiceOffer } from '@/lib/pricing';
-import { offerNotes } from '@/lib/offer-notes';
 
 export type ContentPageKind = 'category' | 'service' | 'location' | 'article';
 
@@ -153,12 +151,6 @@ export interface ServicePageConfig extends ContentPageBase {
     kind: 'service';
     /** Cities or regions the service covers. */
     areaServed?: string[];
-    /**
-     * The published price, from `PRICING` in `lib/pricing.ts`. Never written
-     * out by hand here: the figure has exactly one home, and a second copy next
-     * to the route is how the schema price and the visible price drift apart.
-     */
-    offer?: ServiceOffer;
 }
 
 /**
@@ -515,15 +507,5 @@ function buildSchema(
         image: cfg.image,
         datePublished: cfg.datePublished,
         dateModified: route.lastModified,
-        // Only a service/location page can carry one: a category is a directory
-        // of offerings, not an offering, and an article is a piece of writing.
-        offer: cfg.kind === 'service' ? cfg.offer : undefined,
-        // Built here rather than in `lib/schema`, which is free of i18n: the
-        // wording has to follow the page's locale, and `translate` is already
-        // in hand for the breadcrumb labels.
-        offerNotes:
-            cfg.kind === 'service' && cfg.offer
-                ? offerNotes(cfg.offer, translate)
-                : undefined,
     });
 }

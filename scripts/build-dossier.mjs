@@ -4,7 +4,7 @@
  *
  * Fills `dossier/template.html` (the print stylesheet that mirrors the site's
  * look) with the copy in `dossier/content.<locale>.json`, the contact details
- * from `lib/site-config.ts` and the prices and terms from `lib/pricing.ts` (the
+ * from `lib/site-config.ts` and the payment terms from `lib/pricing.ts` (the
  * same source the site reads, so the two cannot disagree), then prints it to A4 with
  * the Chromium that Playwright already ships for the E2E suite. No runtime
  * dependency is added for this.
@@ -20,20 +20,11 @@ import process from 'node:process';
 import { mkdirSync, readFileSync, writeFileSync } from 'node:fs';
 import { join } from 'node:path';
 import { pathToFileURL } from 'node:url';
-import {
-    BUNDLE_DISCOUNT,
-    EXAMPLE_CUSTOMER_VALUES,
-    FORMER_STANDALONE,
-    PRICING,
-    UPFRONT_SHARE,
-    bundledAmount,
-    coverage,
-    formatAmount,
-} from '../lib/pricing.ts';
+import { UPFRONT_SHARE } from '../lib/pricing.ts';
 
-// Resolved from the working directory, not `import.meta.url`, for the same
-// reason as create-payment-links.mjs: Vitest imports this module for its pure
-// helpers and does not always hand back a `file:`-scheme URL.
+// Resolved from the working directory, not `import.meta.url`: Vitest imports
+// this module for its pure helpers and does not always hand back a
+// `file:`-scheme URL.
 const ROOT = process.cwd();
 const DOSSIER_DIR = join(ROOT, 'dossier');
 const OUT_DIR = join(DOSSIER_DIR, 'dist');
@@ -53,7 +44,7 @@ export function escapeHtml(value) {
         .replace(/"/g, '&quot;');
 }
 
-/** Replaces `{name}` tokens. An unknown token throws: a silent blank in a price sentence is worse. */
+/** Replaces `{name}` tokens. An unknown token throws: a silent blank in a sentence is worse. */
 function fill(text, values) {
     return text.replace(/\{(\w+)\}/g, (_, key) => {
         if (!(key in values)) throw new Error(`Dossier copy uses unknown token {${key}}`);
@@ -112,17 +103,12 @@ function checklist(items, mark = ICONS.checkCircle) {
  * @param {string} args.qrSvg         inline SVG of the booking QR code
  */
 export function renderDossier({ locale, content, template, organization, markets, qrSvg }) {
-    const money = (amount) => escapeHtml(formatAmount(amount, locale));
     const tokens = {
-        discount: Math.round(BUNDLE_DISCOUNT * 100),
         upfront: Math.round(UPFRONT_SHARE * 100),
         opens: organization.openingHoursSpecification.opens,
         closes: organization.openingHoursSpecification.closes,
-        tax: content.tax.suffix,
     };
     const text = (value) => escapeHtml(fill(value, tokens));
-    /** "+ IVA" / "+ VAT". Sits beside every quoted price: none of them includes tax. */
-    const tax = `<span class="tax">${text(content.tax.suffix)}</span>`;
 
     const siteUrl = new URL(organization.logo).origin;
     const siteHost = new URL(siteUrl).host;
@@ -132,7 +118,7 @@ export function renderDossier({ locale, content, template, organization, markets
     const country = new Intl.DisplayNames([locale], { type: 'region' }).of(organization.address.addressCountry);
     const { address } = organization;
 
-    const TOTAL = 7;
+    const TOTAL = 6;
     const head = (label) =>
         `<header class="page-head"><span class="brand">${escapeHtml(organization.name)}</span><span>${escapeHtml(label)}</span></header>`;
     const foot = (current) =>
@@ -140,7 +126,7 @@ export function renderDossier({ locale, content, template, organization, markets
             fill(content.footer.page, { current, total: TOTAL })
         )}</span></footer>`;
 
-    const { cover, approach, core, numbers, addOns, process: steps, contact } = content;
+    const { cover, approach, core, addOns, process: steps, contact } = content;
 
     const coverPage = `
 <section class="page page--dark">
@@ -210,96 +196,17 @@ export function renderDossier({ locale, content, template, organization, markets
         .join('')}
   </div>
   <div class="price-band">
-    <div>
-      <p class="price-label">${text(core.price.label)}</p>
-      <p class="price-figure"><span class="amount">${money(PRICING.localSeo.base.amount)}</span><span class="period">${text(
-          core.price.period
-      )}</span>${tax}</p>
-      <p class="price-note">${text(core.price.note)}</p>
-    </div>
     <div class="goal"><h3>${text(core.goalTitle)}</h3><p>${text(core.goal)}</p></div>
   </div>
   ${foot(3)}
 </section>`;
 
-    const planPrice = PRICING.localSeo.base.amount;
-    const separateTotal = Object.values(FORMER_STANDALONE).reduce((sum, amount) => sum + amount, 0);
-    const saving = Math.round((1 - planPrice / separateTotal) * 100);
-    const coverLabel = (value) => {
-        const { clients, months } = coverage(planPrice, value);
-        if (clients > 1) return fill(numbers.missed.coverClients, { count: clients });
-        if (months > 1) return fill(numbers.missed.coverMonths, { months });
-        return numbers.missed.coverOne;
-    };
-
-    const numbersPage = `
-<section class="page page--muted">
-  ${head(numbers.eyebrow)}
-  <p class="eyebrow">${text(numbers.eyebrow)}</p>
-  <h2>${text(numbers.title)}</h2>
-  <p class="lead">${text(numbers.subtitle)}</p>
-  <div class="compare">
-    <div class="compare-side compare-side--old">
-      <h3>${text(numbers.separate.title)}</h3>
-      <ul class="ledger">
-        ${numbers.separate.items
-            .map((item) => {
-                const amount = item.key ? FORMER_STANDALONE[item.key] : null;
-                const value = amount
-                    ? `${money(amount)} <small>${text(numbers.separate.perMonth)} ${tax}</small>`
-                    : `<em>${text(numbers.separate.unpriced)}</em>`;
-                return `<li><span>${text(item.label)}</span><span>${value}</span></li>`;
-            })
-            .join('')}
-      </ul>
-      <p class="ledger-total"><span>${text(numbers.separate.totalLabel)}</span><span>${money(separateTotal)} <small>${text(
-          numbers.separate.perMonth
-      )} ${tax}</small></span></p>
-      <p class="fine">${text(numbers.separate.note)}</p>
-    </div>
-    <div class="compare-side compare-side--new">
-      <h3>${text(numbers.plan.title)}</h3>
-      <p class="price-figure"><span class="amount">${money(planPrice)}</span><span class="period">${text(core.price.period)}</span>${tax}</p>
-      <p class="included">${ICONS.checkCircle}<span>${text(numbers.plan.includedLabel)}</span></p>
-      <p class="saving">${escapeHtml(fill(numbers.plan.saving, { saving }))}</p>
-    </div>
-  </div>
-  <h3 class="section-title">${text(numbers.missed.title)}</h3>
-  <p class="body missed-lead">${escapeHtml(fill(numbers.missed.description, { ...tokens, annual: formatAmount(planPrice * 12, locale) }))}</p>
-  <table class="missed">
-    <thead><tr><th>${text(numbers.missed.columns.value)}</th><th>${text(numbers.missed.columns.cover)}</th><th>${text(
-        numbers.missed.columns.missed
-    )}</th></tr></thead>
-    <tbody>
-      ${EXAMPLE_CUSTOMER_VALUES.map(
-          (value) =>
-              `<tr><td>${money(value)}</td><td>${escapeHtml(coverLabel(value))}</td><td class="loss">${money(value * 12)}</td></tr>`
-      ).join('')}
-    </tbody>
-  </table>
-  <p class="fine fine--center">${text(numbers.missed.footnote)}</p>
-  ${foot(4)}
-</section>`;
-
     const addOnCard = (item) => {
-        // Only a live optional service may be printed. A key the copy names but
-        // `PRICING` does not carry (a paused or retired service) stops the build.
-        const offer = PRICING[item.key]?.role === 'addOn' ? PRICING[item.key].base : undefined;
-        if (!offer) throw new Error(`Dossier add-on "${item.key}" is not a live optional service in PRICING`);
-        const from = offer.from ? `<span class="from">${text(addOns.fromLabel)}</span> ` : '';
-        const terms = offer.recurrence === 'month' ? addOns.perMonth : addOns.oneOff;
         return `<div class="card addon">
       <div>
         <h3>${text(item.name)}</h3>
         <p class="body">${text(item.description)}</p>
         ${checklist(item.features.map((feature) => fill(feature, tokens)))}
-      </div>
-      <div class="addon-price">
-        <p class="tag">${text(addOns.listLabel)}</p>
-        <p class="list">${money(offer.amount)}</p>
-        <p class="tag tag--bundle">${text(addOns.bundleLabel)}</p>
-        <p class="bundle">${from}${money(bundledAmount(offer.amount))}</p>
-        <p class="terms">${text(terms)} ${tax}</p>
       </div>
     </div>`;
     };
@@ -314,7 +221,7 @@ export function renderDossier({ locale, content, template, organization, markets
   </div>
   <div class="addons">${addOns.items.map(addOnCard).join('')}</div>
   <p class="footnote">${text(addOns.footnote)}</p>
-  ${foot(5)}
+  ${foot(4)}
 </section>`;
 
     const processPage = `
@@ -337,7 +244,7 @@ export function renderDossier({ locale, content, template, organization, markets
         .map((term) => `<div class="card term"><h3>${text(term.title)}</h3><p class="body">${text(term.description)}</p></div>`)
         .join('')}
   </div>
-  ${foot(6)}
+  ${foot(5)}
 </section>`;
 
     const channel = (glyph, label, value, href) =>
@@ -372,10 +279,10 @@ export function renderDossier({ locale, content, template, organization, markets
   <p class="address">${escapeHtml(
       `${organization.legalName} | ${address.streetAddress}, ${address.postalCode} ${address.addressLocality}, ${address.addressRegion}, ${country}`
   )}</p>
-  ${foot(7)}
+  ${foot(6)}
 </section>`;
 
-    const pages = [coverPage, approachPage, corePage, numbersPage, addOnsPage, processPage, contactPage].join('\n');
+    const pages = [coverPage, approachPage, corePage, addOnsPage, processPage, contactPage].join('\n');
 
     return template
         .replace('{{lang}}', locale)

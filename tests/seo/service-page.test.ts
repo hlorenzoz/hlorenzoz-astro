@@ -38,9 +38,8 @@ const node = (g: unknown, type: string) =>
  * Resolves a route's labelKey the way `getTranslations()` does, minus i18n.
  * Returning the key keeps assertions readable and independent of copy edits.
  *
- * It does interpolate `{placeholders}`, because the offer notes are built
- * through this same function and asserting on their output requires the values
- * to actually land. The key itself stands in for the message template.
+ * It does interpolate `{placeholders}`, so a call that passes values shows
+ * them. The key itself stands in for the message template.
  */
 const T = (key: string, values?: Record<string, string | number>) =>
     values
@@ -365,80 +364,8 @@ describe('contentPageSchema', () => {
         expect((page?.author as Record<string, unknown>)['@id']).toBe(SCHEMA_IDS.person);
     });
 
-    /**
-     * Every service page shows a price to the reader. Until this existed, none
-     * of them emitted one: the `Service` node carried no `offers` at all, so a
-     * crawler read a page about a service whose cost was invisible to it. The
-     * home page's OfferCatalog only covers the three tiers it features, which
-     * left the other services priced on screen and unpriced in the graph.
-     */
-    it('emits the offer on a service page that has a published price', () => {
-        const priced = {
-            ...SERVICE,
-            offer: { role: 'core' as const, base: { amount: 750, recurrence: 'month' as const } },
-        };
-        const service = node(contentPageSchema('en', priced, T), 'Service');
-        const offer = service?.offers as Record<string, unknown>;
-
-        expect(offer['@type']).toBe('Offer');
-        const spec = offer.priceSpecification as Record<string, unknown>;
-        expect(spec['@type']).toBe('UnitPriceSpecification');
-        expect(spec.price).toBe('750');
-        // Before tax, like every figure the site publishes.
-        expect(spec.valueAddedTaxIncluded).toBe(false);
-    });
-
-    it('omits offers on a service page with no published price', () => {
+    it('emits no offers on a service page: every service is quoted after a free first call', () => {
         expect(node(contentPageSchema('en', SERVICE, T), 'Service')?.offers).toBeUndefined();
-    });
-
-    /**
-     * Software is priced as a floor. It used to be "quoted", which emitted no
-     * offer at all; a floor published as `price` would be the opposite mistake,
-     * stating that every project costs exactly the starting figure.
-     */
-    it('emits a floor as minPrice on a service priced "from"', () => {
-        const floor = {
-            ...SERVICE,
-            offer: { role: 'addOn' as const, base: { amount: 20000, recurrence: 'once' as const, from: true } },
-        };
-        const offer = node(contentPageSchema('en', floor, T), 'Service')?.offers as Record<string, unknown>;
-        const spec = offer.priceSpecification as Record<string, unknown>;
-
-        expect(spec.minPrice).toBe('20000');
-        expect(spec.price).toBeUndefined();
-        expect(String(offer.description)).toContain('offer.from');
-    });
-
-    /**
-     * The offer notes are built through the page's own `translate`, so they come
-     * out in the page's language. When `lib/schema` assembled them itself it did
-     * so in hardcoded English, and the Spanish pages shipped an English sentence
-     * with Spanish nouns in it. The discount note has to NAME the core offer,
-     * and that name is looked up through the same translator rather than
-     * leaking the `localSeo` key.
-     */
-    it('states the terms of an optional service through the page translator', () => {
-        const optional = {
-            ...SERVICE,
-            offer: { role: 'addOn' as const, base: { amount: 350, recurrence: 'month' as const } },
-        };
-        const offer = node(contentPageSchema('en', optional, T), 'Service')?.offers as Record<string, unknown>;
-        const description = String(offer.description);
-
-        expect(description).toContain('offer.bundleDiscount discount=30 name=services.localSeo.name');
-        expect(description).toContain('offer.upfront upfront=50');
-        expect(description).toContain('offer.beforeTax');
-        expect(description).not.toMatch(/trial/i);
-    });
-
-    it('does not offer the core plan a discount on itself', () => {
-        const core = {
-            ...SERVICE,
-            offer: { role: 'core' as const, base: { amount: 750, recurrence: 'month' as const } },
-        };
-        const offer = node(contentPageSchema('en', core, T), 'Service')?.offers as Record<string, unknown>;
-        expect(String(offer.description)).not.toContain('offer.bundleDiscount');
     });
 
     it('carries areaServed and the FAQ block on a service page', () => {

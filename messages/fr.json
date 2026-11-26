@@ -52,12 +52,9 @@
       "titleGradient": "grâce à Google et à l'IA",
       "description": "Nous ne vendons pas des prestations à la carte. Nous visons un seul résultat : quand quelqu'un cherche ce que propose votre entreprise, c'est vous qu'il trouve en premier.",
       "cta": "Réserver un appel",
-      "secondaryCta": "Voir le forfait et les tarifs"
+      "secondaryCta": "Voir notre méthode"
     },
     "stats": {
-      "plan": {
-        "label": "Un forfait, tout compris"
-      },
       "pillars": {
         "label": "Piliers de travail"
       },
@@ -202,92 +199,7 @@
       ]
     },
     "pricing": {
-      "badge": "Un forfait, tout compris",
-      "title": "Des tarifs simples et transparents",
-      "description": "Un forfait mensuel avec les quatre piliers. Les services optionnels bénéficient de {discount} % de remise lorsqu'ils sont pris avec le SEO local.",
-      "vat": "Aucun prix n'inclut la TVA. La TVA s'ajoute lorsqu'elle est due, au taux applicable à chaque client (21 % pour les clients en Espagne).",
-      "paymentTerms": "À la signature, {upfront} % est réglé d'avance (le premier mois). Ce montant couvre le coût des outils et services qui rendent le travail possible.",
-      "perMonth": "/ mois",
-      "oneOff": "paiement unique",
-      "from": "à partir de",
-      "learnMore": "En savoir plus",
-      "listLabel": "Prix catalogue",
-      "bundleLabel": "Avec le SEO local",
-      "core": {
-        "popular": "L'offre principale",
-        "title": "SEO local",
-        "subtitle": "Les quatre piliers inclus",
-        "goal": "Objectif : la première position sur Google pour les recherches dans votre secteur",
-        "cta": "Réserver un appel",
-        "groups": [
-          {
-            "label": "Contenu d'autorité",
-            "items": [
-              "Recherche de mots clés",
-              "Clusters de contenus",
-              "Analyse des lacunes de contenu"
-            ]
-          },
-          {
-            "label": "Backlinks et citations",
-            "items": [
-              "Liens depuis des annuaires de confiance",
-              "Citations sur des sites pertinents",
-              "Des signaux d'autorité locale renforcés"
-            ]
-          },
-          {
-            "label": "Autorité sur Google et l'IA",
-            "items": [
-              "Fiche Google Business Profile optimisée",
-              "Optimisation SEO locale des pages de votre site",
-              "Données structurées d'entreprise locale"
-            ]
-          },
-          {
-            "label": "Gestion des avis",
-            "items": [
-              "Suivi de la progression des avis dans le temps",
-              "Tendances des retours positifs et négatifs",
-              "Veille sur les réponses des clients"
-            ]
-          }
-        ]
-      },
-      "addOnsTitle": "Services optionnels",
-      "addOnsSubtitle": "{discount} % de remise sur le prix catalogue lorsqu'ils sont pris avec le SEO local.",
-      "addOns": {
-        "websiteDevelopment": {
-          "title": "Création de sites web",
-          "subtitle": "Des sites conçus pour convertir",
-          "features": [
-            "Landing page ou site web complet multipage",
-            "Conception pensée d'abord pour le mobile et Core Web Vitals soignés dès le premier jour",
-            "Open Graph et données structurées en place dès la mise en ligne"
-          ],
-          "cta": "Démarrer"
-        },
-        "aiVoiceReceptionist": {
-          "title": "Réceptionniste vocal IA",
-          "subtitle": "Aucun appel sans réponse",
-          "features": [
-            "Les réservations arrivent directement dans votre agenda",
-            "Voix et script personnalisés à l'image de votre marque",
-            "Optimisé pour l'anglais et l'espagnol"
-          ],
-          "cta": "Démarrer"
-        },
-        "softwareDevelopment": {
-          "title": "Développement logiciel",
-          "subtitle": "Sur mesure, conçu pour évoluer",
-          "features": [
-            "Une seule base de code pour iOS, Android, le web et l'ordinateur",
-            "Tests automatisés et pipeline CI/CD",
-            "Le code source vous appartient entièrement à la livraison"
-          ],
-          "cta": "Demander un devis"
-        }
-      }
+      "title": "Des tarifs simples et transparents"
     },
     "contact": {
       "badge": "Contact",
@@ -302,10 +214,6 @@
           "answer": "Non, et prudence face à quiconque le promet : personne ne contrôle le classement de Google. La première position est l'objectif que nous poursuivons chaque mois, et un compte rendu en termes simples vous montre ce qui a été fait et comment évolue votre visibilité."
         },
         {
-          "question": "Que comprend exactement le forfait ?",
-          "answer": "Les quatre piliers pour {price} par mois {tax} : contenu d'autorité, backlinks et citations, autorité sur Google et l'IA, et gestion des avis. Rien n'est facturé en plus."
-        },
-        {
           "question": "Quel délai avant de voir des résultats dans le classement local ?",
           "answer": "La plupart des clients constatent une progression nette dans le pack local de Google en 30 à 60 jours, mais sur les marchés très concurrentiels cela peut prendre plus de temps."
         },
@@ -315,11 +223,7 @@
         },
         {
           "question": "Il me faut déjà un site web ou une fiche Google ?",
-          "answer": "Non. Si vous n'avez pas de fiche Google Business Profile, nous la créons et la validons à votre nom, et un site web peut s'ajouter en service optionnel avec {discount} % de remise."
-        },
-        {
-          "question": "Comment fonctionne la remise sur les services optionnels ?",
-          "answer": "La création de sites web, le réceptionniste vocal IA et le développement logiciel bénéficient de {discount} % de remise sur leur prix catalogue lorsqu'ils sont pris avec le SEO local. Achetés seuls, ils sont facturés au prix catalogue."
+          "answer": "Non. Si vous n'avez pas de fiche Google Business Profile, nous la créons et la validons à votre nom, et un site web peut s'ajouter en service optionnel."
         }
       ]
     }
@@ -344,7 +248,7 @@
         },
         {
           "label": "Tarifs",
-          "href": "#pricing"
+          "href": "#process"
         },
         {
           "label": "Contact",
@@ -485,10 +389,6 @@
         },
         "pricing": {
           "intro": "Si vous souhaitez acheter un produit ou un service proposé par l'intermédiaire du Service, il pourra vous être demandé de fournir certaines informations nécessaires à votre achat.",
-          "discount": {
-            "title": "Remise sur les services optionnels",
-            "description": "La création de sites web, le réceptionniste vocal IA et le développement logiciel bénéficient d'une remise de {discount} % sur leur prix catalogue lorsqu'ils sont souscrits avec le SEO local. Achetés seuls, ils sont facturés au prix catalogue. Il n'y a pas d'essai gratuit."
-          },
           "tax": {
             "title": "Prix hors TVA",
             "description": "Aucun prix publié n'inclut la TVA. La TVA est ajoutée sur la facture lorsqu'elle est due, au taux applicable à chaque client (21 % pour les clients en Espagne)."
@@ -1269,53 +1169,6 @@
       "title": "Actualités sur ce projet"
     }
   },
-  "numbers": {
-    "badge": "Les chiffres",
-    "title": "Ce que ça coûte, et ce que coûte de s'en passer",
-    "subtitle": "Deux calculs simples : ce que coûterait ce travail acheté au détail, et ce que coûte à une entreprise chaque client qui ne vient pas.",
-    "perMonth": "/ mois",
-    "separate": {
-      "title": "Acheté séparément",
-      "items": [
-        "SEO local",
-        "Gestion des avis",
-        "Contenu d'autorité",
-        "Backlinks et citations"
-      ],
-      "unpriced": "en supplément",
-      "totalLabel": "Rien que deux des quatre",
-      "note": "Prix catalogue auxquels nous proposions ces deux services seuls. Le contenu et les backlinks faisaient l'objet d'un devis à part."
-    },
-    "plan": {
-      "title": "Dans un seul forfait",
-      "includedLabel": "Les quatre piliers inclus",
-      "saving": "{saving} % de moins que deux des piliers achetés séparément, avec les deux autres déjà inclus."
-    },
-    "missed": {
-      "title": "Ce que coûte un client qui ne vient jamais",
-      "description": "Le forfait coûte {annual} {tax} par an. Comparez avec ce que votre entreprise cesse de gagner pour chaque client qui choisit un concurrent.",
-      "columns": {
-        "value": "Si un nouveau client rapporte, par an",
-        "cover": "Le forfait est rentabilisé avec",
-        "missed": "Un client de moins par mois vous coûte, par an"
-      },
-      "coverClients": "{count} clients par mois",
-      "coverOne": "1 client par mois",
-      "coverMonths": "1 client tous les {months} mois",
-      "footnote": "Exemple illustratif avec des valeurs client supposées : faites le calcul avec les vôtres. Ce n'est pas une prévision de résultats."
-    }
-  },
-  "tax": {
-    "suffix": "+ TVA"
-  },
-  "offer": {
-    "from": "Prix de départ : le devis final dépend des besoins fonctionnels.",
-    "bundleDiscount": "{discount} % de remise sur le prix catalogue en complément de {name}.",
-    "upfront": "{upfront} % est réglé d'avance.",
-    "beforeTax": "Le prix n'inclut pas la TVA.",
-    "catalogName": "Services de Lorenzoz Agency",
-    "optionalCharge": "Frais récurrents optionnels"
-  },
   "articles": {
     "eyebrow": "SUR LINKEDIN",
     "title": "Derniers articles LinkedIn",
@@ -1325,9 +1178,6 @@
     "prevSlide": "Article précédent",
     "nextSlide": "Article suivant",
     "goToSlide": "Aller à l'article {index}"
-  },
-  "payment": {
-    "cta": "Payer en ligne en toute sécurité"
   },
   "portfolio": {
     "type": {
@@ -1932,9 +1782,10 @@
     "hub": {
       "eyebrow": "Ce que nous faisons",
       "title": "Un forfait, et ce qui l'accompagne",
-      "subtitle": "Le SEO local est notre offre principale : un forfait mensuel qui vous amène des clients locaux depuis Google et l'IA. La création de sites web, le réceptionniste vocal IA et le développement logiciel sont optionnels, avec {discount} % de remise en complément.",
+      "subtitle": "Le SEO local est notre offre principale : un forfait mensuel qui vous amène des clients locaux depuis Google et l'IA. La création de sites web, le réceptionniste vocal IA et le développement logiciel sont optionnels.",
       "cta": "Découvrir les services"
     },
+    "quoted": "Sur mesure pour votre entreprise, avec un devis après un premier appel gratuit.",
     "localSeo": {
       "name": "SEO local",
       "meta": {
@@ -1945,7 +1796,6 @@
         "eyebrow": "SEO local",
         "title": "Soyez trouvé avant vos concurrents",
         "subtitle": "Un forfait mensuel qui réunit tout le travail nécessaire pour gagner en visibilité dans les recherches locales sur Google et dans les réponses des moteurs d'IA.",
-        "price": "{price} par mois {tax}. Les quatre piliers inclus, {upfront} % réglé d'avance.",
         "cta": "Réserver un appel"
       },
       "benefits": {
@@ -1954,10 +1804,6 @@
           {
             "title": "Vous achetez un résultat, pas une liste de tâches",
             "description": "Contenu, liens, autorité et avis servent le même objectif. Travaillés séparément, par des prestataires différents, aucun ne suffit. Réunis dans un seul forfait, chacun renforce les autres."
-          },
-          {
-            "title": "Moins cher que de l'acheter en morceaux",
-            "description": "Les deux piliers que nous vendions séparément coûtaient plus cher, ensemble, que le forfait complet aujourd'hui, et le forfait inclut les deux autres. Les chiffres sont plus bas sur cette page."
           },
           {
             "title": "Chaque mois, vous savez ce qui a été fait",
@@ -2071,7 +1917,6 @@
         "eyebrow": "Création de sites web",
         "title": "Des sites web conçus pour convertir",
         "subtitle": "Des sites web sur mesure et rapides, conçus pour transformer les visiteurs en clients. Optimisés pour le SEO et adaptés au mobile.",
-        "price": "{price} {tax}, paiement unique. {bundlePrice} avec le SEO local ({discount} % de remise). Hébergement et maintenance en option : {monthly} par mois.",
         "cta": "Réserver une consultation gratuite de 15 minutes"
       },
       "benefits": {
@@ -2178,7 +2023,6 @@
         "eyebrow": "Réceptionniste vocal IA",
         "title": "Ne manquez plus aucun appel",
         "subtitle": "Des agents vocaux qui comprennent le langage naturel et traitent les appels comme le ferait une personne. Ils prennent les réservations et répondent aux questions fréquentes, 24/7.",
-        "price": "{price} par mois {tax}, sans frais de mise en service. {bundlePrice} par mois avec le SEO local ({discount} % de remise).",
         "cta": "Réserver une consultation"
       },
       "benefits": {
@@ -2283,7 +2127,6 @@
         "eyebrow": "Développement logiciel",
         "title": "Un logiciel sur mesure, prêt à grandir",
         "subtitle": "Des produits complets, avec une interface Flutter et un backend robuste, conçus pour fonctionner sur tous les appareils et toutes les tailles d'écran.",
-        "price": "À partir de {price} {tax}. À partir de {bundlePrice} avec le SEO local ({discount} % de remise).",
         "cta": "Réserver une consultation gratuite de 15 minutes"
       },
       "benefits": {
@@ -2329,8 +2172,7 @@
             "items": [
               "Propriété complète du code source à la livraison",
               "Documentation technique complète",
-              "Transmission de l'infrastructure et du déploiement",
-              "Devis par projet, à partir d'un prix de départ publié"
+              "Transmission de l'infrastructure et du déploiement"
             ]
           }
         ]
@@ -2369,7 +2211,7 @@
           },
           {
             "question": "Comment se calcule le prix d'un logiciel sur mesure ?",
-            "answer": "Chaque projet est chiffré individuellement selon ses fonctionnalités et sa complexité. Le montant publié est un prix de départ : le devis final suit une première consultation, il ne s'agit pas d'une offre forfaitaire."
+            "answer": "Chaque projet est chiffré individuellement selon ses fonctionnalités et sa complexité. Le devis suit un premier appel gratuit, il ne s'agit pas d'une offre forfaitaire."
           },
           {
             "question": "Qui possède le code source une fois le projet terminé ?",
