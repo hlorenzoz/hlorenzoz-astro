@@ -91,7 +91,7 @@
       "onThisPage": "Nesta página",
       "needHelp": {
         "title": "Precisa de ajuda?",
-        "content": "Contacte a nossa equipa jurídica para esclarecimentos.",
+        "content": "Entre em contacto connosco para esclarecimentos.",
         "cta": "Contactar o suporte"
       },
       "items": [
@@ -120,7 +120,7 @@
       }
     },
     "privacyPage": {
-      "lastUpdated": "Última atualização: 24 de fevereiro de 2026",
+      "lastUpdated": "Última atualização: 26 de novembro de 2026",
       "sections": {
         "introduction": {
           "title": "Introdução",
@@ -159,13 +159,13 @@
           "content": "Tem o direito de aceder, retificar ou apagar as suas informações pessoais a qualquer momento. Asseguramos a portabilidade dos dados e o seu direito ao esquecimento."
         },
         "contact": {
-          "title": "Contactar a equipa de privacidade",
-          "content": "Se tiver questões sobre as nossas práticas de privacidade, a nossa equipa está pronta para ajudar."
+          "title": "Questões de privacidade",
+          "content": "Se tiver questões sobre as nossas práticas de privacidade, entre em contacto connosco e responderemos."
         }
       }
     },
     "termsPage": {
-      "lastUpdated": "Última atualização: 22 de julho de 2026",
+      "lastUpdated": "Última atualização: 26 de novembro de 2026",
       "sections": {
         "terms": {
           "title": "Termos",
@@ -173,7 +173,7 @@
         },
         "license": {
           "title": "Licença de utilização",
-          "content": "É concedida autorização para descarregar temporariamente uma cópia dos materiais (informação ou software) do site da Lorenzoz Agency, exclusivamente para visualização transitória, pessoal e não comercial.",
+          "content": "É concedida autorização para descarregar temporariamente uma cópia dos materiais (informação ou software) do site da Lorenzoz Agency, exclusivamente para visualização transitória, pessoal e não comercial. Esta é uma licença, não uma transmissão de propriedade, e ao abrigo dela não pode:",
           "list": [
             "Modificar ou copiar os materiais.",
             "Utilizar os materiais para qualquer fim comercial ou para qualquer exibição pública (comercial ou não comercial).",
@@ -193,15 +193,15 @@
           },
           "tax": {
             "title": "Preços sem IVA",
-            "description": "Nenhum preço publicado inclui IVA. Os residentes na UE estão sujeitos a +21% de IVA, acrescentado na fatura."
+            "description": "Nenhum preço publicado inclui IVA. O IVA é acrescentado na fatura quando aplicável, à taxa que se aplica a cada cliente (21% para clientes em Espanha)."
           },
           "subscriptions": {
             "title": "Subscrições",
-            "description": "Faturadas antecipadamente, de forma recorrente e periódica (mensal ou anual)."
+            "description": "Os planos mensais são faturados antecipadamente todos os meses."
           },
           "cancellations": {
             "title": "Cancelamentos",
-            "description": "Pode cancelar a renovação da sua subscrição através da página de gestão da sua conta ou entrando em contacto connosco."
+            "description": "Pode cancelar a renovação de um plano mensal a qualquer momento, entrando em contacto connosco."
           }
         },
         "liability": {
@@ -215,7 +215,7 @@
       }
     },
     "cookiePage": {
-      "lastUpdated": "Última atualização: 24 de fevereiro de 2026",
+      "lastUpdated": "Última atualização: 26 de novembro de 2026",
       "sections": {
         "whatAre": {
           "title": "O que são cookies?",
@@ -245,7 +245,7 @@
         },
         "contact": {
           "title": "Dúvidas?",
-          "content": "Para esclarecimentos sobre a nossa utilização de cookies, contacte a nossa equipa de privacidade."
+          "content": "Para esclarecimentos sobre a nossa utilização de cookies, entre em contacto connosco."
         }
       }
     }
@@ -415,7 +415,7 @@
       "badge": "Um plano, tudo incluído",
       "title": "Preços simples e transparentes",
       "description": "Um plano mensal com os quatro pilares. Os serviços opcionais têm {discount}% de desconto quando contratados em conjunto com o SEO local.",
-      "vat": "Nenhum preço inclui IVA. Os residentes na UE estão sujeitos a +21% de IVA.",
+      "vat": "Nenhum preço inclui IVA. O IVA é acrescentado quando aplicável, à taxa que se aplica a cada cliente (21% para clientes em Espanha).",
       "paymentTerms": "Ao assinar, {upfront}% é pago antecipadamente (o primeiro mês). Cobre o custo das ferramentas e dos serviços que tornam o trabalho possível.",
       "perMonth": "/ mês",
       "oneOff": "pagamento único",

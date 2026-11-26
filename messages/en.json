@@ -186,7 +186,7 @@
       "badge": "One plan, all included",
       "title": "Simple, transparent pricing",
       "description": "One monthly plan with all four pillars. Optional services are {discount}% off when taken alongside Local SEO.",
-      "vat": "No price includes VAT. EU residents are subject to +21% VAT.",
+      "vat": "No price includes VAT. VAT is added where it applies, at the rate that applies to each customer (21% for customers in Spain).",
       "paymentTerms": "On signing, {upfront}% is paid up front (the first month). It covers the cost of the tools and services that make the work possible.",
       "perMonth": "/ mo",
       "oneOff": "one time payment",
@@ -1025,7 +1025,7 @@
       "onThisPage": "On this Page",
       "needHelp": {
         "title": "Need help?",
-        "content": "Contact our legal team for clarifications.",
+        "content": "Contact us for clarifications.",
         "cta": "Contact Support"
       },
       "items": [
@@ -1055,7 +1055,7 @@
     },
     "copyright": "© 2026 Lorenzoz Agency. All rights reserved.",
     "termsPage": {
-      "lastUpdated": "Last updated: July 22, 2026",
+      "lastUpdated": "Last updated: November 26, 2026",
       "sections": {
         "terms": {
           "title": "Terms",
@@ -1063,7 +1063,7 @@
         },
         "license": {
           "title": "Use License",
-          "content": "Permission is granted to temporarily download one copy of the materials (information or software) on Lorenzoz Agency's website for personal, noncommercial transitory viewing only.",
+          "content": "Permission is granted to temporarily download one copy of the materials (information or software) on Lorenzoz Agency's website for personal, noncommercial transitory viewing only. This is a license, not a transfer of ownership, and under it you may not:",
           "list": [
             "Modify or copy the materials.",
             "Use the materials for any commercial purpose, or for any public display (commercial or noncommercial).",
@@ -1083,15 +1083,15 @@
           },
           "tax": {
             "title": "Prices exclude VAT",
-            "description": "No published price includes VAT. EU residents are subject to +21% VAT, added on the invoice."
+            "description": "No published price includes VAT. VAT is added on the invoice where it applies, at the rate that applies to each customer (21% for customers in Spain)."
           },
           "subscriptions": {
             "title": "Subscriptions",
-            "description": "Billed in advance on a recurring and periodic basis (monthly or annually)."
+            "description": "Monthly plans are billed in advance each month."
           },
           "cancellations": {
             "title": "Cancellations",
-            "description": "You may cancel your subscription renewal either through your account management page or by contacting us."
+            "description": "You may cancel the renewal of a monthly plan at any time by contacting us."
           }
         },
         "liability": {
@@ -1105,7 +1105,7 @@
       }
     },
     "privacyPage": {
-      "lastUpdated": "Last updated: February 24, 2026",
+      "lastUpdated": "Last updated: November 26, 2026",
       "sections": {
         "introduction": {
           "title": "Introduction",
@@ -1144,13 +1144,13 @@
           "content": "You have the right to access, correct, or delete your personal information at any time. We support data portability and your right to be forgotten."
         },
         "contact": {
-          "title": "Contact Privacy Team",
-          "content": "If you have questions about our privacy practices, our team is ready to help."
+          "title": "Privacy Questions",
+          "content": "If you have questions about our privacy practices, contact us and we will answer."
         }
       }
     },
     "cookiePage": {
-      "lastUpdated": "Last updated: February 24, 2026",
+      "lastUpdated": "Last updated: November 26, 2026",
       "sections": {
         "whatAre": {
           "title": "What are Cookies?",
@@ -1180,7 +1180,7 @@
         },
         "contact": {
           "title": "Questions?",
-          "content": "For clarifications on our cookie usage, please reach out to our privacy team."
+          "content": "For clarifications on our cookie usage, please contact us."
         }
       }
     }

@@ -75,15 +75,15 @@ const HOME_KEYS = [
 ];
 
 const STATIC_ROUTES: readonly SiteRoute[] = [
-    { path: '', tier: 'home', labelKey: 'navigation.home', copyKeys: HOME_KEYS, lastModified: '2026-11-25' },
+    { path: '', tier: 'home', labelKey: 'navigation.home', copyKeys: HOME_KEYS, lastModified: '2026-11-26' },
     { path: 'portfolio', tier: 'page', labelKey: 'navigation.portfolio', copyKeys: ['portfolio.list', 'portfolio.type', ...getPortfolioItems().flatMap((item) => ['title', 'badge', 'description'].map((k) => `portfolio.${item.id}.${k}`))], lastModified: latestPortfolioModified(), parent: '' },
     // The index lists every post, so its date follows the freshest one instead of a second hand-kept date.
     { path: 'news', tier: 'page', labelKey: 'navigation.news', copyKeys: ['news.list', ...getNewsItems().flatMap((item) => ['title', 'description'].map((k) => `news.items.${item.id}.${k}`))], lastModified: latestNewsModified(), parent: '' },
     { path: 'card/hector', tier: 'page', labelKey: 'sitemap.labels.card', copyKeys: ['card.hector'], lastModified: '2026-07-10', parent: '' },
-    { path: 'sitemap', tier: 'page', labelKey: 'sitemap.labels.sitemap', copyKeys: ['sitemap'], lastModified: '2026-11-25', parent: '' },
-    { path: 'privacy-policy', tier: 'legal', labelKey: 'footer.legal.items.0.label', copyKeys: ['footer.privacyPage', 'footer.legal'], lastModified: '2026-07-10', parent: '' }, // gitleaks:allow (translation key path, not a secret)
-    { path: 'terms-conditions', tier: 'legal', labelKey: 'footer.legal.items.1.label', copyKeys: ['footer.termsPage', 'footer.terms', 'footer.legal'], lastModified: '2026-10-09', parent: '' }, // gitleaks:allow (translation key path, not a secret)
-    { path: 'cookie-policy', tier: 'legal', labelKey: 'footer.legal.items.2.label', copyKeys: ['footer.cookiePage', 'footer.legal'], lastModified: '2026-07-10', parent: '' }, // gitleaks:allow (translation key path, not a secret)
+    { path: 'sitemap', tier: 'page', labelKey: 'sitemap.labels.sitemap', copyKeys: ['sitemap'], lastModified: '2026-11-26', parent: '' },
+    { path: 'privacy-policy', tier: 'legal', labelKey: 'footer.legal.items.0.label', copyKeys: ['footer.privacyPage', 'footer.legal'], lastModified: '2026-11-26', parent: '' }, // gitleaks:allow (translation key path, not a secret)
+    { path: 'terms-conditions', tier: 'legal', labelKey: 'footer.legal.items.1.label', copyKeys: ['footer.termsPage', 'footer.terms', 'footer.legal'], lastModified: '2026-11-26', parent: '' }, // gitleaks:allow (translation key path, not a secret)
+    { path: 'cookie-policy', tier: 'legal', labelKey: 'footer.legal.items.2.label', copyKeys: ['footer.cookiePage', 'footer.legal'], lastModified: '2026-11-26', parent: '' }, // gitleaks:allow (translation key path, not a secret)
     // Core 30 hub + its four services. `parent: ''` because home's own path IS
     // '' — `null` is not a valid `findRoute` key and would break
     // `breadcrumbTrail`'s parent-chain walk.

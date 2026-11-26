@@ -193,7 +193,7 @@
       "badge": "Un forfait, tout compris",
       "title": "Des tarifs simples et transparents",
       "description": "Un forfait mensuel avec les quatre piliers. Les services optionnels bénéficient de {discount} % de remise lorsqu'ils sont pris avec le SEO local.",
-      "vat": "Aucun prix n'inclut la TVA. Pour les résidents de l'UE, une TVA de 21 % s'ajoute.",
+      "vat": "Aucun prix n'inclut la TVA. La TVA s'ajoute lorsqu'elle est due, au taux applicable à chaque client (21 % pour les clients en Espagne).",
       "paymentTerms": "À la signature, {upfront} % est réglé d'avance (le premier mois). Ce montant couvre le coût des outils et services qui rendent le travail possible.",
       "perMonth": "/ mois",
       "oneOff": "paiement unique",
@@ -396,7 +396,7 @@
       "onThisPage": "Sur cette page",
       "needHelp": {
         "title": "Besoin d'aide ?",
-        "content": "Contactez notre équipe juridique pour toute précision.",
+        "content": "N'hésitez pas à nous contacter pour toute précision.",
         "cta": "Contacter le support"
       },
       "items": [
@@ -425,7 +425,7 @@
       }
     },
     "privacyPage": {
-      "lastUpdated": "Dernière mise à jour : 24 février 2026",
+      "lastUpdated": "Dernière mise à jour : 26 novembre 2026",
       "sections": {
         "introduction": {
           "title": "Introduction",
@@ -464,13 +464,13 @@
           "content": "Vous avez le droit d'accéder à vos informations personnelles, de les rectifier ou de les supprimer à tout moment. Nous garantissons la portabilité de vos données et votre droit à l'oubli."
         },
         "contact": {
-          "title": "Contacter l'équipe confidentialité",
-          "content": "Si vous avez des questions sur nos pratiques en matière de confidentialité, notre équipe est prête à vous aider."
+          "title": "Questions de confidentialité",
+          "content": "Si vous avez des questions sur nos pratiques en matière de confidentialité, veuillez nous contacter et nous vous répondrons."
         }
       }
     },
     "termsPage": {
-      "lastUpdated": "Dernière mise à jour : 22 juillet 2026",
+      "lastUpdated": "Dernière mise à jour : 26 novembre 2026",
       "sections": {
         "terms": {
           "title": "Conditions",
@@ -478,7 +478,7 @@
         },
         "license": {
           "title": "Licence d'utilisation",
-          "content": "Il est permis de télécharger temporairement une copie des contenus (informations ou logiciels) présents sur le site web de Lorenzoz Agency, uniquement pour une consultation personnelle, non commerciale et temporaire.",
+          "content": "Il est permis de télécharger temporairement une copie des contenus (informations ou logiciels) présents sur le site web de Lorenzoz Agency, uniquement pour une consultation personnelle, non commerciale et temporaire. Il s'agit d'une licence et non d'un transfert de propriété ; dans ce cadre, il est interdit de :",
           "list": [
             "Modifier ou copier les contenus.",
             "Utiliser les contenus à des fins commerciales ou pour toute présentation publique (commerciale ou non commerciale).",
@@ -498,15 +498,15 @@
           },
           "tax": {
             "title": "Prix hors TVA",
-            "description": "Aucun prix publié n'inclut la TVA. Les résidents de l'UE sont soumis à une TVA de 21 %, ajoutée sur la facture."
+            "description": "Aucun prix publié n'inclut la TVA. La TVA est ajoutée sur la facture lorsqu'elle est due, au taux applicable à chaque client (21 % pour les clients en Espagne)."
           },
           "subscriptions": {
             "title": "Abonnements",
-            "description": "Facturés à l'avance, de manière récurrente et périodique (mensuelle ou annuelle)."
+            "description": "Les forfaits mensuels sont facturés à l'avance chaque mois."
           },
           "cancellations": {
             "title": "Résiliations",
-            "description": "Vous pouvez annuler le renouvellement de votre abonnement depuis la page de gestion de votre compte ou en nous contactant."
+            "description": "Vous pouvez annuler le renouvellement d'un forfait mensuel à tout moment en nous contactant."
           }
         },
         "liability": {
@@ -520,7 +520,7 @@
       }
     },
     "cookiePage": {
-      "lastUpdated": "Dernière mise à jour : 24 février 2026",
+      "lastUpdated": "Dernière mise à jour : 26 novembre 2026",
       "sections": {
         "whatAre": {
           "title": "Que sont les cookies ?",
@@ -550,7 +550,7 @@
         },
         "contact": {
           "title": "Des questions ?",
-          "content": "Pour toute précision sur notre utilisation des cookies, veuillez contacter notre équipe confidentialité."
+          "content": "Pour toute précision sur notre utilisation des cookies, veuillez nous contacter."
         }
       }
     }

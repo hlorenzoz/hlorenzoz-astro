@@ -186,7 +186,7 @@
       "badge": "Un plan, todo incluido",
       "title": "Precio simple y transparente",
       "description": "Un único plan mensual con los cuatro pilares. Los servicios opcionales tienen un {discount}% de descuento cuando se contratan junto a SEO Local.",
-      "vat": "Ningún precio incluye IVA. Los residentes en la UE están sujetos a +21% de IVA.",
+      "vat": "Ningún precio incluye IVA. El IVA se añade cuando corresponde, al tipo que se aplica a cada cliente (21% para clientes en España).",
       "paymentTerms": "Al contratar se abona el {upfront}% por adelantado (el primer mes). Cubre los gastos de las herramientas y servicios que hacen posible el trabajo.",
       "perMonth": "/ mes",
       "oneOff": "pago único",
@@ -1025,7 +1025,7 @@
       "onThisPage": "En esta página",
       "needHelp": {
         "title": "¿Necesitas ayuda?",
-        "content": "Contacta con nuestro equipo legal para aclaraciones.",
+        "content": "Contacta con nosotros para cualquier aclaración.",
         "cta": "Contactar Soporte"
       },
       "items": [
@@ -1055,7 +1055,7 @@
     },
     "copyright": "© 2026 Lorenzoz Agency. Todos los derechos reservados.",
     "termsPage": {
-      "lastUpdated": "Última actualización: 22 de julio de 2026",
+      "lastUpdated": "Última actualización: 26 de noviembre de 2026",
       "sections": {
         "terms": {
           "title": "Términos",
@@ -1063,7 +1063,7 @@
         },
         "license": {
           "title": "Licencia de Uso",
-          "content": "Se otorga permiso para descargar temporalmente una copia de los materiales (información o software) en el sitio web de Lorenzoz Agency solo para visualización transitoria personal y no comercial.",
+          "content": "Se otorga permiso para descargar temporalmente una copia de los materiales (información o software) en el sitio web de Lorenzoz Agency solo para visualización transitoria personal y no comercial. Se trata de una licencia, no de una transmisión de la propiedad, y bajo ella no puede:",
           "list": [
             "Modificar o copiar los materiales.",
             "Utilizar los materiales para cualquier fin comercial o para cualquier exhibición pública (comercial o no comercial).",
@@ -1083,15 +1083,15 @@
           },
           "tax": {
             "title": "Precios sin IVA",
-            "description": "Ningún precio publicado incluye IVA. Los residentes en la UE están sujetos a +21% de IVA, que se añade en la factura."
+            "description": "Ningún precio publicado incluye IVA. El IVA se añade en la factura cuando corresponde, al tipo que se aplica a cada cliente (21% para clientes en España)."
           },
           "subscriptions": {
             "title": "Suscripciones",
-            "description": "Facturado por adelantado de forma recurrente y periódica (mensual o anual)."
+            "description": "Los planes mensuales se facturan por adelantado cada mes."
           },
           "cancellations": {
             "title": "Cancelaciones",
-            "description": "Puede cancelar la renovación de su suscripción a través de su página de administración de cuenta o contactándonos."
+            "description": "Puede cancelar la renovación de un plan mensual en cualquier momento contactándonos."
           }
         },
         "liability": {
@@ -1105,7 +1105,7 @@
       }
     },
     "privacyPage": {
-      "lastUpdated": "Última actualización: 24 de febrero de 2026",
+      "lastUpdated": "Última actualización: 26 de noviembre de 2026",
       "sections": {
         "introduction": {
           "title": "Introducción",
@@ -1144,13 +1144,13 @@
           "content": "Usted tiene derecho a acceder, corregir o eliminar su información personal en cualquier momento. Apoyamos la portabilidad de datos y su derecho al olvido."
         },
         "contact": {
-          "title": "Equipo de Privacidad",
-          "content": "Si tiene preguntas sobre nuestras prácticas de privacidad, nuestro equipo está listo para ayudar."
+          "title": "Preguntas sobre privacidad",
+          "content": "Si tiene preguntas sobre nuestras prácticas de privacidad, contáctenos y le responderemos."
         }
       }
     },
     "cookiePage": {
-      "lastUpdated": "Última actualización: 24 de febrero de 2026",
+      "lastUpdated": "Última actualización: 26 de noviembre de 2026",
       "sections": {
         "whatAre": {
           "title": "¿Qué son las Cookies?",
@@ -1180,7 +1180,7 @@
         },
         "contact": {
           "title": "¿Preguntas?",
-          "content": "Para aclaraciones sobre nuestro uso de cookies, comuníquese con nuestro equipo de privacidad."
+          "content": "Para aclaraciones sobre nuestro uso de cookies, contáctenos."
         }
       }
     }

@@ -193,7 +193,7 @@
             "badge": "Ein Plan, alles inklusive",
             "title": "Einfache, transparente Preise",
             "description": "Ein monatlicher Plan mit allen vier Säulen. Zusatzleistungen erhalten Sie mit {discount}% Rabatt, wenn Sie sie zusammen mit lokalem SEO buchen.",
-            "vat": "Alle Preise verstehen sich zzgl. MwSt. Für Kunden mit Sitz in der EU fallen +21% MwSt. an.",
+            "vat": "Alle Preise verstehen sich zzgl. MwSt. Die Mehrwertsteuer wird berechnet, wo sie anfällt, zum jeweils geltenden Satz (21% für Kunden in Spanien).",
             "paymentTerms": "Bei Vertragsabschluss werden {upfront}% im Voraus gezahlt (der erste Monat). Damit sind die Kosten für die Tools und Dienste gedeckt, die die Arbeit möglich machen.",
             "perMonth": "/ Monat",
             "oneOff": "einmalige Zahlung",
@@ -396,7 +396,7 @@
             "onThisPage": "Auf dieser Seite",
             "needHelp": {
                 "title": "Brauchen Sie Hilfe?",
-                "content": "Wenden Sie sich bei Fragen an unser Rechtsteam.",
+                "content": "Wenden Sie sich bei Fragen direkt an uns.",
                 "cta": "Support kontaktieren"
             },
             "items": [
@@ -425,7 +425,7 @@
             }
         },
         "privacyPage": {
-            "lastUpdated": "Zuletzt aktualisiert: 24. Februar 2026",
+            "lastUpdated": "Zuletzt aktualisiert: 26. November 2026",
             "sections": {
                 "introduction": {
                     "title": "Einleitung",
@@ -464,13 +464,13 @@
                     "content": "Sie haben jederzeit das Recht, Auskunft über Ihre personenbezogenen Daten zu erhalten sowie deren Berichtigung oder Löschung zu verlangen. Wir unterstützen die Datenübertragbarkeit und Ihr Recht auf Vergessenwerden."
                 },
                 "contact": {
-                    "title": "Kontakt zum Datenschutzteam",
-                    "content": "Wenn Sie Fragen zu unserem Umgang mit Ihren Daten haben, hilft Ihnen unser Team gerne weiter."
+                    "title": "Fragen zum Datenschutz",
+                    "content": "Wenn Sie Fragen zu unserem Umgang mit Ihren Daten haben, kontaktieren Sie uns und wir antworten Ihnen."
                 }
             }
         },
         "termsPage": {
-            "lastUpdated": "Zuletzt aktualisiert: 22. Juli 2026",
+            "lastUpdated": "Zuletzt aktualisiert: 26. November 2026",
             "sections": {
                 "terms": {
                     "title": "Bedingungen",
@@ -478,7 +478,7 @@
                 },
                 "license": {
                     "title": "Nutzungslizenz",
-                    "content": "Es wird die Erlaubnis erteilt, vorübergehend eine Kopie der Materialien (Informationen oder Software) auf der Website von Lorenzoz Agency ausschließlich zur persönlichen, nichtkommerziellen und vorübergehenden Ansicht herunterzuladen.",
+                    "content": "Es wird die Erlaubnis erteilt, vorübergehend eine Kopie der Materialien (Informationen oder Software) auf der Website von Lorenzoz Agency ausschließlich zur persönlichen, nichtkommerziellen und vorübergehenden Ansicht herunterzuladen. Dies ist eine Lizenz und keine Eigentumsübertragung. Im Rahmen dieser Lizenz dürfen Sie nicht:",
                     "list": [
                         "Die Materialien verändern oder kopieren.",
                         "Die Materialien für kommerzielle Zwecke oder für eine öffentliche Vorführung (kommerziell oder nichtkommerziell) verwenden.",
@@ -498,15 +498,15 @@
                     },
                     "tax": {
                         "title": "Preise zzgl. MwSt.",
-                        "description": "Kein veröffentlichter Preis enthält die Mehrwertsteuer. Für Kunden mit Sitz in der EU fallen +21% MwSt. an, die auf der Rechnung hinzugerechnet wird."
+                        "description": "Kein veröffentlichter Preis enthält die Mehrwertsteuer. Sie wird, wo sie anfällt, zum jeweils geltenden Satz auf der Rechnung hinzugerechnet (21% für Kunden in Spanien)."
                     },
                     "subscriptions": {
                         "title": "Abonnements",
-                        "description": "Die Abrechnung erfolgt im Voraus in wiederkehrenden, regelmäßigen Abständen (monatlich oder jährlich)."
+                        "description": "Monatliche Pläne werden jeden Monat im Voraus abgerechnet."
                     },
                     "cancellations": {
                         "title": "Kündigungen",
-                        "description": "Sie können die Verlängerung Ihres Abonnements entweder über die Verwaltungsseite Ihres Kontos oder durch eine Nachricht an uns kündigen."
+                        "description": "Sie können die Verlängerung eines monatlichen Plans jederzeit kündigen, indem Sie uns kontaktieren."
                     }
                 },
                 "liability": {
@@ -520,7 +520,7 @@
             }
         },
         "cookiePage": {
-            "lastUpdated": "Zuletzt aktualisiert: 24. Februar 2026",
+            "lastUpdated": "Zuletzt aktualisiert: 26. November 2026",
             "sections": {
                 "whatAre": {
                     "title": "Was sind Cookies?",
@@ -550,7 +550,7 @@
                 },
                 "contact": {
                     "title": "Fragen?",
-                    "content": "Für Fragen zu unserer Verwendung von Cookies wenden Sie sich bitte an unser Datenschutzteam."
+                    "content": "Für Fragen zu unserer Verwendung von Cookies wenden Sie sich bitte an uns."
                 }
             }
         }

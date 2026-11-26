@@ -186,7 +186,7 @@
       "badge": "Un piano, tutto incluso",
       "title": "Prezzi semplici e trasparenti",
       "description": "Un unico piano mensile con tutti e quattro i pilastri. I servizi opzionali sono scontati del {discount}% se abbinati alla SEO locale.",
-      "vat": "Nessun prezzo include l'IVA. Per i residenti nell'UE si aggiunge l'IVA del 21%.",
+      "vat": "Nessun prezzo include l'IVA. L'IVA si aggiunge quando dovuta, con l'aliquota applicabile a ciascun cliente (21% per i clienti in Spagna).",
       "paymentTerms": "Alla firma si paga in anticipo il {upfront}% (il primo mese). Copre il costo degli strumenti e dei servizi che rendono possibile il lavoro.",
       "perMonth": "/ mese",
       "oneOff": "pagamento unico",
@@ -897,7 +897,7 @@
       "onThisPage": "In questa pagina",
       "needHelp": {
         "title": "Hai bisogno di aiuto?",
-        "content": "Contatta il nostro team legale per qualsiasi chiarimento.",
+        "content": "Contattaci per qualsiasi chiarimento.",
         "cta": "Contatta l'assistenza"
       },
       "items": [
@@ -927,7 +927,7 @@
     },
     "copyright": "© 2026 Lorenzoz Agency. Tutti i diritti riservati.",
     "privacyPage": {
-      "lastUpdated": "Ultimo aggiornamento: 24 febbraio 2026",
+      "lastUpdated": "Ultimo aggiornamento: 26 novembre 2026",
       "sections": {
         "introduction": {
           "title": "Introduzione",
@@ -966,13 +966,13 @@
           "content": "Hai il diritto di accedere ai tuoi dati personali, rettificarli o cancellarli in qualsiasi momento. Garantiamo la portabilità dei dati e il tuo diritto all'oblio."
         },
         "contact": {
-          "title": "Contatta il team privacy",
-          "content": "Se hai domande sulle nostre pratiche in materia di privacy, il nostro team è a tua disposizione."
+          "title": "Domande sulla privacy",
+          "content": "Se hai domande sulle nostre pratiche in materia di privacy, contattaci e ti risponderemo."
         }
       }
     },
     "termsPage": {
-      "lastUpdated": "Ultimo aggiornamento: 22 luglio 2026",
+      "lastUpdated": "Ultimo aggiornamento: 26 novembre 2026",
       "sections": {
         "terms": {
           "title": "Termini",
@@ -980,7 +980,7 @@
         },
         "license": {
           "title": "Licenza d'uso",
-          "content": "È concessa l'autorizzazione a scaricare temporaneamente una copia dei materiali (informazioni o software) presenti sul sito web di Lorenzoz Agency esclusivamente per una visualizzazione transitoria, personale e non commerciale.",
+          "content": "È concessa l'autorizzazione a scaricare temporaneamente una copia dei materiali (informazioni o software) presenti sul sito web di Lorenzoz Agency esclusivamente per una visualizzazione transitoria, personale e non commerciale. Si tratta di una licenza, non di un trasferimento di proprietà, e in base a essa non è consentito:",
           "list": [
             "Modificare o copiare i materiali.",
             "Utilizzare i materiali per qualsiasi scopo commerciale o per qualsiasi esposizione pubblica (commerciale o non commerciale).",
@@ -1000,15 +1000,15 @@
           },
           "tax": {
             "title": "Prezzi IVA esclusa",
-            "description": "Nessun prezzo pubblicato include l'IVA. Ai residenti nell'UE si applica l'IVA del 21%, aggiunta in fattura."
+            "description": "Nessun prezzo pubblicato include l'IVA. L'IVA si aggiunge in fattura quando dovuta, con l'aliquota applicabile a ciascun cliente (21% per i clienti in Spagna)."
           },
           "subscriptions": {
             "title": "Abbonamenti",
-            "description": "Fatturati in anticipo su base ricorrente e periodica (mensile o annuale)."
+            "description": "I piani mensili sono fatturati in anticipo ogni mese."
           },
           "cancellations": {
             "title": "Disdette",
-            "description": "Puoi disdire il rinnovo del tuo abbonamento dalla pagina di gestione del tuo account oppure contattandoci."
+            "description": "Puoi disdire il rinnovo di un piano mensile in qualsiasi momento contattandoci."
           }
         },
         "liability": {
@@ -1022,7 +1022,7 @@
       }
     },
     "cookiePage": {
-      "lastUpdated": "Ultimo aggiornamento: 24 febbraio 2026",
+      "lastUpdated": "Ultimo aggiornamento: 26 novembre 2026",
       "sections": {
         "whatAre": {
           "title": "Cosa sono i cookie?",
@@ -1052,7 +1052,7 @@
         },
         "contact": {
           "title": "Domande?",
-          "content": "Per chiarimenti sul nostro utilizzo dei cookie, contatta il nostro team privacy."
+          "content": "Per chiarimenti sul nostro utilizzo dei cookie, contattaci."
         }
       }
     }

@@ -186,7 +186,7 @@
             "badge": "Eén plan, alles inbegrepen",
             "title": "Eenvoudige, transparante prijzen",
             "description": "Eén maandelijks plan met alle vier de pijlers. Aanvullende diensten krijgen {discount}% korting als je ze samen met Lokale SEO afneemt.",
-            "vat": "Alle prijzen zijn exclusief btw. Voor inwoners van de EU komt daar 21% btw bij.",
+            "vat": "Alle prijzen zijn exclusief btw. Btw wordt in rekening gebracht waar die van toepassing is, tegen het tarief dat voor elke klant geldt (21% voor klanten in Spanje).",
             "paymentTerms": "Bij ondertekening betaal je {upfront}% vooraf (de eerste maand). Daarmee dekken we de kosten van de tools en diensten die het werk mogelijk maken.",
             "perMonth": "/ mnd",
             "oneOff": "eenmalige betaling",
@@ -897,7 +897,7 @@
             "onThisPage": "Op deze pagina",
             "needHelp": {
                 "title": "Hulp nodig?",
-                "content": "Neem contact op met ons juridische team voor verduidelijking.",
+                "content": "Neem voor verduidelijking direct contact met ons op.",
                 "cta": "Contact opnemen"
             },
             "items": [
@@ -927,7 +927,7 @@
         },
         "copyright": "© 2026 Lorenzoz Agency. Alle rechten voorbehouden.",
         "privacyPage": {
-            "lastUpdated": "Laatst bijgewerkt: 24 februari 2026",
+            "lastUpdated": "Laatst bijgewerkt: 26 november 2026",
             "sections": {
                 "introduction": {
                     "title": "Inleiding",
@@ -966,13 +966,13 @@
                     "content": "Je hebt op elk moment het recht om je persoonsgegevens in te zien, te corrigeren of te laten verwijderen. Wij ondersteunen gegevensoverdraagbaarheid en je recht om vergeten te worden."
                 },
                 "contact": {
-                    "title": "Contact met het privacyteam",
-                    "content": "Heb je vragen over hoe wij met privacy omgaan? Ons team staat klaar om je te helpen."
+                    "title": "Vragen over privacy",
+                    "content": "Heb je vragen over hoe wij met privacy omgaan? Neem contact met ons op en we geven je antwoord."
                 }
             }
         },
         "termsPage": {
-            "lastUpdated": "Laatst bijgewerkt: 22 juli 2026",
+            "lastUpdated": "Laatst bijgewerkt: 26 november 2026",
             "sections": {
                 "terms": {
                     "title": "Voorwaarden",
@@ -980,7 +980,7 @@
                 },
                 "license": {
                     "title": "Gebruikslicentie",
-                    "content": "Er wordt toestemming verleend om tijdelijk één kopie van het materiaal (informatie of software) op de website van Lorenzoz Agency te downloaden, uitsluitend om het persoonlijk en tijdelijk te bekijken en niet voor commerciële doeleinden.",
+                    "content": "Er wordt toestemming verleend om tijdelijk één kopie van het materiaal (informatie of software) op de website van Lorenzoz Agency te downloaden, uitsluitend om het persoonlijk en tijdelijk te bekijken en niet voor commerciële doeleinden. Dit is een licentie en geen overdracht van eigendom. Onder deze licentie mag je niet:",
                     "list": [
                         "Het materiaal wijzigen of kopiëren.",
                         "Het materiaal gebruiken voor commerciële doeleinden of voor openbare vertoning (al dan niet commercieel).",
@@ -1000,15 +1000,15 @@
                     },
                     "tax": {
                         "title": "Prijzen exclusief btw",
-                        "description": "Geen enkele gepubliceerde prijs is inclusief btw. Voor inwoners van de EU geldt +21% btw, die op de factuur wordt toegevoegd."
+                        "description": "Geen enkele gepubliceerde prijs is inclusief btw. Btw wordt op de factuur toegevoegd waar die van toepassing is, tegen het tarief dat voor elke klant geldt (21% voor klanten in Spanje)."
                     },
                     "subscriptions": {
                         "title": "Abonnementen",
-                        "description": "Vooraf gefactureerd op terugkerende en periodieke basis (maandelijks of jaarlijks)."
+                        "description": "Maandelijkse abonnementen worden elke maand vooraf gefactureerd."
                     },
                     "cancellations": {
                         "title": "Opzeggingen",
-                        "description": "Je kunt de verlenging van je abonnement opzeggen via de pagina voor accountbeheer of door contact met ons op te nemen."
+                        "description": "Je kunt de verlenging van een maandelijks abonnement op elk moment opzeggen door contact met ons op te nemen."
                     }
                 },
                 "liability": {
@@ -1022,7 +1022,7 @@
             }
         },
         "cookiePage": {
-            "lastUpdated": "Laatst bijgewerkt: 24 februari 2026",
+            "lastUpdated": "Laatst bijgewerkt: 26 november 2026",
             "sections": {
                 "whatAre": {
                     "title": "Wat zijn cookies?",
@@ -1052,7 +1052,7 @@
                 },
                 "contact": {
                     "title": "Vragen?",
-                    "content": "Neem voor verduidelijking over ons gebruik van cookies contact op met ons privacyteam."
+                    "content": "Neem voor verduidelijking over ons gebruik van cookies contact met ons op."
                 }
             }
         }
