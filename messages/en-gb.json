@@ -288,27 +288,6 @@
         }
       }
     },
-    "testimonials": {
-      "title": "Success stories",
-      "subtitle": "Join hundreds of businesses that have transformed their operations with our AI solutions.",
-      "items": [
-        {
-          "quote": "Lorenzoz Agency reduced our response time by 80%. We haven't missed a single lead in three months.",
-          "author": "David Chen",
-          "position": "CEO, TechFlow Solutions"
-        },
-        {
-          "quote": "The AI voice receptionist sounds incredibly human. Our customers actually enjoy talking to it.",
-          "author": "Sarah Jenkins",
-          "position": "Operations Manager, Bloom Retail"
-        },
-        {
-          "quote": "Scaling our support used to be our biggest headache. Now the AI handles 90% of the volume effortlessly.",
-          "author": "Marcus Thorne",
-          "position": "Founder, Thorne & Co."
-        }
-      ]
-    },
     "contact": {
       "badge": "Contact",
       "title": "Let's talk about your business.",

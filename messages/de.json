@@ -288,27 +288,6 @@
                 }
             }
         },
-        "testimonials": {
-            "title": "Erfolgsgeschichten",
-            "subtitle": "Schließen Sie sich Hunderten von Unternehmen an, die ihre Abläufe mit unseren Lösungen auf Basis von KI verändert haben.",
-            "items": [
-                {
-                    "quote": "Lorenzoz Agency hat unsere Reaktionszeit um 80% verkürzt. Seit drei Monaten haben wir keine einzige Anfrage mehr verpasst.",
-                    "author": "David Chen",
-                    "position": "CEO, TechFlow Solutions"
-                },
-                {
-                    "quote": "Der Telefonassistent mit KI klingt unglaublich menschlich. Unsere Kunden sprechen tatsächlich gern mit ihm.",
-                    "author": "Sarah Jenkins",
-                    "position": "Leiterin Betrieb, Bloom Retail"
-                },
-                {
-                    "quote": "Unseren Support zu skalieren war früher unser größtes Problem. Heute übernimmt die KI mühelos 90% des Aufkommens.",
-                    "author": "Marcus Thorne",
-                    "position": "Gründer, Thorne & Co."
-                }
-            ]
-        },
         "contact": {
             "badge": "Kontakt",
             "title": "Sprechen wir über Ihr Unternehmen.",

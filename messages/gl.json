@@ -288,27 +288,6 @@
         }
       }
     },
-    "testimonials": {
-      "title": "Casos de éxito",
-      "subtitle": "Únete a centos de empresas que transformaron as súas operacións coas nosas solucións de IA.",
-      "items": [
-        {
-          "quote": "Lorenzoz Agency reduciu o noso tempo de resposta nun 80%. Non perdemos nin un só cliente potencial en tres meses.",
-          "author": "David Chen",
-          "position": "CEO, TechFlow Solutions"
-        },
-        {
-          "quote": "O recepcionista de voz con IA soa incriblemente humano. Aos nosos clientes góstalles de verdade falar con el.",
-          "author": "Sarah Jenkins",
-          "position": "Responsable de operacións, Bloom Retail"
-        },
-        {
-          "quote": "Escalar o noso servizo de atención era a nosa maior dor de cabeza. Agora a IA xestiona o 90% do volume sen esforzo.",
-          "author": "Marcus Thorne",
-          "position": "Fundador, Thorne & Co."
-        }
-      ]
-    },
     "contact": {
       "badge": "Contacto",
       "title": "Falemos do teu negocio.",

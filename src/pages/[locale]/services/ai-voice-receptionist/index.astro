@@ -1,6 +1,5 @@
 ---
 import ServicePage from '../_ServicePage.astro';
-import SocialProofStrip from '@/src/components/services/SocialProofStrip.astro';
 import { contentPageFor, serviceContentPagesByKey } from '../_service-content';
 import { getTranslations } from '@/lib/i18n';
 import { PRICING, priceMessageValues } from '@/lib/pricing';
@@ -24,12 +23,4 @@ const price = tRoot('services.aiVoiceReceptionist.hero.price', { ...priceMessage
     page={contentPageFor(serviceContentPagesByKey.aiVoiceReceptionist, locale)}
     price={price}
     paymentHref={paymentLinkUrl('aiVoiceReceptionist')}
->
-    {/* Social proof sits directly under the hero, per the conversion
-        framework's scroll order (promise -> trust -> offer). Reuses the
-        existing `home.testimonials` copy: all three are about AI call
-        handling and response time, so they are on topic here. The other
-        service pages render no social-proof section rather than borrow a quote
-        about a different service (see service-pages-social-proof.test.ts). */}
-    <SocialProofStrip slot="after-hero" items={tRoot.raw('home.testimonials.items')} />
-</ServicePage>
+></ServicePage>

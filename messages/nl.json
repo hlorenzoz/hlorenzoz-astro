@@ -281,27 +281,6 @@
                 }
             }
         },
-        "testimonials": {
-            "title": "Succesverhalen",
-            "subtitle": "Sluit je aan bij honderden bedrijven die hun werkwijze hebben veranderd met onze oplossingen op basis van AI.",
-            "items": [
-                {
-                    "quote": "Lorenzoz Agency heeft onze reactietijd met 80% verkort. In drie maanden hebben we geen enkele lead gemist.",
-                    "author": "David Chen",
-                    "position": "CEO, TechFlow Solutions"
-                },
-                {
-                    "quote": "De telefoonreceptionist met AI klinkt ongelooflijk menselijk. Onze klanten praten er echt graag mee.",
-                    "author": "Sarah Jenkins",
-                    "position": "Operationeel manager, Bloom Retail"
-                },
-                {
-                    "quote": "Onze support opschalen was vroeger onze grootste hoofdpijn. Nu handelt de AI moeiteloos 90% van alle vragen af.",
-                    "author": "Marcus Thorne",
-                    "position": "Oprichter, Thorne & Co."
-                }
-            ]
-        },
         "contact": {
             "badge": "Contact",
             "title": "Laten we het over je bedrijf hebben.",

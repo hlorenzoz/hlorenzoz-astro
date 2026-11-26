@@ -93,7 +93,7 @@ const STATIC_ROUTES: readonly SiteRoute[] = [
     { path: 'services', tier: 'category', labelKey: 'navigation.services', copyKeys: ['services.hub'], lastModified: '2026-10-09', parent: '' },
     { path: 'services/local-seo', tier: 'service', labelKey: 'services.localSeo.name', copyKeys: ['services.localSeo', 'media.calBooking'], lastModified: '2026-10-09', parent: 'services' },
     { path: 'services/website-development', tier: 'service', labelKey: 'services.websiteDevelopment.name', copyKeys: ['services.websiteDevelopment', 'media.calBooking'], lastModified: '2026-10-09', parent: 'services' },
-    { path: 'services/ai-voice-receptionist', tier: 'service', labelKey: 'services.aiVoiceReceptionist.name', copyKeys: ['services.aiVoiceReceptionist', 'media.calBooking'], lastModified: '2026-10-09', parent: 'services' },
+    { path: 'services/ai-voice-receptionist', tier: 'service', labelKey: 'services.aiVoiceReceptionist.name', copyKeys: ['services.aiVoiceReceptionist', 'media.calBooking'], lastModified: '2026-11-26', parent: 'services' },
     { path: 'services/software-development', tier: 'service', labelKey: 'services.softwareDevelopment.name', copyKeys: ['services.softwareDevelopment', 'media.calBooking'], lastModified: '2026-10-09', parent: 'services' },
     // PAUSED since 2026-10-08, not retired (task #T0021 brings it back). The
     // page lives in the private folder `services/_digital-business-card/`, its

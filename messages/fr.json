@@ -288,27 +288,6 @@
         }
       }
     },
-    "testimonials": {
-      "title": "Témoignages clients",
-      "subtitle": "Rejoignez des centaines d'entreprises qui ont transformé leur activité grâce à nos solutions d'IA.",
-      "items": [
-        {
-          "quote": "Lorenzoz Agency a réduit notre temps de réponse de 80 %. Nous n'avons pas manqué un seul prospect en trois mois.",
-          "author": "David Chen",
-          "position": "PDG, TechFlow Solutions"
-        },
-        {
-          "quote": "Le réceptionniste vocal IA a une voix incroyablement humaine. Nos clients prennent vraiment plaisir à échanger avec lui.",
-          "author": "Sarah Jenkins",
-          "position": "Responsable des opérations, Bloom Retail"
-        },
-        {
-          "quote": "Faire grandir notre support client était notre plus gros souci. Aujourd'hui, l'IA traite 90 % du volume sans effort.",
-          "author": "Marcus Thorne",
-          "position": "Fondateur, Thorne & Co."
-        }
-      ]
-    },
     "contact": {
       "badge": "Contact",
       "title": "Parlons de votre entreprise.",

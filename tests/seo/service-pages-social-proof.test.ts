@@ -1,31 +1,28 @@
 import { describe, it, expect } from 'vitest';
 import { readFileSync } from 'fs';
 import path from 'path';
-import enMessages from '@/messages/en.json';
+import { LOCALES } from '@/lib/routing';
 
 /**
  * Social proof on the service pages, and the honesty rule around it.
  *
- * `home.testimonials` holds three real, unmodified quotes (David Chen, Sarah
- * Jenkins, Marcus Thorne). All three are about the AI voice receptionist:
- * call handling, response time, support volume. Sarah Jenkins names it
- * outright. So `ai-voice-receptionist` is the ONLY service that can carry
- * them without putting words in a client's mouth about a service they never
- * mentioned.
+ * The site used to show three quotes (David Chen, Sarah Jenkins, Marcus
+ * Thorne) on the AI Voice Receptionist page. They came over from the Next.js
+ * scaffold and were not from real clients, so they were removed on
+ * 2026-11-26: a made-up testimonial is a false claim about the business
+ * (Trust, the centre of E-E-A-T) and a fake review under consumer law.
  *
- * The other pages therefore render no social-proof section at all. They
- * used to render `<SocialProofStrip items={[]} />`, which is dead markup: the
- * component returns null on an empty list, so it produced nothing while
- * looking like the conversion element was handled. Removing it is the code
- * fix; the content fix is a real quote per service, which the business has to
- * supply. These tests hold BOTH halves in place: no dead call, and no quote
- * borrowed across services.
+ * Until the business supplies real, attributable quotes, no service page
+ * renders a social-proof section, and the old placeholder copy cannot come
+ * back through the messages. `SocialProofStrip` and the layout's `after-hero`
+ * slot stay, ready for real quotes.
  */
 const SERVICE_PAGES_DIR = path.resolve(__dirname, '../../src/pages/[locale]/services');
 
-const SLUGS_WITHOUT_TESTIMONIALS = [
+const SERVICE_SLUGS = [
     'local-seo',
     'website-development',
+    'ai-voice-receptionist',
     'software-development',
     // Paused, in a private folder. It is not routed, but the file is kept and
     // brought back unchanged, so the rule has to hold there too.
@@ -37,40 +34,19 @@ function readPage(slug: string): string {
 }
 
 describe('service pages: social proof', () => {
-    it('ai-voice-receptionist reuses the real home.testimonials quotes', () => {
-        const source = readPage('ai-voice-receptionist');
-        expect(source).toMatch(/testimonials\.items/);
-        expect(source).not.toMatch(/<SocialProofStrip[^>]*items=\{\[\]\}/);
+    it.each(SERVICE_SLUGS)('%s renders no social-proof section without real quotes', (slug) => {
+        expect(readPage(slug)).not.toMatch(/<SocialProofStrip|testimonials/);
     });
 
-    it.each(SLUGS_WITHOUT_TESTIMONIALS)(
-        '%s renders no social-proof section rather than an empty one',
-        (slug) => {
-            const source = readPage(slug);
-            // The dead call is the regression being guarded against: it renders
-            // nothing, so it silently reads as "handled" in review.
-            expect(source).not.toMatch(/<SocialProofStrip/);
-        }
-    );
+    it.each(LOCALES)('messages/%s.json holds no placeholder testimonials', (locale) => {
+        const messages = JSON.parse(readFileSync(path.resolve(__dirname, `../../messages/${locale}.json`), 'utf-8'));
+        expect(messages.home.testimonials).toBeUndefined();
+        expect(JSON.stringify(messages)).not.toMatch(/Marcus Thorne|Sarah Jenkins|David Chen/);
+    });
 
-    it.each(SLUGS_WITHOUT_TESTIMONIALS)(
-        '%s does not borrow a voice-receptionist testimonial',
-        (slug) => {
-            const source = readPage(slug);
-            for (const testimonial of enMessages.home.testimonials.items) {
-                expect(source).not.toContain(testimonial.author);
-                expect(source).not.toContain(testimonial.quote);
-            }
-        }
-    );
-
-    it('places social proof directly under the hero, before benefits and price', () => {
+    it('keeps the after-hero slot under the hero, before benefits and price', () => {
         // The conversion framework's scroll order is promise -> trust ->
-        // offer: the trust signal has to arrive before the objections it
-        // exists to pre-empt, not after the whole offer and process.
-        // The shared layout owns the order; the page fills its `after-hero` slot.
-        expect(readPage('ai-voice-receptionist')).toMatch(/<SocialProofStrip[^>]*slot="after-hero"/);
-
+        // offer: when real social proof arrives, it fills this slot.
         const layout = readFileSync(path.join(SERVICE_PAGES_DIR, '_ServicePage.astro'), 'utf-8');
         const heroAt = layout.indexOf('<ServiceHero');
         const proofAt = layout.indexOf('<slot name="after-hero"');
@@ -81,14 +57,5 @@ describe('service pages: social proof', () => {
         expect(proofAt).toBeGreaterThan(heroAt);
         expect(proofAt).toBeLessThan(benefitsAt);
         expect(proofAt).toBeLessThan(deliverablesAt);
-    });
-
-    it('keeps every testimonial attributed to a named person and role', () => {
-        // A quote with no attributable source is not social proof.
-        for (const testimonial of enMessages.home.testimonials.items) {
-            expect(testimonial.author.trim()).toBeTruthy();
-            expect(testimonial.position.trim()).toBeTruthy();
-            expect(testimonial.quote.trim()).toBeTruthy();
-        }
     });
 });
