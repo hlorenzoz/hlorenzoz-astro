@@ -14,6 +14,8 @@ import {
     DEFAULT_LOCALE,
     absoluteUrl,
     localeInfo,
+    SERVED_MARKETS,
+    isContinentCode,
 } from '@/lib/site-config';
 import { schemaDateTime } from '@/lib/schema/datetime';
 
@@ -84,8 +86,8 @@ export function organizationGraph({ locale, description }: { locale: string; des
         // which is only where it is physically registered. Emitted as `Country`
         // because these are national markets, not the town/region an
         // address-bound local business would declare.
-        areaServed: ORGANIZATION.areaServed.map((area) => ({
-            '@type': 'Country',
+        areaServed: ORGANIZATION.areaServed.map((area, i) => ({
+            '@type': isContinentCode(SERVED_MARKETS[i]) ? 'Continent' : 'Country',
             name: area,
         })),
         geo: {

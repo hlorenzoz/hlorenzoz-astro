@@ -104,21 +104,22 @@ describe('JSON-LD builders', () => {
         expect((person?.worksFor as Record<string, unknown>)['@id']).toBe(SCHEMA_IDS.organization);
     });
 
-    it('declares the served markets as Country entities, not the local address', () => {
+    it('declares the served markets as countries and Europe as a continent, not the local address', () => {
         const graph = organizationGraph({ locale: 'en', description: 'An agency.' }) as { '@graph': Array<Record<string, unknown>> };
         const org = graph['@graph'].find((n) => n['@type'] === 'ProfessionalService');
         const areas = org?.areaServed as Array<Record<string, unknown>>;
 
-        // The agency is an online provider: areaServed is the countries it
-        // serves, not the town it is registered in. Every entry is a Country,
-        // and the registration town must not leak in as a served area.
-        expect(areas.length).toBeGreaterThan(0);
-        for (const area of areas) {
-            expect(area['@type']).toBe('Country');
-        }
+        // The agency is an online provider: areaServed is the markets it serves,
+        // not the town it is registered in. Europe is a continent, not a Country.
+        expect(areas.map((a) => [a['@type'], a.name])).toEqual([
+            ['Country', 'Australia'],
+            ['Country', 'Canada'],
+            ['Country', 'Costa Rica'],
+            ['Continent', 'Europe'],
+            ['Country', 'United Kingdom'],
+            ['Country', 'United States'],
+        ]);
         const names = areas.map((a) => a.name);
-        expect(names).toContain('United States');
-        expect(names).toContain('Spain');
         expect(names).not.toContain('Xinzo de Limia');
 
         // address stays the physical registration, distinct from areaServed.

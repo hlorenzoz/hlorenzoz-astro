@@ -23,8 +23,8 @@ experience delivering them. The client focuses on delivering their own service; 
 agency owns customer acquisition and follow-up. The mission is to create the conditions
 for clients to generate 1M+ in revenue per year (an objective, not a guarantee).
 
-It serves clients worldwide, focusing primarily on eight markets (Australia, Canada, Costa
-Rica, Ireland, New Zealand, Spain, United Kingdom, United States). These are commercial
+It serves clients worldwide, focusing primarily on six markets (Australia, Canada, Costa
+Rica, Europe, United Kingdom, United States). These are commercial
 target markets, not the site's local GBP service area, see
 [AGENTS.md](./AGENTS.md#target-markets) for why the two must not be conflated.
 

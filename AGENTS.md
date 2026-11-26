@@ -45,29 +45,26 @@ Two notes for anyone writing copy from this:
 
 ### Target markets
 
-The agency serves clients worldwide, but focuses primarily on eight English- and
-Spanish-speaking markets:
+The agency serves clients worldwide, but focuses primarily on six markets:
 
 - Australia
 - Canada
 - Costa Rica
-- Ireland
-- New Zealand
-- Spain
+- Europe
 - United Kingdom
 - United States
 
 The agency is an **online provider**: physically registered in Xinzo de Limia, but
-delivering worldwide, focused on these countries. So the two facts sit in different
+delivering worldwide, focused on these markets. So the two facts sit in different
 schema.org fields, and this table is the source of truth for both:
 
 - **`address`** (`lib/site-config.ts`) stays the physical registration: Xinzo de Limia,
   Ourense, Spain. It is where the business IS, not where it sells.
 - **`ORGANIZATION.areaServed`** is exactly this list, emitted as schema.org `Country`
-  entities. It is where the business DELIVERS. Keep the two in step: editing this table
+  entities, and Europe as a `Continent` (UN M.49 code `150` in `SERVED_MARKETS`). It is where the business DELIVERS. Keep the two in step: editing this table
   means editing `areaServed`.
 
-Do not collapse the two. The address is one town; the served area is eight countries.
+Do not collapse the two. The address is one town; the served area is five countries and a continent.
 Putting the town into `areaServed`, or a country into `address`, misstates the business.
 
 ### Agency Services

@@ -19,22 +19,26 @@ import { DEFAULT_LOCALE, LOCALES, LOCALE_INFO, localeInfo } from '@/lib/routing'
 export const OG_IMAGE = `${CDN_URL}/hlorenzoz.com/og-image.webp`;
 
 /**
- * The countries the online agency serves, as ISO 3166-1 alpha-2 codes, in the
- * display order AGENTS.md lists them (alphabetical by English name).
+ * The markets the online agency serves, in the display order AGENTS.md lists them
+ * (alphabetical by English name): ISO 3166-1 alpha-2 codes for countries and the
+ * UN M.49 code `150` for Europe, which `Intl.DisplayNames` names in every locale.
  *
  * Codes, not names, so there is ONE source: the schema emits English names, the
- * visible homepage band emits localized names ("Spain" vs "España"), and both
+ * visible homepage band emits localized names ("Europe" vs "Europa"), and both
  * derive from this list through `marketNames`. A hand-written localized list per
  * locale is exactly the duplication that lets the two drift apart.
  */
-export const SERVED_MARKETS = ['AU', 'CA', 'CR', 'IE', 'NZ', 'ES', 'GB', 'US'] as const;
+export const SERVED_MARKETS = ['AU', 'CA', 'CR', '150', 'GB', 'US'] as const;
+
+/** A numeric (UN M.49) market code is a region such as a continent, not a country. */
+export const isContinentCode = (code: string) => /^\d+$/.test(code);
 
 /**
  * Localized country names for the served markets, e.g. "España" for `es`.
  *
  * Memoized per locale: `Intl.DisplayNames` loads ICU region data on
  * construction, and this is called at module load (`areaServed`) and once per
- * homepage render per locale over a fixed eight-code list. The cache is a
+ * homepage render per locale over a fixed six-code list. The cache is a
  * read-only snapshot; callers only ever `.map` over it.
  */
 const MARKET_NAMES_CACHE = new Map<string, readonly string[]>();
@@ -92,7 +96,7 @@ export const ORGANIZATION = {
      *
      * Derived from `SERVED_MARKETS` in the default (English) locale, because the
      * #organization node is emitted locale-independently. Emitted as schema.org
-     * `Country` entities (see `lib/schema`), not the hyperlocal town/region an
+     * `Country` entities, Europe as a `Continent` (see `lib/schema`), not the hyperlocal town/region an
      * address-bound business would list.
      */
     areaServed: marketNames(DEFAULT_LOCALE),

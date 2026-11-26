@@ -6,7 +6,7 @@
 
 - Founder: Héctor Luis Lorenzo Zaldivar, Founder & AI Architect
 - Headquartered in Xinzo de Limia, Ourense, Spain
-- Serves clients worldwide, with a primary focus on Australia, Canada, Costa Rica, Ireland, New Zealand, Spain, the United Kingdom, and the United States
+- Serves clients worldwide, with a primary focus on Australia, Canada, Costa Rica, Europe, the United Kingdom, and the United States
 - How we work: a free first call analyzes what the business needs; the agency then proposes, quotes and implements one tailored solution, and measures the results with the client
 - Services: Local SEO (authority content, backlinks and citations, authority on Google and AI, review management), website development, AI voice receptionist, software development; they are building blocks combined per client, none is a core offer, and a service may come included in the solution at no extra cost
 - Tech stack: Astro, Tailwind CSS, Cloudflare (CDN, Workers, Pages), Vitest, Playwright, Lighthouse CI
