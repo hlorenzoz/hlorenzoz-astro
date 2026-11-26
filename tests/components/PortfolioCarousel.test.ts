@@ -21,21 +21,16 @@ describe('PortfolioCarousel', () => {
         expect(screen.body.querySelector('#portfolio')).not.toBeNull();
         expect(screen.getByRole('heading', { level: 2, name: copy.title })).toBeInTheDocument();
         expect(screen.getByText(copy.subtitle)).toBeInTheDocument();
-        // Desktop overlay and mobile controls each name the project.
-        expect(screen.getAllByText(messages.portfolio['dental-clinic-1'].title)).toHaveLength(2);
-        expect(screen.getAllByText(messages.portfolio['lorenzoz-agency'].title)).toHaveLength(2);
+        // One compact card per project: its title appears once, at every width.
+        expect(screen.getAllByText(messages.portfolio['dental-clinic-1'].title)).toHaveLength(1);
+        expect(screen.getAllByText(messages.portfolio['lorenzoz-agency'].title)).toHaveLength(1);
     });
 
     it('links the portfolio index and each project with trailing slashes', async () => {
         const screen = await renderCarousel();
         expect(screen.getByRole('link', { name: copy.cta })).toHaveAttribute('href', '/en/portfolio/');
         const explore = screen.getAllByRole('link', { name: copy.explore }).map((a) => a.getAttribute('href'));
-        expect(explore).toEqual([
-            '/en/portfolio/dental-clinic-1/',
-            '/en/portfolio/dental-clinic-1/',
-            '/en/portfolio/lorenzoz-agency/',
-            '/en/portfolio/lorenzoz-agency/',
-        ]);
+        expect(explore).toEqual(['/en/portfolio/dental-clinic-1/', '/en/portfolio/lorenzoz-agency/']);
     });
 
     it('makes every project title a link to its detail page', async () => {

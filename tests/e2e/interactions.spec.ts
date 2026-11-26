@@ -211,6 +211,26 @@ test.describe('home carousels', () => {
         await page.keyboard.press('ArrowLeft');
         await expect(dots.first()).toHaveAttribute('aria-current', 'true');
     });
+
+    test('the portfolio carousel reaches its last slide and steps back from it', async ({ page }) => {
+        // Several compact cards fit at once, so the last ones cannot align to the
+        // start: "next" must still end on the last dot, and "previous" must move.
+        await page.goto('/en/', { waitUntil: 'load' });
+        const section = page.locator('#portfolio');
+        await section.scrollIntoViewIfNeeded();
+        const dots = section.getByRole('button', { name: /Go to slide/ });
+        const nextButton = section.getByRole('button', { name: 'Next slide', exact: true });
+        const prevButton = section.getByRole('button', { name: 'Previous slide', exact: true });
+        for (let i = 0; i < 20 && (await nextButton.isEnabled()); i++) {
+            await nextButton.click();
+            await page.waitForTimeout(400);
+        }
+        await expect(dots.last()).toHaveAttribute('aria-current', 'true');
+        await expect(nextButton).toBeDisabled();
+        await prevButton.click();
+        await expect(dots.last()).toHaveAttribute('aria-current', 'false');
+        await expect(nextButton).toBeEnabled();
+    });
 });
 
 test.describe('portfolio type filter', () => {
