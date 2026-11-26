@@ -173,6 +173,12 @@ describe('image and accessible text gate publication like page copy', () => {
         expect(localesWithKeys({ en, es: without(cardKey) }, keys)).toEqual(['en']);
     });
 
+    it('the terms page does not publish while its payment and portfolio terms are untranslated', () => {
+        const keys = [...(ALL_ROUTES.find((r) => r.path === 'terms-conditions')!.copyKeys ?? [])];
+        expect(localesWithKeys({ en, es }, keys)).toEqual(['en', 'es']);
+        expect(localesWithKeys({ en, es: without('footer.terms.marketing.description') }, keys)).toEqual(['en']);
+    });
+
     it('an index is only built where every page its cards link to is built', () => {
         for (const prefix of ['portfolio', 'news']) {
             for (const item of ALL_ROUTES.filter((r) => r.path.startsWith(`${prefix}/`))) {

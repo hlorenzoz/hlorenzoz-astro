@@ -82,7 +82,7 @@ const STATIC_ROUTES: readonly SiteRoute[] = [
     { path: 'card/hector', tier: 'page', labelKey: 'sitemap.labels.card', copyKeys: ['card.hector'], lastModified: '2026-07-10', parent: '' },
     { path: 'sitemap', tier: 'page', labelKey: 'sitemap.labels.sitemap', copyKeys: ['sitemap'], lastModified: '2026-11-25', parent: '' },
     { path: 'privacy-policy', tier: 'legal', labelKey: 'footer.legal.items.0.label', copyKeys: ['footer.privacyPage', 'footer.legal'], lastModified: '2026-07-10', parent: '' }, // gitleaks:allow (translation key path, not a secret)
-    { path: 'terms-conditions', tier: 'legal', labelKey: 'footer.legal.items.1.label', copyKeys: ['footer.termsPage', 'footer.legal'], lastModified: '2026-10-09', parent: '' }, // gitleaks:allow (translation key path, not a secret)
+    { path: 'terms-conditions', tier: 'legal', labelKey: 'footer.legal.items.1.label', copyKeys: ['footer.termsPage', 'footer.terms', 'footer.legal'], lastModified: '2026-10-09', parent: '' }, // gitleaks:allow (translation key path, not a secret)
     { path: 'cookie-policy', tier: 'legal', labelKey: 'footer.legal.items.2.label', copyKeys: ['footer.cookiePage', 'footer.legal'], lastModified: '2026-07-10', parent: '' }, // gitleaks:allow (translation key path, not a secret)
     // Core 30 hub + its four services. `parent: ''` because home's own path IS
     // '' — `null` is not a valid `findRoute` key and would break
