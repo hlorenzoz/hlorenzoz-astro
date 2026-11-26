@@ -200,10 +200,10 @@ describe('languageAlternates', () => {
 
     it('reads the route registry through routeAlternates', () => {
         expect(routeAlternates('privacy-policy')).toEqual({
-            en: absoluteUrl('en', 'privacy-policy'),
-            es: absoluteUrl('es', 'privacy-policy'),
+            ...Object.fromEntries(routeLocales('privacy-policy').map((l) => [LOCALE_INFO[l].tag, absoluteUrl(l, 'privacy-policy')])),
             'x-default': absoluteUrl('en', 'privacy-policy'),
         });
+        expect(Object.keys(routeAlternates('privacy-policy'))).toEqual(expect.arrayContaining(['en', 'es', 'x-default']));
     });
 });
 

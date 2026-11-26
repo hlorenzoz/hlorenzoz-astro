@@ -87,6 +87,13 @@
     },
     "legal": {
       "title": "Informação legal",
+      "toc": "Índice",
+      "onThisPage": "Nesta página",
+      "needHelp": {
+        "title": "Precisa de ajuda?",
+        "content": "Contacte a nossa equipa jurídica para esclarecimentos.",
+        "cta": "Contactar o suporte"
+      },
       "items": [
         {
           "label": "Política de privacidade",
@@ -101,6 +108,146 @@
           "href": "/cookie-policy"
         }
       ]
+    },
+    "terms": {
+      "payment": {
+        "title": "Pagamentos",
+        "description": "Ao assinar, {upfront}% é pago antecipadamente (o primeiro mês). Cobre o custo das ferramentas e dos serviços que tornam o trabalho possível. Nos projetos de pagamento único, o valor restante é pago na conclusão e antes da entrega final."
+      },
+      "marketing": {
+        "title": "Portfolio e casos de estudo",
+        "description": "A Lorenzoz Agency poderá utilizar os projetos concluídos como casos de estudo ou referências de marketing para mostrar o nosso trabalho, salvo acordo em contrário por escrito."
+      }
+    },
+    "privacyPage": {
+      "lastUpdated": "Última atualização: 24 de fevereiro de 2026",
+      "sections": {
+        "introduction": {
+          "title": "Introdução",
+          "content": "Agradecemos a sua visita à Lorenzoz Agency. Respeitamos a sua privacidade e estamos empenhados em proteger os seus dados pessoais. A presente Política de Privacidade informa sobre a forma como cuidamos dos seus dados pessoais quando visita o nosso site, sobre os seus direitos de privacidade e sobre a forma como a lei o protege."
+        },
+        "dataCollection": {
+          "title": "Recolha de dados",
+          "content": "Recolhemos as informações que nos fornece diretamente quando utiliza os nossos serviços.",
+          "list": [
+            "Identificação direta (Nome, Email)",
+            "Informação profissional (Empresa, Cargo)",
+            "Dados de utilização e preferências",
+            "Histórico de comunicações"
+          ]
+        },
+        "dataUsage": {
+          "title": "Utilização dos dados",
+          "content": "Os seus dados permitem que prestemos e melhoremos os nossos serviços de forma eficiente.",
+          "list": [
+            "Prestar e manter os nossos serviços",
+            "Comunicar atualizações dos projetos",
+            "Melhorar a experiência do utilizador"
+          ]
+        },
+        "thirdParty": {
+          "title": "Serviços de terceiros",
+          "content": "Recorremos a fornecedores terceiros de confiança para reforçar as nossas capacidades operacionais.",
+          "hosting": "Alojamento e infraestrutura",
+          "payments": "Processamento de pagamentos",
+          "booking": "Agendamento e calendário",
+          "analytics": "Desempenho e análise",
+          "ai": "Infraestrutura de voz com IA"
+        },
+        "rights": {
+          "title": "Os seus direitos",
+          "content": "Tem o direito de aceder, retificar ou apagar as suas informações pessoais a qualquer momento. Asseguramos a portabilidade dos dados e o seu direito ao esquecimento."
+        },
+        "contact": {
+          "title": "Contactar a equipa de privacidade",
+          "content": "Se tiver questões sobre as nossas práticas de privacidade, a nossa equipa está pronta para ajudar."
+        }
+      }
+    },
+    "termsPage": {
+      "lastUpdated": "Última atualização: 22 de julho de 2026",
+      "sections": {
+        "terms": {
+          "title": "Termos",
+          "content": "Ao aceder ao site hlorenzoz.com, aceita ficar vinculado aos presentes termos de serviço e a todas as leis e regulamentos aplicáveis, e aceita que é responsável pelo cumprimento de quaisquer leis locais aplicáveis."
+        },
+        "license": {
+          "title": "Licença de utilização",
+          "content": "É concedida autorização para descarregar temporariamente uma cópia dos materiais (informação ou software) do site da Lorenzoz Agency, exclusivamente para visualização transitória, pessoal e não comercial.",
+          "list": [
+            "Modificar ou copiar os materiais.",
+            "Utilizar os materiais para qualquer fim comercial ou para qualquer exibição pública (comercial ou não comercial).",
+            "Tentar descompilar ou fazer engenharia inversa de qualquer software contido no site da Lorenzoz Agency.",
+            "Remover dos materiais quaisquer menções de direitos de autor ou outras menções de propriedade."
+          ]
+        },
+        "property": {
+          "title": "Propriedade intelectual",
+          "content": "O Serviço e o seu conteúdo, características e funcionalidades originais são e continuarão a ser propriedade exclusiva da Lorenzoz Agency e dos seus licenciantes. As nossas marcas e a nossa imagem comercial não podem ser utilizadas em relação com qualquer produto ou serviço sem o consentimento prévio, por escrito, da Lorenzoz Agency."
+        },
+        "pricing": {
+          "intro": "Se pretender adquirir qualquer produto ou serviço disponibilizado através do Serviço, poderemos pedir que forneça determinadas informações relevantes para a sua Compra.",
+          "discount": {
+            "title": "Desconto nos serviços opcionais",
+            "description": "Desenvolvimento web, Rececionista de voz com IA e Desenvolvimento de software têm {discount}% de desconto sobre o preço de tabela quando contratados em conjunto com o SEO local. Contratados isoladamente, são cobrados ao preço de tabela. Não existe período de teste gratuito."
+          },
+          "tax": {
+            "title": "Preços sem IVA",
+            "description": "Nenhum preço publicado inclui IVA. Os residentes na UE estão sujeitos a +21% de IVA, acrescentado na fatura."
+          },
+          "subscriptions": {
+            "title": "Subscrições",
+            "description": "Faturadas antecipadamente, de forma recorrente e periódica (mensal ou anual)."
+          },
+          "cancellations": {
+            "title": "Cancelamentos",
+            "description": "Pode cancelar a renovação da sua subscrição através da página de gestão da sua conta ou entrando em contacto connosco."
+          }
+        },
+        "liability": {
+          "title": "Responsabilidade e avisos legais",
+          "content": "Em caso algum a Lorenzoz Agency, nem os seus administradores, trabalhadores, parceiros, agentes, fornecedores ou afiliadas, serão responsáveis por quaisquer danos indiretos, incidentais, especiais, consequenciais ou punitivos resultantes do seu acesso ao Serviço ou da sua utilização do mesmo."
+        },
+        "contact": {
+          "title": "Contacto",
+          "content": "Se tiver alguma questão sobre estes Termos, entre em contacto connosco:"
+        }
+      }
+    },
+    "cookiePage": {
+      "lastUpdated": "Última atualização: 24 de fevereiro de 2026",
+      "sections": {
+        "whatAre": {
+          "title": "O que são cookies?",
+          "content": "Os cookies são pequenos ficheiros de texto guardados no seu dispositivo que ajudam os sites a funcionar de forma eficiente e nos fornecem informações de utilização."
+        },
+        "howWeUse": {
+          "title": "Como utilizamos os cookies",
+          "content": "Utilizamos cookies para melhorar a sua experiência, compreender a utilização do site e assegurar funcionalidades básicas.",
+          "items": {
+            "essential": {
+              "title": "Essenciais",
+              "description": "Necessários para o funcionamento do site. Não podem ser desativados."
+            },
+            "analytics": {
+              "title": "Análise",
+              "description": "Permitem que compreendamos como os visitantes interagem com o site."
+            }
+          }
+        },
+        "control": {
+          "title": "Controlo dos cookies",
+          "content": "Pode aceitar ou rejeitar cookies através do nosso aviso de cookies ou das definições do seu navegador. A rejeição de cookies pode afetar algumas funcionalidades do site."
+        },
+        "updates": {
+          "title": "Atualizações da política",
+          "content": "Revemos esta política regularmente para refletir alterações tecnológicas e legais. Recomendamos que a consulte com frequência."
+        },
+        "contact": {
+          "title": "Dúvidas?",
+          "content": "Para esclarecimentos sobre a nossa utilização de cookies, contacte a nossa equipa de privacidade."
+        }
+      }
     }
   },
   "home": {
@@ -2256,6 +2403,21 @@
   },
   "card": {
     "hector": {
+      "name": "Héctor Luis Lorenzo Zaldivar",
+      "title": "Fundador e Arquiteto de IA",
+      "agency": "Lorenzoz Agency",
+      "getInTouch": "Entrar em contacto",
+      "addContacts": "Adicionar aos contactos",
+      "bookCall": "Marcar chamada",
+      "website": "Site",
+      "viewMaps": "Ver no Google Maps",
+      "installApp": "Instalar aplicação",
+      "addToHome": "Adicionar ao ecrã principal",
+      "location": "Xinzo de Limia, Ourense",
+      "nfcWrite": "Gravar no cartão NFC",
+      "nfcWriting": "Aproxime o cartão para gravar...",
+      "nfcSuccess": "Gravado com sucesso!",
+      "nfcError": "O NFC falhou ou não é suportado.",
       "email": "Email",
       "phone": "Telefone",
       "meta": {
@@ -2272,6 +2434,22 @@
     "back": "Voltar ao início"
   },
   "sitemap": {
+    "title": "Mapa do site",
+    "subtitle": "Todas as páginas deste site, agrupadas tal como o site está organizado. Se procura algo concreto, esta é a forma mais rápida de o encontrar.",
+    "toc": "Secções",
+    "tiers": {
+      "home": "Comece aqui",
+      "category": "Serviços",
+      "service": "Serviços individuais",
+      "supporting": "Guias e respostas",
+      "location": "Zonas onde trabalhamos",
+      "page": "Páginas",
+      "legal": "Informação legal"
+    },
+    "labels": {
+      "card": "Cartão de visita digital",
+      "sitemap": "Mapa do site"
+    },
     "byline": {
       "by": "Escrito por",
       "updated": "Atualizado a",

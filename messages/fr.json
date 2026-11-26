@@ -392,6 +392,13 @@
     },
     "legal": {
       "title": "Informations légales",
+      "toc": "Table des matières",
+      "onThisPage": "Sur cette page",
+      "needHelp": {
+        "title": "Besoin d'aide ?",
+        "content": "Contactez notre équipe juridique pour toute précision.",
+        "cta": "Contacter le support"
+      },
       "items": [
         {
           "label": "Politique de confidentialité",
@@ -406,6 +413,146 @@
           "href": "/cookie-policy"
         }
       ]
+    },
+    "terms": {
+      "payment": {
+        "title": "Paiements",
+        "description": "À la signature, {upfront} % est réglé d'avance (le premier mois). Ce montant couvre le coût des outils et services qui rendent le travail possible. Pour les projets à paiement unique, le solde restant est dû à la fin des travaux et avant la livraison finale."
+      },
+      "marketing": {
+        "title": "Portfolio et études de cas",
+        "description": "Lorenzoz Agency peut utiliser les projets réalisés comme études de cas ou références commerciales pour présenter son travail, sauf accord contraire écrit."
+      }
+    },
+    "privacyPage": {
+      "lastUpdated": "Dernière mise à jour : 24 février 2026",
+      "sections": {
+        "introduction": {
+          "title": "Introduction",
+          "content": "Bienvenue chez Lorenzoz Agency. Nous respectons votre vie privée et nous nous engageons à protéger vos données personnelles. La présente politique de confidentialité vous informe de la manière dont nous prenons soin de vos données personnelles lorsque vous visitez notre site web, ainsi que de vos droits en matière de vie privée et de la façon dont la loi vous protège."
+        },
+        "dataCollection": {
+          "title": "Collecte des données",
+          "content": "Nous collectons les informations que vous nous fournissez directement lorsque vous utilisez nos services.",
+          "list": [
+            "Données d'identification directe (nom, email)",
+            "Informations professionnelles (entreprise, fonction)",
+            "Données d'utilisation et préférences",
+            "Historique des échanges"
+          ]
+        },
+        "dataUsage": {
+          "title": "Utilisation des données",
+          "content": "Vos données nous permettent de fournir et d'améliorer nos services de manière efficace.",
+          "list": [
+            "Fournir et maintenir nos services",
+            "Vous informer de l'avancement des projets",
+            "Améliorer l'expérience utilisateur"
+          ]
+        },
+        "thirdParty": {
+          "title": "Services tiers",
+          "content": "Nous faisons appel à des prestataires tiers de confiance pour renforcer nos capacités opérationnelles.",
+          "hosting": "Hébergement et infrastructure",
+          "payments": "Traitement des paiements",
+          "booking": "Planification et agenda",
+          "analytics": "Performance et statistiques",
+          "ai": "Infrastructure vocale IA"
+        },
+        "rights": {
+          "title": "Vos droits",
+          "content": "Vous avez le droit d'accéder à vos informations personnelles, de les rectifier ou de les supprimer à tout moment. Nous garantissons la portabilité de vos données et votre droit à l'oubli."
+        },
+        "contact": {
+          "title": "Contacter l'équipe confidentialité",
+          "content": "Si vous avez des questions sur nos pratiques en matière de confidentialité, notre équipe est prête à vous aider."
+        }
+      }
+    },
+    "termsPage": {
+      "lastUpdated": "Dernière mise à jour : 22 juillet 2026",
+      "sections": {
+        "terms": {
+          "title": "Conditions",
+          "content": "En accédant au site web hlorenzoz.com, vous acceptez d'être lié par les présentes conditions d'utilisation ainsi que par l'ensemble des lois et réglementations applicables, et vous reconnaissez être responsable du respect de toute législation locale applicable."
+        },
+        "license": {
+          "title": "Licence d'utilisation",
+          "content": "Il est permis de télécharger temporairement une copie des contenus (informations ou logiciels) présents sur le site web de Lorenzoz Agency, uniquement pour une consultation personnelle, non commerciale et temporaire.",
+          "list": [
+            "Modifier ou copier les contenus.",
+            "Utiliser les contenus à des fins commerciales ou pour toute présentation publique (commerciale ou non commerciale).",
+            "Tenter de décompiler ou de procéder à l'ingénierie inverse de tout logiciel présent sur le site web de Lorenzoz Agency.",
+            "Supprimer toute mention de droit d'auteur ou toute autre mention de propriété figurant sur les contenus."
+          ]
+        },
+        "property": {
+          "title": "Propriété intellectuelle",
+          "content": "Le Service ainsi que son contenu original, ses caractéristiques et ses fonctionnalités sont et resteront la propriété exclusive de Lorenzoz Agency et de ses concédants de licence. Nos marques et notre habillage commercial ne peuvent être utilisés en relation avec un produit ou un service sans l'accord écrit préalable de Lorenzoz Agency."
+        },
+        "pricing": {
+          "intro": "Si vous souhaitez acheter un produit ou un service proposé par l'intermédiaire du Service, il pourra vous être demandé de fournir certaines informations nécessaires à votre achat.",
+          "discount": {
+            "title": "Remise sur les services optionnels",
+            "description": "La création de sites web, le réceptionniste vocal IA et le développement logiciel bénéficient d'une remise de {discount} % sur leur prix catalogue lorsqu'ils sont souscrits avec le SEO local. Achetés seuls, ils sont facturés au prix catalogue. Il n'y a pas d'essai gratuit."
+          },
+          "tax": {
+            "title": "Prix hors TVA",
+            "description": "Aucun prix publié n'inclut la TVA. Les résidents de l'UE sont soumis à une TVA de 21 %, ajoutée sur la facture."
+          },
+          "subscriptions": {
+            "title": "Abonnements",
+            "description": "Facturés à l'avance, de manière récurrente et périodique (mensuelle ou annuelle)."
+          },
+          "cancellations": {
+            "title": "Résiliations",
+            "description": "Vous pouvez annuler le renouvellement de votre abonnement depuis la page de gestion de votre compte ou en nous contactant."
+          }
+        },
+        "liability": {
+          "title": "Responsabilité et exclusions de garantie",
+          "content": "En aucun cas Lorenzoz Agency, ni ses dirigeants, employés, partenaires, agents, fournisseurs ou sociétés affiliées, ne pourront être tenus responsables de tout dommage indirect, accessoire, spécial, consécutif ou punitif résultant de votre accès au Service ou de son utilisation."
+        },
+        "contact": {
+          "title": "Nous contacter",
+          "content": "Pour toute question concernant les présentes Conditions, veuillez nous contacter :"
+        }
+      }
+    },
+    "cookiePage": {
+      "lastUpdated": "Dernière mise à jour : 24 février 2026",
+      "sections": {
+        "whatAre": {
+          "title": "Que sont les cookies ?",
+          "content": "Les cookies sont de petits fichiers texte enregistrés sur votre appareil afin d'aider les sites web à fonctionner efficacement et de nous fournir des informations sur leur utilisation."
+        },
+        "howWeUse": {
+          "title": "Comment nous utilisons les cookies",
+          "content": "Nous utilisons des cookies pour améliorer votre expérience, comprendre l'utilisation du site et assurer ses fonctionnalités de base.",
+          "items": {
+            "essential": {
+              "title": "Essentiels",
+              "description": "Nécessaires au fonctionnement du site web. Ils ne peuvent pas être désactivés."
+            },
+            "analytics": {
+              "title": "Statistiques",
+              "description": "Ils nous aident à comprendre comment les visiteurs interagissent avec le site web."
+            }
+          }
+        },
+        "control": {
+          "title": "Gérer les cookies",
+          "content": "Vous pouvez accepter ou refuser les cookies depuis notre bannière ou les paramètres de votre navigateur. Le refus des cookies peut affecter certaines fonctionnalités du site."
+        },
+        "updates": {
+          "title": "Mises à jour de la politique",
+          "content": "Nous réexaminons régulièrement cette politique pour tenir compte des évolutions technologiques et juridiques. Nous vous invitons à la consulter souvent."
+        },
+        "contact": {
+          "title": "Des questions ?",
+          "content": "Pour toute précision sur notre utilisation des cookies, veuillez contacter notre équipe confidentialité."
+        }
+      }
     }
   },
   "news": {
@@ -2256,6 +2403,21 @@
   },
   "card": {
     "hector": {
+      "name": "Héctor Luis Lorenzo Zaldivar",
+      "title": "Fondateur et architecte IA",
+      "agency": "Lorenzoz Agency",
+      "getInTouch": "Prendre contact",
+      "addContacts": "Ajouter aux contacts",
+      "bookCall": "Réserver un appel",
+      "website": "Site web",
+      "viewMaps": "Voir sur Google Maps",
+      "installApp": "Installer l'app",
+      "addToHome": "Ajouter à l'écran d'accueil",
+      "location": "Xinzo de Limia, Ourense",
+      "nfcWrite": "Écrire sur la carte NFC",
+      "nfcWriting": "Approchez la carte pour écrire...",
+      "nfcSuccess": "Écriture réussie !",
+      "nfcError": "Échec de la NFC ou NFC non prise en charge.",
       "email": "Email",
       "phone": "Téléphone",
       "meta": {
@@ -2272,6 +2434,22 @@
     "back": "Retour à l'accueil"
   },
   "sitemap": {
+    "title": "Plan du site",
+    "subtitle": "Toutes les pages de ce site, regroupées selon sa structure. Si vous cherchez quelque chose de précis, c'est le moyen le plus rapide de le trouver.",
+    "toc": "Sections",
+    "tiers": {
+      "home": "Pour commencer",
+      "category": "Services",
+      "service": "Nos services en détail",
+      "supporting": "Guides et réponses",
+      "location": "Zones desservies",
+      "page": "Pages",
+      "legal": "Informations légales"
+    },
+    "labels": {
+      "card": "Carte de visite numérique",
+      "sitemap": "Plan du site"
+    },
     "byline": {
       "by": "Rédigé par",
       "updated": "Mis à jour le",

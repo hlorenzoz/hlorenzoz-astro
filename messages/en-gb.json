@@ -392,6 +392,13 @@
     },
     "legal": {
       "title": "Legal",
+      "toc": "Contents",
+      "onThisPage": "On this Page",
+      "needHelp": {
+        "title": "Need help?",
+        "content": "Contact our legal team for clarification.",
+        "cta": "Contact Support"
+      },
       "items": [
         {
           "label": "Privacy Policy",
@@ -406,6 +413,146 @@
           "href": "/cookie-policy"
         }
       ]
+    },
+    "terms": {
+      "payment": {
+        "title": "Payments",
+        "description": "On signing, {upfront}% is paid up front (the first month). It covers the cost of the tools and services that make the work possible. For one off projects, the remaining balance is due on completion and before final delivery."
+      },
+      "marketing": {
+        "title": "Portfolio and Case Studies",
+        "description": "Completed projects may be used by Lorenzoz Agency as case studies or marketing references to showcase our work, unless otherwise agreed in writing."
+      }
+    },
+    "privacyPage": {
+      "lastUpdated": "Last updated: 24 February 2026",
+      "sections": {
+        "introduction": {
+          "title": "Introduction",
+          "content": "Welcome to Lorenzoz Agency. We respect your privacy and are committed to protecting your personal data. This Privacy Policy explains how we look after your personal data when you visit our website, and tells you about your privacy rights and how the law protects you."
+        },
+        "dataCollection": {
+          "title": "Data Collection",
+          "content": "We collect the information you provide directly to us when you use our services.",
+          "list": [
+            "Direct identification (name, email address)",
+            "Professional information (company, role)",
+            "Usage data and preferences",
+            "Communication history"
+          ]
+        },
+        "dataUsage": {
+          "title": "Use of Data",
+          "content": "Your data helps us provide and improve our services efficiently.",
+          "list": [
+            "Provide and maintain our services",
+            "Communicate project updates",
+            "Improve the user experience"
+          ]
+        },
+        "thirdParty": {
+          "title": "Third Party Services",
+          "content": "We use trusted third party providers to strengthen our operational capabilities.",
+          "hosting": "Hosting and Infrastructure",
+          "payments": "Payment Processing",
+          "booking": "Scheduling and Calendar",
+          "analytics": "Performance and Analytics",
+          "ai": "AI Voice Infrastructure"
+        },
+        "rights": {
+          "title": "Your Rights",
+          "content": "You have the right to access, correct or delete your personal information at any time. We support data portability and your right to be forgotten."
+        },
+        "contact": {
+          "title": "Contact our Privacy Team",
+          "content": "If you have any questions about our privacy practices, our team is ready to help."
+        }
+      }
+    },
+    "termsPage": {
+      "lastUpdated": "Last updated: 22 July 2026",
+      "sections": {
+        "terms": {
+          "title": "Terms",
+          "content": "By accessing the website at hlorenzoz.com, you agree to be bound by these terms of service and by all applicable laws and regulations, and you agree that you are responsible for complying with any applicable local laws."
+        },
+        "license": {
+          "title": "Licence to Use",
+          "content": "Permission is granted to temporarily download one copy of the materials (information or software) on Lorenzoz Agency's website for personal, noncommercial, transitory viewing only.",
+          "list": [
+            "Modify or copy the materials.",
+            "Use the materials for any commercial purpose, or for any public display (commercial or noncommercial).",
+            "Attempt to decompile or reverse engineer any software contained on Lorenzoz Agency's website.",
+            "Remove any copyright or other proprietary notices from the materials."
+          ]
+        },
+        "property": {
+          "title": "Intellectual Property",
+          "content": "The Service and its original content, features and functionality are and will remain the exclusive property of Lorenzoz Agency and its licensors. Our trade marks and trade dress may not be used in connection with any product or service without the prior written consent of Lorenzoz Agency."
+        },
+        "pricing": {
+          "intro": "If you wish to purchase any product or service made available through the Service, you may be asked to supply certain information relevant to your purchase.",
+          "discount": {
+            "title": "Discount on optional services",
+            "description": "Website Development, AI Voice Receptionist and Software Development are {discount}% off their list price when taken alongside Local SEO. Bought on their own, they are charged at list price. There is no free trial."
+          },
+          "tax": {
+            "title": "Prices exclude VAT",
+            "description": "No published price includes VAT. EU residents are subject to +21% VAT, added on the invoice."
+          },
+          "subscriptions": {
+            "title": "Subscriptions",
+            "description": "Billed in advance on a recurring and periodic basis (monthly or annually)."
+          },
+          "cancellations": {
+            "title": "Cancellations",
+            "description": "You may cancel the renewal of your subscription either through your account management page or by contacting us."
+          }
+        },
+        "liability": {
+          "title": "Liability and Disclaimers",
+          "content": "In no event shall Lorenzoz Agency, nor its directors, employees, partners, agents, suppliers or affiliates, be liable for any indirect, incidental, special, consequential or punitive damages resulting from your access to or use of the Service."
+        },
+        "contact": {
+          "title": "Contact Us",
+          "content": "If you have any questions about these Terms, please contact us:"
+        }
+      }
+    },
+    "cookiePage": {
+      "lastUpdated": "Last updated: 24 February 2026",
+      "sections": {
+        "whatAre": {
+          "title": "What are Cookies?",
+          "content": "Cookies are small text files stored on your device that help websites work efficiently and provide us with information about how they are used."
+        },
+        "howWeUse": {
+          "title": "How We Use Cookies",
+          "content": "We use cookies to improve your experience, understand how the site is used and support basic functionality.",
+          "items": {
+            "essential": {
+              "title": "Essential",
+              "description": "Necessary for the website to function. They cannot be switched off."
+            },
+            "analytics": {
+              "title": "Analytics",
+              "description": "Help us understand how visitors interact with the website."
+            }
+          }
+        },
+        "control": {
+          "title": "Managing Cookies",
+          "content": "You can accept or reject cookies through our banner or your browser settings. Rejecting cookies may affect some features of the site."
+        },
+        "updates": {
+          "title": "Policy Updates",
+          "content": "We review this policy regularly to reflect technological and legal changes. Please check back often."
+        },
+        "contact": {
+          "title": "Questions?",
+          "content": "For clarification on how we use cookies, please get in touch with our privacy team."
+        }
+      }
     }
   },
   "news": {
@@ -2256,6 +2403,21 @@
   },
   "card": {
     "hector": {
+      "name": "Héctor Luis Lorenzo Zaldivar",
+      "title": "Founder & AI Architect",
+      "agency": "Lorenzoz Agency",
+      "getInTouch": "Get in Touch",
+      "addContacts": "Add to Contacts",
+      "bookCall": "Book a Call",
+      "website": "Website",
+      "viewMaps": "View on Google Maps",
+      "installApp": "Install App",
+      "addToHome": "Add to Home Screen",
+      "location": "Xinzo de Limia, Ourense",
+      "nfcWrite": "Write to NFC Card",
+      "nfcWriting": "Tap the card to write...",
+      "nfcSuccess": "Written successfully!",
+      "nfcError": "NFC failed or is not supported.",
       "email": "Email",
       "phone": "Phone",
       "meta": {
@@ -2272,6 +2434,22 @@
     "back": "Back to home"
   },
   "sitemap": {
+    "title": "Sitemap",
+    "subtitle": "Every page on this site, grouped the way the site is organised. If you are looking for something specific, this is the quickest way to find it.",
+    "toc": "Sections",
+    "tiers": {
+      "home": "Start Here",
+      "category": "Services",
+      "service": "Individual Services",
+      "supporting": "Guides and Answers",
+      "location": "Areas We Serve",
+      "page": "Pages",
+      "legal": "Legal"
+    },
+    "labels": {
+      "card": "Digital Business Card",
+      "sitemap": "Sitemap"
+    },
     "byline": {
       "by": "Written by",
       "updated": "Updated",

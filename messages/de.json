@@ -392,6 +392,13 @@
         },
         "legal": {
             "title": "Rechtliches",
+            "toc": "Inhaltsverzeichnis",
+            "onThisPage": "Auf dieser Seite",
+            "needHelp": {
+                "title": "Brauchen Sie Hilfe?",
+                "content": "Wenden Sie sich bei Fragen an unser Rechtsteam.",
+                "cta": "Support kontaktieren"
+            },
             "items": [
                 {
                     "label": "Datenschutzerklärung",
@@ -406,6 +413,146 @@
                     "href": "/cookie-policy"
                 }
             ]
+        },
+        "terms": {
+            "payment": {
+                "title": "Zahlungen",
+                "description": "Bei Vertragsabschluss werden {upfront}% im Voraus gezahlt (der erste Monat). Damit sind die Kosten für die Tools und Dienste gedeckt, die die Arbeit möglich machen. Bei Projekten mit Einmalzahlung ist der Restbetrag bei Fertigstellung und vor der endgültigen Übergabe fällig."
+            },
+            "marketing": {
+                "title": "Portfolio und Fallstudien",
+                "description": "Lorenzoz Agency darf abgeschlossene Projekte als Fallstudien oder Referenzen im Marketing verwenden, um die eigene Arbeit zu zeigen, sofern nichts anderes schriftlich vereinbart wurde."
+            }
+        },
+        "privacyPage": {
+            "lastUpdated": "Zuletzt aktualisiert: 24. Februar 2026",
+            "sections": {
+                "introduction": {
+                    "title": "Einleitung",
+                    "content": "Willkommen bei Lorenzoz Agency. Wir respektieren Ihre Privatsphäre und verpflichten uns, Ihre personenbezogenen Daten zu schützen. Diese Datenschutzerklärung informiert Sie darüber, wie wir mit Ihren personenbezogenen Daten umgehen, wenn Sie unsere Website besuchen, und klärt Sie über Ihre Datenschutzrechte und darüber auf, wie das Gesetz Sie schützt."
+                },
+                "dataCollection": {
+                    "title": "Datenerhebung",
+                    "content": "Wir erheben Informationen, die Sie uns bei der Nutzung unserer Leistungen direkt zur Verfügung stellen.",
+                    "list": [
+                        "Identifikationsdaten (Name, Mailadresse)",
+                        "Berufliche Angaben (Unternehmen, Funktion)",
+                        "Nutzungsdaten und Präferenzen",
+                        "Kommunikationsverlauf"
+                    ]
+                },
+                "dataUsage": {
+                    "title": "Datenverwendung",
+                    "content": "Ihre Daten helfen uns, unsere Leistungen effizient zu erbringen und zu verbessern.",
+                    "list": [
+                        "Bereitstellung und Aufrechterhaltung unserer Leistungen",
+                        "Information über den Stand Ihrer Projekte",
+                        "Verbesserung der Nutzererfahrung"
+                    ]
+                },
+                "thirdParty": {
+                    "title": "Dienste von Drittanbietern",
+                    "content": "Wir setzen vertrauenswürdige Drittanbieter ein, um unsere betrieblichen Möglichkeiten zu erweitern.",
+                    "hosting": "Hosting und Infrastruktur",
+                    "payments": "Zahlungsabwicklung",
+                    "booking": "Terminplanung und Kalender",
+                    "analytics": "Leistung und Analyse",
+                    "ai": "Infrastruktur für KI Sprachdienste"
+                },
+                "rights": {
+                    "title": "Ihre Rechte",
+                    "content": "Sie haben jederzeit das Recht, Auskunft über Ihre personenbezogenen Daten zu erhalten sowie deren Berichtigung oder Löschung zu verlangen. Wir unterstützen die Datenübertragbarkeit und Ihr Recht auf Vergessenwerden."
+                },
+                "contact": {
+                    "title": "Kontakt zum Datenschutzteam",
+                    "content": "Wenn Sie Fragen zu unserem Umgang mit Ihren Daten haben, hilft Ihnen unser Team gerne weiter."
+                }
+            }
+        },
+        "termsPage": {
+            "lastUpdated": "Zuletzt aktualisiert: 22. Juli 2026",
+            "sections": {
+                "terms": {
+                    "title": "Bedingungen",
+                    "content": "Mit dem Zugriff auf die Website unter hlorenzoz.com erklären Sie sich damit einverstanden, an diese Nutzungsbedingungen sowie an alle geltenden Gesetze und Vorschriften gebunden zu sein, und stimmen zu, dass Sie für die Einhaltung aller anwendbaren lokalen Gesetze verantwortlich sind."
+                },
+                "license": {
+                    "title": "Nutzungslizenz",
+                    "content": "Es wird die Erlaubnis erteilt, vorübergehend eine Kopie der Materialien (Informationen oder Software) auf der Website von Lorenzoz Agency ausschließlich zur persönlichen, nichtkommerziellen und vorübergehenden Ansicht herunterzuladen.",
+                    "list": [
+                        "Die Materialien verändern oder kopieren.",
+                        "Die Materialien für kommerzielle Zwecke oder für eine öffentliche Vorführung (kommerziell oder nichtkommerziell) verwenden.",
+                        "Versuchen, Software auf der Website von Lorenzoz Agency zu dekompilieren oder zurückzuentwickeln.",
+                        "Urheberrechtsvermerke oder sonstige Schutzrechtsvermerke von den Materialien entfernen."
+                    ]
+                },
+                "property": {
+                    "title": "Geistiges Eigentum",
+                    "content": "Der Dienst und seine ursprünglichen Inhalte, Funktionen und Funktionalitäten sind und bleiben das ausschließliche Eigentum von Lorenzoz Agency und ihren Lizenzgebern. Unsere Marken und unsere Aufmachung dürfen ohne vorherige schriftliche Zustimmung von Lorenzoz Agency nicht im Zusammenhang mit Produkten oder Dienstleistungen verwendet werden."
+                },
+                "pricing": {
+                    "intro": "Wenn Sie ein über den Dienst angebotenes Produkt oder eine Dienstleistung erwerben möchten, werden Sie möglicherweise gebeten, bestimmte für Ihren Kauf relevante Informationen anzugeben.",
+                    "discount": {
+                        "title": "Rabatt auf optionale Leistungen",
+                        "description": "Webentwicklung, Telefonassistent mit KI und Softwareentwicklung kosten {discount}% weniger als ihr Listenpreis, wenn sie zusammen mit dem Plan für lokales SEO gebucht werden. Einzeln gebucht werden sie zum Listenpreis berechnet. Es gibt keine kostenlose Testphase."
+                    },
+                    "tax": {
+                        "title": "Preise zzgl. MwSt.",
+                        "description": "Kein veröffentlichter Preis enthält die Mehrwertsteuer. Für Kunden mit Sitz in der EU fallen +21% MwSt. an, die auf der Rechnung hinzugerechnet wird."
+                    },
+                    "subscriptions": {
+                        "title": "Abonnements",
+                        "description": "Die Abrechnung erfolgt im Voraus in wiederkehrenden, regelmäßigen Abständen (monatlich oder jährlich)."
+                    },
+                    "cancellations": {
+                        "title": "Kündigungen",
+                        "description": "Sie können die Verlängerung Ihres Abonnements entweder über die Verwaltungsseite Ihres Kontos oder durch eine Nachricht an uns kündigen."
+                    }
+                },
+                "liability": {
+                    "title": "Haftung und Haftungsausschluss",
+                    "content": "Lorenzoz Agency sowie deren Geschäftsführer, Mitarbeiter, Partner, Vertreter, Lieferanten oder verbundene Unternehmen haften in keinem Fall für mittelbare Schäden, Neben oder Folgeschäden, besondere Schäden oder Schadensersatz mit Strafcharakter, die aus Ihrem Zugriff auf den Dienst oder dessen Nutzung entstehen."
+                },
+                "contact": {
+                    "title": "Kontakt",
+                    "content": "Wenn Sie Fragen zu diesen Bedingungen haben, kontaktieren Sie uns bitte:"
+                }
+            }
+        },
+        "cookiePage": {
+            "lastUpdated": "Zuletzt aktualisiert: 24. Februar 2026",
+            "sections": {
+                "whatAre": {
+                    "title": "Was sind Cookies?",
+                    "content": "Cookies sind kleine Textdateien, die auf Ihrem Gerät gespeichert werden, damit Websites effizient funktionieren und uns Informationen über die Nutzung liefern."
+                },
+                "howWeUse": {
+                    "title": "Wie wir Cookies verwenden",
+                    "content": "Wir verwenden Cookies, um Ihre Nutzererfahrung zu verbessern, die Nutzung der Website zu verstehen und grundlegende Funktionen bereitzustellen.",
+                    "items": {
+                        "essential": {
+                            "title": "Notwendig",
+                            "description": "Für den Betrieb der Website erforderlich. Sie können nicht deaktiviert werden."
+                        },
+                        "analytics": {
+                            "title": "Analyse",
+                            "description": "Helfen uns zu verstehen, wie Besucher mit der Website interagieren."
+                        }
+                    }
+                },
+                "control": {
+                    "title": "Cookies verwalten",
+                    "content": "Sie können Cookies über unser Banner oder in den Einstellungen Ihres Browsers akzeptieren oder ablehnen. Das Ablehnen von Cookies kann einige Funktionen der Website beeinträchtigen."
+                },
+                "updates": {
+                    "title": "Änderungen dieser Richtlinie",
+                    "content": "Wir überprüfen diese Richtlinie regelmäßig, um technische und rechtliche Änderungen zu berücksichtigen. Bitte schauen Sie regelmäßig wieder vorbei."
+                },
+                "contact": {
+                    "title": "Fragen?",
+                    "content": "Für Fragen zu unserer Verwendung von Cookies wenden Sie sich bitte an unser Datenschutzteam."
+                }
+            }
         }
     },
     "news": {
@@ -2256,6 +2403,21 @@
     },
     "card": {
         "hector": {
+            "name": "Héctor Luis Lorenzo Zaldivar",
+            "title": "Gründer und Architekt für KI",
+            "agency": "Lorenzoz Agency",
+            "getInTouch": "Kontakt aufnehmen",
+            "addContacts": "Zu Kontakten hinzufügen",
+            "bookCall": "Gespräch buchen",
+            "website": "Website",
+            "viewMaps": "In Google Maps ansehen",
+            "installApp": "App installieren",
+            "addToHome": "Zum Startbildschirm hinzufügen",
+            "location": "Xinzo de Limia, Ourense",
+            "nfcWrite": "Auf NFC Karte schreiben",
+            "nfcWriting": "Karte zum Beschreiben antippen...",
+            "nfcSuccess": "Erfolgreich geschrieben!",
+            "nfcError": "NFC fehlgeschlagen oder nicht unterstützt.",
             "email": "Mail",
             "phone": "Telefon",
             "meta": {
@@ -2272,6 +2434,22 @@
         "back": "Zurück zur Startseite"
     },
     "sitemap": {
+        "title": "Sitemap",
+        "subtitle": "Alle Seiten dieser Website, gegliedert nach ihrem Aufbau. Wenn Sie etwas Bestimmtes suchen, finden Sie es hier am schnellsten.",
+        "toc": "Bereiche",
+        "tiers": {
+            "home": "Startseite",
+            "category": "Leistungen",
+            "service": "Einzelne Leistungen",
+            "supporting": "Ratgeber und Antworten",
+            "location": "Unsere Einsatzgebiete",
+            "page": "Seiten",
+            "legal": "Rechtliches"
+        },
+        "labels": {
+            "card": "Digitale Visitenkarte",
+            "sitemap": "Sitemap"
+        },
         "byline": {
             "by": "Geschrieben von",
             "updated": "Aktualisiert",

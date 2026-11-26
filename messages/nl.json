@@ -893,6 +893,13 @@
         },
         "legal": {
             "title": "Juridisch",
+            "toc": "Inhoudsopgave",
+            "onThisPage": "Op deze pagina",
+            "needHelp": {
+                "title": "Hulp nodig?",
+                "content": "Neem contact op met ons juridische team voor verduidelijking.",
+                "cta": "Contact opnemen"
+            },
             "items": [
                 {
                     "label": "Privacybeleid",
@@ -908,10 +915,165 @@
                 }
             ]
         },
-        "copyright": "© 2026 Lorenzoz Agency. Alle rechten voorbehouden."
+        "terms": {
+            "payment": {
+                "title": "Betalingen",
+                "description": "Bij ondertekening betaal je {upfront}% vooraf (de eerste maand). Daarmee dekken we de kosten van de tools en diensten die het werk mogelijk maken. Bij projecten met een eenmalige betaling betaal je het resterende bedrag bij oplevering, voor de definitieve overdracht."
+            },
+            "marketing": {
+                "title": "Portfolio en case studies",
+                "description": "Lorenzoz Agency mag afgeronde projecten gebruiken als case study of marketingreferentie om haar werk te laten zien, tenzij schriftelijk anders is afgesproken."
+            }
+        },
+        "copyright": "© 2026 Lorenzoz Agency. Alle rechten voorbehouden.",
+        "privacyPage": {
+            "lastUpdated": "Laatst bijgewerkt: 24 februari 2026",
+            "sections": {
+                "introduction": {
+                    "title": "Inleiding",
+                    "content": "Welkom bij Lorenzoz Agency. Wij respecteren je privacy en zetten ons in voor de bescherming van je persoonsgegevens. Dit privacybeleid informeert je over hoe wij met je persoonsgegevens omgaan wanneer je onze website bezoekt, en over je privacyrechten en de manier waarop de wet je beschermt."
+                },
+                "dataCollection": {
+                    "title": "Verzameling van gegevens",
+                    "content": "Wij verzamelen informatie die je rechtstreeks aan ons verstrekt wanneer je gebruikmaakt van onze diensten.",
+                    "list": [
+                        "Directe identificatiegegevens (naam, mailadres)",
+                        "Professionele gegevens (bedrijf, functie)",
+                        "Gebruiksgegevens en voorkeuren",
+                        "Communicatiegeschiedenis"
+                    ]
+                },
+                "dataUsage": {
+                    "title": "Gebruik van gegevens",
+                    "content": "Met je gegevens kunnen wij onze diensten efficiënt leveren en verbeteren.",
+                    "list": [
+                        "Onze diensten leveren en onderhouden",
+                        "Je op de hoogte houden van de voortgang van projecten",
+                        "De gebruikerservaring verbeteren"
+                    ]
+                },
+                "thirdParty": {
+                    "title": "Diensten van derden",
+                    "content": "Wij maken gebruik van betrouwbare externe aanbieders om onze operationele mogelijkheden te versterken.",
+                    "hosting": "Hosting en infrastructuur",
+                    "payments": "Betalingsverwerking",
+                    "booking": "Planning en agenda",
+                    "analytics": "Prestaties en analyse",
+                    "ai": "Spraakinfrastructuur voor AI"
+                },
+                "rights": {
+                    "title": "Jouw rechten",
+                    "content": "Je hebt op elk moment het recht om je persoonsgegevens in te zien, te corrigeren of te laten verwijderen. Wij ondersteunen gegevensoverdraagbaarheid en je recht om vergeten te worden."
+                },
+                "contact": {
+                    "title": "Contact met het privacyteam",
+                    "content": "Heb je vragen over hoe wij met privacy omgaan? Ons team staat klaar om je te helpen."
+                }
+            }
+        },
+        "termsPage": {
+            "lastUpdated": "Laatst bijgewerkt: 22 juli 2026",
+            "sections": {
+                "terms": {
+                    "title": "Voorwaarden",
+                    "content": "Door de website op hlorenzoz.com te bezoeken, ga je ermee akkoord gebonden te zijn aan deze gebruiksvoorwaarden en aan alle toepasselijke wetten en voorschriften, en erken je dat je zelf verantwoordelijk bent voor de naleving van alle toepasselijke lokale wetgeving."
+                },
+                "license": {
+                    "title": "Gebruikslicentie",
+                    "content": "Er wordt toestemming verleend om tijdelijk één kopie van het materiaal (informatie of software) op de website van Lorenzoz Agency te downloaden, uitsluitend om het persoonlijk en tijdelijk te bekijken en niet voor commerciële doeleinden.",
+                    "list": [
+                        "Het materiaal wijzigen of kopiëren.",
+                        "Het materiaal gebruiken voor commerciële doeleinden of voor openbare vertoning (al dan niet commercieel).",
+                        "Proberen software op de website van Lorenzoz Agency te decompileren of via reverse engineering te herleiden.",
+                        "Vermeldingen van auteursrecht of andere eigendomsaanduidingen uit het materiaal verwijderen."
+                    ]
+                },
+                "property": {
+                    "title": "Intellectueel eigendom",
+                    "content": "De Dienst en de oorspronkelijke inhoud, functies en functionaliteit ervan zijn en blijven het exclusieve eigendom van Lorenzoz Agency en haar licentiegevers. Onze handelsmerken en onze handelsuitstraling mogen niet worden gebruikt in verband met enig product of enige dienst zonder voorafgaande schriftelijke toestemming van Lorenzoz Agency."
+                },
+                "pricing": {
+                    "intro": "Als je een product of dienst wilt aanschaffen dat via de Dienst beschikbaar wordt gesteld, kan je worden gevraagd bepaalde informatie te verstrekken die relevant is voor je aankoop.",
+                    "discount": {
+                        "title": "Korting op optionele diensten",
+                        "description": "Websiteontwikkeling, Telefoonreceptionist met AI en Softwareontwikkeling krijgen {discount}% korting op hun catalogusprijs wanneer je ze samen met Lokale SEO afneemt. Los afgenomen worden ze tegen catalogusprijs in rekening gebracht. Er is geen gratis proefperiode."
+                    },
+                    "tax": {
+                        "title": "Prijzen exclusief btw",
+                        "description": "Geen enkele gepubliceerde prijs is inclusief btw. Voor inwoners van de EU geldt +21% btw, die op de factuur wordt toegevoegd."
+                    },
+                    "subscriptions": {
+                        "title": "Abonnementen",
+                        "description": "Vooraf gefactureerd op terugkerende en periodieke basis (maandelijks of jaarlijks)."
+                    },
+                    "cancellations": {
+                        "title": "Opzeggingen",
+                        "description": "Je kunt de verlenging van je abonnement opzeggen via de pagina voor accountbeheer of door contact met ons op te nemen."
+                    }
+                },
+                "liability": {
+                    "title": "Aansprakelijkheid en disclaimers",
+                    "content": "Lorenzoz Agency, noch haar bestuurders, werknemers, partners, agenten, leveranciers of gelieerde ondernemingen, is in enig geval aansprakelijk voor indirecte schade, incidentele schade, bijzondere schade, gevolgschade of punitieve schadevergoedingen die voortvloeien uit jouw toegang tot of gebruik van de Dienst."
+                },
+                "contact": {
+                    "title": "Contact",
+                    "content": "Heb je vragen over deze voorwaarden? Neem dan contact met ons op:"
+                }
+            }
+        },
+        "cookiePage": {
+            "lastUpdated": "Laatst bijgewerkt: 24 februari 2026",
+            "sections": {
+                "whatAre": {
+                    "title": "Wat zijn cookies?",
+                    "content": "Cookies zijn kleine tekstbestanden die op je apparaat worden opgeslagen, zodat websites efficiënt werken en wij informatie over het gebruik ontvangen."
+                },
+                "howWeUse": {
+                    "title": "Hoe wij cookies gebruiken",
+                    "content": "Wij gebruiken cookies om je ervaring te verbeteren, inzicht te krijgen in het gebruik van de site en de basisfunctionaliteit te ondersteunen.",
+                    "items": {
+                        "essential": {
+                            "title": "Noodzakelijk",
+                            "description": "Nodig om de website te laten werken. Ze kunnen niet worden uitgeschakeld."
+                        },
+                        "analytics": {
+                            "title": "Analytisch",
+                            "description": "Helpen ons te begrijpen hoe bezoekers de website gebruiken."
+                        }
+                    }
+                },
+                "control": {
+                    "title": "Cookies beheren",
+                    "content": "Je kunt cookies accepteren of weigeren via onze banner of via de instellingen van je browser. Het weigeren van cookies kan gevolgen hebben voor sommige functies van de site."
+                },
+                "updates": {
+                    "title": "Wijzigingen in dit beleid",
+                    "content": "Wij herzien dit beleid regelmatig om technologische en juridische ontwikkelingen te verwerken. Raadpleeg het daarom regelmatig."
+                },
+                "contact": {
+                    "title": "Vragen?",
+                    "content": "Neem voor verduidelijking over ons gebruik van cookies contact op met ons privacyteam."
+                }
+            }
+        }
     },
     "card": {
         "hector": {
+            "name": "Héctor Luis Lorenzo Zaldivar",
+            "title": "Founder & AI Architect",
+            "agency": "Lorenzoz Agency",
+            "getInTouch": "Neem contact op",
+            "addContacts": "Toevoegen aan contacten",
+            "bookCall": "Gesprek inplannen",
+            "website": "Website",
+            "viewMaps": "Bekijken op Google Maps",
+            "installApp": "App installeren",
+            "addToHome": "Toevoegen aan beginscherm",
+            "location": "Xinzo de Limia, Ourense",
+            "nfcWrite": "Naar NFC kaart schrijven",
+            "nfcWriting": "Houd de kaart tegen je telefoon...",
+            "nfcSuccess": "Succesvol geschreven!",
+            "nfcError": "NFC mislukt of niet ondersteund.",
             "email": "Mail",
             "phone": "Telefoon",
             "meta": {
@@ -2272,6 +2434,22 @@
         "back": "Terug naar de startpagina"
     },
     "sitemap": {
+        "title": "Sitemap",
+        "subtitle": "Alle pagina's van deze site, gegroepeerd zoals de site is opgebouwd. Zoek je iets specifieks, dan vind je het hier het snelst.",
+        "toc": "Onderdelen",
+        "tiers": {
+            "home": "Begin hier",
+            "category": "Diensten",
+            "service": "Afzonderlijke diensten",
+            "supporting": "Gidsen en antwoorden",
+            "location": "Werkgebieden",
+            "page": "Pagina's",
+            "legal": "Juridisch"
+        },
+        "labels": {
+            "card": "Digitaal visitekaartje",
+            "sitemap": "Sitemap"
+        },
         "byline": {
             "by": "Geschreven door",
             "updated": "Bijgewerkt",
