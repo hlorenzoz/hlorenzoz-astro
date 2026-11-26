@@ -46,10 +46,40 @@ describe('the dossier prints no price', () => {
         expect(html).not.toContain('<span class="tax">');
     });
 
-    it('names exactly the optional services, in the order the site lists them', () => {
+    it('says every solution is quoted after the free needs analysis, excluding VAT', () => {
+        expect(render('en')).toContain('quoted after the free needs analysis');
+        expect(render('en')).toContain('Quotes exclude VAT');
+        expect(render('es')).toContain('se presupuesta tras el análisis de necesidades gratuito');
+        expect(render('es')).toContain('no incluyen IVA');
+    });
+});
+
+/**
+ * The agency is a partner: a needs analysis first, then one tailored solution
+ * built from four services. None of them is a core offer with options around it.
+ */
+describe('the dossier tells the partner model', () => {
+    it.each(['es', 'en'] as const)('names no core offer and no optional services (%s)', (locale) => {
+        expect(render(locale)).not.toMatch(/core offer|oferta central|optional services|servicios opcionales|add-?on/i);
+    });
+
+    it('presents Local SEO and then the other three services, in the order the site lists them', () => {
         for (const content of [esContent, enContent]) {
-            expect(content.addOns.items.map((item) => item.key)).toEqual(SERVICE_KEYS.slice(1));
+            expect(content.localSeo.pillars).toHaveLength(4);
+            expect(content.blocks.items.map((item) => item.key)).toEqual(SERVICE_KEYS.slice(1));
         }
+        expect(SERVICE_KEYS[0]).toBe('localSeo');
+    });
+
+    it('explains how we work in four steps, starting with the free needs analysis', () => {
+        expect(enContent.approach.steps.map((step) => step.title)).toEqual([
+            'Needs analysis',
+            'A tailored solution',
+            'We put it to work',
+            'We measure and adjust',
+        ]);
+        expect(esContent.approach.steps).toHaveLength(4);
+        expect(esContent.approach.steps[0].title).toBe('Análisis de necesidades');
     });
 });
 
@@ -64,14 +94,9 @@ describe('dossier content', () => {
         expect(new Set(shape(enContent))).toEqual(new Set(shape(esContent)));
     });
 
-    it('describes four pillars and three add-ons in each language', () => {
+    it('joins no words with a hyphen (AGENTS.md: no hyphens in copy)', () => {
         for (const content of [esContent, enContent]) {
-            expect(content.core.pillars).toHaveLength(4);
-            expect(content.addOns.items.map((item) => item.key)).toEqual([
-                'websiteDevelopment',
-                'aiVoiceReceptionist',
-                'softwareDevelopment',
-            ]);
+            expect(JSON.stringify(content)).not.toMatch(/\p{L}-\p{L}/u);
         }
     });
 });

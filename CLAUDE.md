@@ -63,8 +63,10 @@ before using an Astro API you have not verified in this repo.
 
 ### Use plan mode for these
 
-Changes to `lib/pricing.ts`, `lib/site-config.ts`, `lib/routes.ts` or `messages/*.json`
-ripple into the visible copy, the JSON-LD, the sitemap and `public/llms.txt` at once.
+Changes to `lib/site-config.ts`, `lib/routes.ts` or `messages/*.json` ripple into the
+visible copy, the JSON-LD, the sitemap and `public/llms.txt` at once. `lib/pricing.ts` holds
+no price any more (the agency publishes none, see `AGENTS.md`), only the service keys and
+the 50% up front share; adding a figure back to it needs plan mode too.
 
 ### Task tracking
 

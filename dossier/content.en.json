@@ -1,63 +1,84 @@
 {
   "meta": {
-    "title": "Lorenzoz Agency | Services dossier",
-    "docLabel": "Services dossier"
+    "title": "Lorenzoz Agency | Agency dossier",
+    "docLabel": "Agency dossier"
   },
   "cover": {
-    "badge": "Local SEO for local businesses",
-    "title": "More local customers",
-    "titleGradient": "from Google and AI",
-    "description": "We do not sell loose services. We work toward one result: when someone searches for what your business offers, they find you first.",
+    "badge": "Your partner for local growth",
+    "title": "More customers,",
+    "titleGradient": "with a solution built for your business",
+    "description": "We are a partner focused on your success. First we analyze what your business needs. Then we implement the solution that brings you new customers.",
     "facts": [
-      { "value": "1", "label": "All-inclusive plan" },
-      { "value": "4", "label": "Pillars of work" },
-      { "value": "8", "label": "Markets served" }
+      {
+        "value": "1",
+        "label": "Solution tailored to you"
+      },
+      {
+        "value": "4",
+        "label": "Services to build it from"
+      },
+      {
+        "value": "8",
+        "label": "Markets served"
+      }
     ],
     "marketsLabel": "We serve businesses in"
   },
   "approach": {
-    "eyebrow": "The approach",
-    "title": "Results, not loose services",
-    "subtitle": "A website, a few reviews or a Google profile do not bring customers on their own. The whole does, worked every month toward a single goal.",
+    "eyebrow": "Our approach",
+    "title": "A partner focused on your success",
+    "subtitle": "A website, a few reviews or a Google profile do not bring customers on their own. A solution built for your business does, and we stay with you while it works.",
     "oldWay": {
-      "title": "Buying services",
+      "title": "Buying separate services",
       "items": [
         "Several providers who never coordinate",
         "Deliverables nobody measures against sales",
-        "A published website nobody finds",
-        "Reviews and directories left unattended"
+        "A package designed for someone else's business",
+        "A price decided before anyone looked at yours"
       ]
     },
     "newWay": {
-      "title": "Buying a result",
+      "title": "Working with a partner",
       "items": [
         "One team accountable for your customer acquisition",
-        "All the work points at showing up first in your area",
-        "Content, links, authority and reviews move together",
-        "A monthly report in plain language of what was done"
+        "A solution built from what your business needs",
+        "Services included only where they add value",
+        "Results measured together, in plain language"
       ]
     },
-    "problemsTitle": "What costs a local business customers today",
-    "problems": [
+    "stepsTitle": "How we work",
+    "steps": [
       {
-        "title": "Invisible on Google",
-        "description": "If your business does not show up when someone searches for your service nearby, a competitor takes that call."
+        "number": "01",
+        "badge": "Free",
+        "title": "Needs analysis",
+        "description": "The first call is free and it is the analysis: how you win customers today, where you lose them and what you need."
       },
       {
-        "title": "Little visible reputation",
-        "description": "Few reviews, old ones or unanswered ones erode trust right before the customer decides."
+        "number": "02",
+        "badge": "Proposal",
+        "title": "A tailored solution",
+        "description": "We propose one solution built from the services you need, and quote it. A service may come included at no extra cost."
       },
       {
-        "title": "AI recommends someone else",
-        "description": "AI assistants answer with the businesses they recognize as the reference. That place has to be earned."
+        "number": "03",
+        "badge": "Implementation",
+        "title": "We put it to work",
+        "description": "We implement the solution while you keep your focus on serving your customers well."
+      },
+      {
+        "number": "04",
+        "badge": "Together",
+        "title": "We measure and adjust",
+        "description": "We review the results with you in plain language and adjust the solution to what changed."
       }
     ]
   },
-  "core": {
-    "eyebrow": "The core offer",
+  "localSeo": {
+    "eyebrow": "Building block 1 of 4",
     "name": "Local SEO",
-    "title": "Everything it takes to rank your business",
-    "description": "One monthly plan that brings together the work needed to gain visibility in local Google searches and in the answers AI engines give.",
+    "title": "Found first on Google, recommended by AI",
+    "description": "The work that makes your business visible in local Google searches and in the answers AI engines give. When Local SEO is part of your solution, it comes with all four pillars.",
     "pillars": [
       {
         "title": "Authority content",
@@ -84,7 +105,7 @@
         "description": "Your business and your website as the reference that gets recommended.",
         "items": [
           "Optimized Google Business Profile",
-          "On-page local SEO for your website",
+          "On page local SEO for your website",
           "Local business structured data",
           "Presence in Google and AI results"
         ]
@@ -103,19 +124,19 @@
     "goalTitle": "Our goal",
     "goal": "The first position on Google for searches in your area. No provider can guarantee a specific ranking and we do not promise one: we commit to the work that leads there."
   },
-  "addOns": {
-    "eyebrow": "Quoted after a free first call",
-    "title": "Optional services",
-    "description": "They join the plan when your business needs them.",
+  "blocks": {
+    "eyebrow": "Combined to fit your business",
+    "title": "Three more building blocks",
+    "description": "Each one joins your solution when your business needs it, and it may come included at no extra cost.",
     "items": [
       {
         "key": "websiteDevelopment",
         "name": "Website Development",
-        "description": "High-speed websites and PWAs, designed to turn visitors into customers.",
+        "description": "Fast websites and PWAs, designed to turn visitors into customers.",
         "features": [
-          "Landing page or full multi-page website",
-          "Mobile-first design and Core Web Vitals from day one",
-          "Open Graph and structured data shipped at launch"
+          "Performance anyone can check in PageSpeed Insights",
+          "Structured data, translations and llms.txt for Google and AI",
+          "Installable as an app on phones and computers"
         ]
       },
       {
@@ -131,7 +152,7 @@
       {
         "key": "softwareDevelopment",
         "name": "Software and Mobile App Development",
-        "description": "Full-stack products with a Flutter frontend and a custom backend, for every device and screen.",
+        "description": "Full stack products with a Flutter frontend and a custom backend, for every device and screen.",
         "features": [
           "One codebase for iOS, Android, web and desktop",
           "Automated tests and a CI/CD pipeline",
@@ -139,40 +160,39 @@
         ]
       }
     ],
-    "footnote": "Every service is quoted after a free first call. No quote includes VAT."
+    "footnote": "Every solution is quoted after the free needs analysis. Quotes exclude VAT."
   },
   "process": {
-    "eyebrow": "How we work",
-    "title": "A clear process, month after month",
-    "steps": [
+    "eyebrow": "The needs analysis",
+    "title": "What we look at in your first call",
+    "subtitle": "Every business loses customers in its own way. These are the gaps we check first, because they decide which building blocks your solution needs.",
+    "problems": [
       {
-        "number": "01",
-        "badge": "Audit",
-        "title": "We learn where you stand",
-        "description": "We review your current presence on Google, your website, your reviews and who gets recommended in your area today."
+        "title": "Invisible on Google and AI",
+        "description": "If your business does not show up when someone searches for your service nearby, or asks an AI assistant, a competitor takes that customer."
       },
       {
-        "number": "02",
-        "badge": "Build",
-        "title": "We work the four pillars",
-        "description": "Content, citations, authority and reviews move in parallel, on a plan you know in advance."
+        "title": "A website that does not convert",
+        "description": "A slow website, or one that leaves the visitor's questions unanswered, loses the customer right before they get in touch."
       },
       {
-        "number": "03",
-        "badge": "Iterate",
-        "title": "We measure and adjust",
-        "description": "Every month you get a report in plain language and we adjust the work to what changed."
+        "title": "Calls nobody answers",
+        "description": "A call that goes unanswered after hours or at a busy moment is a customer who may call someone else."
       }
     ],
     "termsTitle": "Terms",
     "terms": [
       {
+        "title": "Quoted after the analysis",
+        "description": "We publish no price list. Every solution is quoted after the free needs analysis, according to what your business needs."
+      },
+      {
         "title": "{upfront}% up front",
-        "description": "On signing, {upfront}% is paid up front (the first month). It covers the cost of the tools and services that make the work possible."
+        "description": "{upfront}% of the agreed quote is paid up front. It covers the cost of the tools and services the work depends on."
       },
       {
         "title": "Quotes exclude VAT",
-        "description": "The quotes do not include taxes. EU residents are subject to +21% VAT."
+        "description": "VAT is added on the invoice where it applies, at the rate that applies to your business."
       },
       {
         "title": "A goal, not a guarantee",
@@ -183,10 +203,10 @@
   "contact": {
     "eyebrow": "Contact",
     "title": "Let's talk about your business",
-    "description": "A 15-minute call is enough to see where you stand today and whether we can help.",
-    "bookingTitle": "Book a call",
+    "description": "The first call is free, and it is where the needs analysis starts: where your business stands today and what it needs.",
+    "bookingTitle": "Book your free first call",
     "bookingDescription": "Pick the day and time that suit you best. Scan the code or use the button.",
-    "bookingCta": "Book a call",
+    "bookingCta": "Book a free call",
     "channels": {
       "email": "Email",
       "phone": "Phone",

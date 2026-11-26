@@ -1,63 +1,84 @@
 {
   "meta": {
-    "title": "Lorenzoz Agency | Dossier de servicios",
-    "docLabel": "Dossier de servicios"
+    "title": "Lorenzoz Agency | Dossier de la agencia",
+    "docLabel": "Dossier de la agencia"
   },
   "cover": {
-    "badge": "SEO Local para negocios locales",
-    "title": "Más clientes locales",
-    "titleGradient": "desde Google y la IA",
-    "description": "No vendemos servicios sueltos. Trabajamos por un resultado: que quien busca lo que ofrece tu negocio te encuentre a ti primero.",
+    "badge": "Tu partner para crecer en local",
+    "title": "Más clientes,",
+    "titleGradient": "con una solución pensada para tu negocio",
+    "description": "Somos un partner enfocado en tu éxito. Primero analizamos lo que necesita tu negocio. Después implementamos la solución que te trae nuevos clientes.",
     "facts": [
-      { "value": "1", "label": "Plan con todo incluido" },
-      { "value": "4", "label": "Pilares de trabajo" },
-      { "value": "8", "label": "Mercados atendidos" }
+      {
+        "value": "1",
+        "label": "Solución a tu medida"
+      },
+      {
+        "value": "4",
+        "label": "Servicios para construirla"
+      },
+      {
+        "value": "8",
+        "label": "Mercados atendidos"
+      }
     ],
     "marketsLabel": "Atendemos negocios en"
   },
   "approach": {
-    "eyebrow": "El enfoque",
-    "title": "Resultados, no servicios sueltos",
-    "subtitle": "Una web, unas reseñas o un perfil de Google no traen clientes por separado. Los trae el conjunto, trabajado cada mes con un único objetivo.",
+    "eyebrow": "Nuestro enfoque",
+    "title": "Un partner enfocado en tu éxito",
+    "subtitle": "Una web, unas reseñas o un perfil de Google no traen clientes por separado. Los trae una solución pensada para tu negocio, y seguimos a tu lado mientras funciona.",
     "oldWay": {
-      "title": "Comprar servicios",
+      "title": "Comprar servicios sueltos",
       "items": [
         "Varios proveedores que no se coordinan entre sí",
         "Entregables que nadie mide contra las ventas",
-        "Una web publicada que nadie encuentra",
-        "Reseñas y directorios sin atender"
+        "Un paquete pensado para el negocio de otro",
+        "Un precio fijado antes de conocer el tuyo"
       ]
     },
     "newWay": {
-      "title": "Comprar un resultado",
+      "title": "Trabajar con un partner",
       "items": [
         "Un solo responsable de tu captación de clientes",
-        "Todo el trabajo apunta a aparecer primero en tu zona",
-        "Contenido, enlaces, autoridad y reseñas avanzan juntos",
-        "Informe mensual, sin tecnicismos, de lo que se hizo"
+        "Una solución construida según lo que necesita tu negocio",
+        "Servicios incluidos solo donde aportan valor",
+        "Resultados medidos juntos, sin tecnicismos"
       ]
     },
-    "problemsTitle": "Lo que hoy le cuesta clientes a un negocio local",
-    "problems": [
+    "stepsTitle": "Cómo trabajamos",
+    "steps": [
       {
-        "title": "Invisible en Google",
-        "description": "Si tu negocio no aparece cuando alguien busca tu servicio en tu zona, esa llamada la recibe un competidor."
+        "number": "01",
+        "badge": "Gratis",
+        "title": "Análisis de necesidades",
+        "description": "La primera llamada es gratuita y es el análisis: cómo consigues clientes hoy, dónde los pierdes y qué necesitas."
       },
       {
-        "title": "Poca reputación visible",
-        "description": "Pocas reseñas, antiguas o sin respuesta, restan confianza justo antes de que el cliente decida."
+        "number": "02",
+        "badge": "Propuesta",
+        "title": "Una solución a medida",
+        "description": "Te proponemos una solución con los servicios que necesitas y la presupuestamos. Un servicio puede venir incluido sin coste adicional."
       },
       {
-        "title": "La IA recomienda a otros",
-        "description": "Los asistentes de IA responden con los negocios que reconocen como referencia. Ese lugar hay que ganárselo."
+        "number": "03",
+        "badge": "Implementación",
+        "title": "La ponemos en marcha",
+        "description": "Implementamos la solución mientras tú te concentras en atender bien a tus clientes."
+      },
+      {
+        "number": "04",
+        "badge": "Juntos",
+        "title": "Medimos y ajustamos",
+        "description": "Revisamos los resultados contigo, sin tecnicismos, y ajustamos la solución según lo que cambió."
       }
     ]
   },
-  "core": {
-    "eyebrow": "La oferta central",
+  "localSeo": {
+    "eyebrow": "Pieza 1 de 4",
     "name": "SEO Local",
-    "title": "Todo lo necesario para posicionar tu negocio",
-    "description": "Un único plan mensual que reúne el trabajo que hace falta para ganar visibilidad en las búsquedas locales de Google y en las respuestas de los motores de IA.",
+    "title": "Primero en Google, recomendado por la IA",
+    "description": "El trabajo que hace visible a tu negocio en las búsquedas locales de Google y en las respuestas de los motores de IA. Cuando el SEO Local forma parte de tu solución, incluye sus cuatro pilares.",
     "pillars": [
       {
         "title": "Contenido de autoridad",
@@ -84,7 +105,7 @@
         "description": "Tu negocio y tu web como la referencia que se recomienda.",
         "items": [
           "Google Business Profile optimizado",
-          "SEO local on-page en tu sitio web",
+          "SEO local on page en tu sitio web",
           "Datos estructurados de negocio local",
           "Presencia en resultados de Google y de IA"
         ]
@@ -103,19 +124,19 @@
     "goalTitle": "Nuestro objetivo",
     "goal": "La primera posición en Google para las búsquedas de tu zona. Ningún proveedor puede garantizar un puesto concreto y no lo prometemos: nos comprometemos con el trabajo que lleva hasta ahí."
   },
-  "addOns": {
-    "eyebrow": "Presupuesto tras una primera llamada gratuita",
-    "title": "Servicios opcionales",
-    "description": "Se suman al plan cuando tu negocio los necesita.",
+  "blocks": {
+    "eyebrow": "Combinadas según tu negocio",
+    "title": "Tres piezas más",
+    "description": "Cada una se suma a tu solución cuando tu negocio la necesita, y puede venir incluida sin coste adicional.",
     "items": [
       {
         "key": "websiteDevelopment",
         "name": "Desarrollo Web",
-        "description": "Sitios web y PWA de alta velocidad, diseñados para convertir visitantes en clientes.",
+        "description": "Sitios web y PWA rápidos, diseñados para convertir visitantes en clientes.",
         "features": [
-          "Landing page o sitio completo de varias páginas",
-          "Diseño mobile-first y Core Web Vitals desde el día uno",
-          "Open Graph y datos estructurados desde el lanzamiento"
+          "Rendimiento que cualquiera puede comprobar en PageSpeed Insights",
+          "Datos estructurados, traducciones y llms.txt para Google y la IA",
+          "Instalable como una app en móviles y ordenadores"
         ]
       },
       {
@@ -131,7 +152,7 @@
       {
         "key": "softwareDevelopment",
         "name": "Desarrollo de Software y Apps",
-        "description": "Productos full-stack con frontend en Flutter y backend a medida, para cualquier dispositivo y pantalla.",
+        "description": "Productos completos con frontend en Flutter y backend a medida, para cualquier dispositivo y pantalla.",
         "features": [
           "Un solo código para iOS, Android, web y escritorio",
           "Pruebas automatizadas y pipeline de CI/CD",
@@ -139,40 +160,39 @@
         ]
       }
     ],
-    "footnote": "Cada servicio se presupuesta tras una primera llamada gratuita. Ningún presupuesto incluye IVA."
+    "footnote": "Cada solución se presupuesta tras el análisis de necesidades gratuito. Los presupuestos no incluyen IVA."
   },
   "process": {
-    "eyebrow": "Cómo trabajamos",
-    "title": "Un proceso claro, mes a mes",
-    "steps": [
+    "eyebrow": "El análisis de necesidades",
+    "title": "Qué revisamos en tu primera llamada",
+    "subtitle": "Cada negocio pierde clientes a su manera. Estas son las carencias que revisamos primero, porque deciden qué piezas necesita tu solución.",
+    "problems": [
       {
-        "number": "01",
-        "badge": "Auditoría",
-        "title": "Entendemos tu punto de partida",
-        "description": "Revisamos tu presencia actual en Google, tu web, tus reseñas y a quién recomiendan hoy en tu zona."
+        "title": "Invisible en Google y en la IA",
+        "description": "Si tu negocio no aparece cuando alguien busca tu servicio en tu zona, o se lo pregunta a un asistente de IA, ese cliente se lo lleva un competidor."
       },
       {
-        "number": "02",
-        "badge": "Construcción",
-        "title": "Trabajamos los cuatro pilares",
-        "description": "Contenido, citaciones, autoridad y reseñas avanzan en paralelo, con un plan que conoces de antemano."
+        "title": "Una web que no convierte",
+        "description": "Una web lenta, o que deja sin respuesta las dudas del visitante, pierde al cliente justo antes de que contacte."
       },
       {
-        "number": "03",
-        "badge": "Iteración",
-        "title": "Medimos y ajustamos",
-        "description": "Cada mes recibes un informe sin tecnicismos y ajustamos el trabajo según lo que cambió."
+        "title": "Llamadas sin atender",
+        "description": "Una llamada que nadie atiende fuera de horario o en un momento de mucho trabajo es un cliente que puede llamar a otro."
       }
     ],
     "termsTitle": "Condiciones",
     "terms": [
       {
+        "title": "Presupuesto tras el análisis",
+        "description": "No publicamos tarifas. Cada solución se presupuesta tras el análisis de necesidades gratuito, según lo que necesita tu negocio."
+      },
+      {
         "title": "{upfront}% por adelantado",
-        "description": "Al contratar se abona el {upfront}% por adelantado (el primer mes). Cubre los gastos de las herramientas y servicios que hacen posible el trabajo."
+        "description": "Se abona por adelantado el {upfront}% del presupuesto acordado. Cubre los gastos de las herramientas y servicios que hacen posible el trabajo."
       },
       {
         "title": "Presupuestos sin IVA",
-        "description": "Los presupuestos no incluyen impuestos. Los residentes en la UE están sujetos a +21% de IVA."
+        "description": "El IVA se añade en la factura cuando corresponde, al tipo que aplica a tu negocio."
       },
       {
         "title": "Un objetivo, no una garantía",
@@ -183,10 +203,10 @@
   "contact": {
     "eyebrow": "Contacto",
     "title": "Hablemos de tu negocio",
-    "description": "Una llamada de 15 minutos alcanza para ver dónde estás hoy y si podemos ayudarte.",
-    "bookingTitle": "Reserva una llamada",
+    "description": "La primera llamada es gratuita y en ella empieza el análisis de necesidades: dónde está hoy tu negocio y qué necesita.",
+    "bookingTitle": "Reserva tu primera llamada gratuita",
     "bookingDescription": "Elige el día y la hora que mejor te vengan. Escanea el código o pulsa el botón.",
-    "bookingCta": "Reservar llamada",
+    "bookingCta": "Reservar llamada gratuita",
     "channels": {
       "email": "Email",
       "phone": "Teléfono",

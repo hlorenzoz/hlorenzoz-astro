@@ -13,18 +13,21 @@ translated with the page, and a locale missing one does not publish that page. W
 in `docs/i18n-glossary.md`.
 
 This section is the **single versioned source of truth** for the agency's commercial
-facts: positioning, service lines, value ladder, and prices. Copy for the site, schema,
-llms.txt, proposals, and any generated content must be written against it, not against
-memory or against whatever an older page happens to say. The upstream brief it was
-transcribed from is `.agents/context/# Lorenzoz Agency - Website Development .md`.
+facts: positioning, services, how the agency works with a client, and its terms. Copy for
+the site, schema, llms.txt, proposals, and any generated content must be written against
+it, not against memory or against whatever an older page happens to say. The upstream
+brief it was first transcribed from is `.agents/context/# Lorenzoz Agency - Website Development .md`;
+the partner model below (2026-11-26) supersedes the offer and prices written there.
 
 ### Positioning
 
-Lorenzoz Agency builds solutions for local businesses of any size. The mission is to
-create the conditions for clients to generate 1M+ in revenue per year.
+Lorenzoz Agency is a partner focused on its clients' success. It builds solutions for local
+businesses of any size, and the mission is to create the conditions for clients to generate
+1M+ in revenue per year.
 
-The agency sells results, not services: new customers and more business for its clients.
-Everything it offers is organised around that one outcome (see "Agency Services").
+The agency does not sell a menu of services. It works in two steps: first it analyses what
+the client's business needs, then it implements the solution that answers those needs. The
+outcome it works toward is the same for every client: new customers and more business.
 
 The agency has several years of experience delivering this work and the results clients
 hired them for. The promise is a division of labour: the client focuses on delivering
@@ -69,12 +72,14 @@ Putting the town into `areaServed`, or a country into `address`, misstates the b
 
 ### Agency Services
 
-The agency does not sell a menu of services. It sells ONE outcome, new customers for a
-local business, through one core offer, with a few optional services around it.
+The agency offers four services. None of them is a "core" offer and none is an add-on to
+another: they are the building blocks of one solution, combined per client according to
+what the needs analysis finds. A client may need one of them or all four. A service may
+come included in the solution, even at no extra cost, when the client's needs call for it.
 
-**Core offer: Local SEO.** Its purpose is to rank a local business at the top of Google
-for the searches its customers make, and to have it recommended by AI engines. It is one
-monthly plan made of four pillars, and all four are included:
+**Local SEO.** Its purpose is to rank a local business at the top of Google for the
+searches its customers make, and to have it recommended by AI engines. When it is part
+of a solution, it comes with all four of its pillars:
 
 - **Authority content**: keyword research, content clusters, content gap analysis and
   updates to existing content, to establish the business as an authority.
@@ -88,15 +93,17 @@ monthly plan made of four pillars, and all four are included:
 Review management used to be sold as its own service ("Review Management" / "Reputation
 Management"). It is now a pillar of Local SEO and is NOT sold separately.
 
-**Optional services**, each available on its own or alongside Local SEO:
+The other three building blocks:
 
 - **Website Development**: high-conversion websites and PWAs.
 - **AI Voice Receptionist**: inbound-call receptionists that answer FAQs and book appointments 24/7.
 - **Software Development / Mobile App Development**: full-stack products (Flutter + backend) across all devices and screens.
 
 **Paused: Digital Business Card.** Not offered since 2026-10-08. It is paused, not
-retired: do not delete its code or copy, and do not advertise it. See "Where the prices
-live in code" for how it is parked.
+retired: do not delete its code or copy, and do not advertise it. Its route is commented
+out in `lib/routes.ts` and its page sits in the private folder
+`src/pages/[locale]/services/_digital-business-card/`, which Astro does not route (the `_`
+prefix excludes it). Bringing it back is task #T0021.
 
 Two notes for anyone writing copy from this:
 
@@ -108,71 +115,48 @@ Two notes for anyone writing copy from this:
   customers for a review (review gating) is against Google's policies. Feedback links go
   to every customer.
 
-### Value ladder
+### How we work
 
-| Offer | Role | List price | Alongside Local SEO |
-| :--- | :--- | :--- | :--- |
-| Local SEO | core | 750 EUR / month | n/a |
-| Website Development | optional | 2500 EUR, one-off | 1750 EUR |
-| + hosting and maintenance | optional add-on | 49 EUR / month | not discounted |
-| AI Voice Receptionist | optional | 350 EUR / month | 245 EUR / month |
-| Software / Mobile App Development | optional | from 20000 EUR, one-off | from 14000 EUR |
-| Digital Business Card | paused | not offered | n/a |
+Every engagement follows the same four steps:
 
-Terms that apply to every row: **50% is paid up front** (the first month), to cover the
-cost of the tools and services the work depends on, and **no price includes VAT**.
+1. **Free needs analysis.** The first call is free and IS the needs analysis: the agency
+   learns how the business wins customers today, where it loses them, and what it needs.
+2. **Tailored proposal and quote.** From that analysis the agency proposes one solution,
+   built from the services the business actually needs, and quotes it.
+3. **Implementation.** The agency implements the solution, while the client keeps
+   focusing on delivering their own service.
+4. **Measured together.** Results are measured with the client and the solution is
+   adjusted to them. The relationship is a partnership, not a one-off sale.
 
-Five details that are easy to lose when this table is summarised, and each of which is a
-billing dispute if it is:
+Terms, and each one is a billing dispute if it is lost in a summary:
 
-1. **There is no free trial.** The 15-day trial is gone, replaced by the up-front
-   payment. If you find a trial claimed anywhere in the repo or in generated copy, it is
-   stale and wrong.
-2. **The 30% discount exists only alongside Local SEO.** An optional service bought on
-   its own costs its list price. The discount is not a limited-time offer and must never
-   be written as one.
-3. **20000 EUR is a floor, not a price and not a ceiling.** Software is scoped per
-   project; the figure is where quotes start. Publishing it as "20000 EUR" understates
-   what most clients will pay.
-4. **Every published price is before tax.** Each figure carries a "+ VAT" / "+ IVA"
-   marker beside it, in the copy and in the dossier, and the structured data declares
-   `valueAddedTaxIncluded: false`. A bare figure reads as the final price.
-5. **Review management has no price of its own.** It is inside the 750 EUR. The only
-   place the old 897 and 297 figures may appear is the "bought separately" comparison,
-   where they are stated as the agency's former list prices.
+1. **No price is published anywhere.** Not on the site, not in the structured data, not in
+   `public/llms.txt`, not in the dossier, not in a proposal template. Every solution is
+   quoted after the free needs analysis, according to the client's needs, and a service
+   may come included at no extra cost. Never write a figure, a "from" price, a range or a
+   discount.
+2. **Quotes exclude VAT.** Say so wherever a quote is mentioned.
+3. **50% of the agreed quote is paid up front**, to cover the cost of the tools and
+   services the work depends on.
+4. **There is no free trial.** The free part is the needs analysis, nothing else. If you
+   find a trial claimed anywhere in the repo or in generated copy, it is stale and wrong.
+5. **There is no bundle discount.** The former 30% "alongside Local SEO" discount is gone
+   with the prices; do not mention it.
 
-### Where the prices live in code
-
-`lib/pricing.ts` is the executable form of the table above, and the only place a figure
-is written down. The visible copy, the JSON-LD offers, `public/llms.txt`,
-`ORGANIZATION.priceRange` and the commercial dossier (`scripts/build-dossier.mjs`) all
-derive from it.
-
-Changing a price means editing `PRICING` and nothing else. That is deliberate: the same
-number used to be typed into `home.pricing.tiers` (en + es), into six
-`services.*.hero.price` strings (en + es), into llms.txt and into `priceRange`, and
-`offerCatalog()` re-derived it by running a regex over the display string. They drifted,
-and the site advertised prices the agency had stopped charging. `messages/*.json` now
-carries `{price}`, `{bundlePrice}`, `{discount}` and `{monthly}` placeholders instead of
-numbers.
-
-The same file holds the terms, so they cannot drift either: `BUNDLE_DISCOUNT` (30%),
-`UPFRONT_SHARE` (50%), `FORMER_STANDALONE` (the former list prices used in the "bought
-separately" comparison) and `EXAMPLE_CUSTOMER_VALUES` (the illustrative inputs of the
-"cost of a customer who never arrives" table, which are examples and must be labelled as
-such wherever they are shown).
-
-The paused Digital Business Card lives in `PAUSED_PRICING`, outside `PRICING`, so nothing
-that iterates the offers can publish it. Its route is commented out in `lib/routes.ts`
-and its page sits in the private folder `src/pages/[locale]/services/_digital-business-card/`,
-which Astro does not route (the `_` prefix excludes it). Bringing it back is task #T0021.
+No price lives in code either. `lib/pricing.ts` keeps only the service keys, their slug
+helpers and `UPFRONT_SHARE` (the 50%). `tests/seo/no-published-prices.test.ts` guards the
+rule: it fails on any currency amount or price placeholder in the `services.*`, `home.*`
+and `offer.*` copy of every locale, and on `offers`, `priceRange`, `hasOfferCatalog` or
+`priceSpecification` in the JSON-LD of the home and the service pages.
 
 ### What this site currently implements
 
-Four service pages: **Local SEO** and the three optional services (**Website
-Development**, **AI Voice Receptionist**, **Software Development**). The home page is
-built around Local SEO: its four pillars, the cost comparison, one core pricing card and
-the optional services below it.
+The home page and four service pages (**Local SEO**, **Website Development**, **AI Voice
+Receptionist**, **Software Development**), each built as a landing page around the partner
+model: the free needs analysis as the call to action, the service as one building block of
+a tailored solution, and the dossier as a download (`public/dossier/`, built by
+`just dossier`). There is no pricing section and no price on any page; the home keeps the
+news, LinkedIn and other relevant sections below the landing.
 
 `/services/reputation-review-management/` and `/services/digital-business-card/` no
 longer exist; both redirect permanently (`public/_redirects`). `/card/hector` is Hector's

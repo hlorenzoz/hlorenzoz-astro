@@ -29,10 +29,10 @@ never guess the topic.
    - `.agents/skills/copywriting/SKILL.md`
    - `.agents/skills/copy-editing/SKILL.md` (run its sweeps on your draft before delivering)
    - `.agents/skills/content-strategy/SKILL.md` (only for articles, or when the angle is unclear)
-2. **Commercial facts.** `AGENTS.md`, section "Project Focus": positioning, services, value
-   ladder, target markets and the copy rules. Prices live in `lib/pricing.ts` and nowhere
-   else. Read them there when a piece mentions a price; never quote a figure from memory or
-   from an older page.
+2. **Commercial facts.** `AGENTS.md`, section "Project Focus": positioning (a partner that
+   analyses each client's needs, then implements a tailored solution), the four services,
+   how we work, target markets and the copy rules. The agency publishes no price: never
+   write a figure, not from memory and not from an older page.
 3. **Author identity.** The `PERSON` object in `lib/site-config.ts` (name and job title; verify
    them there, do not assume). The LinkedIn profile URL is in `public/llms.txt`, section
    "## Contact". Posts and articles are written in the first person, as that person.
@@ -53,10 +53,12 @@ These come from `AGENTS.md` "Project Focus". Restated as a checklist, not as new
 - The first position on Google is a goal, never a guarantee.
 - No invented years of experience, client counts, revenue, rankings, percentages or results.
   "Several years of experience" is the only experience claim.
-- The software floor price is a floor ("from"), never a fixed price.
-- Every price is before VAT and carries "+ VAT" (en) or "+ IVA" (es) beside it.
-- There is no free trial. The bundle discount applies only alongside Local SEO and is never a
-  limited time offer.
+- No price, range, "from" figure or discount, ever. Every solution is quoted after a free
+  first call, which is the needs analysis, and a service may come included in the solution.
+  Quotes exclude VAT; say so if a piece mentions a quote.
+- No service is a "core" offer: the four services are building blocks of one tailored
+  solution.
+- There is no free trial. The free part is the first call, the needs analysis.
 - Review requests go to every customer; never suggest asking only happy customers.
 - The paused Digital Business Card is never advertised.
 

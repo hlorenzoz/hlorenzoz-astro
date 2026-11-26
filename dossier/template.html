@@ -74,7 +74,7 @@ ul { list-style: none; }
   background: #000;
   background-image: radial-gradient(circle at 50% -10%, #0f2040 0%, #000000 58%);
 }
-.page--pricing {
+.page--blocks {
   color: #fff;
   background: #000;
   background-image: radial-gradient(circle at 50% 50%, #0a172b 0%, #000000 68%);
@@ -93,7 +93,7 @@ ul { list-style: none; }
 .page-head { margin-bottom: 11mm; }
 .page-foot { margin-top: auto; padding-top: 6mm; }
 .page--dark .page-head, .page--dark .page-foot,
-.page--pricing .page-head, .page--pricing .page-foot { color: #9ca3af; }
+.page--blocks .page-head, .page--blocks .page-foot { color: #9ca3af; }
 
 .brand {
   font-size: 13px;
@@ -102,7 +102,7 @@ ul { list-style: none; }
   text-transform: uppercase;
   color: #000;
 }
-.page--dark .brand, .page--pricing .brand { color: #fff; }
+.page--dark .brand, .page--blocks .brand { color: #fff; }
 
 /* --- Type --------------------------------------------------------------- */
 
@@ -114,7 +114,7 @@ ul { list-style: none; }
   color: var(--blue-700);
   margin-bottom: 4mm;
 }
-.page--dark .eyebrow, .page--pricing .eyebrow { color: var(--accent); }
+.page--dark .eyebrow, .page--blocks .eyebrow { color: var(--accent); }
 
 h1 {
   font-size: 58px;
@@ -142,7 +142,7 @@ h3 {
   max-width: 150mm;
   margin-top: 4mm;
 }
-.page--dark .lead, .page--pricing .lead { color: #e5e7eb; }
+.page--dark .lead, .page--blocks .lead { color: #e5e7eb; }
 .body {
   font-size: 11px;
   font-weight: 500;
@@ -280,137 +280,28 @@ h3 {
 
 .section-title { font-size: 19px; font-weight: 700; letter-spacing: -0.02em; margin: 11mm 0 6mm; }
 .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 5mm; }
+.lead + .grid-3 { margin-top: 9mm; }
 .problem { border-radius: 30px; display: flex; flex-direction: column; gap: 5mm; }
 .problem p { margin-top: 2mm; }
 
-/* --- 3. Core offer ------------------------------------------------------ */
+/* --- 3. Local SEO ------------------------------------------------------- */
 
 .pillars { display: grid; grid-template-columns: 1fr 1fr; gap: 5mm; margin-top: 8mm; }
 .pillar { padding: 6.5mm; }
 .pillar-head { display: flex; align-items: center; gap: 10px; margin-bottom: 3mm; }
 .pillar .body { margin-bottom: 4mm; color: var(--text-secondary); }
 
-.price-band {
+.goal {
   margin-top: 6mm;
-  display: grid;
-  grid-template-columns: auto 1fr;
-  gap: 10mm;
-  align-items: center;
   padding: 8mm 9mm;
   border-radius: 32px;
   background: #0a0a0a;
-  color: #fff;
   border: 1px solid rgba(59, 130, 246, 0.5);
 }
-.price-label {
-  font-size: 8.5px;
-  font-weight: 900;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  color: #93c5fd;
-}
-.price-figure { display: flex; align-items: baseline; gap: 7px; margin: 2mm 0 1.5mm; white-space: nowrap; }
-.price-figure .amount { font-size: 50px; font-weight: 700; letter-spacing: -0.045em; line-height: 1; }
-.price-figure .period {
-  font-size: 9px;
-  font-weight: 700;
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
-  color: #d1d5db;
-}
-.price-note { font-size: 10px; font-weight: 500; color: #d1d5db; }
-/* The tax marker beside a price. Louder than the period it follows: it changes what the client pays. */
-.tax { font-weight: 900; white-space: nowrap; }
-.price-figure .tax {
-  font-size: 9px;
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
-  color: #93c5fd;
-}
-.goal { border-left: 1px solid rgba(59, 130, 246, 0.35); padding-left: 9mm; }
 .goal h3 { color: #93c5fd; font-size: 9px; font-weight: 900; letter-spacing: 0.25em; text-transform: uppercase; }
 .goal p { margin-top: 2.5mm; font-size: 11px; font-weight: 500; line-height: 1.55; color: #f3f4f6; }
 
-/* --- 4. The numbers ----------------------------------------------------- */
-
-.compare { display: grid; grid-template-columns: 1.15fr 1fr; gap: 6mm; margin-top: 8mm; align-items: stretch; }
-.compare-side { padding: 8mm; border-radius: 28px; }
-.compare-side h3 { font-size: 17px; margin-bottom: 5mm; }
-.compare-side--old { border: 2px dashed #e5e7eb; background: rgba(255, 255, 255, 0.6); }
-.compare-side--new {
-  background: #0a0a0a;
-  color: #fff;
-  border: 1px solid rgba(59, 130, 246, 0.5);
-  display: flex;
-  flex-direction: column;
-}
-.ledger li, .ledger-total {
-  display: flex;
-  justify-content: space-between;
-  align-items: baseline;
-  gap: 4mm;
-  font-size: 11.5px;
-  font-weight: 600;
-  color: #111827;
-  padding: 2.6mm 0;
-  border-bottom: 1px solid #e5e7eb;
-}
-.ledger li > span:last-child { font-weight: 700; white-space: nowrap; }
-.ledger small, .ledger-total small { font-size: 8.5px; font-weight: 700; color: #6b7280; }
-.ledger .tax, .ledger-total .tax { color: #374151; }
-.ledger em { font-style: normal; font-size: 9px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: #6b7280; }
-.ledger-total { border-bottom: 0; padding-top: 4mm; font-size: 12px; font-weight: 800; color: #000; }
-.ledger-total > span:last-child { font-size: 19px; letter-spacing: -0.03em; white-space: nowrap; }
-.fine { margin-top: 3mm; font-size: 8.5px; font-weight: 500; line-height: 1.5; color: #6b7280; }
-.fine--center { text-align: center; margin-top: 5mm; font-style: italic; }
-.compare-side--new .price-figure { margin: 0 0 4mm; }
-.compare-side--new .price-figure .amount { font-size: 56px; }
-.included { display: flex; align-items: center; gap: 8px; font-size: 11.5px; font-weight: 700; color: #fff; }
-.included svg { width: 16px; height: 16px; color: var(--accent); flex-shrink: 0; }
-.saving {
-  margin-top: auto;
-  padding-top: 5mm;
-  border-top: 1px solid rgba(59, 130, 246, 0.35);
-  font-size: 11px;
-  font-weight: 500;
-  line-height: 1.5;
-  color: #e5e7eb;
-}
-.missed-lead { max-width: 150mm; font-size: 11.5px; margin-top: -3mm; }
-.missed {
-  width: 100%;
-  margin-top: 6mm;
-  border-collapse: separate;
-  border-spacing: 0;
-  background: #fff;
-  border: 1px solid var(--line);
-  border-radius: 24px;
-  overflow: hidden;
-}
-.missed th {
-  text-align: left;
-  padding: 5mm 6mm 4mm;
-  font-size: 8px;
-  font-weight: 900;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  line-height: 1.5;
-  color: #6b7280;
-  vertical-align: bottom;
-  width: 33.33%;
-}
-.missed td {
-  padding: 4.2mm 6mm;
-  border-top: 1px solid #f3f4f6;
-  font-size: 15px;
-  font-weight: 700;
-  letter-spacing: -0.02em;
-  color: #000;
-}
-.missed td:nth-child(2) { font-size: 12px; letter-spacing: 0; color: var(--blue-700); }
-.missed td.loss { color: #b91c1c; }
-
-/* --- 5. Add-ons --------------------------------------------------------- */
+/* --- 4. Building blocks ------------------------------------------------ */
 
 .badge-offer {
   display: inline-block;
@@ -424,63 +315,18 @@ h3 {
   text-transform: uppercase;
   margin-bottom: 6mm;
 }
-.addons-head { text-align: center; }
-.addons-head .lead { margin-left: auto; margin-right: auto; max-width: 138mm; }
-.addons { display: flex; flex-direction: column; gap: 5mm; margin-top: 9mm; }
-.addon {
-  display: grid;
-  grid-template-columns: 1fr 52mm;
-  gap: 8mm;
-  align-items: center;
-  border-radius: 32px;
-  padding: 7.5mm 8mm;
-}
-.addon h3 { font-size: 18px; font-weight: 900; text-transform: uppercase; letter-spacing: -0.02em; }
-.addon .body { margin: 2.5mm 0 4.5mm; }
-.addon-price { border-left: 1px solid #e5e7eb; padding-left: 7mm; }
-.addon-price .tag {
-  font-size: 7.5px;
-  font-weight: 900;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  color: #6b7280;
-}
-.addon-price .tag--bundle { color: var(--blue-700); margin-top: 4mm; }
-.addon-price .list {
-  font-size: 15px;
-  font-weight: 700;
-  color: #9ca3af;
-  text-decoration: line-through;
-  margin-top: 1mm;
-  white-space: nowrap;
-}
-.addon-price .bundle {
-  font-size: 30px;
-  font-weight: 700;
-  letter-spacing: -0.04em;
-  line-height: 1.05;
-  margin-top: 1mm;
-  white-space: nowrap;
-}
-.addon-price .from { font-size: 11px; font-weight: 700; letter-spacing: 0; color: #374151; }
-.addon-price .tax { color: var(--blue-700); font-size: 9.5px; }
-.addon-price .terms {
-  /* The terms grid on the next page shares this class name: opt out of it. */
-  display: block;
-  white-space: nowrap;
-  font-size: 8px;
-  font-weight: 700;
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
-  color: #4b5563;
-  margin-top: 1.5mm;
-}
+.blocks-head { text-align: center; }
+.blocks-head .lead { margin-left: auto; margin-right: auto; max-width: 138mm; }
+.blocks { display: flex; flex-direction: column; gap: 5mm; margin-top: 9mm; }
+.block { border-radius: 32px; padding: 7.5mm 8mm; }
+.block h3 { font-size: 18px; font-weight: 900; text-transform: uppercase; letter-spacing: -0.02em; }
+.block .body { margin: 2.5mm 0 4.5mm; }
 .footnote { margin-top: 6mm; font-size: 9.5px; font-style: italic; line-height: 1.5; color: #9ca3af; text-align: center; }
 
-/* --- 6. Process and terms ----------------------------------------------- */
+/* --- 5. Steps, needs analysis and terms ------------------------------- */
 
-.steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8mm; margin-top: 10mm; }
-.step .number { font-size: 50px; font-weight: 900; letter-spacing: -0.04em; line-height: 1; color: #d1d5db; }
+.steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 6mm; }
+.step .number { font-size: 42px; font-weight: 900; letter-spacing: -0.04em; line-height: 1; color: #d1d5db; }
 .step .badge {
   margin: 4mm 0 2mm;
   font-size: 8.5px;
@@ -495,7 +341,7 @@ h3 {
 .term h3 { font-size: 14px; }
 .term .body { margin-top: 2.5mm; color: #374151; }
 
-/* --- 7. Contact --------------------------------------------------------- */
+/* --- 6. Contact --------------------------------------------------------- */
 
 .booking {
   margin-top: 9mm;

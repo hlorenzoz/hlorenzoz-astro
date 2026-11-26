@@ -4,14 +4,15 @@
  *
  * Fills `dossier/template.html` (the print stylesheet that mirrors the site's
  * look) with the copy in `dossier/content.<locale>.json`, the contact details
- * from `lib/site-config.ts` and the payment terms from `lib/pricing.ts` (the
+ * from `lib/site-config.ts` and the up front share from `lib/pricing.ts` (the
  * same source the site reads, so the two cannot disagree), then prints it to A4 with
  * the Chromium that Playwright already ships for the E2E suite. No runtime
  * dependency is added for this.
  *
  * Output: `dossier/dist/lorenzoz-agency-dossier-<locale>.pdf`, plus the
  * intermediate `.html` next to it for inspecting a layout in a browser. The
- * directory is gitignored: the PDFs are build output, regenerated on demand.
+ * directory is gitignored. The site links its own copies in `public/dossier/`:
+ * after changing the dossier, rebuild and copy both PDFs there.
  *
  * Usage:  just dossier            (both languages)
  *         just dossier es         (one language)
@@ -69,7 +70,6 @@ const ICONS = {
     clock: icon('<circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/>'),
     search: icon('<circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/>'),
     star: icon('<path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>'),
-    sparkles: icon('<path d="M12 3l1.9 5.1L19 10l-5.1 1.9L12 17l-1.9-5.1L5 10l5.1-1.9L12 3z"/><path d="M19 15v4"/><path d="M17 17h4"/>'),
     fileText: icon('<path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="M8 13h8"/><path d="M8 17h6"/>'),
     link: icon('<path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/>'),
     award: icon('<circle cx="12" cy="8" r="6"/><path d="M15.48 12.89 17 22l-5-3-5 3 1.52-9.11"/>'),
@@ -82,7 +82,7 @@ const ICONS = {
 };
 
 const PILLAR_ICONS = [ICONS.fileText, ICONS.link, ICONS.award, ICONS.star];
-const PROBLEM_ICONS = [ICONS.search, ICONS.star, ICONS.sparkles];
+const PROBLEM_ICONS = [ICONS.search, ICONS.globe, ICONS.phone];
 
 function checklist(items, mark = ICONS.checkCircle) {
     return `<ul class="checklist">${items.map((item) => `<li>${mark}<span>${escapeHtml(item)}</span></li>`).join('')}</ul>`;
@@ -126,7 +126,7 @@ export function renderDossier({ locale, content, template, organization, markets
             fill(content.footer.page, { current, total: TOTAL })
         )}</span></footer>`;
 
-    const { cover, approach, core, addOns, process: steps, contact } = content;
+    const { cover, approach, localSeo, blocks, process: analysis, contact } = content;
 
     const coverPage = `
 <section class="page page--dark">
@@ -165,27 +165,27 @@ export function renderDossier({ locale, content, template, organization, markets
     ${way('old', approach.oldWay, ICONS.clock, ICONS.xCircle)}
     ${way('new', approach.newWay, ICONS.checkCircle, ICONS.check)}
   </div>
-  <h3 class="section-title">${text(approach.problemsTitle)}</h3>
-  <div class="grid-3">
-    ${approach.problems
+  <h3 class="section-title">${text(approach.stepsTitle)}</h3>
+  <div class="steps">
+    ${approach.steps
         .map(
-            (problem, i) => `<div class="card problem"><div class="chip chip--gray">${PROBLEM_ICONS[i]}</div><div><h3>${text(
-                problem.title
-            )}</h3><p class="body">${text(problem.description)}</p></div></div>`
+            (step) => `<div class="step"><p class="number">${text(step.number)}</p><p class="badge">${text(step.badge)}</p><h3>${text(
+                step.title
+            )}</h3><p class="body">${text(step.description)}</p></div>`
         )
         .join('')}
   </div>
   ${foot(2)}
 </section>`;
 
-    const corePage = `
+    const localSeoPage = `
 <section class="page">
-  ${head(core.name)}
-  <p class="eyebrow">${text(core.eyebrow)}</p>
-  <h2>${text(core.title)}</h2>
-  <p class="lead">${text(core.description)}</p>
+  ${head(localSeo.name)}
+  <p class="eyebrow">${text(localSeo.eyebrow)}</p>
+  <h2>${text(localSeo.title)}</h2>
+  <p class="lead">${text(localSeo.description)}</p>
   <div class="pillars">
-    ${core.pillars
+    ${localSeo.pillars
         .map(
             (pillar, i) => `<div class="card pillar">
       <div class="pillar-head"><div class="chip">${PILLAR_ICONS[i]}</div><h3>${text(pillar.title)}</h3></div>
@@ -195,52 +195,47 @@ export function renderDossier({ locale, content, template, organization, markets
         )
         .join('')}
   </div>
-  <div class="price-band">
-    <div class="goal"><h3>${text(core.goalTitle)}</h3><p>${text(core.goal)}</p></div>
-  </div>
+  <div class="goal"><h3>${text(localSeo.goalTitle)}</h3><p>${text(localSeo.goal)}</p></div>
   ${foot(3)}
 </section>`;
 
-    const addOnCard = (item) => {
-        return `<div class="card addon">
-      <div>
-        <h3>${text(item.name)}</h3>
-        <p class="body">${text(item.description)}</p>
-        ${checklist(item.features.map((feature) => fill(feature, tokens)))}
-      </div>
+    const blockCard = (item) => `<div class="card block">
+      <h3>${text(item.name)}</h3>
+      <p class="body">${text(item.description)}</p>
+      ${checklist(item.features.map((feature) => fill(feature, tokens)))}
     </div>`;
-    };
 
-    const addOnsPage = `
-<section class="page page--pricing">
-  ${head(addOns.title)}
-  <div class="addons-head">
-    <span class="badge-offer">${text(addOns.eyebrow)}</span>
-    <h2>${text(addOns.title)}</h2>
-    <p class="lead">${text(addOns.description)}</p>
+    const blocksPage = `
+<section class="page page--blocks">
+  ${head(blocks.title)}
+  <div class="blocks-head">
+    <span class="badge-offer">${text(blocks.eyebrow)}</span>
+    <h2>${text(blocks.title)}</h2>
+    <p class="lead">${text(blocks.description)}</p>
   </div>
-  <div class="addons">${addOns.items.map(addOnCard).join('')}</div>
-  <p class="footnote">${text(addOns.footnote)}</p>
+  <div class="blocks">${blocks.items.map(blockCard).join('')}</div>
+  <p class="footnote">${text(blocks.footnote)}</p>
   ${foot(4)}
 </section>`;
 
     const processPage = `
 <section class="page">
-  ${head(steps.eyebrow)}
-  <p class="eyebrow">${text(steps.eyebrow)}</p>
-  <h2>${text(steps.title)}</h2>
-  <div class="steps">
-    ${steps.steps
+  ${head(analysis.eyebrow)}
+  <p class="eyebrow">${text(analysis.eyebrow)}</p>
+  <h2>${text(analysis.title)}</h2>
+  <p class="lead">${text(analysis.subtitle)}</p>
+  <div class="grid-3">
+    ${analysis.problems
         .map(
-            (step) => `<div class="step"><p class="number">${text(step.number)}</p><p class="badge">${text(step.badge)}</p><h3>${text(
-                step.title
-            )}</h3><p class="body">${text(step.description)}</p></div>`
+            (problem, i) => `<div class="card problem"><div class="chip chip--gray">${PROBLEM_ICONS[i]}</div><div><h3>${text(
+                problem.title
+            )}</h3><p class="body">${text(problem.description)}</p></div></div>`
         )
         .join('')}
   </div>
-  <h3 class="section-title">${text(steps.termsTitle)}</h3>
+  <h3 class="section-title">${text(analysis.termsTitle)}</h3>
   <div class="terms">
-    ${steps.terms
+    ${analysis.terms
         .map((term) => `<div class="card term"><h3>${text(term.title)}</h3><p class="body">${text(term.description)}</p></div>`)
         .join('')}
   </div>
@@ -282,7 +277,7 @@ export function renderDossier({ locale, content, template, organization, markets
   ${foot(6)}
 </section>`;
 
-    const pages = [coverPage, approachPage, corePage, addOnsPage, processPage, contactPage].join('\n');
+    const pages = [coverPage, approachPage, localSeoPage, blocksPage, processPage, contactPage].join('\n');
 
     return template
         .replace('{{lang}}', locale)
@@ -334,7 +329,12 @@ async function main() {
             const base = join(OUT_DIR, `lorenzoz-agency-dossier-${locale}`);
             writeFileSync(`${base}.html`, html);
 
-            const page = await browser.newPage();
+            // Google Fonts serves a modern browser the variable Inter, which
+            // Chromium can only embed as Type 3 glyph programs: about 600 KB
+            // per PDF. A generic user agent gets one static TTF per weight,
+            // embedded as small subsets, so the PDF fits under the repo's
+            // 500 KB large file guard and can live in public/dossier/.
+            const page = await browser.newPage({ userAgent: 'Mozilla/5.0' });
             await page.goto(pathToFileURL(`${base}.html`).href, { waitUntil: 'networkidle' });
             // The fonts come from Google Fonts. Printing before they land
             // silently ships the PDF in the system fallback face.

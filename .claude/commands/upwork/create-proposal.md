@@ -1,5 +1,5 @@
 ---
-description: Write three English Upwork proposals for one job posting, each leading with a different angle, mapped to Lorenzoz Agency services: website development, AI voice receptionist, digital business cards, review and reputation management, local SEO, and custom software development
+description: Write three English Upwork proposals for one job posting, each leading with a different angle, mapped to Lorenzoz Agency services: local SEO (with review management), website development, AI voice receptionist, and custom software development
 argument-hint: [job title on the first line, then the job description below it, optionally with the Upwork job URL]
 allowed-tools: Read, Grep, Glob, Write, Bash(pwd), Bash(date:*), Bash(echo:*), Bash(mkdir:*), Bash(rg:*), Bash(fd:*), mcp__plugin_engram_engram__mem_save, mcp__plugin_engram_engram__mem_current_project
 ---
@@ -67,20 +67,21 @@ recommendation unless this particular post argues otherwise.
 
 Read these before writing a single word, in this order:
 
-1. `AGENTS.md`. Positioning, value ladder, and the commercial guardrails. It declares itself the
+1. `AGENTS.md`. Positioning (a partner: needs analysis first, then implementation), the four
+   services, how we work, and the commercial guardrails. It declares itself the
    single versioned source of truth for proposals.
-2. `public/llms.txt`. A one page summary already reconciled with the six services.
+2. `public/llms.txt`. A one page summary already reconciled with the four services.
 3. `lib/site-config.ts`. Identity, contact, served markets.
 4. `messages/en.json` under `services.*`. Copy and deliverables for each service.
 5. `lib/portfolio-data.json`. The projects that can be cited.
 
-Do NOT read `lib/pricing.ts`. See the pricing rule below.
+Do not read `lib/pricing.ts`: it holds no price. See the pricing rule below.
 
 ## Identity, non negotiable
 
 - The proposal is written in the first person as **Hector Luis Lorenzo Zaldivar**, Founder and AI
   Architect at **Lorenzoz Agency**, per `lib/site-config.ts`.
-- The only valid catalog is the six services on this website. Any service not present in
+- The only valid catalog is the four services on this website. Any service not present in
   `lib/routes.ts` and `messages/en.json` does not exist, no matter how well it would fit the job.
 - Never claim a tool, certification, or past project that is not evidenced in this repo. If the job
   asks for something we do not do, say so plainly or do not bid. See the service matching rules.
@@ -142,9 +143,8 @@ catalog. Read the job, name the real problem, and only then choose.
 |---|---|
 | website, landing page, redesign, WordPress migration, speed, Core Web Vitals, conversion | Website Development |
 | phone, calls, receptionist, answering service, after hours, missed leads, appointment booking | AI Voice Receptionist |
-| NFC, QR, networking, contact sharing, business card | Digital Business Card |
-| reviews, reputation, Google reviews, testimonials, feedback loop | Review Management |
 | Google Business Profile, map pack, near me, citations, multi location | Local SEO |
+| reviews, reputation, Google reviews, testimonials, feedback loop | Local SEO (review management is one of its four pillars, never sold on its own) |
 | app, mobile, iOS, Android, Flutter, SaaS, backend, platform, dashboard | Software Development |
 
 Selection rules:
@@ -231,18 +231,19 @@ refresh. Never cite a project absent from the JSON, no matter how well it would 
 ## No pricing, hard rule
 
 The proposal NEVER carries a monetary figure. No EUR, no USD, no hourly rate, no range, no "starting
-from", no "around". Pricing is settled later, in the conversation.
+from", no "around". The agency publishes no price for any service: every solution is quoted
+after a free first call, which is the needs analysis, and a service may even come included in the
+solution. Quotes exclude VAT, and 50% of the agreed quote is paid up front; those terms belong to
+the quote, not to the proposal.
 
 - There is no Investment part in the structure, by design.
 - If the job explicitly asks for a budget or a rate, do not ignore it and do not invent one.
-  Acknowledge it in a single line and say the number comes out of a short call, once the scope is
-  clear. That is honest and it pushes toward the conversation, which is where we want to be.
-- `lib/pricing.ts` is deliberately NOT read. It is the densest source of figures and nothing in a
-  proposal needs it.
-- Be aware that skipping `lib/pricing.ts` is not a complete defence. **`public/llms.txt` and
-  `messages/en.json` both carry the same figures**, and they do get read. So the rule has to hold on
-  discipline, not on the figures being absent: whatever the source, no monetary amount reaches the
-  proposal. Deliverables can be quoted as they are, minus any line carrying a figure.
+  Acknowledge it in a single line and say the quote comes out of a free first call that analyses
+  what they need. That is honest and it pushes toward the conversation, which is where we want to be.
+- `lib/pricing.ts` holds no price any more, and nothing in a proposal needs it.
+- The site copy and `public/llms.txt` no longer carry figures either, but the rule holds on
+  discipline, not on the figures being absent: an older proposal under `upwork/proposal/` may still
+  carry one, and whatever the source, no monetary amount reaches the proposal.
 - Before writing the file, reread the proposal hunting for currency symbols, EUR, USD, `/mo`, `per
   month`, `per hour`, `starting from`. If one survived, cut it.
 

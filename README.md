@@ -1,8 +1,9 @@
-# Lorenzoz Agency - Website Development | Local SEO | Review Management | AI Voice Receptionist | Software Development / Mobile App Development
+# Lorenzoz Agency - Local SEO | Website Development | AI Voice Receptionist | Software Development / Mobile App Development
 
-Production-grade Astro website and PWA for Lorenzoz Agency, a full-service growth
-partner for local businesses covering website development, local SEO, review management,
-AI voice receptionists, and custom software / mobile app development.
+Production-grade Astro website and PWA for Lorenzoz Agency, a partner focused on the
+success of local businesses: it analyses each client's needs, then implements a tailored
+solution built from local SEO, website development, AI voice receptionists, and custom
+software / mobile app development.
 
 ## 🎯 What This Site Does
 
@@ -10,13 +11,14 @@ Lorenzoz Agency's multilingual marketing site (nine locales, published page by p
 Internationalization below). This section documents
 the full commercial context so the site and its content can be evolved against it.
 
-> **Source of truth:** the agency's positioning, value ladder, and prices live in
+> **Source of truth:** the agency's positioning, services, way of working and terms live in
 > [AGENTS.md](./AGENTS.md#project-focus). The summary below is a pointer. When they
 > disagree, AGENTS.md wins.
 
 ### Agency Services
 
-Lorenzoz Agency builds solutions for local businesses of any size, with several years of
+Lorenzoz Agency is a partner focused on its clients' success. It builds solutions for
+local businesses of any size, with several years of
 experience delivering them. The client focuses on delivering their own service; the
 agency owns customer acquisition and follow-up. The mission is to create the conditions
 for clients to generate 1M+ in revenue per year (an objective, not a guarantee).
@@ -26,18 +28,18 @@ Rica, Ireland, New Zealand, Spain, United Kingdom, United States). These are com
 target markets, not the site's local GBP service area, see
 [AGENTS.md](./AGENTS.md#target-markets) for why the two must not be conflated.
 
-It sells one outcome, new customers for a local business, through one core offer:
-**Local SEO**, a single monthly plan made of four pillars (authority content, backlinks
-and citations, authority on Google and AI, and review management). Three optional
-services sit around it: **Website Development**, **AI Voice Receptionist** and
-**Software / Mobile App Development**.
+It works in two steps: a free first call that is the needs analysis, then the
+implementation of one tailored solution. Four services are the building blocks of that
+solution, combined per client and sometimes included at no extra cost: **Local SEO**
+(authority content, backlinks and citations, authority on Google and AI, and review
+management), **Website Development**, **AI Voice Receptionist** and **Software / Mobile
+App Development**.
 
-Positioning, the offer, prices and terms are versioned in
-[AGENTS.md](./AGENTS.md#agency-services) and are not repeated here. They are implemented
-in [lib/pricing.ts](./lib/pricing.ts), which is the only place in the codebase a figure is
-written down. Copy, JSON-LD, `llms.txt`, `priceRange` and the commercial dossier all
-derive from it, so changing a price is one edit. Do not type a number into
-`messages/*.json`.
+No price is published anywhere: every solution is quoted after the free needs analysis,
+quotes exclude VAT, and 50% of the agreed quote is paid up front. Positioning, services and
+terms are versioned in [AGENTS.md](./AGENTS.md#how-we-work) and are not repeated here.
+`tests/seo/no-published-prices.test.ts` fails on any figure in the copy or any offer in
+the JSON-LD.
 
 #### Local SEO delivery: the Core 30 structure
 
@@ -55,9 +57,9 @@ source of truth for the methodology. Do not duplicate the tree here.
 
 ### What this site currently implements
 
-Four service pages under `/services/`: Local SEO and the three optional services, each
-carrying its price in both the visible copy and the structured data. The home page is
-built around Local SEO. See
+The home page and four service pages under `/services/`, built as landing pages around
+the partner model, with no price and the commercial dossier as a download
+(`public/dossier/`). See
 [AGENTS.md](./AGENTS.md#what-this-site-currently-implements).
 
 ## 🚀 Tech Stack
@@ -96,11 +98,11 @@ hlorenzoz-astro/
 │   ├── components/       # .astro components (vanilla scripts for interactivity)
 │   ├── islands/          # React island: ElevenLabs voice widget
 │   └── styles/           # global.css (Tailwind v4)
-├── lib/                  # Data, pricing, routes, SEO metadata and JSON-LD builders
+├── lib/                  # Data, service keys, routes, SEO metadata and JSON-LD builders
 ├── messages/             # <locale>.json, one per locale in lib/routing.ts
 ├── public/               # Static assets, _redirects, _headers, llms.txt, sw.js
 ├── tests/                # Vitest suites mirroring the source tree; tests/e2e for Playwright
-├── scripts/              # CDN image sync, Stripe links, commercial dossier
+├── scripts/              # CDN image sync, commercial dossier
 ├── astro.config.mjs      # Astro configuration
 └── wrangler.jsonc        # Cloudflare Worker (static assets from dist/)
 ```
@@ -179,7 +181,7 @@ to this GitHub repo. Manual deploy: `just deploy`.
 ## 🔧 Environment Variables
 
 Copy `.env.example` to `.env` and fill in the values. Only scripts read them (Cloudflare
-uploads, Stripe payment links); the built site has no runtime environment.
+uploads); the built site has no runtime environment.
 
 ## 🤝 Contributing
 

@@ -6,6 +6,7 @@ import { getPortfolioItems } from '@/lib/portfolio';
 import { getNewsItems } from '@/lib/news';
 import { SERVICE_KEYS, UPFRONT_SHARE, slugFromServiceKey, type ServiceKey } from '@/lib/pricing';
 import { marketNames } from '@/lib/site-config';
+import { LOCALES } from '@/lib/routing';
 
 /**
  * `public/llms.txt` is written to be read by machines, so an error in it is
@@ -108,11 +109,12 @@ describe('llms.txt: news posts match the data source', () => {
         expect(at('## News')).toBeLessThan(at('## Contact'));
     });
 
-    it('states that every page has a same-path Spanish twin, which the registry makes true', () => {
-        expect(LLMS_TXT).toMatch(/^- Languages: .*\/es\/.*$/m);
+    it('names every locale prefix and the same-path rule, which the registry makes true', () => {
+        const languages = LLMS_TXT.match(/^- Languages: .*$/m)?.[0] ?? '';
+        for (const locale of LOCALES) expect(languages).toContain(`/${locale}/`);
         // Shared slugs across locales: no route carries a locale-specific path.
         for (const route of ALL_ROUTES) {
-            expect(route.path).not.toMatch(/^(en|es)(\/|$)/);
+            expect(route.path).not.toMatch(new RegExp(`^(${LOCALES.join('|')})(/|$)`));
         }
     });
 });
@@ -145,6 +147,11 @@ describe('llms.txt: publishes no price', () => {
 
     it('does not promise a ranking', () => {
         expect(lineOf('localSeo')).toMatch(/no ranking is guaranteed/i);
+    });
+
+    it('presents the services as building blocks, never a core offer plus options', () => {
+        expect(LLMS_TXT).not.toMatch(/core offer:|the core offer\.|optional services:/i);
+        expect(LLMS_TXT).toMatch(/free first call analyzes what the business needs/i);
     });
 
     it('lists neither the absorbed nor the paused service', () => {
