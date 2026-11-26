@@ -15,7 +15,8 @@ import { contentPageFor, hubContentPages, LOCALE_MESSAGES } from './_service-con
 import { getTranslations } from '@/lib/i18n';
 import { localeHref } from '@/lib/routing';
 import { SERVICE_DISPLAY_ORDER, serviceKeyFromSlug } from '@/lib/pricing';
-import { type Locale } from '@/lib/site-config';
+import { localeInfo, type Locale } from '@/lib/site-config';
+import { copyTokens } from '@/lib/copy-tokens';
 import { routeExists, routeLocales } from '@/lib/routes';
 
 export function getStaticPaths() {
@@ -71,6 +72,7 @@ const items: ServiceDirectoryItem[] = page.children(locale, tRoot).filter((link)
                 subtitle={t('subtitle')}
                 ctaLabel={t('cta')}
                 ctaHref={`${localeHref(locale, 'services')}#directory`}
+                note={t('note', copyTokens(localeInfo(locale).intl))}
             />
 
             <div class="px-6 pt-6">

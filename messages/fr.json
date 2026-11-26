@@ -1836,6 +1836,7 @@
       "eyebrow": "Ce que nous faisons",
       "title": "Des solutions pour votre entreprise",
       "subtitle": "Nous commençons par une analyse gratuite de vos besoins, puis nous combinons les services dont votre entreprise a besoin en une seule solution qui vous apporte de nouveaux clients.",
+      "note": "Chaque solution commence par une première mise en place à {entryPrice} HT qui engage les deux parties. Le reste fait l'objet d'un devis après l'analyse gratuite.",
       "cta": "Découvrir les services"
     },
     "quoted": "Devis adapté à votre projet",
@@ -1934,7 +1935,7 @@
           },
           {
             "question": "Combien ça coûte ?",
-            "answer": "Cela dépend de votre marché et des besoins de votre entreprise. Nous établissons un devis après l'analyse gratuite, souvent dans le cadre d'une solution plus large."
+            "answer": "Cela dépend de votre marché et des besoins de votre entreprise. Nous établissons un devis après l'analyse gratuite, souvent dans le cadre d'une solution plus large. Chaque solution commence par une première mise en place à {entryPrice} HT qui engage les deux parties."
           },
           {
             "question": "Quel délai avant de voir des résultats ?",
@@ -2172,7 +2173,7 @@
           },
           {
             "question": "Combien ça coûte ?",
-            "answer": "Cela dépend de votre volume d'appels et de ce qu'il doit faire. Nous établissons un devis après l'analyse gratuite, souvent dans le cadre d'une solution plus large."
+            "answer": "Cela dépend de votre volume d'appels et de ce qu'il doit faire. Nous établissons un devis après l'analyse gratuite, souvent dans le cadre d'une solution plus large. Chaque solution commence par une première mise en place à {entryPrice} HT qui engage les deux parties."
           }
         ]
       }
@@ -2271,7 +2272,7 @@
           },
           {
             "question": "Comment est fixé le prix d'un projet ?",
-            "answer": "Chaque produit est différent : nous établissons un devis après l'analyse gratuite, une fois le périmètre clair."
+            "answer": "Chaque produit est différent : nous établissons un devis après l'analyse gratuite, une fois le périmètre clair. Chaque solution commence par une première mise en place à {entryPrice} HT qui engage les deux parties."
           },
           {
             "question": "Le code source m'appartient ?",
@@ -2363,6 +2364,10 @@
         "title": "Vous préférez tout dans un seul document ?",
         "text": "Notre dossier présente notre façon de travailler et ce que nous créons, dans un seul PDF.",
         "cta": "Télécharger le dossier (PDF)"
+      },
+      "entryOffer": {
+        "name": "Première mise en place",
+        "description": "Une première mise en place qui engage les deux parties et pose les premières étapes, au lancement des services."
       }
     },
     "websiteDevelopment": {
@@ -2469,7 +2474,7 @@
       "package": {
         "label": "Votre prix",
         "details": [
-          "Les pages, les langues et les fonctionnalités varient d'une entreprise à l'autre : nous fixons donc le prix ensemble lors d'un premier appel gratuit.",
+          "Les pages, les langues et les fonctionnalités varient d'une entreprise à l'autre : nous fixons donc le prix ensemble lors d'un premier appel gratuit. Chaque solution commence par une première mise en place à {entryPrice} HT qui engage les deux parties.",
           "À la fin de l'appel, vous savez ce que vous obtenez, quand, et à quel prix. Sans engagement."
         ]
       },

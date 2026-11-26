@@ -279,6 +279,7 @@
             "eyebrow": "Wat we doen",
             "title": "Oplossingen rond jouw bedrijf",
             "subtitle": "We beginnen met een gratis behoefteanalyse en combineren daarna de diensten die je bedrijf nodig heeft tot één oplossing die je nieuwe klanten oplevert.",
+            "note": "Elke oplossing begint met een eerste implementatie voor {entryPrice} excl. btw die beide partijen verbindt. Voor de rest krijg je een offerte na de gratis analyse.",
             "cta": "Bekijk de diensten"
         },
         "quoted": "Offerte op maat van je project",
@@ -499,7 +500,7 @@
                     },
                     {
                         "question": "Wat kost het?",
-                        "answer": "Dat hangt af van hoeveel er gebeld wordt en wat hij moet doen. We maken een offerte na de gratis analyse, vaak als onderdeel van een bredere oplossing."
+                        "answer": "Dat hangt af van hoeveel er gebeld wordt en wat hij moet doen. We maken een offerte na de gratis analyse, vaak als onderdeel van een bredere oplossing. Elke oplossing begint met een eerste implementatie voor {entryPrice} excl. btw die beide partijen verbindt."
                     }
                 ]
             }
@@ -599,7 +600,7 @@
                     },
                     {
                         "question": "Wat kost het?",
-                        "answer": "Dat hangt af van je markt en van wat je bedrijf nodig heeft. We maken een offerte na de gratis analyse, vaak als onderdeel van een bredere oplossing."
+                        "answer": "Dat hangt af van je markt en van wat je bedrijf nodig heeft. We maken een offerte na de gratis analyse, vaak als onderdeel van een bredere oplossing. Elke oplossing begint met een eerste implementatie voor {entryPrice} excl. btw die beide partijen verbindt."
                     },
                     {
                         "question": "Hoe lang duurt het voordat ik resultaat zie?",
@@ -714,7 +715,7 @@
                     },
                     {
                         "question": "Hoe wordt een project geprijsd?",
-                        "answer": "Elk product is anders, dus maken we een offerte na de gratis analyse, zodra de scope duidelijk is."
+                        "answer": "Elk product is anders, dus maken we een offerte na de gratis analyse, zodra de scope duidelijk is. Elke oplossing begint met een eerste implementatie voor {entryPrice} excl. btw die beide partijen verbindt."
                     },
                     {
                         "question": "Ben ik eigenaar van de broncode?",
@@ -2363,6 +2364,10 @@
                 "title": "Liever alles in één document?",
                 "text": "Ons dossier legt in één pdf uit hoe we werken en wat we bouwen.",
                 "cta": "Download het dossier (pdf)"
+            },
+            "entryOffer": {
+                "name": "Eerste implementatie",
+                "description": "Een eerste implementatie die beide partijen verbindt en de eerste stappen zet, wanneer de diensten starten."
             }
         },
         "websiteDevelopment": {
@@ -2469,7 +2474,7 @@
             "package": {
                 "label": "Jouw prijs",
                 "details": [
-                    "Pagina's, talen en functies verschillen per bedrijf, dus bepalen we de prijs samen in een gratis eerste gesprek.",
+                    "Pagina's, talen en functies verschillen per bedrijf, dus bepalen we de prijs samen in een gratis eerste gesprek. Elke oplossing begint met een eerste implementatie voor {entryPrice} excl. btw die beide partijen verbindt.",
                     "Na het gesprek weet je wat je krijgt, wanneer en voor welk bedrag. Vrijblijvend."
                 ]
             },

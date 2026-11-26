@@ -279,6 +279,7 @@
       "eyebrow": "Cosa facciamo",
       "title": "Soluzioni su misura per la tua attività",
       "subtitle": "Partiamo da un'analisi gratuita delle tue esigenze, poi combiniamo i servizi di cui la tua attività ha bisogno in un'unica soluzione che ti porta nuovi clienti.",
+      "note": "Ogni soluzione parte da una prima implementazione a {entryPrice} + IVA che impegna entrambe le parti. Il resto riceve un preventivo dopo l'analisi gratuita.",
       "cta": "Scopri i servizi"
     },
     "quoted": "Preventivo su misura per il tuo progetto",
@@ -499,7 +500,7 @@
           },
           {
             "question": "Quanto costa?",
-            "answer": "Dipende dal volume di chiamate e da cosa deve fare. Ti facciamo il preventivo dopo l'analisi gratuita, spesso come parte di una soluzione più ampia."
+            "answer": "Dipende dal volume di chiamate e da cosa deve fare. Ti facciamo il preventivo dopo l'analisi gratuita, spesso come parte di una soluzione più ampia. Ogni soluzione parte da una prima implementazione a {entryPrice} + IVA che impegna entrambe le parti."
           }
         ]
       }
@@ -599,7 +600,7 @@
           },
           {
             "question": "Quanto costa?",
-            "answer": "Dipende dal tuo mercato e da ciò di cui ha bisogno la tua attività. Ti facciamo il preventivo dopo l'analisi gratuita, spesso come parte di una soluzione più ampia."
+            "answer": "Dipende dal tuo mercato e da ciò di cui ha bisogno la tua attività. Ti facciamo il preventivo dopo l'analisi gratuita, spesso come parte di una soluzione più ampia. Ogni soluzione parte da una prima implementazione a {entryPrice} + IVA che impegna entrambe le parti."
           },
           {
             "question": "Quanto tempo serve per vedere i risultati?",
@@ -714,7 +715,7 @@
           },
           {
             "question": "Come si definisce il prezzo di un progetto?",
-            "answer": "Ogni prodotto è diverso, per questo ti facciamo il preventivo dopo l'analisi gratuita, quando l'ambito è chiaro."
+            "answer": "Ogni prodotto è diverso, per questo ti facciamo il preventivo dopo l'analisi gratuita, quando l'ambito è chiaro. Ogni soluzione parte da una prima implementazione a {entryPrice} + IVA che impegna entrambe le parti."
           },
           {
             "question": "Il codice sorgente è mio?",
@@ -2363,6 +2364,10 @@
         "title": "Vuoi tutto in un solo documento?",
         "text": "Il nostro dossier spiega come lavoriamo e cosa realizziamo, in un unico PDF.",
         "cta": "Scarica il dossier (PDF)"
+      },
+      "entryOffer": {
+        "name": "Prima implementazione",
+        "description": "Una prima implementazione che impegna entrambe le parti e muove i primi passi, quando iniziano i servizi."
       }
     },
     "websiteDevelopment": {
@@ -2469,7 +2474,7 @@
       "package": {
         "label": "Il tuo prezzo",
         "details": [
-          "Pagine, lingue e funzionalità cambiano da un'attività all'altra, per questo definiamo il prezzo insieme in una prima chiamata gratuita.",
+          "Pagine, lingue e funzionalità cambiano da un'attività all'altra, per questo definiamo il prezzo insieme in una prima chiamata gratuita. Ogni soluzione parte da una prima implementazione a {entryPrice} + IVA che impegna entrambe le parti.",
           "Alla fine della chiamata sai cosa ottieni, quando e a quale prezzo. Senza impegno."
         ]
       },

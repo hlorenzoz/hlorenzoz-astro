@@ -3,6 +3,7 @@ import { LOCALES, localeInfo } from '@/lib/routing';
 import { getMessages } from '@/lib/i18n';
 import { routeLocales } from '@/lib/routes';
 import HomePage from '@/src/pages/[locale]/index.astro';
+import ServicesHubPage from '@/src/pages/[locale]/services/index.astro';
 import LocalSeoPage from '@/src/pages/[locale]/services/local-seo/index.astro';
 import WebsiteDevelopmentPage from '@/src/pages/[locale]/services/website-development/index.astro';
 import AiVoiceReceptionistPage from '@/src/pages/[locale]/services/ai-voice-receptionist/index.astro';
@@ -44,14 +45,21 @@ const SERVICE_PAGES = [
     ['services/software-development', SoftwareDevelopmentPage],
 ] as const;
 
-describe('structured data publishes no price on the service pages', () => {
-    it.each(SERVICE_PAGES)('/%s emits no offers or priceRange in any locale', async (path, Page) => {
+describe('the service pages mark up the entry price, and only it', () => {
+    it.each(SERVICE_PAGES)('/%s has one Offer, 500 EUR without VAT, shown on the page, in every locale', async (path, Page) => {
         for (const locale of routeLocales(path)) {
             const url = `/${locale}/${path}/`;
-            const nodes = jsonLdNodes(await renderPage(Page, { locale }, url));
-            expect(nodes.length).toBeGreaterThan(0);
-            const priced = JSON.stringify(nodes).match(/"(offers|priceRange|hasOfferCatalog|priceSpecification|Offer)"/g);
-            expect(priced, `${url} JSON-LD`).toBeNull();
+            const page = await renderPage(Page, { locale }, url);
+            const nodes = jsonLdNodes(page);
+            const offers = nodes.filter((node) => node['@type'] === 'Offer') as { price?: unknown; priceSpecification?: unknown }[];
+            expect(offers, `${url} Offer`).toHaveLength(1);
+            expect(offers[0].price).toBe(String(ENTRY_PRICE.amount));
+            expect(offers[0].priceSpecification).toMatchObject({ price: 500, priceCurrency: 'EUR', valueAddedTaxIncluded: false });
+            expect(JSON.stringify(nodes), `${url} JSON-LD`).not.toMatch(/"(offers|priceRange|hasOfferCatalog)"/);
+
+            const visible = page.querySelector('main')!.textContent!.replace(/\s/g, ' ');
+            expect(visible, `${url} page`).toContain(formatEntryPrice(localeInfo(locale).intl).replace(/\s/g, ' '));
+            expect(visible).not.toContain('{entryPrice}');
         }
     });
 });
@@ -74,5 +82,14 @@ describe('the home marks up the entry price, and only it', () => {
 
         const fees = page.querySelector('#fees')!.textContent!.replace(/\s/g, ' ');
         expect(fees).toContain(formatEntryPrice(localeInfo(locale).intl).replace(/\s/g, ' '));
+    });
+});
+
+describe('the services hub states the entry price', () => {
+    it.each(routeLocales('services'))('/%s/services/ shows it in the hero, with no token left', async (locale) => {
+        const page = await renderPage(ServicesHubPage, { locale }, `/${locale}/services/`);
+        const text = page.querySelector('main')!.textContent!.replace(/\s/g, ' ');
+        expect(text).toContain(formatEntryPrice(localeInfo(locale).intl).replace(/\s/g, ' '));
+        expect(text).not.toContain('{entryPrice}');
     });
 });

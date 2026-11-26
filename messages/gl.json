@@ -1927,7 +1927,7 @@
           },
           {
             "question": "Canto custa?",
-            "answer": "Depende do teu mercado e do que necesite o teu negocio. Dámosche o orzamento despois da análise gratuíta, a miúdo como parte dunha solución máis ampla."
+            "answer": "Depende do teu mercado e do que necesite o teu negocio. Dámosche o orzamento despois da análise gratuíta, a miúdo como parte dunha solución máis ampla. Toda solución comeza cunha primeira implementación por {entryPrice} + IVE que compromete a ambas as partes."
           },
           {
             "question": "Canto tempo pasa ata que se ven resultados?",
@@ -2165,7 +2165,7 @@
           },
           {
             "question": "Canto custa?",
-            "answer": "Depende do teu volume de chamadas e do que necesite facer. Dámosche o orzamento despois da análise gratuíta, a miúdo como parte dunha solución máis ampla."
+            "answer": "Depende do teu volume de chamadas e do que necesite facer. Dámosche o orzamento despois da análise gratuíta, a miúdo como parte dunha solución máis ampla. Toda solución comeza cunha primeira implementación por {entryPrice} + IVE que compromete a ambas as partes."
           }
         ]
       }
@@ -2264,7 +2264,7 @@
           },
           {
             "question": "Como se orzamenta un proxecto?",
-            "answer": "Cada produto é diferente, así que o orzamentamos despois da análise gratuíta, unha vez que o alcance está claro."
+            "answer": "Cada produto é diferente, así que o orzamentamos despois da análise gratuíta, unha vez que o alcance está claro. Toda solución comeza cunha primeira implementación por {entryPrice} + IVE que compromete a ambas as partes."
           },
           {
             "question": "O código fonte é meu?",
@@ -2277,6 +2277,7 @@
       "eyebrow": "Que facemos",
       "title": "Solucións á medida do teu negocio",
       "subtitle": "Comezamos cunha análise gratuíta das túas necesidades e combinamos os servizos que precisa o teu negocio nunha solución que che trae clientes novos.",
+      "note": "Toda solución comeza cunha primeira implementación por {entryPrice} + IVE que compromete a ambas as partes. O resto preséntase con orzamento despois da análise gratuíta.",
       "cta": "Ver os servizos"
     },
     "quoted": "Orzamento para o teu proxecto"
@@ -2363,6 +2364,10 @@
         "title": "Queres telo todo nun só documento?",
         "text": "O noso dossier explica como traballamos e que construímos, nun só PDF.",
         "cta": "Descargar o dossier (PDF)"
+      },
+      "entryOffer": {
+        "name": "Primeira implementación",
+        "description": "Unha primeira implementación que compromete a ambas as partes e dá os primeiros pasos, cando comezan os servizos."
       }
     },
     "websiteDevelopment": {
@@ -2469,7 +2474,7 @@
       "package": {
         "label": "O teu prezo",
         "details": [
-          "As páxinas, os idiomas e as funcionalidades cambian dun negocio a outro, así que fixamos o prezo xuntos nunha primeira chamada gratuíta.",
+          "As páxinas, os idiomas e as funcionalidades cambian dun negocio a outro, así que fixamos o prezo xuntos nunha primeira chamada gratuíta. Toda solución comeza cunha primeira implementación por {entryPrice} + IVE que compromete a ambas as partes.",
           "Ao rematar a chamada sabes que recibes, cando e por canto. Sen compromiso."
         ]
       },

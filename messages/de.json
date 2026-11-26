@@ -1836,6 +1836,7 @@
             "eyebrow": "Unsere Leistungen",
             "title": "Lösungen rund um Ihr Unternehmen",
             "subtitle": "Wir beginnen mit einer kostenlosen Bedarfsanalyse und kombinieren dann die Leistungen, die Ihr Unternehmen braucht, zu einer Lösung, die Ihnen neue Kunden bringt.",
+            "note": "Jede Lösung beginnt mit einer ersten Umsetzung für {entryPrice} zzgl. MwSt., die beide Seiten verpflichtet. Der Rest wird nach der kostenlosen Analyse angeboten.",
             "cta": "Leistungen ansehen"
         },
         "quoted": "Individuelles Angebot für Ihr Projekt",
@@ -1934,7 +1935,7 @@
                     },
                     {
                         "question": "Was kostet das?",
-                        "answer": "Das hängt von Ihrem Markt ab und davon, was Ihr Unternehmen braucht. Sie erhalten ein Angebot nach der kostenlosen Analyse, oft als Teil einer umfassenderen Lösung."
+                        "answer": "Das hängt von Ihrem Markt ab und davon, was Ihr Unternehmen braucht. Sie erhalten ein Angebot nach der kostenlosen Analyse, oft als Teil einer umfassenderen Lösung. Jede Lösung beginnt mit einer ersten Umsetzung für {entryPrice} zzgl. MwSt., die beide Seiten verpflichtet."
                     },
                     {
                         "question": "Wie lange dauert es, bis ich Ergebnisse sehe?",
@@ -2172,7 +2173,7 @@
                     },
                     {
                         "question": "Was kostet das?",
-                        "answer": "Das hängt von Ihrem Anrufvolumen ab und davon, was er leisten soll. Sie erhalten ein Angebot nach der kostenlosen Analyse, oft als Teil einer umfassenderen Lösung."
+                        "answer": "Das hängt von Ihrem Anrufvolumen ab und davon, was er leisten soll. Sie erhalten ein Angebot nach der kostenlosen Analyse, oft als Teil einer umfassenderen Lösung. Jede Lösung beginnt mit einer ersten Umsetzung für {entryPrice} zzgl. MwSt., die beide Seiten verpflichtet."
                     }
                 ]
             }
@@ -2271,7 +2272,7 @@
                     },
                     {
                         "question": "Wie wird ein Projekt berechnet?",
-                        "answer": "Jedes Produkt ist anders. Deshalb erstellen wir das Angebot nach der kostenlosen Analyse, sobald der Umfang klar ist."
+                        "answer": "Jedes Produkt ist anders. Deshalb erstellen wir das Angebot nach der kostenlosen Analyse, sobald der Umfang klar ist. Jede Lösung beginnt mit einer ersten Umsetzung für {entryPrice} zzgl. MwSt., die beide Seiten verpflichtet."
                     },
                     {
                         "question": "Gehört mir der Quellcode?",
@@ -2363,6 +2364,10 @@
                 "title": "Lieber alles in einem Dokument?",
                 "text": "Unser Dossier erklärt in einem PDF, wie wir arbeiten und was wir bauen.",
                 "cta": "Dossier herunterladen (PDF)"
+            },
+            "entryOffer": {
+                "name": "Erste Umsetzung",
+                "description": "Eine erste Umsetzung, die beide Seiten verpflichtet und die ersten Schritte geht, wenn die Leistungen beginnen."
             }
         },
         "websiteDevelopment": {
@@ -2469,7 +2474,7 @@
             "package": {
                 "label": "Ihr Preis",
                 "details": [
-                    "Seiten, Sprachen und Funktionen unterscheiden sich von Unternehmen zu Unternehmen. Deshalb legen wir den Preis gemeinsam in einem kostenlosen ersten Gespräch fest.",
+                    "Seiten, Sprachen und Funktionen unterscheiden sich von Unternehmen zu Unternehmen. Deshalb legen wir den Preis gemeinsam in einem kostenlosen ersten Gespräch fest. Jede Lösung beginnt mit einer ersten Umsetzung für {entryPrice} zzgl. MwSt., die beide Seiten verpflichtet.",
                     "Nach dem Gespräch wissen Sie, was Sie bekommen, wann und zu welchem Preis. Unverbindlich."
                 ]
             },

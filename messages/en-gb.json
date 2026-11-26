@@ -1927,7 +1927,7 @@
           },
           {
             "question": "How much does it cost?",
-            "answer": "It depends on your market and on what your business needs. We quote it after the free analysis, often as part of a wider solution."
+            "answer": "It depends on your market and on what your business needs. We quote it after the free analysis, often as part of a wider solution. Every solution starts with a first implementation for {entryPrice} + VAT that commits both sides."
           },
           {
             "question": "How long before I see results?",
@@ -2165,7 +2165,7 @@
           },
           {
             "question": "How much does it cost?",
-            "answer": "It depends on your call volume and on what it needs to do. We quote it after the free analysis, often as part of a wider solution."
+            "answer": "It depends on your call volume and on what it needs to do. We quote it after the free analysis, often as part of a wider solution. Every solution starts with a first implementation for {entryPrice} + VAT that commits both sides."
           }
         ]
       }
@@ -2264,7 +2264,7 @@
           },
           {
             "question": "How is a project priced?",
-            "answer": "Every product is different, so we quote it after the free analysis, once the scope is clear."
+            "answer": "Every product is different, so we quote it after the free analysis, once the scope is clear. Every solution starts with a first implementation for {entryPrice} + VAT that commits both sides."
           },
           {
             "question": "Do I own the source code?",
@@ -2277,6 +2277,7 @@
       "eyebrow": "What We Do",
       "title": "Solutions built around your business",
       "subtitle": "We start with a free needs analysis, then combine the services your business needs into one solution that brings you new customers.",
+      "note": "Every solution starts with a first implementation for {entryPrice} + VAT that commits both sides. The rest is quoted after the free analysis.",
       "cta": "Browse the services"
     },
     "quoted": "Quoted for your project"
@@ -2363,6 +2364,10 @@
         "title": "Want it all in one document?",
         "text": "Our dossier explains how we work and what we build, in one PDF.",
         "cta": "Download the dossier (PDF)"
+      },
+      "entryOffer": {
+        "name": "First implementation",
+        "description": "A first implementation that commits both sides and takes the first steps, when the services begin."
       }
     },
     "websiteDevelopment": {
@@ -2469,7 +2474,7 @@
       "package": {
         "label": "Your price",
         "details": [
-          "Pages, languages and features change from one business to another, so we set the price together in a free first call.",
+          "Pages, languages and features change from one business to another, so we set the price together in a free first call. Every solution starts with a first implementation for {entryPrice} + VAT that commits both sides.",
           "You leave the call knowing what you get, when, and for how much. No obligation."
         ]
       },

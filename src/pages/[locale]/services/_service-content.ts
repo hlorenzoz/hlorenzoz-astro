@@ -13,7 +13,8 @@
  */
 import { defineContentPage, type CategoryPageConfig, type ContentPage } from '@/lib/service-page';
 import { slugFromServiceKey, type ServiceKey } from '@/lib/pricing';
-import { LOCALES, type Locale } from '@/lib/site-config';
+import { LOCALES, localeInfo, type Locale } from '@/lib/site-config';
+import { copyTokens, resolveFaq } from '@/lib/copy-tokens';
 import { getMessages } from '@/lib/i18n';
 import { routeLocales } from '@/lib/routes';
 import type enMessages from '@/messages/en.json';
@@ -68,7 +69,7 @@ function serviceContentPages(key: ServiceKey): LocaleContentPages {
             title: s.meta.title,
             description: s.meta.description,
             name: s.hero.title,
-            faq: s.faq.items,
+            faq: resolveFaq(s.faq.items, copyTokens(localeInfo(locale).intl)),
         });
     };
     return pagesFor(path, build);

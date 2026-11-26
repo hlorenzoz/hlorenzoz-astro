@@ -1836,6 +1836,7 @@
       "eyebrow": "O que fazemos",
       "title": "Soluções à medida do seu negócio",
       "subtitle": "Começamos com uma análise gratuita das suas necessidades e depois combinamos os serviços de que o seu negócio precisa numa só solução que lhe traz clientes novos.",
+      "note": "Todas as soluções começam com uma primeira implementação por {entryPrice} + IVA que compromete ambas as partes. O resto é orçamentado depois da análise gratuita.",
       "cta": "Ver os serviços"
     },
     "quoted": "Orçamento à medida do seu projeto",
@@ -1934,7 +1935,7 @@
           },
           {
             "question": "Quanto custa?",
-            "answer": "Depende do seu mercado e daquilo de que o seu negócio precisa. Fazemos o orçamento depois da análise gratuita, muitas vezes como parte de uma solução mais ampla."
+            "answer": "Depende do seu mercado e daquilo de que o seu negócio precisa. Fazemos o orçamento depois da análise gratuita, muitas vezes como parte de uma solução mais ampla. Todas as soluções começam com uma primeira implementação por {entryPrice} + IVA que compromete ambas as partes."
           },
           {
             "question": "Quanto tempo até ver resultados?",
@@ -2172,7 +2173,7 @@
           },
           {
             "question": "Quanto custa?",
-            "answer": "Depende do volume de chamadas e daquilo que precisa de fazer. Fazemos o orçamento depois da análise gratuita, muitas vezes como parte de uma solução mais ampla."
+            "answer": "Depende do volume de chamadas e daquilo que precisa de fazer. Fazemos o orçamento depois da análise gratuita, muitas vezes como parte de uma solução mais ampla. Todas as soluções começam com uma primeira implementação por {entryPrice} + IVA que compromete ambas as partes."
           }
         ]
       }
@@ -2271,7 +2272,7 @@
           },
           {
             "question": "Como é orçamentado um projeto?",
-            "answer": "Cada produto é diferente, por isso fazemos o orçamento depois da análise gratuita, quando o âmbito estiver claro."
+            "answer": "Cada produto é diferente, por isso fazemos o orçamento depois da análise gratuita, quando o âmbito estiver claro. Todas as soluções começam com uma primeira implementação por {entryPrice} + IVA que compromete ambas as partes."
           },
           {
             "question": "O código fonte fica a ser meu?",
@@ -2363,6 +2364,10 @@
         "title": "Prefere ter tudo num só documento?",
         "text": "O nosso dossiê explica como trabalhamos e o que construímos, num único PDF.",
         "cta": "Descarregar o dossiê (PDF)"
+      },
+      "entryOffer": {
+        "name": "Primeira implementação",
+        "description": "Uma primeira implementação que compromete ambas as partes e dá os primeiros passos, quando os serviços começam."
       }
     },
     "websiteDevelopment": {
@@ -2469,7 +2474,7 @@
       "package": {
         "label": "O seu preço",
         "details": [
-          "As páginas, as línguas e as funcionalidades mudam de um negócio para outro, por isso definimos o preço em conjunto numa primeira chamada gratuita.",
+          "As páginas, as línguas e as funcionalidades mudam de um negócio para outro, por isso definimos o preço em conjunto numa primeira chamada gratuita. Todas as soluções começam com uma primeira implementação por {entryPrice} + IVA que compromete ambas as partes.",
           "No fim da chamada fica a saber o que recebe, quando e por quanto. Sem compromisso."
         ]
       },

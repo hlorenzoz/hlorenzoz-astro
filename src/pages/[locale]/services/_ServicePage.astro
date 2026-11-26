@@ -28,6 +28,9 @@ import type { ContentPage } from '@/lib/service-page';
 import { getTranslations } from '@/lib/i18n';
 import { localeHref } from '@/lib/routing';
 import { dossierHref } from '@/lib/dossier';
+import { copyTokens, fillTokens, resolveFaq } from '@/lib/copy-tokens';
+import { localeInfo } from '@/lib/site-config';
+import { entryOffer } from '@/lib/schema';
 
 export interface Props {
     locale: string;
@@ -54,11 +57,18 @@ const tShared = landing ? getTranslations(locale, 'landing.shared') : undefined;
 // One booking anchor per page: the hero CTA and the deliverables CTA both
 // point here, so the target lives in one place.
 const bookingHref = `${localeHref(locale, path)}#booking`;
+
+// The entry price, the only figure the agency publishes, formatted for the reader.
+const tokens = copyTokens(localeInfo(locale).intl);
+const faqItems = resolveFaq(t.raw('faq.items'), tokens);
+const packageDetails = deliverables ? (tLanding?.raw('package.details') as string[] | undefined)?.map((detail) => fillTokens(detail, tokens)) : undefined;
 ---
 
 <BaseLayout locale={locale} meta={page.metadata(locale)}>
     <div class="min-h-screen bg-white">
         <JsonLd data={page.schema(locale, tRoot)} />
+        {/* The entry price, visible in the FAQ of every service landing, as an Offer. */}
+        {tShared && <JsonLd data={entryOffer({ locale, name: tShared('entryOffer.name'), description: tShared('entryOffer.description') })} />}
         <Navbar locale={locale} />
 
         <main>
@@ -97,7 +107,7 @@ const bookingHref = `${localeHref(locale, path)}#booking`;
                         title={t('deliverables.title')}
                         quote={tRoot('services.quoted')}
                         label={tLanding?.('package.label')}
-                        details={tLanding?.raw('package.details')}
+                        details={packageDetails}
                         ctaLabel={t('hero.cta')}
                         ctaHref={bookingHref}
                         groups={t.raw('deliverables.groups')}
@@ -114,7 +124,7 @@ const bookingHref = `${localeHref(locale, path)}#booking`;
                     <h2 class="text-3xl md:text-5xl font-bold text-black mb-12 tracking-tight">
                         {t('faq.title')}
                     </h2>
-                    <FaqAccordion items={t.raw('faq.items')} />
+                    <FaqAccordion items={faqItems} />
                 </div>
             </section>
 
