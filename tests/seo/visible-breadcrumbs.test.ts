@@ -85,6 +85,19 @@ describe('breadcrumb placement', () => {
     });
 });
 
+describe('services hub', () => {
+    it('lists the services with Website Development first', async () => {
+        const document = await renderPage(ServicesHubPage, { locale: 'en' }, '/en/services/');
+        const hrefs = Array.from(document.querySelectorAll('#directory a[href^="/en/services/"]'), (a) => a.getAttribute('href'));
+        expect([...new Set(hrefs)]).toEqual([
+            '/en/services/website-development/',
+            '/en/services/local-seo/',
+            '/en/services/ai-voice-receptionist/',
+            '/en/services/software-development/',
+        ]);
+    });
+});
+
 describe('home page', () => {
     it('renders no visible breadcrumb', async () => {
         const document = await renderPage(HomePage, { locale: 'en' });

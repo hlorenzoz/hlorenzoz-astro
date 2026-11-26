@@ -13,10 +13,18 @@ export type ServiceKey =
     | 'aiVoiceReceptionist'
     | 'softwareDevelopment';
 
-/** Every service, in presentation order. */
+/** Every service, Local SEO first: the dossier gives it its own page and lists the rest after it. */
 export const SERVICE_KEYS: readonly ServiceKey[] = [
     'localSeo',
     'websiteDevelopment',
+    'aiVoiceReceptionist',
+    'softwareDevelopment',
+];
+
+/** The order the home's Solutions grid and the services hub show the services in. */
+export const SERVICE_DISPLAY_ORDER: readonly ServiceKey[] = [
+    'websiteDevelopment',
+    'localSeo',
     'aiVoiceReceptionist',
     'softwareDevelopment',
 ];

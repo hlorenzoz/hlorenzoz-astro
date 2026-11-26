@@ -25,7 +25,7 @@ import { getPortfolioItemsAction } from '@/lib/actions/portfolio';
 import { getLinkedInArticlesAction } from '@/lib/actions/linkedin';
 import { getNewsItemsAction } from '@/lib/actions/news';
 import { serviceList, faqPage, webPage } from '@/lib/schema';
-import { SERVICE_KEYS, slugFromServiceKey } from '@/lib/pricing';
+import { SERVICE_DISPLAY_ORDER, SERVICE_KEYS, slugFromServiceKey } from '@/lib/pricing';
 import { copyTokens, resolveFaq } from '@/lib/copy-tokens';
 import { LOCALES, absoluteUrl, marketNames } from '@/lib/site-config';
 import { imageFallbackSrc, imageSrcSet } from '@/lib/image';
@@ -42,8 +42,6 @@ const { locale } = Astro.params as { locale: string };
 const t = getTranslations(locale, 'home');
 // Root translator: service names and the news copy live outside the `home` namespace.
 const tRoot = getTranslations(locale);
-// The order the home presents the four services in (the visible grid and its ItemList).
-const SOLUTIONS_ORDER = ['websiteDevelopment', 'localSeo', 'aiVoiceReceptionist', 'softwareDevelopment'] as const satisfies readonly (typeof SERVICE_KEYS)[number][];
 // Carousels show only work and posts whose page exists in this locale: their copy and link must both resolve.
 const portfolioItems = (await getPortfolioItemsAction()).filter((item) => routeExists(`portfolio/${item.slug}`, locale));
 const articles = await getLinkedInArticlesAction();
@@ -66,7 +64,7 @@ const BENEFITS_IMAGE = {
 };
 
 // One icon per `home.problem.cards` / `home.benefits.items` entry, in order.
-const PROBLEM_ICONS = [Search, MousePointerClick, PhoneMissed, Sparkles];
+const PROBLEM_ICONS = [MousePointerClick, Search, Sparkles, PhoneMissed];
 const BENEFIT_ICONS = [Search, Phone, Users];
 ---
 
@@ -171,7 +169,7 @@ const BENEFIT_ICONS = [Search, Phone, Users];
                 title={t('solutions.title')}
                 subtitle={t('solutions.subtitle')}
                 cta={t('solutions.cta')}
-                items={SOLUTIONS_ORDER.map((key) => ({
+                items={SERVICE_DISPLAY_ORDER.map((key) => ({
                     title: tRoot(`services.${key}.name`),
                     description: t(`solutions.items.${key}`),
                     href: routeHref(locale, `services/${slugFromServiceKey(key)}`),
@@ -288,7 +286,7 @@ const BENEFIT_ICONS = [Search, Phone, Users];
                 tell a crawler the agency sells them separately. */}
             <JsonLd
                 data={serviceList(
-                    SOLUTIONS_ORDER.map((key) => ({
+                    SERVICE_DISPLAY_ORDER.map((key) => ({
                         title: tRoot(`services.${key}.name`),
                         description: tRoot(`services.${key}.meta.description`),
                     }))

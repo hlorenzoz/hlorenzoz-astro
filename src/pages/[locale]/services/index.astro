@@ -14,7 +14,7 @@ import ServiceDirectoryList, { type ServiceDirectoryItem } from '@/src/component
 import { contentPageFor, hubContentPages, LOCALE_MESSAGES } from './_service-content';
 import { getTranslations } from '@/lib/i18n';
 import { localeHref } from '@/lib/routing';
-import { serviceKeyFromSlug } from '@/lib/pricing';
+import { SERVICE_DISPLAY_ORDER, serviceKeyFromSlug } from '@/lib/pricing';
 import { type Locale } from '@/lib/site-config';
 import { routeExists, routeLocales } from '@/lib/routes';
 
@@ -46,7 +46,9 @@ const messages = LOCALE_MESSAGES[locale];
 // `https://hlorenzoz.com/...`, leaving localhost and previews. The relative
 // href is rebuilt from the slug with the helper the Navbar and Footer use.
 // Only services whose page exists in this locale: their description and link must both resolve.
-const items: ServiceDirectoryItem[] = page.children(locale, tRoot).filter((link) => routeExists(new URL(link.url).pathname.split('/').slice(2).join('/'), locale)).map((link) => {
+const slugOf = (url: string) => new URL(url).pathname.split('/').filter(Boolean).pop() ?? '';
+const rank = (url: string) => SERVICE_DISPLAY_ORDER.indexOf(serviceKeyFromSlug(slugOf(url)));
+const items: ServiceDirectoryItem[] = page.children(locale, tRoot).filter((link) => routeExists(new URL(link.url).pathname.split('/').slice(2).join('/'), locale)).sort((a, b) => rank(a.url) - rank(b.url)).map((link) => {
     const slug = new URL(link.url).pathname.split('/').filter(Boolean).pop() ?? '';
     return {
         name: link.name,
