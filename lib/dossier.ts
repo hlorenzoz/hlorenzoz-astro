@@ -1,10 +1,11 @@
-/**
- * The agency dossier (`scripts/build-dossier.mjs`) is built in English and
- * Spanish only, so Spanish and Galician readers download the Spanish PDF and
- * every other locale the English one.
- */
-const SPANISH_READERS: readonly string[] = ['es', 'gl'];
+import { LOCALES } from '@/lib/routing';
 
+/**
+ * The agency dossier (`scripts/build-dossier.mjs`) is built in every site
+ * locale, so each reader downloads the PDF in the language of the page. An
+ * unknown locale falls back to the English one.
+ */
 export function dossierHref(locale: string): string {
-    return `/dossier/lorenzoz-agency-dossier-${SPANISH_READERS.includes(locale) ? 'es' : 'en'}.pdf`;
+    const language = (LOCALES as readonly string[]).includes(locale) ? locale : 'en';
+    return `/dossier/lorenzoz-agency-dossier-${language}.pdf`;
 }

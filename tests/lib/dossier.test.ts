@@ -3,16 +3,15 @@ import { LOCALES } from '@/lib/routing';
 import { dossierHref } from '@/lib/dossier';
 
 /**
- * The dossier is built in English and Spanish only, so every locale downloads
- * one of the two: Spanish and Galician readers get the Spanish PDF, everyone
- * else the English one.
+ * The dossier is built in every site locale, so each reader downloads the PDF
+ * in the language of the page they are on.
  */
 describe('dossierHref', () => {
-    it.each(['es', 'gl'])('gives %s the Spanish PDF', (locale) => {
-        expect(dossierHref(locale)).toBe('/dossier/lorenzoz-agency-dossier-es.pdf');
+    it.each(LOCALES)('gives %s its own PDF', (locale) => {
+        expect(dossierHref(locale)).toBe(`/dossier/lorenzoz-agency-dossier-${locale}.pdf`);
     });
 
-    it.each(LOCALES.filter((l) => l !== 'es' && l !== 'gl'))('gives %s the English PDF', (locale) => {
-        expect(dossierHref(locale)).toBe('/dossier/lorenzoz-agency-dossier-en.pdf');
+    it('falls back to the English PDF for an unknown locale', () => {
+        expect(dossierHref('xx')).toBe('/dossier/lorenzoz-agency-dossier-en.pdf');
     });
 });

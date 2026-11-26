@@ -1,0 +1,214 @@
+{
+  "meta": {
+    "title": "Lorenzoz Agency | Dossier da axencia",
+    "docLabel": "Dossier da axencia"
+  },
+  "cover": {
+    "badge": "O teu socio para crecer en local",
+    "title": "Máis clientes,",
+    "titleGradient": "cunha solución pensada para o teu negocio",
+    "description": "Somos un socio centrado no teu éxito. Primeiro analizamos o que necesita o teu negocio. Despois implantamos a solución que che trae clientes novos.",
+    "facts": [
+      {
+        "value": "1",
+        "label": "Solución á túa medida"
+      },
+      {
+        "value": "4",
+        "label": "Servizos para construíla"
+      },
+      {
+        "value": "8",
+        "label": "Mercados atendidos"
+      }
+    ],
+    "marketsLabel": "Atendemos negocios en"
+  },
+  "approach": {
+    "eyebrow": "O noso enfoque",
+    "title": "Un socio centrado no teu éxito",
+    "subtitle": "Unha web, unhas cantas recensións ou un perfil de Google non traen clientes por si sós. Tráeos unha solución pensada para o teu negocio, e seguimos ao teu lado mentres funciona.",
+    "oldWay": {
+      "title": "Mercar servizos soltos",
+      "items": [
+        "Varios provedores que non se coordinan entre si",
+        "Entregables que ninguén mide fronte ás vendas",
+        "Un paquete pensado para o negocio doutro",
+        "Un prezo fixado antes de coñecer o teu"
+      ]
+    },
+    "newWay": {
+      "title": "Traballar cun socio",
+      "items": [
+        "Un único responsable da túa captación de clientes",
+        "Unha solución construída segundo o que necesita o teu negocio",
+        "Servizos incluídos só onde achegan valor",
+        "Resultados medidos xuntos, sen tecnicismos"
+      ]
+    },
+    "stepsTitle": "Como traballamos",
+    "steps": [
+      {
+        "number": "01",
+        "badge": "Gratis",
+        "title": "Análise de necesidades",
+        "description": "A primeira chamada é gratuíta e é a análise: como consegues clientes hoxe, onde os perdes e que necesitas."
+      },
+      {
+        "number": "02",
+        "badge": "Proposta",
+        "title": "Unha solución á medida",
+        "description": "Propoñémosche unha solución cos servizos que necesitas e presentámola con orzamento. Un servizo pode vir incluído sen custo adicional."
+      },
+      {
+        "number": "03",
+        "badge": "Implantación",
+        "title": "Poñémola en marcha",
+        "description": "Implantamos a solución mentres ti te centras en atender ben os teus clientes."
+      },
+      {
+        "number": "04",
+        "badge": "Xuntos",
+        "title": "Medimos e axustamos",
+        "description": "Revisamos os resultados contigo, sen tecnicismos, e axustamos a solución segundo o que cambiou."
+      }
+    ]
+  },
+  "localSeo": {
+    "eyebrow": "Peza 1 de 4",
+    "name": "SEO local",
+    "title": "Primeiro en Google, recomendado pola IA",
+    "description": "O traballo que fai visible o teu negocio nas buscas locais de Google e nas respostas dos motores de IA. Cando o SEO local forma parte da túa solución, inclúe os seus tres piares.",
+    "pillars": [
+      {
+        "title": "Contido de autoridade",
+        "description": "O contido que establece o teu negocio como referencia no seu sector.",
+        "items": [
+          "Investigación de palabras clave",
+          "Clústeres de contido",
+          "Análise das carencias de contido",
+          "Actualización do contido existente"
+        ]
+      },
+      {
+        "title": "Autoridade en Google e na IA",
+        "description": "O teu negocio e a túa web como a referencia que se recomenda.",
+        "items": [
+          "Google Business Profile optimizado",
+          "SEO local on page na túa web",
+          "Datos estruturados de negocio local",
+          "Presenza nos resultados de Google e da IA"
+        ]
+      },
+      {
+        "title": "Xestión de recensións",
+        "description": "A túa reputación, medida e traballada mes a mes.",
+        "items": [
+          "Seguimento do crecemento das recensións",
+          "Tendencias de opinións positivas e negativas",
+          "Seguimento das respostas dos clientes",
+          "Ligazóns de opinión coa túa marca"
+        ]
+      }
+    ],
+    "goalTitle": "O noso obxectivo",
+    "goal": "A primeira posición en Google para as buscas da túa zona. Ningún provedor pode garantir un posto concreto e nós non o prometemos: comprometémonos co traballo que leva ata aí."
+  },
+  "blocks": {
+    "eyebrow": "Combinadas segundo o teu negocio",
+    "title": "Tres pezas máis",
+    "description": "Cada unha súmase á túa solución cando o teu negocio a necesita, e pode vir incluída sen custo adicional.",
+    "items": [
+      {
+        "key": "websiteDevelopment",
+        "name": "Desenvolvemento web",
+        "description": "Sitios web e PWA rápidos, deseñados para converter visitantes en clientes.",
+        "features": [
+          "Un rendemento que calquera pode comprobar en PageSpeed Insights",
+          "Datos estruturados, traducións e llms.txt para Google e a IA",
+          "Instalable como unha app en móbiles e ordenadores"
+        ]
+      },
+      {
+        "key": "aiVoiceReceptionist",
+        "name": "Recepcionista de voz con IA",
+        "description": "Un axente de voz que atende as túas chamadas, responde as preguntas frecuentes e reserva citas, 24/7.",
+        "features": [
+          "Citas reservadas directamente no teu calendario",
+          "Voz e guión personalizados segundo a túa marca",
+          "Optimizado para inglés e español"
+        ]
+      },
+      {
+        "key": "softwareDevelopment",
+        "name": "Desenvolvemento de software e apps",
+        "description": "Produtos completos cun frontend en Flutter e un backend á medida, para calquera dispositivo e pantalla.",
+        "features": [
+          "Un único código para iOS, Android, web e escritorio",
+          "Probas automatizadas e pipeline de CI/CD",
+          "Propiedade completa do código fonte na entrega"
+        ]
+      }
+    ],
+    "footnote": "Cada solución preséntase con orzamento despois da análise de necesidades gratuíta. Os orzamentos non inclúen o IVE."
+  },
+  "process": {
+    "eyebrow": "A análise de necesidades",
+    "title": "Que revisamos na túa primeira chamada",
+    "subtitle": "Cada negocio perde clientes á súa maneira. Estas son as carencias que revisamos primeiro, porque deciden que pezas necesita a túa solución.",
+    "problems": [
+      {
+        "title": "Unha web que non converte",
+        "description": "Unha web lenta, ou que deixa sen resposta as dúbidas de quen a visita, perde o cliente xusto antes de que contacte."
+      },
+      {
+        "title": "Invisible en Google e na IA",
+        "description": "Se o teu negocio non aparece cando alguén busca o teu servizo preto, ou llo pregunta a un asistente de IA, ese cliente lévao un competidor."
+      },
+      {
+        "title": "Chamadas sen atender",
+        "description": "Unha chamada que ninguén atende fóra de horario ou nun momento de moito traballo é un cliente que pode chamar a outro."
+      }
+    ],
+    "termsTitle": "Condicións",
+    "terms": [
+      {
+        "title": "Orzamento despois da análise",
+        "description": "Non publicamos máis prezo que o de entrada. Cada solución preséntase con orzamento despois da análise de necesidades gratuíta, segundo o que necesite o teu negocio."
+      },
+      {
+        "title": "O prezo de entrada e unha cota mensual",
+        "description": "Comezas cunha primeira implementación por {entryPrice} + IVE que compromete a ambas as partes e dá os primeiros pasos. Despois, unha cota mensual ligada aos resultados que che traemos, acordada na proposta. Os clientes novos que trae a solución son os que a cobren."
+      },
+      {
+        "title": "Orzamentos sen IVE",
+        "description": "O IVE engádese na factura cando corresponde, ao tipo que se aplica ao teu negocio."
+      },
+      {
+        "title": "Un obxectivo, non unha garantía",
+        "description": "Traballamos para acadar a primeira posición. Os resultados dependen tamén do teu mercado e da túa competencia."
+      }
+    ]
+  },
+  "contact": {
+    "eyebrow": "Contacto",
+    "title": "Falemos do teu negocio",
+    "description": "A primeira chamada é gratuíta e nela comeza a análise de necesidades: onde está hoxe o teu negocio e que necesita.",
+    "bookingTitle": "Reserva a túa primeira chamada gratuíta",
+    "bookingDescription": "Escolle o día e a hora que mellor che veñan. Escanea o código ou preme o botón.",
+    "bookingCta": "Reservar chamada gratuíta",
+    "channels": {
+      "email": "Correo electrónico",
+      "phone": "Teléfono",
+      "whatsapp": "WhatsApp",
+      "web": "Sitio web",
+      "linkedin": "LinkedIn",
+      "hours": "Horario"
+    },
+    "hours": "De luns a venres, de {opens} a {closes} (hora de España)",
+    "closing": "Ti céntraste en atender ben os teus clientes. Nós encargámonos de que cheguen."
+  },
+  "footer": {
+    "page": "Páxina {current} de {total}"
+  }
+}

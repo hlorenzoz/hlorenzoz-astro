@@ -1,0 +1,214 @@
+{
+  "meta": {
+    "title": "Lorenzoz Agency | Agenturdossier",
+    "docLabel": "Agenturdossier"
+  },
+  "cover": {
+    "badge": "Ihr Partner für lokales Wachstum",
+    "title": "Mehr Kunden,",
+    "titleGradient": "mit einer Lösung, die für Ihr Unternehmen gebaut ist",
+    "description": "Wir sind ein Partner, dem Ihr Erfolg am Herzen liegt. Zuerst analysieren wir, was Ihr Unternehmen braucht. Dann setzen wir die Lösung um, die Ihnen neue Kunden bringt.",
+    "facts": [
+      {
+        "value": "1",
+        "label": "Maßgeschneiderte Lösung für Sie"
+      },
+      {
+        "value": "4",
+        "label": "Leistungen als Bausteine"
+      },
+      {
+        "value": "8",
+        "label": "Betreute Märkte"
+      }
+    ],
+    "marketsLabel": "Wir betreuen Unternehmen in diesen Märkten"
+  },
+  "approach": {
+    "eyebrow": "Unser Ansatz",
+    "title": "Ein Partner, dem Ihr Erfolg am Herzen liegt",
+    "subtitle": "Eine Website, ein paar Bewertungen oder ein Unternehmensprofil bei Google bringen allein keine Kunden. Eine Lösung, die für Ihr Unternehmen gebaut ist, schon, und wir bleiben an Ihrer Seite, solange sie arbeitet.",
+    "oldWay": {
+      "title": "Einzelne Leistungen einkaufen",
+      "items": [
+        "Mehrere Anbieter, die sich nie abstimmen",
+        "Arbeitsergebnisse, die niemand am Umsatz misst",
+        "Ein Paket, das für ein anderes Unternehmen gedacht ist",
+        "Ein Preis, der feststeht, bevor jemand Ihr Unternehmen angesehen hat"
+      ]
+    },
+    "newWay": {
+      "title": "Mit einem Partner arbeiten",
+      "items": [
+        "Ein Team, das für Ihre Kundengewinnung verantwortlich ist",
+        "Eine Lösung aus dem, was Ihr Unternehmen braucht",
+        "Leistungen nur dort, wo sie einen Mehrwert bringen",
+        "Ergebnisse, gemeinsam gemessen und klar erklärt"
+      ]
+    },
+    "stepsTitle": "So arbeiten wir",
+    "steps": [
+      {
+        "number": "01",
+        "badge": "Kostenlos",
+        "title": "Bedarfsanalyse",
+        "description": "Das erste Gespräch ist kostenlos und ist bereits die Analyse: wie Sie heute Kunden gewinnen, wo Sie sie verlieren und was Sie brauchen."
+      },
+      {
+        "number": "02",
+        "badge": "Angebot",
+        "title": "Eine maßgeschneiderte Lösung",
+        "description": "Wir schlagen eine Lösung aus den Leistungen vor, die Sie brauchen, und erstellen ein Angebot dafür. Eine Leistung kann ohne Aufpreis enthalten sein."
+      },
+      {
+        "number": "03",
+        "badge": "Umsetzung",
+        "title": "Wir setzen sie um",
+        "description": "Wir setzen die Lösung um, während Sie sich weiter darauf konzentrieren, Ihre Kunden gut zu bedienen."
+      },
+      {
+        "number": "04",
+        "badge": "Gemeinsam",
+        "title": "Wir messen und passen an",
+        "description": "Wir besprechen die Ergebnisse mit Ihnen in klaren Worten und passen die Lösung an das an, was sich verändert hat."
+      }
+    ]
+  },
+  "localSeo": {
+    "eyebrow": "Baustein 1 von 4",
+    "name": "Lokales SEO",
+    "title": "Bei Google zuerst gefunden, von KI empfohlen",
+    "description": "Die Arbeit, die Ihr Unternehmen in lokalen Suchen bei Google und in den Antworten von KI sichtbar macht. Wenn lokales SEO Teil Ihrer Lösung ist, gehören alle drei Säulen dazu.",
+    "pillars": [
+      {
+        "title": "Inhalte mit Autorität",
+        "description": "Die Inhalte, die Ihr Unternehmen als Referenz in seinem Fachgebiet etablieren.",
+        "items": [
+          "Keywordrecherche",
+          "Themencluster",
+          "Analyse von Inhaltslücken",
+          "Aktualisierung bestehender Inhalte"
+        ]
+      },
+      {
+        "title": "Autorität bei Google und KI",
+        "description": "Ihr Unternehmen und Ihre Website als die Referenz, die empfohlen wird.",
+        "items": [
+          "Optimiertes Google Business Profile",
+          "Lokale Optimierung jeder Seite Ihrer Website",
+          "Strukturierte Daten für lokale Unternehmen",
+          "Präsenz in den Ergebnissen von Google und KI"
+        ]
+      },
+      {
+        "title": "Bewertungsmanagement",
+        "description": "Ihr Ruf, Monat für Monat gemessen und gepflegt.",
+        "items": [
+          "Wachstum der Bewertungen im Zeitverlauf",
+          "Trends bei positivem und negativem Feedback",
+          "Kundenantworten im Blick",
+          "Links für Feedback mit Ihrer Marke"
+        ]
+      }
+    ],
+    "goalTitle": "Unser Ziel",
+    "goal": "Die erste Position bei Google für Suchen in Ihrer Region. Kein Anbieter kann eine bestimmte Platzierung garantieren, und wir versprechen keine: Wir verpflichten uns zu der Arbeit, die dorthin führt."
+  },
+  "blocks": {
+    "eyebrow": "Passend zu Ihrem Unternehmen kombiniert",
+    "title": "Drei weitere Bausteine",
+    "description": "Jeder kommt zu Ihrer Lösung hinzu, wenn Ihr Unternehmen ihn braucht, und kann ohne Aufpreis enthalten sein.",
+    "items": [
+      {
+        "key": "websiteDevelopment",
+        "name": "Webentwicklung",
+        "description": "Schnelle Websites und PWAs, gestaltet, um Besucher zu Kunden zu machen.",
+        "features": [
+          "Leistung, die jeder in PageSpeed Insights prüfen kann",
+          "Strukturierte Daten, Übersetzungen und llms.txt für Google und KI",
+          "Als App auf Smartphones und Computern installierbar"
+        ]
+      },
+      {
+        "key": "aiVoiceReceptionist",
+        "name": "Telefonassistent mit KI",
+        "description": "Ein Sprachagent, der Ihre Anrufe annimmt, häufige Fragen beantwortet und Termine bucht, rund um die Uhr.",
+        "features": [
+          "Termine direkt in Ihren Kalender gebucht",
+          "Individuelle Stimme und Gesprächsleitfaden passend zu Ihrer Marke",
+          "Optimiert für Englisch und Spanisch"
+        ]
+      },
+      {
+        "key": "softwareDevelopment",
+        "name": "Entwicklung von Software und mobilen Apps",
+        "description": "Komplette Produkte mit Flutter im Frontend und einem individuellen Backend, für jedes Gerät und jeden Bildschirm.",
+        "features": [
+          "Eine Codebasis für iOS, Android, Web und Desktop",
+          "Automatisierte Tests und eine Pipeline für CI/CD",
+          "Volles Eigentum am Quellcode bei Übergabe"
+        ]
+      }
+    ],
+    "footnote": "Jede Lösung erhält ihr Angebot nach der kostenlosen Bedarfsanalyse. Angebote verstehen sich zuzüglich MwSt."
+  },
+  "process": {
+    "eyebrow": "Die Bedarfsanalyse",
+    "title": "Was wir uns im ersten Gespräch ansehen",
+    "subtitle": "Jedes Unternehmen verliert Kunden auf seine eigene Weise. Diese Lücken prüfen wir zuerst, denn sie entscheiden, welche Bausteine Ihre Lösung braucht.",
+    "problems": [
+      {
+        "title": "Eine Website, die nicht konvertiert",
+        "description": "Eine langsame Website, oder eine, die die Fragen der Besucher offen lässt, verliert den Kunden kurz bevor er Kontakt aufnimmt."
+      },
+      {
+        "title": "Unsichtbar bei Google und KI",
+        "description": "Wenn Ihr Unternehmen nicht erscheint, wenn jemand Ihre Leistung in der Nähe sucht oder einen Assistenten mit KI fragt, holt sich ein Wettbewerber diesen Kunden."
+      },
+      {
+        "title": "Anrufe, die niemand annimmt",
+        "description": "Ein Anruf, der nach Feierabend oder in einem hektischen Moment unbeantwortet bleibt, ist ein Kunde, der vielleicht jemand anderen anruft."
+      }
+    ],
+    "termsTitle": "Konditionen",
+    "terms": [
+      {
+        "title": "Angebot nach der Analyse",
+        "description": "Außer dem Einstiegspreis veröffentlichen wir keine Preisliste. Jede Lösung erhält ihr Angebot nach der kostenlosen Bedarfsanalyse, je nachdem, was Ihr Unternehmen braucht."
+      },
+      {
+        "title": "Der Einstiegspreis, dann eine Monatsgebühr",
+        "description": "Sie starten mit einer ersten Umsetzung für {entryPrice} + MwSt., die beide Seiten verpflichtet und die ersten Schritte geht. Danach folgt eine Monatsgebühr, die an die Ergebnisse gebunden ist, die wir Ihnen bringen, und im Angebot vereinbart wird. Gedeckt wird sie von den neuen Kunden, die die Lösung bringt."
+      },
+      {
+        "title": "Angebote ohne MwSt.",
+        "description": "Die MwSt. kommt auf der Rechnung hinzu, wo sie anfällt, zu dem Satz, der für Ihr Unternehmen gilt."
+      },
+      {
+        "title": "Ein Ziel, keine Garantie",
+        "description": "Wir arbeiten auf die erste Position hin. Die Ergebnisse hängen auch von Ihrem Markt und Ihrem Wettbewerb ab."
+      }
+    ]
+  },
+  "contact": {
+    "eyebrow": "Kontakt",
+    "title": "Sprechen wir über Ihr Unternehmen",
+    "description": "Das erste Gespräch ist kostenlos, und dort beginnt die Bedarfsanalyse: wo Ihr Unternehmen heute steht und was es braucht.",
+    "bookingTitle": "Buchen Sie Ihr kostenloses erstes Gespräch",
+    "bookingDescription": "Wählen Sie den Tag und die Uhrzeit, die Ihnen am besten passen. Scannen Sie den Code oder nutzen Sie die Schaltfläche.",
+    "bookingCta": "Kostenloses Gespräch buchen",
+    "channels": {
+      "email": "Mail",
+      "phone": "Telefon",
+      "whatsapp": "WhatsApp",
+      "web": "Website",
+      "linkedin": "LinkedIn",
+      "hours": "Erreichbarkeit"
+    },
+    "hours": "Montag bis Freitag, von {opens} bis {closes} (spanische Zeit)",
+    "closing": "Sie konzentrieren sich darauf, Ihre Kunden gut zu bedienen. Wir sorgen dafür, dass sie zu Ihnen kommen."
+  },
+  "footer": {
+    "page": "Seite {current} von {total}"
+  }
+}

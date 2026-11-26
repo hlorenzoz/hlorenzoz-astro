@@ -116,7 +116,7 @@ migrate-cdn *args:
 
 # --- Sales material ------------------------------------------------------
 
-# Build the commercial dossier PDF into dossier/dist/. No args = es and en;
+# Build the commercial dossier PDFs into dossier/dist/. No args = every site locale;
 # pass a language for one, e.g. `just dossier es`.
 dossier *locales:
     node scripts/build-dossier.mjs {{locales}}

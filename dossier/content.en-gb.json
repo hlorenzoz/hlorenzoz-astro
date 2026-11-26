@@ -1,0 +1,214 @@
+{
+  "meta": {
+    "title": "Lorenzoz Agency | Agency dossier",
+    "docLabel": "Agency dossier"
+  },
+  "cover": {
+    "badge": "Your partner for local growth",
+    "title": "More customers,",
+    "titleGradient": "with a solution built for your business",
+    "description": "We are a partner focused on your success. First we analyse what your business needs. Then we implement the solution that brings you new customers.",
+    "facts": [
+      {
+        "value": "1",
+        "label": "Solution tailored to you"
+      },
+      {
+        "value": "4",
+        "label": "Services to build it from"
+      },
+      {
+        "value": "8",
+        "label": "Markets served"
+      }
+    ],
+    "marketsLabel": "We serve businesses in"
+  },
+  "approach": {
+    "eyebrow": "Our approach",
+    "title": "A partner focused on your success",
+    "subtitle": "A website, a few reviews or a Google profile do not bring customers on their own. A solution built for your business does, and we stay with you while it works.",
+    "oldWay": {
+      "title": "Buying separate services",
+      "items": [
+        "Several providers who never coordinate",
+        "Deliverables nobody measures against sales",
+        "A package designed for someone else's business",
+        "A price decided before anyone looked at yours"
+      ]
+    },
+    "newWay": {
+      "title": "Working with a partner",
+      "items": [
+        "One team accountable for your customer acquisition",
+        "A solution built from what your business needs",
+        "Services included only where they add value",
+        "Results measured together, in plain language"
+      ]
+    },
+    "stepsTitle": "How we work",
+    "steps": [
+      {
+        "number": "01",
+        "badge": "Free",
+        "title": "Needs analysis",
+        "description": "The first call is free and it is the analysis: how you win customers today, where you lose them and what you need."
+      },
+      {
+        "number": "02",
+        "badge": "Proposal",
+        "title": "A tailored solution",
+        "description": "We propose one solution built from the services you need, and quote for it. A service may come included at no extra cost."
+      },
+      {
+        "number": "03",
+        "badge": "Implementation",
+        "title": "We put it to work",
+        "description": "We implement the solution while you keep your focus on serving your customers well."
+      },
+      {
+        "number": "04",
+        "badge": "Together",
+        "title": "We measure and adjust",
+        "description": "We review the results with you in plain language and adjust the solution to what changed."
+      }
+    ]
+  },
+  "localSeo": {
+    "eyebrow": "Building block 1 of 4",
+    "name": "Local SEO",
+    "title": "Found first on Google, recommended by AI",
+    "description": "The work that makes your business visible in local Google searches and in the answers AI engines give. When Local SEO is part of your solution, it comes with all three pillars.",
+    "pillars": [
+      {
+        "title": "Authority content",
+        "description": "The content that establishes your business as a reference in its field.",
+        "items": [
+          "Keyword research",
+          "Content clusters",
+          "Content gap analysis",
+          "Updates to existing content"
+        ]
+      },
+      {
+        "title": "Authority on Google and AI",
+        "description": "Your business and your website as the reference that gets recommended.",
+        "items": [
+          "Optimised Google Business Profile",
+          "On page local SEO for your website",
+          "Local business structured data",
+          "Presence in Google and AI results"
+        ]
+      },
+      {
+        "title": "Review management",
+        "description": "Your reputation, measured and worked on month after month.",
+        "items": [
+          "Review growth tracked over time",
+          "Positive and negative feedback trends",
+          "Customer responses monitored",
+          "Branded feedback links"
+        ]
+      }
+    ],
+    "goalTitle": "Our goal",
+    "goal": "The first position on Google for searches in your area. No provider can guarantee a specific ranking and we do not promise one: we commit to the work that leads there."
+  },
+  "blocks": {
+    "eyebrow": "Combined to fit your business",
+    "title": "Three more building blocks",
+    "description": "Each one joins your solution when your business needs it, and it may come included at no extra cost.",
+    "items": [
+      {
+        "key": "websiteDevelopment",
+        "name": "Website Development",
+        "description": "Fast websites and PWAs, designed to turn visitors into customers.",
+        "features": [
+          "Performance anyone can check in PageSpeed Insights",
+          "Structured data, translations and llms.txt for Google and AI",
+          "Installable as an app on phones and computers"
+        ]
+      },
+      {
+        "key": "aiVoiceReceptionist",
+        "name": "AI Voice Receptionist",
+        "description": "A voice agent that answers your calls, handles frequent questions and books appointments, 24/7.",
+        "features": [
+          "Appointments booked straight into your diary",
+          "Custom voice and script matched to your brand",
+          "Optimised for English and Spanish"
+        ]
+      },
+      {
+        "key": "softwareDevelopment",
+        "name": "Software and Mobile App Development",
+        "description": "Full stack products with a Flutter frontend and a custom backend, for every device and screen.",
+        "features": [
+          "One codebase for iOS, Android, web and desktop",
+          "Automated tests and a CI/CD pipeline",
+          "Full source code ownership on delivery"
+        ]
+      }
+    ],
+    "footnote": "Every solution is quoted after the free needs analysis. Quotes exclude VAT."
+  },
+  "process": {
+    "eyebrow": "The needs analysis",
+    "title": "What we look at in your first call",
+    "subtitle": "Every business loses customers in its own way. These are the gaps we check first, because they decide which building blocks your solution needs.",
+    "problems": [
+      {
+        "title": "A website that does not convert",
+        "description": "A slow website, or one that leaves the visitor's questions unanswered, loses the customer right before they get in touch."
+      },
+      {
+        "title": "Invisible on Google and AI",
+        "description": "If your business does not show up when someone searches for your service nearby, or asks an AI assistant, a competitor takes that customer."
+      },
+      {
+        "title": "Calls nobody answers",
+        "description": "A call that goes unanswered after hours or at a busy moment is a customer who may call someone else."
+      }
+    ],
+    "termsTitle": "Terms",
+    "terms": [
+      {
+        "title": "Quoted after the analysis",
+        "description": "We publish no price list beyond the entry price. Every solution is quoted after the free needs analysis, according to what your business needs."
+      },
+      {
+        "title": "The entry price, then a monthly fee",
+        "description": "You start with a first implementation for {entryPrice} + VAT that commits both sides and takes the first steps. After that, a monthly fee tied to the results we bring you, agreed in the proposal. The new customers the solution brings in are what cover it."
+      },
+      {
+        "title": "Quotes exclude VAT",
+        "description": "VAT is added on the invoice where it applies, at the rate that applies to your business."
+      },
+      {
+        "title": "A goal, not a guarantee",
+        "description": "We work towards the first position. Results also depend on your market and your competition."
+      }
+    ]
+  },
+  "contact": {
+    "eyebrow": "Contact",
+    "title": "Let's talk about your business",
+    "description": "The first call is free, and it is where the needs analysis starts: where your business stands today and what it needs.",
+    "bookingTitle": "Book your free first call",
+    "bookingDescription": "Choose the day and time that suit you best. Scan the code or use the button.",
+    "bookingCta": "Book a free call",
+    "channels": {
+      "email": "Email",
+      "phone": "Phone",
+      "whatsapp": "WhatsApp",
+      "web": "Website",
+      "linkedin": "LinkedIn",
+      "hours": "Hours"
+    },
+    "hours": "Monday to Friday, {opens} to {closes} (Spain time)",
+    "closing": "You focus on serving your customers well. We take care of bringing them in."
+  },
+  "footer": {
+    "page": "Page {current} of {total}"
+  }
+}

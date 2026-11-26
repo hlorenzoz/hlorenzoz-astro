@@ -1,0 +1,214 @@
+{
+  "meta": {
+    "title": "Lorenzoz Agency | Dossier dell'agenzia",
+    "docLabel": "Dossier dell'agenzia"
+  },
+  "cover": {
+    "badge": "Il tuo partner per crescere in locale",
+    "title": "Più clienti,",
+    "titleGradient": "con una soluzione pensata per la tua attività",
+    "description": "Siamo un partner concentrato sul tuo successo. Prima analizziamo di cosa ha bisogno la tua attività. Poi realizziamo la soluzione che ti porta nuovi clienti.",
+    "facts": [
+      {
+        "value": "1",
+        "label": "Soluzione su misura per te"
+      },
+      {
+        "value": "4",
+        "label": "Servizi con cui costruirla"
+      },
+      {
+        "value": "8",
+        "label": "Mercati serviti"
+      }
+    ],
+    "marketsLabel": "Lavoriamo con attività in"
+  },
+  "approach": {
+    "eyebrow": "Il nostro approccio",
+    "title": "Un partner concentrato sul tuo successo",
+    "subtitle": "Un sito, qualche recensione o un profilo su Google non portano clienti da soli. Li porta una soluzione pensata per la tua attività, e restiamo al tuo fianco mentre funziona.",
+    "oldWay": {
+      "title": "Comprare servizi separati",
+      "items": [
+        "Diversi fornitori che non si coordinano mai",
+        "Consegne che nessuno misura rispetto alle vendite",
+        "Un pacchetto pensato per l'attività di qualcun altro",
+        "Un prezzo deciso prima che qualcuno guardasse la tua"
+      ]
+    },
+    "newWay": {
+      "title": "Lavorare con un partner",
+      "items": [
+        "Un solo team responsabile dell'acquisizione dei tuoi clienti",
+        "Una soluzione costruita su ciò di cui ha bisogno la tua attività",
+        "Servizi inclusi solo dove aggiungono valore",
+        "Risultati misurati insieme, con parole semplici"
+      ]
+    },
+    "stepsTitle": "Come lavoriamo",
+    "steps": [
+      {
+        "number": "01",
+        "badge": "Gratis",
+        "title": "Analisi delle esigenze",
+        "description": "La prima chiamata è gratuita ed è l'analisi stessa: come trovi clienti oggi, dove li perdi e di cosa hai bisogno."
+      },
+      {
+        "number": "02",
+        "badge": "Proposta",
+        "title": "Una soluzione su misura",
+        "description": "Ti proponiamo una soluzione costruita con i servizi di cui hai bisogno e te la quotiamo. Un servizio può essere incluso senza costi aggiuntivi."
+      },
+      {
+        "number": "03",
+        "badge": "Realizzazione",
+        "title": "La mettiamo al lavoro",
+        "description": "Realizziamo la soluzione mentre tu continui a concentrarti sul servire bene i tuoi clienti."
+      },
+      {
+        "number": "04",
+        "badge": "Insieme",
+        "title": "Misuriamo e adattiamo",
+        "description": "Esaminiamo i risultati con te, con parole semplici, e adattiamo la soluzione a ciò che è cambiato."
+      }
+    ]
+  },
+  "localSeo": {
+    "eyebrow": "Elemento 1 di 4",
+    "name": "SEO locale",
+    "title": "Primo su Google, consigliato dall'IA",
+    "description": "Il lavoro che rende la tua attività visibile nelle ricerche locali su Google e nelle risposte dei motori di IA. Quando la SEO locale fa parte della tua soluzione, arriva con tutti e tre i pilastri.",
+    "pillars": [
+      {
+        "title": "Contenuti autorevoli",
+        "description": "I contenuti che fanno della tua attività un punto di riferimento nel suo settore.",
+        "items": [
+          "Ricerca delle parole chiave",
+          "Cluster di contenuti",
+          "Analisi delle lacune nei contenuti",
+          "Aggiornamento dei contenuti esistenti"
+        ]
+      },
+      {
+        "title": "Autorevolezza su Google e nell'IA",
+        "description": "La tua attività e il tuo sito come il riferimento che viene consigliato.",
+        "items": [
+          "Profilo dell'attività su Google ottimizzato",
+          "SEO locale on page per il tuo sito",
+          "Dati strutturati per attività locali",
+          "Presenza nei risultati di Google e dell'IA"
+        ]
+      },
+      {
+        "title": "Gestione delle recensioni",
+        "description": "La tua reputazione, misurata e curata mese dopo mese.",
+        "items": [
+          "Crescita delle recensioni monitorata nel tempo",
+          "Andamento dei feedback positivi e negativi",
+          "Risposte dei clienti sotto controllo",
+          "Link per il feedback con il tuo brand"
+        ]
+      }
+    ],
+    "goalTitle": "Il nostro obiettivo",
+    "goal": "La prima posizione su Google per le ricerche nella tua zona. Nessun fornitore può garantire una posizione precisa e noi non la promettiamo: ci impegniamo nel lavoro che porta fin lì."
+  },
+  "blocks": {
+    "eyebrow": "Combinati in base alla tua attività",
+    "title": "Altri tre elementi",
+    "description": "Ognuno entra nella tua soluzione quando la tua attività ne ha bisogno, e può essere incluso senza costi aggiuntivi.",
+    "items": [
+      {
+        "key": "websiteDevelopment",
+        "name": "Sviluppo web",
+        "description": "Siti e PWA veloci, progettati per trasformare i visitatori in clienti.",
+        "features": [
+          "Prestazioni che chiunque può verificare su PageSpeed Insights",
+          "Dati strutturati, traduzioni e llms.txt per Google e l'IA",
+          "Installabile come app su telefoni e computer"
+        ]
+      },
+      {
+        "key": "aiVoiceReceptionist",
+        "name": "Receptionist vocale con IA",
+        "description": "Un agente vocale che risponde alle tue chiamate, gestisce le domande frequenti e prenota appuntamenti, 24/7.",
+        "features": [
+          "Appuntamenti fissati direttamente nel tuo calendario",
+          "Voce e copione personalizzati sul tuo brand",
+          "Ottimizzato per inglese e spagnolo"
+        ]
+      },
+      {
+        "key": "softwareDevelopment",
+        "name": "Sviluppo software e app",
+        "description": "Prodotti full stack con frontend in Flutter e un backend su misura, per ogni dispositivo e schermo.",
+        "features": [
+          "Un solo codice per iOS, Android, web e desktop",
+          "Test automatizzati e una pipeline CI/CD",
+          "Piena proprietà del codice sorgente alla consegna"
+        ]
+      }
+    ],
+    "footnote": "Ogni soluzione viene quotata dopo l'analisi gratuita delle esigenze. I preventivi sono IVA esclusa."
+  },
+  "process": {
+    "eyebrow": "L'analisi delle esigenze",
+    "title": "Cosa guardiamo nella tua prima chiamata",
+    "subtitle": "Ogni attività perde clienti a modo suo. Queste sono le lacune che controlliamo per prime, perché decidono di quali elementi ha bisogno la tua soluzione.",
+    "problems": [
+      {
+        "title": "Un sito che non converte",
+        "description": "Un sito lento, o che lascia senza risposta le domande del visitatore, perde il cliente proprio prima che ti contatti."
+      },
+      {
+        "title": "Invisibile su Google e nell'IA",
+        "description": "Se la tua attività non compare quando qualcuno cerca il tuo servizio in zona, o lo chiede a un assistente IA, quel cliente se lo prende un concorrente."
+      },
+      {
+        "title": "Chiamate senza risposta",
+        "description": "Una chiamata che resta senza risposta fuori orario o in un momento di lavoro intenso è un cliente che può chiamare qualcun altro."
+      }
+    ],
+    "termsTitle": "Condizioni",
+    "terms": [
+      {
+        "title": "Preventivo dopo l'analisi",
+        "description": "Non pubblichiamo un listino prezzi oltre al prezzo d'ingresso. Ogni soluzione viene quotata dopo l'analisi gratuita delle esigenze, in base a ciò di cui ha bisogno la tua attività."
+      },
+      {
+        "title": "Il prezzo d'ingresso, poi un canone mensile",
+        "description": "Inizi con una prima realizzazione a {entryPrice} + IVA che impegna entrambe le parti e muove i primi passi. Poi un canone mensile legato ai risultati che ti portiamo, concordato nella proposta. A coprirlo sono i nuovi clienti che la soluzione ti porta."
+      },
+      {
+        "title": "Preventivi IVA esclusa",
+        "description": "L'IVA si aggiunge in fattura dove si applica, all'aliquota prevista per la tua attività."
+      },
+      {
+        "title": "Un obiettivo, non una garanzia",
+        "description": "Lavoriamo per la prima posizione. I risultati dipendono anche dal tuo mercato e dalla tua concorrenza."
+      }
+    ]
+  },
+  "contact": {
+    "eyebrow": "Contatti",
+    "title": "Parliamo della tua attività",
+    "description": "La prima chiamata è gratuita, ed è lì che inizia l'analisi delle esigenze: a che punto è oggi la tua attività e di cosa ha bisogno.",
+    "bookingTitle": "Prenota la tua prima chiamata gratuita",
+    "bookingDescription": "Scegli il giorno e l'ora che preferisci. Inquadra il codice o usa il pulsante.",
+    "bookingCta": "Prenota una chiamata gratuita",
+    "channels": {
+      "email": "Email",
+      "phone": "Telefono",
+      "whatsapp": "WhatsApp",
+      "web": "Sito web",
+      "linkedin": "LinkedIn",
+      "hours": "Orari"
+    },
+    "hours": "Dal lunedì al venerdì, dalle {opens} alle {closes} (ora spagnola)",
+    "closing": "Tu pensi a servire bene i tuoi clienti. Noi pensiamo a portarteli."
+  },
+  "footer": {
+    "page": "Pagina {current} di {total}"
+  }
+}

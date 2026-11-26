@@ -12,7 +12,7 @@
  * Output: `dossier/dist/lorenzoz-agency-dossier-<locale>.pdf`, plus the
  * intermediate `.html` next to it for inspecting a layout in a browser. The
  * directory is gitignored. The site links its own copies in `public/dossier/`:
- * after changing the dossier, rebuild and copy both PDFs there.
+ * after changing the dossier, rebuild and copy every PDF there.
  *
  * Usage:  just dossier            (both languages)
  *         just dossier es         (one language)
@@ -28,7 +28,8 @@ import { pathToFileURL } from 'node:url';
 const ROOT = process.cwd();
 const DOSSIER_DIR = join(ROOT, 'dossier');
 const OUT_DIR = join(DOSSIER_DIR, 'dist');
-const LOCALES = ['es', 'en'];
+/** One dossier per site locale (`LOCALES` in lib/routing.ts; a test keeps the two equal). */
+export const DOSSIER_LOCALES = ['en', 'es', 'en-gb', 'gl', 'pt', 'it', 'fr', 'de', 'nl'];
 
 /**
  * The calendar the site embeds in `src/components/services/CalBooking.astro`, minus
@@ -93,7 +94,7 @@ function checklist(items, mark = ICONS.checkCircle) {
  * render it without Chromium, the network or the filesystem.
  *
  * @param {object} args
- * @param {'es'|'en'} args.locale
+ * @param {string} args.locale         one of `DOSSIER_LOCALES`
  * @param {object} args.content       parsed `dossier/content.<locale>.json`
  * @param {string} args.template      `dossier/template.html`
  * @param {object} args.organization  `ORGANIZATION` from `lib/site-config.ts`
@@ -288,9 +289,9 @@ export function renderDossier({ locale, content, template, organization, markets
 
 async function main() {
     const requested = process.argv.slice(2);
-    const locales = requested.length ? requested : LOCALES;
+    const locales = requested.length ? requested : DOSSIER_LOCALES;
     for (const locale of locales) {
-        if (!LOCALES.includes(locale)) throw new Error(`Unknown locale "${locale}". Use: ${LOCALES.join(', ')}`);
+        if (!DOSSIER_LOCALES.includes(locale)) throw new Error(`Unknown locale "${locale}". Use: ${DOSSIER_LOCALES.join(', ')}`);
     }
 
     // `lib/site-config.ts` imports through the `@/` alias, which only the

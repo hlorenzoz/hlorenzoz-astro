@@ -1,0 +1,214 @@
+{
+  "meta": {
+    "title": "Lorenzoz Agency | Bureaudossier",
+    "docLabel": "Bureaudossier"
+  },
+  "cover": {
+    "badge": "Je partner voor lokale groei",
+    "title": "Meer klanten,",
+    "titleGradient": "met een oplossing gebouwd voor jouw bedrijf",
+    "description": "We zijn een partner die zich richt op jouw succes. Eerst analyseren we wat je bedrijf nodig heeft. Daarna zetten we de oplossing in die je nieuwe klanten oplevert.",
+    "facts": [
+      {
+        "value": "1",
+        "label": "Oplossing op maat voor jou"
+      },
+      {
+        "value": "4",
+        "label": "Diensten om die mee te bouwen"
+      },
+      {
+        "value": "8",
+        "label": "Markten die we bedienen"
+      }
+    ],
+    "marketsLabel": "We werken voor bedrijven in"
+  },
+  "approach": {
+    "eyebrow": "Onze aanpak",
+    "title": "Een partner die zich richt op jouw succes",
+    "subtitle": "Een website, een paar reviews of een profiel op Google brengen op zichzelf geen klanten. Een oplossing die voor je bedrijf is gebouwd wel, en we blijven bij je terwijl die zijn werk doet.",
+    "oldWay": {
+      "title": "Losse diensten inkopen",
+      "items": [
+        "Meerdere leveranciers die nooit met elkaar afstemmen",
+        "Opleveringen die niemand afzet tegen de omzet",
+        "Een pakket bedacht voor het bedrijf van een ander",
+        "Een prijs die vaststond voordat iemand naar jouw bedrijf keek"
+      ]
+    },
+    "newWay": {
+      "title": "Werken met een partner",
+      "items": [
+        "Eén team dat verantwoordelijk is voor je klantenwerving",
+        "Een oplossing gebouwd op wat je bedrijf nodig heeft",
+        "Diensten alleen inbegrepen waar ze waarde toevoegen",
+        "Resultaten samen gemeten, in begrijpelijke taal"
+      ]
+    },
+    "stepsTitle": "Zo werken we",
+    "steps": [
+      {
+        "number": "01",
+        "badge": "Gratis",
+        "title": "Behoefteanalyse",
+        "description": "Het eerste gesprek is gratis en is de analyse: hoe je vandaag klanten wint, waar je ze verliest en wat je nodig hebt."
+      },
+      {
+        "number": "02",
+        "badge": "Voorstel",
+        "title": "Een oplossing op maat",
+        "description": "We stellen één oplossing voor, gebouwd uit de diensten die je nodig hebt, en maken er een offerte voor. Een dienst kan zonder extra kosten inbegrepen zijn."
+      },
+      {
+        "number": "03",
+        "badge": "Implementatie",
+        "title": "We zetten het aan het werk",
+        "description": "We implementeren de oplossing, terwijl jij je blijft richten op het goed helpen van je klanten."
+      },
+      {
+        "number": "04",
+        "badge": "Samen",
+        "title": "We meten en sturen bij",
+        "description": "We bespreken de resultaten met je in begrijpelijke taal en passen de oplossing aan op wat er veranderd is."
+      }
+    ]
+  },
+  "localSeo": {
+    "eyebrow": "Bouwsteen 1 van 4",
+    "name": "Lokale SEO",
+    "title": "Als eerste gevonden op Google, aanbevolen door AI",
+    "description": "Het werk dat je bedrijf zichtbaar maakt in lokale zoekopdrachten op Google en in de antwoorden die AI geeft. Als lokale SEO deel uitmaakt van je oplossing, krijg je alle drie de pijlers.",
+    "pillars": [
+      {
+        "title": "Autoriteitscontent",
+        "description": "De content die je bedrijf neerzet als referentie in je vakgebied.",
+        "items": [
+          "Zoekwoordonderzoek",
+          "Contentclusters",
+          "Analyse van ontbrekende content",
+          "Updates van bestaande content"
+        ]
+      },
+      {
+        "title": "Autoriteit op Google en in AI",
+        "description": "Je bedrijf en je website als de referentie die wordt aanbevolen.",
+        "items": [
+          "Geoptimaliseerd Google Business Profile",
+          "Lokale onpage SEO voor je website",
+          "Gestructureerde gegevens voor lokale bedrijven",
+          "Zichtbaarheid in de resultaten van Google en AI"
+        ]
+      },
+      {
+        "title": "Reviewbeheer",
+        "description": "Je reputatie, gemeten en maand na maand verbeterd.",
+        "items": [
+          "Groei van je reviews door de tijd gevolgd",
+          "Trends in positieve en negatieve feedback",
+          "Reacties van klanten gemonitord",
+          "Links voor feedback in je eigen huisstijl"
+        ]
+      }
+    ],
+    "goalTitle": "Ons doel",
+    "goal": "De eerste positie op Google voor zoekopdrachten in jouw regio. Geen enkele aanbieder kan een specifieke positie garanderen en wij beloven die ook niet: we zetten ons in voor het werk dat daarnaartoe leidt."
+  },
+  "blocks": {
+    "eyebrow": "Gecombineerd zodat het bij je bedrijf past",
+    "title": "Nog drie bouwstenen",
+    "description": "Elke bouwsteen komt in je oplossing wanneer je bedrijf die nodig heeft, en kan zonder extra kosten inbegrepen zijn.",
+    "items": [
+      {
+        "key": "websiteDevelopment",
+        "name": "Websiteontwikkeling",
+        "description": "Snelle websites en PWA's, ontworpen om bezoekers in klanten te veranderen.",
+        "features": [
+          "Prestaties die iedereen kan controleren in PageSpeed Insights",
+          "Gestructureerde gegevens, vertalingen en llms.txt voor Google en AI",
+          "Als app te installeren op telefoons en computers"
+        ]
+      },
+      {
+        "key": "aiVoiceReceptionist",
+        "name": "Telefoonreceptionist met AI",
+        "description": "Een spraakagent die je telefoon opneemt, veelgestelde vragen beantwoordt en afspraken inplant, 24/7.",
+        "features": [
+          "Afspraken direct in je agenda gezet",
+          "Eigen stem en script, afgestemd op je merk",
+          "Geoptimaliseerd voor Engels en Spaans"
+        ]
+      },
+      {
+        "key": "softwareDevelopment",
+        "name": "Softwareontwikkeling en mobiele apps",
+        "description": "Fullstackproducten met een frontend in Flutter en een backend op maat, voor elk apparaat en elk scherm.",
+        "features": [
+          "Eén codebase voor iOS, Android, web en desktop",
+          "Geautomatiseerde tests en een CI/CD pipeline",
+          "Volledig eigendom van de broncode bij oplevering"
+        ]
+      }
+    ],
+    "footnote": "Elke oplossing krijgt een offerte na de gratis behoefteanalyse. Offertes zijn exclusief btw."
+  },
+  "process": {
+    "eyebrow": "De behoefteanalyse",
+    "title": "Waar we naar kijken in je eerste gesprek",
+    "subtitle": "Elk bedrijf verliest klanten op zijn eigen manier. Dit zijn de gaten die we eerst controleren, omdat ze bepalen welke bouwstenen je oplossing nodig heeft.",
+    "problems": [
+      {
+        "title": "Een website die niet converteert",
+        "description": "Een trage website, of een die de vragen van de bezoeker onbeantwoord laat, verliest de klant vlak voordat die contact opneemt."
+      },
+      {
+        "title": "Onzichtbaar op Google en in AI",
+        "description": "Als je bedrijf niet verschijnt wanneer iemand in de buurt naar jouw dienst zoekt, of het vraagt aan een assistent met AI, gaat die klant naar een concurrent."
+      },
+      {
+        "title": "Telefoontjes die niemand opneemt",
+        "description": "Een telefoontje dat buiten kantoortijd of op een druk moment niet wordt opgenomen, is een klant die misschien iemand anders belt."
+      }
+    ],
+    "termsTitle": "Voorwaarden",
+    "terms": [
+      {
+        "title": "Offerte na de analyse",
+        "description": "We publiceren geen prijslijst, alleen de instapprijs. Elke oplossing krijgt een offerte na de gratis behoefteanalyse, op basis van wat je bedrijf nodig heeft."
+      },
+      {
+        "title": "De instapprijs, daarna een maandelijks tarief",
+        "description": "Je begint met een eerste implementatie voor {entryPrice} excl. btw die beide partijen verbindt en de eerste stappen zet. Daarna volgt een maandelijks tarief gekoppeld aan de resultaten die we je opleveren, afgesproken in het voorstel. De nieuwe klanten die de oplossing binnenhaalt, zijn wat het dekt."
+      },
+      {
+        "title": "Offertes exclusief btw",
+        "description": "De btw komt op de factuur waar die van toepassing is, tegen het tarief dat voor je bedrijf geldt."
+      },
+      {
+        "title": "Een doel, geen garantie",
+        "description": "We werken naar de eerste positie toe. Resultaten hangen ook af van je markt en je concurrentie."
+      }
+    ]
+  },
+  "contact": {
+    "eyebrow": "Contact",
+    "title": "Laten we het over je bedrijf hebben",
+    "description": "Het eerste gesprek is gratis, en daar begint de behoefteanalyse: waar je bedrijf vandaag staat en wat het nodig heeft.",
+    "bookingTitle": "Plan je gratis eerste gesprek",
+    "bookingDescription": "Kies de dag en tijd die jou het beste uitkomen. Scan de code of gebruik de knop.",
+    "bookingCta": "Plan een gratis gesprek",
+    "channels": {
+      "email": "Email",
+      "phone": "Telefoon",
+      "whatsapp": "WhatsApp",
+      "web": "Website",
+      "linkedin": "LinkedIn",
+      "hours": "Openingstijden"
+    },
+    "hours": "Maandag tot en met vrijdag, van {opens} tot {closes} (Spaanse tijd)",
+    "closing": "Jij richt je op het goed helpen van je klanten. Wij zorgen dat ze binnenkomen."
+  },
+  "footer": {
+    "page": "Pagina {current} van {total}"
+  }
+}

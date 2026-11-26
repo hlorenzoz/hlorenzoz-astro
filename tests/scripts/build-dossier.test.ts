@@ -3,20 +3,24 @@ import { readFileSync } from 'node:fs';
 import { join } from 'node:path';
 import {
     BOOKING_URL,
+    DOSSIER_LOCALES,
     escapeHtml,
     renderDossier,
 } from '../../scripts/build-dossier.mjs';
 import { ORGANIZATION, marketNames } from '@/lib/site-config';
 import { SERVICE_KEYS, formatEntryPrice } from '@/lib/pricing';
-import { localeInfo } from '@/lib/routing';
+import { LOCALES, localeInfo } from '@/lib/routing';
 import esContent from '../../dossier/content.es.json';
 import enContent from '../../dossier/content.en.json';
 
 const ROOT = process.cwd();
 const template = readFileSync(join(ROOT, 'dossier/template.html'), 'utf8');
-const CONTENT = { es: esContent, en: enContent } as const;
+/** Every locale's content, read from disk: one file per entry of `DOSSIER_LOCALES`. */
+const CONTENT: Record<string, typeof enContent> = Object.fromEntries(
+    DOSSIER_LOCALES.map((locale: string) => [locale, JSON.parse(readFileSync(join(ROOT, 'dossier', `content.${locale}.json`), 'utf8'))])
+);
 
-function render(locale: 'es' | 'en') {
+function render(locale: string) {
     return renderDossier({
         locale,
         content: CONTENT[locale],
@@ -29,7 +33,7 @@ function render(locale: 'es' | 'en') {
 }
 
 /** The entry price as the dossier prints it: plain spaces, no no-break space. */
-function entryPrice(locale: 'es' | 'en') {
+function entryPrice(locale: string) {
     return formatEntryPrice(localeInfo(locale).intl).replace(/\s/g, ' ');
 }
 
@@ -48,7 +52,7 @@ function shape(value: unknown, path = ''): string[] {
  * prospects, so it prints that figure, from `lib/pricing.ts`, and no other.
  */
 describe('the dossier prints the entry price and no other amount', () => {
-    it.each(['es', 'en'] as const)('shows the entry price and no other amount or tax marker (%s)', (locale) => {
+    it.each(DOSSIER_LOCALES)('shows the entry price and no other amount or tax marker (%s)', (locale) => {
         const html = render(locale);
         expect(html).toContain(entryPrice(locale));
         expect(html.split(entryPrice(locale)).join('')).not.toMatch(/€\s?\d|\d\s?€|EUR\s?\d/);
@@ -57,7 +61,7 @@ describe('the dossier prints the entry price and no other amount', () => {
     });
 
     it('keeps the amount out of the copy: it comes from lib/pricing.ts', () => {
-        for (const content of [esContent, enContent]) {
+        for (const content of Object.values(CONTENT)) {
             expect(JSON.stringify(content)).not.toMatch(/€|EUR|\b500\b/);
         }
     });
@@ -69,7 +73,7 @@ describe('the dossier prints the entry price and no other amount', () => {
         expect(render('es')).toContain('no incluyen IVA');
     });
 
-    it.each(['es', 'en'] as const)('states the fee model, an initial payment then a monthly fee, with no share (%s)', (locale) => {
+    it.each(DOSSIER_LOCALES)('states the fee model, an initial payment then a monthly fee, with no share (%s)', (locale) => {
         const html = render(locale);
         // The CSS uses percentages (50% radii, gradient stops), so match the copy's wording.
         expect(html).not.toMatch(/\d\s?% (of|up|del|por)/i);
@@ -89,12 +93,12 @@ describe('the dossier prints the entry price and no other amount', () => {
  * built from four services. None of them is a core offer with options around it.
  */
 describe('the dossier tells the partner model', () => {
-    it.each(['es', 'en'] as const)('names no core offer and no optional services (%s)', (locale) => {
+    it.each(DOSSIER_LOCALES)('names no core offer and no optional services (%s)', (locale) => {
         expect(render(locale)).not.toMatch(/core offer|oferta central|optional services|servicios opcionales|add-?on/i);
     });
 
     it('presents Local SEO and then the other three services, in the order the site lists them', () => {
-        for (const content of [esContent, enContent]) {
+        for (const content of Object.values(CONTENT)) {
             expect(content.localSeo.pillars).toHaveLength(3);
             expect(JSON.stringify(content.localSeo)).not.toMatch(/backlink|citation|citaci/i);
             expect(content.blocks.items.map((item) => item.key)).toEqual(SERVICE_KEYS.slice(1));
@@ -121,18 +125,22 @@ describe('escapeHtml()', () => {
 });
 
 describe('dossier content', () => {
-    it('has the same key shape in both languages', () => {
-        expect(new Set(shape(enContent))).toEqual(new Set(shape(esContent)));
+    it('exists for every site locale', () => {
+        expect([...DOSSIER_LOCALES].sort()).toEqual([...LOCALES].sort());
+    });
+
+    it.each(DOSSIER_LOCALES)('has the English key shape (%s)', (locale) => {
+        expect(new Set(shape(CONTENT[locale]))).toEqual(new Set(shape(enContent)));
     });
 
     it('joins no words with a hyphen (AGENTS.md: no hyphens in copy)', () => {
-        for (const content of [esContent, enContent]) {
+        for (const content of Object.values(CONTENT)) {
             expect(JSON.stringify(content)).not.toMatch(/\p{L}-\p{L}/u);
         }
     });
 });
 
-describe.each(['es', 'en'] as const)('renderDossier(%s)', (locale) => {
+describe.each(DOSSIER_LOCALES)('renderDossier(%s)', (locale) => {
     const html = render(locale);
 
     it('renders six A4 pages', () => {

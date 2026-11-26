@@ -1,0 +1,214 @@
+{
+  "meta": {
+    "title": "Lorenzoz Agency | Dossier de l'agence",
+    "docLabel": "Dossier de l'agence"
+  },
+  "cover": {
+    "badge": "Votre partenaire pour une croissance locale",
+    "title": "Plus de clients,",
+    "titleGradient": "avec une solution conçue pour votre entreprise",
+    "description": "Nous sommes un partenaire engagé pour votre réussite. D'abord, nous analysons ce dont votre entreprise a besoin. Ensuite, nous mettons en place la solution qui vous apporte de nouveaux clients.",
+    "facts": [
+      {
+        "value": "1",
+        "label": "Solution sur mesure pour vous"
+      },
+      {
+        "value": "4",
+        "label": "Services pour la construire"
+      },
+      {
+        "value": "8",
+        "label": "Marchés desservis"
+      }
+    ],
+    "marketsLabel": "Nous accompagnons des entreprises dans ces marchés"
+  },
+  "approach": {
+    "eyebrow": "Notre approche",
+    "title": "Un partenaire engagé pour votre réussite",
+    "subtitle": "Un site web, quelques avis ou une fiche Google n'amènent pas de clients à eux seuls. Une solution conçue pour votre entreprise, si, et nous restons à vos côtés pendant qu'elle porte ses fruits.",
+    "oldWay": {
+      "title": "Acheter des services séparés",
+      "items": [
+        "Plusieurs prestataires qui ne se coordonnent jamais",
+        "Des livrables que personne ne mesure à l'aune des ventes",
+        "Un forfait pensé pour l'entreprise de quelqu'un d'autre",
+        "Un prix fixé avant que quiconque ait regardé la vôtre"
+      ]
+    },
+    "newWay": {
+      "title": "Travailler avec un partenaire",
+      "items": [
+        "Une seule équipe responsable de votre acquisition de clients",
+        "Une solution construite à partir des besoins de votre entreprise",
+        "Des services inclus uniquement là où ils apportent de la valeur",
+        "Des résultats mesurés ensemble, en langage clair"
+      ]
+    },
+    "stepsTitle": "Notre méthode",
+    "steps": [
+      {
+        "number": "01",
+        "badge": "Gratuit",
+        "title": "Analyse des besoins",
+        "description": "Le premier appel est gratuit et c'est lui qui constitue l'analyse : comment vous gagnez des clients aujourd'hui, où vous les perdez et ce dont vous avez besoin."
+      },
+      {
+        "number": "02",
+        "badge": "Proposition",
+        "title": "Une solution sur mesure",
+        "description": "Nous vous proposons une solution construite à partir des services dont vous avez besoin, avec son devis. Un service peut être inclus sans coût supplémentaire."
+      },
+      {
+        "number": "03",
+        "badge": "Mise en place",
+        "title": "Nous la mettons en œuvre",
+        "description": "Nous mettons en place la solution pendant que vous continuez à vous consacrer à bien servir vos clients."
+      },
+      {
+        "number": "04",
+        "badge": "Ensemble",
+        "title": "Nous mesurons et ajustons",
+        "description": "Nous examinons les résultats avec vous, en langage clair, et ajustons la solution selon ce qui a changé."
+      }
+    ]
+  },
+  "localSeo": {
+    "eyebrow": "Brique 1 sur 4",
+    "name": "SEO local",
+    "title": "Trouvé en premier sur Google, recommandé par l'IA",
+    "description": "Le travail qui rend votre entreprise visible dans les recherches locales sur Google et dans les réponses des moteurs d'IA. Lorsque le SEO local fait partie de votre solution, il comprend ses trois piliers.",
+    "pillars": [
+      {
+        "title": "Contenu d'autorité",
+        "description": "Le contenu qui fait de votre entreprise une référence dans son domaine.",
+        "items": [
+          "Recherche de mots clés",
+          "Clusters de contenu",
+          "Analyse des lacunes de contenu",
+          "Mise à jour des contenus existants"
+        ]
+      },
+      {
+        "title": "Autorité sur Google et l'IA",
+        "description": "Votre entreprise et votre site web comme la référence que l'on recommande.",
+        "items": [
+          "Google Business Profile optimisé",
+          "SEO local sur chaque page de votre site",
+          "Données structurées d'entreprise locale",
+          "Présence dans les résultats de Google et de l'IA"
+        ]
+      },
+      {
+        "title": "Gestion des avis",
+        "description": "Votre réputation, mesurée et travaillée mois après mois.",
+        "items": [
+          "Croissance des avis suivie dans le temps",
+          "Tendances des retours positifs et négatifs",
+          "Réponses des clients surveillées",
+          "Liens de retour aux couleurs de votre marque"
+        ]
+      }
+    ],
+    "goalTitle": "Notre objectif",
+    "goal": "La première position sur Google pour les recherches dans votre zone. Aucun prestataire ne peut garantir un classement précis et nous n'en promettons aucun : nous nous engageons sur le travail qui y mène."
+  },
+  "blocks": {
+    "eyebrow": "Combinées selon votre entreprise",
+    "title": "Trois autres briques",
+    "description": "Chacune rejoint votre solution lorsque votre entreprise en a besoin, et elle peut être incluse sans coût supplémentaire.",
+    "items": [
+      {
+        "key": "websiteDevelopment",
+        "name": "Création de sites web",
+        "description": "Des sites web et des PWA rapides, conçus pour transformer les visiteurs en clients.",
+        "features": [
+          "Des performances que chacun peut vérifier dans PageSpeed Insights",
+          "Données structurées, traductions et llms.txt pour Google et l'IA",
+          "Installable comme une application sur téléphone et ordinateur"
+        ]
+      },
+      {
+        "key": "aiVoiceReceptionist",
+        "name": "Réceptionniste vocal IA",
+        "description": "Un agent vocal qui répond à vos appels, traite les questions fréquentes et réserve des créneaux, 24h/24 et 7j/7.",
+        "features": [
+          "Créneaux réservés directement dans votre agenda",
+          "Voix et script personnalisés selon votre marque",
+          "Optimisé pour l'anglais et l'espagnol"
+        ]
+      },
+      {
+        "key": "softwareDevelopment",
+        "name": "Développement logiciel et d'applications mobiles",
+        "description": "Des produits full stack avec un frontend Flutter et un backend sur mesure, pour chaque appareil et chaque écran.",
+        "features": [
+          "Une seule base de code pour iOS, Android, le web et les ordinateurs",
+          "Tests automatisés et pipeline CI/CD",
+          "Propriété complète du code source à la livraison"
+        ]
+      }
+    ],
+    "footnote": "Chaque solution fait l'objet d'un devis après l'analyse gratuite des besoins. Les devis s'entendent hors TVA."
+  },
+  "process": {
+    "eyebrow": "L'analyse des besoins",
+    "title": "Ce que nous examinons lors de votre premier appel",
+    "subtitle": "Chaque entreprise perd des clients à sa manière. Voici les failles que nous vérifions en premier, car elles déterminent les briques dont votre solution a besoin.",
+    "problems": [
+      {
+        "title": "Un site web qui ne convertit pas",
+        "description": "Un site lent, ou qui laisse les questions du visiteur sans réponse, perd le client juste avant qu'il ne vous contacte."
+      },
+      {
+        "title": "Invisible sur Google et l'IA",
+        "description": "Si votre entreprise n'apparaît pas quand quelqu'un cherche votre service à proximité, ou interroge un assistant IA, un concurrent récupère ce client."
+      },
+      {
+        "title": "Des appels sans réponse",
+        "description": "Un appel resté sans réponse en dehors des horaires ou à un moment chargé, c'est un client qui risque d'appeler quelqu'un d'autre."
+      }
+    ],
+    "termsTitle": "Conditions",
+    "terms": [
+      {
+        "title": "Un devis après l'analyse",
+        "description": "Nous ne publions aucun tarif hormis le prix d'entrée. Chaque solution fait l'objet d'un devis après l'analyse gratuite des besoins, selon ce dont votre entreprise a besoin."
+      },
+      {
+        "title": "Le prix d'entrée, puis une mensualité",
+        "description": "Vous commencez par une première mise en place à {entryPrice} + TVA, qui engage les deux parties et pose les premières étapes. Ensuite, une mensualité liée aux résultats que nous vous apportons, convenue dans la proposition. Ce sont les nouveaux clients amenés par la solution qui la financent."
+      },
+      {
+        "title": "Devis hors TVA",
+        "description": "La TVA s'ajoute sur la facture lorsqu'elle s'applique, au taux applicable à votre entreprise."
+      },
+      {
+        "title": "Un objectif, pas une garantie",
+        "description": "Nous visons la première position. Les résultats dépendent aussi de votre marché et de votre concurrence."
+      }
+    ]
+  },
+  "contact": {
+    "eyebrow": "Contact",
+    "title": "Parlons de votre entreprise",
+    "description": "Le premier appel est gratuit, et c'est là que commence l'analyse des besoins : où en est votre entreprise aujourd'hui et ce dont elle a besoin.",
+    "bookingTitle": "Réservez votre premier appel gratuit",
+    "bookingDescription": "Choisissez le jour et l'heure qui vous conviennent le mieux. Scannez le code ou utilisez le bouton.",
+    "bookingCta": "Réserver un appel gratuit",
+    "channels": {
+      "email": "Email",
+      "phone": "Téléphone",
+      "whatsapp": "WhatsApp",
+      "web": "Site web",
+      "linkedin": "LinkedIn",
+      "hours": "Horaires"
+    },
+    "hours": "Du lundi au vendredi, de {opens} à {closes} (heure de l'Espagne)",
+    "closing": "Vous vous concentrez sur la qualité du service à vos clients. Nous nous chargeons de les faire venir."
+  },
+  "footer": {
+    "page": "Page {current} sur {total}"
+  }
+}
