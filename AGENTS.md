@@ -76,12 +76,10 @@ come included in the solution, even at no extra cost, when the client's needs ca
 
 **Local SEO.** Its purpose is to rank a local business at the top of Google for the
 searches its customers make, and to have it recommended by AI engines. When it is part
-of a solution, it comes with all four of its pillars:
+of a solution, it comes with all three of its pillars:
 
 - **Authority content**: keyword research, content clusters, content gap analysis and
   updates to existing content, to establish the business as an authority.
-- **Backlinks and citations**: links from trusted directories and citation websites,
-  strengthening local authority signals across Google and AI engines.
 - **Authority on Google and AI**: the business and its website established as the
   reference that gets recommended in Google results and AI answers.
 - **Review management**: tracking review growth over time, monitoring customer responses
@@ -133,15 +131,18 @@ Terms, and each one is a billing dispute if it is lost in a summary:
    may come included at no extra cost. Never write a figure, a "from" price, a range or a
    discount.
 2. **Quotes exclude VAT.** Say so wherever a quote is mentioned.
-3. **50% of the agreed quote is paid up front**, to cover the cost of the tools and
-   services the work depends on.
+3. **A low initial payment, then a monthly fee tied to results.** When the services
+   start, the client makes an initial payment agreed in the proposal. After that, a monthly
+   fee is billed in advance, its amount tied to the results agreed in the proposal. The new
+   customers the solution brings in are what cover it. Never state the amount of either
+   payment.
 4. **There is no free trial.** The free part is the needs analysis, nothing else. If you
    find a trial claimed anywhere in the repo or in generated copy, it is stale and wrong.
 5. **There is no bundle discount.** The former 30% "alongside Local SEO" discount is gone
    with the prices; do not mention it.
 
-No price lives in code either. `lib/pricing.ts` keeps only the service keys, their slug
-helpers and `UPFRONT_SHARE` (the 50%). `tests/seo/no-published-prices.test.ts` guards the
+No price lives in code either. `lib/pricing.ts` keeps only the service keys and their
+slug helpers. `tests/seo/no-published-prices.test.ts` guards the
 rule: it fails on any currency amount or price placeholder in the `services.*`, `home.*`
 and `offer.*` copy of every locale, and on `offers`, `priceRange`, `hasOfferCatalog` or
 `priceSpecification` in the JSON-LD of the home and the service pages.

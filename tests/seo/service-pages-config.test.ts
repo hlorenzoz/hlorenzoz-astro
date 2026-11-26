@@ -29,8 +29,8 @@ const aiVoiceReceptionist = pagesFor('ai-voice-receptionist');
 const softwareDevelopment = pagesFor('software-development');
 
 /**
- * The live services, in presentation order: the core offer first, then the
- * optional ones. The paused Digital Business Card has no entry: its page sits
+ * The live services, in registry order. None is a core offer: they are the
+ * building blocks of one tailored solution. The paused Digital Business Card has no entry: its page sits
  * in a private folder and its route is commented out.
  */
 const SERVICE_SLUGS = ['local-seo', 'website-development', 'ai-voice-receptionist', 'software-development'] as const;
@@ -50,7 +50,7 @@ describe('service pages: hub', () => {
         expect(hub.contentPages.en!.config.path).toBe('services');
     });
 
-    it('links exactly the four services as children, core offer first', () => {
+    it('links exactly the four services as children, in registry order', () => {
         const links = hub.contentPages.en!.children('en', T);
         // Order matters: it is the order the hub lists them in.
         expect(links.map((l) => l.url)).toEqual(

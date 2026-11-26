@@ -4,7 +4,7 @@ import path from 'path';
 import { ALL_ROUTES } from '@/lib/routes';
 import { getPortfolioItems } from '@/lib/portfolio';
 import { getNewsItems } from '@/lib/news';
-import { SERVICE_KEYS, UPFRONT_SHARE, slugFromServiceKey, type ServiceKey } from '@/lib/pricing';
+import { SERVICE_KEYS, slugFromServiceKey, type ServiceKey } from '@/lib/pricing';
 import { marketNames } from '@/lib/site-config';
 import { LOCALES } from '@/lib/routing';
 
@@ -134,8 +134,11 @@ describe('llms.txt: publishes no price', () => {
         }
     });
 
-    it('states the terms with the figure the code uses', () => {
-        expect(LLMS_TXT).toContain(`${Math.round(UPFRONT_SHARE * 100)}% of the agreed quote is paid up front`);
+    it('states the fee model: an initial payment, then a monthly fee tied to results, with no share', () => {
+        expect(LLMS_TXT).toMatch(/initial payment when the services start/i);
+        expect(LLMS_TXT).toMatch(/monthly fee tied to the results/i);
+        expect(LLMS_TXT).not.toContain('50%');
+        expect(LLMS_TXT).not.toMatch(/up front/i);
         expect(LLMS_TXT).toMatch(/no quote includes VAT/i);
         expect(LLMS_TXT).not.toMatch(/% off/i);
     });
@@ -143,6 +146,11 @@ describe('llms.txt: publishes no price', () => {
     it('claims no free trial', () => {
         expect(LLMS_TXT).toMatch(/there is no free trial/i);
         expect(SERVICES_SECTION).not.toMatch(/free trial/i);
+    });
+
+    it('lists three Local SEO pillars and no backlinks', () => {
+        expect(lineOf('localSeo')).toMatch(/three pillars/i);
+        expect(lineOf('localSeo')).not.toMatch(/backlink|citation/i);
     });
 
     it('does not promise a ranking', () => {

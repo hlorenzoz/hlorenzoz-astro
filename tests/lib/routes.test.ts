@@ -197,7 +197,7 @@ describe('childRoutes', () => {
 });
 
 describe('service-pages routes (hub + 4 services)', () => {
-    // Presentation order: the core offer first, then the optional services.
+    // Registry order. None is a core offer: they are building blocks of one solution.
     const SERVICE_SLUGS = [
         'local-seo',
         'website-development',
@@ -221,9 +221,8 @@ describe('service-pages routes (hub + 4 services)', () => {
         expect(route?.parent).toBe('services');
     });
 
-    it('lists exactly the four services as children of the hub, core offer first', () => {
-        // Not sorted: the hub and both sitemaps present the services in registry
-        // order, and Local SEO leading them is the point of the new model.
+    it('lists exactly the four services as children of the hub, in registry order', () => {
+        // Not sorted: both sitemaps present the services in registry order.
         expect(childRoutes('services').map((r) => r.path)).toEqual(
             SERVICE_SLUGS.map((slug) => `services/${slug}`)
         );

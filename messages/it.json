@@ -151,21 +151,32 @@
       }
     },
     "benefits": {
+      "eyebrow": "Cosa cambia",
       "title": "Cosa cambia per la tua attività",
       "titleGradient": "quando ti trovano",
-      "imageAlt": "Dashboard della crescita aziendale",
+      "subtitle": "Gli stessi clienti stanno già cercando. Cambia chi trovano, cosa vedono e se qualcuno risponde.",
+      "chips": [
+        "Trovato nella ricerca locale",
+        "Visita trasformata in contatto",
+        "Chiamata gestita fuori orario"
+      ],
+      "todayLabel": "Oggi",
+      "withUsLabel": "Con noi",
       "items": [
         {
           "title": "Visibile dove si decide",
-          "description": "Nelle ricerche locali, sulla mappa e nelle risposte dell'IA, dove i tuoi clienti scelgono chi chiamare."
+          "today": "Un concorrente si prende la ricerca locale.",
+          "withUs": "Compari nelle ricerche locali, sulla mappa e nelle risposte dell'IA."
         },
         {
           "title": "Ogni richiesta gestita",
-          "description": "Un sito che trasforma le visite in contatti e chiamate gestite anche quando non puoi rispondere."
+          "today": "I visitatori se ne vanno e le chiamate restano senza risposta.",
+          "withUs": "Le visite diventano contatti e ogni chiamata riceve risposta, giorno e notte."
         },
         {
           "title": "Un solo team dietro a tutto",
-          "description": "Un unico partner che conosce la tua attività, misura ciò che conta e adatta il lavoro insieme a te."
+          "today": "Più fornitori e nessun responsabile.",
+          "withUs": "Un unico partner che misura ciò che conta e adatta il lavoro insieme a te."
         }
       ]
     },
@@ -198,21 +209,75 @@
           "answer": "No, e nessuno può farlo onestamente: è Google a decidere il posizionamento. Lavoriamo per raggiungerla e ti diciamo cosa è realistico nel tuo mercato."
         },
         {
-          "question": "Perché una parte si paga in anticipo?",
-          "answer": "All'inizio si paga il {upfront}% del preventivo concordato, per coprire gli strumenti e i servizi da cui dipende il lavoro."
+          "question": "Come funzionano i vostri compensi?",
+          "answer": "Un pagamento iniziale contenuto quando partono i servizi, poi un canone mensile legato ai risultati che ti portiamo, concordato nella proposta. Sono i nuovi clienti portati dalla soluzione a coprirlo. I preventivi si intendono IVA esclusa."
         },
         {
           "question": "Devo avere già un sito web o un profilo Google?",
           "answer": "No. Se ti serve l'uno o l'altro, diventa parte della tua soluzione."
         }
       ]
+    },
+    "costOfWaiting": {
+      "eyebrow": "Il costo dell'attesa",
+      "title": "Quanto ti costa non fare niente?",
+      "subtitle": "Ogni giorno qualcuno cerca quello che fai, trova prima un concorrente o chiama e nessuno risponde. Conta i clienti che perdi in un giorno e guarda quanto fanno.",
+      "missedLabel": "Clienti che perdi ogni giorno lavorativo",
+      "missedHelp": "Chiamate perse, visitatori che se ne vanno, ricerche vinte da un concorrente",
+      "valueLabel": "Quanto vale per te una prima visita (EUR)",
+      "valueHelp": "Solo il primo lavoro, senza contare visite successive o passaparola",
+      "formNote": "Si parte dall'esempio dello studio dentistico qui sotto: un paziente perso al giorno, che valeva una visita di controllo e un'otturazione. Sostituiscilo con i tuoi numeri. Niente di ciò che scrivi lascia il tuo browser.",
+      "dayLabel": "Perso ogni giorno",
+      "weekLabel": "Ogni settimana",
+      "monthLabel": "Ogni mese",
+      "yearNote": "{year} all'anno, contando solo le prime visite.",
+      "example": {
+        "title": "Esempio: uno studio dentistico che perde un nuovo paziente al giorno",
+        "columns": {
+          "treatment": "Per cosa veniva il paziente perso",
+          "price": "Prezzo mediano",
+          "week": "Perdita a settimana",
+          "month": "Perdita al mese"
+        },
+        "rows": {
+          "cleaning": "Visita di controllo o pulizia",
+          "filling": "Otturazione",
+          "rootCanal": "Devitalizzazione",
+          "implant": "Impianto",
+          "orthodontics": "Ortodonzia"
+        },
+        "footnote": "Prezzi: importi mediani che i pazienti hanno dichiarato di pagare in Spagna, nell'indagine sui dentisti dell'OCU pubblicata il {date}. Un paziente perso per giorno lavorativo, 5 giorni lavorativi a settimana, 52 settimane all'anno. È un'illustrazione del calcolo, non una previsione né un risultato: i numeri che contano sono i tuoi.",
+        "sourceLabel": "Leggi l'indagine dell'OCU"
+      },
+      "cta": "Prenota l'analisi gratuita delle tue esigenze",
+      "ctaNote": "Nell'analisi troviamo dove stai perdendo quei clienti."
+    },
+    "fees": {
+      "title": "Come funzionano i nostri compensi: se vinci tu, vinciamo noi",
+      "subtitle": "I nostri compensi si definiscono quando iniziamo a lavorare, in base a ciò che mostra l'analisi, così seguono i risultati e non un listino prezzi.",
+      "steps": [
+        {
+          "title": "Un pagamento iniziale contenuto",
+          "description": "Per partire, quando iniziano i servizi. Nessun grande investimento all'inizio."
+        },
+        {
+          "title": "Un canone mensile legato ai risultati",
+          "description": "Definito in base ai risultati che ti portiamo, concordato con te nella proposta."
+        },
+        {
+          "title": "Pagato dai nuovi clienti",
+          "description": "Sono i clienti portati dalla nostra acquisizione automatizzata a coprire il canone mensile."
+        }
+      ],
+      "cta": "Prenota l'analisi gratuita delle tue esigenze",
+      "vat": "I preventivi si intendono IVA esclusa."
     }
   },
   "services": {
     "hub": {
       "eyebrow": "Cosa facciamo",
-      "title": "Un solo piano e ciò che gli ruota attorno",
-      "subtitle": "La SEO locale è l'offerta principale: un unico piano mensile che porta clienti della tua zona da Google e dall'IA. Sviluppo web, Receptionist vocale con IA e Sviluppo software sono servizi facoltativi.",
+      "title": "Soluzioni su misura per la tua attività",
+      "subtitle": "Partiamo da un'analisi gratuita delle tue esigenze, poi combiniamo i servizi di cui la tua attività ha bisogno in un'unica soluzione che ti porta nuovi clienti.",
       "cta": "Scopri i servizi"
     },
     "quoted": "Preventivo su misura per il tuo progetto",
@@ -451,15 +516,11 @@
         "cta": "Prenota l'analisi gratuita delle tue esigenze"
       },
       "benefits": {
-        "title": "Quattro fronti che avanzano insieme",
+        "title": "Tre fronti che avanzano insieme",
         "items": [
           {
             "title": "Contenuti autorevoli",
             "description": "Ricerca delle parole chiave per località, cluster di contenuti, analisi delle lacune e aggiornamento di ciò che hai già, perché tu diventi il punto di riferimento nel tuo settore."
-          },
-          {
-            "title": "Backlink e citazioni",
-            "description": "Link da directory affidabili e citazioni su siti pertinenti: i segnali di autorevolezza locale su cui si basano Google e i motori di IA."
           },
           {
             "title": "Autorevolezza su Google e IA",
@@ -481,15 +542,6 @@
               "Cluster di contenuti",
               "Analisi delle lacune nei contenuti",
               "Aggiornamento dei contenuti esistenti"
-            ]
-          },
-          {
-            "label": "Backlink e citazioni",
-            "items": [
-              "Link da directory affidabili",
-              "Citazioni su siti pertinenti",
-              "Segnali di autorevolezza locale più forti",
-              "Per Google e per i motori di IA"
             ]
           },
           {
@@ -528,7 +580,7 @@
           {
             "number": "03",
             "title": "Il lavoro",
-            "description": "Contenuti, citazioni, autorevolezza e recensioni avanzano in parallelo."
+            "description": "Contenuti, autorevolezza e recensioni avanzano in parallelo."
           },
           {
             "number": "04",
@@ -764,7 +816,7 @@
     "terms": {
       "payment": {
         "title": "Pagamenti",
-        "description": "Alla firma si paga in anticipo il {upfront}% (il primo mese). Copre il costo degli strumenti e dei servizi che rendono possibile il lavoro. Per i progetti a pagamento unico, il saldo restante si paga al termine dei lavori e prima della consegna finale."
+        "description": "Quando iniziano i servizi, il cliente versa un pagamento iniziale concordato nella proposta. Successivamente si fattura in anticipo un canone mensile, il cui importo è legato ai risultati concordati nella proposta. I preventivi si intendono IVA esclusa."
       },
       "marketing": {
         "title": "Portfolio e casi di studio",
@@ -848,7 +900,7 @@
           },
           "subscriptions": {
             "title": "Abbonamenti",
-            "description": "I piani mensili sono fatturati in anticipo ogni mese."
+            "description": "I canoni mensili sono fatturati in anticipo ogni mese."
           },
           "cancellations": {
             "title": "Disdette",
@@ -1036,7 +1088,7 @@
         "title": "Chi è Lorenzoz Agency",
         "paragraphs": [
           "Lorenzoz Agency è un partner concentrato sul successo dei suoi clienti. Creiamo soluzioni per attività locali di ogni dimensione, e il risultato a cui lavoriamo è sempre lo stesso: nuovi clienti e più affari. Partiamo da un'analisi gratuita delle loro esigenze, poi proponiamo e realizziamo la soluzione di cui l'attività ha davvero bisogno.",
-          "Quella soluzione combina quattro elementi, secondo ciò che serve a ogni attività: sviluppo web, SEO locale (contenuti autorevoli, backlink e citazioni, autorevolezza su Google e nelle risposte dell'IA, e gestione delle recensioni), receptionist vocale con IA e sviluppo software. Abbiamo sede legale a Xinzo de Limia (Ourense, Spagna) e lavoriamo online con clienti in tutto il mondo, con particolare attenzione ad Australia, Canada, Costa Rica, Europa, Regno Unito e Stati Uniti. La divisione dei compiti è semplice: il cliente si concentra sull'offrire bene il proprio servizio, e noi ci occupiamo di conquistare i suoi clienti e di seguirli nel tempo."
+          "Quella soluzione combina quattro elementi, secondo ciò che serve a ogni attività: sviluppo web, SEO locale (contenuti autorevoli, autorevolezza su Google e nelle risposte dell'IA, e gestione delle recensioni), receptionist vocale con IA e sviluppo software. Abbiamo sede legale a Xinzo de Limia (Ourense, Spagna) e lavoriamo online con clienti in tutto il mondo, con particolare attenzione ad Australia, Canada, Costa Rica, Europa, Regno Unito e Stati Uniti. La divisione dei compiti è semplice: il cliente si concentra sull'offrire bene il proprio servizio, e noi ci occupiamo di conquistare i suoi clienti e di seguirli nel tempo."
         ]
       }
     },
@@ -2469,7 +2521,7 @@
       "ai": {
         "eyebrow": "Ricerca con l'IA",
         "title": "Consigliato nelle risposte dell'IA, non solo su Google",
-        "text": "Sempre più persone chiedono a ChatGPT, Gemini o Perplexity quale attività chiamare. Questi assistenti costruiscono le risposte con ciò che il web dice di te: il tuo sito, i tuoi profili, le tue citazioni e le tue recensioni. Ci assicuriamo che tutto sia chiaro, coerente e facile da leggere per loro, compreso un riepilogo llms.txt della tua attività.",
+        "text": "Sempre più persone chiedono a ChatGPT, Gemini o Perplexity quale attività chiamare. Questi assistenti costruiscono le risposte con ciò che il web dice di te: il tuo sito, i tuoi profili e le tue recensioni. Ci assicuriamo che tutto sia chiaro, coerente e facile da leggere per loro, compreso un riepilogo llms.txt della tua attività.",
         "tiles": [
           {
             "title": "Dati coerenti",
@@ -2480,8 +2532,8 @@
             "text": "Risposte alle domande che le persone fanno"
           },
           {
-            "title": "Citazioni affidabili",
-            "text": "Menzioni sui siti di cui si fidano gli strumenti di IA"
+            "title": "Recensioni recenti",
+            "text": "Ciò che dicono i tuoi clienti, sempre aggiornato"
           }
         ],
         "llms": {
@@ -2601,6 +2653,67 @@
       "close": {
         "title": "Raccontaci cosa devi realizzare",
         "subtitle": "In una chiamata gratuita di 15 minuti analizziamo il problema e ti diciamo come lo risolveremmo."
+      },
+      "build": {
+        "eyebrow": "Come costruiamo",
+        "title": "Progettato per restare sicuro, veloce e online",
+        "subtitle": "Ogni prodotto che consegniamo passa per lo stesso processo di ingegneria che usiamo sul nostro sito. I numeri qui sotto vengono da lì, e puoi verificarli tu stesso.",
+        "items": [
+          {
+            "title": "Sicurezza",
+            "points": [
+              "Nessun codice server in esecuzione dietro il sito",
+              "Ogni commit controllato alla ricerca di segreti e chiavi private",
+              "Servito in HTTPS dalla rete di Cloudflare"
+            ]
+          },
+          {
+            "title": "Efficienza",
+            "points": [
+              "Pagine pubblicate quasi senza JavaScript",
+              "Immagini ridimensionate e servite da una CDN",
+              "Core Web Vitals verificati prima di ogni rilascio"
+            ]
+          },
+          {
+            "title": "Automazione",
+            "points": [
+              "Build, controlli e rilasci senza passaggi manuali",
+              "Lavoro ripetitivo affidato a script, non fatto a mano",
+              "File generati da un'unica fonte di verità"
+            ]
+          },
+          {
+            "title": "Test",
+            "points": [
+              "Test unitari e di componenti con Vitest",
+              "Test end to end con Playwright, su desktop e mobile",
+              "Lighthouse CI su prestazioni, accessibilità e SEO"
+            ]
+          },
+          {
+            "title": "DevOps e CI/CD",
+            "points": [
+              "Lint, controllo dei tipi e test verificano ogni commit",
+              "Ogni modifica su main viene compilata e pubblicata da sola",
+              "Controllo di versione e una cronologia revisionabile di ogni modifica"
+            ]
+          }
+        ],
+        "figures": {
+          "pagespeed": "di prestazioni PageSpeed su mobile, con 100 in accessibilità, best practice e SEO",
+          "tests": {
+            "value": "2.036",
+            "label": "test automatici eseguiti prima di ogni rilascio"
+          },
+          "checks": {
+            "value": "19",
+            "label": "controlli automatici a ogni commit, inclusa la ricerca di segreti"
+          },
+          "languages": "lingue, e ogni pagina viene verificata in tutte prima della pubblicazione"
+        },
+        "footnote": "Dati di hlorenzoz.com: PageSpeed Insights su mobile, 25 novembre 2026; test e controlli al 26 novembre 2026.",
+        "linkLabel": "Prova PageSpeed tu stesso"
       }
     }
   }

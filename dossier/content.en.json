@@ -78,7 +78,7 @@
     "eyebrow": "Building block 1 of 4",
     "name": "Local SEO",
     "title": "Found first on Google, recommended by AI",
-    "description": "The work that makes your business visible in local Google searches and in the answers AI engines give. When Local SEO is part of your solution, it comes with all four pillars.",
+    "description": "The work that makes your business visible in local Google searches and in the answers AI engines give. When Local SEO is part of your solution, it comes with all three pillars.",
     "pillars": [
       {
         "title": "Authority content",
@@ -88,16 +88,6 @@
           "Content clusters",
           "Content gap analysis",
           "Updates to existing content"
-        ]
-      },
-      {
-        "title": "Backlinks and citations",
-        "description": "Presence on trusted directories and citation websites.",
-        "items": [
-          "Links from trusted directories",
-          "Citations on relevant websites",
-          "Stronger local authority signals",
-          "For Google and for AI engines"
         ]
       },
       {
@@ -187,8 +177,8 @@
         "description": "We publish no price list. Every solution is quoted after the free needs analysis, according to what your business needs."
       },
       {
-        "title": "{upfront}% up front",
-        "description": "{upfront}% of the agreed quote is paid up front. It covers the cost of the tools and services the work depends on."
+        "title": "An initial payment, then a monthly fee",
+        "description": "A low initial payment when the services start, then a monthly fee tied to the results we bring you, agreed in the proposal. The new customers the solution brings in are what cover it."
       },
       {
         "title": "Quotes exclude VAT",

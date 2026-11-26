@@ -8,10 +8,10 @@
 - Headquartered in Xinzo de Limia, Ourense, Spain
 - Serves clients worldwide, with a primary focus on Australia, Canada, Costa Rica, Europe, the United Kingdom, and the United States
 - How we work: a free first call analyzes what the business needs; the agency then proposes, quotes and implements one tailored solution, and measures the results with the client
-- Services: Local SEO (authority content, backlinks and citations, authority on Google and AI, review management), website development, AI voice receptionist, software development; they are building blocks combined per client, none is a core offer, and a service may come included in the solution at no extra cost
+- Services: Local SEO (authority content, authority on Google and AI, review management), website development, AI voice receptionist, software development; they are building blocks combined per client, none is a core offer, and a service may come included in the solution at no extra cost
 - Tech stack: Astro, Tailwind CSS, Cloudflare (CDN, Workers, Pages), Vitest, Playwright, Lighthouse CI
 - Pricing: no price is published; every solution is tailored to the business and quoted after the free first call
-- Terms: no quote includes VAT; 50% of the agreed quote is paid up front; there is no free trial
+- Terms: no quote includes VAT; a low initial payment when the services start, then a monthly fee tied to the results agreed in the proposal, covered by the new customers the solution brings in; no amount is published for either; there is no free trial
 - Payment accepted: Bank Transfer, Credit Card, Stripe
 - Languages: nine, every page in each: English (/en/), Spanish (/es/), British English (/en-gb/), Galician (/gl/), Portuguese (/pt/), Italian (/it/), French (/fr/), German (/de/) and Dutch (/nl/); the version of any /en/... URL in another language is the same path under that language's prefix, for example /es/...
 
@@ -25,7 +25,7 @@
 ## Services
 
 - [Services Hub](https://hlorenzoz.com/en/services/): Directory of all 4 service offerings, each with its deliverables, process, and FAQ. Each one is a building block of a solution tailored to the client.
-- [Local SEO](https://hlorenzoz.com/en/services/local-seo/): Ranking on Google and recommendation by AI engines for local searches, with four pillars, all included: authority content, backlinks and citations, authority on Google and AI, and review management. Quoted after a free first call. The goal is the first position on Google for local searches; no ranking is guaranteed.
+- [Local SEO](https://hlorenzoz.com/en/services/local-seo/): Ranking on Google and recommendation by AI engines for local searches, with three pillars, all included: authority content, authority on Google and AI, and review management. Quoted after a free first call. The goal is the first position on Google for local searches; no ranking is guaranteed.
 - [Website Development](https://hlorenzoz.com/en/services/website-development/): Custom, high speed websites and PWAs built to convert visitors into clients, with structured data, translations and llms.txt, plus hosting and maintenance when the solution needs them. Quoted after a free first call.
 - [AI Voice Receptionist](https://hlorenzoz.com/en/services/ai-voice-receptionist/): AI voice agents that answer calls, schedule appointments, and handle FAQs 24/7. Quoted after a free first call.
 - [Software Development](https://hlorenzoz.com/en/services/software-development/): Full stack products with a Flutter frontend and a robust backend, built for every device. Quoted after a free first call; the quote depends on the functional requirements.

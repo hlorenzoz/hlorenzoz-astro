@@ -31,12 +31,12 @@ target markets, not the site's local GBP service area, see
 It works in two steps: a free first call that is the needs analysis, then the
 implementation of one tailored solution. Four services are the building blocks of that
 solution, combined per client and sometimes included at no extra cost: **Local SEO**
-(authority content, backlinks and citations, authority on Google and AI, and review
-management), **Website Development**, **AI Voice Receptionist** and **Software / Mobile
+(authority content, authority on Google and AI, and review management), **Website Development**, **AI Voice Receptionist** and **Software / Mobile
 App Development**.
 
 No price is published anywhere: every solution is quoted after the free needs analysis,
-quotes exclude VAT, and 50% of the agreed quote is paid up front. Positioning, services and
+quotes exclude VAT, and the client pays a low initial payment when the services start,
+then a monthly fee tied to the results agreed in the proposal. Positioning, services and
 terms are versioned in [AGENTS.md](./AGENTS.md#how-we-work) and are not repeated here.
 `tests/seo/no-published-prices.test.ts` fails on any figure in the copy or any offer in
 the JSON-LD.

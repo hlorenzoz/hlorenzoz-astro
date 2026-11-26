@@ -40,6 +40,38 @@ test.describe('FAQ accordion', () => {
     });
 });
 
+test.describe('home calculators', () => {
+    test.beforeEach(async ({ page }) => acceptCookies(page));
+
+    test('the cost of waiting adds a daily loss up per week, month and year, and shows "-" for zero', async ({ page }) => {
+        await page.goto('/en/', { waitUntil: 'load' });
+        const root = page.locator('#cost-of-waiting');
+        const out = (name: string) => root.locator(`[data-output="${name}"]`);
+        await expect(out('week')).toHaveText('€700');
+
+        await root.locator('input[name="missed"]').fill('2');
+        await root.locator('input[name="value"]').fill('100');
+        await expect(out('day')).toHaveText('€200');
+        await expect(out('week')).toHaveText('€1,000');
+        await expect(out('month')).toHaveText('€4,333');
+        await expect(out('year')).toContainText('€52,000');
+
+        await root.locator('input[name="missed"]').fill('0');
+        await expect(out('day')).toHaveText('-');
+        await expect(out('month')).toHaveText('-');
+    });
+
+    test('the cost of waiting formats in the page locale', async ({ page }) => {
+        await page.goto('/es/', { waitUntil: 'load' });
+        const root = page.locator('#cost-of-waiting');
+        // Spanish groups thousands only from five digits on (CLDR), so 10.000 shows the separator.
+        await root.locator('input[name="value"]').fill('2000');
+        await expect(root.locator('[data-output="week"]')).toHaveText(/^10\.000\s€$/);
+        await root.locator('input[name="value"]').fill('');
+        await expect(root.locator('[data-output="week"]')).toHaveText('-');
+    });
+});
+
 test.describe('navbar mobile menu', () => {
     test.use({ viewport: { width: 390, height: 844 } });
     test.beforeEach(async ({ page }) => acceptCookies(page));

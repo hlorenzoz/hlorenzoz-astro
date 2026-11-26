@@ -20,7 +20,7 @@ test.describe('Homepage E2E Tests', () => {
 
     // Check hero section (allow more time for dev server compilation)
     await expect(page.getByRole('heading', { name: /We study your business/i })).toBeVisible({ timeout: 15000 });
-    await expect(page.getByRole('link', { name: 'Book your free needs analysis' })).toBeVisible();
+    await expect(page.locator('#home').getByRole('link', { name: 'Book your free needs analysis' })).toBeVisible();
   });
 
   test('should display navigation', async ({ page }) => {
@@ -69,7 +69,13 @@ test.describe('Homepage E2E Tests', () => {
     await facts.scrollIntoViewIfNeeded();
     await expect(facts.getByText('98 / 100')).toBeVisible({ timeout: 10000 });
     await expect(facts.getByRole('link', { name: 'check it' })).toHaveAttribute('href', /pagespeed\.web\.dev/);
-    await expect(page.locator('body')).not.toContainText(/€\s?\d|\d\s?€/);
+    // The calculators show the visitor's figures and a dental clinic's market prices, never ours.
+    const outsideCalculators = await page.evaluate(() => {
+      const body = document.body.cloneNode(true) as HTMLElement;
+      body.querySelectorAll('#cost-of-waiting').forEach((el) => el.remove());
+      return body.textContent ?? '';
+    });
+    expect(outsideCalculators).not.toMatch(/€\s?\d|\d\s?€/);
   });
 
   test('should open the How we work section from the hero', async ({ page }) => {

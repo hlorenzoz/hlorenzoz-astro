@@ -1,13 +1,12 @@
 /**
  * Tokens for copy that states a term.
  *
- * `messages/*.json` never carries a figure: a term such as the up front share
- * is a `{upfront}` token filled from `lib/pricing.ts`. Most strings are
- * interpolated by the translator (`lib/i18n.ts`), but FAQ items are read with
- * `t.raw` as plain data and handed to both the accordion and the JSON-LD, so
- * they need the same substitution done by hand.
+ * `messages/*.json` never carries a figure: a term that needs one is a `{name}`
+ * token filled from code. Most strings are interpolated by the translator
+ * (`lib/i18n.ts`), but FAQ items are read with `t.raw` as plain data and handed
+ * to both the accordion and the JSON-LD, so they need the same substitution
+ * done by hand.
  */
-import { UPFRONT_SHARE } from '@/lib/pricing';
 
 export type CopyTokens = Record<string, string | number>;
 
@@ -23,9 +22,13 @@ export function fillTokens(text: string, values: CopyTokens): string {
     });
 }
 
-/** The values every term-bearing line may use. */
+/**
+ * The values every term-bearing line may use. Empty since the fee model states
+ * no figure: a `{token}` left in the copy now fails the build instead of
+ * publishing a stale number.
+ */
 export function copyTokens(): CopyTokens {
-    return { upfront: Math.round(UPFRONT_SHARE * 100) };
+    return {};
 }
 
 export interface FaqItem {

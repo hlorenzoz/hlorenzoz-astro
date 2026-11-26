@@ -35,7 +35,7 @@ describe('Footer services links (fixed, registry-derived hrefs)', () => {
         expect(screen.getByText('How we work').closest('a')).toHaveAttribute('href', '/en/#how');
     });
 
-    it('lists Local SEO first: it is the core offer', () => {
+    it('lists the four services in registry order', () => {
         const items = footerEn.footer.services.items as unknown as { label: string; href: string }[];
         expect(items.map((item) => item.href)).toEqual([
             '/services/local-seo',

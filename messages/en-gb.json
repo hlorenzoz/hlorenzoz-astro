@@ -158,21 +158,32 @@
       }
     },
     "benefits": {
+      "eyebrow": "What changes",
       "title": "What changes for your business",
       "titleGradient": "when people can find you",
-      "imageAlt": "Business growth dashboard",
+      "subtitle": "The same customers are already searching. What changes is who they find, what they see and whether anyone picks up.",
+      "chips": [
+        "Found in local search",
+        "Visit turned into an enquiry",
+        "Call answered out of hours"
+      ],
+      "todayLabel": "Today",
+      "withUsLabel": "With us",
       "items": [
         {
           "title": "Visible where the decision is made",
-          "description": "In local searches, on the map and in AI answers, where your customers choose who to ring."
+          "today": "A competitor wins the local search.",
+          "withUs": "You appear in local searches, on the map and in AI answers."
         },
         {
           "title": "Every enquiry handled",
-          "description": "A website that turns visits into contacts, and calls answered even when you cannot pick up."
+          "today": "Visitors leave and calls go unanswered.",
+          "withUs": "Visits become enquiries and every call is answered, day and night."
         },
         {
           "title": "One team behind it",
-          "description": "One partner who knows your business, measures what matters and adjusts the work with you."
+          "today": "Several suppliers, and nobody accountable.",
+          "withUs": "One partner who measures what matters and adjusts the work with you."
         }
       ]
     },
@@ -205,14 +216,68 @@
           "answer": "No, and nobody honestly can: Google decides its rankings. We work towards it and tell you what is realistic for your market."
         },
         {
-          "question": "Why is part of it paid up front?",
-          "answer": "{upfront}% of the agreed quote is paid at the start to cover the tools and services the work depends on."
+          "question": "How do your fees work?",
+          "answer": "A low initial payment when the services start, then a monthly fee linked to the results we bring you, agreed in the proposal. The new customers the solution brings in are what cover it. Quotes exclude VAT."
         },
         {
           "question": "Do I need a website or a Google profile already?",
           "answer": "No. If you need either, it becomes part of your solution."
         }
       ]
+    },
+    "costOfWaiting": {
+      "eyebrow": "The cost of waiting",
+      "title": "What is doing nothing costing you?",
+      "subtitle": "Every day, someone searches for what you do, finds a competitor first, or rings and nobody answers. Count the customers you lose in a day and see what that adds up to.",
+      "missedLabel": "Customers you lose each working day",
+      "missedHelp": "Missed calls, visitors who leave, searches a competitor wins",
+      "valueLabel": "What a first visit is worth to you (EUR)",
+      "valueHelp": "Only the first job, before any return visit or referral",
+      "formNote": "It starts with the dental practice example below: one lost patient a day, worth a check up and a filling. Replace it with your own figures. Nothing you type leaves your browser.",
+      "dayLabel": "Lost each day",
+      "weekLabel": "Each week",
+      "monthLabel": "Each month",
+      "yearNote": "{year} a year, counting first visits only.",
+      "example": {
+        "title": "Example: a dental practice that loses one new patient a day",
+        "columns": {
+          "treatment": "What the lost patient came in for",
+          "price": "Median price",
+          "week": "Lost per week",
+          "month": "Lost per month"
+        },
+        "rows": {
+          "cleaning": "Check up or scale and polish",
+          "filling": "Filling",
+          "rootCanal": "Root canal",
+          "implant": "Implant",
+          "orthodontics": "Orthodontics"
+        },
+        "footnote": "Prices: median amounts patients reported paying in Spain, in the OCU dental survey published on {date}. One lost patient per working day, 5 working days a week, 52 weeks a year. This illustrates the arithmetic; it is not a forecast or a result. Your own figures are the ones that count.",
+        "sourceLabel": "Read the OCU survey"
+      },
+      "cta": "Book your free needs analysis",
+      "ctaNote": "In the analysis we find out where those customers are slipping away."
+    },
+    "fees": {
+      "title": "How our fees work: when you win, we win",
+      "subtitle": "Our fees are set when we start working together, based on what the analysis shows, so they follow the results rather than a price list.",
+      "steps": [
+        {
+          "title": "A low initial payment",
+          "description": "To get going, when the services begin. No large outlay to start with."
+        },
+        {
+          "title": "A monthly fee linked to results",
+          "description": "Set by the results we bring you and agreed with you in the proposal."
+        },
+        {
+          "title": "Paid for by the new customers",
+          "description": "The customers our automated acquisition brings in are what cover the monthly fee."
+        }
+      ],
+      "cta": "Book your free needs analysis",
+      "vat": "Quotes exclude VAT."
     }
   },
   "footer": {
@@ -299,7 +364,7 @@
     "terms": {
       "payment": {
         "title": "Payments",
-        "description": "On signing, {upfront}% is paid up front (the first month). It covers the cost of the tools and services that make the work possible. For one off projects, the remaining balance is due on completion and before final delivery."
+        "description": "When the services start, the client makes an initial payment agreed in the proposal. After that, a monthly fee is invoiced in advance; its amount is linked to the results agreed in the proposal. Quotes exclude VAT."
       },
       "marketing": {
         "title": "Portfolio and Case Studies",
@@ -382,7 +447,7 @@
           },
           "subscriptions": {
             "title": "Subscriptions",
-            "description": "Monthly plans are billed in advance each month."
+            "description": "Monthly fees are invoiced in advance each month."
           },
           "cancellations": {
             "title": "Cancellations",
@@ -1293,7 +1358,7 @@
         "title": "About Lorenzoz Agency",
         "paragraphs": [
           "Lorenzoz Agency is a partner focused on its clients' success. We build solutions for local businesses of any size, and the outcome we work towards is always the same: new customers and more business. We start with a free needs analysis, then propose and implement the solution the business actually needs.",
-          "That solution combines four building blocks, as each business requires: Website Development, Local SEO (authority content, backlinks and citations, authority on Google and in AI answers, and review management), an AI Voice Receptionist and Software Development. We are registered in Xinzo de Limia (Ourense, Spain) and work online with clients worldwide, with a focus on Australia, Canada, Costa Rica, Europe, the United Kingdom and the United States. The division of labour is simple: the client focuses on delivering their own service well, and we take care of winning their customers and following them up."
+          "That solution combines four building blocks, as each business requires: Website Development, Local SEO (authority content, authority on Google and in AI answers, and review management), an AI Voice Receptionist and Software Development. We are registered in Xinzo de Limia (Ourense, Spain) and work online with clients worldwide, with a focus on Australia, Canada, Costa Rica, Europe, the United Kingdom and the United States. The division of labour is simple: the client focuses on delivering their own service well, and we take care of winning their customers and following them up."
         ]
       }
     },
@@ -1779,15 +1844,11 @@
         "cta": "Book your free needs analysis"
       },
       "benefits": {
-        "title": "Four fronts, moving forward together",
+        "title": "Three fronts, moving forward together",
         "items": [
           {
             "title": "Authority content",
             "description": "Keyword research by location, content clusters, gap analysis and updates to what you already have, so you become the reference on your topic."
-          },
-          {
-            "title": "Backlinks and citations",
-            "description": "Links from trusted directories and citations on relevant websites, the local authority signals Google and AI engines rely on."
           },
           {
             "title": "Authority on Google and AI",
@@ -1809,15 +1870,6 @@
               "Content clusters",
               "Content gap analysis",
               "Updates to existing content"
-            ]
-          },
-          {
-            "label": "Backlinks and citations",
-            "items": [
-              "Links from trusted directories",
-              "Citations on relevant websites",
-              "Stronger local authority signals",
-              "For Google and for AI engines"
             ]
           },
           {
@@ -1856,7 +1908,7 @@
           {
             "number": "03",
             "title": "The work",
-            "description": "Content, citations, authority and reviews move forward in parallel."
+            "description": "Content, authority and reviews move forward in parallel."
           },
           {
             "number": "04",
@@ -2222,8 +2274,8 @@
     },
     "hub": {
       "eyebrow": "What We Do",
-      "title": "One plan, and what goes around it",
-      "subtitle": "Local SEO is the core offer: one monthly plan that brings in local customers from Google and AI. Website Development, AI Voice Receptionist and Software Development are optional.",
+      "title": "Solutions built around your business",
+      "subtitle": "We start with a free needs analysis, then combine the services your business needs into one solution that brings you new customers.",
       "cta": "Browse the services"
     },
     "quoted": "Quoted for your project"
@@ -2469,7 +2521,7 @@
       "ai": {
         "eyebrow": "Search with AI",
         "title": "Recommended in AI answers, not only on Google",
-        "text": "More people now ask ChatGPT, Gemini or Perplexity which business to call. These assistants build their answers from what the web says about you: your site, your profiles, your citations and your reviews. We make sure all of it is clear, consistent and easy for them to read, including an llms.txt summary of your business.",
+        "text": "More people now ask ChatGPT, Gemini or Perplexity which business to call. These assistants build their answers from what the web says about you: your site, your profiles and your reviews. We make sure all of it is clear, consistent and easy for them to read, including an llms.txt summary of your business.",
         "tiles": [
           {
             "title": "Consistent details",
@@ -2480,8 +2532,8 @@
             "text": "Answers to the questions people ask"
           },
           {
-            "title": "Trusted citations",
-            "text": "Mentions on sites AI tools rely on"
+            "title": "Fresh reviews",
+            "text": "What your customers say, kept up to date"
           }
         ],
         "llms": {
@@ -2601,6 +2653,67 @@
       "close": {
         "title": "Tell us what you need to build",
         "subtitle": "In a free 15 minute call we look at the problem and tell you how we would solve it."
+      },
+      "build": {
+        "eyebrow": "How we build",
+        "title": "Engineered to stay secure, fast and online",
+        "subtitle": "Every product we deliver goes through the same engineering process we run on our own website. The figures below come from it, and you can check them yourself.",
+        "items": [
+          {
+            "title": "Security",
+            "points": [
+              "No server code running behind the site",
+              "Every commit scanned for secrets and private keys",
+              "Served over HTTPS from Cloudflare's network"
+            ]
+          },
+          {
+            "title": "Efficiency",
+            "points": [
+              "Pages ship with almost no JavaScript",
+              "Images resized and served by a CDN",
+              "Core Web Vitals checked before release"
+            ]
+          },
+          {
+            "title": "Automation",
+            "points": [
+              "Builds, checks and releases run with no manual steps",
+              "Repetitive work scripted rather than done by hand",
+              "Generated files built from a single source of truth"
+            ]
+          },
+          {
+            "title": "Testing",
+            "points": [
+              "Unit and component tests with Vitest",
+              "End to end tests with Playwright, on desktop and mobile",
+              "Lighthouse CI on performance, accessibility and SEO"
+            ]
+          },
+          {
+            "title": "DevOps and CI/CD",
+            "points": [
+              "Linting, type checks and tests gate every commit",
+              "Every change to main builds and deploys automatically",
+              "Version control and a reviewable history for every change"
+            ]
+          }
+        ],
+        "figures": {
+          "pagespeed": "PageSpeed performance on mobile, with 100 for accessibility, best practices and SEO",
+          "tests": {
+            "value": "2,036",
+            "label": "automated tests run before every release"
+          },
+          "checks": {
+            "value": "19",
+            "label": "automatic checks on every commit, including a secrets scan"
+          },
+          "languages": "languages, with every page checked in each one before it goes live"
+        },
+        "footnote": "Figures from hlorenzoz.com: PageSpeed Insights on mobile, 25 November 2026; tests and checks as of 26 November 2026.",
+        "linkLabel": "Run PageSpeed yourself"
       }
     }
   }

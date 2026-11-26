@@ -151,21 +151,32 @@
       }
     },
     "benefits": {
+      "eyebrow": "Lo que cambia",
       "title": "Lo que cambia en tu negocio",
       "titleGradient": "cuando te encuentran",
-      "imageAlt": "Panel de crecimiento del negocio",
+      "subtitle": "Los mismos clientes ya están buscando. Lo que cambia es a quién encuentran, qué ven y si alguien les responde.",
+      "chips": [
+        "Encontrado en la búsqueda local",
+        "Visita convertida en contacto",
+        "Llamada atendida fuera de horario"
+      ],
+      "todayLabel": "Hoy",
+      "withUsLabel": "Con nosotros",
       "items": [
         {
           "title": "Visible donde se decide",
-          "description": "En las búsquedas locales, en el mapa y en las respuestas de la IA, donde tus clientes eligen a quién llamar."
+          "today": "Un competidor se queda con la búsqueda local.",
+          "withUs": "Apareces en las búsquedas locales, en el mapa y en las respuestas de la IA."
         },
         {
           "title": "Cada consulta, atendida",
-          "description": "Una web que convierte visitas en contactos, y llamadas atendidas incluso cuando tú no puedes cogerlas."
+          "today": "Las visitas se van y las llamadas se quedan sin respuesta.",
+          "withUs": "Las visitas se convierten en contactos y cada llamada se atiende, de día y de noche."
         },
         {
           "title": "Un solo equipo detrás",
-          "description": "Un socio que conoce tu negocio, mide lo que importa y ajusta el trabajo contigo."
+          "today": "Varios proveedores y nadie responsable.",
+          "withUs": "Un socio que mide lo que importa y ajusta el trabajo contigo."
         }
       ]
     },
@@ -198,21 +209,75 @@
           "answer": "No, y nadie puede hacerlo con honestidad: el orden de los resultados lo decide Google. Trabajamos para conseguirla y te decimos qué es realista en tu mercado."
         },
         {
-          "question": "¿Por qué se paga una parte por adelantado?",
-          "answer": "Al empezar se abona el {upfront}% del presupuesto acordado, para cubrir las herramientas y los servicios de los que depende el trabajo."
+          "question": "¿Cómo funcionan nuestras tarifas?",
+          "answer": "Un pago inicial bajo al comenzar los servicios y, después, una cuota mensual ligada a los resultados que te traemos, acordada en la propuesta. Los clientes nuevos que trae la solución son los que la cubren. Los presupuestos no incluyen el IVA."
         },
         {
           "question": "¿Necesito tener ya una web o un perfil de Google?",
           "answer": "No. Si te hace falta alguno de los dos, pasa a formar parte de tu solución."
         }
       ]
+    },
+    "costOfWaiting": {
+      "eyebrow": "El coste de esperar",
+      "title": "¿Cuánto te cuesta no hacer nada?",
+      "subtitle": "Cada día alguien busca lo que haces, encuentra antes a un competidor o llama y nadie contesta. Cuenta los clientes que pierdes en un día y mira lo que suman.",
+      "missedLabel": "Clientes que pierdes cada día laborable",
+      "missedHelp": "Llamadas perdidas, visitas que se van, búsquedas que gana un competidor",
+      "valueLabel": "Lo que vale para ti una primera visita (EUR)",
+      "valueHelp": "Solo el primer trabajo, sin contar visitas posteriores ni recomendaciones",
+      "formNote": "Empieza con el ejemplo de la clínica dental de abajo: un paciente perdido al día, que valía una revisión y un empaste. Cámbialo por tus cifras. Nada de lo que escribes sale de tu navegador.",
+      "dayLabel": "Pierdes cada día",
+      "weekLabel": "Cada semana",
+      "monthLabel": "Cada mes",
+      "yearNote": "{year} al año, contando solo primeras visitas.",
+      "example": {
+        "title": "Ejemplo: una clínica dental que pierde un paciente nuevo al día",
+        "columns": {
+          "treatment": "A qué venía el paciente perdido",
+          "price": "Precio mediano",
+          "week": "Pérdida por semana",
+          "month": "Pérdida por mes"
+        },
+        "rows": {
+          "cleaning": "Revisión o limpieza",
+          "filling": "Empaste",
+          "rootCanal": "Endodoncia",
+          "implant": "Implante",
+          "orthodontics": "Ortodoncia"
+        },
+        "footnote": "Precios: importes medianos que los pacientes declararon pagar en España, en la encuesta dental de la OCU publicada el {date}. Un paciente perdido por día laborable, 5 días laborables a la semana, 52 semanas al año. Es una ilustración del cálculo, no una previsión ni un resultado: las cifras que cuentan son las tuyas.",
+        "sourceLabel": "Leer la encuesta de la OCU"
+      },
+      "cta": "Reserva tu análisis gratuito de necesidades",
+      "ctaNote": "En el análisis encontramos dónde se están perdiendo esos clientes."
+    },
+    "fees": {
+      "title": "Cómo funcionan nuestras tarifas: si tú ganas, ganamos",
+      "subtitle": "Nuestras tarifas se fijan al empezar a trabajar, a partir de lo que muestra el análisis, para que sigan a los resultados y no a una lista de precios.",
+      "steps": [
+        {
+          "title": "Un pago inicial bajo",
+          "description": "Para arrancar, cuando empiezan los servicios. Sin una gran inversión para empezar."
+        },
+        {
+          "title": "Una cuota mensual ligada a resultados",
+          "description": "Fijada según los resultados que te traemos, acordada contigo en la propuesta."
+        },
+        {
+          "title": "La pagan los clientes nuevos",
+          "description": "Los clientes que trae nuestra captación automatizada son los que cubren la cuota mensual."
+        }
+      ],
+      "cta": "Reserva tu análisis gratuito de necesidades",
+      "vat": "Los presupuestos no incluyen el IVA."
     }
   },
   "services": {
     "hub": {
       "eyebrow": "Qué hacemos",
-      "title": "Un plan, y lo que lo acompaña",
-      "subtitle": "SEO Local es la oferta central: un único plan mensual que trae clientes locales desde Google y la IA. Desarrollo Web, Recepcionista de Voz IA y Desarrollo de Software son opcionales.",
+      "title": "Soluciones a la medida de tu negocio",
+      "subtitle": "Empezamos con un análisis gratuito de tus necesidades y combinamos los servicios que tu negocio necesita en una solución que te trae clientes nuevos.",
       "cta": "Ver los servicios"
     },
     "quoted": "Presupuesto a medida de tu proyecto",
@@ -555,15 +620,11 @@
         "cta": "Reserva tu análisis de necesidades gratuito"
       },
       "benefits": {
-        "title": "Cuatro frentes que avanzan juntos",
+        "title": "Tres frentes que avanzan juntos",
         "items": [
           {
             "title": "Contenido de autoridad",
             "description": "Investigación de palabras clave por ubicación, clústeres de contenido, análisis de carencias y actualización de lo que ya tienes, para que seas la referencia en tu tema."
-          },
-          {
-            "title": "Backlinks y citaciones",
-            "description": "Enlaces desde directorios de confianza y citaciones en webs relevantes: las señales de autoridad local en las que se apoyan Google y los motores de IA."
           },
           {
             "title": "Autoridad en Google y en IA",
@@ -585,15 +646,6 @@
               "Clústeres de contenido",
               "Análisis de gaps de contenido",
               "Actualización del contenido existente"
-            ]
-          },
-          {
-            "label": "Backlinks y citaciones",
-            "items": [
-              "Enlaces desde directorios de confianza",
-              "Citaciones en sitios relevantes",
-              "Señales de autoridad local más fuertes",
-              "Para Google y para los motores de IA"
             ]
           },
           {
@@ -632,7 +684,7 @@
           {
             "number": "03",
             "title": "El trabajo",
-            "description": "Contenido, citaciones, autoridad y reseñas avanzan en paralelo."
+            "description": "Contenido, autoridad y reseñas avanzan en paralelo."
           },
           {
             "number": "04",
@@ -891,7 +943,7 @@
     "terms": {
       "payment": {
         "title": "Pagos",
-        "description": "Al contratar se abona el {upfront}% por adelantado (el primer mes). Cubre los gastos de las herramientas y servicios de los que depende el trabajo. En los proyectos de pago único, el saldo restante se liquida al finalizar y antes de la entrega final."
+        "description": "Al comenzar los servicios, el cliente realiza un pago inicial acordado en la propuesta. Después se factura por adelantado una cuota mensual, cuyo importe está ligado a los resultados acordados en la propuesta. Los presupuestos no incluyen el IVA."
       },
       "marketing": {
         "title": "Portafolio y Casos de Éxito",
@@ -929,7 +981,7 @@
           },
           "subscriptions": {
             "title": "Suscripciones",
-            "description": "Los planes mensuales se facturan por adelantado cada mes."
+            "description": "Las cuotas mensuales se facturan por adelantado cada mes."
           },
           "cancellations": {
             "title": "Cancelaciones",
@@ -1189,7 +1241,7 @@
         "title": "Sobre Lorenzoz Agency",
         "paragraphs": [
           "Lorenzoz Agency es un partner enfocado en el éxito de sus clientes. Creamos soluciones para negocios locales de cualquier tamaño, y el resultado que buscamos es siempre el mismo: nuevos clientes y más negocio. Empezamos con un análisis gratuito de sus necesidades y después proponemos e implementamos la solución que el negocio realmente necesita.",
-          "Esa solución combina cuatro piezas según lo que pida cada negocio: desarrollo web, SEO Local (contenido de autoridad, backlinks y citaciones, autoridad en Google y en las respuestas de IA, y gestión de reseñas), recepcionista de voz con IA y desarrollo de software. Estamos registrados en Xinzo de Limia (Ourense, España) y trabajamos en línea con clientes de todo el mundo, sobre todo de Australia, Canadá, Costa Rica, Europa, Reino Unido y Estados Unidos. El reparto es sencillo: el cliente se centra en prestar bien su servicio y nosotros nos ocupamos de conseguirle clientes y de darles seguimiento."
+          "Esa solución combina cuatro piezas según lo que pida cada negocio: desarrollo web, SEO Local (contenido de autoridad, autoridad en Google y en las respuestas de IA, y gestión de reseñas), recepcionista de voz con IA y desarrollo de software. Estamos registrados en Xinzo de Limia (Ourense, España) y trabajamos en línea con clientes de todo el mundo, sobre todo de Australia, Canadá, Costa Rica, Europa, Reino Unido y Estados Unidos. El reparto es sencillo: el cliente se centra en prestar bien su servicio y nosotros nos ocupamos de conseguirle clientes y de darles seguimiento."
         ]
       }
     },
@@ -2573,7 +2625,7 @@
       "ai": {
         "eyebrow": "Búsqueda con IA",
         "title": "Que te recomiende la IA, no solo Google",
-        "text": "Cada vez más gente pregunta a ChatGPT, Gemini o Perplexity a qué negocio llamar. Estos asistentes construyen sus respuestas con lo que la web dice de ti: tu sitio, tus perfiles, tus citaciones y tus reseñas. Nos aseguramos de que todo sea claro, coherente y fácil de leer para ellos, incluido un resumen de tu negocio en llms.txt.",
+        "text": "Cada vez más gente pregunta a ChatGPT, Gemini o Perplexity a qué negocio llamar. Estos asistentes construyen sus respuestas con lo que la web dice de ti: tu sitio, tus perfiles y tus reseñas. Nos aseguramos de que todo sea claro, coherente y fácil de leer para ellos, incluido un resumen de tu negocio en llms.txt.",
         "tiles": [
           {
             "title": "Datos coherentes",
@@ -2584,8 +2636,8 @@
             "text": "Respuestas a las preguntas que hace la gente"
           },
           {
-            "title": "Citaciones de confianza",
-            "text": "Menciones en sitios en los que se apoyan las herramientas de IA"
+            "title": "Reseñas al día",
+            "text": "Lo que dicen tus clientes, siempre actualizado"
           }
         ],
         "llms": {
@@ -2705,6 +2757,67 @@
       "close": {
         "title": "Cuéntanos qué necesitas construir",
         "subtitle": "En una llamada gratuita de 15 minutos analizamos el problema y te decimos cómo lo resolveríamos."
+      },
+      "build": {
+        "eyebrow": "Cómo construimos",
+        "title": "Hecho para ser seguro, rápido y estar siempre en línea",
+        "subtitle": "Cada producto que entregamos pasa por el mismo proceso de ingeniería que usamos en nuestra propia web. Las cifras de abajo salen de ella y puedes comprobarlas tú mismo.",
+        "items": [
+          {
+            "title": "Seguridad",
+            "points": [
+              "Sin código de servidor detrás del sitio",
+              "Cada commit revisado en busca de secretos y claves privadas",
+              "Servido por HTTPS desde la red de Cloudflare"
+            ]
+          },
+          {
+            "title": "Eficiencia",
+            "points": [
+              "Páginas que apenas cargan JavaScript",
+              "Imágenes redimensionadas y servidas por una CDN",
+              "Core Web Vitals comprobadas antes de publicar"
+            ]
+          },
+          {
+            "title": "Automatización",
+            "points": [
+              "Compilación, comprobaciones y publicación sin pasos manuales",
+              "El trabajo repetitivo, con scripts y no a mano",
+              "Archivos generados a partir de una única fuente"
+            ]
+          },
+          {
+            "title": "Pruebas",
+            "points": [
+              "Pruebas unitarias y de componentes con Vitest",
+              "Pruebas de extremo a extremo con Playwright, en escritorio y móvil",
+              "Lighthouse CI sobre rendimiento, accesibilidad y SEO"
+            ]
+          },
+          {
+            "title": "DevOps y CI/CD",
+            "points": [
+              "Lint, comprobación de tipos y pruebas en cada commit",
+              "Cada cambio en main se compila y se despliega solo",
+              "Control de versiones e historial revisable de cada cambio"
+            ]
+          }
+        ],
+        "figures": {
+          "pagespeed": "de rendimiento en PageSpeed en móvil, con 100 en accesibilidad, buenas prácticas y SEO",
+          "tests": {
+            "value": "2.036",
+            "label": "pruebas automáticas antes de cada publicación"
+          },
+          "checks": {
+            "value": "19",
+            "label": "comprobaciones automáticas en cada commit, incluida la búsqueda de secretos"
+          },
+          "languages": "idiomas, y cada página se comprueba en todos antes de publicarse"
+        },
+        "footnote": "Cifras de hlorenzoz.com: PageSpeed Insights en móvil, 25 de noviembre de 2026; pruebas y comprobaciones a 26 de noviembre de 2026.",
+        "linkLabel": "Pasa tú mismo PageSpeed"
       }
     }
   }

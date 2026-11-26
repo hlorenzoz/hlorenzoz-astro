@@ -4,7 +4,7 @@
  * layout's default metadata is the page's metadata.
  */
 import { findRoute, routeExists, routeHref, routeLocales } from '@/lib/routes';
-import { MousePointerClick, Phone, PhoneMissed, Search, Sparkles, Users } from '@lucide/astro';
+import { MousePointerClick, PhoneMissed, Search, Sparkles } from '@lucide/astro';
 import BaseLayout from '@/src/layouts/BaseLayout.astro';
 import Navbar from '@/src/components/Navbar.astro';
 import Footer from '@/src/components/Footer.astro';
@@ -19,6 +19,9 @@ import FactsStrip from '@/src/components/home/FactsStrip.astro';
 import PartnerComparison from '@/src/components/home/PartnerComparison.astro';
 import HowWeWork from '@/src/components/home/HowWeWork.astro';
 import SolutionsGrid from '@/src/components/home/SolutionsGrid.astro';
+import BenefitsShowcase from '@/src/components/home/BenefitsShowcase.astro';
+import CostOfWaiting from '@/src/components/home/CostOfWaiting.astro';
+import FeesModel from '@/src/components/home/FeesModel.astro';
 import { getTranslations } from '@/lib/i18n';
 import { dossierHref } from '@/lib/dossier';
 import { getPortfolioItemsAction } from '@/lib/actions/portfolio';
@@ -28,7 +31,6 @@ import { serviceList, faqPage, webPage } from '@/lib/schema';
 import { SERVICE_DISPLAY_ORDER, SERVICE_KEYS, slugFromServiceKey } from '@/lib/pricing';
 import { copyTokens, resolveFaq } from '@/lib/copy-tokens';
 import { LOCALES, absoluteUrl, marketNames } from '@/lib/site-config';
-import { imageFallbackSrc, imageSrcSet } from '@/lib/image';
 
 export function getStaticPaths() {
     return routeLocales('').map((locale) => ({ params: { locale } }));
@@ -56,16 +58,8 @@ const problemTitle = t.markup('problem.title', {
     br: () => '<br/>',
 });
 
-// A plain <img> (no fade wrapper).
-const BENEFITS_IMAGE = {
-    src: 'https://cdn.hlorenzoz.com/hlorenzoz.com/ai-benefits.webp',
-    width: 1000,
-    sizes: '(max-width: 768px) 100vw, 576px',
-};
-
-// One icon per `home.problem.cards` / `home.benefits.items` entry, in order.
+// One icon per `home.problem.cards` entry, in order.
 const PROBLEM_ICONS = [MousePointerClick, Search, Sparkles, PhoneMissed];
-const BENEFIT_ICONS = [Search, Phone, Users];
 ---
 
 {/* No image preload: Next emitted one for the Footer's Upwork favicon only because React
@@ -178,56 +172,9 @@ const BENEFIT_ICONS = [Search, Phone, Users];
 
             <PortfolioCarousel portfolioItems={portfolioItems} locale={locale} />
 
-            {/* What changes for the business */}
-            <section id="benefits" class="py-32 px-6 bg-[#fafafa] overflow-hidden">
-                <div class="max-w-6xl mx-auto">
-                    <div class="grid md:grid-cols-2 gap-20 items-center">
-                        <div class="relative order-2 md:order-1">
-                            <div class="absolute -top-10 -left-10 w-40 h-40 bg-blue-500/10 rounded-full blur-3xl"></div>
-                            <div class="relative rounded-[3rem] overflow-hidden shadow-2xl border border-gray-100 aspect-square md:aspect-auto h-full max-h-[600px]">
-                                {/* Placeholder asset: this image predates the
-                                    results model and will be replaced in the
-                                    redesign (task #T0032). */}
-                                <img
-                                    alt={t('benefits.imageAlt')}
-                                    loading="lazy"
-                                    width="1000"
-                                    height="1000"
-                                    decoding="async"
-                                    data-nimg="1"
-                                    class="w-full h-full object-cover"
-                                    style="color:transparent"
-                                    sizes={BENEFITS_IMAGE.sizes}
-                                    srcset={imageSrcSet(BENEFITS_IMAGE.src, BENEFITS_IMAGE)}
-                                    src={imageFallbackSrc(BENEFITS_IMAGE.src, BENEFITS_IMAGE)}
-                                />
-                                <div class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
-                            </div>
-                        </div>
-                        <div class="order-1 md:order-2">
-                            <h2 class="text-4xl md:text-6xl font-bold text-black mb-12 tracking-tight leading-tight">
-                                {t('benefits.title')} <br />
-                                <span class="text-primary italic font-black">{t('benefits.titleGradient')}</span>
-                            </h2>
-                            <div class="space-y-10">
-                                {
-                                    BENEFIT_ICONS.map((Icon, i) => (
-                                        <div class="flex gap-6 group">
-                                            <div class="shrink-0 size-14 rounded-2xl bg-blue-50 text-blue-800 flex items-center justify-center border border-blue-100 group-hover:bg-blue-800 group-hover:text-white">
-                                                <Icon class="w-8 h-8" aria-hidden="true" />
-                                            </div>
-                                            <div>
-                                                <h3 class="text-xl font-bold text-black mb-2">{t(`benefits.items.${i}.title`)}</h3>
-                                                <p class="text-black font-medium leading-relaxed">{t(`benefits.items.${i}.description`)}</p>
-                                            </div>
-                                        </div>
-                                    ))
-                                }
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
+            <BenefitsShowcase locale={locale} />
+            <CostOfWaiting locale={locale} />
+            <FeesModel locale={locale} />
 
             <DossierDownload title={t('dossier.title')} text={t('dossier.body')} label={t('dossier.cta')} href={dossierHref(locale)} />
 

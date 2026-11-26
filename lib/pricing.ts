@@ -1,9 +1,9 @@
 /**
- * The terms every quote shares, and the service keys.
+ * The service keys and their slug helpers.
  *
- * The agency publishes no price (see AGENTS.md): every solution is tailored to
- * the client and quoted after a free first call. What stays fixed is how a quote
- * is paid, so that is the only figure kept here.
+ * The agency publishes no price and no payment figure (see AGENTS.md): every
+ * solution is tailored to the client and quoted after a free first call, so no
+ * amount lives in code.
  */
 
 /** Service keys mirror the slugs registered in `lib/routes.ts`, camel-cased. */
@@ -28,9 +28,6 @@ export const SERVICE_DISPLAY_ORDER: readonly ServiceKey[] = [
     'aiVoiceReceptionist',
     'softwareDevelopment',
 ];
-
-/** Share of the agreed quote paid up front. */
-export const UPFRONT_SHARE = 0.5;
 
 /** Maps a route slug ('local-seo') to its service key ('localSeo'). */
 export function serviceKeyFromSlug(slug: string): ServiceKey {

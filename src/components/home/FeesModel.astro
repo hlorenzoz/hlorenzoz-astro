@@ -1,0 +1,39 @@
+---
+/**
+ * "How our fees work: when you win, we win": the three steps of the fee model,
+ * with no figure (the agency publishes no price). Copy: `home.fees`.
+ */
+import { getTranslations } from '@/lib/i18n';
+
+export interface Props {
+    locale: string;
+}
+
+const { locale } = Astro.props;
+const t = getTranslations(locale, 'home.fees');
+const steps = t.raw('steps') as { title: string; description: string }[];
+---
+
+<section id="fees" class="py-32 px-6 bg-[#0b0f19] text-white">
+    <div class="max-w-6xl mx-auto">
+        <div class="text-center max-w-3xl mx-auto mb-12">
+            <h2 class="text-3xl md:text-5xl font-bold tracking-tight leading-tight mb-6">{t('title')}</h2>
+            <p class="text-lg text-gray-300 font-medium leading-relaxed">{t('subtitle')}</p>
+        </div>
+        <ol class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {
+                steps.map((step, i) => (
+                    <li class="bg-white/5 border border-white/10 p-8 rounded-[2rem] flex flex-col gap-3">
+                        <span class="text-sm font-black text-blue-300" aria-hidden="true">{String(i + 1).padStart(2, '0')}</span>
+                        <h3 class="text-xl font-bold tracking-tight">{step.title}</h3>
+                        <p class="text-gray-300 font-medium leading-relaxed text-sm">{step.description}</p>
+                    </li>
+                ))
+            }
+        </ol>
+        <div class="mt-12 flex flex-col items-center gap-4 text-center">
+            <a href="#contact" class="bg-white text-blue-950 text-base font-bold px-10 py-4 rounded-full shadow-glow hover:bg-blue-50">{t('cta')}</a>
+            <p class="text-sm text-gray-400 font-medium">{t('vat')}</p>
+        </div>
+    </div>
+</section>

@@ -158,21 +158,32 @@
       }
     },
     "benefits": {
+      "eyebrow": "O que cambia",
       "title": "O que cambia para o teu negocio",
       "titleGradient": "cando te poden atopar",
-      "imageAlt": "Panel de crecemento do negocio",
+      "subtitle": "Os mesmos clientes xa están a buscar. O que cambia é a quen atopan, que ven e se alguén lles responde.",
+      "chips": [
+        "Atopado na busca local",
+        "Visita convertida en contacto",
+        "Chamada atendida fóra de horario"
+      ],
+      "todayLabel": "Hoxe",
+      "withUsLabel": "Connosco",
       "items": [
         {
           "title": "Visible onde se toma a decisión",
-          "description": "Nas buscas locais, no mapa e nas respostas da IA, onde os teus clientes escollen a quen chamar."
+          "today": "Un competidor quédase coa busca local.",
+          "withUs": "Apareces nas buscas locais, no mapa e nas respostas da IA."
         },
         {
           "title": "Cada consulta atendida",
-          "description": "Unha web que converte visitas en contactos, e chamadas atendidas mesmo cando ti non podes coller o teléfono."
+          "today": "As visitas vanse e as chamadas quedan sen resposta.",
+          "withUs": "As visitas convértense en contactos e cada chamada atóndese, de día e de noite."
         },
         {
           "title": "Un único equipo detrás",
-          "description": "Un socio que coñece o teu negocio, mide o que importa e axusta o traballo contigo."
+          "today": "Varios provedores e ninguén responsable.",
+          "withUs": "Un socio que mide o que importa e axusta o traballo contigo."
         }
       ]
     },
@@ -205,14 +216,68 @@
           "answer": "Non, e ninguén pode facelo con honestidade: é Google quen decide a súa clasificación. Traballamos para conseguila e dicímosche que é realista no teu mercado."
         },
         {
-          "question": "Por que se paga unha parte por adiantado?",
-          "answer": "Ao comezo abónase o {upfront}% do orzamento acordado para cubrir as ferramentas e os servizos dos que depende o traballo."
+          "question": "Como funcionan as vosas tarifas?",
+          "answer": "Un pagamento inicial baixo ao comezar os servizos e, despois, unha cota mensual ligada aos resultados que che traemos, acordada na proposta. Os clientes novos que trae a solución son os que a cobren. Os orzamentos non inclúen o IVE."
         },
         {
           "question": "Necesito ter xa unha web ou un perfil de Google?",
           "answer": "Non. Se necesitas algunha das dúas cousas, pasa a formar parte da túa solución."
         }
       ]
+    },
+    "costOfWaiting": {
+      "eyebrow": "O custo de esperar",
+      "title": "Canto che custa non facer nada?",
+      "subtitle": "Cada día alguén busca o que fas, atopa antes un competidor ou chama e ninguén responde. Conta os clientes que perdes nun día e mira o que suman.",
+      "missedLabel": "Clientes que perdes cada día laborable",
+      "missedHelp": "Chamadas perdidas, visitas que se van, buscas que gaña un competidor",
+      "valueLabel": "O que vale para ti unha primeira visita (EUR)",
+      "valueHelp": "Só o primeiro traballo, sen contar visitas posteriores nin recomendacións",
+      "formNote": "Comeza co exemplo da clínica dental de embaixo: un paciente perdido ao día, que valía unha revisión e un empaste. Cámbiao polas túas cifras. Nada do que escribes sae do teu navegador.",
+      "dayLabel": "Perdes cada día",
+      "weekLabel": "Cada semana",
+      "monthLabel": "Cada mes",
+      "yearNote": "{year} ao ano, contando só as primeiras visitas.",
+      "example": {
+        "title": "Exemplo: unha clínica dental que perde un paciente novo ao día",
+        "columns": {
+          "treatment": "A que viña o paciente perdido",
+          "price": "Prezo mediano",
+          "week": "Perda por semana",
+          "month": "Perda por mes"
+        },
+        "rows": {
+          "cleaning": "Revisión ou limpeza",
+          "filling": "Empaste",
+          "rootCanal": "Endodoncia",
+          "implant": "Implante",
+          "orthodontics": "Ortodoncia"
+        },
+        "footnote": "Prezos: importes medianos que os pacientes declararon pagar en España, na enquisa dental da OCU publicada o {date}. Un paciente perdido por día laborable, 5 días laborables á semana, 52 semanas ao ano. É unha ilustración do cálculo, non unha previsión nin un resultado: as cifras que contan son as túas.",
+        "sourceLabel": "Ler a enquisa da OCU"
+      },
+      "cta": "Reserva a túa análise de necesidades gratuíta",
+      "ctaNote": "Na análise atopamos onde se están a perder eses clientes."
+    },
+    "fees": {
+      "title": "Como funcionan as nosas tarifas: se ti gañas, gañamos",
+      "subtitle": "As nosas tarifas fíxanse ao comezar a traballar, a partir do que amosa a análise, para que sigan os resultados e non unha lista de prezos.",
+      "steps": [
+        {
+          "title": "Un pagamento inicial baixo",
+          "description": "Para arrancar, cando comezan os servizos. Sen un gran investimento para empezar."
+        },
+        {
+          "title": "Unha cota mensual ligada a resultados",
+          "description": "Fixada segundo os resultados que che traemos e acordada contigo na proposta."
+        },
+        {
+          "title": "Págana os clientes novos",
+          "description": "Os clientes que trae a nosa captación automatizada son os que cobren a cota mensual."
+        }
+      ],
+      "cta": "Reserva a túa análise de necesidades gratuíta",
+      "vat": "Os orzamentos non inclúen o IVE."
     }
   },
   "footer": {
@@ -299,7 +364,7 @@
     "terms": {
       "payment": {
         "title": "Pagamentos",
-        "description": "Ao contratar, abónase por adiantado o {upfront}% (o primeiro mes). Cobre o custo das ferramentas e dos servizos que fan posible o traballo. Nos proxectos de pagamento único, o importe restante abónase ao rematar e antes da entrega final."
+        "description": "Ao comezar os servizos, o cliente realiza un pagamento inicial acordado na proposta. Despois factúrase por adiantado unha cota mensual, cuxo importe está ligado aos resultados acordados na proposta. Os orzamentos non inclúen o IVE."
       },
       "marketing": {
         "title": "Portfolio e casos de estudo",
@@ -382,7 +447,7 @@
           },
           "subscriptions": {
             "title": "Subscricións",
-            "description": "Os plans mensuais factúranse por adiantado cada mes."
+            "description": "As cotas mensuais factúranse por adiantado cada mes."
           },
           "cancellations": {
             "title": "Cancelacións",
@@ -1699,7 +1764,7 @@
         "title": "Sobre Lorenzoz Agency",
         "paragraphs": [
           "Lorenzoz Agency é un partner centrado no éxito dos seus clientes. Creamos solucións para negocios locais de calquera tamaño, e o resultado que buscamos é sempre o mesmo: novos clientes e máis negocio. Comezamos cunha análise gratuíta das súas necesidades e despois propoñemos e implementamos a solución que o negocio realmente precisa.",
-          "Esa solución combina catro pezas segundo o que precise cada negocio: desenvolvemento web, SEO local (contido de autoridade, backlinks e citas, autoridade en Google e nas respostas de IA, e xestión de reseñas), un recepcionista de voz con IA e desenvolvemento de software. Estamos rexistrados en Xinzo de Limia (Ourense, España) e traballamos en liña con clientes de todo o mundo, con foco en Australia, Canadá, Costa Rica, Europa, o Reino Unido e os Estados Unidos. O reparto do traballo é sinxelo: o cliente céntrase en prestar ben o seu propio servizo, e nós encargámonos de gañarlle clientes e de facerlles seguimento."
+          "Esa solución combina catro pezas segundo o que precise cada negocio: desenvolvemento web, SEO local (contido de autoridade, autoridade en Google e nas respostas de IA, e xestión de recensións), un recepcionista de voz con IA e desenvolvemento de software. Estamos rexistrados en Xinzo de Limia (Ourense, España) e traballamos en liña con clientes de todo o mundo, con foco en Australia, Canadá, Costa Rica, Europa, o Reino Unido e os Estados Unidos. O reparto do traballo é sinxelo: o cliente céntrase en prestar ben o seu propio servizo, e nós encargámonos de gañarlle clientes e de facerlles seguimento."
         ]
       }
     },
@@ -1779,15 +1844,11 @@
         "cta": "Reserva a túa análise de necesidades gratuíta"
       },
       "benefits": {
-        "title": "Catro liñas de traballo que avanzan xuntas",
+        "title": "Tres liñas de traballo que avanzan xuntas",
         "items": [
           {
             "title": "Contido de autoridade",
             "description": "Investigación de palabras clave por localización, clústeres de contido, análise das lagoas e actualización do que xa tes, para que te convertas na referencia do teu tema."
-          },
-          {
-            "title": "Backlinks e citacións",
-            "description": "Ligazóns desde directorios de confianza e citacións en webs relevantes, os sinais de autoridade local nos que se apoian Google e os motores de IA."
           },
           {
             "title": "Autoridade en Google e na IA",
@@ -1809,15 +1870,6 @@
               "Clústeres de contido",
               "Análise das lagoas de contido",
               "Actualización do contido existente"
-            ]
-          },
-          {
-            "label": "Backlinks e citacións",
-            "items": [
-              "Ligazóns desde directorios de confianza",
-              "Citacións en webs relevantes",
-              "Sinais de autoridade local máis fortes",
-              "Para Google e para os motores de IA"
             ]
           },
           {
@@ -1856,7 +1908,7 @@
           {
             "number": "03",
             "title": "O traballo",
-            "description": "Contido, citacións, autoridade e recensións avanzan en paralelo."
+            "description": "Contido, autoridade e recensións avanzan en paralelo."
           },
           {
             "number": "04",
@@ -2222,8 +2274,8 @@
     },
     "hub": {
       "eyebrow": "Que facemos",
-      "title": "Un plan, e o que o acompaña",
-      "subtitle": "O SEO local é a oferta central: un único plan mensual que trae clientes locais desde Google e a IA. Desenvolvemento web, Recepcionista de voz con IA e Desenvolvemento de software son opcionais.",
+      "title": "Solucións á medida do teu negocio",
+      "subtitle": "Comezamos cunha análise gratuíta das túas necesidades e combinamos os servizos que precisa o teu negocio nunha solución que che trae clientes novos.",
       "cta": "Ver os servizos"
     },
     "quoted": "Orzamento para o teu proxecto"
@@ -2469,7 +2521,7 @@
       "ai": {
         "eyebrow": "Busca con IA",
         "title": "Recomendado nas respostas da IA, non só en Google",
-        "text": "Cada vez máis xente lle pregunta a ChatGPT, Gemini ou Perplexity a que negocio chamar. Estes asistentes constrúen as súas respostas co que se di de ti na rede: a túa web, os teus perfís, as túas citacións e as túas recensións. Encargámonos de que todo iso sexa claro, coherente e doado de ler para eles, incluído un resumo do teu negocio en llms.txt.",
+        "text": "Cada vez máis xente lle pregunta a ChatGPT, Gemini ou Perplexity a que negocio chamar. Estes asistentes constrúen as súas respostas co que se di de ti na rede: a túa web, os teus perfís e as túas recensións. Encargámonos de que todo iso sexa claro, coherente e doado de ler para eles, incluído un resumo do teu negocio en llms.txt.",
         "tiles": [
           {
             "title": "Datos coherentes",
@@ -2480,8 +2532,8 @@
             "text": "Respostas ás preguntas que fai a xente"
           },
           {
-            "title": "Citacións de confianza",
-            "text": "Mencións en webs nas que se apoian as ferramentas de IA"
+            "title": "Recensións ao día",
+            "text": "O que din os teus clientes, sempre actualizado"
           }
         ],
         "llms": {
@@ -2601,6 +2653,67 @@
       "close": {
         "title": "Cóntanos que necesitas construír",
         "subtitle": "Nunha chamada gratuíta de 15 minutos analizamos o problema e dicímosche como o resolveriamos."
+      },
+      "build": {
+        "eyebrow": "Como construímos",
+        "title": "Feito para ser seguro, rápido e estar sempre en liña",
+        "subtitle": "Cada produto que entregamos pasa polo mesmo proceso de enxeñaría que usamos na nosa propia web. As cifras de embaixo saen dela e podes comprobalas ti mesmo.",
+        "items": [
+          {
+            "title": "Seguridade",
+            "points": [
+              "Sen código de servidor detrás do sitio",
+              "Cada commit revisado en busca de segredos e claves privadas",
+              "Servido por HTTPS desde a rede de Cloudflare"
+            ]
+          },
+          {
+            "title": "Eficiencia",
+            "points": [
+              "Páxinas que apenas cargan JavaScript",
+              "Imaxes redimensionadas e servidas por unha CDN",
+              "Core Web Vitals comprobadas antes de publicar"
+            ]
+          },
+          {
+            "title": "Automatización",
+            "points": [
+              "Compilación, comprobacións e publicación sen pasos manuais",
+              "O traballo repetitivo, con scripts e non a man",
+              "Ficheiros xerados a partir dunha única fonte"
+            ]
+          },
+          {
+            "title": "Probas",
+            "points": [
+              "Probas unitarias e de compoñentes con Vitest",
+              "Probas de extremo a extremo con Playwright, en escritorio e móbil",
+              "Lighthouse CI sobre rendemento, accesibilidade e SEO"
+            ]
+          },
+          {
+            "title": "DevOps e CI/CD",
+            "points": [
+              "Lint, comprobación de tipos e probas en cada commit",
+              "Cada cambio en main compílase e desprégase só",
+              "Control de versións e historial revisable de cada cambio"
+            ]
+          }
+        ],
+        "figures": {
+          "pagespeed": "de rendemento en PageSpeed en móbil, con 100 en accesibilidade, boas prácticas e SEO",
+          "tests": {
+            "value": "2.036",
+            "label": "probas automáticas antes de cada publicación"
+          },
+          "checks": {
+            "value": "19",
+            "label": "comprobacións automáticas en cada commit, incluída a busca de segredos"
+          },
+          "languages": "idiomas, e cada páxina compróbase en todos antes de publicarse"
+        },
+        "footnote": "Cifras de hlorenzoz.com: PageSpeed Insights en móbil, 25 de novembro de 2026; probas e comprobacións a 26 de novembro de 2026.",
+        "linkLabel": "Pasa ti mesmo PageSpeed"
       }
     }
   }

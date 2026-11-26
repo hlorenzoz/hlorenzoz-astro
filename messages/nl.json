@@ -151,21 +151,32 @@
             }
         },
         "benefits": {
+            "eyebrow": "Wat er verandert",
             "title": "Wat er verandert voor je bedrijf",
             "titleGradient": "als mensen je kunnen vinden",
-            "imageAlt": "Dashboard met de groei van een bedrijf",
+            "subtitle": "Dezelfde klanten zoeken nu al. Wat verandert, is wie ze vinden, wat ze zien en of er iemand opneemt.",
+            "chips": [
+                "Gevonden in lokale zoekresultaten",
+                "Bezoek omgezet in contact",
+                "Telefoon opgenomen na sluitingstijd"
+            ],
+            "todayLabel": "Vandaag",
+            "withUsLabel": "Met ons",
             "items": [
                 {
                     "title": "Zichtbaar waar de keuze valt",
-                    "description": "In lokale zoekresultaten, op de kaart en in antwoorden van AI, precies waar je klanten kiezen wie ze bellen."
+                    "today": "Een concurrent wint de lokale zoekopdracht.",
+                    "withUs": "Je verschijnt in lokale zoekresultaten, op de kaart en in antwoorden van AI."
                 },
                 {
                     "title": "Elke aanvraag opgevolgd",
-                    "description": "Een website die bezoekers omzet in contacten, en telefoontjes die worden beantwoord, ook als jij niet kunt opnemen."
+                    "today": "Bezoekers vertrekken en de telefoon gaat over zonder antwoord.",
+                    "withUs": "Bezoeken worden contacten en elk telefoontje wordt beantwoord, dag en nacht."
                 },
                 {
                     "title": "Eén team achter alles",
-                    "description": "Eén partner die je bedrijf kent, meet wat telt en het werk samen met jou bijstuurt."
+                    "today": "Meerdere leveranciers, niemand verantwoordelijk.",
+                    "withUs": "Eén partner die meet wat telt en het werk samen met jou bijstuurt."
                 }
             ]
         },
@@ -198,21 +209,75 @@
                     "answer": "Nee, en eerlijk gezegd kan niemand dat: Google bepaalt zelf de rangschikking. We werken ernaartoe en vertellen je wat realistisch is in jouw markt."
                 },
                 {
-                    "question": "Waarom betaal ik een deel vooraf?",
-                    "answer": "Bij de start betaal je {upfront}% van de afgesproken offerte. Daarmee dekken we de tools en diensten waar het werk op draait."
+                    "question": "Hoe werken jullie tarieven?",
+                    "answer": "Een lage startbetaling wanneer de diensten beginnen, daarna een maandelijks tarief gekoppeld aan de resultaten die we je opleveren, afgesproken in het voorstel. De nieuwe klanten die de oplossing binnenhaalt, zijn wat het dekken. Offertes zijn exclusief btw."
                 },
                 {
                     "question": "Heb ik al een website of een bedrijfsprofiel op Google nodig?",
                     "answer": "Nee. Heb je een van beide nodig, dan wordt het onderdeel van je oplossing."
                 }
             ]
+        },
+        "costOfWaiting": {
+            "eyebrow": "De kosten van wachten",
+            "title": "Wat kost niets doen je?",
+            "subtitle": "Elke dag zoekt iemand naar wat jij doet, vindt eerst een concurrent of belt en niemand neemt op. Tel de klanten die je op een dag misloopt en zie waar dat op uitkomt.",
+            "missedLabel": "Klanten die je elke werkdag misloopt",
+            "missedHelp": "Gemiste oproepen, bezoekers die vertrekken, zoekopdrachten die een concurrent wint",
+            "valueLabel": "Wat een eerste bezoek je waard is (EUR)",
+            "valueHelp": "Alleen de eerste opdracht, zonder vervolgbezoek of doorverwijzing",
+            "formNote": "Het begint met het voorbeeld van de tandartspraktijk hieronder: een gemiste patiënt per dag, goed voor een controle en een vulling. Vervang het door je eigen cijfers. Niets wat je invult verlaat je browser.",
+            "dayLabel": "Gemist per dag",
+            "weekLabel": "Per week",
+            "monthLabel": "Per maand",
+            "yearNote": "{year} per jaar, alleen eerste bezoeken meegeteld.",
+            "example": {
+                "title": "Voorbeeld: een tandartspraktijk die elke dag een nieuwe patiënt misloopt",
+                "columns": {
+                    "treatment": "Waarvoor de gemiste patiënt kwam",
+                    "price": "Mediaanprijs",
+                    "week": "Gemist per week",
+                    "month": "Gemist per maand"
+                },
+                "rows": {
+                    "cleaning": "Controle of gebitsreiniging",
+                    "filling": "Vulling",
+                    "rootCanal": "Wortelkanaalbehandeling",
+                    "implant": "Implantaat",
+                    "orthodontics": "Orthodontie"
+                },
+                "footnote": "Prijzen: mediaanbedragen die patiënten in Spanje zeiden te betalen, volgens het tandheelkundige onderzoek van de OCU, gepubliceerd op {date}. Een gemiste patiënt per werkdag, 5 werkdagen per week, 52 weken per jaar. Een illustratie van de berekening, geen voorspelling of resultaat: jouw eigen cijfers zijn de cijfers die tellen.",
+                "sourceLabel": "Lees het onderzoek van de OCU"
+            },
+            "cta": "Boek je gratis behoefteanalyse",
+            "ctaNote": "In de analyse vinden we waar die klanten verloren gaan."
+        },
+        "fees": {
+            "title": "Hoe onze tarieven werken: als jij wint, winnen wij",
+            "subtitle": "Onze tarieven worden vastgesteld als we beginnen, op basis van wat de analyse laat zien, zodat ze de resultaten volgen in plaats van een prijslijst.",
+            "steps": [
+                {
+                    "title": "Een lage startbetaling",
+                    "description": "Om te beginnen, wanneer de diensten starten. Geen grote investering vooraf."
+                },
+                {
+                    "title": "Een maandelijks tarief gekoppeld aan resultaten",
+                    "description": "Bepaald door de resultaten die we je opleveren, met jou afgesproken in het voorstel."
+                },
+                {
+                    "title": "Betaald door de nieuwe klanten",
+                    "description": "De klanten die onze geautomatiseerde werving binnenhaalt, zijn wat het maandelijkse tarief dekken."
+                }
+            ],
+            "cta": "Boek je gratis behoefteanalyse",
+            "vat": "Offertes zijn exclusief btw."
         }
     },
     "services": {
         "hub": {
             "eyebrow": "Wat we doen",
-            "title": "Eén plan, en wat eromheen hoort",
-            "subtitle": "Lokale SEO is ons kernaanbod: één maandelijks plan dat klanten uit je regio oplevert via Google en AI. Websiteontwikkeling, Telefoonreceptionist met AI en Softwareontwikkeling zijn optioneel.",
+            "title": "Oplossingen rond jouw bedrijf",
+            "subtitle": "We beginnen met een gratis behoefteanalyse en combineren daarna de diensten die je bedrijf nodig heeft tot één oplossing die je nieuwe klanten oplevert.",
             "cta": "Bekijk de diensten"
         },
         "quoted": "Offerte op maat van je project",
@@ -451,15 +516,11 @@
                 "cta": "Plan je gratis behoefteanalyse"
             },
             "benefits": {
-                "title": "Vier fronten die samen vooruitgaan",
+                "title": "Drie fronten die samen vooruitgaan",
                 "items": [
                     {
                         "title": "Autoriteitscontent",
                         "description": "Zoekwoordonderzoek per locatie, contentclusters, analyse van ontbrekende content en updates van wat je al hebt, zodat je de referentie wordt in je vakgebied."
-                    },
-                    {
-                        "title": "Backlinks en vermeldingen",
-                        "description": "Links vanuit betrouwbare bedrijvengidsen en vermeldingen op relevante websites: de lokale autoriteitssignalen waar Google en AI op vertrouwen."
                     },
                     {
                         "title": "Autoriteit in Google en AI",
@@ -481,15 +542,6 @@
                             "Contentclusters",
                             "Analyse van ontbrekende content",
                             "Bestaande content bijwerken"
-                        ]
-                    },
-                    {
-                        "label": "Backlinks en vermeldingen",
-                        "items": [
-                            "Links vanuit betrouwbare bedrijvengidsen",
-                            "Vermeldingen op relevante websites",
-                            "Sterkere lokale autoriteitssignalen",
-                            "Voor Google en voor AI"
                         ]
                     },
                     {
@@ -528,7 +580,7 @@
                     {
                         "number": "03",
                         "title": "Het werk",
-                        "description": "Content, vermeldingen, autoriteit en reviews gaan tegelijk vooruit."
+                        "description": "Content, autoriteit en reviews gaan tegelijk vooruit."
                     },
                     {
                         "number": "04",
@@ -764,7 +816,7 @@
         "terms": {
             "payment": {
                 "title": "Betalingen",
-                "description": "Bij ondertekening betaal je {upfront}% vooraf (de eerste maand). Daarmee dekken we de kosten van de tools en diensten die het werk mogelijk maken. Bij projecten met een eenmalige betaling betaal je het resterende bedrag bij oplevering, voor de definitieve overdracht."
+                "description": "Wanneer de diensten starten, doet de klant een startbetaling die in het voorstel is afgesproken. Daarna wordt elke maand vooraf een maandelijks tarief gefactureerd; het bedrag is gekoppeld aan de resultaten die in het voorstel zijn afgesproken. Offertes zijn exclusief btw."
             },
             "marketing": {
                 "title": "Portfolio en case studies",
@@ -848,7 +900,7 @@
                     },
                     "subscriptions": {
                         "title": "Abonnementen",
-                        "description": "Maandelijkse abonnementen worden elke maand vooraf gefactureerd."
+                        "description": "Maandelijkse tarieven worden elke maand vooraf gefactureerd."
                     },
                     "cancellations": {
                         "title": "Opzeggingen",
@@ -1062,7 +1114,7 @@
                 "title": "Over Lorenzoz Agency",
                 "paragraphs": [
                     "Lorenzoz Agency is een partner die zich richt op het succes van haar klanten. We bouwen oplossingen voor lokale bedrijven van elke omvang, en het resultaat waar we naartoe werken is altijd hetzelfde: nieuwe klanten en meer omzet. We beginnen met een gratis behoefteanalyse en stellen daarna de oplossing voor die het bedrijf echt nodig heeft, en voeren die uit.",
-                    "Die oplossing combineert vier bouwstenen, afhankelijk van wat elk bedrijf nodig heeft: websiteontwikkeling, Lokale SEO (autoriteitscontent, backlinks en vermeldingen, autoriteit in Google en in antwoorden van AI, en reviewbeheer), een telefoonreceptionist met AI en softwareontwikkeling. We zijn ingeschreven in Xinzo de Limia (Ourense, Spanje) en werken online met klanten wereldwijd, met de nadruk op Australië, Canada, Costa Rica, Europa, het Verenigd Koninkrijk en de Verenigde Staten. De taakverdeling is eenvoudig: de klant richt zich op het goed leveren van zijn eigen dienst, en wij zorgen dat hij klanten wint en dat die worden opgevolgd."
+                    "Die oplossing combineert vier bouwstenen, afhankelijk van wat elk bedrijf nodig heeft: websiteontwikkeling, Lokale SEO (autoriteitscontent, autoriteit in Google en in antwoorden van AI, en reviewbeheer), een telefoonreceptionist met AI en softwareontwikkeling. We zijn ingeschreven in Xinzo de Limia (Ourense, Spanje) en werken online met klanten wereldwijd, met de nadruk op Australië, Canada, Costa Rica, Europa, het Verenigd Koninkrijk en de Verenigde Staten. De taakverdeling is eenvoudig: de klant richt zich op het goed leveren van zijn eigen dienst, en wij zorgen dat hij klanten wint en dat die worden opgevolgd."
                 ]
             }
         },
@@ -2469,7 +2521,7 @@
             "ai": {
                 "eyebrow": "Zoeken met AI",
                 "title": "Aanbevolen in antwoorden van AI, niet alleen in Google",
-                "text": "Steeds meer mensen vragen ChatGPT, Gemini of Perplexity welk bedrijf ze moeten bellen. Die assistenten bouwen hun antwoord op uit wat het web over je zegt: je site, je profielen, je vermeldingen en je reviews. Wij zorgen dat dat allemaal duidelijk, consistent en makkelijk leesbaar voor ze is, inclusief een samenvatting van je bedrijf in llms.txt.",
+                "text": "Steeds meer mensen vragen ChatGPT, Gemini of Perplexity welk bedrijf ze moeten bellen. Die assistenten bouwen hun antwoord op uit wat het web over je zegt: je site, je profielen en je reviews. Wij zorgen dat dat allemaal duidelijk, consistent en makkelijk leesbaar voor ze is, inclusief een samenvatting van je bedrijf in llms.txt.",
                 "tiles": [
                     {
                         "title": "Consistente gegevens",
@@ -2480,8 +2532,8 @@
                         "text": "Antwoorden op de vragen die mensen stellen"
                     },
                     {
-                        "title": "Betrouwbare vermeldingen",
-                        "text": "Op sites waar tools met AI op vertrouwen"
+                        "title": "Verse reviews",
+                        "text": "Wat je klanten zeggen, altijd actueel"
                     }
                 ],
                 "llms": {
@@ -2601,6 +2653,67 @@
             "close": {
                 "title": "Vertel ons wat je wilt bouwen",
                 "subtitle": "In een gratis gesprek van 15 minuten bekijken we het probleem en vertellen we hoe wij het zouden oplossen."
+            },
+            "build": {
+                "eyebrow": "Hoe we bouwen",
+                "title": "Gebouwd om veilig, snel en online te blijven",
+                "subtitle": "Elk product dat we opleveren doorloopt hetzelfde technische proces dat we op onze eigen website gebruiken. De cijfers hieronder komen daaruit, en je kunt ze zelf controleren.",
+                "items": [
+                    {
+                        "title": "Beveiliging",
+                        "points": [
+                            "Geen servercode die achter de site draait",
+                            "Elke commit gescand op geheimen en privésleutels",
+                            "Geleverd via HTTPS vanaf het netwerk van Cloudflare"
+                        ]
+                    },
+                    {
+                        "title": "Efficiëntie",
+                        "points": [
+                            "Pagina's bevatten bijna geen JavaScript",
+                            "Afbeeldingen geschaald en geleverd door een CDN",
+                            "Core Web Vitals gecontroleerd voor elke release"
+                        ]
+                    },
+                    {
+                        "title": "Automatisering",
+                        "points": [
+                            "Builds, controles en releases draaien zonder handmatige stappen",
+                            "Repetitief werk in scripts, niet met de hand",
+                            "Gegenereerde bestanden gebouwd vanuit één bron van waarheid"
+                        ]
+                    },
+                    {
+                        "title": "Testen",
+                        "points": [
+                            "Unit en componenttests met Vitest",
+                            "Tests van begin tot eind met Playwright, op desktop en mobiel",
+                            "Lighthouse CI op prestaties, toegankelijkheid en SEO"
+                        ]
+                    },
+                    {
+                        "title": "DevOps en CI/CD",
+                        "points": [
+                            "Lint, typecontroles en tests bewaken elke commit",
+                            "Elke wijziging op main wordt vanzelf gebouwd en uitgerold",
+                            "Versiebeheer en een controleerbare geschiedenis voor elke wijziging"
+                        ]
+                    }
+                ],
+                "figures": {
+                    "pagespeed": "PageSpeed prestatiescore op mobiel, met 100 voor toegankelijkheid, best practices en SEO",
+                    "tests": {
+                        "value": "2.036",
+                        "label": "geautomatiseerde tests voor elke release"
+                    },
+                    "checks": {
+                        "value": "19",
+                        "label": "automatische controles bij elke commit, inclusief een scan op geheimen"
+                    },
+                    "languages": "talen, elke pagina in elke taal gecontroleerd voordat hij live gaat"
+                },
+                "footnote": "Cijfers van hlorenzoz.com: PageSpeed Insights op mobiel, 25 november 2026; tests en controles per 26 november 2026.",
+                "linkLabel": "Draai PageSpeed zelf"
             }
         }
     }

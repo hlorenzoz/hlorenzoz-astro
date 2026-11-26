@@ -35,7 +35,7 @@ describe('HomePage: partner positioning landing', () => {
     it('leads with the partner hero, the free needs analysis CTA and its microcopy', () => {
         expect($('h1')).toHaveTextContent(`${home.hero.title} ${home.hero.titleGradient}`);
         expect(screen.getByText(home.hero.description)).toBeInTheDocument();
-        expect(screen.getByRole('link', { name: home.hero.cta })).toHaveAttribute('href', '#contact');
+        expect(within($('#home') as HTMLElement).getByRole('link', { name: home.hero.cta })).toHaveAttribute('href', '#contact');
         expect(screen.getByText(home.hero.note)).toBeInTheDocument();
     });
 
@@ -107,9 +107,45 @@ describe('HomePage: partner positioning landing', () => {
         expect(screen.getByText(messages.services.aiVoiceReceptionist.name, { selector: '#solutions h3' })).toBeInTheDocument();
     });
 
-    it('keeps the portfolio carousel and the benefits section', () => {
+    it('keeps the portfolio carousel and contrasts today with working with us in the benefits', () => {
         expect($('#portfolio')).not.toBeNull();
-        expect($$('#benefits h3')).toHaveLength(home.benefits.items.length);
+        const benefits = $('#benefits')!;
+        expect(benefits.querySelectorAll('h3')).toHaveLength(home.benefits.items.length);
+        for (const item of home.benefits.items) {
+            expect(benefits).toHaveTextContent(item.today);
+            expect(benefits).toHaveTextContent(item.withUs);
+        }
+        const journey = Array.from(benefits.querySelectorAll('[data-benefit-journey] > li'));
+        expect(journey.map((step) => step.textContent?.replace(/\s+/g, ' ').trim())).toEqual(
+            home.benefits.chips.map((chip, i) => `${String(i + 1).padStart(2, '0')}${chip}`),
+        );
+        expect(benefits.querySelector('img')).toBeNull();
+    });
+
+    it('shows what waiting costs with server rendered defaults and the dental clinic example', () => {
+        const eur = (n: number) => new Intl.NumberFormat('en', { style: 'currency', currency: 'EUR', maximumFractionDigits: 0 }).format(n);
+        const section = $('#cost-of-waiting')!;
+        const out = (name: string) => section.querySelector(`[data-output="${name}"]`)!.textContent!.trim();
+        expect(out('day')).toBe(eur(140));
+        expect(out('week')).toBe(eur(700));
+        expect(out('month')).toBe(eur((700 * 52) / 12));
+        expect(out('year')).toBe(home.costOfWaiting.yearNote.replace('{year}', eur(36400)));
+        const rows = section.querySelectorAll('tbody tr');
+        expect(rows).toHaveLength(5);
+        expect(section.querySelector('[data-example-row="implant"]')).toHaveTextContent(`${eur(1850)}${eur(9250)}${eur((9250 * 52) / 12)}`);
+        const source = within(section as HTMLElement).getByRole('link', { name: home.costOfWaiting.example.sourceLabel });
+        expect(source).toHaveAttribute('href', 'https://www.ocu.org/organizacion/prensa/notas-de-prensa/2024/saluddental271124');
+        expect(section.querySelector('[data-example-footnote]')).toHaveTextContent('27 November 2024. One lost patient');
+    });
+
+    it('explains how the fees work in three steps, without a figure for our fees', () => {
+        const section = $('#fees')!;
+        expect(section.querySelector('h2')).toHaveTextContent(home.fees.title);
+        expect(section.querySelector('form, input')).toBeNull();
+        const steps = section.querySelectorAll('ol > li');
+        expect(steps).toHaveLength(3);
+        home.fees.steps.forEach((step, i) => expect(steps[i]).toHaveTextContent(step.title));
+        expect(section).toHaveTextContent(home.fees.vat);
     });
 
     it('renders the CalBooking component in the contact section instead of an inline iframe', () => {
@@ -120,11 +156,12 @@ describe('HomePage: partner positioning landing', () => {
         expect($('#contact')).toHaveTextContent(home.contact.note);
     });
 
-    it('answers the five FAQ questions, with the up front share filled in', () => {
+    it('answers the five FAQ questions, with the fee model and no up front share', () => {
         const faq = $('#faq')!;
         expect(faq.querySelectorAll('button[aria-controls]')).toHaveLength(5);
-        expect(faq).toHaveTextContent('50% of the agreed quote');
-        expect(faq.textContent).not.toMatch(/\{upfront\}/);
+        expect(faq).toHaveTextContent(home.faq.items[3].answer);
+        expect(faq).toHaveTextContent('monthly fee tied to the results');
+        expect(faq.textContent).not.toMatch(/\{upfront\}|50%|up front/);
     });
 
     it('renders the News carousel directly above the LinkedIn articles, below the FAQ', () => {
@@ -140,14 +177,17 @@ describe('HomePage: partner positioning landing', () => {
         const ids = Array.from($$('main > section[id]')).map((s) => s.id);
         expect(ids).toEqual([
             'home', 'facts', 'problem', 'partner', 'how', 'solutions',
-            'portfolio', 'benefits', 'contact', 'faq', 'news', 'articles',
+            'portfolio', 'benefits', 'cost-of-waiting', 'fees', 'contact', 'faq', 'news', 'articles',
         ]);
     });
 
-    it('publishes no price, no pricing section and no free trial', () => {
+    it('publishes no price of ours, no pricing section and no free trial', () => {
         expect($('#pricing')).toBeNull();
         expect($('#numbers')).toBeNull();
-        expect(document.body.textContent).not.toMatch(/€\s?\d|\d\s?€/);
+        // The calculators show the visitor's figures and a dental clinic's market prices: never ours.
+        const body = document.body.cloneNode(true) as HTMLElement;
+        body.querySelectorAll('#cost-of-waiting [data-output], #cost-of-waiting table').forEach((el) => el.remove());
+        expect(body.textContent).not.toMatch(/€\s?\d|\d\s?€/);
         expect(document.body.textContent).not.toMatch(/trial|limited time/i);
     });
 

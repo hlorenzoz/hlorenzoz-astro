@@ -1,0 +1,141 @@
+---
+/**
+ * "What does doing nothing cost you?": customers lost a day times a first visit
+ * value, added up per week, month and year, then the dental clinic example.
+ * Copy: `home.costOfWaiting`; amounts and math: `lib/cost-example.ts`.
+ * The defaults are rendered on the server, so the section reads right without JS.
+ */
+import { getTranslations } from '@/lib/i18n';
+import { localeInfo } from '@/lib/site-config';
+import { DEFAULTS, DENTAL_MEDIANS, OCU_SOURCE, euroFormatter, lossFromInputs, lossPerPeriod } from '@/lib/cost-example';
+
+export interface Props {
+    locale: string;
+}
+
+const { locale } = Astro.props;
+const t = getTranslations(locale, 'home.costOfWaiting');
+const intl = localeInfo(locale).intl;
+const eur = euroFormatter(intl);
+const loss = lossFromInputs(DEFAULTS.missed, DEFAULTS.value)!;
+const published = new Intl.DateTimeFormat(intl, { dateStyle: 'long', timeZone: 'UTC' }).format(new Date(OCU_SOURCE.published));
+
+const FIELDS = [
+    { name: 'missed', label: t('missedLabel'), help: t('missedHelp'), value: DEFAULTS.missed },
+    { name: 'value', label: t('valueLabel'), help: t('valueHelp'), value: DEFAULTS.value },
+];
+const TILES = [
+    { name: 'day', label: t('dayLabel'), tone: 'bg-rose-50 border-rose-100 text-rose-700' },
+    { name: 'week', label: t('weekLabel'), tone: 'bg-red-50 border-red-100 text-red-700' },
+    { name: 'month', label: t('monthLabel'), tone: 'bg-red-900 border-red-900 text-white' },
+] as const;
+---
+
+<section id="cost-of-waiting" class="py-32 px-6 bg-white" data-cost-of-waiting data-intl={intl} data-year-template={t.raw('yearNote')}>
+    <div class="max-w-6xl mx-auto">
+        <div class="text-center max-w-3xl mx-auto mb-16">
+            <p class="text-red-700 font-extrabold tracking-[0.2em] uppercase text-[12px] mb-6">{t('eyebrow')}</p>
+            <h2 class="text-4xl md:text-6xl font-bold text-black tracking-tight leading-tight mb-8">{t('title')}</h2>
+            <p class="text-lg md:text-xl text-gray-900 font-medium leading-relaxed">{t('subtitle')}</p>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 items-start">
+            <form class="flex flex-col gap-6 bg-[#fafafa] p-8 rounded-[2rem] border border-gray-100" data-calculator>
+                {
+                    FIELDS.map((field) => (
+                        <div class="flex flex-col gap-2">
+                            <label for={`cow-${field.name}`} class="text-base font-bold text-black">{field.label}</label>
+                            <input
+                                id={`cow-${field.name}`}
+                                name={field.name}
+                                type="number"
+                                min="0"
+                                step="any"
+                                inputmode="decimal"
+                                value={field.value}
+                                aria-describedby={`cow-${field.name}-help`}
+                                class="w-full rounded-xl border border-gray-300 bg-white px-4 py-3 text-lg font-bold text-black focus:outline-none focus:ring-2 focus:ring-red-600"
+                            />
+                            <p id={`cow-${field.name}-help`} class="text-sm text-gray-600 font-medium">{field.help}</p>
+                        </div>
+                    ))
+                }
+                <p class="text-sm text-gray-700 font-medium leading-relaxed">{t('formNote')}</p>
+            </form>
+
+            <div class="flex flex-col gap-4" aria-live="polite">
+                {
+                    TILES.map((tile) => (
+                        <div class={`p-8 rounded-[2rem] border ${tile.tone}`}>
+                            <p class="text-[12px] font-extrabold uppercase tracking-[0.2em] opacity-80">{tile.label}</p>
+                            <p class="text-4xl md:text-5xl font-black tracking-tight mt-2" data-output={tile.name}>
+                                {eur.format(loss[tile.name])}
+                            </p>
+                        </div>
+                    ))
+                }
+                <p class="text-base font-bold text-black" data-output="year">{t('yearNote', { year: eur.format(loss.year) })}</p>
+            </div>
+        </div>
+
+        <div class="mt-24">
+            <h3 id="cost-example-title" class="text-2xl md:text-3xl font-bold text-black tracking-tight mb-8">{t('example.title')}</h3>
+            <div class="overflow-x-auto rounded-[2rem] border border-gray-100 shadow-[0_20px_60px_rgba(0,0,0,0.05)]">
+                <table class="w-full text-left text-sm md:text-base" aria-labelledby="cost-example-title">
+                    <thead class="bg-[#fafafa] text-black">
+                        <tr>
+                            {(['treatment', 'price', 'week', 'month'] as const).map((column) => (
+                                <th scope="col" class="px-6 py-4 font-extrabold">{t(`example.columns.${column}`)}</th>
+                            ))}
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {
+                            DENTAL_MEDIANS.map(({ key, amount }) => {
+                                const row = lossPerPeriod(amount);
+                                return (
+                                    <tr class="border-t border-gray-100" data-example-row={key}>
+                                        <th scope="row" class="px-6 py-4 font-bold text-black">{t(`example.rows.${key}`)}</th>
+                                        <td class="px-6 py-4 text-gray-900">{eur.format(amount)}</td>
+                                        <td class="px-6 py-4 font-bold text-red-700">{eur.format(row.week)}</td>
+                                        <td class="px-6 py-4 font-black text-red-900">{eur.format(row.month)}</td>
+                                    </tr>
+                                );
+                            })
+                        }
+                    </tbody>
+                </table>
+            </div>
+            <p class="mt-6 text-sm text-gray-700 font-medium leading-relaxed" data-example-footnote>
+                {t('example.footnote', { date: published })}{' '}
+                <a href={OCU_SOURCE.url} class="font-bold text-blue-800 underline hover:text-blue-600" target="_blank" rel="noopener noreferrer">{t('example.sourceLabel')}</a>
+            </p>
+        </div>
+
+        <div class="mt-16 flex flex-col items-center gap-4 text-center">
+            <a href="#contact" class="bg-blue-900 text-white text-base font-bold px-10 py-4 rounded-full shadow-glow hover:bg-blue-800">{t('cta')}</a>
+            <p class="text-sm text-gray-700 font-medium">{t('ctaNote')}</p>
+        </div>
+    </div>
+</section>
+
+<script>
+    import { euroFormatter, lossFromInputs } from '@/lib/cost-example';
+
+    document.querySelectorAll<HTMLElement>('[data-cost-of-waiting]').forEach((root) => {
+        const form = root.querySelector<HTMLFormElement>('[data-calculator]')!;
+        const eur = euroFormatter(root.dataset.intl!);
+        const yearTemplate = root.dataset.yearTemplate!;
+        const input = (name: string) => form.querySelector<HTMLInputElement>(`input[name="${name}"]`)!.valueAsNumber;
+        const output = (name: string) => root.querySelector<HTMLElement>(`[data-output="${name}"]`)!;
+
+        const update = () => {
+            const loss = lossFromInputs(input('missed'), input('value'));
+            for (const name of ['day', 'week', 'month'] as const) output(name).textContent = loss ? eur.format(loss[name]) : '-';
+            output('year').textContent = yearTemplate.replace('{year}', loss ? eur.format(loss.year) : '-');
+        };
+
+        form.addEventListener('input', update);
+        form.addEventListener('submit', (event) => event.preventDefault());
+    });
+</script>

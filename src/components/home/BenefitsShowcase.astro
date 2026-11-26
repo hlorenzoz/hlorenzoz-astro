@@ -1,0 +1,76 @@
+---
+/**
+ * "What changes for your business": the customer's path in three steps (found
+ * in search, visit turned into a contact, call answered), then three cards that
+ * contrast today with working with us. Copy: `home.benefits`. The navbar links
+ * to `#benefits`.
+ */
+import { ArrowRight, MousePointerClick, PhoneCall, Search } from '@lucide/astro';
+import { getTranslations } from '@/lib/i18n';
+
+export interface Props {
+    locale: string;
+}
+
+const { locale } = Astro.props;
+const t = getTranslations(locale, 'home.benefits');
+
+// One icon per `home.benefits.chips` entry, in order.
+const JOURNEY_ICONS = [Search, MousePointerClick, PhoneCall];
+const chips = t.raw('chips') as string[];
+const items = t.raw('items') as { title: string; today: string; withUs: string }[];
+---
+
+<section id="benefits" class="py-32 px-6 bg-[#fafafa] overflow-hidden">
+    <div class="max-w-6xl mx-auto">
+        <div class="text-center max-w-3xl mx-auto mb-16">
+            <p class="text-blue-800 font-extrabold tracking-[0.2em] uppercase text-[12px] mb-6">{t('eyebrow')}</p>
+            <h2 class="text-4xl md:text-6xl font-bold text-black tracking-tight leading-tight mb-8">
+                {t('title')} <br />
+                <span class="text-primary italic font-black">{t('titleGradient')}</span>
+            </h2>
+            <p class="text-lg md:text-xl text-gray-900 font-medium leading-relaxed">{t('subtitle')}</p>
+        </div>
+
+        <div class="relative rounded-[3rem] overflow-hidden mb-12 p-8 md:p-14 bg-[#0b0f19] shadow-2xl">
+            <div class="absolute -top-32 left-1/2 -translate-x-1/2 w-[36rem] h-[36rem] rounded-full bg-blue-600/25 blur-3xl" aria-hidden="true"></div>
+            <ol class="relative grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-10" data-benefit-journey>
+                {
+                    chips.map((chip, i) => {
+                        const Icon = JOURNEY_ICONS[i];
+                        return (
+                            <li class="relative flex flex-col items-center text-center gap-4 p-8 rounded-[2rem] bg-white/5 border border-white/10 backdrop-blur-md">
+                                <span class="text-[11px] font-black tracking-[0.2em] text-blue-300" aria-hidden="true">{String(i + 1).padStart(2, '0')}</span>
+                                <span class="w-16 h-16 rounded-2xl bg-blue-600/20 border border-blue-400/30 flex items-center justify-center text-blue-200" aria-hidden="true">
+                                    <Icon class="w-8 h-8" />
+                                </span>
+                                <span class="text-lg font-bold text-white tracking-tight">{chip}</span>
+                                {i < chips.length - 1 && (
+                                    <ArrowRight class="hidden md:block absolute -right-8 top-1/2 -translate-y-1/2 w-6 h-6 text-blue-300/70" aria-hidden="true" />
+                                )}
+                            </li>
+                        );
+                    })
+                }
+            </ol>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {
+                items.map((item) => (
+                    <article class="bg-white p-8 rounded-[2rem] border border-gray-100 shadow-[0_20px_60px_rgba(0,0,0,0.05)] flex flex-col gap-5">
+                        <h3 class="text-xl font-bold text-black tracking-tight">{item.title}</h3>
+                        <p class="text-sm text-gray-600 font-medium leading-relaxed" data-benefit-today>
+                            <span class="block text-[11px] font-extrabold uppercase tracking-[0.2em] text-gray-500 mb-1">{t('todayLabel')}</span>
+                            {item.today}
+                        </p>
+                        <p class="text-sm text-black font-semibold leading-relaxed border-l-4 border-blue-700 pl-4" data-benefit-with-us>
+                            <span class="block text-[11px] font-extrabold uppercase tracking-[0.2em] text-blue-800 mb-1">{t('withUsLabel')}</span>
+                            {item.withUs}
+                        </p>
+                    </article>
+                ))
+            }
+        </div>
+    </div>
+</section>

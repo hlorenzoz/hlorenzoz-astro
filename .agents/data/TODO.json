@@ -1158,6 +1158,43 @@
         "lib/news-data.json + messages/{en,es}.json news.items.<id> (intro y sections con imagenes reutilizadas del CDN) + public/llms.txt.",
         "Verificar con just validate, build, Lighthouse de cada noticia y JSON-LD NewsArticle."
       ]
+    },
+    {
+      "id": "#T0054",
+      "estado": "hecha",
+      "prioridad": "alta",
+      "tipo": "contenido",
+      "titulo": "Home con calculadoras (coste de esperar, coste por cliente), nuevo modelo de tarifas, SEO Local con tres pilares, seccion Como construimos en Desarrollo de Software, en 9 idiomas",
+      "anotada": "2026-11-26",
+      "origen": "usuario",
+      "depende": [],
+      "notas": [
+        "Detalle y specs en odd/tasks/growth-sections.md.",
+        "2026-11-26: just validate 2058 tests en verde, Playwright 88 en verde; calculadora de coste por cliente retirada a peticion del usuario; seccion What changes sin imagen; tarjetas de LinkedIn del tamano de las de noticias."
+      ],
+      "descripcion": [
+        "messages/*.json, src/components/home, src/pages/[locale]/index.astro, terms, dossier, llms.txt, AGENTS.md.",
+        "Verificar con just validate, build, Playwright y revision independiente."
+      ],
+      "hecha": "2026-11-26"
+    },
+    {
+      "id": "#T0055",
+      "estado": "en curso",
+      "prioridad": "alta",
+      "tipo": "contenido",
+      "titulo": "Precio de entrada de 500 EUR (implementacion previa que compromete a ambas partes), visible en la pagina y en los datos estructurados",
+      "anotada": "2026-11-26",
+      "origen": "usuario",
+      "depende": [
+        "#T0054"
+      ],
+      "notas": [
+        "El usuario eligio visible + JSON-LD: Google no admite marcar precios que no se ven en la pagina."
+      ],
+      "descripcion": [
+        "Cambia la regla de AGENTS.md de no publicar ningun precio, su test, llms.txt y el dossier."
+      ]
     }
   ]
 }

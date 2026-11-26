@@ -112,7 +112,7 @@
     "terms": {
       "payment": {
         "title": "Pagamentos",
-        "description": "Ao assinar, {upfront}% é pago antecipadamente (o primeiro mês). Cobre o custo das ferramentas e dos serviços que tornam o trabalho possível. Nos projetos de pagamento único, o valor restante é pago na conclusão e antes da entrega final."
+        "description": "Quando os serviços começam, o cliente faz um pagamento inicial acordado na proposta. A partir daí, é faturada antecipadamente uma mensalidade, cujo valor está ligado aos resultados acordados na proposta. Os orçamentos não incluem IVA."
       },
       "marketing": {
         "title": "Portfolio e casos de estudo",
@@ -195,7 +195,7 @@
           },
           "subscriptions": {
             "title": "Subscrições",
-            "description": "Os planos mensais são faturados antecipadamente todos os meses."
+            "description": "As mensalidades são faturadas antecipadamente todos os meses."
           },
           "cancellations": {
             "title": "Cancelamentos",
@@ -379,21 +379,32 @@
       }
     },
     "benefits": {
+      "eyebrow": "O que muda",
       "title": "O que muda no seu negócio",
       "titleGradient": "quando os clientes o encontram",
-      "imageAlt": "Painel de crescimento do negócio",
+      "subtitle": "Os mesmos clientes já estão a pesquisar. O que muda é quem encontram, o que veem e se alguém atende.",
+      "chips": [
+        "Encontrado na pesquisa local",
+        "Visita transformada em contacto",
+        "Chamada atendida fora de horas"
+      ],
+      "todayLabel": "Hoje",
+      "withUsLabel": "Connosco",
       "items": [
         {
           "title": "Visível onde se decide",
-          "description": "Nas pesquisas locais, no mapa e nas respostas da IA, onde os seus clientes escolhem a quem ligar."
+          "today": "Um concorrente fica com a pesquisa local.",
+          "withUs": "Aparece nas pesquisas locais, no mapa e nas respostas da IA."
         },
         {
           "title": "Cada pedido de contacto tratado",
-          "description": "Um site que transforma visitas em contactos, e chamadas atendidas mesmo quando não está disponível."
+          "today": "Os visitantes saem e as chamadas ficam sem resposta.",
+          "withUs": "As visitas passam a ser contactos e todas as chamadas são atendidas, de dia e de noite."
         },
         {
           "title": "Uma só equipa por trás",
-          "description": "Um parceiro que conhece o seu negócio, mede o que importa e ajusta o trabalho consigo."
+          "today": "Vários fornecedores e ninguém responsável.",
+          "withUs": "Um parceiro que mede o que importa e ajusta o trabalho consigo."
         }
       ]
     },
@@ -426,14 +437,68 @@
           "answer": "Não, e ninguém o pode garantir com honestidade: é o Google que decide a ordem dos resultados. Trabalhamos para lá chegar e dizemos o que é realista no seu mercado."
         },
         {
-          "question": "Porque é que uma parte é paga antecipadamente?",
-          "answer": "{upfront}% do orçamento acordado é pago no início, para cobrir as ferramentas e os serviços de que o trabalho depende."
+          "question": "Como funcionam os vossos honorários?",
+          "answer": "Um pagamento inicial baixo quando os serviços começam e, depois, uma mensalidade ligada aos resultados que lhe trazemos, acordada na proposta. São os clientes novos trazidos pela solução que a cobrem. Os orçamentos não incluem IVA."
         },
         {
           "question": "Preciso de já ter um site ou um perfil no Google?",
           "answer": "Não. Se precisar de algum dos dois, passa a fazer parte da sua solução."
         }
       ]
+    },
+    "costOfWaiting": {
+      "eyebrow": "O custo de esperar",
+      "title": "Quanto lhe custa não fazer nada?",
+      "subtitle": "Todos os dias, alguém procura o que faz, encontra primeiro um concorrente ou liga e ninguém atende. Conte os clientes que perde num dia e veja quanto isso soma.",
+      "missedLabel": "Clientes que perde em cada dia útil",
+      "missedHelp": "Chamadas perdidas, visitantes que saem, pesquisas que um concorrente ganha",
+      "valueLabel": "Quanto vale para si uma primeira visita (EUR)",
+      "valueHelp": "Só o primeiro trabalho, sem contar visitas seguintes nem recomendações",
+      "formNote": "Começa com o exemplo da clínica dentária abaixo: um paciente perdido por dia, que valia uma consulta de rotina e uma obturação. Troque esse exemplo pelos seus números. Nada do que escreve sai do seu navegador.",
+      "dayLabel": "Perdido por dia",
+      "weekLabel": "Por semana",
+      "monthLabel": "Por mês",
+      "yearNote": "{year} por ano, contando só as primeiras visitas.",
+      "example": {
+        "title": "Exemplo: uma clínica dentária que perde um paciente novo por dia",
+        "columns": {
+          "treatment": "Ao que vinha o paciente perdido",
+          "price": "Preço mediano",
+          "week": "Perda por semana",
+          "month": "Perda por mês"
+        },
+        "rows": {
+          "cleaning": "Consulta de rotina ou limpeza",
+          "filling": "Obturação",
+          "rootCanal": "Desvitalização",
+          "implant": "Implante",
+          "orthodontics": "Ortodontia"
+        },
+        "footnote": "Preços: valores medianos que os pacientes declararam pagar em Espanha, no inquérito dentário da OCU publicado a {date}. Um paciente perdido por dia útil, 5 dias úteis por semana, 52 semanas por ano. É uma ilustração do cálculo, não uma previsão nem um resultado: os números que contam são os seus.",
+        "sourceLabel": "Ler o inquérito da OCU"
+      },
+      "cta": "Marcar a sua análise gratuita",
+      "ctaNote": "Na análise descobrimos onde se estão a perder esses clientes."
+    },
+    "fees": {
+      "title": "Como funcionam os nossos honorários: quando ganha, nós ganhamos",
+      "subtitle": "Os nossos honorários são definidos quando começamos a trabalhar, a partir do que a análise mostra, para que acompanhem os resultados e não uma tabela de preços.",
+      "steps": [
+        {
+          "title": "Um pagamento inicial baixo",
+          "description": "Para arrancar, quando os serviços começam. Sem um grande investimento à partida."
+        },
+        {
+          "title": "Uma mensalidade ligada aos resultados",
+          "description": "Definida pelos resultados que lhe trazemos, acordada consigo na proposta."
+        },
+        {
+          "title": "Paga pelos clientes novos",
+          "description": "Os clientes que a nossa captação automatizada traz são os que cobrem a mensalidade."
+        }
+      ],
+      "cta": "Marcar a sua análise gratuita",
+      "vat": "Os orçamentos não incluem IVA."
     }
   },
   "news": {
@@ -1328,7 +1393,7 @@
         "title": "Sobre a Lorenzoz Agency",
         "paragraphs": [
           "A Lorenzoz Agency é um parceiro focado no sucesso dos seus clientes. Criamos soluções para negócios locais de qualquer dimensão, e o resultado que procuramos é sempre o mesmo: novos clientes e mais negócio. Começamos com uma análise gratuita das suas necessidades e depois propomos e implementamos a solução de que o negócio realmente precisa.",
-          "Essa solução combina quatro peças conforme o que cada negócio exige: desenvolvimento web, SEO local (conteúdo de autoridade, backlinks e citações, autoridade no Google e nas respostas de IA, e gestão de avaliações), um rececionista de voz com IA e desenvolvimento de software. Estamos registados em Xinzo de Limia (Ourense, Espanha) e trabalhamos online com clientes de todo o mundo, com foco na Austrália, no Canadá, na Costa Rica, na Europa, no Reino Unido e nos Estados Unidos. A divisão do trabalho é simples: o cliente foca a sua energia em prestar bem o seu próprio serviço, e nós tratamos de conquistar os seus clientes e de os acompanhar."
+          "Essa solução combina quatro peças conforme o que cada negócio exige: desenvolvimento web, SEO local (conteúdo de autoridade, autoridade no Google e nas respostas de IA, e gestão de avaliações), um rececionista de voz com IA e desenvolvimento de software. Estamos registados em Xinzo de Limia (Ourense, Espanha) e trabalhamos online com clientes de todo o mundo, com foco na Austrália, no Canadá, na Costa Rica, na Europa, no Reino Unido e nos Estados Unidos. A divisão do trabalho é simples: o cliente foca a sua energia em prestar bem o seu próprio serviço, e nós tratamos de conquistar os seus clientes e de os acompanhar."
         ]
       }
     },
@@ -1768,8 +1833,8 @@
   "services": {
     "hub": {
       "eyebrow": "O que fazemos",
-      "title": "Um plano, e o que o complementa",
-      "subtitle": "O SEO local é a oferta principal: um único plano mensal que traz clientes locais vindos do Google e da IA. Desenvolvimento web, Rececionista de voz com IA e Desenvolvimento de software são opcionais.",
+      "title": "Soluções à medida do seu negócio",
+      "subtitle": "Começamos com uma análise gratuita das suas necessidades e depois combinamos os serviços de que o seu negócio precisa numa só solução que lhe traz clientes novos.",
       "cta": "Ver os serviços"
     },
     "quoted": "Orçamento à medida do seu projeto",
@@ -1786,15 +1851,11 @@
         "cta": "Marcar a sua análise gratuita"
       },
       "benefits": {
-        "title": "Quatro frentes que avançam em conjunto",
+        "title": "Três frentes que avançam em conjunto",
         "items": [
           {
             "title": "Conteúdo de autoridade",
             "description": "Estudo de keywords por localização, clusters de conteúdo, análise de lacunas e atualização do que já tem, para que se torne a referência no seu tema."
-          },
-          {
-            "title": "Backlinks e citações",
-            "description": "Links de diretórios de confiança e citações em sites relevantes, os sinais de autoridade local em que o Google e os motores de IA se baseiam."
           },
           {
             "title": "Autoridade no Google e na IA",
@@ -1816,15 +1877,6 @@
               "Clusters de conteúdo",
               "Análise de lacunas de conteúdo",
               "Atualização do conteúdo existente"
-            ]
-          },
-          {
-            "label": "Backlinks e citações",
-            "items": [
-              "Links de diretórios de confiança",
-              "Citações em sites relevantes",
-              "Sinais de autoridade local mais fortes",
-              "Para o Google e para os motores de IA"
             ]
           },
           {
@@ -1863,7 +1915,7 @@
           {
             "number": "03",
             "title": "O trabalho",
-            "description": "Conteúdo, citações, autoridade e avaliações avançam em paralelo."
+            "description": "Conteúdo, autoridade e avaliações avançam em paralelo."
           },
           {
             "number": "04",
@@ -2469,7 +2521,7 @@
       "ai": {
         "eyebrow": "Pesquisa com IA",
         "title": "Recomendado nas respostas da IA, não só no Google",
-        "text": "Cada vez mais pessoas perguntam ao ChatGPT, ao Gemini ou ao Perplexity a que negócio devem ligar. Estes assistentes constroem as respostas a partir do que a web diz sobre si: o seu site, os seus perfis, as suas citações e as suas avaliações. Garantimos que tudo isso é claro, coerente e fácil de ler para eles, incluindo um resumo do seu negócio em llms.txt.",
+        "text": "Cada vez mais pessoas perguntam ao ChatGPT, ao Gemini ou ao Perplexity a que negócio devem ligar. Estes assistentes constroem as respostas a partir do que a web diz sobre si: o seu site, os seus perfis e as suas avaliações. Garantimos que tudo isso é claro, coerente e fácil de ler para eles, incluindo um resumo do seu negócio em llms.txt.",
         "tiles": [
           {
             "title": "Dados coerentes",
@@ -2480,8 +2532,8 @@
             "text": "Respostas às perguntas que as pessoas fazem"
           },
           {
-            "title": "Citações de confiança",
-            "text": "Menções em sites em que as ferramentas de IA confiam"
+            "title": "Avaliações recentes",
+            "text": "O que os seus clientes dizem, sempre atualizado"
           }
         ],
         "llms": {
@@ -2601,6 +2653,67 @@
       "close": {
         "title": "Fale connosco sobre o que precisa de construir",
         "subtitle": "Numa chamada gratuita de 15 minutos analisamos o problema e dizemos como o resolveríamos."
+      },
+      "build": {
+        "eyebrow": "Como construímos",
+        "title": "Feito para se manter seguro, rápido e online",
+        "subtitle": "Cada produto que entregamos passa pelo mesmo processo de engenharia que usamos no nosso próprio site. Os números abaixo vêm daí, e pode confirmar esses números por si.",
+        "items": [
+          {
+            "title": "Segurança",
+            "points": [
+              "Nenhum código de servidor a correr por trás do site",
+              "Cada commit analisado à procura de segredos e chaves privadas",
+              "Servido por HTTPS a partir da rede da Cloudflare"
+            ]
+          },
+          {
+            "title": "Eficiência",
+            "points": [
+              "Páginas publicadas quase sem JavaScript",
+              "Imagens redimensionadas e servidas por uma CDN",
+              "Core Web Vitals verificadas antes de cada lançamento"
+            ]
+          },
+          {
+            "title": "Automação",
+            "points": [
+              "Compilações, verificações e lançamentos correm sem passos manuais",
+              "Trabalho repetitivo automatizado com scripts, não feito à mão",
+              "Ficheiros gerados a partir de uma única fonte de verdade"
+            ]
+          },
+          {
+            "title": "Testes",
+            "points": [
+              "Testes unitários e de componentes com Vitest",
+              "Testes de ponta a ponta com Playwright, em computador e telemóvel",
+              "Lighthouse CI em desempenho, acessibilidade e SEO"
+            ]
+          },
+          {
+            "title": "DevOps e CI/CD",
+            "points": [
+              "Lint, verificação de tipos e testes controlam cada commit",
+              "Cada alteração em main é compilada e publicada sozinha",
+              "Controlo de versões e um histórico revisível de cada alteração"
+            ]
+          }
+        ],
+        "figures": {
+          "pagespeed": "de desempenho no PageSpeed em telemóvel, com 100 em acessibilidade, boas práticas e SEO",
+          "tests": {
+            "value": "2036",
+            "label": "testes automáticos executados antes de cada lançamento"
+          },
+          "checks": {
+            "value": "19",
+            "label": "verificações automáticas em cada commit, incluindo a pesquisa de segredos"
+          },
+          "languages": "idiomas, e cada página é verificada em todos antes de ser publicada"
+        },
+        "footnote": "Números de hlorenzoz.com: PageSpeed Insights em telemóvel, 25 de novembro de 2026; testes e verificações a 26 de novembro de 2026.",
+        "linkLabel": "Experimente o PageSpeed por si"
       }
     }
   }

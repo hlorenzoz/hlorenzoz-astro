@@ -9,20 +9,10 @@ import Breadcrumbs from '@/src/components/Breadcrumbs.astro';
 import { getTranslations } from '@/lib/i18n';
 import { legalCrumbs, legalMetadata, legalPageSchema, type LegalPageConfig } from '@/lib/legal-page';
 import { routeLocales } from '@/lib/routes';
-import { UPFRONT_SHARE } from '@/lib/pricing';
 
 export function getStaticPaths() {
     return routeLocales('terms-conditions').map((locale) => ({ params: { locale } }));
 }
-
-/**
- * The percentage the legal copy states, from `lib/pricing.ts`. Typed into the
- * message file it would be a second copy of a term, free to disagree with the
- * first.
- */
-const TERMS_TOKENS = {
-    upfront: Math.round(UPFRONT_SHARE * 100),
-};
 
 const LEGAL: LegalPageConfig = {
     slug: 'terms-conditions',
@@ -137,7 +127,7 @@ const pageSchema = await legalPageSchema(locale, LEGAL, crumbs);
                                                     <Icon class="w-6 h-6 text-blue-700" />
                                                     <p class="text-sm font-black uppercase tracking-widest text-black m-0">{t(titleKey)}</p>
                                                 </div>
-                                                <p class="text-sm text-gray-500 font-medium m-0 leading-relaxed">{t(descKey, TERMS_TOKENS)}</p>
+                                                <p class="text-sm text-gray-500 font-medium m-0 leading-relaxed">{t(descKey)}</p>
                                             </div>
                                         );
                                     })}

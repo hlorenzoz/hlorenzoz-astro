@@ -78,7 +78,7 @@
     "eyebrow": "Pieza 1 de 4",
     "name": "SEO Local",
     "title": "Primero en Google, recomendado por la IA",
-    "description": "El trabajo que hace visible a tu negocio en las búsquedas locales de Google y en las respuestas de los motores de IA. Cuando el SEO Local forma parte de tu solución, incluye sus cuatro pilares.",
+    "description": "El trabajo que hace visible a tu negocio en las búsquedas locales de Google y en las respuestas de los motores de IA. Cuando el SEO Local forma parte de tu solución, incluye sus tres pilares.",
     "pillars": [
       {
         "title": "Contenido de autoridad",
@@ -88,16 +88,6 @@
           "Clústeres de contenido",
           "Análisis de gaps de contenido",
           "Actualización del contenido existente"
-        ]
-      },
-      {
-        "title": "Backlinks y citaciones",
-        "description": "Presencia en directorios y sitios de citaciones de confianza.",
-        "items": [
-          "Enlaces desde directorios de confianza",
-          "Citaciones en sitios relevantes",
-          "Señales de autoridad local más fuertes",
-          "Para Google y para los motores de IA"
         ]
       },
       {
@@ -187,8 +177,8 @@
         "description": "No publicamos tarifas. Cada solución se presupuesta tras el análisis de necesidades gratuito, según lo que necesita tu negocio."
       },
       {
-        "title": "{upfront}% por adelantado",
-        "description": "Se abona por adelantado el {upfront}% del presupuesto acordado. Cubre los gastos de las herramientas y servicios que hacen posible el trabajo."
+        "title": "Pago inicial y cuota mensual",
+        "description": "Un pago inicial bajo al comenzar los servicios y, después, una cuota mensual ligada a los resultados que te traemos, acordada en la propuesta. Los clientes nuevos que trae la solución son los que la cubren."
       },
       {
         "title": "Presupuestos sin IVA",

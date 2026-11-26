@@ -99,8 +99,9 @@ const STATIC_ROUTES: readonly SiteRoute[] = [
     // '': `null` is not a valid `findRoute` key and would break
     // `breadcrumbTrail`'s parent-chain walk.
     //
-    // Local SEO is listed first on purpose: it is the core offer, and this
-    // order is the order the hub and the sitemaps present the services in.
+    // This is the order the sitemaps and the child links present the services
+    // in. None of the four is a core offer: they are building blocks of one
+    // tailored solution (AGENTS.md).
     { path: 'services', tier: 'category', labelKey: 'navigation.services', copyKeys: ['services.hub'], lastModified: '2026-11-26', parent: '' },
     { path: 'services/local-seo', tier: 'service', labelKey: 'services.localSeo.name', copyKeys: SERVICE_KEYS('localSeo'), lastModified: '2026-11-26', parent: 'services' },
     { path: 'services/website-development', tier: 'service', labelKey: 'services.websiteDevelopment.name', copyKeys: SERVICE_KEYS('websiteDevelopment', 'services.quoted', ...LIVE_SITE_CASE_STUDIES.flatMap(({ item }) => [`portfolio.${item.id}.title`, `portfolio.${item.id}.badge`])), lastModified: '2026-11-26', parent: 'services' },

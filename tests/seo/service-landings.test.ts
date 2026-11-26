@@ -42,7 +42,7 @@ const PAGES = [
         key: 'localSeo',
         sections: [
             'We look at your market before we touch anything',
-            'Four fronts, moving forward together',
+            'Three fronts, moving forward together',
             'Give Google the facts, not guesses',
             'Recommended in AI answers, not only on Google',
             'More reviews, gathered the right way',
@@ -75,6 +75,7 @@ const PAGES = [
         sections: [
             'Investep App: one codebase, every screen',
             'Built like a product, not a prototype',
+            'Engineered to stay secure, fast and online',
             'How to scale a single codebase to every device',
             'From idea to product',
             'Frequently asked questions',
@@ -82,6 +83,7 @@ const PAGES = [
             'Tell us what you need to build',
         ],
         links: [
+            PAGESPEED,
             'https://investep.hlorenzoz.com/',
             '/en/portfolio/investep-app/',
             'https://www.linkedin.com/pulse/how-scale-single-codebase-every-device-inside-modern-hector-luis-7vt0e',

@@ -158,21 +158,32 @@
             }
         },
         "benefits": {
+            "eyebrow": "Was sich ändert",
             "title": "Was sich für Ihr Unternehmen ändert,",
             "titleGradient": "wenn man Sie finden kann",
-            "imageAlt": "Dashboard zum Unternehmenswachstum",
+            "subtitle": "Dieselben Kunden suchen bereits. Was sich ändert: wen sie finden, was sie sehen und ob jemand antwortet.",
+            "chips": [
+                "In der lokalen Suche gefunden",
+                "Aus dem Besuch wird ein Kontakt",
+                "Anruf auch nach Feierabend angenommen"
+            ],
+            "todayLabel": "Heute",
+            "withUsLabel": "Mit uns",
             "items": [
                 {
                     "title": "Sichtbar, wo die Entscheidung fällt",
-                    "description": "In der lokalen Suche, auf der Karte und in den Antworten der KI, genau dort, wo Ihre Kunden entscheiden, wen sie anrufen."
+                    "today": "Ein Wettbewerber gewinnt die lokale Suche.",
+                    "withUs": "Sie erscheinen in der lokalen Suche, auf der Karte und in Antworten von KI."
                 },
                 {
                     "title": "Keine Anfrage geht verloren",
-                    "description": "Eine Website, die aus Besuchen Kontakte macht, und Anrufe, die angenommen werden, auch wenn Sie selbst nicht rangehen können."
+                    "today": "Besucher gehen wieder, und Anrufe bleiben unbeantwortet.",
+                    "withUs": "Aus Besuchen werden Kontakte, und jeder Anruf wird angenommen, Tag und Nacht."
                 },
                 {
                     "title": "Ein Team, das dahintersteht",
-                    "description": "Ein Partner, der Ihr Unternehmen kennt, misst, was zählt, und die Arbeit gemeinsam mit Ihnen anpasst."
+                    "today": "Mehrere Dienstleister, und niemand ist verantwortlich.",
+                    "withUs": "Ein Partner, der misst, was zählt, und die Arbeit gemeinsam mit Ihnen anpasst."
                 }
             ]
         },
@@ -205,14 +216,68 @@
                     "answer": "Nein, und ehrlicherweise kann das niemand: Google entscheidet selbst über sein Ranking. Wir arbeiten darauf hin und sagen Ihnen, was in Ihrem Markt realistisch ist."
                 },
                 {
-                    "question": "Warum wird ein Teil im Voraus bezahlt?",
-                    "answer": "{upfront}% des vereinbarten Angebots werden zu Beginn gezahlt, um die Tools und Dienste zu decken, von denen die Arbeit abhängt."
+                    "question": "Wie funktionieren Ihre Honorare?",
+                    "answer": "Eine niedrige Anfangszahlung, wenn die Leistungen beginnen, danach eine monatliche Gebühr, die an die Ergebnisse gekoppelt ist, die wir Ihnen bringen, und im Angebot vereinbart wird. Gedeckt wird sie durch die neuen Kunden, die die Lösung bringt. Angebote verstehen sich zzgl. MwSt."
                 },
                 {
                     "question": "Brauche ich schon eine Website oder ein Profil bei Google?",
                     "answer": "Nein. Wenn Sie eines davon brauchen, wird es Teil Ihrer Lösung."
                 }
             ]
+        },
+        "costOfWaiting": {
+            "eyebrow": "Was Warten kostet",
+            "title": "Was kostet es Sie, nichts zu tun?",
+            "subtitle": "Jeden Tag sucht jemand nach dem, was Sie anbieten, findet zuerst einen Wettbewerber oder ruft an, und niemand nimmt ab. Zählen Sie die Kunden, die Sie an einem Tag verlieren, und sehen Sie, was sich daraus ergibt.",
+            "missedLabel": "Kunden, die Sie pro Arbeitstag verlieren",
+            "missedHelp": "Verpasste Anrufe, Besucher, die wieder gehen, Suchen, die ein Wettbewerber gewinnt",
+            "valueLabel": "Was Ihnen ein erster Besuch wert ist (EUR)",
+            "valueHelp": "Nur der erste Auftrag, ohne spätere Besuche oder Empfehlungen",
+            "formNote": "Ausgangspunkt ist das Beispiel der Zahnarztpraxis weiter unten: ein verlorener Patient pro Tag, der für eine Kontrolle und eine Füllung gekommen wäre. Ersetzen Sie es durch Ihre eigenen Zahlen. Nichts, was Sie eingeben, verlässt Ihren Browser.",
+            "dayLabel": "Verlust pro Tag",
+            "weekLabel": "Pro Woche",
+            "monthLabel": "Pro Monat",
+            "yearNote": "{year} pro Jahr, nur erste Besuche gerechnet.",
+            "example": {
+                "title": "Beispiel: eine Zahnarztpraxis, die jeden Tag einen neuen Patienten verliert",
+                "columns": {
+                    "treatment": "Weswegen der verlorene Patient kam",
+                    "price": "Medianpreis",
+                    "week": "Verlust pro Woche",
+                    "month": "Verlust pro Monat"
+                },
+                "rows": {
+                    "cleaning": "Kontrolle oder Zahnreinigung",
+                    "filling": "Füllung",
+                    "rootCanal": "Wurzelbehandlung",
+                    "implant": "Implantat",
+                    "orthodontics": "Kieferorthopädie"
+                },
+                "footnote": "Preise: Medianbeträge, die Patienten in Spanien laut der am {date} veröffentlichten Zahnarztumfrage der OCU gezahlt haben. Ein verlorener Patient pro Arbeitstag, 5 Arbeitstage pro Woche, 52 Wochen pro Jahr. Eine Veranschaulichung der Rechnung, keine Prognose und kein Ergebnis: Entscheidend sind Ihre eigenen Zahlen.",
+                "sourceLabel": "Zur Umfrage der OCU"
+            },
+            "cta": "Kostenlose Bedarfsanalyse buchen",
+            "ctaNote": "In der Analyse finden wir heraus, wo diese Kunden verloren gehen."
+        },
+        "fees": {
+            "title": "So funktionieren unsere Honorare: Wenn Sie gewinnen, gewinnen wir",
+            "subtitle": "Unsere Honorare werden zu Beginn der Zusammenarbeit auf Grundlage der Analyse festgelegt, damit sie sich an den Ergebnissen orientieren statt an einer Preisliste.",
+            "steps": [
+                {
+                    "title": "Eine niedrige Anfangszahlung",
+                    "description": "Zum Start, wenn die Leistungen beginnen. Keine große Investition am Anfang."
+                },
+                {
+                    "title": "Eine monatliche Gebühr, an Ergebnisse gekoppelt",
+                    "description": "Bemessen an den Ergebnissen, die wir Ihnen bringen, und mit Ihnen im Angebot vereinbart."
+                },
+                {
+                    "title": "Bezahlt durch die neuen Kunden",
+                    "description": "Die Kunden, die unsere automatisierte Kundengewinnung bringt, decken die monatliche Gebühr."
+                }
+            ],
+            "cta": "Kostenlose Bedarfsanalyse buchen",
+            "vat": "Angebote verstehen sich zzgl. MwSt."
         }
     },
     "footer": {
@@ -299,7 +364,7 @@
         "terms": {
             "payment": {
                 "title": "Zahlungen",
-                "description": "Bei Vertragsabschluss werden {upfront}% im Voraus gezahlt (der erste Monat). Damit sind die Kosten für die Tools und Dienste gedeckt, die die Arbeit möglich machen. Bei Projekten mit Einmalzahlung ist der Restbetrag bei Fertigstellung und vor der endgültigen Übergabe fällig."
+                "description": "Zu Beginn der Leistungen leistet der Kunde eine im Angebot vereinbarte Anfangszahlung. Danach wird eine monatliche Gebühr im Voraus abgerechnet; ihre Höhe ist an die im Angebot vereinbarten Ergebnisse gekoppelt. Angebote verstehen sich zzgl. MwSt."
             },
             "marketing": {
                 "title": "Portfolio und Fallstudien",
@@ -382,7 +447,7 @@
                     },
                     "subscriptions": {
                         "title": "Abonnements",
-                        "description": "Monatliche Pläne werden jeden Monat im Voraus abgerechnet."
+                        "description": "Monatliche Gebühren werden jeden Monat im Voraus abgerechnet."
                     },
                     "cancellations": {
                         "title": "Kündigungen",
@@ -1545,7 +1610,7 @@
                 "title": "Über Lorenzoz Agency",
                 "paragraphs": [
                     "Lorenzoz Agency ist ein Partner, der sich auf den Erfolg seiner Kunden konzentriert. Wir entwickeln Lösungen für lokale Unternehmen jeder Größe, und das Ergebnis, auf das wir hinarbeiten, ist immer dasselbe: neue Kunden und mehr Geschäft. Wir beginnen mit einer kostenlosen Bedarfsanalyse und schlagen dann die Lösung vor, die das Unternehmen wirklich braucht, und setzen sie um.",
-                    "Diese Lösung kombiniert vier Bausteine, je nachdem, was ein Unternehmen braucht: Webentwicklung, lokales SEO (Inhalte mit Autorität, Backlinks und Brancheneinträge, Autorität bei Google und in Antworten von KI sowie Bewertungsmanagement), einen Telefonassistenten mit KI und Softwareentwicklung. Wir sind in Xinzo de Limia (Ourense, Spanien) eingetragen und arbeiten online mit Kunden weltweit, mit Schwerpunkt auf Australien, Kanada, Costa Rica, Europa, dem Vereinigten Königreich und den Vereinigten Staaten. Die Arbeitsteilung ist einfach: Der Kunde konzentriert sich darauf, seine eigene Leistung gut zu erbringen, und wir kümmern uns darum, ihm Kunden zu gewinnen und sie zu betreuen."
+                    "Diese Lösung kombiniert vier Bausteine, je nachdem, was ein Unternehmen braucht: Webentwicklung, lokales SEO (Inhalte mit Autorität, Autorität bei Google und in Antworten von KI sowie Bewertungsmanagement), einen Telefonassistenten mit KI und Softwareentwicklung. Wir sind in Xinzo de Limia (Ourense, Spanien) eingetragen und arbeiten online mit Kunden weltweit, mit Schwerpunkt auf Australien, Kanada, Costa Rica, Europa, dem Vereinigten Königreich und den Vereinigten Staaten. Die Arbeitsteilung ist einfach: Der Kunde konzentriert sich darauf, seine eigene Leistung gut zu erbringen, und wir kümmern uns darum, ihm Kunden zu gewinnen und sie zu betreuen."
                 ]
             }
         },
@@ -1768,8 +1833,8 @@
     "services": {
         "hub": {
             "eyebrow": "Unsere Leistungen",
-            "title": "Ein Plan und alles, was ihn ergänzt",
-            "subtitle": "Lokales SEO ist unser Kernangebot: ein monatlicher Plan, der Ihnen Kunden aus Ihrer Region über Google und KI bringt. Webentwicklung, Telefonassistent mit KI und Softwareentwicklung sind optional.",
+            "title": "Lösungen rund um Ihr Unternehmen",
+            "subtitle": "Wir beginnen mit einer kostenlosen Bedarfsanalyse und kombinieren dann die Leistungen, die Ihr Unternehmen braucht, zu einer Lösung, die Ihnen neue Kunden bringt.",
             "cta": "Leistungen ansehen"
         },
         "quoted": "Individuelles Angebot für Ihr Projekt",
@@ -1786,15 +1851,11 @@
                 "cta": "Kostenlose Bedarfsanalyse buchen"
             },
             "benefits": {
-                "title": "Vier Bereiche, die gemeinsam vorankommen",
+                "title": "Drei Bereiche, die gemeinsam vorankommen",
                 "items": [
                     {
                         "title": "Inhalte mit Autorität",
                         "description": "Keywordrecherche nach Standort, Themencluster, Analyse von Inhaltslücken und Aktualisierung Ihrer bestehenden Inhalte, damit Sie zur Referenz für Ihr Thema werden."
-                    },
-                    {
-                        "title": "Backlinks und Brancheneinträge",
-                        "description": "Links aus vertrauenswürdigen Verzeichnissen und Erwähnungen auf relevanten Websites: die lokalen Autoritätssignale, auf die sich Google und KI stützen."
                     },
                     {
                         "title": "Autorität bei Google und KI",
@@ -1816,15 +1877,6 @@
                             "Themencluster",
                             "Analyse von Inhaltslücken",
                             "Aktualisierung bestehender Inhalte"
-                        ]
-                    },
-                    {
-                        "label": "Backlinks und Brancheneinträge",
-                        "items": [
-                            "Links aus vertrauenswürdigen Verzeichnissen",
-                            "Erwähnungen auf relevanten Websites",
-                            "Stärkere lokale Autoritätssignale",
-                            "Für Google und für KI"
                         ]
                     },
                     {
@@ -1863,7 +1915,7 @@
                     {
                         "number": "03",
                         "title": "Die Umsetzung",
-                        "description": "Inhalte, Brancheneinträge, Autorität und Bewertungen kommen parallel voran."
+                        "description": "Inhalte, Autorität und Bewertungen kommen parallel voran."
                     },
                     {
                         "number": "04",
@@ -2469,7 +2521,7 @@
             "ai": {
                 "eyebrow": "Suche mit KI",
                 "title": "Empfohlen in Antworten von KI, nicht nur bei Google",
-                "text": "Immer mehr Menschen fragen ChatGPT, Gemini oder Perplexity, welches Unternehmen sie anrufen sollen. Diese Assistenten bauen ihre Antworten aus dem, was das Web über Sie sagt: Ihre Website, Ihre Profile, Ihre Brancheneinträge und Ihre Bewertungen. Wir sorgen dafür, dass all das klar, einheitlich und für sie leicht lesbar ist, einschließlich einer Zusammenfassung Ihres Unternehmens in llms.txt.",
+                "text": "Immer mehr Menschen fragen ChatGPT, Gemini oder Perplexity, welches Unternehmen sie anrufen sollen. Diese Assistenten bauen ihre Antworten aus dem, was das Web über Sie sagt: Ihre Website, Ihre Profile und Ihre Bewertungen. Wir sorgen dafür, dass all das klar, einheitlich und für sie leicht lesbar ist, einschließlich einer Zusammenfassung Ihres Unternehmens in llms.txt.",
                 "tiles": [
                     {
                         "title": "Einheitliche Angaben",
@@ -2480,8 +2532,8 @@
                         "text": "Antworten auf die Fragen, die Menschen stellen"
                     },
                     {
-                        "title": "Vertrauenswürdige Erwähnungen",
-                        "text": "Nennungen auf Websites, auf die sich KI stützt"
+                        "title": "Aktuelle Bewertungen",
+                        "text": "Was Ihre Kunden sagen, immer auf dem neuesten Stand"
                     }
                 ],
                 "llms": {
@@ -2601,6 +2653,67 @@
             "close": {
                 "title": "Erzählen Sie uns, was Sie bauen möchten",
                 "subtitle": "In einem kostenlosen Gespräch von 15 Minuten sehen wir uns das Problem an und sagen Ihnen, wie wir es lösen würden."
+            },
+            "build": {
+                "eyebrow": "Wie wir entwickeln",
+                "title": "Entwickelt, um sicher, schnell und online zu bleiben",
+                "subtitle": "Jedes Produkt, das wir liefern, durchläuft denselben Entwicklungsprozess wie unsere eigene Website. Die Zahlen unten stammen daraus, und Sie können sie selbst prüfen.",
+                "items": [
+                    {
+                        "title": "Sicherheit",
+                        "points": [
+                            "Kein Servercode, der hinter der Website läuft",
+                            "Jeder Commit wird auf Secrets und private Schlüssel geprüft",
+                            "Ausgeliefert über HTTPS aus dem Netzwerk von Cloudflare"
+                        ]
+                    },
+                    {
+                        "title": "Effizienz",
+                        "points": [
+                            "Seiten kommen fast ohne JavaScript aus",
+                            "Bilder werden von einem CDN skaliert und ausgeliefert",
+                            "Core Web Vitals werden vor jeder Veröffentlichung geprüft"
+                        ]
+                    },
+                    {
+                        "title": "Automatisierung",
+                        "points": [
+                            "Builds, Prüfungen und Releases laufen ohne manuelle Schritte",
+                            "Wiederkehrende Arbeit ist automatisiert statt Handarbeit",
+                            "Generierte Dateien entstehen aus einer einzigen Quelle"
+                        ]
+                    },
+                    {
+                        "title": "Tests",
+                        "points": [
+                            "Unittests und Komponententests mit Vitest",
+                            "Tests über den gesamten Ablauf mit Playwright, auf Desktop und Mobilgeräten",
+                            "Lighthouse CI für Performance, Barrierefreiheit und SEO"
+                        ]
+                    },
+                    {
+                        "title": "DevOps und CI/CD",
+                        "points": [
+                            "Lint, Typprüfung und Tests sichern jeden Commit ab",
+                            "Jede Änderung an main wird automatisch gebaut und ausgeliefert",
+                            "Versionskontrolle und eine nachvollziehbare Historie für jede Änderung"
+                        ]
+                    }
+                ],
+                "figures": {
+                    "pagespeed": "PageSpeed Performance auf Mobilgeräten, dazu 100 bei Barrierefreiheit, Best Practices und SEO",
+                    "tests": {
+                        "value": "2.036",
+                        "label": "automatisierte Tests vor jeder Veröffentlichung"
+                    },
+                    "checks": {
+                        "value": "19",
+                        "label": "automatische Prüfungen bei jedem Commit, einschließlich der Suche nach Secrets"
+                    },
+                    "languages": "Sprachen, jede Seite wird vor der Veröffentlichung in jeder davon geprüft"
+                },
+                "footnote": "Zahlen von hlorenzoz.com: PageSpeed Insights auf Mobilgeräten, 25. November 2026; Tests und Prüfungen mit Stand vom 26. November 2026.",
+                "linkLabel": "PageSpeed selbst testen"
             }
         }
     }

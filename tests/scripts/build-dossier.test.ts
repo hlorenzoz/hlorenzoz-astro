@@ -52,6 +52,18 @@ describe('the dossier prints no price', () => {
         expect(render('es')).toContain('se presupuesta tras el análisis de necesidades gratuito');
         expect(render('es')).toContain('no incluyen IVA');
     });
+
+    it.each(['es', 'en'] as const)('states the fee model, an initial payment then a monthly fee, with no share (%s)', (locale) => {
+        const html = render(locale);
+        // The CSS uses percentages (50% radii, gradient stops), so match the copy's wording.
+        expect(html).not.toMatch(/\d\s?% (of|up|del|por)/i);
+        expect(html).not.toMatch(/up front|por adelantado/i);
+    });
+
+    it('describes the initial payment and the monthly fee tied to results', () => {
+        expect(render('en')).toContain('A low initial payment when the services start, then a monthly fee tied to the results we bring you');
+        expect(render('es')).toContain('Un pago inicial bajo al comenzar los servicios y, después, una cuota mensual ligada a los resultados');
+    });
 });
 
 /**
@@ -65,7 +77,8 @@ describe('the dossier tells the partner model', () => {
 
     it('presents Local SEO and then the other three services, in the order the site lists them', () => {
         for (const content of [esContent, enContent]) {
-            expect(content.localSeo.pillars).toHaveLength(4);
+            expect(content.localSeo.pillars).toHaveLength(3);
+            expect(JSON.stringify(content.localSeo)).not.toMatch(/backlink|citation|citaci/i);
             expect(content.blocks.items.map((item) => item.key)).toEqual(SERVICE_KEYS.slice(1));
         }
         expect(SERVICE_KEYS[0]).toBe('localSeo');

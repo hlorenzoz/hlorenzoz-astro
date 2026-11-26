@@ -4,8 +4,8 @@
  *
  * Fills `dossier/template.html` (the print stylesheet that mirrors the site's
  * look) with the copy in `dossier/content.<locale>.json`, the contact details
- * from `lib/site-config.ts` and the up front share from `lib/pricing.ts` (the
- * same source the site reads, so the two cannot disagree), then prints it to A4 with
+ * from `lib/site-config.ts` (the same source the site reads, so the two cannot
+ * disagree), then prints it to A4 with
  * the Chromium that Playwright already ships for the E2E suite. No runtime
  * dependency is added for this.
  *
@@ -21,7 +21,6 @@ import process from 'node:process';
 import { mkdirSync, readFileSync, writeFileSync } from 'node:fs';
 import { join } from 'node:path';
 import { pathToFileURL } from 'node:url';
-import { UPFRONT_SHARE } from '../lib/pricing.ts';
 
 // Resolved from the working directory, not `import.meta.url`: Vitest imports
 // this module for its pure helpers and does not always hand back a
@@ -71,7 +70,6 @@ const ICONS = {
     search: icon('<circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/>'),
     star: icon('<path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>'),
     fileText: icon('<path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="M8 13h8"/><path d="M8 17h6"/>'),
-    link: icon('<path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/>'),
     award: icon('<circle cx="12" cy="8" r="6"/><path d="M15.48 12.89 17 22l-5-3-5 3 1.52-9.11"/>'),
     mail: icon('<rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/>'),
     phone: icon('<path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>'),
@@ -81,7 +79,7 @@ const ICONS = {
     calendar: icon('<rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4"/><path d="M8 2v4"/><path d="M3 10h18"/>'),
 };
 
-const PILLAR_ICONS = [ICONS.fileText, ICONS.link, ICONS.award, ICONS.star];
+const PILLAR_ICONS = [ICONS.fileText, ICONS.award, ICONS.star];
 const PROBLEM_ICONS = [ICONS.search, ICONS.globe, ICONS.phone];
 
 function checklist(items, mark = ICONS.checkCircle) {
@@ -104,7 +102,6 @@ function checklist(items, mark = ICONS.checkCircle) {
  */
 export function renderDossier({ locale, content, template, organization, markets, qrSvg }) {
     const tokens = {
-        upfront: Math.round(UPFRONT_SHARE * 100),
         opens: organization.openingHoursSpecification.opens,
         closes: organization.openingHoursSpecification.closes,
     };

@@ -2,18 +2,17 @@ import { describe, it, expect } from 'vitest';
 import { copyTokens, fillTokens, resolveFaq } from '@/lib/copy-tokens';
 
 /**
- * FAQ answers and a few other lines state a term that lives in
- * `lib/pricing.ts`. The copy carries an `{upfront}` token instead of the
- * figure, resolved here.
+ * FAQ answers are read with `t.raw`, so any `{token}` in them is resolved here
+ * rather than by the translator.
  */
 describe('fillTokens', () => {
     it('replaces every token it knows', () => {
-        expect(fillTokens('{upfront}% up front, {when}', { upfront: 50, when: 'on signing' })).toBe('50% up front, on signing');
+        expect(fillTokens('{count} visits, {when}', { count: 3, when: 'on signing' })).toBe('3 visits, on signing');
     });
 
     it('throws on a token it does not know', () => {
         // A silent blank in a sentence about terms is worse than a failed build.
-        expect(() => fillTokens('{upfrnt}% up front', { upfront: 50 })).toThrow(/upfrnt/);
+        expect(() => fillTokens('{cuont} visits', { count: 3 })).toThrow(/cuont/);
     });
 
     it('leaves text without tokens untouched', () => {
@@ -22,18 +21,27 @@ describe('fillTokens', () => {
 });
 
 describe('copyTokens', () => {
-    it('carries the up front share and no price', () => {
-        expect(copyTokens()).toEqual({ upfront: 50 });
+    it('carries no figure: the fee model states no amount', () => {
+        expect(copyTokens()).toEqual({});
+    });
+
+    it('makes a leftover {upfront} token fail instead of publishing a stale share', () => {
+        expect(() => fillTokens('{upfront}% up front', copyTokens())).toThrow(/upfront/);
     });
 });
 
 describe('resolveFaq', () => {
-    const tokens = copyTokens();
+    const tokens = { when: 'when the services start' };
 
     it('fills the tokens in both the question and the answer', () => {
         expect(
-            resolveFaq([{ question: 'Is {upfront}% paid first?', answer: 'Yes, {upfront}% up front.' }], tokens)
-        ).toEqual([{ question: 'Is 50% paid first?', answer: 'Yes, 50% up front.' }]);
+            resolveFaq([{ question: 'Paid {when}?', answer: 'Yes, {when}.' }], tokens)
+        ).toEqual([{ question: 'Paid when the services start?', answer: 'Yes, when the services start.' }]);
+    });
+
+    it('passes copy without tokens through with the real token set', () => {
+        const item = { question: 'How do I pay?', answer: 'A low initial payment, then a monthly fee.' };
+        expect(resolveFaq([item], copyTokens())).toEqual([item]);
     });
 
     it('drops anything that is not a question and answer pair', () => {
