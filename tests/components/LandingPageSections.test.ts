@@ -67,8 +67,13 @@ describe('HomePage: partner positioning landing', () => {
         expect(screen.getByText(home.markets.title)).toBeInTheDocument();
     });
 
-    it('renders four problem cards and the problem title markup', () => {
-        expect($$('#problem h3')).toHaveLength(4);
+    it('renders four problem cards, the website first, and the problem title markup', () => {
+        expect(Array.from($$('#problem h3')).map((h) => h.textContent?.trim())).toEqual([
+            'A website that does not convert',
+            'Invisible on Google',
+            'AI recommends someone else',
+            'Calls nobody answers',
+        ]);
         const title = $('#problem h2')!;
         expect(title.querySelector('span.relative.inline-block > span.bg-red-600')).not.toBeNull();
         expect(title.innerHTML).not.toMatch(/<trad>|&lt;/);

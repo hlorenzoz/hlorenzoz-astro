@@ -76,20 +76,20 @@
       "description": "La scelta si fa sulla prima schermata di Google, nella risposta di un assistente IA o in una telefonata a cui nessuno risponde. Ogni attività perde clienti in un punto diverso: è per questo che prima analizziamo.",
       "cards": [
         {
-          "title": "Invisibile su Google",
-          "description": "Se non compari quando qualcuno cerca in zona, quella chiamata va a un concorrente."
-        },
-        {
           "title": "Un sito che non converte",
           "description": "Lento, poco chiaro o in una sola lingua, perde i visitatori prima che ti contattino."
         },
         {
-          "title": "Chiamate senza risposta",
-          "description": "Fuori orario o con tutte le linee occupate, il cliente chiama semplicemente un'altra attività."
+          "title": "Invisibile su Google",
+          "description": "Se non compari quando qualcuno cerca in zona, quella chiamata va a un concorrente."
         },
         {
           "title": "L'IA consiglia qualcun altro",
           "description": "Gli assistenti rispondono con i nomi che riconoscono. Quel posto va conquistato."
+        },
+        {
+          "title": "Chiamate senza risposta",
+          "description": "Fuori orario o con tutte le linee occupate, il cliente chiama semplicemente un'altra attività."
         }
       ]
     },

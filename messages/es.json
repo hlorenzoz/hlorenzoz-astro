@@ -76,20 +76,20 @@
       "description": "La decisión se toma en la primera pantalla de Google, en la respuesta de un asistente de IA o en una llamada que nadie atiende. Cada negocio pierde clientes en un punto distinto: por eso primero analizamos.",
       "cards": [
         {
-          "title": "Invisible en Google",
-          "description": "Si no apareces cuando alguien busca cerca de ti, esa llamada se la lleva un competidor."
-        },
-        {
           "title": "Una web que no convierte",
           "description": "Lenta, confusa o en un solo idioma, pierde a las visitas antes de que te contacten."
         },
         {
-          "title": "Llamadas sin respuesta",
-          "description": "Fuera de horario o con todas las líneas ocupadas, el cliente llama sin más al siguiente negocio."
+          "title": "Invisible en Google",
+          "description": "Si no apareces cuando alguien busca cerca de ti, esa llamada se la lleva un competidor."
         },
         {
           "title": "La IA recomienda a otros",
           "description": "Los asistentes responden con los nombres que reconocen. Ese lugar hay que ganárselo."
+        },
+        {
+          "title": "Llamadas sin respuesta",
+          "description": "Fuera de horario o con todas las líneas ocupadas, el cliente llama sin más al siguiente negocio."
         }
       ]
     },

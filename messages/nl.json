@@ -76,20 +76,20 @@
             "description": "De keuze valt op het eerste scherm van Google, in het antwoord van een assistent met AI of bij een telefoontje dat niemand opneemt. Elk bedrijf verliest klanten op een andere plek: daarom kijken we eerst.",
             "cards": [
                 {
-                    "title": "Onvindbaar op Google",
-                    "description": "Verschijn je niet als iemand in de buurt zoekt, dan gaat dat telefoontje naar een concurrent."
-                },
-                {
                     "title": "Een website die niet converteert",
                     "description": "Traag, onduidelijk of maar in één taal: zo verlies je bezoekers voordat ze contact opnemen."
                 },
                 {
-                    "title": "Telefoontjes die niemand opneemt",
-                    "description": "Buiten kantooruren of met alle lijnen bezet belt de klant gewoon het volgende bedrijf."
+                    "title": "Onvindbaar op Google",
+                    "description": "Verschijn je niet als iemand in de buurt zoekt, dan gaat dat telefoontje naar een concurrent."
                 },
                 {
                     "title": "AI raadt een ander aan",
                     "description": "Assistenten noemen de namen die ze herkennen. Die plek moet je verdienen."
+                },
+                {
+                    "title": "Telefoontjes die niemand opneemt",
+                    "description": "Buiten kantooruren of met alle lijnen bezet belt de klant gewoon het volgende bedrijf."
                 }
             ]
         },

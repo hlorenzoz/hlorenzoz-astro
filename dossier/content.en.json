@@ -168,12 +168,12 @@
     "subtitle": "Every business loses customers in its own way. These are the gaps we check first, because they decide which building blocks your solution needs.",
     "problems": [
       {
-        "title": "Invisible on Google and AI",
-        "description": "If your business does not show up when someone searches for your service nearby, or asks an AI assistant, a competitor takes that customer."
-      },
-      {
         "title": "A website that does not convert",
         "description": "A slow website, or one that leaves the visitor's questions unanswered, loses the customer right before they get in touch."
+      },
+      {
+        "title": "Invisible on Google and AI",
+        "description": "If your business does not show up when someone searches for your service nearby, or asks an AI assistant, a competitor takes that customer."
       },
       {
         "title": "Calls nobody answers",

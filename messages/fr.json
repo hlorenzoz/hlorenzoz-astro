@@ -83,20 +83,20 @@
       "description": "La décision se prend sur la première page de Google, dans la réponse d'un assistant IA ou lors d'un appel auquel personne ne répond. Chaque entreprise perd des clients à un endroit différent : c'est pourquoi nous commençons par analyser.",
       "cards": [
         {
-          "title": "Invisible sur Google",
-          "description": "Si vous n'apparaissez pas quand quelqu'un cherche à proximité, c'est un concurrent qui reçoit l'appel."
-        },
-        {
           "title": "Un site web qui ne convertit pas",
           "description": "Lent, peu clair ou dans une seule langue, il perd les visiteurs avant qu'ils ne prennent contact."
         },
         {
-          "title": "Des appels sans réponse",
-          "description": "En dehors des horaires ou quand toutes les lignes sont occupées, le client appelle tout simplement l'entreprise suivante."
+          "title": "Invisible sur Google",
+          "description": "Si vous n'apparaissez pas quand quelqu'un cherche à proximité, c'est un concurrent qui reçoit l'appel."
         },
         {
           "title": "L'IA recommande quelqu'un d'autre",
           "description": "Les assistants répondent avec les noms qu'ils reconnaissent. Cette place, il faut la gagner."
+        },
+        {
+          "title": "Des appels sans réponse",
+          "description": "En dehors des horaires ou quand toutes les lignes sont occupées, le client appelle tout simplement l'entreprise suivante."
         }
       ]
     },

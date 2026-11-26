@@ -83,20 +83,20 @@
       "description": "A decisión tómase na primeira pantalla de Google, na resposta dun asistente de IA ou nunha chamada que ninguén atende. Cada negocio perde clientes nun sitio distinto: por iso empezamos por mirar.",
       "cards": [
         {
-          "title": "Invisible en Google",
-          "description": "Se non apareces cando alguén busca preto, esa chamada lévaa a competencia."
-        },
-        {
           "title": "Unha web que non converte",
           "description": "Lenta, pouco clara ou nun só idioma, perde as visitas antes de que se poñan en contacto."
         },
         {
-          "title": "Chamadas que ninguén atende",
-          "description": "Fóra de horario ou coas liñas ocupadas, o cliente chama sen máis ao seguinte negocio."
+          "title": "Invisible en Google",
+          "description": "Se non apareces cando alguén busca preto, esa chamada lévaa a competencia."
         },
         {
           "title": "A IA recomenda a outros",
           "description": "Os asistentes responden cos nomes que recoñecen. Ese lugar hai que gañalo."
+        },
+        {
+          "title": "Chamadas que ninguén atende",
+          "description": "Fóra de horario ou coas liñas ocupadas, o cliente chama sen máis ao seguinte negocio."
         }
       ]
     },

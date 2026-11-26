@@ -168,12 +168,12 @@
     "subtitle": "Cada negocio pierde clientes a su manera. Estas son las carencias que revisamos primero, porque deciden qué piezas necesita tu solución.",
     "problems": [
       {
-        "title": "Invisible en Google y en la IA",
-        "description": "Si tu negocio no aparece cuando alguien busca tu servicio en tu zona, o se lo pregunta a un asistente de IA, ese cliente se lo lleva un competidor."
-      },
-      {
         "title": "Una web que no convierte",
         "description": "Una web lenta, o que deja sin respuesta las dudas del visitante, pierde al cliente justo antes de que contacte."
+      },
+      {
+        "title": "Invisible en Google y en la IA",
+        "description": "Si tu negocio no aparece cuando alguien busca tu servicio en tu zona, o se lo pregunta a un asistente de IA, ese cliente se lo lleva un competidor."
       },
       {
         "title": "Llamadas sin atender",

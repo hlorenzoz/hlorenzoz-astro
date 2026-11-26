@@ -83,20 +83,20 @@
             "description": "Die Entscheidung fällt auf der ersten Seite bei Google, in der Antwort einer KI oder bei einem Anruf, den niemand annimmt. Jedes Unternehmen verliert Kunden an einer anderen Stelle: Deshalb schauen wir zuerst genau hin.",
             "cards": [
                 {
-                    "title": "Unsichtbar bei Google",
-                    "description": "Erscheinen Sie nicht, wenn jemand in der Nähe sucht, bekommt ein Wettbewerber den Anruf."
-                },
-                {
                     "title": "Eine Website, die keine Anfragen bringt",
                     "description": "Langsam, unklar oder nur in einer Sprache: So verliert sie Besucher, bevor diese Kontakt aufnehmen."
                 },
                 {
-                    "title": "Anrufe, die niemand annimmt",
-                    "description": "Außerhalb der Geschäftszeiten oder wenn alle Leitungen besetzt sind, ruft der Kunde einfach beim nächsten Unternehmen an."
+                    "title": "Unsichtbar bei Google",
+                    "description": "Erscheinen Sie nicht, wenn jemand in der Nähe sucht, bekommt ein Wettbewerber den Anruf."
                 },
                 {
                     "title": "Die KI empfiehlt jemand anderen",
                     "description": "Assistenten antworten mit den Namen, die sie kennen. Diesen Platz muss man sich erarbeiten."
+                },
+                {
+                    "title": "Anrufe, die niemand annimmt",
+                    "description": "Außerhalb der Geschäftszeiten oder wenn alle Leitungen besetzt sind, ruft der Kunde einfach beim nächsten Unternehmen an."
                 }
             ]
         },

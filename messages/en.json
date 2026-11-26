@@ -76,20 +76,20 @@
       "description": "The decision is made on the first screen of Google, in an AI assistant's answer or in a phone call nobody picks up. Each business loses customers in a different place: that is why we look first.",
       "cards": [
         {
-          "title": "Invisible on Google",
-          "description": "If you do not show up when someone searches nearby, a competitor gets that call."
-        },
-        {
           "title": "A website that does not convert",
           "description": "Slow, unclear or only in one language, it loses visitors before they get in touch."
         },
         {
-          "title": "Calls nobody answers",
-          "description": "Out of hours or with every line busy, the customer simply calls the next business."
+          "title": "Invisible on Google",
+          "description": "If you do not show up when someone searches nearby, a competitor gets that call."
         },
         {
           "title": "AI recommends someone else",
           "description": "Assistants answer with the names they recognize. That place has to be earned."
+        },
+        {
+          "title": "Calls nobody answers",
+          "description": "Out of hours or with every line busy, the customer simply calls the next business."
         }
       ]
     },

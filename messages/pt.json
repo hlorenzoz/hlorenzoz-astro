@@ -304,20 +304,20 @@
       "description": "A decisão é tomada no primeiro ecrã do Google, na resposta de um assistente de IA ou numa chamada que ninguém atende. Cada negócio perde clientes num sítio diferente: é por isso que começamos por analisar.",
       "cards": [
         {
-          "title": "Invisível no Google",
-          "description": "Se não aparece quando alguém procura perto de si, é um concorrente que recebe essa chamada."
-        },
-        {
           "title": "Um site que não converte",
           "description": "Lento, confuso ou só num idioma, perde visitantes antes de eles entrarem em contacto."
         },
         {
-          "title": "Chamadas sem resposta",
-          "description": "Fora de horas ou com todas as linhas ocupadas, o cliente liga simplesmente para o negócio seguinte."
+          "title": "Invisível no Google",
+          "description": "Se não aparece quando alguém procura perto de si, é um concorrente que recebe essa chamada."
         },
         {
           "title": "A IA recomenda outra empresa",
           "description": "Os assistentes respondem com os nomes que reconhecem. Esse lugar tem de ser conquistado."
+        },
+        {
+          "title": "Chamadas sem resposta",
+          "description": "Fora de horas ou com todas as linhas ocupadas, o cliente liga simplesmente para o negócio seguinte."
         }
       ]
     },
