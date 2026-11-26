@@ -91,11 +91,11 @@ describe('HomePage: partner positioning landing', () => {
         expect(how).toHaveTextContent(home.how.note);
     });
 
-    it('links each of the four solutions to its own service page', () => {
+    it('links each of the four solutions to its own service page, Website Development first', () => {
         const hrefs = Array.from($$('#solutions a')).map((a) => a.getAttribute('href'));
         expect(hrefs).toEqual([
-            '/en/services/local-seo/',
             '/en/services/website-development/',
+            '/en/services/local-seo/',
             '/en/services/ai-voice-receptionist/',
             '/en/services/software-development/',
         ]);
