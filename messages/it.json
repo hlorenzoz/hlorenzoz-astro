@@ -58,7 +58,7 @@
         "label": "su questo sito"
       },
       "pageSpeed": {
-        "value": "98 / 100",
+        "value": "100 / 100",
         "label": "PageSpeed su mobile,",
         "link": "verificalo"
       },
@@ -1065,7 +1065,7 @@
           "speed": {
             "badge": "Prestazioni",
             "title": "Prestazioni",
-            "description": "PageSpeed Insights su mobile, 25 novembre 2026, dopo il passaggio ad Astro: 98 in Prestazioni e 100 in Accessibilità, Best practice e SEO.",
+            "description": "PageSpeed Insights su mobile, 27 novembre 2026: 100 in Prestazioni, Accessibilità, Best practice e SEO.",
             "cta": "Prova su PageSpeed Insights"
           },
           "pwa": {
@@ -2382,7 +2382,7 @@
           "Best practice",
           "SEO"
         ],
-        "caption": "Questo sito, PageSpeed Insights su mobile, 25 novembre 2026",
+        "caption": "Questo sito, PageSpeed Insights su mobile, 27 novembre 2026",
         "link": "Fai il test tu stesso"
       },
       "portfolio": {
@@ -2411,8 +2411,8 @@
         ],
         "cta": "Verificalo su PageSpeed Insights",
         "note": "I punteggi variano leggermente da un test all'altro.",
-        "alt": "Report di PageSpeed Insights per hlorenzoz.com su mobile, 25 novembre 2026: 98 in Prestazioni e 100 in Accessibilità, Best practice e SEO",
-        "caption": "PageSpeed Insights per hlorenzoz.com su mobile, 25 novembre 2026."
+        "alt": "Report di PageSpeed Insights per hlorenzoz.com su mobile, 27 novembre 2026: 100 in Prestazioni, Accessibilità, Best practice e SEO",
+        "caption": "PageSpeed Insights per hlorenzoz.com su mobile, 27 novembre 2026."
       },
       "structuredData": {
         "eyebrow": "Dati strutturati",
@@ -2718,7 +2718,7 @@
           },
           "languages": "lingue, e ogni pagina viene verificata in tutte prima della pubblicazione"
         },
-        "footnote": "Dati di hlorenzoz.com: PageSpeed Insights su mobile, 25 novembre 2026; test e controlli al 26 novembre 2026.",
+        "footnote": "Dati di hlorenzoz.com: PageSpeed Insights su mobile, 27 novembre 2026; test e controlli al 26 novembre 2026.",
         "linkLabel": "Prova PageSpeed tu stesso"
       }
     }

@@ -4,7 +4,7 @@ import { contentPageFor, serviceContentPagesByKey } from '../_service-content';
 import FeatureSection from '@/src/components/services/FeatureSection.astro';
 import BuildPractices from '@/src/components/services/BuildPractices.astro';
 import ProofFigure from '@/src/components/services/ProofFigure.astro';
-import { PAGESPEED_SCORES, PAGESPEED_URL, PROOF_IMAGES } from '@/src/components/services/proof';
+import { PAGESPEED_SCORES, pagespeedUrl, PROOF_IMAGES } from '@/src/components/services/proof';
 import { type Locale } from '@/lib/site-config';
 import { routeExists, routeLocales } from '@/lib/routes';
 import { LOCALES, localeHref } from '@/lib/routing';
@@ -83,7 +83,7 @@ const buildFigures = [
         items={t.raw('build.items')}
         figures={buildFigures}
         footnote={t('build.footnote')}
-        link={{ label: t('build.linkLabel'), href: PAGESPEED_URL }}
+        link={{ label: t('build.linkLabel'), href: pagespeedUrl(locale) }}
     />
 
     <FeatureSection

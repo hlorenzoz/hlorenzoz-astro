@@ -86,12 +86,12 @@ export const LIVE_SITE_CASE_STUDIES = getPortfolioItems()
 const SERVICE_KEYS = (key: string, ...extra: string[]) => [`services.${key}`, 'landing.shared', `landing.${key}`, 'media.calBooking', ...extra];
 
 const STATIC_ROUTES: readonly SiteRoute[] = [
-    { path: '', tier: 'home', labelKey: 'navigation.home', copyKeys: HOME_KEYS, lastModified: '2026-11-26' },
+    { path: '', tier: 'home', labelKey: 'navigation.home', copyKeys: HOME_KEYS, lastModified: '2026-11-27' },
     { path: 'portfolio', tier: 'page', labelKey: 'navigation.portfolio', copyKeys: ['portfolio.list', 'portfolio.type', ...getPortfolioItems().flatMap((item) => ['title', 'badge', 'description'].map((k) => `portfolio.${item.id}.${k}`))], lastModified: latestPortfolioModified(), parent: '' },
     // The index lists every post, so its date follows the freshest one instead of a second hand-kept date.
     { path: 'news', tier: 'page', labelKey: 'navigation.news', copyKeys: ['news.list', ...getNewsItems().flatMap((item) => ['title', 'description'].map((k) => `news.items.${item.id}.${k}`))], lastModified: latestNewsModified(), parent: '' },
     { path: 'card/hector', tier: 'page', labelKey: 'sitemap.labels.card', copyKeys: ['card.hector'], lastModified: '2026-07-10', parent: '' },
-    { path: 'sitemap', tier: 'page', labelKey: 'sitemap.labels.sitemap', copyKeys: ['sitemap'], lastModified: '2026-11-26', parent: '' },
+    { path: 'sitemap', tier: 'page', labelKey: 'sitemap.labels.sitemap', copyKeys: ['sitemap'], lastModified: '2026-11-27', parent: '' },
     { path: 'privacy-policy', tier: 'legal', labelKey: 'footer.legal.items.0.label', copyKeys: ['footer.privacyPage', 'footer.legal'], lastModified: '2026-11-26', parent: '' }, // gitleaks:allow (translation key path, not a secret)
     { path: 'terms-conditions', tier: 'legal', labelKey: 'footer.legal.items.1.label', copyKeys: ['footer.termsPage', 'footer.terms', 'footer.legal'], lastModified: '2026-11-26', parent: '' }, // gitleaks:allow (translation key path, not a secret)
     { path: 'cookie-policy', tier: 'legal', labelKey: 'footer.legal.items.2.label', copyKeys: ['footer.cookiePage', 'footer.legal'], lastModified: '2026-11-26', parent: '' }, // gitleaks:allow (translation key path, not a secret)
@@ -104,9 +104,9 @@ const STATIC_ROUTES: readonly SiteRoute[] = [
     // tailored solution (AGENTS.md).
     { path: 'services', tier: 'category', labelKey: 'navigation.services', copyKeys: ['services.hub'], lastModified: '2026-11-26', parent: '' },
     { path: 'services/local-seo', tier: 'service', labelKey: 'services.localSeo.name', copyKeys: SERVICE_KEYS('localSeo'), lastModified: '2026-11-26', parent: 'services' },
-    { path: 'services/website-development', tier: 'service', labelKey: 'services.websiteDevelopment.name', copyKeys: SERVICE_KEYS('websiteDevelopment', 'services.quoted', ...LIVE_SITE_CASE_STUDIES.flatMap(({ item }) => [`portfolio.${item.id}.title`, `portfolio.${item.id}.badge`])), lastModified: '2026-11-26', parent: 'services' },
+    { path: 'services/website-development', tier: 'service', labelKey: 'services.websiteDevelopment.name', copyKeys: SERVICE_KEYS('websiteDevelopment', 'services.quoted', ...LIVE_SITE_CASE_STUDIES.flatMap(({ item }) => [`portfolio.${item.id}.title`, `portfolio.${item.id}.badge`])), lastModified: '2026-11-27', parent: 'services' },
     { path: 'services/ai-voice-receptionist', tier: 'service', labelKey: 'services.aiVoiceReceptionist.name', copyKeys: SERVICE_KEYS('aiVoiceReceptionist'), lastModified: '2026-11-26', parent: 'services' },
-    { path: 'services/software-development', tier: 'service', labelKey: 'services.softwareDevelopment.name', copyKeys: SERVICE_KEYS('softwareDevelopment'), lastModified: '2026-11-26', parent: 'services' },
+    { path: 'services/software-development', tier: 'service', labelKey: 'services.softwareDevelopment.name', copyKeys: SERVICE_KEYS('softwareDevelopment'), lastModified: '2026-11-27', parent: 'services' },
     // PAUSED since 2026-10-08, not retired (task #T0021 brings it back). The
     // page lives in the private folder `services/_digital-business-card/` and
     // its copy in `services.digitalBusinessCard`.

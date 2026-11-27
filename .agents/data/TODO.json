@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updated": "2026-11-26",
+  "updated": "2026-11-27",
   "tasks": [
     {
       "id": "#T0001",
@@ -1216,6 +1216,27 @@
       "descripcion": [
         "src/components/CookieBanner.astro: aparece con el primer gesto (pointerdown, keydown, touchstart, wheel, scroll), sin temporizador ni user agent.",
         "astro.config.mjs: build.inlineStylesheets always."
+      ]
+    },
+    {
+      "id": "#T0057",
+      "estado": "hecha",
+      "prioridad": "media",
+      "tipo": "contenido",
+      "titulo": "Nuevo resultado de PageSpeed (100 en las cuatro categorias, 27 nov 2026) en home, servicios y portafolio, con el enlace al informe en el idioma de la pagina",
+      "anotada": "2026-11-27",
+      "hecha": "2026-11-27",
+      "origen": "usuario",
+      "depende": [
+        "#T0056"
+      ],
+      "notas": [
+        "Captura lorenzoz-agency-pagespeed-insights-100 subida al CDN. La noticia de la migracion a Astro conserva a proposito sus cifras y su captura del 25 nov.",
+        "La home muestra 100 / 100 (decision del usuario); pagespeedUrl(locale) apunta a hlorenzoz.com/<locale>/.",
+        "just validate 2166 en verde, Playwright 88 en verde."
+      ],
+      "descripcion": [
+        "src/components/services/proof.ts, src/pages/[locale]/index.astro y las paginas de servicios, lib/portfolio-data.json, messages/*.json (5 claves y home.facts.pageSpeed.value)."
       ]
     }
   ]

@@ -4,7 +4,7 @@ import { contentPageFor, serviceContentPagesByKey } from '../_service-content';
 import FeatureSection from '@/src/components/services/FeatureSection.astro';
 import ProofFigure from '@/src/components/services/ProofFigure.astro';
 import TileGrid from '@/src/components/services/TileGrid.astro';
-import { LLMS_TXT_PATH, PAGESPEED_URL, PROOF_IMAGES, RICH_RESULTS_URL } from '@/src/components/services/proof';
+import { LLMS_TXT_PATH, pagespeedUrl, PROOF_IMAGES, RICH_RESULTS_URL } from '@/src/components/services/proof';
 import { type Locale } from '@/lib/site-config';
 import { routeLocales } from '@/lib/routes';
 import { getTranslations } from '@/lib/i18n';
@@ -18,7 +18,7 @@ const t = getTranslations(locale, 'landing.localSeo');
 
 // The hero's checks, each next to the Google test that proves it.
 const proof: { value: string; text: string }[] = t.raw('hero.proof');
-const proofLinks = [PAGESPEED_URL, RICH_RESULTS_URL];
+const proofLinks = [pagespeedUrl(locale), RICH_RESULTS_URL];
 const aiTiles = [...t.raw('ai.tiles'), { ...t.raw('ai.llms'), href: LLMS_TXT_PATH }];
 const analysis: string[] = t.raw('analysis.items');
 const report: string[] = t.raw('reviews.report.items');

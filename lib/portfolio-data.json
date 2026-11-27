@@ -2,7 +2,7 @@
     {
         "id": "lorenzoz-agency",
         "slug": "lorenzoz-agency",
-        "lastModified": "2026-11-26",
+        "lastModified": "2026-11-27",
         "type": "live",
         "image": "https://cdn.hlorenzoz.com/hlorenzoz.com/portfolio/me/cover.webp",
         "fullScreenshot": [
@@ -46,11 +46,11 @@
             },
             {
                 "id": "speed",
-                "image": "https://cdn.hlorenzoz.com/hlorenzoz.com/portfolio/hlorenzoz/lorenzoz-agency-pagespeed-insights.webp",
-                "link": "https://pagespeed.web.dev/analysis?url=https%3A%2F%2Fhlorenzoz.com%2F",
+                "image": "https://cdn.hlorenzoz.com/hlorenzoz.com/portfolio/hlorenzoz/lorenzoz-agency-pagespeed-insights-100.webp",
+                "link": "https://pagespeed.web.dev/analysis?url=https%3A%2F%2Fhlorenzoz.com%2Fen%2F",
                 "badge": "Performance",
                 "title": "Performance",
-                "description": "PageSpeed Insights on mobile, November 25, 2026, after the move to Astro: 98 for Performance and 100 for Accessibility, Best Practices and SEO."
+                "description": "PageSpeed Insights on mobile, November 27, 2026: 100 for Performance, Accessibility, Best Practices and SEO."
             },
             {
                 "id": "pwa",

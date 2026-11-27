@@ -12,7 +12,8 @@ import { jsonLdNodes, renderPage } from './render-page';
  * visitor can check, a free needs analysis as the only call to action, the
  * dossier, and the booking calendar last.
  */
-const PAGESPEED = 'https://pagespeed.web.dev/analysis?url=https%3A%2F%2Fhlorenzoz.com%2F';
+// The report for the page's own language: these tests render the English pages.
+const PAGESPEED = 'https://pagespeed.web.dev/analysis?url=https%3A%2F%2Fhlorenzoz.com%2Fen%2F';
 const RICH_RESULTS = 'https://search.google.com/test/rich-results?url=https%3A%2F%2Fhlorenzoz.com%2F';
 
 const PAGES = [

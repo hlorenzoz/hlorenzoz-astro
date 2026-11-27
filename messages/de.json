@@ -65,7 +65,7 @@
                 "label": "auf dieser Website"
             },
             "pageSpeed": {
-                "value": "98 / 100",
+                "value": "100 / 100",
                 "label": "PageSpeed auf dem Smartphone,",
                 "link": "selbst prüfen"
             },
@@ -1586,7 +1586,7 @@
                     "speed": {
                         "badge": "Performance",
                         "title": "Performance",
-                        "description": "PageSpeed Insights auf dem Smartphone, 25. November 2026, nach der Umstellung auf Astro: 98 bei Performance und 100 bei Barrierefreiheit, Best Practices und SEO.",
+                        "description": "PageSpeed Insights auf dem Smartphone, 27. November 2026: 100 bei Performance, Barrierefreiheit, Best Practices und SEO.",
                         "cta": "Mit PageSpeed Insights testen"
                     },
                     "pwa": {
@@ -2382,7 +2382,7 @@
                     "Best Practices",
                     "SEO"
                 ],
-                "caption": "Diese Website, PageSpeed Insights auf Mobilgeräten, 25. November 2026",
+                "caption": "Diese Website, PageSpeed Insights auf Mobilgeräten, 27. November 2026",
                 "link": "Selbst testen"
             },
             "portfolio": {
@@ -2411,8 +2411,8 @@
                 ],
                 "cta": "Bei PageSpeed Insights prüfen",
                 "note": "Die Werte schwanken leicht von Messung zu Messung.",
-                "alt": "Bericht von PageSpeed Insights für hlorenzoz.com auf Mobilgeräten, 25. November 2026: 98 bei Leistung und 100 bei Barrierefreiheit, Best Practices und SEO",
-                "caption": "PageSpeed Insights für hlorenzoz.com auf Mobilgeräten, 25. November 2026."
+                "alt": "Bericht von PageSpeed Insights für hlorenzoz.com auf Mobilgeräten, 27. November 2026: 100 bei Leistung, Barrierefreiheit, Best Practices und SEO",
+                "caption": "PageSpeed Insights für hlorenzoz.com auf Mobilgeräten, 27. November 2026."
             },
             "structuredData": {
                 "eyebrow": "Strukturierte Daten",
@@ -2718,7 +2718,7 @@
                     },
                     "languages": "Sprachen, jede Seite wird vor der Veröffentlichung in jeder davon geprüft"
                 },
-                "footnote": "Zahlen von hlorenzoz.com: PageSpeed Insights auf Mobilgeräten, 25. November 2026; Tests und Prüfungen mit Stand vom 26. November 2026.",
+                "footnote": "Zahlen von hlorenzoz.com: PageSpeed Insights auf Mobilgeräten, 27. November 2026; Tests und Prüfungen mit Stand vom 26. November 2026.",
                 "linkLabel": "PageSpeed selbst testen"
             }
         }

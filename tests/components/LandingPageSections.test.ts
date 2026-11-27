@@ -59,7 +59,8 @@ describe('HomePage: partner positioning landing', () => {
         expect(facts).toHaveTextContent(home.facts.pageSpeed.value);
         expect(facts).toHaveTextContent(home.facts.markets.value);
         const verify = within(facts as HTMLElement).getByRole('link', { name: home.facts.pageSpeed.link });
-        expect(verify).toHaveAttribute('href', 'https://pagespeed.web.dev/analysis?url=https%3A%2F%2Fhlorenzoz.com%2F');
+        expect(verify).toHaveAttribute('href', 'https://pagespeed.web.dev/analysis?url=https%3A%2F%2Fhlorenzoz.com%2Fen%2F');
+        expect(facts).toHaveTextContent('100 / 100');
     });
 
     it('lists every served market beside the facts', () => {

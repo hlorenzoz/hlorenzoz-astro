@@ -24,6 +24,7 @@ import CostOfWaiting from '@/src/components/home/CostOfWaiting.astro';
 import FeesModel from '@/src/components/home/FeesModel.astro';
 import { getTranslations } from '@/lib/i18n';
 import { dossierHref } from '@/lib/dossier';
+import { pagespeedUrl } from '@/src/components/services/proof';
 import { getPortfolioItemsAction } from '@/lib/actions/portfolio';
 import { getLinkedInArticlesAction } from '@/lib/actions/linkedin';
 import { getNewsItemsAction } from '@/lib/actions/news';
@@ -37,7 +38,6 @@ export function getStaticPaths() {
 }
 
 /** Anyone can rerun the mobile PageSpeed test the facts strip quotes. */
-const PAGESPEED_REPORT = 'https://pagespeed.web.dev/analysis?url=https%3A%2F%2Fhlorenzoz.com%2F';
 
 const { locale } = Astro.params as { locale: string };
 
@@ -104,7 +104,7 @@ const PROBLEM_ICONS = [MousePointerClick, Search, Sparkles, PhoneMissed];
                 facts={[
                     { value: t('facts.services.value', { count: SERVICE_KEYS.length }), label: t('facts.services.label') },
                     { value: t('facts.languages.value', { count: LOCALES.length }), label: t('facts.languages.label') },
-                    { value: t('facts.pageSpeed.value'), label: t('facts.pageSpeed.label'), link: { href: PAGESPEED_REPORT, text: t('facts.pageSpeed.link') } },
+                    { value: t('facts.pageSpeed.value'), label: t('facts.pageSpeed.label'), link: { href: pagespeedUrl(locale), text: t('facts.pageSpeed.link') } },
                     { value: t('facts.markets.value'), label: t('facts.markets.label') },
                 ]}
                 marketsTitle={t('markets.title')}

@@ -549,5 +549,14 @@
       "avif": "https://cdn.hlorenzoz.com/hlorenzoz.com/portfolio/hlorenzoz/lorenzoz-agency-pagespeed-insights.avif",
       "jpeg": "https://cdn.hlorenzoz.com/hlorenzoz.com/portfolio/hlorenzoz/lorenzoz-agency-pagespeed-insights.jpeg"
     }
+  },
+  "hlorenzoz.com/portfolio/hlorenzoz/lorenzoz-agency-pagespeed-insights-100.png": {
+    "source": "assets/hlorenzoz.com/portfolio/hlorenzoz/lorenzoz-agency-pagespeed-insights-100.png",
+    "r2Bucket": "images",
+    "formats": {
+      "webp": "https://cdn.hlorenzoz.com/hlorenzoz.com/portfolio/hlorenzoz/lorenzoz-agency-pagespeed-insights-100.webp",
+      "avif": "https://cdn.hlorenzoz.com/hlorenzoz.com/portfolio/hlorenzoz/lorenzoz-agency-pagespeed-insights-100.avif",
+      "jpeg": "https://cdn.hlorenzoz.com/hlorenzoz.com/portfolio/hlorenzoz/lorenzoz-agency-pagespeed-insights-100.jpeg"
+    }
   }
 }

@@ -67,7 +67,7 @@ test.describe('Homepage E2E Tests', () => {
 
     const facts = page.locator('section#facts');
     await facts.scrollIntoViewIfNeeded();
-    await expect(facts.getByText('98 / 100')).toBeVisible({ timeout: 10000 });
+    await expect(facts.getByText('100 / 100')).toBeVisible({ timeout: 10000 });
     await expect(facts.getByRole('link', { name: 'check it' })).toHaveAttribute('href', /pagespeed\.web\.dev/);
     // The calculator shows the visitor's figures and a dental clinic's market prices, never ours;
     // the only price of ours on the page is the entry price.

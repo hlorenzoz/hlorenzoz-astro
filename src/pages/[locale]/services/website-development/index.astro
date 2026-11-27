@@ -7,7 +7,7 @@ import FeatureSection from '@/src/components/services/FeatureSection.astro';
 import ProofFigure from '@/src/components/services/ProofFigure.astro';
 import TileGrid from '@/src/components/services/TileGrid.astro';
 import LanguageChips from '@/src/components/services/LanguageChips.astro';
-import { LLMS_TXT_PATH, PAGESPEED_SCORES, PAGESPEED_URL, PROOF_IMAGES, RICH_RESULTS_URL } from '@/src/components/services/proof';
+import { LLMS_TXT_PATH, PAGESPEED_SCORES, pagespeedUrl, PROOF_IMAGES, RICH_RESULTS_URL } from '@/src/components/services/proof';
 import llmsTxt from '@/public/llms.txt?raw';
 import { LOCALES, type Locale } from '@/lib/site-config';
 import { LIVE_SITE_CASE_STUDIES, routeExists, routeHref, routeLocales } from '@/lib/routes';
@@ -61,7 +61,7 @@ const points: { title: string; text: string }[] = t.raw('performance.points');
     deliverables
     hero={{ secondaryLabel: t('hero.secondary'), secondaryHref: '#proof', note: t('hero.note') }}
 >
-    <ScoreStrip slot="hero" scores={scores} caption={t('scores.caption')} linkLabel={t('scores.link')} href={PAGESPEED_URL} />
+    <ScoreStrip slot="hero" scores={scores} caption={t('scores.caption')} linkLabel={t('scores.link')} href={pagespeedUrl(locale)} />
 
     <LiveSitesGrid
         slot="after-hero"
@@ -80,7 +80,7 @@ const points: { title: string; text: string }[] = t.raw('performance.points');
             eyebrow={t('performance.eyebrow')}
             title={t('performance.title')}
             paragraphs={[t('performance.text')]}
-            link={{ label: t('performance.cta'), href: PAGESPEED_URL }}
+            link={{ label: t('performance.cta'), href: pagespeedUrl(locale) }}
             note={t('performance.note')}
         >
             <ul class="flex flex-col gap-3.5">

@@ -1,8 +1,10 @@
 import { describe, it, expect } from 'vitest';
 import { renderAstro } from '@/tests/helpers/render';
 import BuildPractices from '@/src/components/services/BuildPractices.astro';
-import { PAGESPEED_URL } from '@/src/components/services/proof';
+import { pagespeedUrl } from '@/src/components/services/proof';
 import en from '@/messages/en.json';
+
+const PAGESPEED_URL = pagespeedUrl('en');
 
 const build = en.landing.softwareDevelopment.build;
 const props = {
@@ -50,5 +52,12 @@ describe('BuildPractices', () => {
         const screen = await renderAstro(BuildPractices, props);
         expect(screen.getByText(build.footnote)).toBeInTheDocument();
         expect(screen.getByRole('link', { name: build.linkLabel })).toHaveAttribute('href', PAGESPEED_URL);
+    });
+});
+
+describe('pagespeedUrl', () => {
+    it("points the report at the reader's own language", () => {
+        expect(pagespeedUrl('en')).toBe('https://pagespeed.web.dev/analysis?url=https%3A%2F%2Fhlorenzoz.com%2Fen%2F');
+        expect(pagespeedUrl('es')).toBe('https://pagespeed.web.dev/analysis?url=https%3A%2F%2Fhlorenzoz.com%2Fes%2F');
     });
 });

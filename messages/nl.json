@@ -58,7 +58,7 @@
                 "label": "op deze website"
             },
             "pageSpeed": {
-                "value": "98 / 100",
+                "value": "100 / 100",
                 "label": "PageSpeed op mobiel,",
                 "link": "controleer het zelf"
             },
@@ -1091,7 +1091,7 @@
                     "speed": {
                         "badge": "Prestaties",
                         "title": "Prestaties",
-                        "description": "PageSpeed Insights op mobiel, 25 november 2026, na de overstap naar Astro: 98 voor Prestaties en 100 voor Toegankelijkheid, Praktische tips en SEO.",
+                        "description": "PageSpeed Insights op mobiel, 27 november 2026: 100 voor Prestaties, Toegankelijkheid, Praktische tips en SEO.",
                         "cta": "Testen op PageSpeed Insights"
                     },
                     "pwa": {
@@ -2382,7 +2382,7 @@
                     "Praktische tips",
                     "SEO"
                 ],
-                "caption": "Deze website, PageSpeed Insights op mobiel, 25 november 2026",
+                "caption": "Deze website, PageSpeed Insights op mobiel, 27 november 2026",
                 "link": "Doe de test zelf"
             },
             "portfolio": {
@@ -2411,8 +2411,8 @@
                 ],
                 "cta": "Controleer het op PageSpeed Insights",
                 "note": "Scores verschillen een beetje per meting.",
-                "alt": "Rapport van PageSpeed Insights voor hlorenzoz.com op mobiel, 25 november 2026: 98 voor Prestaties en 100 voor Toegankelijkheid, Praktische tips en SEO",
-                "caption": "PageSpeed Insights voor hlorenzoz.com op mobiel, 25 november 2026."
+                "alt": "Rapport van PageSpeed Insights voor hlorenzoz.com op mobiel, 27 november 2026: 100 voor Prestaties, Toegankelijkheid, Praktische tips en SEO",
+                "caption": "PageSpeed Insights voor hlorenzoz.com op mobiel, 27 november 2026."
             },
             "structuredData": {
                 "eyebrow": "Gestructureerde data",
@@ -2718,7 +2718,7 @@
                     },
                     "languages": "talen, elke pagina in elke taal gecontroleerd voordat hij live gaat"
                 },
-                "footnote": "Cijfers van hlorenzoz.com: PageSpeed Insights op mobiel, 25 november 2026; tests en controles per 26 november 2026.",
+                "footnote": "Cijfers van hlorenzoz.com: PageSpeed Insights op mobiel, 27 november 2026; tests en controles per 26 november 2026.",
                 "linkLabel": "Draai PageSpeed zelf"
             }
         }

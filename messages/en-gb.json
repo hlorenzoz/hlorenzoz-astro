@@ -65,7 +65,7 @@
         "label": "on this site"
       },
       "pageSpeed": {
-        "value": "98 / 100",
+        "value": "100 / 100",
         "label": "PageSpeed on mobile,",
         "link": "check it"
       },
@@ -1334,7 +1334,7 @@
           "speed": {
             "badge": "Performance",
             "title": "Performance",
-            "description": "PageSpeed Insights on mobile, 25 November 2026, after the move to Astro: 98 for Performance and 100 for Accessibility, Best Practices and SEO.",
+            "description": "PageSpeed Insights on mobile, 27 November 2026: 100 for Performance, Accessibility, Best Practices and SEO.",
             "cta": "Test on PageSpeed Insights"
           },
           "pwa": {
@@ -2382,7 +2382,7 @@
           "Best Practices",
           "SEO"
         ],
-        "caption": "This website, PageSpeed Insights on mobile, 25 November 2026",
+        "caption": "This website, PageSpeed Insights on mobile, 27 November 2026",
         "link": "Run the test yourself"
       },
       "portfolio": {
@@ -2411,8 +2411,8 @@
         ],
         "cta": "Check it on PageSpeed Insights",
         "note": "Scores vary slightly from run to run.",
-        "alt": "PageSpeed Insights report for hlorenzoz.com on mobile, 25 November 2026: 98 Performance and 100 for Accessibility, Best Practices and SEO",
-        "caption": "PageSpeed Insights for hlorenzoz.com on mobile, 25 November 2026."
+        "alt": "PageSpeed Insights report for hlorenzoz.com on mobile, 27 November 2026: 100 for Performance, Accessibility, Best Practices and SEO",
+        "caption": "PageSpeed Insights for hlorenzoz.com on mobile, 27 November 2026."
       },
       "structuredData": {
         "eyebrow": "Structured data",
@@ -2718,7 +2718,7 @@
           },
           "languages": "languages, with every page checked in each one before it goes live"
         },
-        "footnote": "Figures from hlorenzoz.com: PageSpeed Insights on mobile, 25 November 2026; tests and checks as of 26 November 2026.",
+        "footnote": "Figures from hlorenzoz.com: PageSpeed Insights on mobile, 27 November 2026; tests and checks as of 26 November 2026.",
         "linkLabel": "Run PageSpeed yourself"
       }
     }
