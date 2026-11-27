@@ -709,5 +709,6 @@ describe('ElevenLabsWidget - calculate_cost_of_waiting client tool', () => {
         const tool = mockConversation.options.clientTools.calculate_cost_of_waiting;
         expect(tool({ customers_per_day: 1, value_per_customer: 250 })).toContain('1250 EUR a week, 5417 EUR a month, 65000 EUR a year');
         expect(tool({ customers_per_day: 0, value_per_customer: 250 })).toMatch(/^Cannot calculate/);
+        expect(tool({ customers_per_day: 1, value_per_customer: 90, currency: 'USD' })).toContain('450 USD a week');
     });
 });

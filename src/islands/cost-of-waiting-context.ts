@@ -27,17 +27,23 @@ export function readCostOfWaiting(): CostOfWaitingInputs | null {
     return { missed: input('missed'), value: input('value') };
 }
 
+/** Currencies of the markets the reference prices cover (AGENTS.md, "Target markets"). */
+const CURRENCIES = ['EUR', 'GBP', 'USD', 'CAD', 'AUD', 'CRC'];
+
 /**
  * The `calculate_cost_of_waiting` client tool: the agent never does this arithmetic itself,
- * so what it says matches the calculator to the euro. Inputs arrive as the LLM sends them
- * (numbers or numeric text); anything not positive is refused instead of guessed.
+ * so what it says matches the calculator exactly. Inputs arrive as the LLM sends them
+ * (numbers or numeric text); anything not positive, or an unknown currency, is refused
+ * instead of guessed.
  */
-export function costEstimate(customersPerDay: unknown, valuePerCustomer: unknown): string {
+export function costEstimate(customersPerDay: unknown, valuePerCustomer: unknown, currencyCode: unknown = 'EUR'): string {
+    const currency = String(currencyCode ?? 'EUR').trim().toUpperCase();
+    if (!CURRENCIES.includes(currency)) return `Cannot calculate: currency must be one of ${CURRENCIES.join(', ')} (got ${String(currencyCode)}).`;
     const missed = Number(customersPerDay);
     const value = Number(valuePerCustomer);
     const loss = lossFromInputs(missed, value);
     if (!loss) return `Cannot calculate: customers_per_day and value_per_customer must be positive numbers (got ${String(customersPerDay)} and ${String(valuePerCustomer)}).`;
-    const eur = (n: number) => `${Math.round(n)} EUR`;
+    const money = (n: number) => `${Math.round(n)} ${currency}`;
     const customers = `${missed} customer${missed === 1 ? '' : 's'}`;
-    return `${customers} lost per working day worth ${value} EUR each: ${eur(loss.day)} a day, ${eur(loss.week)} a week, ${eur(loss.month)} a month, ${eur(loss.year)} a year (5 working days a week, 52 weeks a year, first visits only).`;
+    return `${customers} lost per working day worth ${value} ${currency} each: ${money(loss.day)} a day, ${money(loss.week)} a week, ${money(loss.month)} a month, ${money(loss.year)} a year (5 working days a week, 52 weeks a year, first visits only).`;
 }

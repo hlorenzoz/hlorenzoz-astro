@@ -220,8 +220,8 @@ export function ElevenLabsWidget({ locale, labels }: ElevenLabsWidgetProps) {
             setError(typeof err === 'string' ? err : err.message);
         },
         clientTools: {
-            calculate_cost_of_waiting: ({ customers_per_day, value_per_customer }: { customers_per_day?: unknown; value_per_customer?: unknown }) =>
-                costEstimate(customers_per_day, value_per_customer),
+            calculate_cost_of_waiting: ({ customers_per_day, value_per_customer, currency }: { customers_per_day?: unknown; value_per_customer?: unknown; currency?: unknown }) =>
+                costEstimate(customers_per_day, value_per_customer, currency),
             show_cost_of_waiting: () => {
                 const section = document.getElementById('cost-of-waiting');
                 if (section) {

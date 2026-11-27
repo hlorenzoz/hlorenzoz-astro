@@ -50,6 +50,17 @@ describe('costEstimate (the assistant calculate_cost_of_waiting tool)', () => {
         expect(costEstimate('2', '45.5')).toContain('2 customers lost per working day worth 45.5 EUR each: 91 EUR a day, 455 EUR a week');
     });
 
+    it('calculates in the currency of the market the figure comes from', () => {
+        expect(costEstimate(1, 50, 'GBP')).toBe(
+            '1 customer lost per working day worth 50 GBP each: 50 GBP a day, 250 GBP a week, 1083 GBP a month, 13000 GBP a year (5 working days a week, 52 weeks a year, first visits only).'
+        );
+        expect(costEstimate(2, 30000, 'crc')).toContain('60000 CRC a day, 300000 CRC a week');
+    });
+
+    it('refuses a currency outside the markets the agency serves', () => {
+        expect(costEstimate(1, 50, 'BTC')).toMatch(/^Cannot calculate: currency/);
+    });
+
     it.each([[0, 100], [-1, 100], [1, 0], ['abc', 100], [1, undefined]])('rejects %s customers at %s EUR instead of inventing a figure', (customers, value) => {
         expect(costEstimate(customers, value)).toMatch(/^Cannot calculate/);
     });
