@@ -10,8 +10,19 @@ import { imageFallbackSrc, imageSrcSet } from '@/lib/image';
 import { localeHref } from '@/lib/routing';
 import { CONVERSATION_KEY as STORAGE_KEY } from './conversation-storage';
 import { costEstimate, costOfWaitingContext, readCostOfWaiting, type CostOfWaitingInputs } from './cost-of-waiting-context';
+import { AGENT_ID, saveAvailability } from './assistant-availability';
 
-const AGENT_ID = 'agent_7601kjm9f042e55894dty11tqtnh';
+/** ElevenLabs said the agent cannot answer (no quota): the next pages show WhatsApp instead. */
+function rememberIfUnavailable(reason: unknown) {
+    const message = reason instanceof Error ? reason.message : String(reason ?? '');
+    if (!/not available/i.test(message)) return;
+    try {
+        saveAvailability(window.localStorage, false, Date.now());
+    } catch {
+        // Storage unavailable: the next page checks again.
+    }
+}
+
 const AVATAR = 'https://cdn.hlorenzoz.com/hlorenzoz.com/hector-profile.webp';
 
 /** The widget's visible and accessible text: `messages/<locale>.json` `assistant`, passed in by the loader. */
@@ -219,7 +230,10 @@ export function ElevenLabsWidget({ locale, labels, whatsapp }: ElevenLabsWidgetP
             }
             setMode(null);
             // The server or the network ended the session: say so instead of leaving the visitor waiting.
-            if (details.reason === 'error') setError(modeRef.current === 'call' ? labels.micError : labels.chatError);
+            if (details.reason === 'error') {
+                rememberIfUnavailable(details.message);
+                setError(modeRef.current === 'call' ? labels.micError : labels.chatError);
+            }
         },
         onError: (err: Error | string) => {
             console.error('11Labs Error:', err);
@@ -458,6 +472,7 @@ export function ElevenLabsWidget({ locale, labels, whatsapp }: ElevenLabsWidgetP
                                                 sendText(inputValue);
                                             } catch (err: unknown) {
                                                 console.error("Failed to start text conversation:", err);
+                                                rememberIfUnavailable(err);
                                                 setMode(null);
                                                 setError(labels.chatError);
                                             }

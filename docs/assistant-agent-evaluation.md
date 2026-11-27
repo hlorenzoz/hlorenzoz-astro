@@ -179,3 +179,17 @@ Not verified: the 19 simulations of the full run (booking flows and figures) did
 ElevenLabs account ran out of credits (Starter plan, 90000 of 90000 used, no auto top up, reset on 2026-12-04 at 17:02
 UTC). While at the limit the live agent refuses sessions ("The AI agent you are trying to reach is not available"), so
 the site assistant shows its error message until credits return.
+
+## WhatsApp when the agent has no quota (2026-11-27)
+
+The site checks on load whether the agent can answer (`src/islands/assistant-availability.ts`): no public HTTP endpoint
+reveals the quota (the token and widget endpoints answer 200 with the account at its limit, the usage API needs the secret
+key), so the page opens a text-only conversation socket and closes it at once. The agent closes it first with code 3000
+("not available") when it cannot answer, or sends its initiation metadata when it can. The answer is kept in localStorage
+for an hour (`assistant-availability`), and a chat that fails with "not available" saves it too. Without quota the
+assistant is not mounted, a WhatsApp button to ORGANIZATION.telephone takes its place and the "Start a conversation" buttons
+open WhatsApp; with quota, or when the check cannot finish, the assistant behaves as before. Bots never run the check.
+
+Each check opens a conversation that ElevenLabs may list in the agent's history with no messages; no message is sent, so
+no reply is generated. Whether such an empty session costs credits is not documented and was not measurable with the
+account at its limit: check the usage after the reset.
