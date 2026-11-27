@@ -612,3 +612,39 @@ describe('ElevenLabsWidget - a session the server ends', () => {
         expect(screen.queryByText(en.assistant.chatError)).toBeNull();
     });
 });
+
+describe('ElevenLabsWidget - message box', () => {
+    beforeEach(() => {
+        vi.clearAllMocks();
+        sessionStorage.clear();
+        mockConversation.status = 'disconnected';
+        mockConversation.startSession.mockResolvedValue(undefined);
+    });
+
+    it('is a multiline box, so a long message stays visible while it is written', async () => {
+        render(<ElevenLabsWidget locale="en" labels={en.assistant} />);
+        const box = await screen.findByPlaceholderText('Or send a message');
+        expect(box.tagName).toBe('TEXTAREA');
+    });
+
+    it('sends with Enter and keeps the line break with Shift+Enter', async () => {
+        render(<ElevenLabsWidget locale="en" labels={en.assistant} />);
+        const box = await screen.findByPlaceholderText('Or send a message');
+        fireEvent.change(box, { target: { value: 'first line' } });
+        fireEvent.keyDown(box, { key: 'Enter', shiftKey: true });
+        expect(mockConversation.startSession).not.toHaveBeenCalled();
+
+        fireEvent.change(box, { target: { value: 'first line\nsecond line' } });
+        fireEvent.keyDown(box, { key: 'Enter' });
+        await waitFor(() => expect(mockConversation.sendUserMessage).toHaveBeenCalledWith('first line\nsecond line'));
+        expect(box).toHaveValue('');
+    });
+
+    it('does not send while an input method is composing', async () => {
+        render(<ElevenLabsWidget locale="en" labels={en.assistant} />);
+        const box = await screen.findByPlaceholderText('Or send a message');
+        fireEvent.change(box, { target: { value: 'nihon' } });
+        fireEvent.keyDown(box, { key: 'Enter', isComposing: true });
+        expect(mockConversation.startSession).not.toHaveBeenCalled();
+    });
+});

@@ -83,6 +83,7 @@ export function ElevenLabsWidget({ locale, labels }: ElevenLabsWidgetProps) {
     const [messages, setMessages] = useState<Message[]>(() => restored?.messages ?? []);
     const [mode, setMode] = useState<Mode | null>(() => restored?.mode ?? null);
     const messagesEndRef = useRef<HTMLDivElement>(null);
+    const boxRef = useRef<HTMLTextAreaElement>(null);
     // True once the page is going away: that disconnect is not the end of the conversation.
     const leavingRef = useRef(false);
     const resumedRef = useRef(false);
@@ -119,6 +120,14 @@ export function ElevenLabsWidget({ locale, labels }: ElevenLabsWidgetProps) {
     useEffect(() => {
         messagesEndRef.current?.scrollIntoView({ behavior: 'smooth', block: 'end' });
     }, [messages]);
+
+    // Fit the message box to its text; max-h-32 caps it and it scrolls beyond that.
+    useEffect(() => {
+        const box = boxRef.current;
+        if (!box) return;
+        box.style.height = 'auto';
+        box.style.height = `${box.scrollHeight}px`;
+    }, [inputValue]);
 
     // Keep the conversation for the next page while it is going on; forget it once it ends.
     useEffect(() => {
@@ -357,7 +366,7 @@ export function ElevenLabsWidget({ locale, labels }: ElevenLabsWidgetProps) {
                                     <div
                                         key={i}
                                         className={cn(
-                                            "max-w-[80%] px-3 py-2 rounded-2xl text-[14px] leading-snug shadow-sm",
+                                            "max-w-[80%] px-3 py-2 rounded-2xl text-[14px] leading-snug shadow-sm whitespace-pre-wrap break-words",
                                             m.role === 'user'
                                                 ? "self-end bg-blue-500 text-white"
                                                 : "self-start bg-white/80 dark:bg-white/10 text-black dark:text-white"
@@ -396,10 +405,12 @@ export function ElevenLabsWidget({ locale, labels }: ElevenLabsWidgetProps) {
                                         }
                                     }
                                 }}
-                                className="relative flex items-center"
+                                className="relative flex items-end"
                             >
-                                <input
-                                    type="text"
+                                {/* Grows with the message (up to a cap, then scrolls) so what was written stays visible. */}
+                                <textarea
+                                    ref={boxRef}
+                                    rows={1}
                                     placeholder={labels.placeholder}
                                     value={inputValue}
                                     onChange={(e) => {
@@ -408,13 +419,20 @@ export function ElevenLabsWidget({ locale, labels }: ElevenLabsWidgetProps) {
                                             conversation.sendUserActivity();
                                         }
                                     }}
-                                    className="w-full bg-white/50 dark:bg-white/5 border border-gray-300 dark:border-white/40 rounded-[1rem] pl-4 pr-12 py-3 text-[15px] text-black dark:text-white placeholder-gray-700 dark:placeholder-white/60 focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 font-medium shadow-sm"
+                                    onKeyDown={(e) => {
+                                        // Enter sends, Shift+Enter breaks the line; never while an IME is composing.
+                                        if (e.key === 'Enter' && !e.shiftKey && !e.nativeEvent.isComposing) {
+                                            e.preventDefault();
+                                            e.currentTarget.form?.requestSubmit();
+                                        }
+                                    }}
+                                    className="block w-full max-h-32 resize-none overflow-y-auto bg-white/50 dark:bg-white/5 border border-gray-300 dark:border-white/40 rounded-[1rem] pl-4 pr-12 py-3 text-[15px] leading-snug text-black dark:text-white placeholder-gray-700 dark:placeholder-white/60 focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 font-medium shadow-sm"
                                 />
                                 <button
                                     type="submit"
                                     aria-label={labels.send}
                                     disabled={!inputValue.trim() || isConnecting}
-                                    className="absolute right-1.5 p-2 bg-black/10 dark:bg-white/20 text-black dark:text-white rounded-[0.8rem] disabled:opacity-40 hover:bg-black/20 dark:hover:bg-white/30 dark:border dark:border-white/20"
+                                    className="absolute right-1.5 bottom-1.5 p-2 bg-black/10 dark:bg-white/20 text-black dark:text-white rounded-[0.8rem] disabled:opacity-40 hover:bg-black/20 dark:hover:bg-white/30 dark:border dark:border-white/20"
                                 >
                                     {isConnecting ? (
                                         <svg className="animate-spin h-4 w-4 text-black dark:text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
