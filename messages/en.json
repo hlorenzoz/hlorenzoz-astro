@@ -2449,7 +2449,8 @@
     "startCall": "Start a call",
     "endCall": "End call",
     "micError": "Microphone access denied or error occurred.",
-    "chatError": "Could not start the chat. Please try again."
+    "chatError": "Could not start the chat. Please try again.",
+    "typing": "Typing..."
   },
   "media": {
     "calBooking": "Cal.com Booking"

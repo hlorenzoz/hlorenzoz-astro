@@ -2296,7 +2296,8 @@
     "startCall": "Avvia una chiamata",
     "endCall": "Termina la chiamata",
     "micError": "Accesso al microfono negato o errore imprevisto.",
-    "chatError": "Impossibile avviare la chat. Riprova."
+    "chatError": "Impossibile avviare la chat. Riprova.",
+    "typing": "Sta scrivendo..."
   },
   "media": {
     "calBooking": "Prenotazione su Cal.com"

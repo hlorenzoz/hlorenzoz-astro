@@ -2296,7 +2296,8 @@
     "startCall": "Iniciar unha chamada",
     "endCall": "Rematar a chamada",
     "micError": "Non se puido acceder ao micrófono ou produciuse un erro.",
-    "chatError": "Non se puido iniciar o chat. Téntao de novo."
+    "chatError": "Non se puido iniciar o chat. Téntao de novo.",
+    "typing": "Escribindo..."
   },
   "media": {
     "calBooking": "Reserva en Cal.com"

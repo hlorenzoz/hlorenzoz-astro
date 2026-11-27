@@ -29,11 +29,15 @@ export interface AssistantLabels {
     endCall: string;
     micError: string;
     chatError: string;
+    /** Accessible name of the typing indicator shown before a chat reply. */
+    typing: string;
     /** The agent's first message in a new conversation (the `first_message` override). */
     greeting: string;
 }
 
 type Message = { role: 'user' | 'agent'; text: string };
+/** A chat reply waits at least this long after the visitor's message, behind the typing indicator. */
+const MIN_TYPING_MS = 900;
 /** A text chat (no microphone) or a voice call: the same SDK session, told apart only here. */
 type Mode = 'chat' | 'call';
 
@@ -97,6 +101,10 @@ export function ElevenLabsWidget({ locale, labels }: ElevenLabsWidgetProps) {
     // Typed messages the agent has not answered yet: resent when a rejected session is retried.
     const unansweredRef = useRef<string[]>([]);
     const modeRef = useRef(mode);
+    const [agentTyping, setAgentTyping] = useState(false);
+    // When the visitor last sent a chat message, and when the last held reply is due.
+    const sentAtRef = useRef(0);
+    const releaseAtRef = useRef(0);
     modeRef.current = mode;
 
     /**
@@ -119,7 +127,7 @@ export function ElevenLabsWidget({ locale, labels }: ElevenLabsWidgetProps) {
     // Keep the newest message in view as the conversation grows.
     useEffect(() => {
         messagesEndRef.current?.scrollIntoView({ behavior: 'smooth', block: 'end' });
-    }, [messages]);
+    }, [messages, agentTyping]);
 
     // Fit the message box to its text; max-h-32 caps it and it scrolls beyond that.
     useEffect(() => {
@@ -167,10 +175,21 @@ export function ElevenLabsWidget({ locale, labels }: ElevenLabsWidgetProps) {
                 return;
             }
             if (role === 'agent') unansweredRef.current = [];
+            if (role === 'agent' && modeRef.current === 'chat') {
+                // An instant reply reads like a machine: hold it briefly behind the indicator, in order.
+                const due = Math.max(Date.now(), sentAtRef.current + MIN_TYPING_MS, releaseAtRef.current);
+                releaseAtRef.current = due;
+                setTimeout(() => {
+                    setMessages((prev) => [...prev, { role, text: message }]);
+                    if (releaseAtRef.current === due) setAgentTyping(false);
+                }, due - Date.now());
+                return;
+            }
             setMessages((prev) => [...prev, { role, text: message }]);
         },
         onDisconnect: (details: DisconnectionDetails) => {
             if (leavingRef.current) return;
+            setAgentTyping(false);
             if (details.reason === 'error' && /override/i.test(details.message) && !overridesRejectedRef.current) {
                 console.warn('11Labs rejected the session overrides, retrying without them:', details.message);
                 overridesRejectedRef.current = true;
@@ -262,6 +281,8 @@ export function ElevenLabsWidget({ locale, labels }: ElevenLabsWidgetProps) {
         skipGreetingRef.current = false;
         setMessages((prev) => [...prev, { role: 'user', text }]);
         unansweredRef.current = [...unansweredRef.current, text];
+        sentAtRef.current = Date.now();
+        setAgentTyping(true);
         conversation.sendUserMessage(text);
         setInputValue('');
     };
@@ -375,6 +396,22 @@ export function ElevenLabsWidget({ locale, labels }: ElevenLabsWidgetProps) {
                                         {m.text}
                                     </div>
                                 ))}
+                                {agentTyping && (
+                                    <div
+                                        role="status"
+                                        aria-label={labels.typing}
+                                        className="self-start flex items-center gap-1 px-3 py-3 rounded-2xl bg-white/80 shadow-sm"
+                                    >
+                                        {[0, 150, 300].map((delay) => (
+                                            <span
+                                                key={delay}
+                                                aria-hidden="true"
+                                                className="size-1.5 rounded-full bg-gray-500 animate-bounce motion-reduce:animate-none"
+                                                style={{ animationDelay: `${delay}ms` }}
+                                            />
+                                        ))}
+                                    </div>
+                                )}
                                 <div ref={messagesEndRef} />
                             </div>
                         )}

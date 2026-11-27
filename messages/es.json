@@ -2449,7 +2449,8 @@
     "startCall": "Iniciar una llamada",
     "endCall": "Finalizar llamada",
     "micError": "No se pudo acceder al micrófono o se produjo un error.",
-    "chatError": "No se pudo iniciar el chat. Inténtalo de nuevo."
+    "chatError": "No se pudo iniciar el chat. Inténtalo de nuevo.",
+    "typing": "Escribiendo..."
   },
   "media": {
     "calBooking": "Reserva en Cal.com"

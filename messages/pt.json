@@ -2296,7 +2296,8 @@
     "startCall": "Iniciar uma chamada",
     "endCall": "Terminar chamada",
     "micError": "Não foi possível aceder ao microfone ou ocorreu um erro.",
-    "chatError": "Não foi possível iniciar o chat. Tente novamente."
+    "chatError": "Não foi possível iniciar o chat. Tente novamente.",
+    "typing": "A escrever..."
   },
   "media": {
     "calBooking": "Marcação no Cal.com"

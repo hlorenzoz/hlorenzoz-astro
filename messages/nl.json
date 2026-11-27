@@ -2322,7 +2322,8 @@
         "startCall": "Gesprek starten",
         "endCall": "Gesprek beëindigen",
         "micError": "Geen toegang tot de microfoon of er is een fout opgetreden.",
-        "chatError": "De chat kon niet worden gestart. Probeer het opnieuw."
+        "chatError": "De chat kon niet worden gestart. Probeer het opnieuw.",
+        "typing": "Typt..."
     },
     "media": {
         "calBooking": "Afspraak boeken via Cal.com"

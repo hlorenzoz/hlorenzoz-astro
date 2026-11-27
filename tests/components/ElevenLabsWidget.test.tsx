@@ -132,9 +132,12 @@ describe('ElevenLabsWidget - text vs voice decoupling', () => {
         act(() => {
             mockConversation.options.onMessage({ message: 'Hola, en que puedo ayudarte?', source: 'ai', role: 'agent' });
         });
+        // A chat reply shows after the brief typing pause.
         const log = await screen.findByRole('log');
-        const bubbles = [...log.children].map((el) => el.textContent).filter(Boolean);
-        expect(bubbles).toEqual(['Hola', 'Hola, en que puedo ayudarte?']);
+        await waitFor(() => {
+            const bubbles = [...log.children].map((el) => el.textContent).filter(Boolean);
+            expect(bubbles).toEqual(['Hola', 'Hola, en que puedo ayudarte?']);
+        }, { timeout: 2000 });
     });
 
     it('does not show a typed message when the text session fails to start', async () => {
@@ -369,8 +372,8 @@ describe('ElevenLabsWidget - the conversation survives a language switch', () =>
         act(() => mockConversation.options.onMessage({ message: 'Me dijiste que tu clinica esta en Madrid.', role: 'agent' }));
 
         const log = await screen.findByRole('log');
+        await waitFor(() => expect(log).toHaveTextContent('Me dijiste que tu clinica esta en Madrid.'), { timeout: 2000 });
         expect(log).not.toHaveTextContent('Hi! How can I help today?');
-        expect(log).toHaveTextContent('Me dijiste que tu clinica esta en Madrid.');
     });
 
     it('keeps a call transcript on the new page and waits for a click to call again, with context', async () => {
@@ -456,7 +459,8 @@ describe('ElevenLabsWidget - what each session starts with', () => {
         fireEvent.change(screen.getByPlaceholderText('Or send a message'), { target: { value: 'And the price?' } });
         fireEvent.click(screen.getByRole('button', { name: /send message/i }));
         act(() => mockConversation.options.onMessage({ message: 'The entry price is 500 EUR plus VAT.', role: 'agent' }));
-        expect(await screen.findByRole('log')).toHaveTextContent('The entry price is 500 EUR plus VAT.');
+        const log = await screen.findByRole('log');
+        await waitFor(() => expect(log).toHaveTextContent('The entry price is 500 EUR plus VAT.'), { timeout: 2000 });
     });
 
     it('starts a call from a chat with messages with no greeting', async () => {
@@ -646,5 +650,54 @@ describe('ElevenLabsWidget - message box', () => {
         fireEvent.change(box, { target: { value: 'nihon' } });
         fireEvent.keyDown(box, { key: 'Enter', isComposing: true });
         expect(mockConversation.startSession).not.toHaveBeenCalled();
+    });
+});
+
+describe('ElevenLabsWidget - typing indicator', () => {
+    beforeEach(() => {
+        vi.clearAllMocks();
+        sessionStorage.clear();
+        mockConversation.status = 'disconnected';
+        mockConversation.startSession.mockResolvedValue(undefined);
+    });
+
+    async function chat(text: string) {
+        render(<ElevenLabsWidget locale="en" labels={en.assistant} />);
+        const box = await screen.findByPlaceholderText('Or send a message');
+        fireEvent.change(box, { target: { value: text } });
+        fireEvent.keyDown(box, { key: 'Enter' });
+        await waitFor(() => expect(mockConversation.sendUserMessage).toHaveBeenCalledWith(text));
+    }
+
+    const agentSays = (message: string) => act(() => mockConversation.options.onMessage({ message, role: 'agent' }));
+
+    it('shows that the assistant is typing once a chat message is sent', async () => {
+        await chat('hola');
+        expect(screen.getByRole('status', { name: en.assistant.typing })).toBeInTheDocument();
+    });
+
+    it('holds an instant reply briefly behind the indicator, then shows it', async () => {
+        await chat('hola');
+        await agentSays('Hi there');
+        expect(screen.queryByText('Hi there')).toBeNull();
+        expect(await screen.findByText('Hi there', {}, { timeout: 2000 })).toBeInTheDocument();
+        expect(screen.queryByRole('status', { name: en.assistant.typing })).toBeNull();
+    });
+
+    it('keeps the order of several replies', async () => {
+        await chat('hola');
+        await agentSays('first');
+        await agentSays('second');
+        await screen.findByText('second', {}, { timeout: 3000 });
+        const texts = screen.getAllByText(/^(first|second)$/).map((el) => el.textContent);
+        expect(texts).toEqual(['first', 'second']);
+    });
+
+    it('does not delay what the agent says in a voice call', async () => {
+        mockConversation.status = 'connected';
+        render(<ElevenLabsWidget locale="en" labels={en.assistant} />);
+        await screen.findByRole('button', { name: en.assistant.endCall });
+        await agentSays('Hello by voice');
+        expect(screen.getByText('Hello by voice')).toBeInTheDocument();
     });
 });

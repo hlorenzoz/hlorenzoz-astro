@@ -2296,7 +2296,8 @@
     "startCall": "Démarrer un appel",
     "endCall": "Raccrocher",
     "micError": "Accès au micro refusé ou une erreur s'est produite.",
-    "chatError": "Impossible de lancer la discussion. Veuillez réessayer."
+    "chatError": "Impossible de lancer la discussion. Veuillez réessayer.",
+    "typing": "En train d'écrire..."
   },
   "media": {
     "calBooking": "Réservation Cal.com"
