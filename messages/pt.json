@@ -2297,6 +2297,8 @@
     "endCall": "Terminar chamada",
     "micError": "Não foi possível aceder ao microfone ou ocorreu um erro.",
     "chatError": "Não foi possível iniciar o chat. Tente novamente.",
+    "whatsapp": "Fale connosco pelo WhatsApp",
+    "whatsappMessage": "Olá, estou a escrever a partir de hlorenzoz.com.",
     "typing": "A escrever..."
   },
   "media": {

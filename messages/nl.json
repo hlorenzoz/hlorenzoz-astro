@@ -2323,6 +2323,8 @@
         "endCall": "Gesprek beëindigen",
         "micError": "Geen toegang tot de microfoon of er is een fout opgetreden.",
         "chatError": "De chat kon niet worden gestart. Probeer het opnieuw.",
+        "whatsapp": "Stuur ons een bericht via WhatsApp",
+        "whatsappMessage": "Hallo, ik stuur jullie een bericht via hlorenzoz.com.",
         "typing": "Typt..."
     },
     "media": {

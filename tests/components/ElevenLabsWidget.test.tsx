@@ -712,3 +712,47 @@ describe('ElevenLabsWidget - calculate_cost_of_waiting client tool', () => {
         expect(tool({ customers_per_day: 1, value_per_customer: 90, currency: 'USD' })).toContain('450 USD a week');
     });
 });
+
+describe('ElevenLabsWidget - WhatsApp when the assistant is unavailable', () => {
+    const WHATSAPP = '34643844720';
+
+    beforeEach(() => {
+        vi.clearAllMocks();
+        sessionStorage.clear();
+        mockConversation.status = 'disconnected';
+    });
+
+    async function type(text: string, whatsapp?: string) {
+        render(<ElevenLabsWidget locale="en" labels={en.assistant} whatsapp={whatsapp} />);
+        const box = await screen.findByPlaceholderText('Or send a message');
+        fireEvent.change(box, { target: { value: text } });
+        fireEvent.keyDown(box, { key: 'Enter' });
+    }
+
+    it('offers WhatsApp with the typed message when the chat cannot start', async () => {
+        mockConversation.startSession.mockRejectedValue(new Error('The AI agent you are trying to reach is not available.'));
+        await type('hola, quiero una web', WHATSAPP);
+        const link = await screen.findByRole('link', { name: en.assistant.whatsapp });
+        const url = new URL(link.getAttribute('href')!);
+        expect(url.origin + url.pathname).toBe(`https://wa.me/${WHATSAPP}`);
+        expect(url.searchParams.get('text')).toBe(`${en.assistant.whatsappMessage} hola, quiero una web`);
+        expect(link).toHaveAttribute('target', '_blank');
+        expect(screen.getByText(en.assistant.chatError)).toBeInTheDocument();
+    });
+
+    it('offers WhatsApp when the server ends the chat', async () => {
+        mockConversation.startSession.mockResolvedValue(undefined);
+        await type('hola', WHATSAPP);
+        await waitFor(() => expect(mockConversation.sendUserMessage).toHaveBeenCalledWith('hola'));
+        await act(() => mockConversation.options.onDisconnect({ reason: 'error', message: 'The connection was closed by the server.' }));
+        const link = await screen.findByRole('link', { name: en.assistant.whatsapp });
+        expect(new URL(link.getAttribute('href')!).searchParams.get('text')).toBe(`${en.assistant.whatsappMessage} hola`);
+    });
+
+    it('shows no WhatsApp link while the assistant works', async () => {
+        mockConversation.startSession.mockResolvedValue(undefined);
+        await type('hola', WHATSAPP);
+        await waitFor(() => expect(mockConversation.sendUserMessage).toHaveBeenCalled());
+        expect(screen.queryByRole('link', { name: en.assistant.whatsapp })).toBeNull();
+    });
+});

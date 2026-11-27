@@ -2297,6 +2297,8 @@
     "endCall": "End call",
     "micError": "Microphone access was denied or an error occurred.",
     "chatError": "We couldn't start the chat. Please try again.",
+    "whatsapp": "Write to us on WhatsApp",
+    "whatsappMessage": "Hi, I am writing from hlorenzoz.com.",
     "typing": "Typing..."
   },
   "media": {

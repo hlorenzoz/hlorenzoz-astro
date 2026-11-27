@@ -2450,6 +2450,8 @@
     "endCall": "Finalizar llamada",
     "micError": "No se pudo acceder al micrófono o se produjo un error.",
     "chatError": "No se pudo iniciar el chat. Inténtalo de nuevo.",
+    "whatsapp": "Escríbenos por WhatsApp",
+    "whatsappMessage": "Hola, os escribo desde hlorenzoz.com.",
     "typing": "Escribiendo..."
   },
   "media": {

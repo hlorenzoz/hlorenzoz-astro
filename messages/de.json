@@ -2297,6 +2297,8 @@
         "endCall": "Anruf beenden",
         "micError": "Der Zugriff auf das Mikrofon wurde verweigert oder es ist ein Fehler aufgetreten.",
         "chatError": "Der Chat konnte nicht gestartet werden. Bitte versuchen Sie es erneut.",
+        "whatsapp": "Schreiben Sie uns auf WhatsApp",
+        "whatsappMessage": "Hallo, ich schreibe Ihnen von hlorenzoz.com.",
         "typing": "Schreibt..."
     },
     "media": {

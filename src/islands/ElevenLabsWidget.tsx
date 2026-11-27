@@ -31,6 +31,10 @@ export interface AssistantLabels {
     chatError: string;
     /** Accessible name of the typing indicator shown before a chat reply. */
     typing: string;
+    /** The WhatsApp button offered when the assistant cannot answer. */
+    whatsapp: string;
+    /** The start of the prefilled WhatsApp message; what the visitor typed follows it. */
+    whatsappMessage: string;
     /** The agent's first message in a new conversation (the `first_message` override). */
     greeting: string;
 }
@@ -74,9 +78,11 @@ function visitorTimezone(): string {
 export interface ElevenLabsWidgetProps {
     locale: string;
     labels: AssistantLabels;
+    /** The agency's WhatsApp number, digits only (from ORGANIZATION.telephone); no number, no fallback. */
+    whatsapp?: string;
 }
 
-export function ElevenLabsWidget({ locale, labels }: ElevenLabsWidgetProps) {
+export function ElevenLabsWidget({ locale, labels, whatsapp }: ElevenLabsWidgetProps) {
     const [error, setError] = useState<string | null>(null);
     const [isHovered, setIsHovered] = useState(false);
     const [inputValue, setInputValue] = useState('');
@@ -339,8 +345,21 @@ export function ElevenLabsWidget({ locale, labels }: ElevenLabsWidgetProps) {
                     className="flex flex-col items-end"
                 >
                     {error && (
-                        <div className="mb-4 bg-red-50 text-red-600 text-sm px-4 py-2 rounded-2xl shadow-sm border border-red-100">
+                        <div className="mb-4 bg-red-50 text-red-600 text-sm px-4 py-2 rounded-2xl shadow-sm border border-red-100 max-w-[340px]">
                             {error}
+                            {whatsapp && (
+                                // The assistant is down (no credits, outage): the visitor reaches a person instead, keeping what they typed.
+                                <a
+                                    href={`https://wa.me/${whatsapp}?text=${encodeURIComponent(
+                                        [labels.whatsappMessage, ...unansweredRef.current, inputValue.trim()].filter(Boolean).join(' ')
+                                    )}`}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="mt-2 flex items-center justify-center gap-2 rounded-xl bg-[#1f7a4d] hover:bg-[#19663f] text-white font-semibold px-4 py-2 no-underline"
+                                >
+                                    {labels.whatsapp}
+                                </a>
+                            )}
                         </div>
                     )}
 
