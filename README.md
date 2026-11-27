@@ -1,9 +1,9 @@
-# Lorenzoz Agency - Local SEO | Website Development | AI Voice Receptionist | Software Development / Mobile App Development
+# Lorenzoz Agency - Local SEO | Website Development | AI Voice Receptionist | AI Business Automation | Software Development / Mobile App Development
 
 Production-grade Astro website and PWA for Lorenzoz Agency, a partner focused on the
 success of local businesses: it analyses each client's needs, then implements a tailored
-solution built from local SEO, website development, AI voice receptionists, and custom
-software / mobile app development.
+solution built from local SEO, website development, AI voice receptionists, AI business
+automation, and custom software / mobile app development.
 
 ## 🎯 What This Site Does
 
@@ -29,9 +29,9 @@ target markets, not the site's local GBP service area, see
 [AGENTS.md](./AGENTS.md#target-markets) for why the two must not be conflated.
 
 It works in two steps: a free first call that is the needs analysis, then the
-implementation of one tailored solution. Four services are the building blocks of that
+implementation of one tailored solution. Five services are the building blocks of that
 solution, combined per client and sometimes included at no extra cost: **Local SEO**
-(authority content, authority on Google and AI, and review management), **Website Development**, **AI Voice Receptionist** and **Software / Mobile
+(authority content, authority on Google and AI, and review management), **Website Development**, **AI Voice Receptionist**, **AI Business Automation** and **Software / Mobile
 App Development**.
 
 The only published price is the entry price, 500 EUR + VAT for a first implementation that
@@ -57,7 +57,7 @@ source of truth for the methodology. Do not duplicate the tree here.
 
 ### What this site currently implements
 
-The home page and four service pages under `/services/`, built as landing pages around
+The home page and five service pages under `/services/`, built as landing pages around
 the partner model, with no price and the commercial dossier as a download
 (`public/dossier/`). See
 [AGENTS.md](./AGENTS.md#what-this-site-currently-implements).

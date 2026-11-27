@@ -19,7 +19,7 @@ words. If a translator finds a better established term, change it here first, th
 - No price, figure, range or discount ever appears in copy: every solution is quoted after
   the free first call (`tests/seo/no-published-prices.test.ts`). Where copy mentions a quote,
   it says the quote excludes VAT, with the tax name below.
-- No service is a "core" offer: the four services are building blocks of one tailored
+- No service is a "core" offer: the five services are building blocks of one tailored
   solution.
 - No promises of rankings or results; the first position on Google is a goal, never a
   guarantee. "Several years of experience" is never turned into a number.
@@ -36,6 +36,7 @@ words. If a translator finds a better established term, change it here first, th
 | Local SEO | Local SEO | Local SEO | SEO Local | SEO local | SEO local | SEO locale | SEO local | Lokales SEO | Lokale SEO |
 | Website Development | Website Development | Website Development | Desarrollo Web | Desenvolvemento web | Desenvolvimento web | Sviluppo web | Creation de sites web | Webentwicklung | Websiteontwikkeling |
 | AI Voice Receptionist | AI Voice Receptionist | AI Voice Receptionist | Recepcionista de Voz IA | Recepcionista de voz con IA | Rececionista de voz com IA | Receptionist vocale con IA | Receptionniste vocal IA | Telefonassistent mit KI | Telefoonreceptionist met AI |
+| AI Business Automation | AI Business Automation | AI Business Automation | Automatizacion de Negocio con IA | Automatizacion de negocio con IA | Automacao de negocio com IA | Automazione aziendale con IA | Automatisation d'entreprise par IA | Geschaeftsautomatisierung mit KI | Bedrijfsautomatisering met AI |
 | Software Development | Software Development | Software Development | Desarrollo de Software | Desenvolvemento de software | Desenvolvimento de software | Sviluppo software | Developpement logiciel | Softwareentwicklung | Softwareontwikkeling |
 | Portfolio | Portfolio | Portfolio | Portafolio | Portfolio | Portfolio | Portfolio | Portfolio | Portfolio | Portfolio |
 | News | News | News | Noticias | Novas | Noticias | Notizie | Actualites | Neuigkeiten | Nieuws |
@@ -44,4 +45,5 @@ words. If a translator finds a better established term, change it here first, th
 
 Accents are omitted in this table only to keep it ASCII; write them in copy (Creation ->
 Création, Developpement -> Développement, Actualites -> Actualités, Rececionista ->
-Rececionista, Noticias -> Notícias in pt).
+Rececionista, Noticias -> Notícias in pt, Automatizacion -> Automatización, Automacao de
+negocio -> Automação de negócio, Geschaeftsautomatisierung -> Geschäftsautomatisierung).

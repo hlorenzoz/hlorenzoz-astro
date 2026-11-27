@@ -33,7 +33,7 @@ disconnect); the agent setting is part of the alignment below.
 | Language and context | Answers in Galician | next reply (LLM) |
 | Language and context | Uses the page the visitor is on | next reply (LLM) |
 | Language and context | Continues a conversation without greeting again | next reply (LLM) |
-| Knowledge | Explains the four services as one solution | next reply (LLM) |
+| Knowledge | Explains the five services as one solution | next reply (LLM) |
 | Knowledge | Review management is part of Local SEO | next reply (LLM) |
 | Knowledge | Knows the markets it serves | next reply (LLM) |
 | Knowledge | Says it does not know instead of inventing | next reply (LLM) |

@@ -69,9 +69,9 @@ Putting the town into `areaServed`, or a country into `address`, misstates the b
 
 ### Agency Services
 
-The agency offers four services. None of them is a "core" offer and none is an add-on to
+The agency offers five services. None of them is a "core" offer and none is an add-on to
 another: they are the building blocks of one solution, combined per client according to
-what the needs analysis finds. A client may need one of them or all four. A service may
+what the needs analysis finds. A client may need one of them or all five. A service may
 come included in the solution, even at no extra cost, when the client's needs call for it.
 
 **Local SEO.** Its purpose is to rank a local business at the top of Google for the
@@ -88,10 +88,19 @@ of a solution, it comes with all three of its pillars:
 Review management used to be sold as its own service ("Review Management" / "Reputation
 Management"). It is now a pillar of Local SEO and is NOT sold separately.
 
-The other three building blocks:
+The other four building blocks:
 
 - **Website Development**: high-conversion websites and PWAs.
 - **AI Voice Receptionist**: inbound-call receptionists that answer FAQs and book appointments 24/7.
+- **AI Business Automation** (new as of 2026-11-27): AI agents connected to the tools the business
+  already uses, in four areas: lead follow up (an instant reply to every enquiry by web, WhatsApp,
+  email or missed call, qualified and followed up until it books or says no), bookings and
+  reminders, back office (quotes, invoices, data entry and reports, with the owner approving what
+  matters) and reviews and loyalty (a review request after every visit to EVERY customer, plus
+  messages that bring back lapsed customers). A person takes over when it matters. It is designed
+  after the free needs analysis; the proof is the assistant on hlorenzoz.com, which answers by
+  voice or chat, checks the calendar and books the free analysis by itself. Do not name an
+  integration (a CRM or tool brand) in its copy.
 - **Software Development / Mobile App Development**: full-stack products (Flutter + backend) across all devices and screens.
 
 **Paused: Digital Business Card.** Not offered since 2026-10-08. It is paused, not
@@ -144,7 +153,7 @@ Terms, and each one is a billing dispute if it is lost in a summary:
 
 One price lives in code: `ENTRY_PRICE` in `lib/pricing.ts`, next to the service keys and
 their slug helpers. Copy never holds the amount: it uses the `{entryPrice}` token, filled
-and formatted per locale by `copyTokens()` (`lib/copy-tokens.ts`). The home and the four
+and formatted per locale by `copyTokens()` (`lib/copy-tokens.ts`). The home and the five
 service landings mark it up as one `Offer` each (`entryOffer` in `lib/schema`), and only
 where the same price is visible: the home's fees section and FAQ, each service's price FAQ
 (the package panel on Website Development). The services hub shows it in its hero but
@@ -156,8 +165,8 @@ or one whose price the page does not show.
 
 ### What this site currently implements
 
-The home page and four service pages (**Local SEO**, **Website Development**, **AI Voice
-Receptionist**, **Software Development**), each built as a landing page around the partner
+The home page and five service pages (**Local SEO**, **Website Development**, **AI Voice
+Receptionist**, **AI Business Automation**, **Software Development**), each built as a landing page around the partner
 model: the free needs analysis as the call to action, the service as one building block of
 a tailored solution, and the dossier as a download (`public/dossier/`, built by
 `just dossier`, one PDF per site locale). There is no price list: the only figure is the
@@ -325,7 +334,7 @@ which point the Core 30 naming layers on top of a structure that already has the
 
 Current state, so an audit reports against reality rather than an assumed GBP tree:
 
-- Route tiers today: `home`, `category` (one hub, `/services`), `service` (four pages), `page`,
+- Route tiers today: `home`, `category` (one hub, `/services`), `service` (five pages), `page`,
   `legal`. Each service page shares one slug identity across `lib/routes.ts`,
   `messages/<locale>.json`'s `services.*` namespace, and its own
   `src/pages/[locale]/services/<slug>/index.astro`; there is no string-matched duplication.
