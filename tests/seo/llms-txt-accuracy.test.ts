@@ -7,6 +7,7 @@ import { getNewsItems } from '@/lib/news';
 import { ENTRY_PRICE, SERVICE_KEYS, slugFromServiceKey, type ServiceKey } from '@/lib/pricing';
 import { marketNames } from '@/lib/site-config';
 import { LOCALES } from '@/lib/routing';
+import { DENTAL_MEDIANS, DEFAULTS } from '@/lib/cost-example';
 
 /**
  * `public/llms.txt` is written to be read by machines, so an error in it is
@@ -18,6 +19,12 @@ import { LOCALES } from '@/lib/routing';
  * the file to the data it describes. These tests are that tie.
  */
 const LLMS_TXT = readFileSync(path.resolve(__dirname, '../../public/llms.txt'), 'utf-8');
+
+/** Every amount written as a price: `€ 60`, `60 EUR`. */
+const AMOUNT = /€\s?\d[\d.,]*|\d[\d.,]*\s?(€|EUR)\b/gi;
+
+/** The home calculator section: the only place amounts other than the entry price may appear. */
+const COST_SECTION = LLMS_TXT.split('## The Cost of Waiting')[1]?.split('\n## ')[0] ?? '';
 
 /** The `## Services` section only, so unrelated prose cannot satisfy a match. */
 const SERVICES_SECTION = LLMS_TXT.split('## Services')[1]?.split('\n## ')[0] ?? '';
@@ -124,10 +131,16 @@ describe('llms.txt: publishes the entry price and no other price', () => {
     const lineOf = (key: ServiceKey) =>
         SERVICES_SECTION.split('\n').find((line) => line.includes(`/services/${slugFromServiceKey(key)}/`)) ?? '';
 
-    it('quotes no amount but the entry price', () => {
-        const amounts = LLMS_TXT.match(/€\s?\d[\d.,]*|\d[\d.,]*\s?(€|EUR)\b/gi) ?? [];
+    it('quotes no amount but the entry price outside the cost of waiting section', () => {
+        expect(COST_SECTION.trim().length).toBeGreaterThan(0);
+        const amounts = LLMS_TXT.replace(COST_SECTION, '').match(AMOUNT) ?? [];
         expect(amounts).toEqual([`${ENTRY_PRICE.amount} EUR`]);
         expect(LLMS_TXT).not.toMatch(/price range|list price/i);
+    });
+
+    it('quotes, in the cost of waiting section, only its default and the dental medians', () => {
+        const expected = [DEFAULTS.value, ...DENTAL_MEDIANS.map((m) => m.amount)].map((n) => `${n} EUR`);
+        expect(COST_SECTION.match(AMOUNT) ?? []).toEqual(expected);
     });
 
     it('says every service is quoted after a free first call', () => {
@@ -184,5 +197,30 @@ describe('llms.txt: served markets match site-config', () => {
                 country
             );
         }
+    });
+});
+
+/**
+ * The site's own voice assistant reads this file as its knowledge base, so the
+ * calculator must be described with the same arithmetic `lib/cost-example.ts` runs.
+ */
+describe('llms.txt: the cost of waiting calculator', () => {
+    it('links the home anchor of the calculator', () => {
+        expect(COST_SECTION).toContain('(https://hlorenzoz.com/en/#cost-of-waiting)');
+        expect(COST_SECTION).toMatch(/every site language/i);
+    });
+
+    it('states the arithmetic and the default the calculator starts from', () => {
+        expect(COST_SECTION).toContain('per week = per day x 5');
+        expect(COST_SECTION).toContain('per month = per day x 5 x 52 / 12');
+        expect(COST_SECTION).toContain('per year = per day x 260');
+        expect(COST_SECTION).toContain(`${DEFAULTS.missed} customer worth ${DEFAULTS.value} EUR`);
+        expect(COST_SECTION).toMatch(/first visits only/i);
+    });
+
+    it('frames the dental example as an illustration of a client industry, not a forecast or agency prices', () => {
+        expect(COST_SECTION).toContain('OCU dental survey of 27 November 2024');
+        expect(COST_SECTION).toMatch(/illustration of the arithmetic, not a forecast or a result/i);
+        expect(COST_SECTION).toMatch(/not the agency's prices/i);
     });
 });

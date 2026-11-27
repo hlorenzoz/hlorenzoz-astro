@@ -22,6 +22,13 @@
 - [News](https://hlorenzoz.com/en/news/): Agency announcements, such as new work added to the portfolio, each linking to its case study.
 - [Digital Business Card](https://hlorenzoz.com/en/card/hector/): Héctor's NFC enabled digital business card with contact details, "Add to Contacts", call booking, and location on Google Maps.
 
+## The Cost of Waiting
+
+- [Cost of waiting calculator](https://hlorenzoz.com/en/#cost-of-waiting): A calculator on the home page, titled "What does doing nothing cost you?". It exists in every site language, at the same anchor under each language prefix (for example https://hlorenzoz.com/es/#cost-of-waiting). Its point is to help a business see what the customers it misses cost it, as a starting point for the free needs analysis.
+- [What the visitor enters](https://hlorenzoz.com/en/#cost-of-waiting): the customers the business loses each working day, and what a first visit is worth to it in EUR. It starts at 1 customer worth 140 EUR (a check up plus a filling in the dental example below). The figures stay in the visitor's browser; the site's assistant only receives them when the visitor starts a conversation with it.
+- [How the calculator counts](https://hlorenzoz.com/en/#cost-of-waiting): per day = customers lost per day x value of a first visit; per week = per day x 5; per month = per day x 5 x 52 / 12; per year = per day x 260 (5 working days a week, 52 weeks a year). It counts first visits only, before any return visit or referral.
+- [Dental clinic example, OCU dental survey of 27 November 2024](https://www.ocu.org/organizacion/prensa/notas-de-prensa/2024/saluddental271124): median prices patients reported paying in Spain: check up or cleaning 60 EUR, filling 80 EUR, root canal 250 EUR, implant 1850 EUR, orthodontics 2000 EUR, each multiplied by one lost patient a day. It is an illustration of the arithmetic, not a forecast or a result. These are market prices of a client industry, not the agency's prices.
+
 ## Services
 
 - [Services Hub](https://hlorenzoz.com/en/services/): Directory of all 4 service offerings, each with its deliverables, process, and FAQ. Each one is a building block of a solution tailored to the client.

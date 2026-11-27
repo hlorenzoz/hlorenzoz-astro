@@ -1257,6 +1257,25 @@
       "descripcion": [
         "src/islands/ElevenLabsWidget.tsx, src/islands/conversation-storage.ts, src/components/ElevenLabsLoader.astro y sus pruebas."
       ]
+    },
+    {
+      "id": "#T0059",
+      "estado": "en curso",
+      "prioridad": "alta",
+      "tipo": "funcionalidad",
+      "titulo": "Asistente de ElevenLabs: ayudar mejor, invitar a reservar sin presion, medir conversiones y conocer El coste de esperar",
+      "anotada": "2026-11-27",
+      "origen": "usuario",
+      "depende": [
+        "#T0058"
+      ],
+      "notas": [
+        "Plan y refutacion en odd/tasks/assistant-conversions.md. Base: desde el 5 mar, 29 conversaciones, mediana de 1 mensaje del visitante, 3 llegaron a ver huecos, 0 reservas."
+      ],
+      "descripcion": [
+        "Fase 1: llms.txt con El coste de esperar, saludo traducido, widget con overrides, variables dinamicas y herramienta show_cost_of_waiting.",
+        "Fase 2: configuracion del agente (prompt, base de conocimiento con auto-sync, herramientas, allowlist, evaluacion, pruebas)."
+      ]
     }
   ]
 }
