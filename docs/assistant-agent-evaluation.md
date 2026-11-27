@@ -124,3 +124,29 @@ Reading it:
 The prompt was hardened after this run (key facts, never describing payment methods, passing the exact UTC slot, never
 fixing an email, every figure from calculate_cost_of_waiting, reference prices). The choice of model waits for a rerun of
 the best candidates on the final prompt, with the estimate tests added.
+
+## Live agent after the alignment (2026-11-27)
+
+Applied with the ElevenLabs MCP and published (version `agtvrsn_7501m8eepcqefmptb5mgs81mnhks` after the reference
+prices). The previous version stays in the agent's version history in ElevenLabs.
+
+| Setting | Value |
+| :--- | :--- |
+| LLM | unchanged, `gemini-3.1-flash-lite` (a switch waits for the rerun on the final prompt) |
+| Prompt | `docs/assistant-agent-prompt.md` |
+| Tools | get_available_slots, reserve_slot, create_booking, navigate_to_contact, show_cost_of_waiting (`tool_1701m8e9g7saepva0dyhgqbvcwgd`), calculate_cost_of_waiting (`tool_5601m8ebyn31fjqtsag90ve7szja`); reschedule_booking, get_user_bookings and cancel_booking removed from the agent (records kept) |
+| Knowledge base | "hlorenzoz.com llms.txt" (`ZPvdoeWEk7Fo3s04Hjz3`, URL, daily sync) and "Reference prices by business and country" (`CEHMB280I2L2Ots9LjQ7`, text rendered by `just assistant-kb` from `docs/assistant-kb/reference-prices.json`) |
+| Dynamic variable defaults | page_title "Lorenzoz Agency", page_url "https://hlorenzoz.com/", locale "en", visitor_timezone "Europe/Madrid", cost_of_waiting "not used" |
+| Client overrides | first_message and language allowed |
+| Origin allowlist | still empty: the MCP has no setting for it; add hlorenzoz.com, www.hlorenzoz.com and localhost:4321 in the dashboard |
+
+The reference prices document is plain text: after editing the JSON, render it with `just assistant-kb` and replace the
+document's text in ElevenLabs.
+
+Checked in a real chat on the local site against the live agent:
+
+- "dime el cálculo para una clínica dental diario, semanal, mensual, para 1 paciente en España": the OCU median for a
+  check up or cleaning (60 EUR, November 2024), then 60 EUR a day, 300 a week, 1300 a month and 15600 a year.
+- A London physio clinic missing 2 patients a day, no figure of its own: the UK reference of 65 GBP a session, then 130 GBP
+  a day, 650 a week, 2817 a month and 33800 a year, said to be a market average. It did not name the source; the prompt
+  now asks for it explicitly.
