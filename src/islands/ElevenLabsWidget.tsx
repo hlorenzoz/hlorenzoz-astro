@@ -8,6 +8,7 @@ import { Phone, Minimize2 } from 'lucide-react';
 import { cn } from '@/lib/utils/cn';
 import { imageFallbackSrc, imageSrcSet } from '@/lib/image';
 import { localeHref } from '@/lib/routing';
+import { CONVERSATION_KEY as STORAGE_KEY } from './conversation-storage';
 
 const AGENT_ID = 'agent_7601kjm9f042e55894dty11tqtnh';
 const AVATAR = 'https://cdn.hlorenzoz.com/hlorenzoz.com/hector-profile.webp';
@@ -29,6 +30,32 @@ export interface AssistantLabels {
     chatError: string;
 }
 
+type Message = { role: 'user' | 'agent'; text: string };
+/** A text chat (no microphone) or a voice call: the same SDK session, told apart only here. */
+type Mode = 'chat' | 'call';
+
+/**
+ * A language switch loads a new page, which closes the live session, and the SDK cannot
+ * resume one. So the transcript and the mode are kept for the tab in sessionStorage: the next
+ * page shows the same conversation, reconnects a chat on its own and offers to call again,
+ * handing the agent the conversation so far as context.
+ */
+
+function loadSaved(): { mode: Mode; messages: Message[] } | null {
+    try {
+        const saved = JSON.parse(sessionStorage.getItem(STORAGE_KEY) ?? 'null');
+        return saved && (saved.mode === 'chat' || saved.mode === 'call') && Array.isArray(saved.messages) ? saved : null;
+    } catch {
+        return null;
+    }
+}
+
+/** The conversation so far, for the agent: never shown to the visitor. */
+function contextFrom(messages: Message[]): string {
+    const lines = messages.slice(-20).map((m) => `${m.role === 'user' ? 'Visitor' : 'You'}: ${m.text}`);
+    return `The visitor is continuing a conversation they already had with you on this site. Do not greet them again; carry on from here.\n${lines.join('\n')}`;
+}
+
 export interface ElevenLabsWidgetProps {
     locale: string;
     labels: AssistantLabels;
@@ -40,18 +67,44 @@ export function ElevenLabsWidget({ locale, labels }: ElevenLabsWidgetProps) {
     const [inputValue, setInputValue] = useState('');
     const [isShrunk, setIsShrunk] = useState(false);
     const [mounted, setMounted] = useState(false);
-    const [messages, setMessages] = useState<{ role: 'user' | 'agent'; text: string }[]>([]);
+    // Read once: what the previous page left (a language switch), if anything.
+    const [restored] = useState(loadSaved);
+    const [messages, setMessages] = useState<Message[]>(() => restored?.messages ?? []);
+    const [mode, setMode] = useState<Mode | null>(() => restored?.mode ?? null);
     const messagesEndRef = useRef<HTMLDivElement>(null);
+    // True once the page is going away: that disconnect is not the end of the conversation.
+    const leavingRef = useRef(false);
+    const resumedRef = useRef(false);
+    // Every new session opens with the agent's greeting. When it continues a conversation
+    // (a chat after a language switch, or a call after a chat) that greeting is noise in the
+    // transcript, so the first agent message of such a session is not shown.
+    const skipGreetingRef = useRef(false);
 
     // Keep the newest message in view as the conversation grows.
     useEffect(() => {
         messagesEndRef.current?.scrollIntoView({ behavior: 'smooth', block: 'end' });
     }, [messages]);
 
-    // Default to shrunk on mobile
+    // Keep the conversation for the next page while it is going on; forget it once it ends.
+    useEffect(() => {
+        try {
+            if (mode) sessionStorage.setItem(STORAGE_KEY, JSON.stringify({ mode, messages }));
+            else sessionStorage.removeItem(STORAGE_KEY);
+        } catch {
+            // Storage unavailable (private mode): the conversation simply does not carry over.
+        }
+    }, [mode, messages]);
+
+    useEffect(() => {
+        const leave = () => (leavingRef.current = true);
+        window.addEventListener('pagehide', leave);
+        return () => window.removeEventListener('pagehide', leave);
+    }, []);
+
+    // Default to shrunk on mobile, unless a conversation carried over from the previous page.
     useEffect(() => {
         const checkMobile = () => {
-            if (window.innerWidth < 768) {
+            if (window.innerWidth < 768 && !restored) {
                 setIsShrunk(true);
             }
         };
@@ -59,13 +112,20 @@ export function ElevenLabsWidget({ locale, labels }: ElevenLabsWidgetProps) {
         setMounted(true);
         window.addEventListener('resize', checkMobile);
         return () => window.removeEventListener('resize', checkMobile);
-    }, []);
+    }, [restored]);
 
     const conversation = useConversation({
         onConnect: () => setError(null),
-        onMessage: ({ message, role }: { message: string; role: 'user' | 'agent' }) =>
-            setMessages((prev) => [...prev, { role, text: message }]),
-        onDisconnect: () => console.log('11Labs Disconnected'),
+        onMessage: ({ message, role }: { message: string; role: 'user' | 'agent' }) => {
+            if (role === 'agent' && skipGreetingRef.current) {
+                skipGreetingRef.current = false;
+                return;
+            }
+            setMessages((prev) => [...prev, { role, text: message }]);
+        },
+        onDisconnect: () => {
+            if (!leavingRef.current) setMode(null);
+        },
         onError: (err: Error | string) => {
             console.error('11Labs Error:', err);
             setError(typeof err === 'string' ? err : err.message);
@@ -96,6 +156,21 @@ export function ElevenLabsWidget({ locale, labels }: ElevenLabsWidgetProps) {
 
     // The SDK only echoes voice input (user_transcript) through onMessage; typed text is sent as
     // user_message and never comes back, so it joins the transcript here, when it is sent.
+    // A chat carried over from the previous page reconnects on its own, without the microphone.
+    useEffect(() => {
+        if (restored?.mode !== 'chat' || resumedRef.current) return;
+        resumedRef.current = true;
+        skipGreetingRef.current = true;
+        conversation
+            .startSession({ agentId: AGENT_ID, connectionType: 'websocket', textOnly: true })
+            .then(() => conversation.sendContextualUpdate(contextFrom(restored.messages)))
+            .catch((err: unknown) => {
+                console.error('Failed to resume the chat:', err);
+                setMode(null);
+            });
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, []);
+
     const sendText = (text: string) => {
         setMessages((prev) => [...prev, { role: 'user', text }]);
         conversation.sendUserMessage(text);
@@ -107,22 +182,31 @@ export function ElevenLabsWidget({ locale, labels }: ElevenLabsWidgetProps) {
 
     const isConnected = conversation.status === 'connected';
     const isConnecting = conversation.status === 'connecting';
+    // A connected text chat is not a call: it keeps offering one instead of "End call".
+    const isCall = isConnected && mode !== 'chat';
 
     const toggleConversation = async () => {
-        if (isConnected) {
+        if (isCall) {
             await conversation.endSession();
-        } else {
-            setError(null);
-            try {
-                await navigator.mediaDevices.getUserMedia({ audio: true });
-                await conversation.startSession({
-                    agentId: AGENT_ID,
-                    connectionType: 'webrtc',
-                });
-            } catch (err: unknown) {
-                console.error("Failed to start conversation:", err);
-                setError(labels.micError);
-            }
+            setMode(null);
+            return;
+        }
+        setError(null);
+        try {
+            // A chat in progress becomes a call: the text session closes, the transcript stays.
+            if (isConnected) await conversation.endSession();
+            await navigator.mediaDevices.getUserMedia({ audio: true });
+            setMode('call');
+            skipGreetingRef.current = messages.length > 0;
+            await conversation.startSession({
+                agentId: AGENT_ID,
+                connectionType: 'webrtc',
+            });
+            if (messages.length) conversation.sendContextualUpdate(contextFrom(messages));
+        } catch (err: unknown) {
+            console.error("Failed to start conversation:", err);
+            setMode(null);
+            setError(labels.micError);
         }
     };
 
@@ -179,7 +263,7 @@ export function ElevenLabsWidget({ locale, labels }: ElevenLabsWidgetProps) {
 
                             {/* Text */}
                             <div className="text-black dark:text-white font-semibold text-[20px] leading-tight flex-1 pr-8">
-                                {isConnected ?
+                                {isCall ?
                                     (conversation.isSpeaking ? labels.speaking : labels.listening) :
                                     (isConnecting ? labels.connecting : labels.prompt)}
                             </div>
@@ -218,6 +302,7 @@ export function ElevenLabsWidget({ locale, labels }: ElevenLabsWidgetProps) {
                                         if (!isConnected) {
                                             try {
                                                 // Text-only session: no microphone, no WebRTC audio.
+                                                setMode('chat');
                                                 await conversation.startSession({
                                                     agentId: AGENT_ID,
                                                     connectionType: 'websocket',
@@ -226,6 +311,7 @@ export function ElevenLabsWidget({ locale, labels }: ElevenLabsWidgetProps) {
                                                 sendText(inputValue);
                                             } catch (err: unknown) {
                                                 console.error("Failed to start text conversation:", err);
+                                                setMode(null);
                                                 setError(labels.chatError);
                                             }
                                         } else {
@@ -276,7 +362,7 @@ export function ElevenLabsWidget({ locale, labels }: ElevenLabsWidgetProps) {
                                 onMouseLeave={() => setIsHovered(false)}
                                 style={{
                                     color: '#ffffff',
-                                    backgroundColor: isConnecting ? '#000000' : (isConnected ? (isHovered ? '#b00010' : '#d70015') : (isHovered ? '#1c6b3d' : '#227747'))
+                                    backgroundColor: isConnecting ? '#000000' : (isCall ? (isHovered ? '#b00010' : '#d70015') : (isHovered ? '#1c6b3d' : '#227747'))
                                 }}
                                 className={cn(
                                     "w-full flex items-center justify-center gap-2.5 py-4 rounded-[1.5rem] font-medium text-[17px] !text-white shadow-md border border-transparent dark:border-white/10",
@@ -288,7 +374,7 @@ export function ElevenLabsWidget({ locale, labels }: ElevenLabsWidgetProps) {
                                         <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
                                         <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
                                     </svg>
-                                ) : isConnected ? (
+                                ) : isCall ? (
                                     <>
                                         <svg aria-hidden="true" className="!text-white" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
                                             <path d="M10.68 13.31a16 16 0 0 0 3.41 2.6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1 1.72 2v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.42 19.42 0 0 1-3.33-2.67m-2.67-3.34a19.79 19.79 0 0 1-3.07-8.63A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91"></path>

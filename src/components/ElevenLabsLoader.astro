@@ -41,6 +41,7 @@ window.__vite_plugin_react_preamble_installed__ = true;`}
 
 <script>
     import type { AssistantLabels } from '../islands/ElevenLabsWidget';
+    import { hasSavedConversation } from '../islands/conversation-storage';
 
     const container = document.querySelector<HTMLElement>('[data-elevenlabs]');
 
@@ -68,6 +69,9 @@ window.__vite_plugin_react_preamble_installed__ = true;`}
             if (!(event.target as Element | null)?.closest?.('[data-assistant-open]')) return;
             mountAssistant().then(() => openAssistant());
         });
+
+        // A conversation in progress on the previous page (a language switch): show it at once.
+        if (hasSavedConversation()) mountAssistant();
 
         if (!isBot) {
             // Mount as soon as the user scrolls below the fold (engagement signal).

@@ -13,6 +13,7 @@ const mockConversation = {
     endSession: vi.fn(),
     sendUserMessage: vi.fn(),
     sendUserActivity: vi.fn(),
+    sendContextualUpdate: vi.fn(),
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     options: undefined as any,
 };
@@ -44,6 +45,7 @@ HTMLElement.prototype.scrollIntoView = vi.fn();
 describe('ElevenLabsWidget - text vs voice decoupling', () => {
     beforeEach(() => {
         vi.clearAllMocks();
+        sessionStorage.clear();
         mockConversation.status = 'disconnected';
         mockConversation.isSpeaking = false;
         mockConversation.startSession.mockResolvedValue(undefined);
@@ -254,5 +256,144 @@ describe('ElevenLabsWidget - translated text', () => {
         expect(screen.getByRole('button', { name: 'Enviar mensaje' })).toBeInTheDocument();
         expect(screen.getByRole('button', { name: 'Minimizar el asistente' })).toBeInTheDocument();
         expect(screen.getByText('Iniciar una llamada')).toBeInTheDocument();
+    });
+});
+
+/** Where the widget keeps the conversation between pages (a language switch loads a new page). */
+const STORAGE_KEY = 'elevenlabs-conversation';
+
+describe('ElevenLabsWidget - chat vs call', () => {
+    beforeEach(() => {
+        vi.clearAllMocks();
+        sessionStorage.clear();
+        mockConversation.status = 'disconnected';
+        mockConversation.isSpeaking = false;
+        mockConversation.startSession.mockResolvedValue(undefined);
+        Object.defineProperty(navigator, 'mediaDevices', {
+            value: { getUserMedia: vi.fn().mockResolvedValue({}) },
+            configurable: true,
+        });
+    });
+
+    async function chat(text: string) {
+        const view = render(<ElevenLabsWidget locale="en" labels={en.assistant} />);
+        const input = await screen.findByPlaceholderText('Or send a message');
+        fireEvent.change(input, { target: { value: text } });
+        fireEvent.click(screen.getByRole('button', { name: /send message/i }));
+        await waitFor(() => expect(mockConversation.sendUserMessage).toHaveBeenCalledWith(text));
+        mockConversation.status = 'connected';
+        view.rerender(<ElevenLabsWidget locale="en" labels={en.assistant} />);
+        return view;
+    }
+
+    it('keeps offering a call during a text chat: no "End call", no listening state', async () => {
+        await chat('hola');
+        expect(screen.getByRole('button', { name: en.assistant.startCall })).toBeInTheDocument();
+        expect(screen.queryByRole('button', { name: en.assistant.endCall })).toBeNull();
+        expect(screen.queryByText(en.assistant.listening)).toBeNull();
+    });
+
+    it('turns a chat into a call carrying the chat so far as context', async () => {
+        await chat('hola');
+        fireEvent.click(screen.getByRole('button', { name: en.assistant.startCall }));
+
+        await waitFor(() => expect(mockConversation.endSession).toHaveBeenCalled());
+        await waitFor(() =>
+            expect(mockConversation.startSession).toHaveBeenLastCalledWith(expect.objectContaining({ connectionType: 'webrtc' }))
+        );
+        expect(navigator.mediaDevices.getUserMedia).toHaveBeenCalled();
+        await waitFor(() => expect(mockConversation.sendContextualUpdate).toHaveBeenCalledWith(expect.stringContaining('hola')));
+    });
+
+    it('shows "End call" during a voice call', async () => {
+        mockConversation.status = 'connected';
+        render(<ElevenLabsWidget locale="en" labels={en.assistant} />);
+        expect(await screen.findByRole('button', { name: en.assistant.endCall })).toBeInTheDocument();
+        expect(screen.getByText(en.assistant.listening)).toBeInTheDocument();
+    });
+});
+
+describe('ElevenLabsWidget - the conversation survives a language switch', () => {
+    beforeEach(() => {
+        vi.clearAllMocks();
+        sessionStorage.clear();
+        mockConversation.status = 'disconnected';
+        mockConversation.isSpeaking = false;
+        mockConversation.startSession.mockResolvedValue(undefined);
+        Object.defineProperty(navigator, 'mediaDevices', {
+            value: { getUserMedia: vi.fn().mockResolvedValue({}) },
+            configurable: true,
+        });
+    });
+
+    const saved = (mode: 'chat' | 'call') =>
+        sessionStorage.setItem(
+            STORAGE_KEY,
+            JSON.stringify({ mode, messages: [{ role: 'user', text: 'hola' }, { role: 'agent', text: 'Hola, en que puedo ayudarte?' }] })
+        );
+
+    it('saves the conversation and its mode for the next page', async () => {
+        render(<ElevenLabsWidget locale="en" labels={en.assistant} />);
+        const input = await screen.findByPlaceholderText('Or send a message');
+        fireEvent.change(input, { target: { value: 'hola' } });
+        fireEvent.click(screen.getByRole('button', { name: /send message/i }));
+
+        await waitFor(() => expect(JSON.parse(sessionStorage.getItem(STORAGE_KEY) ?? 'null')).toEqual({
+            mode: 'chat',
+            messages: [{ role: 'user', text: 'hola' }],
+        }));
+    });
+
+    it('resumes a chat on the new page: same transcript, reconnected as text, with the chat as context', async () => {
+        saved('chat');
+        render(<ElevenLabsWidget locale="es" labels={es.assistant} />);
+
+        const log = await screen.findByRole('log');
+        expect(log).toHaveTextContent('hola');
+        expect(log).toHaveTextContent('Hola, en que puedo ayudarte?');
+        await waitFor(() =>
+            expect(mockConversation.startSession).toHaveBeenCalledWith(expect.objectContaining({ textOnly: true }))
+        );
+        expect(navigator.mediaDevices.getUserMedia).not.toHaveBeenCalled();
+        await waitFor(() =>
+            expect(mockConversation.sendContextualUpdate).toHaveBeenCalledWith(expect.stringContaining('Hola, en que puedo ayudarte?'))
+        );
+    });
+
+    it('does not repeat the agent greeting in a resumed chat, but shows the replies after it', async () => {
+        saved('chat');
+        render(<ElevenLabsWidget locale="es" labels={es.assistant} />);
+        await waitFor(() => expect(mockConversation.startSession).toHaveBeenCalled());
+
+        act(() => mockConversation.options.onMessage({ message: 'Hi! How can I help today?', role: 'agent' }));
+        act(() => mockConversation.options.onMessage({ message: 'Me dijiste que tu clinica esta en Madrid.', role: 'agent' }));
+
+        const log = await screen.findByRole('log');
+        expect(log).not.toHaveTextContent('Hi! How can I help today?');
+        expect(log).toHaveTextContent('Me dijiste que tu clinica esta en Madrid.');
+    });
+
+    it('keeps a call transcript on the new page and waits for a click to call again, with context', async () => {
+        saved('call');
+        render(<ElevenLabsWidget locale="es" labels={es.assistant} />);
+
+        expect(await screen.findByRole('log')).toHaveTextContent('hola');
+        expect(mockConversation.startSession).not.toHaveBeenCalled();
+
+        fireEvent.click(screen.getByRole('button', { name: es.assistant.startCall }));
+        await waitFor(() =>
+            expect(mockConversation.startSession).toHaveBeenCalledWith(expect.objectContaining({ connectionType: 'webrtc' }))
+        );
+        await waitFor(() => expect(mockConversation.sendContextualUpdate).toHaveBeenCalledWith(expect.stringContaining('hola')));
+    });
+
+    it('forgets the conversation when the visitor ends the call', async () => {
+        saved('call');
+        mockConversation.status = 'connected';
+        render(<ElevenLabsWidget locale="en" labels={en.assistant} />);
+
+        fireEvent.click(await screen.findByRole('button', { name: en.assistant.endCall }));
+        await waitFor(() => expect(mockConversation.endSession).toHaveBeenCalled());
+        await waitFor(() => expect(sessionStorage.getItem(STORAGE_KEY)).toBeNull());
     });
 });

@@ -322,3 +322,22 @@ test.describe('full screenshot carousel', () => {
         await expect(root.locator('[data-fsc-modal]')).toBeHidden();
     });
 });
+
+test.describe('assistant after a language switch', () => {
+    test.beforeEach(async ({ page }) => acceptCookies(page));
+
+    test('shows the conversation from the previous page at once, without scrolling', async ({ page }) => {
+        // A call (not a chat) carried over: the widget waits for a click, so no session opens here.
+        await page.addInitScript(() =>
+            sessionStorage.setItem(
+                'elevenlabs-conversation',
+                JSON.stringify({ mode: 'call', messages: [{ role: 'user', text: 'hola' }, { role: 'agent', text: 'Hola, en que puedo ayudarte?' }] })
+            )
+        );
+        await page.goto('/es/', { waitUntil: 'load' });
+        const log = page.locator('[data-elevenlabs] [role="log"]');
+        await expect(log).toContainText('Hola, en que puedo ayudarte?', { timeout: 15000 });
+        await expect(page.locator('[data-elevenlabs]').getByRole('button', { name: 'Iniciar una llamada' })).toBeVisible();
+        expect(await page.evaluate(() => window.scrollY)).toBe(0);
+    });
+});

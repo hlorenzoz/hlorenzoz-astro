@@ -1238,6 +1238,25 @@
       "descripcion": [
         "src/components/services/proof.ts, src/pages/[locale]/index.astro y las paginas de servicios, lib/portfolio-data.json, messages/*.json (5 claves y home.facts.pageSpeed.value)."
       ]
+    },
+    {
+      "id": "#T0058",
+      "estado": "hecha",
+      "prioridad": "media",
+      "tipo": "funcionalidad",
+      "titulo": "Widget de ElevenLabs: el chat de texto no muestra Finalizar llamada y la conversacion sigue tras cambiar de idioma",
+      "anotada": "2026-11-27",
+      "hecha": "2026-11-27",
+      "origen": "usuario",
+      "depende": [],
+      "notas": [
+        "Propuesta A elegida por el usuario: modo chat o llamada; la conversacion se guarda en sessionStorage y la pagina nueva la muestra al instante, reconecta el chat y ofrece retomar la llamada, con la transcripcion como contexto (sendContextualUpdate). El SDK 0.14.3 no permite reanudar una sesion.",
+        "Prueba real en el servidor de desarrollo: tras pasar de /en/ a /es/ el agente respondio que la clinica esta en Madrid, dato dado antes del cambio.",
+        "just validate 2175 en verde, Playwright 90 en verde."
+      ],
+      "descripcion": [
+        "src/islands/ElevenLabsWidget.tsx, src/islands/conversation-storage.ts, src/components/ElevenLabsLoader.astro y sus pruebas."
+      ]
     }
   ]
 }
