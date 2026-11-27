@@ -1337,6 +1337,27 @@
         "Hecha cuando just validate y Playwright pasan y la landing se ve en el navegador."
       ],
       "hecha": "2026-11-27"
+    },
+    {
+      "id": "#T0063",
+      "estado": "hecha",
+      "prioridad": "media",
+      "tipo": "contenido",
+      "titulo": "Noticia: modelo de socio, precio de entrada, rediseno, PageSpeed 100 y asistente de IA (cambios del 25 al 27 de noviembre)",
+      "anotada": "2026-11-27",
+      "hecha": "2026-11-27",
+      "origen": "usuario",
+      "depende": [
+        "#T0062"
+      ],
+      "notas": [
+        "Slug partner-model-update, portada lorenzoz-agency-pagespeed-insights-100 del CDN, 9 idiomas, linea en public/llms.txt.",
+        "La noticia no escribe el importe del precio de entrada: los posts se renderizan con t.raw y no rellenan {entryPrice}.",
+        "just validate 2557 en verde, Playwright chromium y Mobile Chrome 102 en verde, revisada en el navegador."
+      ],
+      "descripcion": [
+        "Una noticia que reune el modelo de negocio, la optimizacion del sitio, el sistema de precios, el rediseno y las mejoras del asistente con su respaldo de WhatsApp."
+      ]
     }
   ]
 }

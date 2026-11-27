@@ -1223,6 +1223,77 @@
             ]
           }
         ]
+      },
+      "partner-model-update": {
+        "title": "Un modèle de partenaire, un site plus rapide et un assistant plus malin : ce qui a changé en novembre",
+        "description": "Notre modèle de partenaire, un seul prix publié, une refonte en neuf langues, 100 dans PageSpeed Insights et un assistant IA testé, relayé par WhatsApp.",
+        "paragraphs": [
+          "Entre le 25 et le 27 novembre 2026, nous avons changé plus de choses sur hlorenzoz.com qu'en aucune autre semaine depuis son lancement. Nous avons changé notre façon de travailler avec nos clients, notre façon de parler du prix, l'apparence de chaque page, la vitesse de chargement du site et la manière dont répond l'assistant présent sur chaque page.",
+          "Cet article réunit ces changements en un seul endroit. Chaque chiffre vient d'un test que nous avons mené, avec sa date."
+        ],
+        "sections": [
+          {
+            "heading": "Un partenaire, pas un catalogue de services",
+            "paragraphs": [
+              "Nous ne vendons plus nos services un par un. Chaque collaboration suit désormais les mêmes quatre étapes : une analyse gratuite des besoins lors du premier appel, une proposition avec une seule solution construite à partir de ce dont l'entreprise a réellement besoin, la mise en œuvre, puis des résultats mesurés avec le client, sur lesquels la solution est ajustée.",
+              "Les services sont devenus les briques de cette solution, et aucun n'est une option ajoutée à un autre. Le 27 novembre, un cinquième les a rejoints : l'Automatisation d'entreprise par IA, avec des agents IA qui assurent le suivi de chaque demande, gardent l'agenda rempli, prennent en charge les tâches administratives et demandent un avis à chaque client.",
+              "Les marchés sur lesquels nous nous concentrons sont désormais l'Australie, le Canada, le Costa Rica, l'Europe, le Royaume Uni et les États Unis, et le dossier de l'agence, un PDF qui explique tout cela, peut être téléchargé dans chaque langue du site."
+            ]
+          },
+          {
+            "heading": "Un seul prix publié",
+            "paragraphs": [
+              "Nous avons cessé de publier une grille tarifaire. Le seul chiffre du site est le prix d'entrée d'une première mise en œuvre qui engage les deux parties et pose les premiers jalons. Il figure sur la page d'accueil et sur chaque page de service, hors TVA.",
+              "Ensuite, le client paie un forfait mensuel lié aux résultats convenus dans la proposition : ce sont les nouveaux clients apportés par la solution qui le financent. Tout le reste fait l'objet d'un devis après l'analyse gratuite. Il n'y a ni essai gratuit ni remise groupée : ce qui est gratuit, c'est l'analyse.",
+              "Le prix d'entrée est aussi balisé pour les moteurs de recherche sous forme d'Offer, et uniquement sur les pages où les visiteurs peuvent le lire."
+            ]
+          },
+          {
+            "heading": "Une refonte pensée autour de l'activité du visiteur",
+            "paragraphs": [
+              "La page d'accueil et les pages de service ont été reconstruites en pages d'atterrissage. Elles s'ouvrent sur le problème que rencontre une entreprise locale, montrent notre façon de travailler et se terminent par l'analyse gratuite des besoins, réservée directement depuis la page.",
+              "La page d'accueil a gagné un calculateur, \"Combien vous coûte le fait de ne rien faire ?\". Le visiteur indique les clients qu'il perd chaque jour ouvré et ce que vaut une première visite, et voit ce que cela représente par semaine, par mois et par an. Son exemple reprend les prix que des patients ont déclaré payer pour des soins dentaires en Espagne.",
+              "Chaque page est désormais publiée en neuf langues : anglais, anglais britannique, espagnol, galicien, portugais, italien, français, allemand et néerlandais, y compris les textes alternatifs, les libellés et le texte des données structurées."
+            ]
+          },
+          {
+            "heading": "100 dans PageSpeed Insights",
+            "paragraphs": [
+              "Le 27 novembre 2026, Google PageSpeed Insights a attribué à la page d'accueil en ligne 100 en Performance, Accessibilité, Bonnes pratiques et SEO sur mobile. La page d'accueil affiche ce résultat et renvoie vers le rapport dans chaque langue.",
+              "Pour y arriver, il a fallu supprimer ce qui s'affichait tard à l'écran. Le bandeau de cookies apparaît désormais à la première interaction du visiteur au lieu de quelques secondes après le chargement, et les styles sont intégrés à la page. Dans notre laboratoire Lighthouse local, médiane de trois mesures le 26 novembre, le Speed Index est passé de 3,46 s à 0,90 s.",
+              "Un jour plus tard, le score est tombé à 97 : l'assistant vérifiait sa disponibilité après chaque chargement de page et affichait un bouton en retard. Cette vérification attend désormais elle aussi la première interaction, et le laboratoire local est revenu à 100 avec un Speed Index de 1,05 s."
+            ]
+          },
+          {
+            "heading": "Un assistant qui sait où vous êtes",
+            "paragraphs": [
+              "L'assistant présent sur chaque page répond à la voix ou par chat, dans la langue du visiteur. Il connaît désormais la page consultée, le fuseau horaire du visiteur et les chiffres saisis dans le calculateur : sa première réponse porte donc sur ce que le visiteur est en train de lire.",
+              "Dans un chat, il se comporte comme un chat : le champ s'agrandit avec le texte, un indicateur de saisie apparaît avant chaque réponse et il n'y a pas de bouton pour raccrocher. Quand le visiteur change la langue de la page, la conversation reprend là où elle en était au lieu de recommencer.",
+              "Ses estimations du coût de l'attente viennent d'un outil de calcul, jamais de l'arithmétique du modèle, et de prix de référence par activité et par pays, chacun avec sa source. Il consulte notre agenda, bloque un créneau et réserve l'analyse gratuite des besoins sans intervention de notre part."
+            ]
+          },
+          {
+            "heading": "Testé avant de parler à qui que ce soit",
+            "paragraphs": [
+              "Nous avons écrit 55 tests pour l'assistant dans ElevenLabs : langues, connaissance de l'agence, prix et conditions, réservations et sécurité, par exemple refuser des données de carte bancaire dans un chat, mettre en garde contre les faux appels au nom de Google ou refuser de rédiger de faux avis. Les réservations sont testées avec tous les outils simulés, si bien qu'aucun test n'atteint le vrai agenda.",
+              "Nous avons soumis les mêmes tests à six modèles de langage. Le modèle que nous utilisions a obtenu 47 sur 55 ; Claude Haiku 5.5 a obtenu 51 sur 55 pour un coût inférieur par exécution, et l'assistant fonctionne donc désormais avec lui. Ses instructions ont été renforcées après les tests : il n'annonce jamais d'autre prix que le prix d'entrée, ne promet jamais de résultats et ne décrit jamais de moyens de paiement."
+            ]
+          },
+          {
+            "heading": "WhatsApp quand l'assistant ne peut pas répondre",
+            "paragraphs": [
+              "Un assistant a une limite : le nombre de conversations qu'il peut tenir chaque mois. Quand elle est atteinte, le site n'affiche plus un assistant qui échouerait. Il affiche à la place un bouton WhatsApp, et les boutons qui lancent une conversation ouvrent WhatsApp avec un message prêt à envoyer.",
+              "L'assistant propose aussi WhatsApp en pleine conversation quand il ne peut pas aider. Dans tous les cas, le visiteur a toujours une personne à qui écrire."
+            ]
+          },
+          {
+            "heading": "Ce que cela signifie pour une entreprise locale",
+            "paragraphs": [
+              "Tout ce que décrit cet article est un travail que nous réalisons aussi pour nos clients : des pages d'atterrissage qui mènent à une réservation, un site qui se charge immédiatement sur un téléphone ordinaire, un assistant qui répond et réserve à toute heure, et les tests qui le gardent honnête.",
+              "Si vous voulez savoir de quelles pièces votre entreprise a besoin, le premier appel est gratuit et c'est l'analyse des besoins."
+            ]
+          }
+        ]
       }
     },
     "related": {

@@ -1223,6 +1223,77 @@
             ]
           }
         ]
+      },
+      "partner-model-update": {
+        "title": "A partner model, a faster site and a smarter assistant: what changed in November",
+        "description": "Our partner model, one published price, a redesign in nine languages, 100 in PageSpeed Insights and a tested AI assistant with WhatsApp as a fallback.",
+        "paragraphs": [
+          "Between 25 and 27 November 2026 we changed more of hlorenzoz.com than in any week since it launched. We changed how we work with clients, how we talk about price, how every page looks, how fast the site loads and how the assistant on every page answers.",
+          "This post brings those changes together in one place. Every figure comes from a test we ran, with its date."
+        ],
+        "sections": [
+          {
+            "heading": "A partner, not a menu of services",
+            "paragraphs": [
+              "We no longer sell services one at a time. Every engagement now follows the same four steps: a free needs analysis on the first call, a proposal with one solution built from what the business actually needs, the implementation, and results measured together with the client and adjusted to them.",
+              "The services became building blocks of that solution, and none of them is an extra bolted on to another. On 27 November a fifth one joined them: AI Business Automation, with AI agents that follow up every enquiry, keep the diary full, take on back office work and ask every customer for a review.",
+              "The markets we focus on are now Australia, Canada, Costa Rica, Europe, the United Kingdom and the United States, and the agency dossier, a PDF that explains all of this, can be downloaded in every language of the site."
+            ]
+          },
+          {
+            "heading": "One published price",
+            "paragraphs": [
+              "We stopped publishing a price list. The only figure on the site is the entry price of a first implementation that commits both sides and takes the first steps, shown on the home page and on every service page, excluding VAT.",
+              "After that, the client pays a monthly fee tied to the results agreed in the proposal, so the new customers the solution brings in are what cover it. Everything else is quoted after the free analysis. There is no free trial and no bundle discount: the free part is the analysis itself.",
+              "The entry price is also marked up for search engines as an Offer, and only on the pages where visitors can read it."
+            ]
+          },
+          {
+            "heading": "A redesign built around the visitor's business",
+            "paragraphs": [
+              "The home page and the service pages were rebuilt as landing pages. They open with the problem a local business has, show how we work and finish with the free needs analysis, booked straight from the page.",
+              "The home page gained a calculator, \"What is doing nothing costing you?\". The visitor enters the customers they lose each working day and what a first visit is worth, and sees what that adds up to per week, month and year. Its example uses the prices patients reported paying for dental treatment in Spain.",
+              "Every page is now published in nine languages: English, British English, Spanish, Galician, Portuguese, Italian, French, German and Dutch, including the alt texts, the labels and the text inside the structured data."
+            ]
+          },
+          {
+            "heading": "100 in PageSpeed Insights",
+            "paragraphs": [
+              "On 27 November 2026 Google PageSpeed Insights gave the live home page 100 for Performance, Accessibility, Best Practices and SEO on mobile. The home page shows that result and links to the report in each language.",
+              "Getting there meant removing whatever painted late on the screen. The cookie banner now appears on the visitor's first interaction rather than seconds after loading, and the page styles travel inside the page. In our local Lighthouse lab, the median of three runs on 26 November, Speed Index went from 3.46 s to 0.90 s.",
+              "A day later the score dropped to 97: the assistant checked its availability after every page load and painted a button late. That check now also waits for the first interaction, and the local lab went back to 100 with a Speed Index of 1.05 s."
+            ]
+          },
+          {
+            "heading": "An assistant that knows where you are",
+            "paragraphs": [
+              "The assistant on every page answers by voice or by chat in the visitor's language. It now knows which page the visitor is on, their time zone and the figures they entered in the calculator, so its first answer is about what they are reading.",
+              "In a chat it behaves like a chat: the box grows with the text, a typing indicator shows before each reply and there is no button to end a call. When the visitor changes the page language, the conversation carries on where it was instead of starting again.",
+              "Its estimates of the cost of waiting come from a calculation tool, never from the model's own arithmetic, and from reference prices by business and country, each with its source. It checks our calendar, holds a slot and books the free needs analysis by itself."
+            ]
+          },
+          {
+            "heading": "Tested before it talks to anyone",
+            "paragraphs": [
+              "We wrote 55 tests for the assistant in ElevenLabs: languages, knowledge of the agency, prices and terms, bookings, and safety, such as refusing card details in a chat, warning about the fake Google caller or refusing to write fake reviews. Bookings are tested with every tool mocked, so no test reaches the real calendar.",
+              "We ran the same tests on six language models. The model we were using scored 47 of 55; Claude Haiku 5.5 scored 51 of 55 and cost less per run, so the assistant now runs on it. Its instructions were tightened after the tests: it never states a price other than the entry price, never promises results and never describes ways to pay."
+            ]
+          },
+          {
+            "heading": "WhatsApp when the assistant cannot answer",
+            "paragraphs": [
+              "An assistant has a limit: the number of conversations it can hold each month. When it is reached, the site no longer shows an assistant that would fail. It shows a WhatsApp button instead, and the buttons that start a conversation open WhatsApp with a message ready to send.",
+              "The assistant also offers WhatsApp partway through a conversation when it cannot help. Either way the visitor always has a person to write to."
+            ]
+          },
+          {
+            "heading": "What this means for a local business",
+            "paragraphs": [
+              "Everything in this post is work we also do for clients: landing pages that lead to a booking, a site that loads at once on an ordinary phone, an assistant that answers and books at any hour, and the tests that keep it honest.",
+              "If you would like to know which of these pieces your business needs, the first call is free and is the needs analysis."
+            ]
+          }
+        ]
       }
     },
     "related": {

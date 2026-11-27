@@ -1223,6 +1223,77 @@
             ]
           }
         ]
+      },
+      "partner-model-update": {
+        "title": "Un modelo de socio, unha web máis rápida e un asistente máis listo: o que cambiou en novembro",
+        "description": "O noso modelo de socio, un único prezo publicado, un redeseño en nove idiomas, 100 en PageSpeed Insights e un asistente de IA probado, con WhatsApp.",
+        "paragraphs": [
+          "Entre o 25 e o 27 de novembro de 2026 cambiamos máis cousas de hlorenzoz.com ca en ningunha outra semana desde o seu lanzamento. Cambiamos como traballamos cos clientes, como falamos de prezo, como se ve cada páxina, o rápido que carga a web e como responde o asistente de cada páxina.",
+          "Esta nova reúne eses cambios nun só lugar. Cada cifra vén dunha proba que fixemos, coa súa data."
+        ],
+        "sections": [
+          {
+            "heading": "Un socio, non un catálogo de servizos",
+            "paragraphs": [
+              "Xa non vendemos os servizos un a un. Cada proxecto segue agora os mesmos catro pasos: unha análise de necesidades gratuíta na primeira chamada, unha proposta cunha solución construída a partir do que o negocio necesita de verdade, a implementación, e resultados medidos xunto ao cliente e axustados a eles.",
+              "Os servizos pasaron a ser pezas desa solución, e ningún é un engadido doutro. O 27 de novembro sumouse unha quinta: Automatización de negocio con IA, con axentes de IA que fan o seguimento de cada consulta, manteñen a axenda chea, ocúpanse do traballo administrativo e piden unha recensión a cada cliente.",
+              "Os mercados nos que nos centramos son agora Australia, Canadá, Costa Rica, Europa, Reino Unido e Estados Unidos, e o dossier da axencia, un PDF que o explica todo, pódese descargar en cada idioma da web."
+            ]
+          },
+          {
+            "heading": "Un único prezo publicado",
+            "paragraphs": [
+              "Deixamos de publicar unha lista de prezos. A única cifra da web é o prezo de entrada dunha primeira implementación que compromete a ambas as partes e dá os primeiros pasos, visible na páxina de inicio e en cada páxina de servizo, sen IVE.",
+              "Despois, o cliente paga unha cota mensual ligada aos resultados acordados na proposta, de xeito que a cobren os clientes novos que trae a solución. Todo o demais orzaméntase tras a análise gratuíta. Non hai proba gratuíta nin desconto por combinar servizos: o gratuíto é a propia análise.",
+              "O prezo de entrada tamén está marcado para os buscadores como unha oferta (Offer), e só nas páxinas onde as persoas visitantes poden lelo."
+            ]
+          },
+          {
+            "heading": "Un redeseño pensado para o negocio de quen nos visita",
+            "paragraphs": [
+              "A páxina de inicio e as páxinas de servizo reconstruíronse como páxinas de destino. Comezan polo problema dun negocio local, mostran como traballamos e rematan coa análise de necesidades gratuíta, que se reserva desde a propia páxina.",
+              "A páxina de inicio gañou unha calculadora, \"Canto che custa non facer nada?\". A persoa visitante indica os clientes que perde cada día laborable e o que vale unha primeira visita, e ve canto suma por semana, mes e ano. O seu exemplo usa os prezos que os pacientes din pagar por tratamentos dentais en España.",
+              "Cada páxina publícase agora en nove idiomas: inglés, inglés británico, español, galego, portugués, italiano, francés, alemán e neerlandés, incluídos os textos alternativos, as etiquetas e o texto dos datos estruturados."
+            ]
+          },
+          {
+            "heading": "100 en PageSpeed Insights",
+            "paragraphs": [
+              "O 27 de novembro de 2026, Google PageSpeed Insights deulle á páxina de inicio publicada 100 en Rendemento, Accesibilidade, Boas prácticas e SEO en móbil. A páxina de inicio mostra ese resultado e inclúe a ligazón ao informe en cada idioma.",
+              "Chegar aí supuxo quitar o que se pintaba tarde na pantalla. O aviso de cookies aparece agora coa primeira interacción da persoa visitante en lugar de segundos despois de cargar, e os estilos viaxan dentro da propia páxina. No noso laboratorio local de Lighthouse, a mediana de tres execucións do 26 de novembro, o Speed Index pasou de 3,46 s a 0,90 s.",
+              "Un día despois a puntuación baixou a 97: o asistente comprobaba a súa dispoñibilidade tras cada carga e pintaba un botón tarde. Esa comprobación agora tamén espera á primeira interacción, e o laboratorio local volveu a 100 cun Speed Index de 1,05 s."
+            ]
+          },
+          {
+            "heading": "Un asistente que sabe onde estás",
+            "paragraphs": [
+              "O asistente de cada páxina responde por voz ou por chat no idioma de quen nos visita. Agora coñece a páxina na que se atopa a persoa visitante, o seu fuso horario e as cifras que introduciu na calculadora, así que a súa primeira resposta trata do que está a ler.",
+              "Nun chat compórtase como un chat: a caixa medra co texto, aparece un indicador de escritura antes de cada resposta e non hai botón para colgar unha chamada. Cando a persoa visitante cambia o idioma da páxina, a conversa continúa onde estaba en lugar de comezar de novo.",
+              "As súas estimacións do custo de esperar saen dunha ferramenta de cálculo, nunca das contas do propio modelo, e de prezos de referencia por negocio e país, cada un coa súa fonte. Consulta o noso calendario, reserva un oco e axenda a análise de necesidades gratuíta por si só."
+            ]
+          },
+          {
+            "heading": "Probado antes de falar con ninguén",
+            "paragraphs": [
+              "Escribimos 55 probas para o asistente en ElevenLabs: idiomas, coñecemento da axencia, prezos e condicións, reservas e seguridade, como rexeitar datos de tarxeta nun chat, avisar do falso chamador de Google ou negarse a escribir recensións falsas. As reservas próbanse con todas as ferramentas simuladas, así que ningunha proba chega ao calendario real.",
+              "Pasamos as mesmas probas a seis modelos de linguaxe. O modelo que usabamos obtivo 47 de 55; Claude Haiku 5.5 obtivo 51 de 55 e custou menos por execución, así que o asistente funciona agora con el. As súas instrucións reforzáronse despois das probas: nunca dá outro prezo que o de entrada, nunca promete resultados e nunca describe formas de pago."
+            ]
+          },
+          {
+            "heading": "WhatsApp cando o asistente non pode responder",
+            "paragraphs": [
+              "Un asistente ten un límite: as conversas que pode manter cada mes. Cando se alcanza, a web xa non mostra un asistente que fallaría. No seu lugar mostra un botón de WhatsApp, e os botóns que inician unha conversa abren WhatsApp cunha mensaxe lista para enviar.",
+              "O asistente tamén ofrece WhatsApp no medio dunha conversa cando non pode axudar. En calquera dos casos, quen nos visita sempre ten unha persoa á que escribir."
+            ]
+          },
+          {
+            "heading": "Que significa para un negocio local",
+            "paragraphs": [
+              "Todo o que conta esta nova é traballo que tamén facemos para clientes: páxinas de destino que levan a unha reserva, unha web que carga ao momento nun móbil normal, un asistente que responde e reserva a calquera hora, e as probas que o manteñen honesto.",
+              "Se queres saber cales destas pezas necesita o teu negocio, a primeira chamada é gratuíta e é a análise de necesidades."
+            ]
+          }
+        ]
       }
     },
     "related": {

@@ -1223,6 +1223,77 @@
                         ]
                     }
                 ]
+            },
+            "partner-model-update": {
+                "title": "Ein Partnermodell, eine schnellere Website und ein klügerer Assistent: Das hat sich im November geändert",
+                "description": "Unser Partnermodell, ein einziger veröffentlichter Preis, ein Redesign in neun Sprachen, 100 in PageSpeed Insights und ein getesteter Assistent mit KI.",
+                "paragraphs": [
+                    "Zwischen dem 25. und dem 27. November 2026 haben wir an hlorenzoz.com mehr verändert als in jeder anderen Woche seit dem Start. Wir haben verändert, wie wir mit Kunden arbeiten, wie wir über den Preis sprechen, wie jede Seite aussieht, wie schnell die Website lädt und wie der Assistent auf jeder Seite antwortet.",
+                    "Dieser Beitrag fasst diese Änderungen an einer Stelle zusammen. Jede Zahl stammt aus einem Test, den wir durchgeführt haben, mit Datum."
+                ],
+                "sections": [
+                    {
+                        "heading": "Ein Partner statt einer Liste von Leistungen",
+                        "paragraphs": [
+                            "Wir verkaufen Leistungen nicht mehr einzeln. Jede Zusammenarbeit folgt jetzt denselben vier Schritten: einer kostenlosen Bedarfsanalyse im ersten Gespräch, einem Angebot mit einer einzigen Lösung, die auf dem aufbaut, was das Unternehmen wirklich braucht, der Umsetzung und Ergebnissen, die wir gemeinsam mit dem Kunden messen und nach denen wir die Lösung anpassen.",
+                            "Die Leistungen wurden zu Bausteinen dieser Lösung, und keine ist ein Zusatz zu einer anderen. Am 27. November kam eine fünfte hinzu, die Geschäftsautomatisierung mit KI. Ihre Agenten mit KI verfolgen jede Anfrage nach, halten den Terminkalender voll, übernehmen Büroarbeit und bitten jeden Kunden um eine Bewertung.",
+                            "Unsere Schwerpunktmärkte sind jetzt Australien, Kanada, Costa Rica, Europa, das Vereinigte Königreich und die Vereinigten Staaten, und das Agenturdossier, ein PDF, das all das erklärt, steht in jeder Sprache der Website zum Download bereit."
+                        ]
+                    },
+                    {
+                        "heading": "Ein einziger veröffentlichter Preis",
+                        "paragraphs": [
+                            "Wir veröffentlichen keine Preisliste mehr. Die einzige Zahl auf der Website ist der Einstiegspreis für eine erste Umsetzung, die beide Seiten verpflichtet und die ersten Schritte geht. Er steht auf der Startseite und auf jeder Leistungsseite, ohne MwSt.",
+                            "Danach zahlt der Kunde eine monatliche Gebühr, die an die im Angebot vereinbarten Ergebnisse gebunden ist: Die neuen Kunden, die die Lösung bringt, decken sie. Alles andere wird nach der kostenlosen Analyse angeboten. Es gibt keine kostenlose Testphase und keinen Paketrabatt: Kostenlos ist die Analyse selbst.",
+                            "Der Einstiegspreis ist für Suchmaschinen außerdem als Offer ausgezeichnet, und zwar nur auf den Seiten, auf denen Besucher ihn lesen können."
+                        ]
+                    },
+                    {
+                        "heading": "Ein Redesign rund um das Geschäft des Besuchers",
+                        "paragraphs": [
+                            "Die Startseite und die Leistungsseiten wurden als Landingpages neu gebaut. Sie beginnen mit dem Problem eines lokalen Unternehmens, zeigen, wie wir arbeiten, und enden mit der kostenlosen Bedarfsanalyse, die direkt auf der Seite gebucht wird.",
+                            "Die Startseite hat einen Rechner bekommen: \"Was kostet es Sie, nichts zu tun?\" Der Besucher gibt ein, wie viele Kunden er an jedem Arbeitstag verliert und was ein erster Besuch wert ist, und sieht, was das pro Woche, Monat und Jahr ausmacht. Das Beispiel nutzt die Preise, die Patienten in Spanien für Zahnbehandlungen angegeben haben.",
+                            "Jede Seite erscheint jetzt in neun Sprachen: Englisch, britisches Englisch, Spanisch, Galicisch, Portugiesisch, Italienisch, Französisch, Deutsch und Niederländisch, einschließlich der Alternativtexte, der Beschriftungen und des Textes in den strukturierten Daten."
+                        ]
+                    },
+                    {
+                        "heading": "100 in PageSpeed Insights",
+                        "paragraphs": [
+                            "Am 27. November 2026 gab Google PageSpeed Insights der live geschalteten Startseite auf Mobilgeräten 100 bei Performance, Barrierefreiheit, Best Practices und SEO. Die Startseite zeigt dieses Ergebnis und verlinkt in jeder Sprache auf den Bericht.",
+                            "Dafür mussten wir entfernen, was spät auf dem Bildschirm erschien. Das Cookiebanner erscheint jetzt bei der ersten Interaktion des Besuchers statt einige Sekunden nach dem Laden, und die Styles werden direkt in der Seite mitgeliefert. In unserem lokalen Labor mit Lighthouse sank der Speed Index als Median aus drei Durchläufen am 26. November von 3,46 s auf 0,90 s.",
+                            "Einen Tag später fiel die Punktzahl auf 97: Der Assistent prüfte nach jedem Seitenaufruf seine Verfügbarkeit und zeigte verspätet eine Schaltfläche an. Diese Prüfung wartet jetzt ebenfalls auf die erste Interaktion, und das lokale Labor kam wieder auf 100, mit einem Speed Index von 1,05 s."
+                        ]
+                    },
+                    {
+                        "heading": "Ein Assistent, der weiß, wo Sie gerade sind",
+                        "paragraphs": [
+                            "Der Assistent auf jeder Seite antwortet per Sprache oder im Chat, in der Sprache des Besuchers. Er kennt jetzt die Seite, auf der sich der Besucher befindet, seine Zeitzone und die Zahlen, die er in den Rechner eingegeben hat. So geht schon seine erste Antwort auf das ein, was der Besucher gerade liest.",
+                            "Im Chat verhält er sich wie ein Chat: Das Eingabefeld wächst mit dem Text, vor jeder Antwort erscheint eine Tippanzeige, und es gibt keine Schaltfläche zum Auflegen. Wechselt der Besucher die Sprache der Seite, geht das Gespräch dort weiter, wo es war, statt neu zu beginnen.",
+                            "Seine Schätzungen, was Warten kostet, stammen aus einem Rechenwerkzeug, nie aus der eigenen Rechnung des Modells, und aus Referenzpreisen nach Branche und Land, jeweils mit Quelle. Er prüft unseren Kalender, reserviert einen Termin und bucht die kostenlose Bedarfsanalyse selbstständig."
+                        ]
+                    },
+                    {
+                        "heading": "Getestet, bevor er mit jemandem spricht",
+                        "paragraphs": [
+                            "Wir haben in ElevenLabs 55 Tests für den Assistenten geschrieben: Sprachen, Wissen über die Agentur, Preise und Bedingungen, Buchungen und Sicherheit, etwa Kartendaten im Chat abzulehnen, vor falschen Anrufen im Namen von Google zu warnen oder keine gefälschten Bewertungen zu schreiben. Buchungen werden getestet, während jedes Werkzeug simuliert ist, sodass kein Test den echten Kalender erreicht.",
+                            "Wir haben dieselben Tests mit sechs Sprachmodellen durchgeführt. Das bisher genutzte Modell erreichte 47 von 55; Claude Haiku 5.5 erreichte 51 von 55 und kostete pro Durchlauf weniger, deshalb läuft der Assistent jetzt damit. Nach den Tests wurden seine Anweisungen verschärft: Er nennt nie einen anderen Preis als den Einstiegspreis, verspricht nie Ergebnisse und beschreibt nie Zahlungswege."
+                        ]
+                    },
+                    {
+                        "heading": "WhatsApp, wenn der Assistent nicht antworten kann",
+                        "paragraphs": [
+                            "Ein Assistent hat eine Grenze: die Zahl der Gespräche, die er pro Monat führen kann. Ist sie erreicht, zeigt die Website keinen Assistenten mehr, der scheitern würde. Stattdessen zeigt sie eine Schaltfläche für WhatsApp, und die Schaltflächen, die ein Gespräch beginnen, öffnen WhatsApp mit einer fertigen Nachricht.",
+                            "Der Assistent bietet WhatsApp auch mitten im Gespräch an, wenn er nicht weiterhelfen kann. So hat der Besucher immer einen Menschen, dem er schreiben kann."
+                        ]
+                    },
+                    {
+                        "heading": "Was das für ein lokales Unternehmen bedeutet",
+                        "paragraphs": [
+                            "Alles in diesem Beitrag ist Arbeit, die wir auch für Kunden leisten: Landingpages, die zu einer Buchung führen, eine Website, die auf einem gewöhnlichen Smartphone sofort lädt, ein Assistent, der zu jeder Stunde antwortet und bucht, und die Tests, die ihn ehrlich halten.",
+                            "Wenn Sie wissen möchten, welche dieser Bausteine Ihr Unternehmen braucht: Das erste Gespräch ist kostenlos und ist die Bedarfsanalyse."
+                        ]
+                    }
+                ]
             }
         },
         "related": {

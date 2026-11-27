@@ -2421,6 +2421,77 @@
                         ]
                     }
                 ]
+            },
+            "partner-model-update": {
+                "title": "Een partnermodel, een snellere site en een slimmere assistent: wat er in november veranderde",
+                "description": "Ons partnermodel, één gepubliceerde prijs, een redesign in negen talen, 100 in PageSpeed Insights en een geteste assistent met AI, met WhatsApp als vangnet.",
+                "paragraphs": [
+                    "Van 25 tot en met 27 november 2026 veranderden we meer aan hlorenzoz.com dan in welke week ook sinds de lancering. We veranderden hoe we met klanten werken, hoe we over prijs praten, hoe elke pagina eruitziet, hoe snel de site laadt en hoe de assistent op elke pagina antwoordt.",
+                    "Dit artikel zet die veranderingen op één plek op een rij. Elk cijfer komt uit een test die we uitvoerden, met de datum erbij."
+                ],
+                "sections": [
+                    {
+                        "heading": "Een partner, geen menukaart met diensten",
+                        "paragraphs": [
+                            "We verkopen diensten niet meer los. Elke samenwerking volgt nu dezelfde vier stappen: een gratis behoefteanalyse in het eerste gesprek, een voorstel met één oplossing die is opgebouwd uit wat het bedrijf echt nodig heeft, de uitvoering, en resultaten die we samen met de klant meten en waarop we de oplossing bijstellen.",
+                            "De diensten werden bouwstenen van die oplossing, en geen ervan is een aanvulling op een andere. Op 27 november kwam er een vijfde bij: Bedrijfsautomatisering met AI, met agenten met AI die elke aanvraag opvolgen, de agenda vol houden, backofficewerk overnemen en elke klant om een review vragen.",
+                            "De markten waar we ons op richten zijn nu Australië, Canada, Costa Rica, Europa, het Verenigd Koninkrijk en de Verenigde Staten, en het dossier van het bureau, een pdf die dit allemaal uitlegt, kun je in elke taal van de site downloaden."
+                        ]
+                    },
+                    {
+                        "heading": "Eén gepubliceerde prijs",
+                        "paragraphs": [
+                            "We publiceren geen prijslijst meer. Het enige bedrag op de site is de instapprijs van een eerste uitvoering die beide partijen bindt en de eerste stappen zet. Die staat op de homepage en op elke dienstpagina, exclusief btw.",
+                            "Daarna betaalt de klant een maandelijks tarief dat gekoppeld is aan de resultaten uit het voorstel, zodat de nieuwe klanten die de oplossing oplevert het dekken. Al het andere krijgt een offerte na de gratis analyse. Er is geen gratis proefperiode en geen bundelkorting: het gratis deel is de analyse zelf.",
+                            "De instapprijs is voor zoekmachines ook gemarkeerd als Offer, en alleen op de pagina's waar bezoekers hem kunnen lezen."
+                        ]
+                    },
+                    {
+                        "heading": "Een redesign rond het bedrijf van de bezoeker",
+                        "paragraphs": [
+                            "De homepage en de dienstpagina's zijn opnieuw opgebouwd als landingspagina's. Ze openen met het probleem van een lokaal bedrijf, laten zien hoe we werken en eindigen met de gratis behoefteanalyse, die je direct vanaf de pagina boekt.",
+                            "De homepage kreeg een rekenmodule, \"Wat kost niets doen je?\". De bezoeker vult in hoeveel klanten hij per werkdag misloopt en wat een eerste bezoek waard is, en ziet wat dat per week, maand en jaar oploopt. Het voorbeeld gebruikt de prijzen die patiënten in Spanje opgaven voor tandheelkundige behandelingen.",
+                            "Elke pagina verschijnt nu in negen talen: Engels, Brits Engels, Spaans, Galicisch, Portugees, Italiaans, Frans, Duits en Nederlands, inclusief de alt teksten, de labels en de tekst in de gestructureerde data."
+                        ]
+                    },
+                    {
+                        "heading": "100 in PageSpeed Insights",
+                        "paragraphs": [
+                            "Op 27 november 2026 gaf Google PageSpeed Insights de live homepage op mobiel 100 voor Prestaties, Toegankelijkheid, Praktische tips en SEO. De homepage toont dat resultaat en linkt in elke taal naar het rapport.",
+                            "Om daar te komen, haalden we weg wat laat op het scherm verscheen. De cookiebanner verschijnt nu bij de eerste interactie van de bezoeker in plaats van seconden na het laden, en de stijlen reizen mee in de pagina zelf. In ons lokale Lighthouse lab, de mediaan van drie runs op 26 november, ging de Speed Index van 3,46 s naar 0,90 s.",
+                            "Een dag later zakte de score naar 97: de assistent controleerde na elke paginalading of hij beschikbaar was en tekende een knop te laat. Die controle wacht nu ook op de eerste interactie, en het lokale lab kwam terug op 100 met een Speed Index van 1,05 s."
+                        ]
+                    },
+                    {
+                        "heading": "Een assistent die weet waar je bent",
+                        "paragraphs": [
+                            "De assistent op elke pagina antwoordt met spraak of in een chat, in de taal van de bezoeker. Hij weet nu op welke pagina de bezoeker is, in welke tijdzone en welke cijfers hij in de rekenmodule invulde, zodat zijn eerste antwoord gaat over wat de bezoeker aan het lezen is.",
+                            "In een chat gedraagt hij zich als een chat: het tekstvak groeit mee met de tekst, voor elk antwoord verschijnt een indicator dat hij typt en er is geen knop om een gesprek op te hangen. Wisselt de bezoeker van paginataal, dan gaat het gesprek verder waar het was in plaats van opnieuw te beginnen.",
+                            "Zijn schattingen van wat wachten kost komen uit een rekentool, nooit uit het eigen rekenwerk van het model, en uit referentieprijzen per branche en land, elk met zijn bron. Hij bekijkt onze agenda, houdt een tijdstip vast en boekt de gratis behoefteanalyse zelf."
+                        ]
+                    },
+                    {
+                        "heading": "Getest voordat hij met iemand praat",
+                        "paragraphs": [
+                            "We schreven 55 tests voor de assistent in ElevenLabs: talen, kennis van het bureau, prijzen en voorwaarden, boekingen en veiligheid, zoals kaartgegevens in een chat weigeren, waarschuwen voor de valse beller die zich voordoet als Google of weigeren om nepreviews te schrijven. Boekingen testen we met elke tool nagebootst, zodat geen enkele test de echte agenda bereikt.",
+                            "We draaiden dezelfde tests op zes taalmodellen. Het model dat we gebruikten scoorde 47 van de 55; Claude Haiku 5.5 scoorde 51 van de 55 en kostte minder per run, dus de assistent draait er nu op. Na de tests werden zijn instructies aangescherpt: hij noemt nooit een andere prijs dan de instapprijs, belooft nooit resultaten en beschrijft nooit manieren om te betalen."
+                        ]
+                    },
+                    {
+                        "heading": "WhatsApp als de assistent niet kan antwoorden",
+                        "paragraphs": [
+                            "Een assistent heeft een grens: het aantal gesprekken dat hij per maand kan voeren. Is die bereikt, dan toont de site geen assistent meer die zou falen. Hij toont dan een WhatsApp knop, en de knoppen die een gesprek starten openen WhatsApp met een bericht dat klaarstaat om te versturen.",
+                            "De assistent biedt WhatsApp ook midden in een gesprek aan als hij niet kan helpen. Hoe dan ook heeft de bezoeker altijd een persoon om naar te schrijven."
+                        ]
+                    },
+                    {
+                        "heading": "Wat dit betekent voor een lokaal bedrijf",
+                        "paragraphs": [
+                            "Alles in dit artikel is werk dat we ook voor klanten doen: landingspagina's die naar een boeking leiden, een site die op een gewone telefoon meteen laadt, een assistent die op elk uur antwoordt en boekt, en de tests die hem eerlijk houden.",
+                            "Wil je weten welke van deze onderdelen je bedrijf nodig heeft? Het eerste gesprek is gratis en is de behoefteanalyse."
+                        ]
+                    }
+                ]
             }
         },
         "related": {

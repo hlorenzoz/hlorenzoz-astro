@@ -2395,6 +2395,77 @@
             ]
           }
         ]
+      },
+      "partner-model-update": {
+        "title": "Un modello da partner, un sito più veloce e un assistente più intelligente: cosa è cambiato a novembre",
+        "description": "Il nostro modello da partner, un unico prezzo pubblicato, un nuovo design in nove lingue, 100 su PageSpeed Insights e un assistente IA testato, con WhatsApp.",
+        "paragraphs": [
+          "Tra il 25 e il 27 novembre 2026 abbiamo cambiato più cose di hlorenzoz.com che in qualsiasi altra settimana dal lancio. Abbiamo cambiato il modo in cui lavoriamo con i clienti, il modo in cui parliamo di prezzo, l'aspetto di ogni pagina, la velocità con cui si carica il sito e il modo in cui risponde l'assistente su ogni pagina.",
+          "Questa notizia raccoglie quei cambiamenti in un unico posto. Ogni numero viene da un test che abbiamo fatto, con la sua data."
+        ],
+        "sections": [
+          {
+            "heading": "Un partner, non un catalogo di servizi",
+            "paragraphs": [
+              "Non vendiamo più i servizi uno per uno. Ogni progetto segue ora gli stessi quattro passi: un'analisi gratuita delle esigenze alla prima chiamata, una proposta con una soluzione costruita su ciò di cui l'attività ha davvero bisogno, l'implementazione, e risultati misurati insieme al cliente e adattati a essi.",
+              "I servizi sono diventati i tasselli di quella soluzione, e nessuno è un'aggiunta di un altro. Il 27 novembre se n'è aggiunto un quinto: Automazione aziendale con IA, con agenti IA che seguono ogni richiesta, tengono piena l'agenda, si occupano del lavoro amministrativo e chiedono una recensione a ogni cliente.",
+              "I mercati su cui ci concentriamo ora sono Australia, Canada, Costa Rica, Europa, Regno Unito e Stati Uniti, e il dossier dell'agenzia, un PDF che spiega tutto questo, si può scaricare in ogni lingua del sito."
+            ]
+          },
+          {
+            "heading": "Un unico prezzo pubblicato",
+            "paragraphs": [
+              "Abbiamo smesso di pubblicare un listino prezzi. L'unica cifra sul sito è il prezzo d'ingresso di una prima implementazione che impegna entrambe le parti e muove i primi passi, indicato nella home page e in ogni pagina di servizio, IVA esclusa.",
+              "Dopo, il cliente paga un canone mensile legato ai risultati concordati nella proposta, così a coprirlo sono i nuovi clienti portati dalla soluzione. Per tutto il resto prepariamo un preventivo dopo l'analisi gratuita. Non c'è una prova gratuita né uno sconto per più servizi insieme: la parte gratuita è l'analisi stessa.",
+              "Il prezzo d'ingresso è anche marcato per i motori di ricerca come offerta (Offer), e solo nelle pagine in cui i visitatori possono leggerlo."
+            ]
+          },
+          {
+            "heading": "Un nuovo design pensato per l'attività del visitatore",
+            "paragraphs": [
+              "La home page e le pagine dei servizi sono state ricostruite come landing page. Partono dal problema di un'attività locale, mostrano come lavoriamo e si chiudono con l'analisi gratuita delle esigenze, da prenotare direttamente dalla pagina.",
+              "La home page ha guadagnato un calcolatore, \"Quanto ti costa non fare niente?\". Il visitatore inserisce i clienti che perde ogni giorno lavorativo e quanto vale una prima visita, e vede quanto fa a settimana, al mese e all'anno. L'esempio usa i prezzi che i pazienti dichiarano di pagare per i trattamenti dentali in Spagna.",
+              "Ogni pagina è ora pubblicata in nove lingue: inglese, inglese britannico, spagnolo, galiziano, portoghese, italiano, francese, tedesco e olandese, compresi i testi alternativi, le etichette e il testo dei dati strutturati."
+            ]
+          },
+          {
+            "heading": "100 su PageSpeed Insights",
+            "paragraphs": [
+              "Il 27 novembre 2026 Google PageSpeed Insights ha dato alla home page online 100 in Prestazioni, Accessibilità, Best practice e SEO su mobile. La home page mostra quel risultato e rimanda al report in ogni lingua.",
+              "Per arrivarci abbiamo tolto ciò che compariva tardi sullo schermo. Il banner dei cookie appare ora alla prima interazione del visitatore invece che qualche secondo dopo il caricamento, e gli stili viaggiano dentro la pagina stessa. Nel nostro laboratorio locale di Lighthouse, mediana di tre esecuzioni del 26 novembre, lo Speed Index è passato da 3,46 s a 0,90 s.",
+              "Un giorno dopo il punteggio è sceso a 97: l'assistente verificava la propria disponibilità dopo ogni caricamento e disegnava un pulsante in ritardo. Ora anche quella verifica aspetta la prima interazione, e il laboratorio locale è tornato a 100 con uno Speed Index di 1,05 s."
+            ]
+          },
+          {
+            "heading": "Un assistente che sa dove sei",
+            "paragraphs": [
+              "L'assistente su ogni pagina risponde a voce o in chat nella lingua del visitatore. Ora conosce la pagina in cui si trova il visitatore, il suo fuso orario e le cifre inserite nel calcolatore, così la sua prima risposta riguarda ciò che sta leggendo.",
+              "In chat si comporta da chat: la casella cresce con il testo, prima di ogni risposta compare un indicatore di scrittura e non c'è un pulsante per chiudere una chiamata. Quando il visitatore cambia la lingua della pagina, la conversazione riprende da dove era invece di ricominciare.",
+              "Le sue stime del costo dell'attesa vengono da uno strumento di calcolo, mai dai conti del modello stesso, e da prezzi di riferimento per settore e paese, ognuno con la sua fonte. Consulta il nostro calendario, blocca un orario e prenota da solo l'analisi gratuita delle esigenze."
+            ]
+          },
+          {
+            "heading": "Testato prima di parlare con chiunque",
+            "paragraphs": [
+              "Abbiamo scritto 55 test per l'assistente su ElevenLabs: lingue, conoscenza dell'agenzia, prezzi e condizioni, prenotazioni e sicurezza, come rifiutare i dati di una carta in chat, mettere in guardia dal falso operatore di Google o rifiutarsi di scrivere recensioni false. Le prenotazioni sono testate con tutti gli strumenti simulati, così nessun test raggiunge il calendario reale.",
+              "Abbiamo fatto girare gli stessi test su sei modelli linguistici. Il modello che usavamo ha ottenuto 47 su 55; Claude Haiku 5.5 ha ottenuto 51 su 55 e costava meno per esecuzione, quindi ora l'assistente funziona con lui. Dopo i test le sue istruzioni sono state rafforzate: non indica mai un prezzo diverso da quello d'ingresso, non promette mai risultati e non descrive mai modalità di pagamento."
+            ]
+          },
+          {
+            "heading": "WhatsApp quando l'assistente non può rispondere",
+            "paragraphs": [
+              "Un assistente ha un limite: le conversazioni che può sostenere ogni mese. Quando lo raggiunge, il sito non mostra più un assistente destinato a fallire. Mostra invece un pulsante di WhatsApp, e i pulsanti che avviano una conversazione aprono WhatsApp con un messaggio pronto da inviare.",
+              "L'assistente propone WhatsApp anche a metà conversazione quando non può aiutare. In ogni caso il visitatore ha sempre una persona a cui scrivere."
+            ]
+          },
+          {
+            "heading": "Cosa significa per un'attività locale",
+            "paragraphs": [
+              "Tutto ciò che racconta questa notizia è lavoro che facciamo anche per i clienti: landing page che portano a una prenotazione, un sito che si carica subito su un telefono qualunque, un assistente che risponde e prenota a qualsiasi ora, e i test che lo mantengono onesto.",
+              "Se vuoi sapere quali di questi tasselli servono alla tua attività, la prima chiamata è gratuita ed è l'analisi delle esigenze."
+            ]
+          }
+        ]
       }
     },
     "related": {

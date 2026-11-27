@@ -64,5 +64,14 @@
         "lastModified": "2026-11-25",
         "portfolioId": "lorenzoz-agency",
         "image": "https://cdn.hlorenzoz.com/hlorenzoz.com/portfolio/me/cover.webp"
+    },
+    {
+        "id": "partner-model-update",
+        "slug": "partner-model-update",
+        "datePublished": "2026-11-27",
+        "lastModified": "2026-11-27",
+        "portfolioId": "lorenzoz-agency",
+        "image": "https://cdn.hlorenzoz.com/hlorenzoz.com/portfolio/hlorenzoz/lorenzoz-agency-pagespeed-insights-100.webp",
+        "ogImage": "https://cdn.hlorenzoz.com/hlorenzoz.com/portfolio/hlorenzoz/lorenzoz-agency-pagespeed-insights-100.jpeg"
     }
 ]
