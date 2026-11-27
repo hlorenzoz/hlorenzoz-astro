@@ -27,6 +27,11 @@ describe('assistant agent prompt', () => {
         for (const tool of tools) expect(prompt, tool).toMatch(new RegExp(`^${tool}: `, 'm'));
     });
 
+    it('tells the agent the visitor never sees tool results, so it writes every figure itself', () => {
+        expect(prompt).toContain('The visitor never sees what a tool returns');
+        expect(prompt).toContain('Never announce a result before you have it');
+    });
+
     it('never asks the agent to do the arithmetic itself', () => {
         expect(prompt).toContain('Never do this arithmetic yourself');
         expect(prompt).not.toMatch(/do the arithmetic exactly/);
