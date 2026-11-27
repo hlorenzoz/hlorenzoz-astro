@@ -550,3 +550,65 @@ describe('ElevenLabsWidget - calculator changes reach the agent', () => {
         }
     });
 });
+
+describe('ElevenLabsWidget - a session the server ends', () => {
+    const OVERRIDE_REJECTED = "Override for field 'first_message' is not allowed by config.";
+
+    beforeEach(() => {
+        vi.clearAllMocks();
+        sessionStorage.clear();
+        mockConversation.status = 'disconnected';
+        mockConversation.isSpeaking = false;
+        mockConversation.startSession.mockResolvedValue(undefined);
+    });
+
+    async function chat(text: string) {
+        render(<ElevenLabsWidget locale="en" labels={en.assistant} />);
+        const input = await screen.findByPlaceholderText('Or send a message');
+        fireEvent.change(input, { target: { value: text } });
+        fireEvent.click(screen.getByRole('button', { name: /send message/i }));
+        await waitFor(() => expect(mockConversation.sendUserMessage).toHaveBeenCalledWith(text));
+    }
+
+    const disconnect = (details: object) => act(() => mockConversation.options.onDisconnect(details));
+
+    it('retries a chat without overrides when the agent rejects them, and resends the unanswered message', async () => {
+        await chat('hola');
+        expect(mockConversation.startSession.mock.calls[0][0]).toHaveProperty('overrides');
+
+        await disconnect({ reason: 'error', message: OVERRIDE_REJECTED, closeCode: 1008 });
+
+        await waitFor(() => expect(mockConversation.startSession).toHaveBeenCalledTimes(2));
+        const retry = mockConversation.startSession.mock.calls[1][0];
+        expect(retry).not.toHaveProperty('overrides');
+        expect(retry).toEqual(expect.objectContaining({ textOnly: true, connectionType: 'websocket', dynamicVariables: expect.any(Object) }));
+        await waitFor(() => expect(mockConversation.sendUserMessage).toHaveBeenCalledTimes(2));
+        expect(mockConversation.sendUserMessage).toHaveBeenLastCalledWith('hola');
+        expect(screen.queryByText(en.assistant.chatError)).toBeNull();
+    });
+
+    it('keeps later sessions without the rejected overrides', async () => {
+        await chat('hola');
+        await disconnect({ reason: 'error', message: OVERRIDE_REJECTED, closeCode: 1008 });
+        await waitFor(() => expect(mockConversation.startSession).toHaveBeenCalledTimes(2));
+
+        await disconnect({ reason: 'agent', closeCode: 1000 });
+        fireEvent.change(screen.getByPlaceholderText('Or send a message'), { target: { value: 'again' } });
+        fireEvent.click(screen.getByRole('button', { name: /send message/i }));
+        await waitFor(() => expect(mockConversation.startSession).toHaveBeenCalledTimes(3));
+        expect(mockConversation.startSession.mock.calls[2][0]).not.toHaveProperty('overrides');
+    });
+
+    it('tells the visitor when the connection drops for any other reason', async () => {
+        await chat('hola');
+        await disconnect({ reason: 'error', message: 'The connection was closed by the server.', closeCode: 1011 });
+        expect(await screen.findByText(en.assistant.chatError)).toBeInTheDocument();
+        expect(mockConversation.startSession).toHaveBeenCalledTimes(1);
+    });
+
+    it('shows no error when the conversation simply ends', async () => {
+        await chat('hola');
+        await disconnect({ reason: 'agent', closeCode: 1000 });
+        expect(screen.queryByText(en.assistant.chatError)).toBeNull();
+    });
+});

@@ -3,7 +3,7 @@
  * `src/components/ElevenLabsLoader.astro` (see `mount-elevenlabs.tsx`).
  */
 import { useState, useEffect, useRef } from 'react';
-import { useConversation } from '@elevenlabs/react';
+import { useConversation, type DisconnectionDetails } from '@elevenlabs/react';
 import { Phone, Minimize2 } from 'lucide-react';
 import { cn } from '@/lib/utils/cn';
 import { imageFallbackSrc, imageSrcSet } from '@/lib/image';
@@ -90,6 +90,13 @@ export function ElevenLabsWidget({ locale, labels }: ElevenLabsWidgetProps) {
     // a chat) starts with an empty first message. Safety net for an agent that greets anyway:
     // an agent message before the visitor says anything in that session is not shown.
     const skipGreetingRef = useRef(false);
+    // ElevenLabs closes a session whose overrides the agent does not allow (agent Security tab,
+    // Overrides). The greeting is a nicety, the answer is not: once rejected, sessions go without it.
+    const overridesRejectedRef = useRef(false);
+    // Typed messages the agent has not answered yet: resent when a rejected session is retried.
+    const unansweredRef = useRef<string[]>([]);
+    const modeRef = useRef(mode);
+    modeRef.current = mode;
 
     /**
      * What every session starts with: the translated greeting for a new conversation, none when
@@ -98,7 +105,7 @@ export function ElevenLabsWidget({ locale, labels }: ElevenLabsWidgetProps) {
      */
     const sessionBase = (continuing: boolean) => ({
         agentId: AGENT_ID,
-        overrides: { agent: { firstMessage: continuing ? '' : labels.greeting } },
+        ...(overridesRejectedRef.current ? {} : { overrides: { agent: { firstMessage: continuing ? '' : labels.greeting } } }),
         dynamicVariables: {
             page_title: document.title,
             page_url: location.origin + location.pathname,
@@ -150,10 +157,32 @@ export function ElevenLabsWidget({ locale, labels }: ElevenLabsWidgetProps) {
                 skipGreetingRef.current = false;
                 return;
             }
+            if (role === 'agent') unansweredRef.current = [];
             setMessages((prev) => [...prev, { role, text: message }]);
         },
-        onDisconnect: () => {
-            if (!leavingRef.current) setMode(null);
+        onDisconnect: (details: DisconnectionDetails) => {
+            if (leavingRef.current) return;
+            if (details.reason === 'error' && /override/i.test(details.message) && !overridesRejectedRef.current) {
+                console.warn('11Labs rejected the session overrides, retrying without them:', details.message);
+                overridesRejectedRef.current = true;
+                const pending = unansweredRef.current;
+                if (modeRef.current === 'chat' && pending.length) {
+                    const live = conversationRef.current;
+                    live.startSession({ ...sessionBase(false), connectionType: 'websocket', textOnly: true })
+                        .then(() => {
+                            for (const text of pending) live.sendUserMessage(text);
+                        })
+                        .catch((err: unknown) => {
+                            console.error('Failed to restart the chat:', err);
+                            setMode(null);
+                            setError(labels.chatError);
+                        });
+                    return;
+                }
+            }
+            setMode(null);
+            // The server or the network ended the session: say so instead of leaving the visitor waiting.
+            if (details.reason === 'error') setError(modeRef.current === 'call' ? labels.micError : labels.chatError);
         },
         onError: (err: Error | string) => {
             console.error('11Labs Error:', err);
@@ -223,6 +252,7 @@ export function ElevenLabsWidget({ locale, labels }: ElevenLabsWidgetProps) {
     const sendText = (text: string) => {
         skipGreetingRef.current = false;
         setMessages((prev) => [...prev, { role: 'user', text }]);
+        unansweredRef.current = [...unansweredRef.current, text];
         conversation.sendUserMessage(text);
         setInputValue('');
     };
