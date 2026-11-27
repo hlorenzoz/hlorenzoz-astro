@@ -62,7 +62,7 @@ window.__vite_plugin_react_preamble_installed__ = true;`}
 <script>
     import type { AssistantLabels } from '../islands/ElevenLabsWidget';
     import { hasSavedConversation } from '../islands/conversation-storage';
-    import { agentAvailability } from '../islands/assistant-availability';
+    import { agentAvailability, readAvailability } from '../islands/assistant-availability';
 
     const container = document.querySelector<HTMLElement>('[data-elevenlabs]');
 
@@ -80,9 +80,21 @@ window.__vite_plugin_react_preamble_installed__ = true;`}
         }
     })();
     // Bots never get the assistant, so they never spend a check either: null keeps today's behaviour.
+    // The check waits for the visitor's first interaction, not for `load`: lab browsers (PageSpeed
+    // emulates a phone user agent the bot filter misses) never interact, and a WhatsApp button
+    // painted seconds after the content pushed Speed Index back. A fresh saved answer, or a
+    // conversation carried over from the previous page, is applied at once.
+    const INTERACTIONS = ['pointerdown', 'keydown', 'touchstart', 'wheel', 'scroll'] as const;
     const availability: Promise<boolean | null> = isBot
         ? Promise.resolve(null)
-        : new Promise((resolve) => window.addEventListener('load', () => resolve(agentAvailability(storage, Date.now())), { once: true }));
+        : new Promise((resolve) => {
+              const check = () => {
+                  for (const type of INTERACTIONS) window.removeEventListener(type, check);
+                  resolve(agentAvailability(storage, Date.now()));
+              };
+              if (readAvailability(storage, Date.now()) !== null || hasSavedConversation()) return check();
+              for (const type of INTERACTIONS) window.addEventListener(type, check, { once: true, passive: true });
+          });
 
     if (container) {
         const labels = JSON.parse(container.dataset.labels!) as AssistantLabels;

@@ -1297,6 +1297,25 @@
         "Que el test compruebe que, para un visitante con visitor_timezone America/Toronto que pide manana por la manana, get_available_slots busca en la manana de Toronto (aprox. 11:00 a 17:00 UTC) y no en la de Madrid.",
         "Hecha cuando el test pasa con el modelo en produccion (claude-haiku-5-5) y la ruta usada queda anotada en docs/assistant-agent-evaluation.md."
       ]
+    },
+    {
+      "id": "#T0061",
+      "estado": "hecha",
+      "prioridad": "media",
+      "tipo": "rendimiento",
+      "titulo": "Speed Index de la home: la comprobacion de cuota del asistente espera al primer gesto",
+      "anotada": "2026-11-27",
+      "hecha": "2026-11-27",
+      "origen": "usuario",
+      "depende": [],
+      "notas": [
+        "PageSpeed movil bajo a 97 con Speed Index 3.9 s. Tras el load cada visita abria un socket a ElevenLabs y, sin creditos, pintaba el boton de WhatsApp tarde; el filtro de bots por user agent no detecta a Lighthouse (emula un Moto G).",
+        "Ahora la comprobacion espera al primer gesto (o se aplica al instante si hay respuesta guardada o conversacion en curso). Lighthouse local /en/: 100, SI 1.05 s. No se pudo ver la tira de PageSpeed: la API publica agoto su cuota diaria.",
+        "just validate 2467 en verde, Playwright 100 en verde."
+      ],
+      "descripcion": [
+        "src/components/ElevenLabsLoader.astro y tests/e2e/assistant-availability.spec.ts."
+      ]
     }
   ]
 }
