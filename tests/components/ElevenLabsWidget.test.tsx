@@ -397,3 +397,156 @@ describe('ElevenLabsWidget - the conversation survives a language switch', () =>
         await waitFor(() => expect(sessionStorage.getItem(STORAGE_KEY)).toBeNull());
     });
 });
+
+describe('ElevenLabsWidget - what each session starts with', () => {
+    beforeEach(() => {
+        vi.clearAllMocks();
+        sessionStorage.clear();
+        mockConversation.status = 'disconnected';
+        mockConversation.isSpeaking = false;
+        mockConversation.startSession.mockResolvedValue(undefined);
+        Object.defineProperty(navigator, 'mediaDevices', {
+            value: { getUserMedia: vi.fn().mockResolvedValue({}) },
+            configurable: true,
+        });
+    });
+
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    const lastSession = (): any => mockConversation.startSession.mock.lastCall?.[0];
+
+    it('opens a new chat with the translated greeting and the five dynamic variables', async () => {
+        render(<ElevenLabsWidget locale="en" labels={en.assistant} />);
+        fireEvent.change(await screen.findByPlaceholderText('Or send a message'), { target: { value: 'hola' } });
+        fireEvent.click(screen.getByRole('button', { name: /send message/i }));
+
+        await waitFor(() => expect(mockConversation.startSession).toHaveBeenCalled());
+        const session = lastSession();
+        expect(session.overrides.agent.firstMessage).toBe(en.assistant.greeting);
+        expect(session.overrides.agent).not.toHaveProperty('language');
+        const vars = session.dynamicVariables;
+        expect(Object.keys(vars).sort()).toEqual(['cost_of_waiting', 'locale', 'page_title', 'page_url', 'visitor_timezone']);
+        for (const value of Object.values(vars)) expect(typeof value).toBe('string');
+        expect(vars.locale).toBe('en');
+        expect(vars.visitor_timezone).not.toBe('');
+        expect(vars.cost_of_waiting).toBe('not used');
+    });
+
+    it('opens a new call with the greeting too', async () => {
+        render(<ElevenLabsWidget locale="en" labels={en.assistant} />);
+        fireEvent.click(await screen.findByRole('button', { name: en.assistant.startCall }));
+        await waitFor(() => expect(mockConversation.startSession).toHaveBeenCalled());
+        expect(lastSession().overrides.agent.firstMessage).toBe(en.assistant.greeting);
+    });
+
+    it('resumes a chat with no greeting', async () => {
+        sessionStorage.setItem(STORAGE_KEY, JSON.stringify({ mode: 'chat', messages: [{ role: 'user', text: 'hola' }] }));
+        render(<ElevenLabsWidget locale="es" labels={es.assistant} />);
+        await waitFor(() => expect(mockConversation.startSession).toHaveBeenCalled());
+        expect(lastSession().overrides.agent.firstMessage).toBe('');
+        expect(lastSession().dynamicVariables.locale).toBe('es');
+    });
+
+    // With the empty first message honored the agent never greets, so its first message after the
+    // visitor speaks is a real reply: the safety net that hides a repeated greeting must not eat it.
+    it('shows the first reply in a resumed chat once the visitor has typed', async () => {
+        sessionStorage.setItem(STORAGE_KEY, JSON.stringify({ mode: 'chat', messages: [{ role: 'user', text: 'hola' }] }));
+        render(<ElevenLabsWidget locale="en" labels={en.assistant} />);
+        await waitFor(() => expect(mockConversation.startSession).toHaveBeenCalled());
+        mockConversation.status = 'connected';
+        fireEvent.change(screen.getByPlaceholderText('Or send a message'), { target: { value: 'And the price?' } });
+        fireEvent.click(screen.getByRole('button', { name: /send message/i }));
+        act(() => mockConversation.options.onMessage({ message: 'The entry price is 500 EUR plus VAT.', role: 'agent' }));
+        expect(await screen.findByRole('log')).toHaveTextContent('The entry price is 500 EUR plus VAT.');
+    });
+
+    it('starts a call from a chat with messages with no greeting', async () => {
+        sessionStorage.setItem(STORAGE_KEY, JSON.stringify({ mode: 'call', messages: [{ role: 'user', text: 'hola' }] }));
+        render(<ElevenLabsWidget locale="en" labels={en.assistant} />);
+        fireEvent.click(await screen.findByRole('button', { name: en.assistant.startCall }));
+        await waitFor(() => expect(mockConversation.startSession).toHaveBeenCalled());
+        expect(lastSession().connectionType).toBe('webrtc');
+        expect(lastSession().overrides.agent.firstMessage).toBe('');
+    });
+
+    it('reads the visitor figures from the calculator when it is on the page', async () => {
+        document.body.insertAdjacentHTML(
+            'beforeend',
+            '<section data-cost-of-waiting><input name="missed" type="number" value="3"><input name="value" type="number" value="200"></section>'
+        );
+        try {
+            render(<ElevenLabsWidget locale="en" labels={en.assistant} />);
+            fireEvent.click(await screen.findByRole('button', { name: en.assistant.startCall }));
+            await waitFor(() => expect(mockConversation.startSession).toHaveBeenCalled());
+            expect(lastSession().dynamicVariables.cost_of_waiting).toContain('600 EUR a day');
+        } finally {
+            document.querySelector('[data-cost-of-waiting]')?.remove();
+        }
+    });
+});
+
+describe('ElevenLabsWidget - client tools', () => {
+    it('offers navigate_to_contact and show_cost_of_waiting, and no create_booking', () => {
+        render(<ElevenLabsWidget locale="en" labels={en.assistant} />);
+        const tools = mockConversation.options.clientTools;
+        expect(tools).toHaveProperty('navigate_to_contact');
+        expect(tools).toHaveProperty('show_cost_of_waiting');
+        expect(tools).not.toHaveProperty('create_booking');
+    });
+
+    it('show_cost_of_waiting scrolls to the calculator when it is on the page', () => {
+        document.body.insertAdjacentHTML('beforeend', '<section id="cost-of-waiting"></section>');
+        try {
+            render(<ElevenLabsWidget locale="en" labels={en.assistant} />);
+            const scrollSpy = HTMLElement.prototype.scrollIntoView as ReturnType<typeof vi.fn>;
+            scrollSpy.mockClear();
+            const reply = mockConversation.options.clientTools.show_cost_of_waiting();
+            expect(scrollSpy.mock.contexts[0]).toBe(document.getElementById('cost-of-waiting'));
+            expect(typeof reply).toBe('string');
+        } finally {
+            document.getElementById('cost-of-waiting')?.remove();
+        }
+    });
+});
+
+describe('ElevenLabsWidget - calculator changes reach the agent', () => {
+    beforeEach(() => {
+        vi.clearAllMocks();
+        sessionStorage.clear();
+        mockConversation.isSpeaking = false;
+    });
+
+    const change = (missed: number, value: number) =>
+        window.dispatchEvent(new CustomEvent('cost-of-waiting:change', { detail: { missed, value } }));
+
+    it('sends one debounced contextual update with the latest figures during a session', () => {
+        mockConversation.status = 'connected';
+        render(<ElevenLabsWidget locale="en" labels={en.assistant} />);
+        vi.useFakeTimers();
+        try {
+            change(2, 200);
+            change(3, 200);
+            vi.advanceTimersByTime(300);
+            expect(mockConversation.sendContextualUpdate).not.toHaveBeenCalled();
+            vi.advanceTimersByTime(1000);
+            expect(mockConversation.sendContextualUpdate).toHaveBeenCalledTimes(1);
+            expect(mockConversation.sendContextualUpdate).toHaveBeenCalledWith(
+                expect.stringContaining('600 EUR a day, 3000 EUR a week, 13000 EUR a month, 156000 EUR a year')
+            );
+        } finally {
+            vi.useRealTimers();
+        }
+    });
+
+    it('sends nothing when no session is connected', () => {
+        mockConversation.status = 'disconnected';
+        render(<ElevenLabsWidget locale="en" labels={en.assistant} />);
+        vi.useFakeTimers();
+        try {
+            change(3, 200);
+            vi.advanceTimersByTime(2000);
+            expect(mockConversation.sendContextualUpdate).not.toHaveBeenCalled();
+        } finally {
+            vi.useRealTimers();
+        }
+    });
+});

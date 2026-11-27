@@ -130,9 +130,13 @@ const TILES = [
         const output = (name: string) => root.querySelector<HTMLElement>(`[data-output="${name}"]`)!;
 
         const update = () => {
-            const loss = lossFromInputs(input('missed'), input('value'));
+            const missed = input('missed');
+            const value = input('value');
+            const loss = lossFromInputs(missed, value);
             for (const name of ['day', 'week', 'month'] as const) output(name).textContent = loss ? eur.format(loss[name]) : '-';
             output('year').textContent = yearTemplate.replace('{year}', loss ? eur.format(loss.year) : '-');
+            // The assistant (src/islands/ElevenLabsWidget.tsx) passes valid figures on to the agent.
+            if (loss) window.dispatchEvent(new CustomEvent('cost-of-waiting:change', { detail: { missed, value } }));
         };
 
         form.addEventListener('input', update);

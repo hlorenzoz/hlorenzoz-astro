@@ -61,6 +61,21 @@ test.describe('home calculators', () => {
         await expect(out('month')).toHaveText('-');
     });
 
+    test('the cost of waiting tells the assistant each valid change', async ({ page }) => {
+        await page.goto('/en/', { waitUntil: 'load' });
+        await page.evaluate(() => {
+            (window as unknown as { costEvents: unknown[] }).costEvents = [];
+            window.addEventListener('cost-of-waiting:change', (event) =>
+                (window as unknown as { costEvents: unknown[] }).costEvents.push((event as CustomEvent).detail)
+            );
+        });
+        const root = page.locator('#cost-of-waiting');
+        await root.locator('input[name="missed"]').fill('3');
+        await root.locator('input[name="value"]').fill('0');
+        const events = () => page.evaluate(() => (window as unknown as { costEvents: unknown[] }).costEvents);
+        await expect.poll(events).toEqual([{ missed: 3, value: 140 }]);
+    });
+
     test('the cost of waiting formats in the page locale', async ({ page }) => {
         await page.goto('/es/', { waitUntil: 'load' });
         const root = page.locator('#cost-of-waiting');

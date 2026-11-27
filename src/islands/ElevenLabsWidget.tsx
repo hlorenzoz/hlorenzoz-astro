@@ -9,6 +9,7 @@ import { cn } from '@/lib/utils/cn';
 import { imageFallbackSrc, imageSrcSet } from '@/lib/image';
 import { localeHref } from '@/lib/routing';
 import { CONVERSATION_KEY as STORAGE_KEY } from './conversation-storage';
+import { costOfWaitingContext, readCostOfWaiting, type CostOfWaitingInputs } from './cost-of-waiting-context';
 
 const AGENT_ID = 'agent_7601kjm9f042e55894dty11tqtnh';
 const AVATAR = 'https://cdn.hlorenzoz.com/hlorenzoz.com/hector-profile.webp';
@@ -28,6 +29,8 @@ export interface AssistantLabels {
     endCall: string;
     micError: string;
     chatError: string;
+    /** The agent's first message in a new conversation (the `first_message` override). */
+    greeting: string;
 }
 
 type Message = { role: 'user' | 'agent'; text: string };
@@ -56,6 +59,14 @@ function contextFrom(messages: Message[]): string {
     return `The visitor is continuing a conversation they already had with you on this site. Do not greet them again; carry on from here.\n${lines.join('\n')}`;
 }
 
+function visitorTimezone(): string {
+    try {
+        return Intl.DateTimeFormat().resolvedOptions().timeZone || 'UTC';
+    } catch {
+        return 'UTC';
+    }
+}
+
 export interface ElevenLabsWidgetProps {
     locale: string;
     labels: AssistantLabels;
@@ -75,10 +86,27 @@ export function ElevenLabsWidget({ locale, labels }: ElevenLabsWidgetProps) {
     // True once the page is going away: that disconnect is not the end of the conversation.
     const leavingRef = useRef(false);
     const resumedRef = useRef(false);
-    // Every new session opens with the agent's greeting. When it continues a conversation
-    // (a chat after a language switch, or a call after a chat) that greeting is noise in the
-    // transcript, so the first agent message of such a session is not shown.
+    // A session that continues a conversation (a chat after a language switch, or a call after
+    // a chat) starts with an empty first message. Safety net for an agent that greets anyway:
+    // an agent message before the visitor says anything in that session is not shown.
     const skipGreetingRef = useRef(false);
+
+    /**
+     * What every session starts with: the translated greeting for a new conversation, none when
+     * it continues one (the agent ignores an empty first message and waits), and the dynamic
+     * variables the agent's prompt reads. The language is not overridden: the agent detects it.
+     */
+    const sessionBase = (continuing: boolean) => ({
+        agentId: AGENT_ID,
+        overrides: { agent: { firstMessage: continuing ? '' : labels.greeting } },
+        dynamicVariables: {
+            page_title: document.title,
+            page_url: location.origin + location.pathname,
+            locale,
+            visitor_timezone: visitorTimezone(),
+            cost_of_waiting: costOfWaitingContext(readCostOfWaiting()),
+        },
+    });
 
     // Keep the newest message in view as the conversation grows.
     useEffect(() => {
@@ -117,6 +145,7 @@ export function ElevenLabsWidget({ locale, labels }: ElevenLabsWidgetProps) {
     const conversation = useConversation({
         onConnect: () => setError(null),
         onMessage: ({ message, role }: { message: string; role: 'user' | 'agent' }) => {
+            if (role === 'user') skipGreetingRef.current = false;
             if (role === 'agent' && skipGreetingRef.current) {
                 skipGreetingRef.current = false;
                 return;
@@ -131,6 +160,15 @@ export function ElevenLabsWidget({ locale, labels }: ElevenLabsWidgetProps) {
             setError(typeof err === 'string' ? err : err.message);
         },
         clientTools: {
+            show_cost_of_waiting: () => {
+                const section = document.getElementById('cost-of-waiting');
+                if (section) {
+                    section.scrollIntoView({ behavior: 'auto' });
+                } else {
+                    window.location.assign(`${localeHref(locale, '')}#cost-of-waiting`);
+                }
+                return 'Showed the visitor the cost of waiting calculator.';
+            },
             navigate_to_contact: () => {
                 const contactSection = document.getElementById('contact');
                 if (contactSection) {
@@ -141,18 +179,29 @@ export function ElevenLabsWidget({ locale, labels }: ElevenLabsWidgetProps) {
                 }
                 return "Navigated securely to contact section.";
             },
-            create_booking: (_parameters: unknown) => {
-                /**
-                 * Use this to finalize and book the appointment after the user has agreed on a time.
-                 * You MUST ask the user for their full name and email address before calling this tool.
-                 * Instruct the user that they should preferably add their Name and email by typing
-                 * in the text box to avoid misspelling.
-                 */
-                // console.log("Booking request received:", _parameters);
-                return "Appointment request received. I'm finalizing your booking now.";
-            }
         }
     });
+    // The listener below outlives renders; it reads the live session through this ref.
+    const conversationRef = useRef(conversation);
+    conversationRef.current = conversation;
+
+    // The visitor changes the calculator during a session: tell the agent once they stop typing.
+    useEffect(() => {
+        let timer: ReturnType<typeof setTimeout> | undefined;
+        const onChange = (event: Event) => {
+            const text = costOfWaitingContext((event as CustomEvent<CostOfWaitingInputs>).detail);
+            clearTimeout(timer);
+            timer = setTimeout(() => {
+                const live = conversationRef.current;
+                if (live.status === 'connected' && text !== 'not used') live.sendContextualUpdate(text);
+            }, 800);
+        };
+        window.addEventListener('cost-of-waiting:change', onChange);
+        return () => {
+            clearTimeout(timer);
+            window.removeEventListener('cost-of-waiting:change', onChange);
+        };
+    }, []);
 
     // The SDK only echoes voice input (user_transcript) through onMessage; typed text is sent as
     // user_message and never comes back, so it joins the transcript here, when it is sent.
@@ -162,7 +211,7 @@ export function ElevenLabsWidget({ locale, labels }: ElevenLabsWidgetProps) {
         resumedRef.current = true;
         skipGreetingRef.current = true;
         conversation
-            .startSession({ agentId: AGENT_ID, connectionType: 'websocket', textOnly: true })
+            .startSession({ ...sessionBase(true), connectionType: 'websocket', textOnly: true })
             .then(() => conversation.sendContextualUpdate(contextFrom(restored.messages)))
             .catch((err: unknown) => {
                 console.error('Failed to resume the chat:', err);
@@ -172,6 +221,7 @@ export function ElevenLabsWidget({ locale, labels }: ElevenLabsWidgetProps) {
     }, []);
 
     const sendText = (text: string) => {
+        skipGreetingRef.current = false;
         setMessages((prev) => [...prev, { role: 'user', text }]);
         conversation.sendUserMessage(text);
         setInputValue('');
@@ -198,10 +248,7 @@ export function ElevenLabsWidget({ locale, labels }: ElevenLabsWidgetProps) {
             await navigator.mediaDevices.getUserMedia({ audio: true });
             setMode('call');
             skipGreetingRef.current = messages.length > 0;
-            await conversation.startSession({
-                agentId: AGENT_ID,
-                connectionType: 'webrtc',
-            });
+            await conversation.startSession({ ...sessionBase(messages.length > 0), connectionType: 'webrtc' });
             if (messages.length) conversation.sendContextualUpdate(contextFrom(messages));
         } catch (err: unknown) {
             console.error("Failed to start conversation:", err);
@@ -304,7 +351,7 @@ export function ElevenLabsWidget({ locale, labels }: ElevenLabsWidgetProps) {
                                                 // Text-only session: no microphone, no WebRTC audio.
                                                 setMode('chat');
                                                 await conversation.startSession({
-                                                    agentId: AGENT_ID,
+                                                    ...sessionBase(false),
                                                     connectionType: 'websocket',
                                                     textOnly: true,
                                                 });
