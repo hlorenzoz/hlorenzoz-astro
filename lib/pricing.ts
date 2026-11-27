@@ -24,6 +24,7 @@ export type ServiceKey =
     | 'localSeo'
     | 'websiteDevelopment'
     | 'aiVoiceReceptionist'
+    | 'aiBusinessAutomation'
     | 'softwareDevelopment';
 
 /** Every service, Local SEO first: the dossier gives it its own page and lists the rest after it. */
@@ -31,6 +32,7 @@ export const SERVICE_KEYS: readonly ServiceKey[] = [
     'localSeo',
     'websiteDevelopment',
     'aiVoiceReceptionist',
+    'aiBusinessAutomation',
     'softwareDevelopment',
 ];
 
@@ -39,6 +41,7 @@ export const SERVICE_DISPLAY_ORDER: readonly ServiceKey[] = [
     'websiteDevelopment',
     'localSeo',
     'aiVoiceReceptionist',
+    'aiBusinessAutomation',
     'softwareDevelopment',
 ];
 

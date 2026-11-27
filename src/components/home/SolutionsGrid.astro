@@ -2,6 +2,8 @@
 /**
  * The services as building blocks of one solution, each card a link to its
  * own page. Strings and hrefs in; the card title is the link's accessible name.
+ * A card may carry a `badge` ("New") and the `dark` variant to stand out. Five
+ * cards sit 3 + 2 on wide screens (a 6 column grid, spans of 2 then 3).
  */
 import { ArrowRight } from '@lucide/astro';
 
@@ -10,10 +12,13 @@ export interface Props {
     title: string;
     subtitle: string;
     cta: string;
-    items: { title: string; description: string; href: string }[];
+    items: { title: string; description: string; href: string; badge?: string; dark?: boolean }[];
 }
 
 const { badge, title, subtitle, cta, items } = Astro.props;
+const threePlusTwo = items.length === 5;
+// Static strings so Tailwind keeps them.
+const span = (i: number) => (threePlusTwo ? (i < 3 ? 'lg:col-span-2' : 'lg:col-span-3') : '');
 ---
 
 <section id="solutions" class="py-32 px-6 bg-[#f9f9f9]">
@@ -23,16 +28,19 @@ const { badge, title, subtitle, cta, items } = Astro.props;
             <h2 class="text-4xl md:text-6xl font-bold text-black mb-8 tracking-tight leading-tight">{title}</h2>
             <p class="text-lg md:text-xl text-black font-medium leading-relaxed">{subtitle}</p>
         </div>
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div class={`grid grid-cols-1 sm:grid-cols-2 gap-6 ${threePlusTwo ? 'lg:grid-cols-6' : 'lg:grid-cols-4'}`}>
             {
-                items.map((item) => (
+                items.map((item, i) => (
                     <a
                         href={item.href}
-                        class="bg-white p-9 rounded-[3rem] border border-gray-100 shadow-[0_20px_60px_rgba(0,0,0,0.05)] flex flex-col gap-4 hover:border-blue-200 transition-colors"
+                        class={`p-9 rounded-[3rem] border shadow-[0_20px_60px_rgba(0,0,0,0.05)] flex flex-col gap-4 transition-colors ${span(i)} ${item.dark ? 'bg-[#0b0f19] border-[#0b0f19] hover:border-blue-500' : 'bg-white border-gray-100 hover:border-blue-200'}`}
                     >
-                        <h3 class="text-xl font-bold text-black tracking-tight leading-tight">{item.title}</h3>
-                        <p class="text-gray-900 leading-relaxed font-medium text-sm grow">{item.description}</p>
-                        <span class="text-blue-800 font-extrabold uppercase text-xs tracking-[0.2em] flex items-center gap-2">
+                        {item.badge && (
+                            <span class={`self-start px-2.5 py-1 rounded-full text-[11px] font-extrabold uppercase tracking-[0.14em] ${item.dark ? 'bg-blue-500/20 text-blue-300' : 'bg-blue-50 text-blue-800'}`}>{item.badge}</span>
+                        )}
+                        <h3 class={`text-xl font-bold tracking-tight leading-tight ${item.dark ? 'text-white' : 'text-black'}`}>{item.title}</h3>
+                        <p class={`leading-relaxed font-medium text-sm grow ${item.dark ? 'text-gray-300' : 'text-gray-900'}`}>{item.description}</p>
+                        <span class={`font-extrabold uppercase text-xs tracking-[0.2em] flex items-center gap-2 ${item.dark ? 'text-blue-300' : 'text-blue-800'}`}>
                             {cta} <ArrowRight class="w-4 h-4" aria-hidden="true" />
                         </span>
                     </a>

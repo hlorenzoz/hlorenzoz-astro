@@ -1,6 +1,6 @@
 # Lorenzoz Agency
 
-> A partner focused on the success of local businesses: first a free needs analysis, then the implementation of one tailored solution that brings new customers, built from local SEO, website development, an AI voice receptionist and custom software. Built by Héctor Luis Lorenzo Zaldivar (Founder & AI Architect) from Xinzo de Limia, Spain.
+> A partner focused on the success of local businesses: first a free needs analysis, then the implementation of one tailored solution that brings new customers, built from local SEO, website development, an AI voice receptionist, AI business automation and custom software. Built by Héctor Luis Lorenzo Zaldivar (Founder & AI Architect) from Xinzo de Limia, Spain.
 
 **Key facts**
 
@@ -8,7 +8,7 @@
 - Headquartered in Xinzo de Limia, Ourense, Spain
 - Serves clients worldwide, with a primary focus on Australia, Canada, Costa Rica, Europe, the United Kingdom, and the United States
 - How we work: a free first call analyzes what the business needs; the agency then proposes, quotes and implements one tailored solution, and measures the results with the client
-- Services: Local SEO (authority content, authority on Google and AI, review management), website development, AI voice receptionist, software development; they are building blocks combined per client, none is a core offer, and a service may come included in the solution at no extra cost
+- Services: Local SEO (authority content, authority on Google and AI, review management), website development, AI voice receptionist, AI business automation, software development; they are building blocks combined per client, none is a core offer, and a service may come included in the solution at no extra cost
 - Tech stack: Astro, Tailwind CSS, Cloudflare (CDN, Workers, Pages), Vitest, Playwright, Lighthouse CI
 - Pricing: no price is published; every solution is tailored to the business and quoted after the free first call
 - Terms: no quote includes VAT; the work starts with a first implementation for 500 EUR + VAT that commits both sides and takes the first steps, then a monthly fee tied to the results agreed in the proposal, covered by the new customers the solution brings in; no other price is published; there is no free trial
@@ -17,7 +17,7 @@
 
 ## Docs
 
-- [Home](https://hlorenzoz.com/en/): The partner model in one page: the free needs analysis, how the work runs, the four services as building blocks of one tailored solution, and the agency dossier to download. It also shows the latest agency news.
+- [Home](https://hlorenzoz.com/en/): The partner model in one page: the free needs analysis, how the work runs, the five services as building blocks of one tailored solution, and the agency dossier to download. It also shows the latest agency news.
 - [Portfolio](https://hlorenzoz.com/en/portfolio/): Case studies of live and demo projects, each documented with tech stack, performance scores, structured data, and multidevice testing evidence.
 - [News](https://hlorenzoz.com/en/news/): Agency announcements, such as new work added to the portfolio, each linking to its case study.
 - [Digital Business Card](https://hlorenzoz.com/en/card/hector/): Héctor's NFC enabled digital business card with contact details, "Add to Contacts", call booking, and location on Google Maps.
@@ -31,10 +31,11 @@
 
 ## Services
 
-- [Services Hub](https://hlorenzoz.com/en/services/): Directory of all 4 service offerings, each with its deliverables, process, and FAQ. Each one is a building block of a solution tailored to the client.
+- [Services Hub](https://hlorenzoz.com/en/services/): Directory of all 5 service offerings, each with its deliverables, process, and FAQ. Each one is a building block of a solution tailored to the client.
 - [Local SEO](https://hlorenzoz.com/en/services/local-seo/): Ranking on Google and recommendation by AI engines for local searches, with three pillars, all included: authority content, authority on Google and AI, and review management. Quoted after a free first call. The goal is the first position on Google for local searches; no ranking is guaranteed.
 - [Website Development](https://hlorenzoz.com/en/services/website-development/): Custom, high speed websites and PWAs built to convert visitors into clients, with structured data, translations and llms.txt, plus hosting and maintenance when the solution needs them. Quoted after a free first call.
 - [AI Voice Receptionist](https://hlorenzoz.com/en/services/ai-voice-receptionist/): AI voice agents that answer calls, schedule appointments, and handle FAQs 24/7. Quoted after a free first call.
+- [AI Business Automation](https://hlorenzoz.com/en/services/ai-business-automation/): AI agents connected to the tools the business already uses, in four areas: lead follow up (an instant reply to every enquiry by web, WhatsApp, email or missed call, qualified and followed up until it books or says no), bookings and reminders on the calendar, back office work (quotes, invoices, data entry and reports, with the owner approving what matters), and reviews and loyalty (a review request after every visit to every customer, never only the happy ones, plus messages that bring back customers who have not returned). A person takes over when it matters. Designed after the free needs analysis; the assistant on this site, which answers by voice or chat, checks the calendar and books the free analysis by itself, is an example of it. Quoted after a free first call.
 - [Software Development](https://hlorenzoz.com/en/services/software-development/): Full stack products with a Flutter frontend and a robust backend, built for every device. Quoted after a free first call; the quote depends on the functional requirements.
 
 ## Portfolio Case Studies

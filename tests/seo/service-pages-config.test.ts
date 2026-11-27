@@ -1,5 +1,5 @@
 /**
- * Contract tests for the REAL Core 30 service pages (hub + 4 services), not a
+ * Contract tests for the REAL Core 30 service pages (hub + 5 services), not a
  * fixture. `tests/seo/service-page.test.ts` proves the factory itself is
  * correct in isolation; this proves the pages this repo actually ships wire
  * it up without throwing, register the right kind/tier, and produce the
@@ -26,6 +26,7 @@ const pagesFor = (slug: string) => ({ contentPages: serviceContentPagesByKey[ser
 const localSeo = pagesFor('local-seo');
 const websiteDevelopment = pagesFor('website-development');
 const aiVoiceReceptionist = pagesFor('ai-voice-receptionist');
+const aiBusinessAutomation = pagesFor('ai-business-automation');
 const softwareDevelopment = pagesFor('software-development');
 
 /**
@@ -33,7 +34,7 @@ const softwareDevelopment = pagesFor('software-development');
  * building blocks of one tailored solution. The paused Digital Business Card has no entry: its page sits
  * in a private folder and its route is commented out.
  */
-const SERVICE_SLUGS = ['local-seo', 'website-development', 'ai-voice-receptionist', 'software-development'] as const;
+const SERVICE_SLUGS = ['local-seo', 'website-development', 'ai-voice-receptionist', 'ai-business-automation', 'software-development'] as const;
 
 type Graph = { '@graph': Array<Record<string, unknown>> };
 const node = (g: unknown, type: string) =>
@@ -50,7 +51,7 @@ describe('service pages: hub', () => {
         expect(hub.contentPages.en!.config.path).toBe('services');
     });
 
-    it('links exactly the four services as children, in registry order', () => {
+    it('links exactly the five services as children, in registry order', () => {
         const links = hub.contentPages.en!.children('en', T);
         // Order matters: it is the order the hub lists them in.
         expect(links.map((l) => l.url)).toEqual(
@@ -73,12 +74,12 @@ describe('service pages: hub', () => {
         ]);
     });
 
-    it('emits a CollectionPage with an ItemList naming exactly the four services', () => {
+    it('emits a CollectionPage with an ItemList naming exactly the five services', () => {
         const g = hub.contentPages.en!.schema('en', T) as Graph;
         const collection = node(g, 'CollectionPage');
         expect(collection).toBeDefined();
         const list = collection?.mainEntity as { numberOfItems: number; itemListElement: { url: string }[] };
-        expect(list.numberOfItems).toBe(4);
+        expect(list.numberOfItems).toBe(5);
         expect(list.itemListElement.map((i) => i.url)).toEqual(
             SERVICE_SLUGS.map((slug) => absoluteUrl('en', `services/${slug}`))
         );
@@ -95,6 +96,7 @@ const SERVICES = [
     { slug: 'local-seo', mod: localSeo },
     { slug: 'website-development', mod: websiteDevelopment },
     { slug: 'ai-voice-receptionist', mod: aiVoiceReceptionist },
+    { slug: 'ai-business-automation', mod: aiBusinessAutomation },
     { slug: 'software-development', mod: softwareDevelopment },
 ] as const satisfies readonly { slug: string; mod: { contentPages: LocaleContentPages } }[];
 

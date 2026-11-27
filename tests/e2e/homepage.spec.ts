@@ -47,7 +47,7 @@ test.describe('Homepage E2E Tests', () => {
     await expect(contactLink.first()).toBeAttached({ timeout: 15000 });
   });
 
-  test('should display the four solutions, each linking to its service page', async ({ page }) => {
+  test('should display the five solutions, each linking to its service page', async ({ page }) => {
     await page.goto('/', { waitUntil: 'domcontentloaded' });
 
     const solutionsSection = page.locator('section#solutions');
@@ -56,6 +56,7 @@ test.describe('Homepage E2E Tests', () => {
       ['Local SEO', 'local-seo'],
       ['Website Development', 'website-development'],
       ['AI Voice Receptionist', 'ai-voice-receptionist'],
+      ['AI Business Automation', 'ai-business-automation'],
       ['Software Development', 'software-development'],
     ]) {
       await expect(solutionsSection.getByRole('link', { name: new RegExp(name) })).toHaveAttribute('href', `/en/services/${slug}/`);

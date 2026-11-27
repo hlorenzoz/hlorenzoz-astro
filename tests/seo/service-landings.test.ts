@@ -3,11 +3,12 @@ import en from '@/messages/en.json';
 import LocalSeo from '@/src/pages/[locale]/services/local-seo/index.astro';
 import WebsiteDevelopment from '@/src/pages/[locale]/services/website-development/index.astro';
 import AiVoiceReceptionist from '@/src/pages/[locale]/services/ai-voice-receptionist/index.astro';
+import AiBusinessAutomation from '@/src/pages/[locale]/services/ai-business-automation/index.astro';
 import SoftwareDevelopment from '@/src/pages/[locale]/services/software-development/index.astro';
 import { jsonLdNodes, renderPage } from './render-page';
 
 /**
- * The four service pages are landing pages built from the approved designs
+ * The five service pages are landing pages built from the approved designs
  * (odd/tasks/partner-positioning.md, S1 and S4): one promise, proof the
  * visitor can check, a free needs analysis as the only call to action, the
  * dossier, and the booking calendar last.
@@ -68,6 +69,22 @@ const PAGES = [
             'Stop losing calls, starting this month',
         ],
         links: ['/en/#how'],
+    },
+    {
+        path: 'services/ai-business-automation',
+        Page: AiBusinessAutomation,
+        key: 'aiBusinessAutomation',
+        sections: [
+            'Four areas where a business loses time and customers',
+            'The assistant on this site already does it',
+            'What does a slow reply cost you?',
+            'Built around the way you already work',
+            'From the first call to work that runs itself',
+            'Frequently asked questions',
+            'Want it all in one document?',
+            'Get hours back every week',
+        ],
+        links: ['#proof', '/en/#cost-of-waiting', '/en/#how'],
     },
     {
         path: 'services/software-development',
@@ -180,5 +197,20 @@ describe('AI Voice Receptionist demo', () => {
         const document = await render(AiVoiceReceptionist, 'services/ai-voice-receptionist');
         const button = document.querySelector('#try button[data-assistant-open]');
         expect(text(button)).toBe('Start a conversation');
+    });
+});
+
+describe('AI Business Automation proof', () => {
+    it('shows the enquiry journey beside the hero', async () => {
+        const document = await render(AiBusinessAutomation, 'services/ai-business-automation');
+        const hero = document.querySelector(`${MAIN} h1`)!.closest('section')!;
+        expect([...hero.querySelectorAll('ol li strong')].map(text)).toEqual(en.landing.aiBusinessAutomation.journey.steps.map((s) => s.title));
+    });
+
+    it('offers a button in the dark proof section that opens the site assistant', async () => {
+        const document = await render(AiBusinessAutomation, 'services/ai-business-automation');
+        const button = document.querySelector('section#proof button[data-assistant-open]');
+        expect(text(button)).toBe(en.landing.aiBusinessAutomation.proof.button);
+        expect(document.querySelectorAll('section#proof li')).toHaveLength(4);
     });
 });

@@ -1316,6 +1316,27 @@
       "descripcion": [
         "src/components/ElevenLabsLoader.astro y tests/e2e/assistant-availability.spec.ts."
       ]
+    },
+    {
+      "id": "#T0062",
+      "estado": "hecha",
+      "prioridad": "alta",
+      "tipo": "funcionalidad",
+      "titulo": "Nuevo servicio: Automatizacion de Negocio con IA (landing, home, dossier, llms.txt)",
+      "anotada": "2026-11-27",
+      "origen": "usuario",
+      "depende": [],
+      "notas": [
+        "Diseno aprobado en el canvas (AiAutomation y HomeSolutions). Clave aiBusinessAutomation, slug ai-business-automation, cuarto servicio tras el AI Voice Receptionist.",
+        "Cuatro areas: seguimiento de consultas, reservas y recordatorios, trabajo administrativo, resenas y fidelizacion.",
+        "just validate 2519 en verde, Playwright chromium y Mobile Chrome 102 en verde; landing, hub y home revisados en el navegador. Dossier en 2x2 sin desbordes en los 9 idiomas.",
+        "Pendiente con OK del usuario tras el despliegue: refrescar el llms.txt en la base de conocimiento de ElevenLabs y anadir el servicio a la linea de servicios del prompt del agente."
+      ],
+      "descripcion": [
+        "Landing en los 9 idiomas, tarjeta en Solutions de la home con etiqueta Nuevo, hub de servicios, footer, dossier, public/llms.txt y documentacion.",
+        "Hecha cuando just validate y Playwright pasan y la landing se ve en el navegador."
+      ],
+      "hecha": "2026-11-27"
     }
   ]
 }

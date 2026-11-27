@@ -14,7 +14,7 @@
         "label": "Oplossing op maat voor jou"
       },
       {
-        "value": "4",
+        "value": "5",
         "label": "Diensten om die mee te bouwen"
       },
       {
@@ -75,7 +75,7 @@
     ]
   },
   "localSeo": {
-    "eyebrow": "Bouwsteen 1 van 4",
+    "eyebrow": "Bouwsteen 1 van 5",
     "name": "Lokale SEO",
     "title": "Als eerste gevonden op Google, aanbevolen door AI",
     "description": "Het werk dat je bedrijf zichtbaar maakt in lokale zoekopdrachten op Google en in de antwoorden die AI geeft. Als lokale SEO deel uitmaakt van je oplossing, krijg je alle drie de pijlers.",
@@ -116,7 +116,7 @@
   },
   "blocks": {
     "eyebrow": "Gecombineerd zodat het bij je bedrijf past",
-    "title": "Nog drie bouwstenen",
+    "title": "Nog vier bouwstenen",
     "description": "Elke bouwsteen komt in je oplossing wanneer je bedrijf die nodig heeft, en kan zonder extra kosten inbegrepen zijn.",
     "items": [
       {
@@ -137,6 +137,16 @@
           "Afspraken direct in je agenda gezet",
           "Eigen stem en script, afgestemd op je merk",
           "Geoptimaliseerd voor Engels en Spaans"
+        ]
+      },
+      {
+        "key": "aiBusinessAutomation",
+        "name": "Bedrijfsautomatisering met AI",
+        "description": "Slimme agents met AI, gekoppeld aan de software die je al gebruikt, die elke aanvraag opvolgen en je terugkerend werk uit handen nemen.",
+        "features": [
+          "Direct antwoord op elke aanvraag, opgevolgd tot een afspraak of een nee",
+          "Afspraken, herinneringen, offertes en facturen, met jouw akkoord waar het telt",
+          "Een reviewverzoek na elk bezoek, aan elke klant"
         ]
       },
       {

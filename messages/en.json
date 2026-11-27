@@ -24,7 +24,7 @@
   "home": {
     "meta": {
       "title": "Lorenzoz Agency | Growth Partner for Local Businesses",
-      "description": "We analyze what your business needs in a free first call, then build the right mix of local SEO, website, AI voice receptionist or custom software.",
+      "description": "We analyze what your business needs in a free first call, then build the right mix of local SEO, website, AI receptionist, AI automation or custom software.",
       "ogImageAlt": "Lorenzoz Agency: AI & Web Excellence",
       "keywords": [
         "Local SEO",
@@ -35,15 +35,16 @@
         "AI Search Visibility",
         "Website Development",
         "AI Voice Receptionist",
+        "AI Business Automation",
         "Software Development"
       ],
-      "organizationDescription": "A growth partner for local businesses: we analyze what each business needs, then implement a tailored solution of local SEO, websites, AI voice receptionists and custom software."
+      "organizationDescription": "A growth partner for local businesses: we analyze what each business needs, then implement a tailored solution of local SEO, websites, AI voice receptionists, AI business automation and custom software."
     },
     "hero": {
       "badge": "Your growth partner",
       "title": "We study your business, then build what",
       "titleGradient": "brings you customers",
-      "description": "No packages and no price list. In a free first call we analyze what your business needs. Then we implement the right mix of local SEO, website, AI voice receptionist or custom software, and measure the results with you.",
+      "description": "No packages and no price list. In a free first call we analyze what your business needs. Then we implement the right mix of local SEO, website, AI voice receptionist, AI business automation or custom software, and measure the results with you.",
       "cta": "Book your free needs analysis",
       "secondaryCta": "How we work",
       "note": "15 minutes by video call. No obligation."
@@ -129,7 +130,7 @@
         },
         {
           "title": "Implementation",
-          "description": "We build and launch it: your website, your local presence, your voice receptionist or your software, tested before it goes live."
+          "description": "We build and launch it: your website, your local presence, your voice receptionist, your automations or your software, tested before it goes live."
         },
         {
           "title": "Measured together",
@@ -143,10 +144,12 @@
       "title": "The pieces we combine for you",
       "subtitle": "Every business needs something different. These are the building blocks of your solution; you only get what moves your business forward.",
       "cta": "Learn more",
+      "new": "New",
       "items": {
         "localSeo": "Be found on Google and in AI answers when people nearby search for what you offer.",
         "websiteDevelopment": "Fast, multilingual websites that search engines and AI understand, built to turn visits into calls.",
         "aiVoiceReceptionist": "Every call answered, day and night: questions, bookings and messages handled in a natural voice.",
+        "aiBusinessAutomation": "Every enquiry followed up, bookings and reminders, back office tasks and reviews handled by AI agents connected to your tools.",
         "softwareDevelopment": "Your own app for phones, tablets, the web and desktop when ready made tools fall short."
       }
     },
@@ -501,6 +504,118 @@
           {
             "question": "How much does it cost?",
             "answer": "It depends on your call volume and on what it needs to do. We quote it after the free analysis, often as part of a wider solution. Every solution starts with a first implementation for {entryPrice} + VAT that commits both sides."
+          }
+        ]
+      }
+    },
+    "aiBusinessAutomation": {
+      "name": "AI Business Automation",
+      "meta": {
+        "title": "AI Business Automation",
+        "description": "AI agents that follow up every enquiry, keep your diary full, take on back office work and ask every customer for a review, designed after a free analysis."
+      },
+      "hero": {
+        "eyebrow": "AI Business Automation",
+        "title": "Your business keeps working while you serve your customers",
+        "subtitle": "AI agents that reply to and follow up every enquiry, keep your diary full, take the repetitive back office work off your hands and look after your reviews, connected to the tools you already use. We design them after a free analysis of where your time and your customers go.",
+        "cta": "Book your free needs analysis"
+      },
+      "benefits": {
+        "title": "Four areas where a business loses time and customers",
+        "items": [
+          {
+            "title": "Lead follow up",
+            "description": "Every enquiry from your website, WhatsApp, email or a missed call gets a reply at once, is qualified with the right questions and followed up until it books or says no."
+          },
+          {
+            "title": "Bookings and reminders",
+            "description": "Confirmations, reminders and rescheduling connected to your calendar, so fewer appointments are forgotten and your diary stays full."
+          },
+          {
+            "title": "Back office",
+            "description": "Quotes, invoices, data entry, reports and repetitive tasks done by AI agents connected to the tools you already use, with you approving what matters."
+          },
+          {
+            "title": "Reviews and loyalty",
+            "description": "A review request after every visit, to every customer, plus messages that bring back customers who have not returned in a while."
+          }
+        ]
+      },
+      "deliverables": {
+        "title": "The Complete Package",
+        "groups": [
+          {
+            "label": "Every Customer Followed Up",
+            "items": [
+              "An instant reply to every enquiry by web, WhatsApp, email or missed call",
+              "Qualifying questions agreed with you",
+              "Follow up until the enquiry books or says no",
+              "Booking confirmations and reminders"
+            ]
+          },
+          {
+            "label": "Work Off Your Plate",
+            "items": [
+              "Quotes and invoices prepared for your approval",
+              "Data entry and reports",
+              "Connected to the tools you already use",
+              "Tasks passed to a person when they need one"
+            ]
+          },
+          {
+            "label": "Ongoing Care",
+            "items": [
+              "A review request after every visit, to every customer",
+              "Messages that bring back customers who have not returned",
+              "Monthly review of results and flows",
+              "Data handling aligned with GDPR"
+            ]
+          }
+        ]
+      },
+      "process": {
+        "title": "From the first call to work that runs itself",
+        "steps": [
+          {
+            "number": "01",
+            "title": "Free analysis",
+            "description": "Where your time goes and where enquiries are lost today."
+          },
+          {
+            "number": "02",
+            "title": "Map the flows",
+            "description": "We agree what is automated, what passes to you and how it is measured."
+          },
+          {
+            "number": "03",
+            "title": "Build and test",
+            "description": "Connected to your tools and tested with real cases before it goes live."
+          },
+          {
+            "number": "04",
+            "title": "Live and measured",
+            "description": "We review results with you and improve the flows every month."
+          }
+        ]
+      },
+      "faq": {
+        "title": "Frequently asked questions",
+        "items": [
+          {
+            "question": "Do I have to change the tools I use?",
+            "answer": "No. We review your calendar, messaging and software in the analysis and connect the automation to them. If one of them cannot be connected, we tell you and propose an alternative."
+          },
+          {
+            "question": "What happens when the AI cannot handle something?",
+            "answer": "It passes it to you or your team, the way we agree in the analysis. You decide which tasks need your approval."
+          },
+          {
+            "question": "Will my customers know they are talking to an AI?",
+            "answer": "We agree with you how it introduces itself. Being open about it builds trust with your customers."
+          },
+          {
+            "question": "How much does it cost?",
+            "answer": "It depends on what is automated and how much work it takes off your hands. We quote it after the free analysis, often as part of a wider solution. Every solution starts with a first implementation for {entryPrice} + VAT that commits both sides."
           }
         ]
       }
@@ -880,6 +995,10 @@
           "href": "/services/ai-voice-receptionist"
         },
         {
+          "label": "AI Business Automation",
+          "href": "/services/ai-business-automation"
+        },
+        {
           "label": "Software Development",
           "href": "/services/software-development"
         }
@@ -1243,7 +1362,7 @@
         "title": "About Lorenzoz Agency",
         "paragraphs": [
           "Lorenzoz Agency is a partner focused on its clients' success. We build solutions for local businesses of any size, and the outcome we work toward is always the same: new customers and more business. We start with a free needs analysis, then propose and implement the solution the business actually needs.",
-          "That solution combines four building blocks, as each business requires: website development, Local SEO (authority content, authority on Google and in AI answers, and review management), an AI voice receptionist and software development. We are registered in Xinzo de Limia (Ourense, Spain) and work online with clients worldwide, with a focus on Australia, Canada, Costa Rica, Europe, the United Kingdom and the United States. The division of labour is simple: the client focuses on delivering their own service well, and we take care of winning their customers and following them up."
+          "That solution combines five building blocks, as each business requires: website development, Local SEO (authority content, authority on Google and in AI answers, and review management), an AI voice receptionist, AI business automation and software development. We are registered in Xinzo de Limia (Ourense, Spain) and work online with clients worldwide, with a focus on Australia, Canada, Costa Rica, Europe, the United Kingdom and the United States. The division of labour is simple: the client focuses on delivering their own service well, and we take care of winning their customers and following them up."
         ]
       }
     },
@@ -2730,6 +2849,97 @@
       "close": {
         "title": "Stop losing calls, starting this month",
         "subtitle": "Tell us how your phone works today. In 15 minutes we show you what your receptionist would do."
+      }
+    },
+    "aiBusinessAutomation": {
+      "hero": {
+        "secondary": "See it working on this site"
+      },
+      "journey": {
+        "title": "One enquiry, handled from start to finish",
+        "steps": [
+          {
+            "title": "Enquiry arrives",
+            "text": "By web, WhatsApp or email, at 22:40 on a Sunday."
+          },
+          {
+            "title": "Answered at once",
+            "text": "The questions it needs are asked straight away."
+          },
+          {
+            "title": "Booked",
+            "text": "Into your diary, with reminders before the visit."
+          },
+          {
+            "title": "After the visit",
+            "text": "The invoice goes out and every customer is asked for a review."
+          }
+        ],
+        "note": "Illustrative journey: the steps are designed for each business in the analysis."
+      },
+      "areas": {
+        "eyebrow": "What we automate",
+        "subtitle": "We automate only what your analysis shows is worth it. A business may need one of these areas or all four."
+      },
+      "proof": {
+        "eyebrow": "Built by us, working here",
+        "title": "The assistant on this site already does it",
+        "text": "It answers by voice or chat in the visitor's language, checks our calendar, holds a time and books the free needs analysis, with no one from our team involved. When it cannot answer, it offers WhatsApp instead. The same kind of automation, built for your business.",
+        "button": "Try the assistant",
+        "note": "Uses your microphone only if you start a call.",
+        "tiles": [
+          {
+            "title": "Answers 24/7",
+            "text": "Voice or chat, in the visitor's language"
+          },
+          {
+            "title": "Books by itself",
+            "text": "Reads the calendar and confirms the time"
+          },
+          {
+            "title": "Knows the business",
+            "text": "Reads our services and terms from one source"
+          },
+          {
+            "title": "Hands over",
+            "text": "WhatsApp when it cannot answer"
+          }
+        ]
+      },
+      "costOfWaiting": {
+        "title": "What does a slow reply cost you?",
+        "text": "An enquiry answered the next day often went to a competitor overnight. Put in how many customers you lose a day and see what it adds up to in a month.",
+        "cta": "Work out your cost of waiting"
+      },
+      "fits": {
+        "title": "Built around the way you already work",
+        "tiles": [
+          {
+            "title": "Your tools, not new ones",
+            "text": "We connect the automation to the calendar, messaging and software you already use, once we have reviewed them in the analysis."
+          },
+          {
+            "title": "A person when it matters",
+            "text": "You decide what the AI handles and when a conversation or a task passes to you or your team."
+          },
+          {
+            "title": "Honest reviews",
+            "text": "Every customer is asked for a review, not only the happy ones: that is Google's rule, and it keeps your reputation real."
+          },
+          {
+            "title": "Data handled with care",
+            "text": "Customer data handled in line with GDPR, and only the data each task needs."
+          }
+        ],
+        "bigger": {
+          "title": "Part of a bigger solution",
+          "text": "Automation pays off most next to a website that converts, a local presence that brings enquiries in and a receptionist that answers the phone. After the analysis we propose the combination that fits; some pieces may come included.",
+          "cta": "See how we work"
+        }
+      },
+      "close": {
+        "title": "Get hours back every week",
+        "subtitle": "Tell us what takes your time today. In 15 minutes we show you what we would automate first."
       }
     },
     "softwareDevelopment": {

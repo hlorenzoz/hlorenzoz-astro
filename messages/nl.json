@@ -24,7 +24,7 @@
     "home": {
         "meta": {
             "title": "Lorenzoz Agency | Groeipartner voor lokale bedrijven",
-            "description": "In een gratis eerste gesprek analyseren we wat je bedrijf nodig heeft. Daarna bouwen we de juiste mix van lokale SEO, website, telefoonreceptionist met AI of software op maat.",
+            "description": "We analyseren gratis wat je bedrijf nodig heeft en bouwen daarna de juiste mix van lokale SEO, website, receptionist en automatisering met AI of software.",
             "ogImageAlt": "Lorenzoz Agency: uitmuntend in AI en web",
             "keywords": [
                 "Lokale SEO",
@@ -35,15 +35,16 @@
                 "Zichtbaarheid in zoekmachines met AI",
                 "Websiteontwikkeling",
                 "Telefoonreceptionist met AI",
+                "Bedrijfsautomatisering met AI",
                 "Softwareontwikkeling"
             ],
-            "organizationDescription": "Een groeipartner voor lokale bedrijven: we analyseren wat elk bedrijf nodig heeft en zetten daarna een oplossing op maat in, met lokale SEO, websites, telefoonreceptionisten met AI en software op maat."
+            "organizationDescription": "Een groeipartner voor lokale bedrijven: we analyseren wat elk bedrijf nodig heeft en zetten daarna een oplossing op maat in, met lokale SEO, websites, telefoonreceptionisten met AI, bedrijfsautomatisering met AI en software op maat."
         },
         "hero": {
             "badge": "Je groeipartner",
             "title": "Eerst leren we je bedrijf kennen, dan bouwen we wat",
             "titleGradient": "je klanten oplevert",
-            "description": "Geen pakketten en geen prijslijst. In een gratis eerste gesprek analyseren we wat je bedrijf nodig heeft. Daarna zetten we de juiste mix in van lokale SEO, een website, een telefoonreceptionist met AI of software op maat, en meten we samen met jou de resultaten.",
+            "description": "Geen pakketten en geen prijslijst. In een gratis eerste gesprek analyseren we wat je bedrijf nodig heeft. Daarna zetten we de juiste mix in van lokale SEO, een website, een telefoonreceptionist met AI, bedrijfsautomatisering met AI of software op maat, en meten we samen met jou de resultaten.",
             "cta": "Plan je gratis behoefteanalyse",
             "secondaryCta": "Zo werken we",
             "note": "15 minuten via videogesprek. Vrijblijvend."
@@ -129,7 +130,7 @@
                 },
                 {
                     "title": "Implementatie",
-                    "description": "We bouwen en lanceren het: je website, je lokale aanwezigheid, je telefoonreceptionist of je software, getest voordat het live gaat."
+                    "description": "We bouwen en lanceren het: je website, je lokale aanwezigheid, je telefoonreceptionist, je automatiseringen of je software, getest voordat het live gaat."
                 },
                 {
                     "title": "Samen meten",
@@ -143,10 +144,12 @@
             "title": "De onderdelen die we voor je combineren",
             "subtitle": "Elk bedrijf heeft iets anders nodig. Dit zijn de bouwstenen van je oplossing; je krijgt alleen wat je bedrijf verder helpt.",
             "cta": "Meer informatie",
+            "new": "Nieuw",
             "items": {
                 "localSeo": "Gevonden worden op Google en in antwoorden van AI als mensen in de buurt zoeken naar wat jij aanbiedt.",
                 "websiteDevelopment": "Snelle, meertalige websites die zoekmachines en AI begrijpen, gebouwd om bezoeken om te zetten in telefoontjes.",
                 "aiVoiceReceptionist": "Elk telefoontje beantwoord, dag en nacht: vragen, afspraken en berichten afgehandeld met een natuurlijke stem.",
+                "aiBusinessAutomation": "Elke aanvraag opgevolgd, afspraken en herinneringen, backofficetaken en reviews afgehandeld door agenten met AI die gekoppeld zijn aan je tools.",
                 "softwareDevelopment": "Je eigen app voor telefoon, tablet, web en desktop, als standaardtools tekortschieten."
             }
         },
@@ -505,6 +508,118 @@
                 ]
             }
         },
+        "aiBusinessAutomation": {
+            "name": "Bedrijfsautomatisering met AI",
+            "meta": {
+                "title": "Bedrijfsautomatisering met AI",
+                "description": "Agenten met AI die elke aanvraag opvolgen, je agenda vol houden, backofficewerk overnemen en elke klant om een review vragen. Ontworpen na een gratis analyse."
+            },
+            "hero": {
+                "eyebrow": "Bedrijfsautomatisering met AI",
+                "title": "Je bedrijf blijft draaien terwijl jij je klanten helpt",
+                "subtitle": "Agenten met AI die elke aanvraag beantwoorden en opvolgen, je agenda vol houden, het repetitieve backofficewerk van je overnemen en je reviews verzorgen, gekoppeld aan de tools die je al gebruikt. We ontwerpen ze na een gratis analyse van waar je tijd en je klanten naartoe gaan.",
+                "cta": "Plan je gratis behoefteanalyse"
+            },
+            "benefits": {
+                "title": "Vier gebieden waar een bedrijf tijd en klanten verliest",
+                "items": [
+                    {
+                        "title": "Opvolging van leads",
+                        "description": "Elke aanvraag via je website, WhatsApp, mail of een gemist telefoontje krijgt direct antwoord, wordt gekwalificeerd met de juiste vragen en opgevolgd tot er een afspraak staat of een nee komt."
+                    },
+                    {
+                        "title": "Afspraken en herinneringen",
+                        "description": "Bevestigingen, herinneringen en verzette afspraken, gekoppeld aan je agenda, zodat er minder afspraken worden vergeten en je agenda vol blijft."
+                    },
+                    {
+                        "title": "Backoffice",
+                        "description": "Offertes, facturen, gegevensinvoer, rapporten en repetitieve taken, uitgevoerd door agenten met AI die gekoppeld zijn aan de tools die je al gebruikt. Wat ertoe doet, keur jij goed."
+                    },
+                    {
+                        "title": "Reviews en klantbinding",
+                        "description": "Een reviewverzoek na elk bezoek, aan elke klant, plus berichten die klanten terughalen die al een tijd niet zijn teruggekomen."
+                    }
+                ]
+            },
+            "deliverables": {
+                "title": "Het complete pakket",
+                "groups": [
+                    {
+                        "label": "Elke klant opgevolgd",
+                        "items": [
+                            "Direct antwoord op elke aanvraag via web, WhatsApp, mail of gemist telefoontje",
+                            "Kwalificatievragen die we met je afspreken",
+                            "Opvolging tot er een afspraak staat of een nee komt",
+                            "Bevestigingen en herinneringen voor afspraken"
+                        ]
+                    },
+                    {
+                        "label": "Werk uit handen",
+                        "items": [
+                            "Offertes en facturen klaargezet voor jouw goedkeuring",
+                            "Gegevensinvoer en rapporten",
+                            "Gekoppeld aan de tools die je al gebruikt",
+                            "Taken doorgegeven aan een mens als dat nodig is"
+                        ]
+                    },
+                    {
+                        "label": "Doorlopende zorg",
+                        "items": [
+                            "Een reviewverzoek na elk bezoek, aan elke klant",
+                            "Berichten die klanten terughalen die niet meer zijn teruggekomen",
+                            "Maandelijkse evaluatie van resultaten en flows",
+                            "Gegevensverwerking in lijn met de AVG"
+                        ]
+                    }
+                ]
+            },
+            "process": {
+                "title": "Van eerste gesprek tot werk dat vanzelf loopt",
+                "steps": [
+                    {
+                        "number": "01",
+                        "title": "Gratis analyse",
+                        "description": "Waar je tijd naartoe gaat en waar aanvragen nu verloren gaan."
+                    },
+                    {
+                        "number": "02",
+                        "title": "Flows in kaart",
+                        "description": "We spreken af wat wordt geautomatiseerd, wat naar jou gaat en hoe het wordt gemeten."
+                    },
+                    {
+                        "number": "03",
+                        "title": "Bouwen en testen",
+                        "description": "Gekoppeld aan je tools en getest met echte gevallen voordat het live gaat."
+                    },
+                    {
+                        "number": "04",
+                        "title": "Live en gemeten",
+                        "description": "We bespreken de resultaten met je en verbeteren de flows elke maand."
+                    }
+                ]
+            },
+            "faq": {
+                "title": "Veelgestelde vragen",
+                "items": [
+                    {
+                        "question": "Moet ik andere tools gaan gebruiken?",
+                        "answer": "Nee. In de analyse bekijken we je agenda, berichtendiensten en software, en koppelen we de automatisering daaraan. Is een ervan niet te koppelen, dan zeggen we dat en stellen we een alternatief voor."
+                    },
+                    {
+                        "question": "Wat gebeurt er als de AI iets niet kan afhandelen?",
+                        "answer": "Dan gaat het naar jou of je team, zoals we in de analyse afspreken. Jij bepaalt welke taken jouw goedkeuring nodig hebben."
+                    },
+                    {
+                        "question": "Weten mijn klanten dat ze met AI praten?",
+                        "answer": "We spreken met je af hoe de AI zich voorstelt. Daar open over zijn wekt vertrouwen bij je klanten."
+                    },
+                    {
+                        "question": "Wat kost het?",
+                        "answer": "Dat hangt af van wat er wordt geautomatiseerd en hoeveel werk het je uit handen neemt. We maken een offerte na de gratis analyse, vaak als onderdeel van een bredere oplossing. Elke oplossing begint met een eerste implementatie voor {entryPrice} excl. btw die beide partijen verbindt."
+                    }
+                ]
+            }
+        },
         "localSeo": {
             "name": "Lokale SEO",
             "meta": {
@@ -751,6 +866,10 @@
                 {
                     "label": "Telefoonreceptionist met AI",
                     "href": "/services/ai-voice-receptionist"
+                },
+                {
+                    "label": "Bedrijfsautomatisering met AI",
+                    "href": "/services/ai-business-automation"
                 },
                 {
                     "label": "Softwareontwikkeling",
@@ -1116,7 +1235,7 @@
                 "title": "Over Lorenzoz Agency",
                 "paragraphs": [
                     "Lorenzoz Agency is een partner die zich richt op het succes van haar klanten. We bouwen oplossingen voor lokale bedrijven van elke omvang, en het resultaat waar we naartoe werken is altijd hetzelfde: nieuwe klanten en meer omzet. We beginnen met een gratis behoefteanalyse en stellen daarna de oplossing voor die het bedrijf echt nodig heeft, en voeren die uit.",
-                    "Die oplossing combineert vier bouwstenen, afhankelijk van wat elk bedrijf nodig heeft: websiteontwikkeling, Lokale SEO (autoriteitscontent, autoriteit in Google en in antwoorden van AI, en reviewbeheer), een telefoonreceptionist met AI en softwareontwikkeling. We zijn ingeschreven in Xinzo de Limia (Ourense, Spanje) en werken online met klanten wereldwijd, met de nadruk op Australië, Canada, Costa Rica, Europa, het Verenigd Koninkrijk en de Verenigde Staten. De taakverdeling is eenvoudig: de klant richt zich op het goed leveren van zijn eigen dienst, en wij zorgen dat hij klanten wint en dat die worden opgevolgd."
+                    "Die oplossing combineert vijf bouwstenen, afhankelijk van wat elk bedrijf nodig heeft: websiteontwikkeling, Lokale SEO (autoriteitscontent, autoriteit in Google en in antwoorden van AI, en reviewbeheer), een telefoonreceptionist met AI, bedrijfsautomatisering met AI en softwareontwikkeling. We zijn ingeschreven in Xinzo de Limia (Ourense, Spanje) en werken online met klanten wereldwijd, met de nadruk op Australië, Canada, Costa Rica, Europa, het Verenigd Koninkrijk en de Verenigde Staten. De taakverdeling is eenvoudig: de klant richt zich op het goed leveren van zijn eigen dienst, en wij zorgen dat hij klanten wint en dat die worden opgevolgd."
                 ]
             }
         },
@@ -2626,6 +2745,97 @@
             "close": {
                 "title": "Mis geen telefoontjes meer, vanaf deze maand",
                 "subtitle": "Vertel ons hoe je telefoon nu werkt. In 15 minuten laten we zien wat je receptionist zou doen."
+            }
+        },
+        "aiBusinessAutomation": {
+            "hero": {
+                "secondary": "Zie het werken op deze site"
+            },
+            "journey": {
+                "title": "Eén aanvraag, van begin tot eind afgehandeld",
+                "steps": [
+                    {
+                        "title": "Aanvraag komt binnen",
+                        "text": "Via web, WhatsApp of mail, om 22:40 op een zondag."
+                    },
+                    {
+                        "title": "Direct beantwoord",
+                        "text": "De vragen die nodig zijn, worden meteen gesteld."
+                    },
+                    {
+                        "title": "Ingepland",
+                        "text": "In je agenda, met herinneringen voor het bezoek."
+                    },
+                    {
+                        "title": "Na het bezoek",
+                        "text": "De factuur gaat de deur uit en elke klant wordt om een review gevraagd."
+                    }
+                ],
+                "note": "Voorbeeldtraject ter illustratie: de stappen worden per bedrijf in de analyse ontworpen."
+            },
+            "areas": {
+                "eyebrow": "Wat we automatiseren",
+                "subtitle": "We automatiseren alleen wat volgens je analyse de moeite waard is. Een bedrijf kan één van deze gebieden nodig hebben, of alle vier."
+            },
+            "proof": {
+                "eyebrow": "Door ons gebouwd, hier aan het werk",
+                "title": "De assistent op deze site doet het al",
+                "text": "Hij antwoordt met spraak of chat in de taal van de bezoeker, bekijkt onze agenda, houdt een tijd vast en plant de gratis behoefteanalyse in, zonder dat iemand van ons team eraan te pas komt. Heeft hij geen antwoord, dan biedt hij WhatsApp aan. Dezelfde soort automatisering, gebouwd voor jouw bedrijf.",
+                "button": "Probeer de assistent",
+                "note": "Gebruikt je microfoon alleen als je een gesprek start.",
+                "tiles": [
+                    {
+                        "title": "Antwoordt 24/7",
+                        "text": "Spraak of chat, in de taal van de bezoeker"
+                    },
+                    {
+                        "title": "Plant zelf in",
+                        "text": "Leest de agenda en bevestigt de tijd"
+                    },
+                    {
+                        "title": "Kent het bedrijf",
+                        "text": "Leest onze diensten en voorwaarden uit één bron"
+                    },
+                    {
+                        "title": "Geeft door",
+                        "text": "WhatsApp als hij geen antwoord heeft"
+                    }
+                ]
+            },
+            "costOfWaiting": {
+                "title": "Wat kost een trage reactie je?",
+                "text": "Een aanvraag die pas de volgende dag antwoord krijgt, is 's nachts vaak al naar een concurrent gegaan. Vul in hoeveel klanten je per dag misloopt en zie waar dat in een maand op uitkomt.",
+                "cta": "Bereken wat wachten je kost"
+            },
+            "fits": {
+                "title": "Gebouwd rond de manier waarop je nu al werkt",
+                "tiles": [
+                    {
+                        "title": "Je eigen tools, geen nieuwe",
+                        "text": "We koppelen de automatisering aan de agenda, berichtendiensten en software die je al gebruikt, nadat we ze in de analyse hebben bekeken."
+                    },
+                    {
+                        "title": "Een mens als het ertoe doet",
+                        "text": "Jij bepaalt wat de AI afhandelt en wanneer een gesprek of taak naar jou of je team gaat."
+                    },
+                    {
+                        "title": "Eerlijke reviews",
+                        "text": "Elke klant wordt om een review gevraagd, niet alleen de tevreden klanten: dat is de regel van Google, en zo blijft je reputatie echt."
+                    },
+                    {
+                        "title": "Zorgvuldig met gegevens",
+                        "text": "Klantgegevens verwerkt in lijn met de AVG, en alleen de gegevens die elke taak nodig heeft."
+                    }
+                ],
+                "bigger": {
+                    "title": "Onderdeel van een grotere oplossing",
+                    "text": "Automatisering levert het meest op naast een website die converteert, een lokale aanwezigheid die aanvragen binnenbrengt en een receptionist die de telefoon opneemt. Na de analyse stellen we de combinatie voor die bij je past; sommige onderdelen kunnen inbegrepen zijn.",
+                    "cta": "Bekijk hoe we werken"
+                }
+            },
+            "close": {
+                "title": "Win elke week uren terug",
+                "subtitle": "Vertel ons wat je nu tijd kost. In 15 minuten laten we zien wat we als eerste zouden automatiseren."
             }
         },
         "softwareDevelopment": {

@@ -23,6 +23,7 @@ const SERVICE_SLUGS = [
     'local-seo',
     'website-development',
     'ai-voice-receptionist',
+    'ai-business-automation',
     'software-development',
     // Paused, in a private folder. It is not routed, but the file is kept and
     // brought back unchanged, so the rule has to hold there too.

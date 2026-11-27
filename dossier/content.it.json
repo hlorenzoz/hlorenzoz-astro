@@ -14,7 +14,7 @@
         "label": "Soluzione su misura per te"
       },
       {
-        "value": "4",
+        "value": "5",
         "label": "Servizi con cui costruirla"
       },
       {
@@ -75,7 +75,7 @@
     ]
   },
   "localSeo": {
-    "eyebrow": "Elemento 1 di 4",
+    "eyebrow": "Elemento 1 di 5",
     "name": "SEO locale",
     "title": "Primo su Google, consigliato dall'IA",
     "description": "Il lavoro che rende la tua attività visibile nelle ricerche locali su Google e nelle risposte dei motori di IA. Quando la SEO locale fa parte della tua soluzione, arriva con tutti e tre i pilastri.",
@@ -116,7 +116,7 @@
   },
   "blocks": {
     "eyebrow": "Combinati in base alla tua attività",
-    "title": "Altri tre elementi",
+    "title": "Altri quattro elementi",
     "description": "Ognuno entra nella tua soluzione quando la tua attività ne ha bisogno, e può essere incluso senza costi aggiuntivi.",
     "items": [
       {
@@ -137,6 +137,16 @@
           "Appuntamenti fissati direttamente nel tuo calendario",
           "Voce e copione personalizzati sul tuo brand",
           "Ottimizzato per inglese e spagnolo"
+        ]
+      },
+      {
+        "key": "aiBusinessAutomation",
+        "name": "Automazione aziendale con IA",
+        "description": "Agenti di IA collegati agli strumenti che usi già, che seguono i tuoi clienti e ti tolgono il lavoro ripetitivo.",
+        "features": [
+          "Risposta immediata a ogni richiesta, seguita fino alla prenotazione o a un no",
+          "Prenotazioni, promemoria, preventivi e fatture, con la tua approvazione su ciò che conta",
+          "Una richiesta di recensione dopo ogni visita, a tutti i clienti"
         ]
       },
       {

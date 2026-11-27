@@ -54,7 +54,7 @@ describe('HomePage: partner positioning landing', () => {
 
     it('states verifiable facts: services and languages counted from data, the checkable PageSpeed score', () => {
         const facts = $('#facts')!;
-        expect(facts).toHaveTextContent('4 services');
+        expect(facts).toHaveTextContent('5 services');
         expect(facts).toHaveTextContent(`${LOCALES.length} languages`);
         expect(facts).toHaveTextContent(home.facts.pageSpeed.value);
         expect(facts).toHaveTextContent(home.facts.markets.value);
@@ -97,12 +97,13 @@ describe('HomePage: partner positioning landing', () => {
         expect(how).toHaveTextContent(home.how.note);
     });
 
-    it('links each of the four solutions to its own service page, Website Development first', () => {
+    it('links each of the five solutions to its own service page, Website Development first', () => {
         const hrefs = Array.from($$('#solutions a')).map((a) => a.getAttribute('href'));
         expect(hrefs).toEqual([
             '/en/services/website-development/',
             '/en/services/local-seo/',
             '/en/services/ai-voice-receptionist/',
+            '/en/services/ai-business-automation/',
             '/en/services/software-development/',
         ]);
         expect(screen.getByText(messages.services.aiVoiceReceptionist.name, { selector: '#solutions h3' })).toBeInTheDocument();

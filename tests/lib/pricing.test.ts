@@ -13,7 +13,7 @@ describe('SERVICE_KEYS covers the catalogue', () => {
     );
 
     it('names exactly the registered service routes', () => {
-        expect(serviceSlugs).toHaveLength(4);
+        expect(serviceSlugs).toHaveLength(5);
         expect([...SERVICE_KEYS].sort()).toEqual(serviceSlugs.map(serviceKeyFromSlug).sort());
     });
 

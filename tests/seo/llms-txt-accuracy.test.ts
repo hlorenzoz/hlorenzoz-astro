@@ -32,7 +32,7 @@ const SERVICES_SECTION = LLMS_TXT.split('## Services')[1]?.split('\n## ')[0] ?? 
 describe('llms.txt: service count', () => {
     it('claims exactly as many services as the route registry declares', () => {
         const registered = ALL_ROUTES.filter((route) => route.tier === 'service').length;
-        expect(registered).toBe(4);
+        expect(registered).toBe(5);
 
         // The hub is a directory OF the services, not one of them.
         expect(SERVICES_SECTION).not.toMatch(/seven service/i);

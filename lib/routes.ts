@@ -65,7 +65,7 @@ const HOME_KEYS = [
     'portfolio.portfolioCarousel',
     'portfolio.type',
     'media.calBooking',
-    ...['localSeo', 'websiteDevelopment', 'aiVoiceReceptionist', 'softwareDevelopment'].flatMap((key) => [
+    ...['localSeo', 'websiteDevelopment', 'aiVoiceReceptionist', 'aiBusinessAutomation', 'softwareDevelopment'].flatMap((key) => [
         `services.${key}.name`,
         `services.${key}.meta.description`,
     ]),
@@ -95,17 +95,18 @@ const STATIC_ROUTES: readonly SiteRoute[] = [
     { path: 'privacy-policy', tier: 'legal', labelKey: 'footer.legal.items.0.label', copyKeys: ['footer.privacyPage', 'footer.legal'], lastModified: '2026-11-26', parent: '' }, // gitleaks:allow (translation key path, not a secret)
     { path: 'terms-conditions', tier: 'legal', labelKey: 'footer.legal.items.1.label', copyKeys: ['footer.termsPage', 'footer.terms', 'footer.legal'], lastModified: '2026-11-26', parent: '' }, // gitleaks:allow (translation key path, not a secret)
     { path: 'cookie-policy', tier: 'legal', labelKey: 'footer.legal.items.2.label', copyKeys: ['footer.cookiePage', 'footer.legal'], lastModified: '2026-11-26', parent: '' }, // gitleaks:allow (translation key path, not a secret)
-    // Core 30 hub + its four services. `parent: ''` because home's own path IS
+    // Core 30 hub + its five services. `parent: ''` because home's own path IS
     // '': `null` is not a valid `findRoute` key and would break
     // `breadcrumbTrail`'s parent-chain walk.
     //
     // This is the order the sitemaps and the child links present the services
-    // in. None of the four is a core offer: they are building blocks of one
+    // in. None of the five is a core offer: they are building blocks of one
     // tailored solution (AGENTS.md).
-    { path: 'services', tier: 'category', labelKey: 'navigation.services', copyKeys: ['services.hub'], lastModified: '2026-11-26', parent: '' },
+    { path: 'services', tier: 'category', labelKey: 'navigation.services', copyKeys: ['services.hub'], lastModified: '2026-11-27', parent: '' },
     { path: 'services/local-seo', tier: 'service', labelKey: 'services.localSeo.name', copyKeys: SERVICE_KEYS('localSeo'), lastModified: '2026-11-26', parent: 'services' },
     { path: 'services/website-development', tier: 'service', labelKey: 'services.websiteDevelopment.name', copyKeys: SERVICE_KEYS('websiteDevelopment', 'services.quoted', ...LIVE_SITE_CASE_STUDIES.flatMap(({ item }) => [`portfolio.${item.id}.title`, `portfolio.${item.id}.badge`])), lastModified: '2026-11-27', parent: 'services' },
     { path: 'services/ai-voice-receptionist', tier: 'service', labelKey: 'services.aiVoiceReceptionist.name', copyKeys: SERVICE_KEYS('aiVoiceReceptionist'), lastModified: '2026-11-26', parent: 'services' },
+    { path: 'services/ai-business-automation', tier: 'service', labelKey: 'services.aiBusinessAutomation.name', copyKeys: SERVICE_KEYS('aiBusinessAutomation'), lastModified: '2026-11-27', parent: 'services' },
     { path: 'services/software-development', tier: 'service', labelKey: 'services.softwareDevelopment.name', copyKeys: SERVICE_KEYS('softwareDevelopment'), lastModified: '2026-11-27', parent: 'services' },
     // PAUSED since 2026-10-08, not retired (task #T0021 brings it back). The
     // page lives in the private folder `services/_digital-business-card/` and

@@ -14,7 +14,7 @@
         "label": "Solution sur mesure pour vous"
       },
       {
-        "value": "4",
+        "value": "5",
         "label": "Services pour la construire"
       },
       {
@@ -75,7 +75,7 @@
     ]
   },
   "localSeo": {
-    "eyebrow": "Brique 1 sur 4",
+    "eyebrow": "Brique 1 sur 5",
     "name": "SEO local",
     "title": "Trouvé en premier sur Google, recommandé par l'IA",
     "description": "Le travail qui rend votre entreprise visible dans les recherches locales sur Google et dans les réponses des moteurs d'IA. Lorsque le SEO local fait partie de votre solution, il comprend ses trois piliers.",
@@ -116,7 +116,7 @@
   },
   "blocks": {
     "eyebrow": "Combinées selon votre entreprise",
-    "title": "Trois autres briques",
+    "title": "Quatre autres briques",
     "description": "Chacune rejoint votre solution lorsque votre entreprise en a besoin, et elle peut être incluse sans coût supplémentaire.",
     "items": [
       {
@@ -137,6 +137,16 @@
           "Créneaux réservés directement dans votre agenda",
           "Voix et script personnalisés selon votre marque",
           "Optimisé pour l'anglais et l'espagnol"
+        ]
+      },
+      {
+        "key": "aiBusinessAutomation",
+        "name": "Automatisation d'entreprise par IA",
+        "description": "Des agents IA reliés aux outils que vous utilisez déjà, qui assurent le suivi de vos clients et vous libèrent des tâches répétitives.",
+        "features": [
+          "Une réponse immédiate à chaque demande, suivie jusqu'à la réservation ou un refus",
+          "Réservations, rappels, devis et factures, avec votre validation sur l'essentiel",
+          "Une demande d'avis après chaque visite, à tous vos clients"
         ]
       },
       {

@@ -5,7 +5,7 @@ import { test, expect } from '@playwright/test';
  * rest of every solution is quoted after a free first call (the needs
  * analysis), so the hero offers that call and the booking CTA is the only one.
  */
-const SERVICE_SLUGS = ['local-seo', 'website-development', 'ai-voice-receptionist', 'software-development'];
+const SERVICE_SLUGS = ['local-seo', 'website-development', 'ai-voice-receptionist', 'ai-business-automation', 'software-development'];
 
 test.describe('Service pages are quoted, not priced', () => {
     for (const slug of SERVICE_SLUGS) {

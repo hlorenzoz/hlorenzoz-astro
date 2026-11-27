@@ -14,7 +14,7 @@
         "label": "Solution tailored to you"
       },
       {
-        "value": "4",
+        "value": "5",
         "label": "Services to build it from"
       },
       {
@@ -75,7 +75,7 @@
     ]
   },
   "localSeo": {
-    "eyebrow": "Building block 1 of 4",
+    "eyebrow": "Building block 1 of 5",
     "name": "Local SEO",
     "title": "Found first on Google, recommended by AI",
     "description": "The work that makes your business visible in local Google searches and in the answers AI engines give. When Local SEO is part of your solution, it comes with all three pillars.",
@@ -116,7 +116,7 @@
   },
   "blocks": {
     "eyebrow": "Combined to fit your business",
-    "title": "Three more building blocks",
+    "title": "Four more building blocks",
     "description": "Each one joins your solution when your business needs it, and it may come included at no extra cost.",
     "items": [
       {
@@ -137,6 +137,16 @@
           "Appointments booked straight into your calendar",
           "Custom voice and script matched to your brand",
           "Optimized for English and Spanish"
+        ]
+      },
+      {
+        "key": "aiBusinessAutomation",
+        "name": "AI Business Automation",
+        "description": "AI agents connected to the tools you already use, that follow up your customers and take repetitive work off your hands.",
+        "features": [
+          "Every enquiry answered at once and followed up until it books or says no",
+          "Bookings, reminders, quotes and invoices, with you approving what matters",
+          "A review request after every visit, to every customer"
         ]
       },
       {

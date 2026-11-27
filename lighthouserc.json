@@ -20,6 +20,7 @@
         "http://localhost:45723/en/services/website-development/",
         "http://localhost:45723/en/services/local-seo/",
         "http://localhost:45723/en/services/ai-voice-receptionist/",
+        "http://localhost:45723/en/services/ai-business-automation/",
         "http://localhost:45723/en/services/software-development/"
       ],
       "numberOfRuns": 1,

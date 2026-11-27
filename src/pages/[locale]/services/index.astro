@@ -3,7 +3,7 @@
  * Core 30 hub: the category page that groups the service pages beneath it.
  * Its `defineContentPage` config lives in `./_service-content.ts`.
  */
-import { CodeXml, Globe, MapPin, Phone } from '@lucide/astro';
+import { CodeXml, Globe, MapPin, Phone, Workflow } from '@lucide/astro';
 import BaseLayout from '@/src/layouts/BaseLayout.astro';
 import Navbar from '@/src/components/Navbar.astro';
 import Footer from '@/src/components/Footer.astro';
@@ -31,6 +31,7 @@ const SLUG_TO_ICON: Record<string, ServiceDirectoryItem['icon']> = {
     'local-seo': MapPin,
     'website-development': Globe,
     'ai-voice-receptionist': Phone,
+    'ai-business-automation': Workflow,
     'software-development': CodeXml,
 };
 

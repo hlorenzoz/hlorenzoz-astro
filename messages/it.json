@@ -24,7 +24,7 @@
   "home": {
     "meta": {
       "title": "Lorenzoz Agency | Partner di crescita per attività locali",
-      "description": "Analizziamo di cosa ha bisogno la tua attività in una prima chiamata gratuita, poi costruiamo il giusto mix di SEO locale, sito web, receptionist vocale con IA o software su misura.",
+      "description": "Analizziamo gratis di cosa ha bisogno la tua attività e creiamo il giusto mix di SEO locale, sito web, receptionist IA, automazione IA o software su misura.",
       "ogImageAlt": "Lorenzoz Agency: eccellenza in IA e web",
       "keywords": [
         "SEO locale",
@@ -35,15 +35,16 @@
         "Visibilità nelle ricerche con IA",
         "Sviluppo web",
         "Receptionist vocale con IA",
+        "Automazione aziendale con IA",
         "Sviluppo software"
       ],
-      "organizationDescription": "Un partner di crescita per le attività locali: analizziamo di cosa ha bisogno ogni attività, poi realizziamo una soluzione su misura fatta di SEO locale, siti web, receptionist vocali con IA e software personalizzato."
+      "organizationDescription": "Un partner di crescita per le attività locali: analizziamo di cosa ha bisogno ogni attività, poi realizziamo una soluzione su misura fatta di SEO locale, siti web, receptionist vocali con IA, automazione aziendale con IA e software personalizzato."
     },
     "hero": {
       "badge": "Il tuo partner per la crescita",
       "title": "Studiamo la tua attività, poi costruiamo ciò che",
       "titleGradient": "ti porta clienti",
-      "description": "Niente pacchetti e nessun listino prezzi. In una prima chiamata gratuita analizziamo di cosa ha bisogno la tua attività. Poi realizziamo il giusto mix di SEO locale, sito web, receptionist vocale con IA o software su misura, e misuriamo i risultati insieme a te.",
+      "description": "Niente pacchetti e nessun listino prezzi. In una prima chiamata gratuita analizziamo di cosa ha bisogno la tua attività. Poi realizziamo il giusto mix di SEO locale, sito web, receptionist vocale con IA, automazione aziendale con IA o software su misura, e misuriamo i risultati insieme a te.",
       "cta": "Prenota l'analisi gratuita delle tue esigenze",
       "secondaryCta": "Come lavoriamo",
       "note": "15 minuti in videochiamata. Senza impegno."
@@ -129,7 +130,7 @@
         },
         {
           "title": "Implementazione",
-          "description": "La realizziamo e la lanciamo: il tuo sito web, la tua presenza locale, il tuo receptionist vocale o il tuo software, collaudati prima di andare online."
+          "description": "La realizziamo e la lanciamo: il tuo sito web, la tua presenza locale, il tuo receptionist vocale, le tue automazioni o il tuo software, collaudati prima di andare online."
         },
         {
           "title": "Risultati misurati insieme",
@@ -143,10 +144,12 @@
       "title": "Gli elementi che combiniamo per te",
       "subtitle": "Ogni attività ha bisogno di qualcosa di diverso. Questi sono i mattoni della tua soluzione; ricevi solo ciò che fa crescere la tua attività.",
       "cta": "Scopri di più",
+      "new": "Nuovo",
       "items": {
         "localSeo": "Fatti trovare su Google e nelle risposte dell'IA quando chi è in zona cerca ciò che offri.",
         "websiteDevelopment": "Siti web veloci e multilingue che motori di ricerca e IA capiscono, pensati per trasformare le visite in chiamate.",
         "aiVoiceReceptionist": "Ogni chiamata riceve risposta, giorno e notte: domande, prenotazioni e messaggi gestiti con una voce naturale.",
+        "aiBusinessAutomation": "Ogni richiesta seguita, prenotazioni e promemoria, lavoro d'ufficio e recensioni gestiti da agenti IA collegati ai tuoi strumenti.",
         "softwareDevelopment": "La tua app per smartphone, tablet, web e desktop quando gli strumenti già pronti non bastano."
       }
     },
@@ -505,6 +508,118 @@
         ]
       }
     },
+    "aiBusinessAutomation": {
+      "name": "Automazione aziendale con IA",
+      "meta": {
+        "title": "Automazione aziendale con IA",
+        "description": "Agenti IA che seguono ogni richiesta, tengono piena l'agenda, gestiscono il lavoro d'ufficio e chiedono una recensione a ogni cliente, dopo un'analisi gratuita."
+      },
+      "hero": {
+        "eyebrow": "Automazione aziendale con IA",
+        "title": "La tua attività continua a lavorare mentre servi i tuoi clienti",
+        "subtitle": "Agenti IA che rispondono a ogni richiesta e la seguono, tengono piena la tua agenda, ti tolgono il lavoro d'ufficio ripetitivo e si prendono cura delle tue recensioni, collegati agli strumenti che usi già. Li progettiamo dopo un'analisi gratuita di dove finiscono il tuo tempo e i tuoi clienti.",
+        "cta": "Prenota l'analisi gratuita delle tue esigenze"
+      },
+      "benefits": {
+        "title": "Quattro aree in cui un'attività perde tempo e clienti",
+        "items": [
+          {
+            "title": "Gestione dei contatti",
+            "description": "Ogni richiesta che arriva dal tuo sito, da WhatsApp, via email o da una chiamata persa riceve subito una risposta, viene qualificata con le domande giuste e seguita finché non prenota o dice di no."
+          },
+          {
+            "title": "Prenotazioni e promemoria",
+            "description": "Conferme, promemoria e spostamenti degli appuntamenti collegati al tuo calendario, così gli appuntamenti dimenticati diminuiscono e la tua agenda resta piena."
+          },
+          {
+            "title": "Lavoro d'ufficio",
+            "description": "Preventivi, fatture, inserimento dati, report e attività ripetitive svolti da agenti IA collegati agli strumenti che usi già, con la tua approvazione su ciò che conta."
+          },
+          {
+            "title": "Recensioni e fidelizzazione",
+            "description": "Una richiesta di recensione dopo ogni visita, a ogni cliente, e messaggi che riportano da te i clienti che non tornano da un po'."
+          }
+        ]
+      },
+      "deliverables": {
+        "title": "Il pacchetto completo",
+        "groups": [
+          {
+            "label": "Ogni cliente seguito",
+            "items": [
+              "Una risposta immediata a ogni richiesta via web, WhatsApp, email o chiamata persa",
+              "Domande di qualificazione concordate con te",
+              "Ricontatti finché la richiesta non prenota o dice di no",
+              "Conferme e promemoria degli appuntamenti"
+            ]
+          },
+          {
+            "label": "Lavoro che non fai più",
+            "items": [
+              "Preventivi e fatture preparati per la tua approvazione",
+              "Inserimento dati e report",
+              "Collegamento agli strumenti che usi già",
+              "Attività passate a una persona quando serve"
+            ]
+          },
+          {
+            "label": "Assistenza continua",
+            "items": [
+              "Una richiesta di recensione dopo ogni visita, a ogni cliente",
+              "Messaggi che riportano da te i clienti che non sono più tornati",
+              "Revisione mensile di risultati e flussi",
+              "Trattamento dei dati conforme al GDPR"
+            ]
+          }
+        ]
+      },
+      "process": {
+        "title": "Dalla prima telefonata a un lavoro che va avanti da solo",
+        "steps": [
+          {
+            "number": "01",
+            "title": "Analisi gratuita",
+            "description": "Dove va il tuo tempo e dove si perdono oggi le richieste."
+          },
+          {
+            "number": "02",
+            "title": "Mappa dei flussi",
+            "description": "Concordiamo cosa si automatizza, cosa passa a te e come si misura."
+          },
+          {
+            "number": "03",
+            "title": "Sviluppo e test",
+            "description": "Collegato ai tuoi strumenti e testato con casi reali prima di andare online."
+          },
+          {
+            "number": "04",
+            "title": "Online e misurato",
+            "description": "Rivediamo i risultati con te e miglioriamo i flussi ogni mese."
+          }
+        ]
+      },
+      "faq": {
+        "title": "Domande frequenti",
+        "items": [
+          {
+            "question": "Devo cambiare gli strumenti che uso?",
+            "answer": "No. Nell'analisi esaminiamo il tuo calendario, la tua messaggistica e il tuo software e vi colleghiamo l'automazione. Se uno di questi non si può collegare, te lo diciamo e ti proponiamo un'alternativa."
+          },
+          {
+            "question": "Cosa succede quando l'IA non riesce a gestire qualcosa?",
+            "answer": "Lo passa a te o al tuo team, come concordato nell'analisi. Sei tu a decidere quali attività richiedono la tua approvazione."
+          },
+          {
+            "question": "I miei clienti sapranno che stanno parlando con un'IA?",
+            "answer": "Decidiamo con te come si presenta. Essere trasparenti su questo crea fiducia con i tuoi clienti."
+          },
+          {
+            "question": "Quanto costa?",
+            "answer": "Dipende da cosa si automatizza e da quanto lavoro ti toglie. Ti facciamo il preventivo dopo l'analisi gratuita, spesso come parte di una soluzione più ampia. Ogni soluzione parte da una prima implementazione a {entryPrice} + IVA che impegna entrambe le parti."
+          }
+        ]
+      }
+    },
     "localSeo": {
       "name": "SEO locale",
       "meta": {
@@ -751,6 +866,10 @@
         {
           "label": "Receptionist vocale con IA",
           "href": "/services/ai-voice-receptionist"
+        },
+        {
+          "label": "Automazione aziendale con IA",
+          "href": "/services/ai-business-automation"
         },
         {
           "label": "Sviluppo software",
@@ -1090,7 +1209,7 @@
         "title": "Chi è Lorenzoz Agency",
         "paragraphs": [
           "Lorenzoz Agency è un partner concentrato sul successo dei suoi clienti. Creiamo soluzioni per attività locali di ogni dimensione, e il risultato a cui lavoriamo è sempre lo stesso: nuovi clienti e più affari. Partiamo da un'analisi gratuita delle loro esigenze, poi proponiamo e realizziamo la soluzione di cui l'attività ha davvero bisogno.",
-          "Quella soluzione combina quattro elementi, secondo ciò che serve a ogni attività: sviluppo web, SEO locale (contenuti autorevoli, autorevolezza su Google e nelle risposte dell'IA, e gestione delle recensioni), receptionist vocale con IA e sviluppo software. Abbiamo sede legale a Xinzo de Limia (Ourense, Spagna) e lavoriamo online con clienti in tutto il mondo, con particolare attenzione ad Australia, Canada, Costa Rica, Europa, Regno Unito e Stati Uniti. La divisione dei compiti è semplice: il cliente si concentra sull'offrire bene il proprio servizio, e noi ci occupiamo di conquistare i suoi clienti e di seguirli nel tempo."
+          "Quella soluzione combina cinque elementi, secondo ciò che serve a ogni attività: sviluppo web, SEO locale (contenuti autorevoli, autorevolezza su Google e nelle risposte dell'IA, e gestione delle recensioni), receptionist vocale con IA, automazione aziendale con IA e sviluppo software. Abbiamo sede legale a Xinzo de Limia (Ourense, Spagna) e lavoriamo online con clienti in tutto il mondo, con particolare attenzione ad Australia, Canada, Costa Rica, Europa, Regno Unito e Stati Uniti. La divisione dei compiti è semplice: il cliente si concentra sull'offrire bene il proprio servizio, e noi ci occupiamo di conquistare i suoi clienti e di seguirli nel tempo."
         ]
       }
     },
@@ -2626,6 +2745,97 @@
       "close": {
         "title": "Smetti di perdere chiamate, già da questo mese",
         "subtitle": "Raccontaci come funziona oggi il tuo telefono. In 15 minuti ti mostriamo cosa farebbe il tuo receptionist."
+      }
+    },
+    "aiBusinessAutomation": {
+      "hero": {
+        "secondary": "Guardalo all'opera su questo sito"
+      },
+      "journey": {
+        "title": "Una richiesta, gestita dall'inizio alla fine",
+        "steps": [
+          {
+            "title": "Arriva la richiesta",
+            "text": "Dal sito, da WhatsApp o via email, alle 22:40 di una domenica."
+          },
+          {
+            "title": "Risposta immediata",
+            "text": "Le domande necessarie vengono poste subito."
+          },
+          {
+            "title": "Prenotata",
+            "text": "Nella tua agenda, con promemoria prima della visita."
+          },
+          {
+            "title": "Dopo la visita",
+            "text": "Parte la fattura e a ogni cliente viene chiesta una recensione."
+          }
+        ],
+        "note": "Percorso illustrativo: i passaggi vengono progettati per ogni attività durante l'analisi."
+      },
+      "areas": {
+        "eyebrow": "Cosa automatizziamo",
+        "subtitle": "Automatizziamo solo ciò per cui la tua analisi dimostra che ne vale la pena. Un'attività può avere bisogno di una di queste aree o di tutte e quattro."
+      },
+      "proof": {
+        "eyebrow": "Fatto da noi, all'opera qui",
+        "title": "L'assistente di questo sito lo fa già",
+        "text": "Risponde a voce o in chat nella lingua del visitatore, consulta il nostro calendario, blocca un orario e prenota l'analisi gratuita delle esigenze, senza che intervenga nessuno del nostro team. Quando non sa rispondere, propone WhatsApp. Lo stesso tipo di automazione, realizzato per la tua attività.",
+        "button": "Prova l'assistente",
+        "note": "Usa il tuo microfono solo se avvii una chiamata.",
+        "tiles": [
+          {
+            "title": "Risponde 24/7",
+            "text": "A voce o in chat, nella lingua del visitatore"
+          },
+          {
+            "title": "Prenota da solo",
+            "text": "Legge il calendario e conferma l'orario"
+          },
+          {
+            "title": "Conosce l'attività",
+            "text": "Legge i nostri servizi e le nostre condizioni da un'unica fonte"
+          },
+          {
+            "title": "Passa la mano",
+            "text": "WhatsApp quando non sa rispondere"
+          }
+        ]
+      },
+      "costOfWaiting": {
+        "title": "Quanto ti costa rispondere tardi?",
+        "text": "Una richiesta che riceve risposta il giorno dopo spesso è già andata a un concorrente durante la notte. Inserisci quanti clienti perdi al giorno e scopri quanto fa in un mese.",
+        "cta": "Calcola il costo dell'attesa"
+      },
+      "fits": {
+        "title": "Costruito intorno al tuo modo di lavorare",
+        "tiles": [
+          {
+            "title": "I tuoi strumenti, non nuovi",
+            "text": "Colleghiamo l'automazione al calendario, alla messaggistica e al software che usi già, dopo averli esaminati nell'analisi."
+          },
+          {
+            "title": "Una persona quando conta",
+            "text": "Decidi tu cosa gestisce l'IA e quando una conversazione o un'attività passa a te o al tuo team."
+          },
+          {
+            "title": "Recensioni oneste",
+            "text": "A ogni cliente viene chiesta una recensione, non solo a quelli soddisfatti: è la regola di Google e mantiene autentica la tua reputazione."
+          },
+          {
+            "title": "Dati trattati con cura",
+            "text": "I dati dei tuoi clienti sono trattati nel rispetto del GDPR, e solo quelli che servono a ogni attività."
+          }
+        ],
+        "bigger": {
+          "title": "Parte di una soluzione più ampia",
+          "text": "L'automazione rende al meglio accanto a un sito che converte, a una presenza locale che porta richieste e a un receptionist che risponde al telefono. Dopo l'analisi ti proponiamo la combinazione adatta; alcuni elementi possono essere inclusi.",
+          "cta": "Scopri come lavoriamo"
+        }
+      },
+      "close": {
+        "title": "Recupera ore ogni settimana",
+        "subtitle": "Raccontaci cosa ti porta via tempo oggi. In 15 minuti ti mostriamo cosa automatizzeremmo per primo."
       }
     },
     "softwareDevelopment": {

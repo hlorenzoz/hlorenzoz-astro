@@ -79,5 +79,6 @@ export const serviceContentPagesByKey: Record<ServiceKey, LocaleContentPages> = 
     localSeo: serviceContentPages('localSeo'),
     websiteDevelopment: serviceContentPages('websiteDevelopment'),
     aiVoiceReceptionist: serviceContentPages('aiVoiceReceptionist'),
+    aiBusinessAutomation: serviceContentPages('aiBusinessAutomation'),
     softwareDevelopment: serviceContentPages('softwareDevelopment'),
 };

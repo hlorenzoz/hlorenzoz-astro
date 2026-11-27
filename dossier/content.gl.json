@@ -14,7 +14,7 @@
         "label": "Solución á túa medida"
       },
       {
-        "value": "4",
+        "value": "5",
         "label": "Servizos para construíla"
       },
       {
@@ -75,7 +75,7 @@
     ]
   },
   "localSeo": {
-    "eyebrow": "Peza 1 de 4",
+    "eyebrow": "Peza 1 de 5",
     "name": "SEO local",
     "title": "Primeiro en Google, recomendado pola IA",
     "description": "O traballo que fai visible o teu negocio nas buscas locais de Google e nas respostas dos motores de IA. Cando o SEO local forma parte da túa solución, inclúe os seus tres piares.",
@@ -116,7 +116,7 @@
   },
   "blocks": {
     "eyebrow": "Combinadas segundo o teu negocio",
-    "title": "Tres pezas máis",
+    "title": "Catro pezas máis",
     "description": "Cada unha súmase á túa solución cando o teu negocio a necesita, e pode vir incluída sen custo adicional.",
     "items": [
       {
@@ -137,6 +137,16 @@
           "Citas reservadas directamente no teu calendario",
           "Voz e guión personalizados segundo a túa marca",
           "Optimizado para inglés e español"
+        ]
+      },
+      {
+        "key": "aiBusinessAutomation",
+        "name": "Automatización de negocio con IA",
+        "description": "Axentes de IA conectados ás ferramentas que xa usas, que fan o seguimento dos teus clientes e quítanche o traballo repetitivo.",
+        "features": [
+          "Resposta inmediata e seguimento de cada consulta ata que reserva ou di que non",
+          "Reservas, recordatorios, orzamentos e facturas, coa túa aprobación no importante",
+          "Unha petición de reseña despois de cada visita, a todos os teus clientes"
         ]
       },
       {

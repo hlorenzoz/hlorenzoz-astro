@@ -7,6 +7,7 @@ import ServicesHubPage from '@/src/pages/[locale]/services/index.astro';
 import LocalSeoPage from '@/src/pages/[locale]/services/local-seo/index.astro';
 import WebsiteDevelopmentPage from '@/src/pages/[locale]/services/website-development/index.astro';
 import AiVoiceReceptionistPage from '@/src/pages/[locale]/services/ai-voice-receptionist/index.astro';
+import AiBusinessAutomationPage from '@/src/pages/[locale]/services/ai-business-automation/index.astro';
 import SoftwareDevelopmentPage from '@/src/pages/[locale]/services/software-development/index.astro';
 import { ENTRY_PRICE, formatEntryPrice } from '@/lib/pricing';
 import { jsonLdNodes, renderPage } from './render-page';
@@ -42,6 +43,7 @@ const SERVICE_PAGES = [
     ['services/local-seo', LocalSeoPage],
     ['services/website-development', WebsiteDevelopmentPage],
     ['services/ai-voice-receptionist', AiVoiceReceptionistPage],
+    ['services/ai-business-automation', AiBusinessAutomationPage],
     ['services/software-development', SoftwareDevelopmentPage],
 ] as const;
 

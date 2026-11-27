@@ -149,7 +149,7 @@ describe('image and accessible text gate publication like page copy', () => {
     it('every page requires the alt and label keys of the components it renders', () => {
         const keysOf = (path: string) => ALL_ROUTES.find((r) => r.path === path)!.copyKeys ?? [];
         expect(keysOf('')).toContain('media.calBooking');
-        for (const path of ['services/local-seo', 'services/website-development', 'services/ai-voice-receptionist', 'services/software-development']) {
+        for (const path of ['services/local-seo', 'services/website-development', 'services/ai-voice-receptionist', 'services/ai-business-automation', 'services/software-development']) {
             expect(keysOf(path), path).toContain('media.calBooking');
         }
         for (const route of ALL_ROUTES.filter((r) => /^portfolio\/./.test(r.path))) {

@@ -41,7 +41,7 @@ function keyPaths(value: unknown, prefix = ''): string[] {
 }
 
 /**
- * The four live services, plus the paused Digital Business Card. Its copy is
+ * The five live services, plus the paused Digital Business Card. Its copy is
  * kept in the message files, dormant, so the page can come back unchanged
  * (task #T0021); holding it to the same shape is what keeps that true.
  */
@@ -49,6 +49,7 @@ const SERVICE_SLUGS = [
     'localSeo',
     'websiteDevelopment',
     'aiVoiceReceptionist',
+    'aiBusinessAutomation',
     'softwareDevelopment',
     'digitalBusinessCard',
 ] as const;

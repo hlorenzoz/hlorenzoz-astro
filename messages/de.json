@@ -31,7 +31,7 @@
     "home": {
         "meta": {
             "title": "Lorenzoz Agency | Wachstumspartner für Unternehmen vor Ort",
-            "description": "In einem kostenlosen ersten Gespräch analysieren wir, was Ihr Unternehmen braucht, und bauen dann die passende Kombination aus lokalem SEO, Website, Telefonassistent mit KI oder individueller Software.",
+            "description": "In einem kostenlosen Erstgespräch analysieren wir Ihren Bedarf und kombinieren lokales SEO, Website, Telefonassistent, Automatisierung mit KI oder Software.",
             "ogImageAlt": "Lorenzoz Agency: Exzellenz in KI und Web",
             "keywords": [
                 "Lokales SEO",
@@ -42,15 +42,16 @@
                 "Sichtbarkeit in der Suche mit KI",
                 "Webentwicklung",
                 "Telefonassistent mit KI",
+                "Geschäftsautomatisierung mit KI",
                 "Softwareentwicklung"
             ],
-            "organizationDescription": "Ein Wachstumspartner für lokale Unternehmen: Wir analysieren, was jedes Unternehmen braucht, und setzen dann eine maßgeschneiderte Lösung aus lokalem SEO, Websites, Telefonassistenten mit KI und individueller Software um."
+            "organizationDescription": "Ein Wachstumspartner für lokale Unternehmen: Wir analysieren, was jedes Unternehmen braucht, und setzen dann eine maßgeschneiderte Lösung aus lokalem SEO, Websites, Telefonassistenten mit KI, Geschäftsautomatisierung mit KI und individueller Software um."
         },
         "hero": {
             "badge": "Ihr Wachstumspartner",
             "title": "Wir analysieren Ihr Unternehmen und bauen dann, was",
             "titleGradient": "Ihnen Kunden bringt",
-            "description": "Keine Pakete und keine Preisliste. In einem kostenlosen ersten Gespräch analysieren wir, was Ihr Unternehmen braucht. Dann setzen wir die passende Kombination aus lokalem SEO, Website, Telefonassistent mit KI oder individueller Software um und messen die Ergebnisse gemeinsam mit Ihnen.",
+            "description": "Keine Pakete und keine Preisliste. In einem kostenlosen ersten Gespräch analysieren wir, was Ihr Unternehmen braucht. Dann setzen wir die passende Kombination aus lokalem SEO, Website, Telefonassistent mit KI, Geschäftsautomatisierung mit KI oder individueller Software um und messen die Ergebnisse gemeinsam mit Ihnen.",
             "cta": "Kostenlose Bedarfsanalyse buchen",
             "secondaryCta": "So arbeiten wir",
             "note": "15 Minuten per Videocall. Unverbindlich."
@@ -136,7 +137,7 @@
                 },
                 {
                     "title": "Umsetzung",
-                    "description": "Wir bauen und starten sie: Ihre Website, Ihre lokale Präsenz, Ihren Telefonassistenten oder Ihre Software, getestet, bevor alles live geht."
+                    "description": "Wir bauen und starten sie: Ihre Website, Ihre lokale Präsenz, Ihren Telefonassistenten, Ihre Automatisierungen oder Ihre Software, getestet, bevor alles live geht."
                 },
                 {
                     "title": "Gemeinsam gemessen",
@@ -150,10 +151,12 @@
             "title": "Die Bausteine, die wir für Sie kombinieren",
             "subtitle": "Jedes Unternehmen braucht etwas anderes. Das sind die Bausteine Ihrer Lösung; Sie bekommen nur, was Ihr Unternehmen voranbringt.",
             "cta": "Mehr erfahren",
+            "new": "Neu",
             "items": {
                 "localSeo": "Bei Google und in den Antworten der KI gefunden werden, wenn Menschen in der Nähe nach Ihrem Angebot suchen.",
                 "websiteDevelopment": "Schnelle, mehrsprachige Websites, die Suchmaschinen und KI verstehen, gebaut, um aus Besuchen Anrufe zu machen.",
                 "aiVoiceReceptionist": "Jeder Anruf wird angenommen, Tag und Nacht: Fragen, Terminbuchungen und Nachrichten, erledigt mit natürlicher Stimme.",
+                "aiBusinessAutomation": "Jede Anfrage nachverfolgt, Termine und Erinnerungen, Büroarbeit und Bewertungen erledigt von Agenten mit KI, die mit Ihren Tools verbunden sind.",
                 "softwareDevelopment": "Ihre eigene App für Smartphone, Tablet, Web und Desktop, wenn fertige Tools nicht ausreichen."
             }
         },
@@ -331,6 +334,10 @@
                 {
                     "label": "Telefonassistent mit KI",
                     "href": "/services/ai-voice-receptionist"
+                },
+                {
+                    "label": "Geschäftsautomatisierung mit KI",
+                    "href": "/services/ai-business-automation"
                 },
                 {
                     "label": "Softwareentwicklung",
@@ -1611,7 +1618,7 @@
                 "title": "Über Lorenzoz Agency",
                 "paragraphs": [
                     "Lorenzoz Agency ist ein Partner, der sich auf den Erfolg seiner Kunden konzentriert. Wir entwickeln Lösungen für lokale Unternehmen jeder Größe, und das Ergebnis, auf das wir hinarbeiten, ist immer dasselbe: neue Kunden und mehr Geschäft. Wir beginnen mit einer kostenlosen Bedarfsanalyse und schlagen dann die Lösung vor, die das Unternehmen wirklich braucht, und setzen sie um.",
-                    "Diese Lösung kombiniert vier Bausteine, je nachdem, was ein Unternehmen braucht: Webentwicklung, lokales SEO (Inhalte mit Autorität, Autorität bei Google und in Antworten von KI sowie Bewertungsmanagement), einen Telefonassistenten mit KI und Softwareentwicklung. Wir sind in Xinzo de Limia (Ourense, Spanien) eingetragen und arbeiten online mit Kunden weltweit, mit Schwerpunkt auf Australien, Kanada, Costa Rica, Europa, dem Vereinigten Königreich und den Vereinigten Staaten. Die Arbeitsteilung ist einfach: Der Kunde konzentriert sich darauf, seine eigene Leistung gut zu erbringen, und wir kümmern uns darum, ihm Kunden zu gewinnen und sie zu betreuen."
+                    "Diese Lösung kombiniert fünf Bausteine, je nachdem, was ein Unternehmen braucht: Webentwicklung, lokales SEO (Inhalte mit Autorität, Autorität bei Google und in Antworten von KI sowie Bewertungsmanagement), einen Telefonassistenten mit KI, Geschäftsautomatisierung mit KI und Softwareentwicklung. Wir sind in Xinzo de Limia (Ourense, Spanien) eingetragen und arbeiten online mit Kunden weltweit, mit Schwerpunkt auf Australien, Kanada, Costa Rica, Europa, dem Vereinigten Königreich und den Vereinigten Staaten. Die Arbeitsteilung ist einfach: Der Kunde konzentriert sich darauf, seine eigene Leistung gut zu erbringen, und wir kümmern uns darum, ihm Kunden zu gewinnen und sie zu betreuen."
                 ]
             }
         },
@@ -2178,6 +2185,118 @@
                 ]
             }
         },
+        "aiBusinessAutomation": {
+            "name": "Geschäftsautomatisierung mit KI",
+            "meta": {
+                "title": "Geschäftsautomatisierung mit KI",
+                "description": "Agenten mit KI, die jede Anfrage nachverfolgen, Ihren Kalender füllen, Büroarbeit erledigen und jeden Kunden um eine Bewertung bitten, nach kostenloser Analyse."
+            },
+            "hero": {
+                "eyebrow": "Geschäftsautomatisierung mit KI",
+                "title": "Ihr Unternehmen arbeitet weiter, während Sie Ihre Kunden bedienen",
+                "subtitle": "Agenten mit KI, die jede Anfrage beantworten und nachverfolgen, Ihren Kalender füllen, Ihnen wiederkehrende Büroarbeit abnehmen und sich um Ihre Bewertungen kümmern, verbunden mit den Tools, die Sie schon nutzen. Wir gestalten sie nach einer kostenlosen Analyse, wohin Ihre Zeit und Ihre Kunden heute gehen.",
+                "cta": "Kostenlose Bedarfsanalyse buchen"
+            },
+            "benefits": {
+                "title": "Vier Bereiche, in denen ein Unternehmen Zeit und Kunden verliert",
+                "items": [
+                    {
+                        "title": "Nachverfolgung von Anfragen",
+                        "description": "Jede Anfrage über Ihre Website, WhatsApp, Mail oder einen verpassten Anruf bekommt sofort eine Antwort, wird mit den richtigen Fragen qualifiziert und nachverfolgt, bis ein Termin steht oder ein klares Nein kommt."
+                    },
+                    {
+                        "title": "Termine und Erinnerungen",
+                        "description": "Bestätigungen, Erinnerungen und Terminverschiebungen, verbunden mit Ihrem Kalender, damit weniger Termine vergessen werden und Ihr Kalender voll bleibt."
+                    },
+                    {
+                        "title": "Büroarbeit",
+                        "description": "Angebote, Rechnungen, Datenerfassung, Berichte und wiederkehrende Aufgaben, erledigt von Agenten mit KI, die mit Ihren bestehenden Tools verbunden sind. Was wichtig ist, geben Sie frei."
+                    },
+                    {
+                        "title": "Bewertungen und Kundenbindung",
+                        "description": "Nach jedem Besuch eine Bitte um Bewertung, an jeden Kunden, dazu Nachrichten, die Kunden zurückholen, die länger nicht mehr da waren."
+                    }
+                ]
+            },
+            "deliverables": {
+                "title": "Das Komplettpaket",
+                "groups": [
+                    {
+                        "label": "Jeder Kunde wird betreut",
+                        "items": [
+                            "Sofortige Antwort auf jede Anfrage über Web, WhatsApp, Mail oder verpassten Anruf",
+                            "Qualifizierende Fragen, mit Ihnen abgestimmt",
+                            "Nachverfolgung, bis ein Termin steht oder ein Nein kommt",
+                            "Terminbestätigungen und Erinnerungen"
+                        ]
+                    },
+                    {
+                        "label": "Weniger Arbeit für Sie",
+                        "items": [
+                            "Angebote und Rechnungen, vorbereitet zu Ihrer Freigabe",
+                            "Datenerfassung und Berichte",
+                            "Verbunden mit den Tools, die Sie schon nutzen",
+                            "Übergabe an einen Menschen, wenn eine Aufgabe es braucht"
+                        ]
+                    },
+                    {
+                        "label": "Laufende Betreuung",
+                        "items": [
+                            "Nach jedem Besuch eine Bitte um Bewertung, an jeden Kunden",
+                            "Nachrichten, die Kunden zurückholen, die länger nicht da waren",
+                            "Monatliche Auswertung der Ergebnisse und Abläufe",
+                            "Datenverarbeitung im Einklang mit der DSGVO"
+                        ]
+                    }
+                ]
+            },
+            "process": {
+                "title": "Vom ersten Gespräch zur Arbeit, die von selbst läuft",
+                "steps": [
+                    {
+                        "number": "01",
+                        "title": "Kostenlose Analyse",
+                        "description": "Wohin Ihre Zeit heute geht und wo Anfragen verloren gehen."
+                    },
+                    {
+                        "number": "02",
+                        "title": "Abläufe festlegen",
+                        "description": "Wir legen fest, was automatisiert wird, was an Sie geht und wie wir es messen."
+                    },
+                    {
+                        "number": "03",
+                        "title": "Aufbau und Test",
+                        "description": "Verbunden mit Ihren Tools und mit echten Fällen getestet, bevor es live geht."
+                    },
+                    {
+                        "number": "04",
+                        "title": "Live und gemessen",
+                        "description": "Wir prüfen die Ergebnisse mit Ihnen und verbessern die Abläufe jeden Monat."
+                    }
+                ]
+            },
+            "faq": {
+                "title": "Häufige Fragen",
+                "items": [
+                    {
+                        "question": "Muss ich meine Tools wechseln?",
+                        "answer": "Nein. Wir prüfen in der Analyse Ihren Kalender, Ihre Messenger und Ihre Software und binden die Automatisierung daran an. Lässt sich etwas davon nicht anbinden, sagen wir es Ihnen und schlagen eine Alternative vor."
+                    },
+                    {
+                        "question": "Was passiert, wenn die KI etwas nicht lösen kann?",
+                        "answer": "Sie gibt es an Sie oder Ihr Team weiter, so wie wir es in der Analyse vereinbaren. Sie entscheiden, welche Aufgaben Ihre Freigabe brauchen."
+                    },
+                    {
+                        "question": "Merken meine Kunden, dass sie mit einer KI sprechen?",
+                        "answer": "Wir legen mit Ihnen fest, wie sie sich vorstellt. Offenheit schafft Vertrauen bei Ihren Kunden."
+                    },
+                    {
+                        "question": "Was kostet das?",
+                        "answer": "Das hängt davon ab, was automatisiert wird und wie viel Arbeit es Ihnen abnimmt. Sie erhalten ein Angebot nach der kostenlosen Analyse, oft als Teil einer umfassenderen Lösung. Jede Lösung beginnt mit einer ersten Umsetzung für {entryPrice} zzgl. MwSt., die beide Seiten verpflichtet."
+                    }
+                ]
+            }
+        },
         "softwareDevelopment": {
             "name": "Softwareentwicklung",
             "meta": {
@@ -2626,6 +2745,97 @@
             "close": {
                 "title": "Verlieren Sie ab diesem Monat keine Anrufe mehr",
                 "subtitle": "Erzählen Sie uns, wie Ihr Telefon heute läuft. In 15 Minuten zeigen wir Ihnen, was Ihr Telefonassistent tun würde."
+            }
+        },
+        "aiBusinessAutomation": {
+            "hero": {
+                "secondary": "Hier auf der Website im Einsatz sehen"
+            },
+            "journey": {
+                "title": "Eine Anfrage, von Anfang bis Ende erledigt",
+                "steps": [
+                    {
+                        "title": "Anfrage geht ein",
+                        "text": "Per Web, WhatsApp oder Mail, sonntags um 22:40 Uhr."
+                    },
+                    {
+                        "title": "Sofort beantwortet",
+                        "text": "Die nötigen Fragen werden direkt gestellt."
+                    },
+                    {
+                        "title": "Gebucht",
+                        "text": "In Ihren Kalender, mit Erinnerungen vor dem Termin."
+                    },
+                    {
+                        "title": "Nach dem Besuch",
+                        "text": "Die Rechnung geht raus und jeder Kunde wird um eine Bewertung gebeten."
+                    }
+                ],
+                "note": "Beispielhafter Ablauf: Die Schritte werden in der Analyse für jedes Unternehmen gestaltet."
+            },
+            "areas": {
+                "eyebrow": "Was wir automatisieren",
+                "subtitle": "Wir automatisieren nur, was sich laut Ihrer Analyse lohnt. Ein Unternehmen braucht vielleicht einen dieser Bereiche oder alle vier."
+            },
+            "proof": {
+                "eyebrow": "Von uns gebaut, hier im Einsatz",
+                "title": "Der Assistent dieser Website macht es schon",
+                "text": "Er antwortet per Sprache oder Chat in der Sprache des Besuchers, prüft unseren Kalender, reserviert einen Termin und bucht die kostenlose Bedarfsanalyse, ohne dass jemand aus unserem Team eingreift. Wenn er nicht antworten kann, bietet er stattdessen WhatsApp an. Dieselbe Art von Automatisierung, gebaut für Ihr Unternehmen.",
+                "button": "Assistenten ausprobieren",
+                "note": "Nutzt Ihr Mikrofon nur, wenn Sie ein Gespräch starten.",
+                "tiles": [
+                    {
+                        "title": "Antwortet rund um die Uhr",
+                        "text": "Per Sprache oder Chat, in der Sprache des Besuchers"
+                    },
+                    {
+                        "title": "Bucht selbstständig",
+                        "text": "Liest den Kalender und bestätigt den Termin"
+                    },
+                    {
+                        "title": "Kennt das Unternehmen",
+                        "text": "Liest unsere Leistungen und Konditionen aus einer einzigen Quelle"
+                    },
+                    {
+                        "title": "Übergibt",
+                        "text": "WhatsApp, wenn er nicht antworten kann"
+                    }
+                ]
+            },
+            "costOfWaiting": {
+                "title": "Was kostet Sie eine langsame Antwort?",
+                "text": "Eine Anfrage, die erst am nächsten Tag beantwortet wird, ist oft über Nacht bei der Konkurrenz gelandet. Geben Sie ein, wie viele Kunden Sie pro Tag verlieren, und sehen Sie, was das im Monat ausmacht.",
+                "cta": "Ihre Kosten des Wartens berechnen"
+            },
+            "fits": {
+                "title": "Gebaut für die Art, wie Sie schon arbeiten",
+                "tiles": [
+                    {
+                        "title": "Ihre Tools, keine neuen",
+                        "text": "Wir verbinden die Automatisierung mit dem Kalender, den Messengern und der Software, die Sie schon nutzen, nachdem wir sie in der Analyse geprüft haben."
+                    },
+                    {
+                        "title": "Ein Mensch, wenn es darauf ankommt",
+                        "text": "Sie entscheiden, was die KI übernimmt und wann ein Gespräch oder eine Aufgabe an Sie oder Ihr Team geht."
+                    },
+                    {
+                        "title": "Ehrliche Bewertungen",
+                        "text": "Jeder Kunde wird um eine Bewertung gebeten, nicht nur die zufriedenen: So verlangt es Google, und so bleibt Ihr Ruf echt."
+                    },
+                    {
+                        "title": "Sorgfältiger Umgang mit Daten",
+                        "text": "Kundendaten werden im Einklang mit der DSGVO verarbeitet, und nur die Daten, die jede Aufgabe braucht."
+                    }
+                ],
+                "bigger": {
+                    "title": "Teil einer größeren Lösung",
+                    "text": "Automatisierung bringt am meisten zusammen mit einer Website, die überzeugt, einer lokalen Präsenz, die Anfragen bringt, und einem Telefonassistenten, der ans Telefon geht. Nach der Analyse schlagen wir die passende Kombination vor; manche Bausteine können bereits inbegriffen sein.",
+                    "cta": "So arbeiten wir"
+                }
+            },
+            "close": {
+                "title": "Gewinnen Sie jede Woche Stunden zurück",
+                "subtitle": "Erzählen Sie uns, was Sie heute Zeit kostet. In 15 Minuten zeigen wir Ihnen, was wir zuerst automatisieren würden."
             }
         },
         "softwareDevelopment": {

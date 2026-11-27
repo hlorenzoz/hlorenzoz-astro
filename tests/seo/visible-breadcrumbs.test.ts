@@ -21,6 +21,7 @@ import ServicesHubPage from '@/src/pages/[locale]/services/index.astro';
 import LocalSeoPage from '@/src/pages/[locale]/services/local-seo/index.astro';
 import WebsiteDevelopmentPage from '@/src/pages/[locale]/services/website-development/index.astro';
 import AiVoiceReceptionistPage from '@/src/pages/[locale]/services/ai-voice-receptionist/index.astro';
+import AiBusinessAutomationPage from '@/src/pages/[locale]/services/ai-business-automation/index.astro';
 import SoftwareDevelopmentPage from '@/src/pages/[locale]/services/software-development/index.astro';
 
 type ListItem = { name: string; item: string };
@@ -49,6 +50,7 @@ const PAGES: [string, unknown, string][] = [
     ['local seo', LocalSeoPage, ''],
     ['website development', WebsiteDevelopmentPage, ''],
     ['ai voice receptionist', AiVoiceReceptionistPage, ''],
+    ['ai business automation', AiBusinessAutomationPage, ''],
     ['software development', SoftwareDevelopmentPage, ''],
 ];
 
@@ -73,7 +75,7 @@ describe.each(['en', 'es'])('visible breadcrumb (%s)', (locale) => {
 });
 
 // Pages that open with a dark hero section show the trail right under it, not above it.
-const HERO_PAGES = PAGES.filter(([name]) => ['portfolio detail', 'services hub', 'local seo', 'website development', 'ai voice receptionist', 'software development'].includes(name));
+const HERO_PAGES = PAGES.filter(([name]) => ['portfolio detail', 'services hub', 'local seo', 'website development', 'ai voice receptionist', 'ai business automation', 'software development'].includes(name));
 
 describe('breadcrumb placement', () => {
     it.each(HERO_PAGES)('%s shows the trail below its top section', async (_name, Page, slug) => {
@@ -93,6 +95,7 @@ describe('services hub', () => {
             '/en/services/website-development/',
             '/en/services/local-seo/',
             '/en/services/ai-voice-receptionist/',
+            '/en/services/ai-business-automation/',
             '/en/services/software-development/',
         ]);
     });

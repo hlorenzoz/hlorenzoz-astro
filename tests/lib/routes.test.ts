@@ -196,12 +196,13 @@ describe('childRoutes', () => {
     });
 });
 
-describe('service-pages routes (hub + 4 services)', () => {
+describe('service-pages routes (hub + 5 services)', () => {
     // Registry order. None is a core offer: they are building blocks of one solution.
     const SERVICE_SLUGS = [
         'local-seo',
         'website-development',
         'ai-voice-receptionist',
+        'ai-business-automation',
         'software-development',
     ] as const;
 
@@ -221,7 +222,7 @@ describe('service-pages routes (hub + 4 services)', () => {
         expect(route?.parent).toBe('services');
     });
 
-    it('lists exactly the four services as children of the hub, in registry order', () => {
+    it('lists exactly the five services as children of the hub, in registry order', () => {
         // Not sorted: both sitemaps present the services in registry order.
         expect(childRoutes('services').map((r) => r.path)).toEqual(
             SERVICE_SLUGS.map((slug) => `services/${slug}`)

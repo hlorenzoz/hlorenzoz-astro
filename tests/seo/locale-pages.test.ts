@@ -21,6 +21,7 @@ import ServicesHub from '@/src/pages/[locale]/services/index.astro';
 import LocalSeo from '@/src/pages/[locale]/services/local-seo/index.astro';
 import WebsiteDevelopment from '@/src/pages/[locale]/services/website-development/index.astro';
 import AiVoiceReceptionist from '@/src/pages/[locale]/services/ai-voice-receptionist/index.astro';
+import AiBusinessAutomation from '@/src/pages/[locale]/services/ai-business-automation/index.astro';
 import SoftwareDevelopment from '@/src/pages/[locale]/services/software-development/index.astro';
 import PortfolioList from '@/src/pages/[locale]/portfolio/index.astro';
 import PortfolioDetail from '@/src/pages/[locale]/portfolio/[slug]/index.astro';
@@ -39,6 +40,7 @@ const STATIC_PAGES: Record<string, unknown> = {
     'services/local-seo': LocalSeo,
     'services/website-development': WebsiteDevelopment,
     'services/ai-voice-receptionist': AiVoiceReceptionist,
+    'services/ai-business-automation': AiBusinessAutomation,
     'services/software-development': SoftwareDevelopment,
     portfolio: PortfolioList,
     news: NewsList,

@@ -167,6 +167,8 @@ const PROBLEM_ICONS = [MousePointerClick, Search, Sparkles, PhoneMissed];
                     title: tRoot(`services.${key}.name`),
                     description: t(`solutions.items.${key}`),
                     href: routeHref(locale, `services/${slugFromServiceKey(key)}`),
+                    badge: key === 'aiBusinessAutomation' ? t('solutions.new') : undefined,
+                    dark: key === 'aiBusinessAutomation',
                 }))}
             />
 

@@ -27,6 +27,7 @@ describe('Footer services links (fixed, registry-derived hrefs)', () => {
     it('links every services item to its explicit href from footer.services.items, EN', async () => {
         const screen = await renderAt('/en/services/');
         expect(screen.getByText('AI Voice Receptionist').closest('a')).toHaveAttribute('href', '/en/services/ai-voice-receptionist/');
+        expect(screen.getByText('AI Business Automation').closest('a')).toHaveAttribute('href', '/en/services/ai-business-automation/');
         expect(screen.getByText('Website Development').closest('a')).toHaveAttribute('href', '/en/services/website-development/');
         expect(screen.getByText('Local SEO').closest('a')).toHaveAttribute('href', '/en/services/local-seo/');
         expect(screen.getByText('Software Development').closest('a')).toHaveAttribute('href', '/en/services/software-development/');
@@ -35,12 +36,13 @@ describe('Footer services links (fixed, registry-derived hrefs)', () => {
         expect(screen.getByText('How we work').closest('a')).toHaveAttribute('href', '/en/#how');
     });
 
-    it('lists the four services in registry order', () => {
+    it('lists the five services in registry order', () => {
         const items = footerEn.footer.services.items as unknown as { label: string; href: string }[];
         expect(items.map((item) => item.href)).toEqual([
             '/services/local-seo',
             '/services/website-development',
             '/services/ai-voice-receptionist',
+            '/services/ai-business-automation',
             '/services/software-development',
         ]);
     });

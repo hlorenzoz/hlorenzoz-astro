@@ -14,7 +14,7 @@
         "label": "Maßgeschneiderte Lösung für Sie"
       },
       {
-        "value": "4",
+        "value": "5",
         "label": "Leistungen als Bausteine"
       },
       {
@@ -75,7 +75,7 @@
     ]
   },
   "localSeo": {
-    "eyebrow": "Baustein 1 von 4",
+    "eyebrow": "Baustein 1 von 5",
     "name": "Lokales SEO",
     "title": "Bei Google zuerst gefunden, von KI empfohlen",
     "description": "Die Arbeit, die Ihr Unternehmen in lokalen Suchen bei Google und in den Antworten von KI sichtbar macht. Wenn lokales SEO Teil Ihrer Lösung ist, gehören alle drei Säulen dazu.",
@@ -116,7 +116,7 @@
   },
   "blocks": {
     "eyebrow": "Passend zu Ihrem Unternehmen kombiniert",
-    "title": "Drei weitere Bausteine",
+    "title": "Vier weitere Bausteine",
     "description": "Jeder kommt zu Ihrer Lösung hinzu, wenn Ihr Unternehmen ihn braucht, und kann ohne Aufpreis enthalten sein.",
     "items": [
       {
@@ -137,6 +137,16 @@
           "Termine direkt in Ihren Kalender gebucht",
           "Individuelle Stimme und Gesprächsleitfaden passend zu Ihrer Marke",
           "Optimiert für Englisch und Spanisch"
+        ]
+      },
+      {
+        "key": "aiBusinessAutomation",
+        "name": "Geschäftsautomatisierung mit KI",
+        "description": "Agenten mit künstlicher Intelligenz, angebunden an Ihre bestehenden Programme, die jede Anfrage nachverfolgen und Ihnen wiederkehrende Arbeit abnehmen.",
+        "features": [
+          "Sofortige Antwort auf jede Anfrage und Nachfassen bis zur Buchung oder Absage",
+          "Termine, Erinnerungen, Angebote und Rechnungen, mit Ihrer Freigabe, wo es darauf ankommt",
+          "Eine Bewertungsanfrage nach jedem Besuch, an alle Kunden"
         ]
       },
       {
