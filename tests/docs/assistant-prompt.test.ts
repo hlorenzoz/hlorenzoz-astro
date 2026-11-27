@@ -32,6 +32,12 @@ describe('assistant agent prompt', () => {
         expect(prompt).toContain('Never announce a result before you have it');
     });
 
+    it('maps the time zone of every market to its country, so it picks the right reference prices', () => {
+        for (const zone of ['Europe/Madrid', 'Europe/Lisbon', 'Europe/Paris', 'Europe/Rome', 'Europe/Berlin', 'Europe/Amsterdam', 'Europe/London', 'America/Toronto', 'America/New_York', 'Australia/Sydney', 'America/Costa_Rica']) {
+            expect(prompt, zone).toContain(zone);
+        }
+    });
+
     it('never asks the agent to do the arithmetic itself', () => {
         expect(prompt).toContain('Never do this arithmetic yourself');
         expect(prompt).not.toMatch(/do the arithmetic exactly/);
