@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest';
-import { costOfWaitingContext } from '@/src/islands/cost-of-waiting-context';
+import { costEstimate, costOfWaitingContext } from '@/src/islands/cost-of-waiting-context';
 import { DEFAULTS } from '@/lib/cost-example';
 
 describe('costOfWaitingContext', () => {
@@ -26,5 +26,31 @@ describe('costOfWaitingContext', () => {
         expect(costOfWaitingContext({ missed: 1, value: 100 })).toBe(
             'The visitor entered 1 customer lost per working day worth 100 EUR each: 100 EUR a day, 500 EUR a week, 2167 EUR a month, 26000 EUR a year.'
         );
+    });
+});
+
+describe('costEstimate (the assistant calculate_cost_of_waiting tool)', () => {
+    it('gives the same figures as the calculator, rounded to whole euros', () => {
+        expect(costEstimate(1, 140)).toBe(
+            '1 customer lost per working day worth 140 EUR each: 140 EUR a day, 700 EUR a week, 3033 EUR a month, 36400 EUR a year (5 working days a week, 52 weeks a year, first visits only).'
+        );
+    });
+
+    it.each([
+        [60, '300 EUR a week, 1300 EUR a month, 15600 EUR a year'],
+        [80, '400 EUR a week, 1733 EUR a month, 20800 EUR a year'],
+        [250, '1250 EUR a week, 5417 EUR a month, 65000 EUR a year'],
+        [1850, '9250 EUR a week, 40083 EUR a month, 481000 EUR a year'],
+        [2000, '10000 EUR a week, 43333 EUR a month, 520000 EUR a year'],
+    ])('matches the dental example row for a %s EUR treatment', (value, figures) => {
+        expect(costEstimate(1, value)).toContain(figures);
+    });
+
+    it('accepts numbers sent as text and decimals', () => {
+        expect(costEstimate('2', '45.5')).toContain('2 customers lost per working day worth 45.5 EUR each: 91 EUR a day, 455 EUR a week');
+    });
+
+    it.each([[0, 100], [-1, 100], [1, 0], ['abc', 100], [1, undefined]])('rejects %s customers at %s EUR instead of inventing a figure', (customers, value) => {
+        expect(costEstimate(customers, value)).toMatch(/^Cannot calculate/);
     });
 });

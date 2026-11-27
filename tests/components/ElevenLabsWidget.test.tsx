@@ -701,3 +701,13 @@ describe('ElevenLabsWidget - typing indicator', () => {
         expect(screen.getByText('Hello by voice')).toBeInTheDocument();
     });
 });
+
+describe('ElevenLabsWidget - calculate_cost_of_waiting client tool', () => {
+    it('lets the agent get exact figures from the calculator arithmetic', async () => {
+        render(<ElevenLabsWidget locale="en" labels={en.assistant} />);
+        await screen.findByPlaceholderText('Or send a message');
+        const tool = mockConversation.options.clientTools.calculate_cost_of_waiting;
+        expect(tool({ customers_per_day: 1, value_per_customer: 250 })).toContain('1250 EUR a week, 5417 EUR a month, 65000 EUR a year');
+        expect(tool({ customers_per_day: 0, value_per_customer: 250 })).toMatch(/^Cannot calculate/);
+    });
+});

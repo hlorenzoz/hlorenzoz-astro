@@ -9,7 +9,7 @@ import { cn } from '@/lib/utils/cn';
 import { imageFallbackSrc, imageSrcSet } from '@/lib/image';
 import { localeHref } from '@/lib/routing';
 import { CONVERSATION_KEY as STORAGE_KEY } from './conversation-storage';
-import { costOfWaitingContext, readCostOfWaiting, type CostOfWaitingInputs } from './cost-of-waiting-context';
+import { costEstimate, costOfWaitingContext, readCostOfWaiting, type CostOfWaitingInputs } from './cost-of-waiting-context';
 
 const AGENT_ID = 'agent_7601kjm9f042e55894dty11tqtnh';
 const AVATAR = 'https://cdn.hlorenzoz.com/hlorenzoz.com/hector-profile.webp';
@@ -102,9 +102,10 @@ export function ElevenLabsWidget({ locale, labels }: ElevenLabsWidgetProps) {
     const unansweredRef = useRef<string[]>([]);
     const modeRef = useRef(mode);
     const [agentTyping, setAgentTyping] = useState(false);
-    // When the visitor last sent a chat message, and when the last held reply is due.
+    // When the visitor last sent a chat message; held replies wait in one queue so they keep their order.
     const sentAtRef = useRef(0);
-    const releaseAtRef = useRef(0);
+    const replyQueueRef = useRef(Promise.resolve());
+    const heldRepliesRef = useRef(0);
     modeRef.current = mode;
 
     /**
@@ -177,12 +178,14 @@ export function ElevenLabsWidget({ locale, labels }: ElevenLabsWidgetProps) {
             if (role === 'agent') unansweredRef.current = [];
             if (role === 'agent' && modeRef.current === 'chat') {
                 // An instant reply reads like a machine: hold it briefly behind the indicator, in order.
-                const due = Math.max(Date.now(), sentAtRef.current + MIN_TYPING_MS, releaseAtRef.current);
-                releaseAtRef.current = due;
-                setTimeout(() => {
-                    setMessages((prev) => [...prev, { role, text: message }]);
-                    if (releaseAtRef.current === due) setAgentTyping(false);
-                }, due - Date.now());
+                heldRepliesRef.current += 1;
+                replyQueueRef.current = replyQueueRef.current
+                    .then(() => new Promise((done) => setTimeout(done, Math.max(0, sentAtRef.current + MIN_TYPING_MS - Date.now()))))
+                    .then(() => {
+                        setMessages((prev) => [...prev, { role, text: message }]);
+                        heldRepliesRef.current -= 1;
+                        if (heldRepliesRef.current === 0) setAgentTyping(false);
+                    });
                 return;
             }
             setMessages((prev) => [...prev, { role, text: message }]);
@@ -217,6 +220,8 @@ export function ElevenLabsWidget({ locale, labels }: ElevenLabsWidgetProps) {
             setError(typeof err === 'string' ? err : err.message);
         },
         clientTools: {
+            calculate_cost_of_waiting: ({ customers_per_day, value_per_customer }: { customers_per_day?: unknown; value_per_customer?: unknown }) =>
+                costEstimate(customers_per_day, value_per_customer),
             show_cost_of_waiting: () => {
                 const section = document.getElementById('cost-of-waiting');
                 if (section) {
