@@ -1,0 +1,3087 @@
+{
+    "collected": "2026-11-27",
+    "businesses": {
+        "dental_checkup_cleaning": "Dental check up and cleaning",
+        "dental_implant": "Dental implant (one tooth)",
+        "physiotherapy_session": "Physiotherapy session",
+        "psychology_session": "Psychology or therapy session",
+        "private_gp_consultation": "Private doctor (GP) visit",
+        "eye_test": "Eye test at an optician",
+        "glasses_single_vision": "Single vision glasses with frame",
+        "vet_consultation": "Vet consultation",
+        "womens_haircut": "Women's cut and blow dry",
+        "mens_haircut": "Men's haircut (barber)",
+        "gel_manicure": "Gel manicure",
+        "massage_60min": "Massage, 60 minutes",
+        "botox_one_area": "Botox, one area",
+        "gym_membership_month": "Gym membership",
+        "personal_training_session": "Personal training session",
+        "restaurant_spend_per_diner": "Restaurant, spend per diner",
+        "plumber_callout": "Plumber call out or first hour",
+        "electrician_hour": "Electrician",
+        "locksmith_lockout": "Locksmith, emergency lockout",
+        "car_service": "Car service (standard)",
+        "home_cleaning_hour": "Home cleaning",
+        "lawyer_initial_consultation": "Lawyer, first consultation",
+        "accountant_month_small_business": "Accountant for a small business or self employed",
+        "wedding_dj": "Wedding DJ",
+        "wedding_photographer": "Wedding photographer",
+        "driving_lesson": "Driving lesson"
+    },
+    "countries": [
+        {
+            "country": "ES",
+            "country_name": "Spain",
+            "currency": "EUR",
+            "rows": [
+                {
+                    "key": "dental_checkup_cleaning",
+                    "typical": 60,
+                    "low": null,
+                    "high": null,
+                    "unit": "per visit",
+                    "currency": "EUR",
+                    "source_title": "OCU nota de prensa: encuesta salud dental (27 nov 2024)",
+                    "source_url": "https://www.ocu.org/organizacion/prensa/notas-de-prensa/2024/saluddental271124",
+                    "source_date": "2024-11",
+                    "notes": "Median price paid reported by a representative national OCU survey; 'revision o limpieza dental'."
+                },
+                {
+                    "key": "dental_implant",
+                    "typical": 1850,
+                    "low": null,
+                    "high": null,
+                    "unit": "per visit",
+                    "currency": "EUR",
+                    "source_title": "OCU nota de prensa: encuesta salud dental (27 nov 2024)",
+                    "source_url": "https://www.ocu.org/organizacion/prensa/notas-de-prensa/2024/saluddental271124",
+                    "source_date": "2024-11",
+                    "notes": "Median price per implant reported by national OCU survey; page does not say whether the crown is included."
+                },
+                {
+                    "key": "physiotherapy_session",
+                    "typical": 40,
+                    "low": 30,
+                    "high": 50,
+                    "unit": "per session",
+                    "currency": "EUR",
+                    "source_title": "Cronoshare: Cuanto cuesta un fisioterapeuta?",
+                    "source_url": "https://www.cronoshare.com/cuanto-cuesta/sesion-fisioterapia",
+                    "source_date": "2026-01",
+                    "notes": "Midpoint of range; national average range 30-50 EUR per session."
+                },
+                {
+                    "key": "psychology_session",
+                    "typical": 75,
+                    "low": 50,
+                    "high": 100,
+                    "unit": "per session",
+                    "currency": "EUR",
+                    "source_title": "OCU: Como elegir psicologo",
+                    "source_url": "https://www.ocu.org/salud/salud-mental/consejos/elegir-psicologo",
+                    "source_date": "2024-06",
+                    "notes": "Midpoint of range; OCU says a private session usually costs 50-100 EUR, national."
+                },
+                {
+                    "key": "private_gp_consultation",
+                    "typical": 42.5,
+                    "low": 25,
+                    "high": 60,
+                    "unit": "per visit",
+                    "currency": "EUR",
+                    "source_title": "Selectra: Cuanto cuesta una consulta medica privada en Espana?",
+                    "source_url": "https://selectra.es/seguros/seguros-salud/precio-consulta-privada",
+                    "source_date": "2025-05",
+                    "notes": "Midpoint of range; 'Medicina general / familia' 25-60 EUR without insurance, from Doctoralia and Top Doctors data."
+                },
+                {
+                    "key": "eye_test",
+                    "missing": true,
+                    "notes": "No reliable Spanish source with a price for an optician eye exam found; many opticians bundle it with glasses."
+                },
+                {
+                    "key": "glasses_single_vision",
+                    "typical": 210.93,
+                    "low": null,
+                    "high": null,
+                    "unit": "per visit",
+                    "currency": "EUR",
+                    "source_title": "El precio medio de una gafa completa supera los 210 euros, segun datos de la FEDAO (Europa Press via Diario Estrategia)",
+                    "source_url": "https://www.diarioestrategia.cl/texto-diario/mostrar/5907009/precio-medio-gafa-completa-supera-210-euros-segun-datos-fedao",
+                    "source_date": "2026-06",
+                    "notes": "Average price per complete pair (frame plus two lenses) from FEDAO Libro Blanco de la Vision; all lens types, not single vision only."
+                },
+                {
+                    "key": "vet_consultation",
+                    "typical": 35,
+                    "low": 25,
+                    "high": 45,
+                    "unit": "per visit",
+                    "currency": "EUR",
+                    "source_title": "Selectra: Cuanto cuesta una visita al veterinario?",
+                    "source_url": "https://selectra.es/seguros/seguros-mascotas/precio-visita-veterinario",
+                    "source_date": "2025-03",
+                    "notes": "Average basic consultation, based on rates of 20+ clinics; services table gives 25-50 EUR."
+                },
+                {
+                    "key": "womens_haircut",
+                    "typical": 18.5,
+                    "low": 12,
+                    "high": 25,
+                    "unit": "per visit",
+                    "currency": "EUR",
+                    "source_title": "Cronoshare: Peluqueria (servicios)",
+                    "source_url": "https://www.cronoshare.com/servicios/peluqueria",
+                    "source_date": null,
+                    "notes": "Midpoint of range; women's haircut usually 12-25 EUR, blow dry not specified; page undated."
+                },
+                {
+                    "key": "mens_haircut",
+                    "typical": 22.5,
+                    "low": 15,
+                    "high": 30,
+                    "unit": "per visit",
+                    "currency": "EUR",
+                    "source_title": "Cronoshare: Cuanto cuesta una barberia?",
+                    "source_url": "https://www.cronoshare.com/cuanto-cuesta/barberia",
+                    "source_date": "2026-08",
+                    "notes": "Midpoint of national average barbershop range 15-30 EUR; haircut row in table 10-35 EUR."
+                },
+                {
+                    "key": "gel_manicure",
+                    "typical": 25,
+                    "low": 20,
+                    "high": 30,
+                    "unit": "per session",
+                    "currency": "EUR",
+                    "source_title": "Cronoshare: Cuanto cuesta una manicura?",
+                    "source_url": "https://www.cronoshare.com/cuanto-cuesta/manicura",
+                    "source_date": "2026-01",
+                    "notes": "Midpoint of 'manicura con gel' 35-40 EUR; semi-permanent polish manicure listed separately at 20-30 EUR. Verified 2026-11-27: The 35-40 EUR row is 'manicura con gel, acrygel o unas acrilicas', i.e. gel/acrylic nail extensions, not a gel-polish manicure. The gel-polish (semi-permanent) manicure is the 'esmalte permanente' row, 20-30 EUR, which is also the page's national average headline."
+                },
+                {
+                    "key": "massage_60min",
+                    "typical": 47.5,
+                    "low": 40,
+                    "high": 70,
+                    "unit": "per session",
+                    "currency": "EUR",
+                    "source_title": "Cronoshare: Cuanto cuesta un servicio de masaje?",
+                    "source_url": "https://www.cronoshare.com/cuanto-cuesta/servicio-masaje",
+                    "source_date": "2026-01",
+                    "notes": "Midpoint of range; 60-minute row 40-70 EUR for most techniques, national. Verified 2026-11-27: The page gives a national average for 60 minutes of about 40-55 EUR within a 40-70 EUR span for most techniques; typical should be the midpoint of the stated average, not of the span. VAT included (approximate). Page dated 11 Jan 2026."
+                },
+                {
+                    "key": "botox_one_area",
+                    "typical": 175,
+                    "low": 150,
+                    "high": 200,
+                    "unit": "per session",
+                    "currency": "EUR",
+                    "source_title": "Precios de medicina estetica facial (cuantomecuesta.com)",
+                    "source_url": "https://cuantomecuesta.com/es/medicina-estetica-facial/",
+                    "source_date": "2026-04",
+                    "notes": "Midpoint of range; one zone (forehead, frown lines or crow's feet) in a medical aesthetic clinic outside Madrid/Barcelona (about 20 pct more there); price comparator, collection method not detailed"
+                },
+                {
+                    "key": "gym_membership_month",
+                    "typical": 35.01,
+                    "low": null,
+                    "high": null,
+                    "unit": "per month",
+                    "currency": "EUR",
+                    "source_title": "OCU: Precio de polideportivos municipales y gimnasios",
+                    "source_url": "https://www.ocu.org/consumo-familia/derechos-consumidor/noticias/precio-polideportivos-municipales",
+                    "source_date": "2023-04",
+                    "notes": "Average monthly fee of private gyms in OCU national study."
+                },
+                {
+                    "key": "personal_training_session",
+                    "typical": 32.5,
+                    "low": 30,
+                    "high": 35,
+                    "unit": "per session",
+                    "currency": "EUR",
+                    "source_title": "Cronoshare: Cuanto cuesta un entrenador personal?",
+                    "source_url": "https://www.cronoshare.com/cuanto-cuesta/entrenador-personal",
+                    "source_date": "2026-01",
+                    "notes": "Midpoint of national average 30-35 EUR; wider in-person range 15-60 EUR."
+                },
+                {
+                    "key": "restaurant_spend_per_diner",
+                    "typical": 27,
+                    "low": null,
+                    "high": null,
+                    "unit": "per person",
+                    "currency": "EUR",
+                    "source_title": "Mallorca lider espanol el crecimiento de reservas online en restaurantes con un 24% mas en 2025 (Vinetur, TheFork data)",
+                    "source_url": "https://www.vinetur.com/2026011394696/mallorca-lider-espanol-el-crecimiento-de-reservas-online-en-restaurantes-con-un-24-mas-en-2025.html",
+                    "source_date": "2026-01",
+                    "notes": "TheFork 2025 average spend per diner on online bookings, national. Verified 2026-11-27: TheFork 2025 average spend per diner on online bookings (up from 26 EUR in 2024); skews toward restaurants listed on TheFork. Article dated 13 Jan 2026."
+                },
+                {
+                    "key": "plumber_callout",
+                    "typical": 32.5,
+                    "low": 25,
+                    "high": 40,
+                    "unit": "per hour",
+                    "currency": "EUR",
+                    "source_title": "Cronoshare: Cuanto cuesta un servicio de fontaneria?",
+                    "source_url": "https://www.cronoshare.com/cuanto-cuesta/servicio-fontaneria",
+                    "source_date": "2026-01",
+                    "notes": "Midpoint of national hourly range; callout fee usually 20-50 EUR extra."
+                },
+                {
+                    "key": "electrician_hour",
+                    "typical": 42.5,
+                    "low": 35,
+                    "high": 50,
+                    "unit": "per hour",
+                    "currency": "EUR",
+                    "source_title": "Cronoshare: Cuanto cuesta un electricista por hora?",
+                    "source_url": "https://www.cronoshare.com/cuanto-cuesta/electricista-hora",
+                    "source_date": "2026-01",
+                    "notes": "Midpoint of national average range 35-50 EUR per hour. Verified 2026-11-27: VAT included (approximate); travel usually 10-50 EUR on top; emergency calls 50-100 EUR/h daytime, 100-200 night or holiday. Page dated 6 Jan 2026."
+                },
+                {
+                    "key": "locksmith_lockout",
+                    "typical": 200,
+                    "low": 180,
+                    "high": 220,
+                    "unit": "per visit",
+                    "currency": "EUR",
+                    "source_title": "Cronoshare: Cuanto cuesta un cerrajero?",
+                    "source_url": "https://www.cronoshare.com/cuanto-cuesta/cerrajero",
+                    "source_date": "2026-01",
+                    "notes": "Midpoint of range; emergency door opening usually 180-220 EUR depending on area."
+                },
+                {
+                    "key": "car_service",
+                    "typical": 249,
+                    "low": null,
+                    "high": null,
+                    "unit": "per visit",
+                    "currency": "EUR",
+                    "source_title": "OCU nota de prensa: talleres (28 abr 2026)",
+                    "source_url": "https://www.ocu.org/organizacion/prensa/notas-de-prensa/2026/tallerescoches280426",
+                    "source_date": "2026-04",
+                    "notes": "Average annual service at official dealer garages; independent garages average about 200 EUR."
+                },
+                {
+                    "key": "home_cleaning_hour",
+                    "typical": 12.5,
+                    "low": 10,
+                    "high": 15,
+                    "unit": "per hour",
+                    "currency": "EUR",
+                    "source_title": "Cronoshare: Cuanto cuesta la limpieza a domicilio?",
+                    "source_url": "https://www.cronoshare.com/cuanto-cuesta/limpieza-domicilio",
+                    "source_date": "2026-01",
+                    "notes": "Midpoint of national average range 10-15 EUR per hour."
+                },
+                {
+                    "key": "lawyer_initial_consultation",
+                    "typical": 95,
+                    "low": 40,
+                    "high": 150,
+                    "unit": "per visit",
+                    "currency": "EUR",
+                    "source_title": "Cronoshare: Cuanto cuesta un abogado?",
+                    "source_url": "https://www.cronoshare.com/cuanto-cuesta/abogado",
+                    "source_date": "2026-01",
+                    "notes": "Midpoint of range; initial consultation 40-150 EUR by city and specialty. Verified 2026-11-27: Midpoint of range; VAT inclusion not confirmed by the page; some firms do not charge. Madrid/Barcelona 60-150. Page dated 4 Jan 2026."
+                },
+                {
+                    "key": "accountant_month_small_business",
+                    "typical": 125,
+                    "low": 50,
+                    "high": 200,
+                    "unit": "per month",
+                    "currency": "EUR",
+                    "source_title": "Cronoshare: Cuanto cuesta una gestoria?",
+                    "source_url": "https://www.cronoshare.com/cuanto-cuesta/gestoria",
+                    "source_date": "2026-01",
+                    "notes": "Midpoint of in-person gestoria range for self-employed; online 35-80 EUR, companies 150-250 EUR."
+                },
+                {
+                    "key": "wedding_dj",
+                    "typical": 425,
+                    "low": 350,
+                    "high": 500,
+                    "unit": "per event",
+                    "currency": "EUR",
+                    "source_title": "Cronoshare: Cuanto cuesta contratar a un DJ para fiestas y bodas?",
+                    "source_url": "https://www.cronoshare.com/cuanto-cuesta/contratar-dj-fiestas-bodas",
+                    "source_date": "2026-01",
+                    "notes": "Midpoint of national average range 350-500 EUR."
+                },
+                {
+                    "key": "wedding_photographer",
+                    "typical": 2900,
+                    "low": 2800,
+                    "high": 3000,
+                    "unit": "per event",
+                    "currency": "EUR",
+                    "source_title": "Cronoshare: Cuanto cuesta un fotografo de boda?",
+                    "source_url": "https://www.cronoshare.com/cuanto-cuesta/fotografo-boda",
+                    "source_date": "2026-01",
+                    "notes": "Midpoint of national average 2800-3000 EUR for full coverage; overall range 2000-7500 EUR."
+                },
+                {
+                    "key": "driving_lesson",
+                    "typical": 30,
+                    "low": null,
+                    "high": null,
+                    "unit": "per lesson",
+                    "currency": "EUR",
+                    "source_title": "OCU nota de prensa: autoescuelas (15 sep 2026)",
+                    "source_url": "https://www.ocu.org/organizacion/prensa/notas-de-prensa/2026/autoescuelas150926",
+                    "source_date": "2026-09",
+                    "notes": "Average price per practical lesson; lessons last 45-90 minutes."
+                }
+            ]
+        },
+        {
+            "country": "PT",
+            "country_name": "Portugal",
+            "currency": "EUR",
+            "rows": [
+                {
+                    "key": "dental_checkup_cleaning",
+                    "missing": true,
+                    "notes": "DECO PROteste gives no cleaning price; only anecdotal complaints and a Lisbon consultation average (36 EUR) without cleaning. Gap fill 2: OMD Barometro 2025 gives only spend on the most recent treatment of any kind (avg 136 EUR, 57.2% paid 30-50 EUR), not a cleaning price."
+                },
+                {
+                    "key": "dental_implant",
+                    "typical": 1600,
+                    "low": 920,
+                    "high": 3190,
+                    "unit": "per visit",
+                    "currency": "EUR",
+                    "source_title": "DECO PROteste: Implantes dentarios caros e sem comparticipacao do Estado",
+                    "source_url": "https://www.deco.proteste.pt/saude/higiene-oral/noticias/implantes-dentarios-caros-sem-comparticipacao-estado",
+                    "source_date": "2026-01",
+                    "notes": "Average total to replace one tooth (implant plus crown plus consult and X-ray); survey of 16 Lisbon clinics."
+                },
+                {
+                    "key": "physiotherapy_session",
+                    "typical": 35,
+                    "low": 30,
+                    "high": 50,
+                    "unit": "per session",
+                    "currency": "EUR",
+                    "source_title": "Fixando: Price of Physiotherapy",
+                    "source_url": "https://www.fixando.pt/en/fisioterapia/preco",
+                    "source_date": "2026-11",
+                    "notes": "Median of quotes Nov 2024 to Nov 2026, national; fixed-price median 35 EUR. Verified 2026-11-27: The row used Fixando's 'negotiable price' (40-48 EUR), a thin category; the fixed-price median and range are the better per-session figures (Q3 2026 fixed median 37.50, IQR 30-45). Nov 2024-Nov 2026 quotes."
+                },
+                {
+                    "key": "psychology_session",
+                    "typical": 40,
+                    "low": 25,
+                    "high": 40,
+                    "unit": "per session",
+                    "currency": "EUR",
+                    "source_title": "Fixando: Price of Psychology and Counseling",
+                    "source_url": "https://www.fixando.pt/en/psicologia-e-aconselhamento/preco",
+                    "source_date": "2026-11",
+                    "notes": "Median of quotes Nov 2024 to Nov 2026, national."
+                },
+                {
+                    "key": "private_gp_consultation",
+                    "missing": true,
+                    "notes": "Only DECO PROteste 2026 teleconsultation average (48.95 EUR) found; no in-person private GP price source."
+                },
+                {
+                    "key": "eye_test",
+                    "missing": true,
+                    "notes": "Fixando optometrist page has no price data; no other reliable source found."
+                },
+                {
+                    "key": "glasses_single_vision",
+                    "missing": true,
+                    "notes": "No reliable Portuguese source with an average price for single vision glasses found."
+                },
+                {
+                    "key": "vet_consultation",
+                    "missing": true,
+                    "notes": "Verified 2026-11-27: Page has no consultation price. 50 EUR is a fixed-price median for any veterinary service with all quartiles equal (likely one or very few quotes), and the hourly rate is 120 EUR. Not a fair consultation figure."
+                },
+                {
+                    "key": "womens_haircut",
+                    "typical": 25,
+                    "low": 17,
+                    "high": 43,
+                    "unit": "per visit",
+                    "currency": "EUR",
+                    "source_title": "Fixando: Price of Hairdressers",
+                    "source_url": "https://www.fixando.pt/en/cabeleireiros/quanto-custa",
+                    "source_date": "2026-11",
+                    "notes": "Median fixed price across all hairdresser services, not cut and blow dry specifically. Verified 2026-11-27: Median of fixed-price quotes across all hairdresser services on Fixando (Nov 2024-Nov 2026), not cut and blow dry specifically; latest quarter IQR 22.25-38.75 EUR. Present as a rough hairdresser price, not a quoted cut-and-blow-dry rate."
+                },
+                {
+                    "key": "mens_haircut",
+                    "typical": 15,
+                    "low": 10,
+                    "high": 21.5,
+                    "unit": "per visit",
+                    "currency": "EUR",
+                    "source_title": "Numbeo: Cost of Living in Portugal",
+                    "source_url": "https://www.numbeo.com/cost-of-living/country_result.jsp?country=Portugal",
+                    "source_date": "2026-11",
+                    "notes": "Crowdsourced Numbeo average for a standard barbershop men's haircut, national; last resort, no survey source found."
+                },
+                {
+                    "key": "gel_manicure",
+                    "missing": true,
+                    "notes": "Fixando gives only a general manicure and pedicure median (25 EUR), not gel-specific."
+                },
+                {
+                    "key": "massage_60min",
+                    "typical": 60,
+                    "low": 40,
+                    "high": 70,
+                    "unit": "per hour",
+                    "currency": "EUR",
+                    "source_title": "Fixando: Price of Massages",
+                    "source_url": "https://www.fixando.pt/en/massagens/custo",
+                    "source_date": "2026-11",
+                    "notes": "Median hourly rate of quotes Nov 2024 to Nov 2026; per-session median 40 EUR."
+                },
+                {
+                    "key": "botox_one_area",
+                    "missing": true,
+                    "notes": "No reliable Portuguese source with a botox price found."
+                },
+                {
+                    "key": "gym_membership_month",
+                    "typical": 38.29,
+                    "low": 24.99,
+                    "high": 58,
+                    "unit": "per month",
+                    "currency": "EUR",
+                    "source_title": "Cost of Living in Portugal (Numbeo)",
+                    "source_url": "https://www.numbeo.com/cost-of-living/country_result.jsp?country=Portugal&displayCurrency=EUR",
+                    "source_date": "2026-11",
+                    "notes": "Numbeo 'Monthly Fitness Club Membership', crowdsourced, used as last resort."
+                },
+                {
+                    "key": "personal_training_session",
+                    "typical": 29,
+                    "low": 20,
+                    "high": 36,
+                    "unit": "per hour",
+                    "currency": "EUR",
+                    "source_title": "Fixando: Price of Personal Training",
+                    "source_url": "https://www.fixando.pt/en/personal-training/preco",
+                    "source_date": "2026-11",
+                    "notes": "Median hourly rate of quotes; latest per-session median 25 EUR."
+                },
+                {
+                    "key": "restaurant_spend_per_diner",
+                    "typical": 12,
+                    "low": 8,
+                    "high": 20,
+                    "unit": "per person",
+                    "currency": "EUR",
+                    "source_title": "Cost of Living in Portugal (Numbeo)",
+                    "source_url": "https://www.numbeo.com/cost-of-living/country_result.jsp?country=Portugal&displayCurrency=EUR",
+                    "source_date": "2026-11",
+                    "notes": "Numbeo 'Meal at an Inexpensive Restaurant', crowdsourced, used as last resort; mid-range 3-course meal for two is 45 EUR."
+                },
+                {
+                    "key": "plumber_callout",
+                    "typical": 25,
+                    "low": 15,
+                    "high": 76,
+                    "unit": "per hour",
+                    "currency": "EUR",
+                    "source_title": "Fixando: Price of Plumbing",
+                    "source_url": "https://www.fixando.pt/en/canalizacao/preco",
+                    "source_date": "2026-11",
+                    "notes": "Median hourly rate of quotes Nov 2024 to Nov 2026, national; materials and travel extra."
+                },
+                {
+                    "key": "electrician_hour",
+                    "typical": 20,
+                    "low": 15,
+                    "high": 50,
+                    "unit": "per hour",
+                    "currency": "EUR",
+                    "source_title": "Fixando: Price of an Electrician",
+                    "source_url": "https://www.fixando.pt/en/eletricistas/preco",
+                    "source_date": "2026-11",
+                    "notes": "Median hourly rate of quotes; page also states an average of 23 EUR."
+                },
+                {
+                    "key": "locksmith_lockout",
+                    "missing": true,
+                    "notes": "Fixando locks page gives a general median (80 EUR) not specific to emergency door opening."
+                },
+                {
+                    "key": "car_service",
+                    "typical": 300,
+                    "low": 220,
+                    "high": 500,
+                    "unit": "per visit",
+                    "currency": "EUR",
+                    "source_title": "Manutencao do carro custa entre 200 e 500 euros (DECO PROteste)",
+                    "source_url": "https://www.deco.proteste.pt/auto/carros-eletricos/noticias/manutencao-carro-custa-200-500-euros",
+                    "source_date": "2026-01",
+                    "notes": "Reference annual maintenance cost at brand workshops (range 220-500), independents about 200; survey of 4,231 PT drivers May-Jul 2025."
+                },
+                {
+                    "key": "home_cleaning_hour",
+                    "typical": 12,
+                    "low": 9,
+                    "high": 17,
+                    "unit": "per hour",
+                    "currency": "EUR",
+                    "source_title": "Fixando: Price of Cleaning",
+                    "source_url": "https://www.fixando.pt/en/limpeza/preco",
+                    "source_date": "2026-11",
+                    "notes": "Median hourly rate of quotes Nov 2024 to Nov 2026, national."
+                },
+                {
+                    "key": "lawyer_initial_consultation",
+                    "typical": 70,
+                    "low": 60,
+                    "high": 70,
+                    "unit": "per session",
+                    "currency": "EUR",
+                    "source_title": "Fixando: Price of Legal services",
+                    "source_url": "https://www.fixando.pt/en/servicos-juridicos/preco",
+                    "source_date": "2026-11",
+                    "notes": "Median price per session for legal services; median hourly rate 75 EUR."
+                },
+                {
+                    "key": "accountant_month_small_business",
+                    "typical": 112.5,
+                    "low": 75,
+                    "high": 150,
+                    "unit": "per month",
+                    "currency": "EUR",
+                    "source_title": "Zaask: Quanto custa um contabilista?",
+                    "source_url": "https://www.zaask.pt/quanto-custa/contabilistas",
+                    "source_date": null,
+                    "notes": "Midpoint of monthly fee for sole traders; SMEs 275-450 EUR; page undated."
+                },
+                {
+                    "key": "wedding_dj",
+                    "typical": 550,
+                    "low": 350,
+                    "high": 852,
+                    "unit": "per event",
+                    "currency": "EUR",
+                    "source_title": "Fixando: Price of Wedding DJ",
+                    "source_url": "https://www.fixando.pt/en/dj-para-casamentos/preco",
+                    "source_date": "2026-11",
+                    "notes": "Median fixed price of quotes Nov 2024 to Nov 2026, national."
+                },
+                {
+                    "key": "wedding_photographer",
+                    "typical": 800,
+                    "low": 400,
+                    "high": 1515,
+                    "unit": "per event",
+                    "currency": "EUR",
+                    "source_title": "Fixando: Price of Wedding Photography",
+                    "source_url": "https://www.fixando.pt/en/fotografia-de-casamentos/preco",
+                    "source_date": "2026-11",
+                    "notes": "Median fixed price of quotes Nov 2024 to Nov 2026, national."
+                },
+                {
+                    "key": "driving_lesson",
+                    "typical": 20,
+                    "low": 20,
+                    "high": 40,
+                    "unit": "per lesson",
+                    "currency": "EUR",
+                    "source_title": "Fixando: Price of Driving Lessons",
+                    "source_url": "https://www.fixando.pt/en/escolas-de-conducao/preco",
+                    "source_date": "2026-11",
+                    "notes": "Median hourly rate (latest quarter) used as per-lesson price; median peaked at 32.50 EUR in Q2 2026. Verified 2026-11-27: Fixando hourly-rate median for Q3 2026; thin and volatile data (15 EUR through 2025, 32.50 in Q2 2026). Per hour, not per package; packages for the licence are priced separately."
+                }
+            ]
+        },
+        {
+            "country": "FR",
+            "country_name": "France",
+            "currency": "EUR",
+            "rows": [
+                {
+                    "key": "dental_checkup_cleaning",
+                    "typical": 28.92,
+                    "low": null,
+                    "high": null,
+                    "unit": "per visit",
+                    "currency": "EUR",
+                    "source_title": "Consultations et soins dentaires : vos remboursements (ameli)",
+                    "source_url": "https://www.ameli.fr/assure/remboursements/rembourse/soins-protheses-dentaires-optique-audition/consultations-soins-protheses-dentaires/consultations-soins-dentaires",
+                    "source_date": "2024-10",
+                    "notes": "National conventional tariff for scaling (detartrage), table dated 25 Oct 2024; a dentist consultation alone is 23 EUR; fixed fee, no overcharge for routine care. Verified 2026-11-27: Regulated Assurance Maladie tariff for scaling (detartrage), 60 percent reimbursed; dentist consultation alone 23 EUR. Overcharges only in limited cases (special patient request, dentist with permanent right to exceed). Table dated 25 Oct 2024."
+                },
+                {
+                    "key": "dental_implant",
+                    "typical": 1800,
+                    "low": 1500,
+                    "high": 2500,
+                    "unit": "per visit",
+                    "currency": "EUR",
+                    "source_title": "Prix d'un implant dentaire : le guide complet (Dentaly)",
+                    "source_url": "https://www.dentaly.org/prix-dun-implant-dentaire-le-guide-complet/",
+                    "source_date": "2024-12",
+                    "notes": "Average for implant + abutment + crown, not reimbursed by Securite sociale; national; price guide, no underlying survey named"
+                },
+                {
+                    "key": "physiotherapy_session",
+                    "typical": 16.58,
+                    "low": null,
+                    "high": null,
+                    "unit": "per session",
+                    "currency": "EUR",
+                    "source_title": "Tableaux recapitulatifs des taux de remboursement (ameli)",
+                    "source_url": "https://www.ameli.fr/assure/remboursements/rembourse/tableau-recapitulatif-taux-remboursement",
+                    "source_date": null,
+                    "notes": "National conventional tariff example: one rehab session after a sprain by a masseur-kinesitherapeute; page undated; overcharges only on special request"
+                },
+                {
+                    "key": "psychology_session",
+                    "typical": 61,
+                    "low": null,
+                    "high": null,
+                    "unit": "per session",
+                    "currency": "EUR",
+                    "source_title": "Se faire rembourser le psy : mission impossible en 2025 ? (Selectra)",
+                    "source_url": "https://selectra.info/assurance/actualites/generalites/se-faire-rembourser-le-psy-mission-impossible-en-2025",
+                    "source_date": "2025-11",
+                    "notes": "Average session price for a non-conventionne psychologist, Selectra survey; Mon Soutien Psy sessions are fixed at 50 EUR"
+                },
+                {
+                    "key": "private_gp_consultation",
+                    "typical": 30,
+                    "low": null,
+                    "high": null,
+                    "unit": "per visit",
+                    "currency": "EUR",
+                    "source_title": "Consultations en metropole : vos remboursements (ameli)",
+                    "source_url": "https://www.ameli.fr/assure/remboursements/rembourse/consultations-telemedecine/metropole",
+                    "source_date": "2026-01",
+                    "notes": "National conventional fee for a GP (generaliste secteur 1) consultation, tariffs applicable 1 Jan 2026; secteur 2 non-OPTAM fees are free"
+                },
+                {
+                    "key": "eye_test",
+                    "typical": 31.5,
+                    "low": null,
+                    "high": null,
+                    "unit": "per visit",
+                    "currency": "EUR",
+                    "source_title": "Consultations en metropole : vos remboursements (ameli)",
+                    "source_url": "https://www.ameli.fr/assure/remboursements/rembourse/consultations-telemedecine/metropole",
+                    "source_date": "2026-01",
+                    "notes": "Ophthalmologist secteur 1 consultation in direct access (conventional fee); eye exams in France are mostly done by ophthalmologists, not an optician price"
+                },
+                {
+                    "key": "glasses_single_vision",
+                    "typical": 340,
+                    "low": null,
+                    "high": null,
+                    "unit": "per visit",
+                    "currency": "EUR",
+                    "source_title": "La complementaire sante 2024, Fiche 22: La prise en charge en optique (DREES)",
+                    "source_url": "https://drees.solidarites-sante.gouv.fr/sites/default/files/2025-04/CS24%20-%20Fiche%2022%20-%20La%20prise%20en%20charge%20en%20optique%20%28MAJ%29.pdf",
+                    "source_date": "2021",
+                    "notes": "National average price paid in 2021 for frame + single vision lenses (panier libre, not the 100% sante basket), SNDS data, DREES calculations; PDF updated 2025-04"
+                },
+                {
+                    "key": "vet_consultation",
+                    "typical": 38,
+                    "low": 20,
+                    "high": 85,
+                    "unit": "per visit",
+                    "currency": "EUR",
+                    "source_title": "Veterinaires : l'augmentation des tarifs varie fortement selon les villes (Que Choisir)",
+                    "source_url": "https://www.quechoisir.org/actualite-veterinaires-l-augmentation-des-tarifs-varie-fortement-selon-les-villes-n101796/",
+                    "source_date": "2022-06",
+                    "notes": "UFC-Que Choisir survey of 2,105 practices; national average basic consultation; data older than 2023"
+                },
+                {
+                    "key": "womens_haircut",
+                    "typical": 52.6,
+                    "low": null,
+                    "high": null,
+                    "unit": "per visit",
+                    "currency": "EUR",
+                    "source_title": "Chiffres cles de la coiffure 2024 (UNEC)",
+                    "source_url": "https://unec.fr/wp-content/uploads/2024/11/unec-chiffres2024-web.pdf",
+                    "source_date": "2024-11",
+                    "notes": "Average women's ticket per salon visit (fiche moyenne femme) in 2023 from the hairdressers' trade union; covers all services, not only cut and blow dry. Verified 2026-11-27: Must be presented as the average women's spend per salon visit in 2023 (all services, including colour), not the price of a cut and blow dry; a plain cut and blow dry is likely below this."
+                },
+                {
+                    "key": "mens_haircut",
+                    "typical": 27.8,
+                    "low": null,
+                    "high": null,
+                    "unit": "per visit",
+                    "currency": "EUR",
+                    "source_title": "Chiffres cles de la coiffure 2024 (UNEC)",
+                    "source_url": "https://unec.fr/wp-content/uploads/2024/11/unec-chiffres2024-web.pdf",
+                    "source_date": "2024-11",
+                    "notes": "Average men's ticket per salon visit (fiche moyenne homme) in 2023 from the hairdressers' trade union; covers all services"
+                },
+                {
+                    "key": "gel_manicure",
+                    "typical": 35,
+                    "low": 30,
+                    "high": 40,
+                    "unit": "per visit",
+                    "currency": "EUR",
+                    "source_title": "Vernis semi-permanent : avantages, inconvenients et precautions (Matmut)",
+                    "source_url": "https://www.matmut.fr/mutuelle/conseils/vernis-semi-permanent",
+                    "source_date": "2023-04",
+                    "notes": "Midpoint of range; semi-permanent (gel) varnish application in a beauty salon, national average range; removal sometimes extra (about 10 EUR); insurer advice page, no survey named"
+                },
+                {
+                    "key": "massage_60min",
+                    "missing": true,
+                    "notes": "No reliable source found"
+                },
+                {
+                    "key": "botox_one_area",
+                    "missing": true,
+                    "notes": "No reliable source found"
+                },
+                {
+                    "key": "gym_membership_month",
+                    "typical": 40,
+                    "low": null,
+                    "high": null,
+                    "unit": "per month",
+                    "currency": "EUR",
+                    "source_title": "Salles de sport : prix, frequentation, satisfaction, ce que revele notre enquete (Que Choisir)",
+                    "source_url": "https://quechoisir.org/actualite-salles-de-sport-prix-frequentation-satisfaction-ce-que-revele-notre-enquete-n178950",
+                    "source_date": "2026-10",
+                    "notes": "UFC-Que Choisir survey of 1,352 members; average monthly price; low-cost chains 29-36 EUR, independents 45 EUR"
+                },
+                {
+                    "key": "personal_training_session",
+                    "missing": true,
+                    "notes": "No reliable source found"
+                },
+                {
+                    "key": "restaurant_spend_per_diner",
+                    "typical": 38,
+                    "low": null,
+                    "high": null,
+                    "unit": "per person",
+                    "currency": "EUR",
+                    "source_title": "L'observatoire FIDUCIAL 2026 de la restauration",
+                    "source_url": "https://www.fiducial.fr/Hotellerie-Restauration/comptabilite/L-Observatoire-FIDUCIAL-de-la-restauration/L-observatoire-FIDUCIAL-2026-de-la-restauration",
+                    "source_date": "2026-09",
+                    "notes": "Average ticket incl. VAT in traditional (sit-down) restaurants, panel of 400 outlets; fast food 19 EUR"
+                },
+                {
+                    "key": "plumber_callout",
+                    "typical": 70,
+                    "low": 50,
+                    "high": 90,
+                    "unit": "per hour",
+                    "currency": "EUR",
+                    "source_title": "Prix d'un plombier : tarifs 2026 et devis reels (MesDepanneurs.fr)",
+                    "source_url": "https://www.mesdepanneurs.fr/blog/tarifs-moyens-plombier",
+                    "source_date": "2026-09",
+                    "notes": "Midpoint of average hourly rate incl. VAT; travel fee 30-60 EUR extra; up to 140 EUR/h excl. VAT in Paris; UFC-Que Choisir linked platform"
+                },
+                {
+                    "key": "electrician_hour",
+                    "typical": 62.5,
+                    "low": 45,
+                    "high": 80,
+                    "unit": "per hour",
+                    "currency": "EUR",
+                    "source_title": "Prix electricien : tarifs, devis et conseils (MesDepanneurs.fr)",
+                    "source_url": "https://www.mesdepanneurs.fr/blog/tarifs-moyens-electricien",
+                    "source_date": "2026-05",
+                    "notes": "Midpoint of average hourly rate excl. VAT; Paris 60-100 EUR, rest of France 45-65 EUR"
+                },
+                {
+                    "key": "locksmith_lockout",
+                    "typical": 155,
+                    "low": 130,
+                    "high": 180,
+                    "unit": "per visit",
+                    "currency": "EUR",
+                    "source_title": "Prix Serrurier : les tarifs fiables pour chaque intervention (MesDepanneurs.fr)",
+                    "source_url": "https://www.mesdepanneurs.fr/blog/prix-serrurier",
+                    "source_date": "2025-12",
+                    "notes": "Midpoint of range incl. VAT for opening a simple slammed door, daytime; armoured door 150-200 EUR"
+                },
+                {
+                    "key": "car_service",
+                    "typical": 352.09,
+                    "low": null,
+                    "high": null,
+                    "unit": "per visit",
+                    "currency": "EUR",
+                    "source_title": "Barometre entretien auto 2025 (iDGARAGES)",
+                    "source_url": "https://www.idgarages.com/fr-fr/a-propos/barometre-entretien-auto-2025",
+                    "source_date": "2025-07",
+                    "notes": "Average general service (revision generale) from nearly 1 million quotes, Q1 2025, 4,000+ garages"
+                },
+                {
+                    "key": "home_cleaning_hour",
+                    "typical": 21,
+                    "low": 17,
+                    "high": 25,
+                    "unit": "per hour",
+                    "currency": "EUR",
+                    "source_title": "Combien coute une femme de menage ? (La Poste)",
+                    "source_url": "https://www.laposte.fr/combien-coute-une-femme-de-menage",
+                    "source_date": null,
+                    "notes": "Midpoint of range; page says 17-25 EUR per hour whatever the hiring option, before 50 percent tax credit; page undated"
+                },
+                {
+                    "key": "lawyer_initial_consultation",
+                    "typical": 150,
+                    "low": null,
+                    "high": null,
+                    "unit": "per visit",
+                    "currency": "EUR",
+                    "source_title": "Quel est le tarif des honoraires d'un avocat ? (StarOfService)",
+                    "source_url": "https://www.starofservice.com/cost-guides/combien-coute-services-dun-avocat",
+                    "source_date": null,
+                    "notes": "Average fee for a consultation; varies with firm reputation and case; page undated"
+                },
+                {
+                    "key": "accountant_month_small_business",
+                    "typical": 133,
+                    "low": null,
+                    "high": null,
+                    "unit": "per month",
+                    "currency": "EUR",
+                    "source_title": "Quel est le tarif d'un expert-comptable ? (StarOfService)",
+                    "source_url": "https://www.starofservice.com/cost-guides/combien-coutent-services-expert-comptable",
+                    "source_date": null,
+                    "notes": "Page gives about 1600 EUR excl. VAT per year for a local expert-comptable (online 900-1000 EUR/yr); typical = 1600/12; page undated. Verified 2026-11-27: 1600 EUR HT per year divided by 12 (my calculation), excluding VAT; local expert-comptable; online about 75-83 EUR/month HT; page undated."
+                },
+                {
+                    "key": "wedding_dj",
+                    "typical": 650,
+                    "low": null,
+                    "high": null,
+                    "unit": "per event",
+                    "currency": "EUR",
+                    "source_title": "Quel est le tarif d'un DJ ? (StarOfService)",
+                    "source_url": "https://www.starofservice.com/cost-guides/combien-coutent-services-dj",
+                    "source_date": null,
+                    "notes": "Page says count about 650 EUR for a wedding DJ until 2am; general DJ 450-600 EUR; page undated"
+                },
+                {
+                    "key": "wedding_photographer",
+                    "typical": 1300,
+                    "low": null,
+                    "high": null,
+                    "unit": "per event",
+                    "currency": "EUR",
+                    "source_title": "Prix d'un photographe de mariage (Mariages.net)",
+                    "source_url": "https://www.mariages.net/articles/prix-photographe-mariage--c11471",
+                    "source_date": "2024-07",
+                    "notes": "Average budget from Mariages.net 2024 wedding industry report, 1,400+ couples married in 2023"
+                },
+                {
+                    "key": "driving_lesson",
+                    "typical": 55.85,
+                    "low": 36,
+                    "high": 70,
+                    "unit": "per lesson",
+                    "currency": "EUR",
+                    "source_title": "Tarifs des auto-ecoles, enquete CLCV",
+                    "source_url": "https://www.clcv.org/storage/app/media/files/Dossier_de_presse_auto-%C3%A9cole05.09.pdf",
+                    "source_date": "2019-09",
+                    "notes": "CLCV consumer survey of 665 driving schools in 45 departments (Apr-Jul 2019); average lesson price; 36 EUR in Nord up to 70 EUR in Paris; data older than 2023. Verified 2026-11-27: 2019 survey (665 schools, 45 departements, Apr-Jul 2019), prices have risen since. Low/high are single observed extremes (Nord vs Paris), not a range of averages, and lesson length varies by school."
+                }
+            ]
+        },
+        {
+            "country": "IT",
+            "country_name": "Italy",
+            "currency": "EUR",
+            "rows": [
+                {
+                    "key": "dental_checkup_cleaning",
+                    "typical": 70,
+                    "low": 40,
+                    "high": 180,
+                    "unit": "per visit",
+                    "currency": "EUR",
+                    "source_title": "Igiene Orale o pulizia denti (iDoctors)",
+                    "source_url": "https://www.idoctors.it/prestazioni/igiene-orale-o-pulizia-denti",
+                    "source_date": "2026",
+                    "notes": "Midpoint of range of prices listed by dentists on iDoctors booking platform; professional cleaning session, national; page undated, 2026 copyright. Verified 2026-11-27: 110 was the midpoint of the platform's min-max span; the 20 listed provincial prices run 40-94 EUR with a median of 70 (my calculation from the listed prices). Professional cleaning (igiene orale) only; the page does not say a dentist check-up is included. Page updated 26/11/2026."
+                },
+                {
+                    "key": "dental_implant",
+                    "missing": true,
+                    "notes": "Gap fill: only sponsored dental-tourism articles (2,500-3,500 EUR) and clinic platforms found, not reliable. Gap fill 2: Altroconsumo dental price tables are behind login."
+                },
+                {
+                    "key": "physiotherapy_session",
+                    "typical": 47.5,
+                    "low": 35,
+                    "high": 60,
+                    "unit": "per session",
+                    "currency": "EUR",
+                    "source_title": "Quanto costa un fisioterapista? Prezzi 2026",
+                    "source_url": "https://www.cronoshare.it/quanto-costa/sedute-fisioterapista",
+                    "source_date": "2026-02",
+                    "notes": "Midpoint of range; Cronoshare national average range per seduta"
+                },
+                {
+                    "key": "psychology_session",
+                    "typical": 75,
+                    "low": 50,
+                    "high": 100,
+                    "unit": "per session",
+                    "currency": "EUR",
+                    "source_title": "Quanto costa uno psicologo? Prezzi 2026",
+                    "source_url": "https://www.cronoshare.it/quanto-costa/psicologo",
+                    "source_date": "2026-01",
+                    "notes": "Midpoint of range; Cronoshare national range 50-100 EUR per hour session; page cites CNOP fee guide 35-115 EUR"
+                },
+                {
+                    "key": "private_gp_consultation",
+                    "missing": true,
+                    "notes": "No reliable source found for a private (non-SSN) GP visit price in Italy"
+                },
+                {
+                    "key": "eye_test",
+                    "missing": true,
+                    "notes": "Only an ophthalmologist booking-platform range found (iDoctors visita oculistica 50-280 EUR), too wide to give a meaningful typical; no optician eye-test price source"
+                },
+                {
+                    "key": "glasses_single_vision",
+                    "missing": true,
+                    "notes": "No reliable dated source found"
+                },
+                {
+                    "key": "vet_consultation",
+                    "typical": 61,
+                    "low": null,
+                    "high": null,
+                    "unit": "per visit",
+                    "currency": "EUR",
+                    "source_title": "Costi veterinari (Altroconsumo comunicato)",
+                    "source_url": "https://www.altroconsumo.it/organizzazione/media-e-press/comunicati/2023/costi-veterinari",
+                    "source_date": "2025-06",
+                    "notes": "Average cost of a generic vet visit reported by 930 owners (Altroconsumo survey of 1,200 owners, June 2025, not representative)."
+                },
+                {
+                    "key": "womens_haircut",
+                    "typical": 22,
+                    "low": 12.8,
+                    "high": 32.2,
+                    "unit": "per visit",
+                    "currency": "EUR",
+                    "source_title": "Taglio dei capelli: Trento la citta italiana con i prezzi piu alti, Napoli la piu economica (L'Adige)",
+                    "source_url": "https://www.ladige.it/cronaca/taglio-dei-capelli-trento-la-citta-italiana-con-i-prezzi-piu-alti-napoli-la-piu-economica-gi2n4fkb",
+                    "source_date": "2024-10",
+                    "notes": "Skineco analysis of Mimit Osservatorio prezzi, main cities; women's cut only, blow dry (piega) is a separate 17.6 EUR average; low/high are cheapest (Napoli) and dearest (Trento) city averages"
+                },
+                {
+                    "key": "mens_haircut",
+                    "typical": 19.5,
+                    "low": null,
+                    "high": null,
+                    "unit": "per visit",
+                    "currency": "EUR",
+                    "source_title": "Taglio dei capelli: Trento la citta italiana con i prezzi piu alti, Napoli la piu economica (L'Adige)",
+                    "source_url": "https://www.ladige.it/cronaca/taglio-dei-capelli-trento-la-citta-italiana-con-i-prezzi-piu-alti-napoli-la-piu-economica-gi2n4fkb",
+                    "source_date": "2024-10",
+                    "notes": "Skineco analysis of Mimit Osservatorio prezzi, average men's cut across main Italian cities"
+                },
+                {
+                    "key": "gel_manicure",
+                    "missing": true,
+                    "notes": "Gap fill: only single-salon listings (about 20-40 EUR) found, no average."
+                },
+                {
+                    "key": "massage_60min",
+                    "typical": 60,
+                    "low": 40,
+                    "high": 80,
+                    "unit": "per session",
+                    "currency": "EUR",
+                    "source_title": "Quanto costa un massaggio rilassante?",
+                    "source_url": "https://www.cronoshare.it/quanto-costa/massaggio-rilassante",
+                    "source_date": "2026-01",
+                    "notes": "Midpoint of range; page states 60 minute relaxing massage costs 40-80 EUR on average; national"
+                },
+                {
+                    "key": "botox_one_area",
+                    "missing": true,
+                    "notes": "Gap fill: Open (2026-04) gives 250-500 EUR per session for one or more areas, not one-area specific."
+                },
+                {
+                    "key": "gym_membership_month",
+                    "typical": 48.77,
+                    "low": 20.83,
+                    "high": 80,
+                    "unit": "per month",
+                    "currency": "EUR",
+                    "source_title": "Cost of Living in Italy (Numbeo)",
+                    "source_url": "https://www.numbeo.com/cost-of-living/country_result.jsp?country=Italy&displayCurrency=EUR",
+                    "source_date": "2026-11",
+                    "notes": "Numbeo 'Monthly Fitness Club Membership', crowdsourced, used as last resort."
+                },
+                {
+                    "key": "personal_training_session",
+                    "typical": 60,
+                    "low": 40,
+                    "high": 80,
+                    "unit": "per session",
+                    "currency": "EUR",
+                    "source_title": "Quanto costa un personal trainer? Prezzi per lezione 2026",
+                    "source_url": "https://www.cronoshare.it/quanto-costa/costo-personal-trainer",
+                    "source_date": "2026-01",
+                    "notes": "Midpoint of range; Cronoshare national average range per session"
+                },
+                {
+                    "key": "restaurant_spend_per_diner",
+                    "typical": 18,
+                    "low": 11,
+                    "high": 25,
+                    "unit": "per person",
+                    "currency": "EUR",
+                    "source_title": "Cost of Living in Italy (Numbeo)",
+                    "source_url": "https://www.numbeo.com/cost-of-living/country_result.jsp?country=Italy&displayCurrency=EUR",
+                    "source_date": "2026-11",
+                    "notes": "Numbeo 'Meal at an Inexpensive Restaurant', crowdsourced, used as last resort; mid-range 3-course meal for two is 70 EUR."
+                },
+                {
+                    "key": "plumber_callout",
+                    "typical": 55,
+                    "low": 40,
+                    "high": 70,
+                    "unit": "per hour",
+                    "currency": "EUR",
+                    "source_title": "Quanto costa un impianto idraulico? Prezzi 2026",
+                    "source_url": "https://www.cronoshare.it/quanto-costa/idraulico",
+                    "source_date": "2026-02",
+                    "notes": "Midpoint of hourly rate range 40-70 EUR; call-out fee (uscita) of 30 EUR is extra; out-of-hours about +45 percent"
+                },
+                {
+                    "key": "electrician_hour",
+                    "typical": 42.5,
+                    "low": 25,
+                    "high": 60,
+                    "unit": "per hour",
+                    "currency": "EUR",
+                    "source_title": "Quanto costa un elettricista all'ora? Prezzi 2026",
+                    "source_url": "https://www.cronoshare.it/quanto-costa/elettricista",
+                    "source_date": "2026-01",
+                    "notes": "Midpoint of range; Cronoshare national average 25-60 EUR per hour for standard jobs"
+                },
+                {
+                    "key": "locksmith_lockout",
+                    "typical": 90,
+                    "low": 80,
+                    "high": 100,
+                    "unit": "per visit",
+                    "currency": "EUR",
+                    "source_title": "Quanto costa un fabbro? Prezzi 2026",
+                    "source_url": "https://www.cronoshare.it/quanto-costa/fabbro",
+                    "source_date": "2026-01",
+                    "notes": "Midpoint of range for opening a slammed door; door locked with key costs about 200 EUR; nights and holidays can reach 300-500 EUR"
+                },
+                {
+                    "key": "car_service",
+                    "typical": 275,
+                    "low": 150,
+                    "high": 400,
+                    "unit": "per visit",
+                    "currency": "EUR",
+                    "source_title": "Quanto costa mantenere un'auto nel 2026 (Quotidiano Motori)",
+                    "source_url": "https://www.quotidianomotori.com/automobili/quanto-costa-auto-anno-assicurazione-bollo-carburante-tagliando/",
+                    "source_date": "2026-06",
+                    "notes": "Midpoint of range; basic tagliando (oil, filters, checks) 150-400 EUR per unnamed market surveys to June 2026. Verified 2026-11-27: Midpoint of a basic tagliando range (oil, filters, checks); full service 300-600 EUR; independent garages 25-40 percent below dealers. Article published 15 Jun 2026, prices 'aggiornati a giugno 2026'."
+                },
+                {
+                    "key": "home_cleaning_hour",
+                    "typical": 12.5,
+                    "low": 10,
+                    "high": 15,
+                    "unit": "per hour",
+                    "currency": "EUR",
+                    "source_title": "Quanto costano le pulizie domestiche? Prezzi 2026",
+                    "source_url": "https://www.cronoshare.it/quanto-costa/pulizie-domestiche",
+                    "source_date": "2026-01",
+                    "notes": "Midpoint of range; Cronoshare national average 10-15 EUR per hour for a house cleaner"
+                },
+                {
+                    "key": "lawyer_initial_consultation",
+                    "typical": 75,
+                    "low": 50,
+                    "high": 100,
+                    "unit": "per visit",
+                    "currency": "EUR",
+                    "source_title": "Quanto costa un avvocato? (Cronoshare)",
+                    "source_url": "https://www.cronoshare.it/quanto-costa/avvocato",
+                    "source_date": "2026-01",
+                    "notes": "Midpoint of range for a 30 min oral consultation; 1 hour 100-200 EUR; page says the first consultation is often free."
+                },
+                {
+                    "key": "accountant_month_small_business",
+                    "typical": 60,
+                    "low": 30,
+                    "high": 90,
+                    "unit": "per month",
+                    "currency": "EUR",
+                    "source_title": "Quanto costa un commercialista? Prezzi 2026",
+                    "source_url": "https://www.cronoshare.it/quanto-costa/commercialista",
+                    "source_date": "2026-01",
+                    "notes": "Midpoint of range for bookkeeping of a self-employed professional; companies 150-250 EUR per month"
+                },
+                {
+                    "key": "wedding_dj",
+                    "typical": 500,
+                    "low": 400,
+                    "high": 600,
+                    "unit": "per event",
+                    "currency": "EUR",
+                    "source_title": "Quanto costa un DJ per matrimoni?",
+                    "source_url": "https://www.cronoshare.it/quanto-costa/dj-per-matrimoni",
+                    "source_date": "2026-01",
+                    "notes": "Midpoint of range; Cronoshare national average per wedding service"
+                },
+                {
+                    "key": "wedding_photographer",
+                    "typical": 1750,
+                    "low": 1000,
+                    "high": 2500,
+                    "unit": "per event",
+                    "currency": "EUR",
+                    "source_title": "Quanto costa un fotografo per matrimoni? Prezzi 2026",
+                    "source_url": "https://www.cronoshare.it/quanto-costa/fotografo-matrimonio",
+                    "source_date": "2026-01",
+                    "notes": "Midpoint of range; Cronoshare national average"
+                },
+                {
+                    "key": "driving_lesson",
+                    "typical": 50,
+                    "low": 40,
+                    "high": 60,
+                    "unit": "per lesson",
+                    "currency": "EUR",
+                    "source_title": "Quanto costa fare la patente B dell'auto? (BusinessOnline)",
+                    "source_url": "https://www.businessonline.it/news/quanto-costa-fare-la-patente-b-dellauto-prezzi-e-tariffe-medie-2024-autoscuola-in-base-al-numero-guide-e-tipologie-corsi_n74811.html",
+                    "source_date": "2025-04",
+                    "notes": "Midpoint of range; average practical lesson 40-60 EUR per hour at autoscuola; article updated 2025-04"
+                }
+            ]
+        },
+        {
+            "country": "DE",
+            "country_name": "Germany",
+            "currency": "EUR",
+            "rows": [
+                {
+                    "key": "dental_checkup_cleaning",
+                    "typical": 100,
+                    "low": 80,
+                    "high": 120,
+                    "unit": "per visit",
+                    "currency": "EUR",
+                    "source_title": "Was kostet eine professionelle Zahnreinigung? (Verbraucherzentrale)",
+                    "source_url": "https://www.verbraucherzentrale.de/wissen/gesundheit-pflege/aerztinnen-und-kliniken/was-kostet-eine-professionelle-zahnreinigung-12916",
+                    "source_date": "2024-05",
+                    "notes": "Midpoint of range. Professional cleaning (PZR), most practices 80-120 EUR per KZBV, some over 150; the check-up itself is covered by statutory insurance."
+                },
+                {
+                    "key": "dental_implant",
+                    "typical": 2500,
+                    "low": 1500,
+                    "high": 3500,
+                    "unit": "per visit",
+                    "currency": "EUR",
+                    "source_title": "Bruecke, Krone, Implantat: Welche Unterschiede gibt es beim Zahnersatz? (Verbraucherzentrale)",
+                    "source_url": "https://www.verbraucherzentrale.de/wissen/gesundheit-pflege/aerztinnen-und-kliniken/bruecke-krone-implantat-welche-unterschiede-gibt-es-beim-zahnersatz-7925",
+                    "source_date": "2024-07",
+                    "notes": "Midpoint of range. Single-tooth implant including the crown, national."
+                },
+                {
+                    "key": "physiotherapy_session",
+                    "typical": 62.5,
+                    "low": 35,
+                    "high": 90,
+                    "unit": "per session",
+                    "currency": "EUR",
+                    "source_title": "Physiotherapie: Kosten und Uebernahme durch die Krankenkasse",
+                    "source_url": "https://marcusknispel.com/physiotherapie-kosten/",
+                    "source_date": "2026-05",
+                    "notes": "Midpoint of range. Self-pay price per unit without prescription; source is a private-insurance broker guide, not an association."
+                },
+                {
+                    "key": "psychology_session",
+                    "typical": 134.06,
+                    "low": null,
+                    "high": null,
+                    "unit": "per session",
+                    "currency": "EUR",
+                    "source_title": "Private psychotherapy session contract (GOP fee schedule from 2024-07-01)",
+                    "source_url": "https://form.jotform.com/260452951694363",
+                    "source_date": "2024-07",
+                    "notes": "50-minute self-pay session at one private practice under the GOP; matches 2x the 2.3-fold 25-minute rate (67.03 EUR) reported from BPtK on therapyroute.com. Verified 2026-11-27: The cited source is one practice's form, but the figure equals the standard private fee: from 01.07.2024 short-term psychotherapy is billed 'analog Nr. 812, je vollendete 25 Minuten' (BAeK/BPtK/PKV recommendation); 2 x GOAe 812 (500 points) at the 2.3 factor = 2 x 67.03 = 134.06 EUR for 50 min. Better cite api.bptk.de/uploads/20241029_B_Ae_K_B_Pt_K_PKV_V_Beihilfe_Abrechnungsempfehlung_c781af747d.pdf. Point value of 812 is from my knowledge of the GOAe, not on the page."
+                },
+                {
+                    "key": "private_gp_consultation",
+                    "typical": 40,
+                    "low": 30,
+                    "high": 50,
+                    "unit": "per visit",
+                    "currency": "EUR",
+                    "source_title": "Wie viel kostet ein Arztbesuch ohne Versicherung? (t-online)",
+                    "source_url": "https://www.t-online.de/finanzen/ratgeber/altersvorsorge/privatevorsorge/id_100291016/wie-viel-kostet-ein-arztbesuch-ohne-versicherung-.html",
+                    "source_date": "2026-06",
+                    "notes": "Midpoint of range. Consultation-only with a private doctor billed under GOAE; exams and tests cost extra."
+                },
+                {
+                    "key": "eye_test",
+                    "missing": true,
+                    "notes": "No optician price found: Verbraucherzentrale NRW (2025-10) says opticians usually do not charge for the refraction when glasses are bought; it only gives eye-doctor private packages (about 15 EUR)."
+                },
+                {
+                    "key": "glasses_single_vision",
+                    "missing": true,
+                    "notes": "No single-vision average found. ZVA Branchenentwicklung 2025/26 (2026-01) gives only about 550 EUR for a complete corrective pair across all lens types, which overstates single vision; Stiftung Warentest tables paywalled."
+                },
+                {
+                    "key": "vet_consultation",
+                    "typical": 47.25,
+                    "low": 23.63,
+                    "high": 70.86,
+                    "unit": "per visit",
+                    "currency": "EUR",
+                    "source_title": "Tierarztkosten fuer einen Hund (HanseMerkur)",
+                    "source_url": "https://www.hansemerkur.de/haustiere/tierarztkosten-hund",
+                    "source_date": "2026",
+                    "notes": "Midpoint of range. General exam with advice for a dog under GOT, 1x to 3x rate, excluding VAT."
+                },
+                {
+                    "key": "womens_haircut",
+                    "typical": 54,
+                    "low": null,
+                    "high": null,
+                    "unit": "per visit",
+                    "currency": "EUR",
+                    "source_title": "Preisdruck im Friseurhandwerk: Das kostet ein Haarschnitt 2025 (Deutsche Handwerks Zeitung)",
+                    "source_url": "https://www.deutsche-handwerks-zeitung.de/?p=370315",
+                    "source_date": "2025-10",
+                    "notes": "Average wash, cut and blow dry for women, survey of salons by Friseur- und Kosmetikverband NRW (regional)."
+                },
+                {
+                    "key": "mens_haircut",
+                    "typical": 33,
+                    "low": null,
+                    "high": null,
+                    "unit": "per visit",
+                    "currency": "EUR",
+                    "source_title": "Preisdruck im Friseurhandwerk: Das kostet ein Haarschnitt 2025 (Deutsche Handwerks Zeitung)",
+                    "source_url": "https://www.deutsche-handwerks-zeitung.de/?p=370315",
+                    "source_date": "2025-10",
+                    "notes": "Average men's salon visit, NRW salon survey; barbershops did not take part."
+                },
+                {
+                    "key": "gel_manicure",
+                    "missing": true,
+                    "notes": "Only individual salon listings on booking platforms found (about 30-60 EUR); no survey or price guide with an average."
+                },
+                {
+                    "key": "massage_60min",
+                    "missing": true,
+                    "notes": "Only individual practice price lists and a low-quality aggregator found; no reliable national average."
+                },
+                {
+                    "key": "botox_one_area",
+                    "typical": 275,
+                    "low": 150,
+                    "high": 400,
+                    "unit": "per session",
+                    "currency": "EUR",
+                    "source_title": "Wie Botox angewendet wird und welche Nebenwirkungen moeglich sind (Apotheken Umschau)",
+                    "source_url": "https://www.apotheken-umschau.de/mein-koerper/haut-und-haare/botox-anwendungen-vorteile-und-moegliche-nebenwirkungen-1350515.html",
+                    "source_date": "2025-07",
+                    "notes": "Midpoint of range. One facial area such as the forehead, national."
+                },
+                {
+                    "key": "gym_membership_month",
+                    "typical": 48.55,
+                    "low": null,
+                    "high": null,
+                    "unit": "per month",
+                    "currency": "EUR",
+                    "source_title": "Fitnessstudio-Tarife werden teurer, FIBO-Messe startet (Nordkurier)",
+                    "source_url": "https://www.nordkurier.de/wirtschaft/fitnessstudio-tarife-werden-teurer-fibo-messe-startet-4507522",
+                    "source_date": "2026-04",
+                    "notes": "National average monthly fee for 2025 from the DSSV and Deloitte study, all studio types."
+                },
+                {
+                    "key": "personal_training_session",
+                    "typical": 100,
+                    "low": 50,
+                    "high": 150,
+                    "unit": "per session",
+                    "currency": "EUR",
+                    "source_title": "Mit welchen Kosten muss ich fuer einen Personal Trainer rechnen? (Superprof)",
+                    "source_url": "https://www.superprof.de/blog/mit-welchen-kosten-muss-ich-fuer-einen-personal-trainer-rechnen/",
+                    "source_date": "2025-04",
+                    "notes": "Midpoint of range. Per hour, varies with qualification, city and location (studio or home)."
+                },
+                {
+                    "key": "restaurant_spend_per_diner",
+                    "missing": true,
+                    "notes": "Only a 2017 Bookatable survey (26-50 EUR per evening) found on an open page; too old to quote as current."
+                },
+                {
+                    "key": "plumber_callout",
+                    "typical": 75,
+                    "low": 60,
+                    "high": 90,
+                    "unit": "per hour",
+                    "currency": "EUR",
+                    "source_title": "Handwerker Kostenindex (Clean Invoice)",
+                    "source_url": "https://www.clean-invoice.com/kostenindex",
+                    "source_date": "2026-02",
+                    "notes": "Midpoint of range. Heating/sanitary hourly rate, net of VAT; travel flat fee of 15-50 EUR often added."
+                },
+                {
+                    "key": "electrician_hour",
+                    "typical": 70,
+                    "low": 55,
+                    "high": 85,
+                    "unit": "per hour",
+                    "currency": "EUR",
+                    "source_title": "Elektriker Stundenlohn und Tarif 2026 (Clean Invoice)",
+                    "source_url": "https://www.clean-invoice.com/wissen/elektriker/elektriker-stundenlohn-tarif",
+                    "source_date": "2026-03",
+                    "notes": "Midpoint of range. Customer hourly rate incl. VAT, national; big cities higher."
+                },
+                {
+                    "key": "locksmith_lockout",
+                    "typical": 100,
+                    "low": null,
+                    "high": 180,
+                    "unit": "per visit",
+                    "currency": "EUR",
+                    "source_title": "Ausgesperrt und abgezockt vom Schluesseldienst (Verbraucherzentrale Hamburg)",
+                    "source_url": "https://www.vzhh.de/themen/einkauf-reise-freizeit/schluesseldienst/ausgesperrt-abgezockt-vom-schluesseldienst",
+                    "source_date": "2024-01",
+                    "notes": "Simple door opening without lock change: 100 EUR daytime, 180 EUR night or weekend still seen as reasonable."
+                },
+                {
+                    "key": "car_service",
+                    "typical": 275,
+                    "low": 250,
+                    "high": 300,
+                    "unit": "per visit",
+                    "currency": "EUR",
+                    "source_title": "Auto Inspektion, Service und Wartung: aktuelle Kosten (carwow)",
+                    "source_url": "https://www.carwow.de/automagazin/auto-besitzen-und-fahren/wartung-reparatur-und-pflege/auto-inspektion",
+                    "source_date": "2025-07",
+                    "notes": "Midpoint of range. Small inspection; a large inspection is 400-800 EUR."
+                },
+                {
+                    "key": "home_cleaning_hour",
+                    "typical": 28.5,
+                    "low": 22,
+                    "high": 35,
+                    "unit": "per hour",
+                    "currency": "EUR",
+                    "source_title": "Putzfrau Kosten: Kosten und Pflichten fuer eine Haushaltshilfe (Finanztip)",
+                    "source_url": "https://www.finanztip.de/haushaltshilfe-kosten/",
+                    "source_date": "2024-01",
+                    "notes": "Midpoint of range. Cleaner employed by an agency; self-employed cleaners on platforms 12-35 EUR."
+                },
+                {
+                    "key": "lawyer_initial_consultation",
+                    "missing": true,
+                    "notes": "Verified 2026-11-27: 226.10 EUR is the statutory cap for a consumer first consultation when no fee was agreed (190 EUR + 19 percent VAT), not a market average; quote it only as 'up to 226.10 EUR incl. VAT'. Lawyers may agree higher hourly fees (average 244 EUR/h in 2024 per the page). Page Stand 01.09.2026."
+                },
+                {
+                    "key": "accountant_month_small_business",
+                    "typical": 96.6,
+                    "low": 27.6,
+                    "high": 165.6,
+                    "unit": "per month",
+                    "currency": "EUR",
+                    "source_title": "Steuerberater Kosten (sevdesk)",
+                    "source_url": "https://sevdesk.de/blog/steuerberater-kosten",
+                    "source_date": "2026-07",
+                    "notes": "Midpoint of range. Monthly bookkeeping under StBVV table C for 50,000 EUR revenue, VAT returns included."
+                },
+                {
+                    "key": "wedding_dj",
+                    "typical": 1700,
+                    "low": 900,
+                    "high": 2500,
+                    "unit": "per event",
+                    "currency": "EUR",
+                    "source_title": "Kosten DJ Hochzeit 2026 (Trustlocal)",
+                    "source_url": "https://trustlocal.de/kosten/dj-kosten/kosten-dj-hochzeit/",
+                    "source_date": "2026-11",
+                    "notes": "Midpoint of range. Full wedding day, 8-10 hours; platform guide values."
+                },
+                {
+                    "key": "wedding_photographer",
+                    "typical": 1656,
+                    "low": 800,
+                    "high": 3000,
+                    "unit": "per event",
+                    "currency": "EUR",
+                    "source_title": "Was kostet ein Hochzeitsfotograf? Der Kostenguide fuer das Jahr 2026 (Bridebook)",
+                    "source_url": "https://bridebook.com/de/article/was-kostet-ein-hochzeitsfotograf",
+                    "source_date": "2026-07",
+                    "notes": "Average couple spend from Bridebook Wedding Report 2026, national."
+                },
+                {
+                    "key": "driving_lesson",
+                    "typical": 63,
+                    "low": 53,
+                    "high": 78,
+                    "unit": "per lesson",
+                    "currency": "EUR",
+                    "source_title": "Was kostet der Fuehrerschein in meiner Stadt? (ingenieur.de)",
+                    "source_url": "https://www.ingenieur.de/technik/fachbereiche/verkehr/was-kostet-der-fuehrerschein-in-meiner-stadt/",
+                    "source_date": "2024-08",
+                    "notes": "National average for a 45-minute lesson from a PaulCamper study; range is Berlin to Munich. Verified 2026-11-27: 45-minute lesson, PaulCamper study reported Aug 2024; low/high are Berlin and Munich city averages, not national extremes."
+                }
+            ]
+        },
+        {
+            "country": "NL",
+            "country_name": "Netherlands",
+            "currency": "EUR",
+            "rows": [
+                {
+                    "key": "dental_checkup_cleaning",
+                    "typical": 45.33,
+                    "low": 45.33,
+                    "high": 78.97,
+                    "unit": "per visit",
+                    "currency": "EUR",
+                    "source_title": "Vergoeding tandarts (Zorgwijzer)",
+                    "source_url": "https://www.zorgwijzer.nl/vergoeding/tandarts",
+                    "source_date": "2026-11",
+                    "notes": "NZa 2026 maximum tariff for the check-up only (C002); cleaning (M03) adds 16.82 EUR per 5 minutes, so a visit with cleaning costs more. Verified 2026-11-27: 28.51 is the check-up only. Check-up (C002) plus one 5-minute cleaning block (M03) = 45.33 EUR; each further 5 minutes adds 16.82 (high = 15 min of cleaning). Sums are my calculation from NZa 2026 maximum tariffs; dentists may charge less. Present typical as 'from'."
+                },
+                {
+                    "key": "dental_implant",
+                    "typical": 1850,
+                    "low": 1500,
+                    "high": 2200,
+                    "unit": "per visit",
+                    "currency": "EUR",
+                    "source_title": "Vergoeding tandimplantaten 2026 (Overstappen.nl)",
+                    "source_url": "https://www.overstappen.nl/zorgverzekering/vergoedingen/tandimplantaten/",
+                    "source_date": "2026-11",
+                    "notes": "Midpoint of range; one implant with crown, 'vaak tussen 1.500 en 2.200 EUR', total treatment, national."
+                },
+                {
+                    "key": "physiotherapy_session",
+                    "typical": 43,
+                    "low": null,
+                    "high": null,
+                    "unit": "per session",
+                    "currency": "EUR",
+                    "source_title": "Vergoeding fysiotherapie (Consumentenbond)",
+                    "source_url": "https://www.consumentenbond.nl/zorgverzekering/vergoedingen/fysiotherapie",
+                    "source_date": null,
+                    "notes": "Consumentenbond: 'reken op zo'n 43 EUR per behandeling' for a regular treatment, self-pay; page undated (policy year 2027 shown)."
+                },
+                {
+                    "key": "psychology_session",
+                    "typical": 125,
+                    "low": 100,
+                    "high": 150,
+                    "unit": "per session",
+                    "currency": "EUR",
+                    "source_title": "Kosten psycholoog (Trustoo)",
+                    "source_url": "https://trustoo.nl/kosten/psycholoog-kosten/",
+                    "source_date": "2026-11",
+                    "notes": "Midpoint of range; 100-150 EUR per hour (60 min) average, based on Trustoo requests; 2026 statutory max GZ-psycholoog 177.89 EUR."
+                },
+                {
+                    "key": "private_gp_consultation",
+                    "typical": 37.24,
+                    "low": 20.34,
+                    "high": 71.04,
+                    "unit": "per visit",
+                    "currency": "EUR",
+                    "source_title": "Tarieven huisartsen onverzekerde (CAK)",
+                    "source_url": "https://hetcak.nl/zakelijk/onverzekerbare-vreemdelingen/huisartsen",
+                    "source_date": "2026",
+                    "notes": "Regulated 2026 tariff an uninsured patient pays for a GP consult of 5-20 min (code 12529); low/high are <5 min and 20+ min tariffs. NL has no separate private GP market."
+                },
+                {
+                    "key": "eye_test",
+                    "missing": true,
+                    "notes": "Gap fill: no NL source with an optician eye test price (Kassa/Consumentenbond only say it is often free)."
+                },
+                {
+                    "key": "glasses_single_vision",
+                    "missing": true,
+                    "notes": "Gap fill: Consumentenbond says prices vary widely; no dated average for single vision glasses found."
+                },
+                {
+                    "key": "vet_consultation",
+                    "typical": 51,
+                    "low": 35,
+                    "high": 70,
+                    "unit": "per visit",
+                    "currency": "EUR",
+                    "source_title": "Spoedhulp dierenarts kost dubbel zoveel (Overstappen.nl)",
+                    "source_url": "https://www.overstappen.nl/nieuws/spoedhulp-dierenarts-kost-dubbel-zoveel-vervolgbehandeling-drijft-rekening-op-tot-meer-dan-350-euro/",
+                    "source_date": "2026-10",
+                    "notes": "Average regular weekday daytime vet visit, Overstappen.nl analysis; emergency/out of hours 2-3x more."
+                },
+                {
+                    "key": "womens_haircut",
+                    "typical": 40.6,
+                    "low": 28,
+                    "high": 65.85,
+                    "unit": "per visit",
+                    "currency": "EUR",
+                    "source_title": "Numbeo: Cost of Living in Netherlands",
+                    "source_url": "https://www.numbeo.com/cost-of-living/country_result.jsp?country=Netherlands",
+                    "source_date": "2026-11",
+                    "notes": "Crowdsourced Numbeo average for women's wash and basic cut (not blow dry), national; last resort."
+                },
+                {
+                    "key": "mens_haircut",
+                    "typical": 30,
+                    "low": 20,
+                    "high": 45,
+                    "unit": "per visit",
+                    "currency": "EUR",
+                    "source_title": "Numbeo: Cost of Living in Netherlands",
+                    "source_url": "https://www.numbeo.com/cost-of-living/country_result.jsp?country=Netherlands",
+                    "source_date": "2026-11",
+                    "notes": "Crowdsourced Numbeo average for a standard barbershop men's haircut, national; last resort."
+                },
+                {
+                    "key": "gel_manicure",
+                    "missing": true,
+                    "notes": "Gap fill: only individual Treatwell salon listings found, no average."
+                },
+                {
+                    "key": "massage_60min",
+                    "missing": true,
+                    "notes": "Gap fill: only individual salon listings found; Knab zzp tariff page returned 404."
+                },
+                {
+                    "key": "botox_one_area",
+                    "missing": true,
+                    "notes": "Gap fill: only single-clinic price lists (about 220-225 EUR per zone) found, no average."
+                },
+                {
+                    "key": "gym_membership_month",
+                    "typical": 48,
+                    "low": 35,
+                    "high": 61,
+                    "unit": "per month",
+                    "currency": "EUR",
+                    "source_title": "Fitnesscentra; klanten, abonnementsprijzen en voorzieningen (CBS 83822NED)",
+                    "source_url": "https://www.cbs.nl/nl-nl/cijfers/detail/83822NED",
+                    "source_date": "2023",
+                    "notes": "Midpoint of CBS 2023 (preliminary) averages: cheapest monthly subscription 35 EUR, most expensive 61 EUR, all gym sizes."
+                },
+                {
+                    "key": "personal_training_session",
+                    "typical": 65,
+                    "low": 40,
+                    "high": 90,
+                    "unit": "per session",
+                    "currency": "EUR",
+                    "source_title": "Kosten personal trainer (Trustoo)",
+                    "source_url": "https://trustoo.nl/kosten/personal-trainer-kosten/",
+                    "source_date": "2026-11",
+                    "notes": "Midpoint of range; 40-90 EUR per hour average, based on Trustoo requests (min 30, max 120)."
+                },
+                {
+                    "key": "restaurant_spend_per_diner",
+                    "typical": 20,
+                    "low": 12.5,
+                    "high": 30,
+                    "unit": "per person",
+                    "currency": "EUR",
+                    "source_title": "Cost of Living in Netherlands (Numbeo)",
+                    "source_url": "https://www.numbeo.com/cost-of-living/country_result.jsp?country=Netherlands&displayCurrency=EUR",
+                    "source_date": "2026-11",
+                    "notes": "Numbeo 'Meal at an Inexpensive Restaurant', crowdsourced, used as last resort; mid-range 3-course meal for two is 80 EUR. Verified 2026-11-27: Crowdsourced price of a meal at an inexpensive restaurant, the low end of restaurant spend; a mid-range three-course meal is about 40 EUR per person (80 for two, without drinks). Updated 26 Nov 2026."
+                },
+                {
+                    "key": "plumber_callout",
+                    "typical": 57.5,
+                    "low": 45,
+                    "high": 70,
+                    "unit": "per hour",
+                    "currency": "EUR",
+                    "source_title": "Loodgieter kosten (Offerteadviseur)",
+                    "source_url": "https://www.offerteadviseur.nl/categorie/huis/loodgieter/kosten/",
+                    "source_date": "2026-02",
+                    "notes": "Midpoint of range. Hourly rate by region and experience; call-out 0-45 EUR, often included; VAT not stated."
+                },
+                {
+                    "key": "electrician_hour",
+                    "typical": 47.5,
+                    "low": 25,
+                    "high": 70,
+                    "unit": "per hour",
+                    "currency": "EUR",
+                    "source_title": "Kosten elektricien (Offerteadviseur)",
+                    "source_url": "https://www.offerteadviseur.nl/kosten/elektricien/",
+                    "source_date": "2026-02",
+                    "notes": "Midpoint of range. Minimum and maximum hourly rates in NL; VAT not stated."
+                },
+                {
+                    "key": "locksmith_lockout",
+                    "typical": 125,
+                    "low": null,
+                    "high": null,
+                    "unit": "per visit",
+                    "currency": "EUR",
+                    "source_title": "Slotenmakers (Consumentenbond)",
+                    "source_url": "https://www.consumentenbond.nl/verbouwen-en-klussen/slotenmakers",
+                    "source_date": "2026-04",
+                    "notes": "NSSG guideline maximum for opening a door in daytime without safety strip, incl. VAT; evening usually +50%."
+                },
+                {
+                    "key": "car_service",
+                    "typical": 125,
+                    "low": 100,
+                    "high": 150,
+                    "unit": "per visit",
+                    "currency": "EUR",
+                    "source_title": "Kosten kleine beurt (Univé)",
+                    "source_url": "https://www.unive.nl/autoverzekering/auto-onderhoud/kosten-kleine-beurt",
+                    "source_date": null,
+                    "notes": "Midpoint of range; average small service (kleine beurt) excl. replacement parts; insurer page, undated. Verified 2026-11-27: Excludes replacement parts; undated insurer page."
+                },
+                {
+                    "key": "home_cleaning_hour",
+                    "typical": 21,
+                    "low": 17,
+                    "high": 25,
+                    "unit": "per hour",
+                    "currency": "EUR",
+                    "source_title": "Kosten schoonmaakbedrijf (Trustoo)",
+                    "source_url": "https://trustoo.nl/kosten/schoonmaakbedrijf-kosten/",
+                    "source_date": "2026-11",
+                    "notes": "Midpoint of range; huishoudelijke hulp / cleaner at home 17-25 EUR per hour."
+                },
+                {
+                    "key": "lawyer_initial_consultation",
+                    "typical": 225,
+                    "low": 150,
+                    "high": 300,
+                    "unit": "per visit",
+                    "currency": "EUR",
+                    "source_title": "Kosten advocaat (Trustoo)",
+                    "source_url": "https://trustoo.nl/kosten/advocaat-kosten/",
+                    "source_date": "2026-11",
+                    "notes": "Midpoint of range for a legal advice meeting (juridisch adviesgesprek); page notes many lawyers offer the first meeting free. Verified 2026-11-27: Prices excluding VAT (21 percent extra); many lawyers offer the first meeting free. Data updated 23-11-2026."
+                },
+                {
+                    "key": "accountant_month_small_business",
+                    "typical": 200,
+                    "low": null,
+                    "high": null,
+                    "unit": "per month",
+                    "currency": "EUR",
+                    "source_title": "Kosten boekhouder (Offerteadviseur)",
+                    "source_url": "https://www.offerteadviseur.nl/categorie/zakelijk/boekhouder/kosten/",
+                    "source_date": "2022-05",
+                    "notes": "Standard bookkeeping subscription for a small business at an accounting office; tax returns extra (up to 60 EUR per month); 2022 data. Verified 2026-11-27: Bookkeeping subscription only, excludes tax returns and annual accounts (up to 60 EUR/month extra); page last edited 4 May 2022, so likely outdated; VAT treatment not stated."
+                },
+                {
+                    "key": "wedding_dj",
+                    "typical": 900,
+                    "low": 500,
+                    "high": 1300,
+                    "unit": "per event",
+                    "currency": "EUR",
+                    "source_title": "Kosten dj (Trustoo)",
+                    "source_url": "https://trustoo.nl/kosten/dj-kosten/",
+                    "source_date": "2026-11",
+                    "notes": "Midpoint of range; DJ for about 4 hours incl. equipment, based on Trustoo requests; 6 h 850-2000 EUR."
+                },
+                {
+                    "key": "wedding_photographer",
+                    "typical": 2500,
+                    "low": 1800,
+                    "high": 3500,
+                    "unit": "per event",
+                    "currency": "EUR",
+                    "source_title": "Kosten bruidsfotograaf (Offerteadviseur)",
+                    "source_url": "https://www.offerteadviseur.nl/categorie/zakelijk/fotograaf/kosten-bruidsfotograaf/",
+                    "source_date": "2026-02",
+                    "notes": "Average across wedding photography packages; full day (8-12 hours) is 2,000-3,800 EUR."
+                },
+                {
+                    "key": "driving_lesson",
+                    "typical": 62.5,
+                    "low": 50,
+                    "high": 75,
+                    "unit": "per lesson",
+                    "currency": "EUR",
+                    "source_title": "Kosten rijschool (Trustoo)",
+                    "source_url": "https://trustoo.nl/kosten/rijschool-kosten/",
+                    "source_date": "2026-11",
+                    "notes": "Midpoint of range; car driving lesson 50-75 EUR per hour average (min 40, max 100)."
+                }
+            ]
+        },
+        {
+            "country": "GB",
+            "country_name": "United Kingdom",
+            "currency": "GBP",
+            "rows": [
+                {
+                    "key": "dental_checkup_cleaning",
+                    "typical": 130,
+                    "low": null,
+                    "high": null,
+                    "unit": "per visit",
+                    "currency": "GBP",
+                    "source_title": "Saga: private dentist costs (MyTribe research among hundreds of UK private dentists)",
+                    "source_url": "https://saga.co.uk/money-news/private-dentist-costs",
+                    "source_date": "2025-06",
+                    "notes": "Private, national. Sum of two averages on the page: routine check-up 55 plus 30-min scale and polish 75. NHS England Band 1 is much cheaper. Verified 2026-11-27: Sum of two separately listed private averages (check-up 55 + 30-min scale and polish 75), which matches the key; the page itself gives no combined price. NHS Band 1 is much cheaper. Published 18 Jun 2025, MyTribe data."
+                },
+                {
+                    "key": "dental_implant",
+                    "typical": 2500,
+                    "low": 1800,
+                    "high": 3500,
+                    "unit": "per implant",
+                    "currency": "GBP",
+                    "source_title": "Going Private UK: private dental implants UK",
+                    "source_url": "https://goingprivateuk.co.uk/private-dental-implants-uk/",
+                    "source_date": "2026-08",
+                    "notes": "Midpoint of typical range 2000-3000 incl post, abutment and crown; low/high is wider market range; London specialists up to 4500. Source cites no dataset. Verified 2026-11-27: Figures correct but unit must be per implant (post + abutment + crown), not per visit; bone grafts 400-2000 and sinus lifts 1000-2500 extra; no dataset cited; London up to 4500. Updated Aug 2026."
+                },
+                {
+                    "key": "physiotherapy_session",
+                    "typical": 65,
+                    "low": 40,
+                    "high": 90,
+                    "unit": "per session",
+                    "currency": "GBP",
+                    "source_title": "Going Private UK: private physiotherapy cost UK",
+                    "source_url": "https://goingprivateuk.co.uk/private-physiotherapy-cost-uk/",
+                    "source_date": "2026-07",
+                    "notes": "Midpoint of range. Follow-up session, national rough guide; initial assessment a little higher, London at top end. No dataset cited. Verified 2026-11-27: Midpoint of an indicative follow-up range with no cited data; initial assessment a little higher; London at the top end. July 2026."
+                },
+                {
+                    "key": "psychology_session",
+                    "typical": 50,
+                    "low": 40,
+                    "high": 60,
+                    "unit": "per session",
+                    "currency": "GBP",
+                    "source_title": "BACP blog: therapy fees",
+                    "source_url": "https://www.bacp.co.uk/news/news-from-bacp/blogs/2026/blogs-and-vlogs/29-july-fees/",
+                    "source_date": "2026-07",
+                    "notes": "Midpoint of range. More than half of BACP directory listings advertise 40-60 per session (counselling/psychotherapy)."
+                },
+                {
+                    "key": "private_gp_consultation",
+                    "typical": 65,
+                    "low": 40,
+                    "high": 90,
+                    "unit": "per visit",
+                    "currency": "GBP",
+                    "source_title": "Which?: private GP services",
+                    "source_url": "https://www.which.co.uk/health-services/gps/private-gp-services",
+                    "source_date": "2025-12",
+                    "notes": "Midpoint of range. Short appointment, varies by provider; prices checked 26 Dec 2025, page dated Jan 2026."
+                },
+                {
+                    "key": "eye_test",
+                    "typical": 32,
+                    "low": 25,
+                    "high": 39,
+                    "unit": "per visit",
+                    "currency": "GBP",
+                    "source_title": "TreatCompare: eye tests",
+                    "source_url": "https://www.treatcompare.com/eyecare/eye-tests",
+                    "source_date": "2026-11",
+                    "notes": "Midpoint of range. Private test without retinal scan at 4 optical chains; with scan 30-99. Free NHS test for eligible groups."
+                },
+                {
+                    "key": "glasses_single_vision",
+                    "missing": true,
+                    "notes": "No source with an average or median spend on a pair of single vision glasses; Which? gives only entry prices (from 15), Glasses Direct 2023 figure is retailer-commissioned and not per pair."
+                },
+                {
+                    "key": "vet_consultation",
+                    "typical": 61.99,
+                    "low": 44.4,
+                    "high": 81,
+                    "unit": "per visit",
+                    "currency": "GBP",
+                    "source_title": "ManyPets: how much is a vet visit in the UK?",
+                    "source_url": "https://manypets.com/uk/articles/vet-visit-cost",
+                    "source_date": "2026-01",
+                    "notes": "Survey of 80 vets across the UK, Jan 2026; low/high are cheapest and dearest practices; North avg 56.39, London 65."
+                },
+                {
+                    "key": "womens_haircut",
+                    "typical": 45,
+                    "low": 25,
+                    "high": 65,
+                    "unit": "per visit",
+                    "currency": "GBP",
+                    "source_title": "Whito: UK hairdresser marketing data",
+                    "source_url": "https://whito.co.uk/hairdressers/uk-hairdresser-marketing-data/",
+                    "source_date": "2026",
+                    "notes": "Midpoint of national range for cut and blow-dry; central London 85-120. Compiled from NHF surveys and booking platforms."
+                },
+                {
+                    "key": "mens_haircut",
+                    "typical": 13,
+                    "low": 9,
+                    "high": 21,
+                    "unit": "per visit",
+                    "currency": "GBP",
+                    "source_title": "Modern Barber: UK cities spending the most and least on men's haircuts",
+                    "source_url": "https://modernbarber.co.uk/the-uk-cities-spending-money-on-mens-haircuts",
+                    "source_date": "2025-02",
+                    "notes": "UK average from Expatistan crowd data across 36 towns; low Stoke-on-Trent, high Edinburgh."
+                },
+                {
+                    "key": "gel_manicure",
+                    "typical": 37.5,
+                    "low": 25,
+                    "high": 50,
+                    "unit": "per visit",
+                    "currency": "GBP",
+                    "source_title": "Airtasker: how much does a manicure cost?",
+                    "source_url": "https://www.airtasker.com/uk/costs/manicure/manicure-cost/",
+                    "source_date": "2026-05",
+                    "notes": "Midpoint of range for standard gel nails; method not stated."
+                },
+                {
+                    "key": "massage_60min",
+                    "missing": true,
+                    "notes": "Only listing sites and clinic pages with differing ranges; Bark guide blocked; no source with a stated national average found."
+                },
+                {
+                    "key": "botox_one_area",
+                    "missing": true,
+                    "notes": "TreatCompare withdrew its 990-clinic medians as irreproducible; Consultingroom blocked; only clinic marketing ranges remain."
+                },
+                {
+                    "key": "gym_membership_month",
+                    "typical": 48.45,
+                    "low": 24.51,
+                    "high": 74.97,
+                    "unit": "per month",
+                    "currency": "GBP",
+                    "source_title": "The Fitness Group: how much does a gym membership cost in the UK (citing Leisure DB 2025 State of the UK Fitness Industry Report)",
+                    "source_url": "https://www.thefitnessgrp.co.uk/how-much-does-a-gym-membership-cost/",
+                    "source_date": "2025",
+                    "notes": "Peak non-contract membership at private clubs; low is budget-gym average, high is London average."
+                },
+                {
+                    "key": "personal_training_session",
+                    "typical": 70,
+                    "low": 20,
+                    "high": 90,
+                    "unit": "per session",
+                    "currency": "GBP",
+                    "source_title": "Airtasker: how much does a personal trainer cost?",
+                    "source_url": "https://www.airtasker.com/uk/costs/personal-training/personal-trainer-cost/",
+                    "source_date": "2025-03",
+                    "notes": "Median per session, session length not specified."
+                },
+                {
+                    "key": "restaurant_spend_per_diner",
+                    "typical": 16,
+                    "low": 10,
+                    "high": 30,
+                    "unit": "per person",
+                    "currency": "GBP",
+                    "source_title": "Numbeo: Cost of Living in United Kingdom",
+                    "source_url": "https://www.numbeo.com/cost-of-living/country_result.jsp?country=United+Kingdom",
+                    "source_date": "2026-11",
+                    "notes": "Crowdsourced Numbeo average for a meal at an inexpensive restaurant, national; last resort."
+                },
+                {
+                    "key": "plumber_callout",
+                    "typical": 110,
+                    "low": null,
+                    "high": null,
+                    "unit": "per visit",
+                    "currency": "GBP",
+                    "source_title": "HomeServe: plumbing repair cost guide (citing Checkatrade)",
+                    "source_url": "https://www.homeserve.co.uk/insurance-cover/plumbing-and-drainage-comparison/plumbing-advice/plumbing-repair-cost-guide/",
+                    "source_date": "2026-10",
+                    "notes": "Emergency call-out flat fee, parts extra; standard hourly rate 50."
+                },
+                {
+                    "key": "electrician_hour",
+                    "typical": 55,
+                    "low": 50,
+                    "high": 60,
+                    "unit": "per hour",
+                    "currency": "GBP",
+                    "source_title": "HomeServe: electrical repair cost guide (citing Checkatrade)",
+                    "source_url": "https://www.homeserve.co.uk/insurance-cover/electrical-comparison/electrical-advice/electrical-repair-cost-guide/",
+                    "source_date": "2026-03",
+                    "notes": "Midpoint of range; usually covers the visit and first hour. Page FAQ gives 40-60."
+                },
+                {
+                    "key": "locksmith_lockout",
+                    "typical": 140,
+                    "low": 80,
+                    "high": 200,
+                    "unit": "per visit",
+                    "currency": "GBP",
+                    "source_title": "Fantastic Services: emergency locksmith cost 2026 UK price guide",
+                    "source_url": "https://www.fantasticservices.com/cost-guides/locksmith/emergency-locksmith/",
+                    "source_date": "2026",
+                    "notes": "Midpoint of range, incl VAT, outside London; London/SE 120-250; parts extra. Source is a service provider."
+                },
+                {
+                    "key": "car_service",
+                    "typical": 260,
+                    "low": null,
+                    "high": null,
+                    "unit": "per visit",
+                    "currency": "GBP",
+                    "source_title": "Which?: car maintenance costs",
+                    "source_url": "https://www.which.co.uk/reviews/new-and-used-cars/article/car-maintenance-costs-ak42T6h2YcqS",
+                    "source_date": "2025",
+                    "notes": "Average per service at local independent garages, survey of 63,334 owners Apr-Jun 2025; dealer average 361."
+                },
+                {
+                    "key": "home_cleaning_hour",
+                    "typical": 22,
+                    "low": null,
+                    "high": null,
+                    "unit": "per hour",
+                    "currency": "GBP",
+                    "source_title": "Taskrabbit: house cleaning cost guide",
+                    "source_url": "https://www.taskrabbit.co.uk/cost-guides/house-cleaning",
+                    "source_date": "2026-11",
+                    "notes": "National average from market research and platform data; city averages vary."
+                },
+                {
+                    "key": "lawyer_initial_consultation",
+                    "missing": true,
+                    "notes": "No UK source with an average fee for an initial solicitor consultation found; many firms offer it free or fixed fee."
+                },
+                {
+                    "key": "accountant_month_small_business",
+                    "typical": 75,
+                    "low": 50,
+                    "high": 100,
+                    "unit": "per month",
+                    "currency": "GBP",
+                    "source_title": "myPOS: How Much Does an Accountant Cost for a Small UK Business?",
+                    "source_url": "https://www.mypos.com/en-gb/blog/business-guide/how-much-accountant-costs-for-small-business-in-uk",
+                    "source_date": "2026-04",
+                    "notes": "Midpoint of range for a sole trader (self assessment, expenses, simple bookkeeping); guide range, no data source cited."
+                },
+                {
+                    "key": "wedding_dj",
+                    "typical": 1100,
+                    "low": 850,
+                    "high": 1250,
+                    "unit": "per event",
+                    "currency": "GBP",
+                    "source_title": "FixTheMusic: the cost of hiring a wedding DJ in 2026",
+                    "source_url": "https://www.fixthemusic.com/blog/cost-hire-wedding-dj",
+                    "source_date": "2026-09",
+                    "notes": "Average from hundreds of recent quotes on the platform; range is where most couples land."
+                },
+                {
+                    "key": "wedding_photographer",
+                    "typical": 1484,
+                    "low": null,
+                    "high": null,
+                    "unit": "per event",
+                    "currency": "GBP",
+                    "source_title": "Bridebook: how much does a wedding cost in the UK (2026 UK Wedding Report)",
+                    "source_url": "https://bridebook.com/uk/article/how-much-does-a-wedding-cost-the-uk-average",
+                    "source_date": "2026-09",
+                    "notes": "Average spend, survey of 7,000 married and planning couples."
+                },
+                {
+                    "key": "driving_lesson",
+                    "typical": 42,
+                    "low": 39,
+                    "high": 45,
+                    "unit": "per lesson",
+                    "currency": "GBP",
+                    "source_title": "Confused.com: learner drivers face nearly 1000 in costs before getting their licence",
+                    "source_url": "https://www.confused.com/press/releases/2026/learner-drivers-face-nearly-1000-in-costs-before-even-getting-their-licence",
+                    "source_date": "2026-06",
+                    "notes": "One-hour lesson, OnePoll survey of 2,000 drivers and learners May 2026; DVSA 2025 survey: most ADIs charge 36-40."
+                }
+            ]
+        },
+        {
+            "country": "US",
+            "country_name": "United States",
+            "currency": "USD",
+            "rows": [
+                {
+                    "key": "dental_checkup_cleaning",
+                    "typical": 203,
+                    "low": 50,
+                    "high": 350,
+                    "unit": "per visit",
+                    "currency": "USD",
+                    "source_title": "Dentist Prices: Dental Procedure Cost List - CareCredit",
+                    "source_url": "https://www.carecredit.com/dentistry/costs/",
+                    "source_date": "2023-10",
+                    "notes": "National average for routine exam with cleaning and x-rays, 2023 Synchrony Average Procedural Cost Study (ASQ360)."
+                },
+                {
+                    "key": "dental_implant",
+                    "typical": 4000,
+                    "low": 3665,
+                    "high": 5505,
+                    "unit": "per visit",
+                    "currency": "USD",
+                    "source_title": "A comparative analysis of dental implant costs across major US markets - Dental Economics",
+                    "source_url": "https://www.dentaleconomics.com/practice/article/55343557/a-comparative-analysis-of-dental-implant-costs-across-major-us-markets",
+                    "source_date": "2026-02",
+                    "notes": "Nationwide median for complete implant (implant, abutment, crown), survey of 278 practices Sept 2025; low/high are lowest and highest metro medians (Houston, Minneapolis)."
+                },
+                {
+                    "key": "physiotherapy_session",
+                    "typical": 150,
+                    "low": 100,
+                    "high": 350,
+                    "unit": "per session",
+                    "currency": "USD",
+                    "source_title": "The true cost of physical therapy - Hinge Health",
+                    "source_url": "https://www.hingehealth.com/resources/articles/physical-therapy-cost-calculator/",
+                    "source_date": "2026-06",
+                    "notes": "Midpoint of range; self-pay per session, independent clinics $100-200, hospital-based $200-350+. Verified 2026-11-27: 225 was the midpoint of an open-ended overall range that includes hospital outpatient pricing; self-pay patients mostly use independent clinics (100-200), so 150 is the fairer single figure (my judgement). Initial evaluations 150-400+. June 2026."
+                },
+                {
+                    "key": "psychology_session",
+                    "typical": 139.4,
+                    "low": 122,
+                    "high": 227,
+                    "unit": "per session",
+                    "currency": "USD",
+                    "source_title": "Average therapy session fees by state - SimplePractice",
+                    "source_url": "https://www.simplepractice.com/blog/average-therapy-session-fees-by-state/",
+                    "source_date": "2024",
+                    "notes": "National average psychotherapy session fee 2024 from SimplePractice data; low/high are state averages (Missouri, North Dakota). Page published 2025-03, updated 2026-10."
+                },
+                {
+                    "key": "private_gp_consultation",
+                    "typical": 171,
+                    "low": 40,
+                    "high": 300,
+                    "unit": "per visit",
+                    "currency": "USD",
+                    "source_title": "How much does a primary care visit cost without insurance - Zocdoc",
+                    "source_url": "https://www.zocdoc.com/blog/guides/how-much-does-a-primary-care-visit-cost-without-insurance/",
+                    "source_date": "2026-02",
+                    "notes": "Self-pay primary care visit, average across major US cities per a 2024 survey cited by the page. Verified 2026-11-27: Self-pay average across major US cities from an unnamed 2024 survey; page dated 13 Feb 2026."
+                },
+                {
+                    "key": "eye_test",
+                    "typical": 136,
+                    "low": 105,
+                    "high": 257,
+                    "unit": "per visit",
+                    "currency": "USD",
+                    "source_title": "Vision Care Costs: Eye Exams, Lasik, Eyeglasses - CareCredit",
+                    "source_url": "https://www.carecredit.com/lasik/costs/",
+                    "source_date": "2024",
+                    "notes": "National average routine eye exam without insurance, 2024 Synchrony Average Procedural Cost Study (ASQ360)."
+                },
+                {
+                    "key": "glasses_single_vision",
+                    "missing": true,
+                    "notes": "No single-vision figure found. Consumer Reports 2022 member survey (reported 2023-10) gives a 224 USD out-of-pocket median for all new glasses incl. progressives, not single vision; CR pages paywalled."
+                },
+                {
+                    "key": "vet_consultation",
+                    "typical": 92.5,
+                    "low": 56,
+                    "high": 129,
+                    "unit": "per visit",
+                    "currency": "USD",
+                    "source_title": "Veterinary Exam and Procedure Costs - CareCredit",
+                    "source_url": "https://www.carecredit.com/vetmed/costs/",
+                    "source_date": "2026",
+                    "notes": "Midpoint of range; routine vet visit for a dog (cats $57-130), 2025-2026 Synchrony veterinary cost study (ASQ360)."
+                },
+                {
+                    "key": "womens_haircut",
+                    "typical": 69,
+                    "low": 45,
+                    "high": 75,
+                    "unit": "per visit",
+                    "currency": "USD",
+                    "source_title": "Average Haircut Prices in the US by State - Goldie",
+                    "source_url": "https://heygoldie.com/blog/average-haircut-prices-in-us",
+                    "source_date": "2026-03",
+                    "notes": "National average women's haircut; range is CNN-reported $45-75 including shampoo, cut and styling. Methodology not stated."
+                },
+                {
+                    "key": "mens_haircut",
+                    "typical": 43,
+                    "low": null,
+                    "high": null,
+                    "unit": "per visit",
+                    "currency": "USD",
+                    "source_title": "Average Haircut Prices in the US by State - Goldie",
+                    "source_url": "https://heygoldie.com/blog/average-haircut-prices-in-us",
+                    "source_date": "2026-03",
+                    "notes": "National average men's haircut per 'recent industry data'; methodology not stated."
+                },
+                {
+                    "key": "gel_manicure",
+                    "typical": 35,
+                    "low": null,
+                    "high": null,
+                    "unit": "per visit",
+                    "currency": "USD",
+                    "source_title": "Average Salon Service Prices in the U.S. - Goldie",
+                    "source_url": "https://heygoldie.com/blog/average-salon-service-prices-us",
+                    "source_date": "2026-02",
+                    "notes": "National average from aggregated prices of US beauty pros using Goldie, last 12 months."
+                },
+                {
+                    "key": "massage_60min",
+                    "typical": 92.5,
+                    "low": 50,
+                    "high": 135,
+                    "unit": "per session",
+                    "currency": "USD",
+                    "source_title": "How to set your massage prices competitively in 2026 - ClinicSense",
+                    "source_url": "https://clinicsense.com/blog/how-to-set-your-massage-prices-competitively-in-2026",
+                    "source_date": "2026-09",
+                    "notes": "Midpoint of range; US 60-minute session, research by ClinicSense, methodology not described."
+                },
+                {
+                    "key": "botox_one_area",
+                    "typical": 435,
+                    "low": null,
+                    "high": null,
+                    "unit": "per session",
+                    "currency": "USD",
+                    "source_title": "Botulinum Toxin Cost - American Society of Plastic Surgeons",
+                    "source_url": "https://www.plasticsurgery.org/cosmetic-procedures/botulinum-toxin/cost",
+                    "source_date": "2026",
+                    "notes": "ASPS average fee per treatment (not stated per area); page undated, copyright 2026, 'latest statistics'. Verified 2026-11-27: ASPS national average fee per treatment, year not stated on the page; a treatment often covers more than one area, so this may overstate a single area. Excludes nothing explicitly; surgeon fee only."
+                },
+                {
+                    "key": "gym_membership_month",
+                    "typical": 69,
+                    "low": null,
+                    "high": null,
+                    "unit": "per month",
+                    "currency": "USD",
+                    "source_title": "American fitness membership data - Athletech News",
+                    "source_url": "https://athletechnews.com/american-fitness-membership-data-hfa/",
+                    "source_date": "2024",
+                    "notes": "Average monthly fitness facility fee 2024, Health and Fitness Association 2025 US Consumer Report; article 2025-04."
+                },
+                {
+                    "key": "personal_training_session",
+                    "typical": 75,
+                    "low": 50,
+                    "high": 100,
+                    "unit": "per session",
+                    "currency": "USD",
+                    "source_title": "Getting A Personal Trainer: Cost vs. Benefit - Crunch Fitness",
+                    "source_url": "https://crunch.com/thehub/how-much-does-a-personal-trainer-cost/",
+                    "source_date": "2026-06",
+                    "notes": "Midpoint of range; gym chain blog estimate ($50 to $100 or more), no survey cited. Verified 2026-11-27: Gym-chain blog estimate, no survey cited; upper bound is open-ended ('or more'). June 2026."
+                },
+                {
+                    "key": "restaurant_spend_per_diner",
+                    "typical": 21.6,
+                    "low": null,
+                    "high": null,
+                    "unit": "per person",
+                    "currency": "USD",
+                    "source_title": "How consumers' reasons for dining out are changing - IFMA",
+                    "source_url": "https://foodaway.org/IFMA/Resources/News/2025/How-consumers%E2%80%99-reasons-for-dining-out-are-changing.aspx",
+                    "source_date": "2025-08",
+                    "notes": "Average per-person tab for a casual dinner, Datassential survey of 1,509 US adults for IFMA."
+                },
+                {
+                    "key": "plumber_callout",
+                    "typical": 112.5,
+                    "low": 75,
+                    "high": 150,
+                    "unit": "per visit",
+                    "currency": "USD",
+                    "source_title": "Vetting Local Plumbers for Urgent and Routine Needs - Fixr",
+                    "source_url": "https://www.fixr.com/articles/finding-a-plumber-near-me-urgent-and-routine-plumbing-needs",
+                    "source_date": "2026-10",
+                    "notes": "Midpoint of range; standard service call fee, labour extra; emergency visits average $377."
+                },
+                {
+                    "key": "electrician_hour",
+                    "typical": 100.5,
+                    "low": 70,
+                    "high": 131,
+                    "unit": "per hour",
+                    "currency": "USD",
+                    "source_title": "Electrician Cost - Fixr",
+                    "source_url": "https://www.fixr.com/costs/electrician",
+                    "source_date": "2025-01",
+                    "notes": "Midpoint of range; national average hourly rate."
+                },
+                {
+                    "key": "locksmith_lockout",
+                    "typical": 112.5,
+                    "low": 50,
+                    "high": 175,
+                    "unit": "per visit",
+                    "currency": "USD",
+                    "source_title": "Locksmith Prices - Fixr",
+                    "source_url": "https://www.fixr.com/costs/locksmith-service",
+                    "source_date": "2025-01",
+                    "notes": "Midpoint of range; house lockout, national; after hours adds $150-250."
+                },
+                {
+                    "key": "car_service",
+                    "missing": true,
+                    "notes": "No standard annual service price found; US sources report annual maintenance totals or single items, not a per-visit service."
+                },
+                {
+                    "key": "home_cleaning_hour",
+                    "typical": 35,
+                    "low": 25,
+                    "high": 45,
+                    "unit": "per hour",
+                    "currency": "USD",
+                    "source_title": "House Cleaning Prices - Fixr",
+                    "source_url": "https://www.fixr.com/costs/house-cleaning",
+                    "source_date": "2025-01",
+                    "notes": "Midpoint of range; basic cleaning, one cleaner, per hour."
+                },
+                {
+                    "key": "lawyer_initial_consultation",
+                    "missing": true,
+                    "notes": "Opened source (8am, 2025 Legal Industry Report) gives only $50 to $1,000+ and says 51% of firms charge; no reliable typical figure."
+                },
+                {
+                    "key": "accountant_month_small_business",
+                    "typical": 900,
+                    "low": 300,
+                    "high": 1500,
+                    "unit": "per month",
+                    "currency": "USD",
+                    "source_title": "How much does a bookkeeper cost - QuickBooks",
+                    "source_url": "https://quickbooks.intuit.com/r/bookkeeping/how-much-does-a-bookkeeper-cost/",
+                    "source_date": "2026",
+                    "notes": "Midpoint of range; subscription virtual bookkeeping flat monthly fee, no source cited by the page. Verified 2026-11-27: Midpoint of a range for subscription virtual bookkeeping, not an average; bookkeeping only, tax prep extra; no source cited by the page."
+                },
+                {
+                    "key": "wedding_dj",
+                    "typical": 1800,
+                    "low": null,
+                    "high": null,
+                    "unit": "per event",
+                    "currency": "USD",
+                    "source_title": "Wedding costs from Knot study - MoneyLion",
+                    "source_url": "https://moneylion.com/trending/money/wedding-costs-from-knot-study-will-make-you-just-elope",
+                    "source_date": "2026-04",
+                    "notes": "Average reception DJ, The Knot 2026 Real Weddings Study (2025 weddings), reported secondhand."
+                },
+                {
+                    "key": "wedding_photographer",
+                    "typical": 3000,
+                    "low": null,
+                    "high": null,
+                    "unit": "per event",
+                    "currency": "USD",
+                    "source_title": "Wedding costs from Knot study - MoneyLion",
+                    "source_url": "https://moneylion.com/trending/money/wedding-costs-from-knot-study-will-make-you-just-elope",
+                    "source_date": "2026-04",
+                    "notes": "Average photographer, The Knot 2026 Real Weddings Study (2025 weddings), reported secondhand."
+                },
+                {
+                    "key": "driving_lesson",
+                    "typical": 100,
+                    "low": 50,
+                    "high": 150,
+                    "unit": "per lesson",
+                    "currency": "USD",
+                    "source_title": "Driving lessons cost - Airtasker US",
+                    "source_url": "https://www.airtasker.com/us/costs/driving-lessons/driving-lessons-cost",
+                    "source_date": "2026-11",
+                    "notes": "Median one-hour lesson from Airtasker data and US driving school benchmarks."
+                }
+            ]
+        },
+        {
+            "country": "CA",
+            "country_name": "Canada",
+            "currency": "CAD",
+            "rows": [
+                {
+                    "key": "dental_checkup_cleaning",
+                    "typical": 275,
+                    "low": 150,
+                    "high": 400,
+                    "unit": "per visit",
+                    "currency": "CAD",
+                    "source_title": "How Much is a Dental Cleaning Without Insurance? | PolicyMe",
+                    "source_url": "https://www.policyme.com/dental-insurance/how-much-is-a-dental-cleaning-without-insurance",
+                    "source_date": "2026-02",
+                    "notes": "Midpoint of range; routine cleaning for most adults without insurance, national; provincial fee guides vary."
+                },
+                {
+                    "key": "dental_implant",
+                    "typical": 4475,
+                    "low": 3000,
+                    "high": 6100,
+                    "unit": "per visit",
+                    "currency": "CAD",
+                    "source_title": "Dental Implant Cost in Canada 2026: Price by Province (CAD) - Real Dental Costs",
+                    "source_url": "https://realdentalcosts.com/ca/dental-implants-cost/",
+                    "source_date": "2026-06",
+                    "notes": "National average for fixture, abutment and crown, compiled from provincial fee guides; range is by province."
+                },
+                {
+                    "key": "physiotherapy_session",
+                    "typical": 105,
+                    "low": 80,
+                    "high": 130,
+                    "unit": "per session",
+                    "currency": "CAD",
+                    "source_title": "Private Physiotherapy and Chiropractic Costs in Canada 2026 | Lifetimes Canada",
+                    "source_url": "https://lifetimescanada.com/blog/rehabilitation/private-physiotherapy-and-chiropractic-costs-in-canada-2026",
+                    "source_date": "2026-05",
+                    "notes": "Midpoint of range; private follow-up session 30-45 min, national; initial assessment $120-180."
+                },
+                {
+                    "key": "psychology_session",
+                    "typical": 300,
+                    "low": 200,
+                    "high": 400,
+                    "unit": "per session",
+                    "currency": "CAD",
+                    "source_title": "How much does therapy cost in Canada [2026]? - GreenShield",
+                    "source_url": "https://www.greenshield.ca/en-ca/blog/therapy-cost-canada",
+                    "source_date": "2026-09",
+                    "notes": "Midpoint of range; private-pay psychologist, national benchmark; Quebec regulator reports $120-180 there, so may overstate low-cost provinces. Verified 2026-11-27: Midpoint of a national private-pay benchmark range, no average given; varies by province (lower in Quebec). Posted 14.09.2026."
+                },
+                {
+                    "key": "private_gp_consultation",
+                    "missing": true,
+                    "notes": "GP visits are publicly funded; only scattered uninsured-patient clinic fees and thin guides found, no reliable typical private price."
+                },
+                {
+                    "key": "eye_test",
+                    "typical": 115,
+                    "low": 80,
+                    "high": 150,
+                    "unit": "per visit",
+                    "currency": "CAD",
+                    "source_title": "How Much Are Eye Exams in Canada in 2026? - HelloSafe",
+                    "source_url": "https://hellosafe.ca/en/health-insurance/eye-exams",
+                    "source_date": "2025-04",
+                    "notes": "Midpoint of range; adult eye exam without coverage, national. Verified 2026-11-27: Adult exam without coverage; the same page also attributes a 200 CAD average to the Canadian Association of Optometrists, which conflicts with the range. Updated 8 April 2025."
+                },
+                {
+                    "key": "glasses_single_vision",
+                    "missing": true,
+                    "notes": "Only a 2022 BC poll for a retailer ($150-300 basic lenses and frames, page blocked) and retailer starting prices found."
+                },
+                {
+                    "key": "vet_consultation",
+                    "missing": true,
+                    "notes": "Only blog guides and one non-profit clinic fee list (Toronto Humane Society wellness exam $75) found; no reliable national figure."
+                },
+                {
+                    "key": "womens_haircut",
+                    "typical": 60,
+                    "low": 40,
+                    "high": 80,
+                    "unit": "per visit",
+                    "currency": "CAD",
+                    "source_title": "Cost of Living in Canada - Numbeo",
+                    "source_url": "https://www.numbeo.com/cost-of-living/country_result.jsp?country=Canada",
+                    "source_date": "2026-11",
+                    "notes": "Crowdsourced national average for women's wash and basic cut (blow dry not specified); last resort source."
+                },
+                {
+                    "key": "mens_haircut",
+                    "typical": 35,
+                    "low": 25,
+                    "high": 47.25,
+                    "unit": "per visit",
+                    "currency": "CAD",
+                    "source_title": "Cost of Living in Canada - Numbeo",
+                    "source_url": "https://www.numbeo.com/cost-of-living/country_result.jsp?country=Canada",
+                    "source_date": "2026-11",
+                    "notes": "Crowdsourced national average for a men's haircut at a standard barbershop; last resort source."
+                },
+                {
+                    "key": "gel_manicure",
+                    "missing": true,
+                    "notes": "Only a Metro Vancouver travel guide (7 salon price lists, starting prices, median $40) found; too thin to use."
+                },
+                {
+                    "key": "massage_60min",
+                    "typical": 111.35,
+                    "low": 101.42,
+                    "high": 127.6,
+                    "unit": "per session",
+                    "currency": "CAD",
+                    "source_title": "Average Massage Therapy Fees - RMTAO",
+                    "source_url": "https://rmtao.com/average-massage-therapy-fees",
+                    "source_date": "2026",
+                    "notes": "Ontario only, registered massage therapist, pre-HST; unweighted mean of 8 district averages, low/high are district extremes."
+                },
+                {
+                    "key": "botox_one_area",
+                    "missing": true,
+                    "notes": "Only clinic marketing pages and a lender blog found ($10-18 per unit); no reliable per-area typical price."
+                },
+                {
+                    "key": "gym_membership_month",
+                    "typical": 57.58,
+                    "low": 17.31,
+                    "high": 100,
+                    "unit": "per month",
+                    "currency": "CAD",
+                    "source_title": "Cost of Living in Canada - Numbeo",
+                    "source_url": "https://www.numbeo.com/cost-of-living/country_result.jsp?country=Canada",
+                    "source_date": "2026-11",
+                    "notes": "Crowdsourced national average monthly fitness club fee, one adult; last resort source."
+                },
+                {
+                    "key": "personal_training_session",
+                    "missing": true,
+                    "notes": "Only vendor blogs and single rec-centre price lists found; no reliable national figure."
+                },
+                {
+                    "key": "restaurant_spend_per_diner",
+                    "typical": 25,
+                    "low": 15,
+                    "high": 45,
+                    "unit": "per person",
+                    "currency": "CAD",
+                    "source_title": "Cost of Living in Canada - Numbeo",
+                    "source_url": "https://www.numbeo.com/cost-of-living/country_result.jsp?country=Canada",
+                    "source_date": "2026-11",
+                    "notes": "Crowdsourced national average meal at an inexpensive restaurant, one person; last resort source."
+                },
+                {
+                    "key": "plumber_callout",
+                    "typical": 307.5,
+                    "low": 140,
+                    "high": 475,
+                    "unit": "per visit",
+                    "currency": "CAD",
+                    "source_title": "Plumbing Cost Guide - HomeStars",
+                    "source_url": "https://r.homestars.com/plumbing/price-guides/plumbing-cost",
+                    "source_date": "2026-08",
+                    "notes": "Midpoint of range; service call fee, usually includes first hour of labour, national."
+                },
+                {
+                    "key": "electrician_hour",
+                    "typical": 115,
+                    "low": 80,
+                    "high": 150,
+                    "unit": "per hour",
+                    "currency": "CAD",
+                    "source_title": "Electricians Cost Guide - HomeStars",
+                    "source_url": "https://r.homestars.com/electricity/price-guides/electricians-cost",
+                    "source_date": "2026-08",
+                    "notes": "Midpoint of range; standard residential work, national; first hour $100-200."
+                },
+                {
+                    "key": "locksmith_lockout",
+                    "typical": 110,
+                    "low": 70,
+                    "high": 150,
+                    "unit": "per visit",
+                    "currency": "CAD",
+                    "source_title": "Find a locksmith in Markham - HomeStars",
+                    "source_url": "https://r.homestars.com/handyman-services/locksmith-pros/markham",
+                    "source_date": "2026",
+                    "notes": "Midpoint of range; lockout service, Markham ON city page, undated (copyright 2026); national guide average for any locksmith job is $95. Verified 2026-11-27: Single-city figure (Markham, ON), undated; urgent or after-hours calls cost more (call-out fees 100-300 cited on the same page)."
+                },
+                {
+                    "key": "car_service",
+                    "typical": 302,
+                    "low": null,
+                    "high": 539,
+                    "unit": "per visit",
+                    "currency": "CAD",
+                    "source_title": "Auto Service Visits and Cost Rise as Canadians Keep Vehicles Longer Amid Economic Uncertainty - MOTOR (J.D. Power release)",
+                    "source_url": "https://www.motor.com/2025/09/auto-service-visits-and-cost-rise-as-canadians-keep-vehicles-longer/",
+                    "source_date": "2025-09",
+                    "notes": "J.D. Power 2025 Canada CSI-LT, vehicles 4-12 years: average spend per service visit at aftermarket shops; high is the dealership average ($539). Visits mix maintenance and repairs, not a fixed annual service package."
+                },
+                {
+                    "key": "home_cleaning_hour",
+                    "typical": 42.5,
+                    "low": 30,
+                    "high": 55,
+                    "unit": "per hour",
+                    "currency": "CAD",
+                    "source_title": "How much does a cleaning service cost - HomeStars",
+                    "source_url": "https://r.homestars.com/cleaning/price-guides/how-much-does-a-cleaning-service-cost",
+                    "source_date": "2026-08",
+                    "notes": "Midpoint of range; per cleaner per hour, national."
+                },
+                {
+                    "key": "lawyer_initial_consultation",
+                    "missing": true,
+                    "notes": "Only law firm guides found, ranging from free to $600 by practice area; no reliable typical figure."
+                },
+                {
+                    "key": "accountant_month_small_business",
+                    "typical": 1150,
+                    "low": 300,
+                    "high": 2000,
+                    "unit": "per month",
+                    "currency": "CAD",
+                    "source_title": "How to hire a bookkeeper - Xero CA",
+                    "source_url": "https://www.xero.com/ca/guides/hire-bookkeeper/",
+                    "source_date": "2026-05",
+                    "notes": "Midpoint of range; monthly bookkeeping packages for small businesses; a sole trader likely pays near the low end. Verified 2026-11-27: Midpoint of a wide bookkeeping-package range, not an average; most sole traders and micro businesses sit near the low end; bookkeeping, not tax filing. Published 19 May 2026."
+                },
+                {
+                    "key": "wedding_dj",
+                    "missing": true,
+                    "notes": "Directory average contradicted itself ($600 on page vs $1,008 in search snippet); only Toronto vendor guides otherwise."
+                },
+                {
+                    "key": "wedding_photographer",
+                    "typical": 4900,
+                    "low": null,
+                    "high": null,
+                    "unit": "per event",
+                    "currency": "CAD",
+                    "source_title": "2025 Wedding Photography Prices in Canada - Fearless Photographers",
+                    "source_url": "https://www.fearlessphotographers.com/blog/355/2025-canada-prices",
+                    "source_date": "2025",
+                    "notes": "Average of 23 Canadian photographers for about 10 hours coverage and 600-1,000 images, taxes included."
+                },
+                {
+                    "key": "driving_lesson",
+                    "missing": true,
+                    "notes": "Only a Toronto driving school's own undated page ($55-75 per hour) found; no independent source."
+                }
+            ]
+        },
+        {
+            "country": "AU",
+            "country_name": "Australia",
+            "currency": "AUD",
+            "rows": [
+                {
+                    "key": "dental_checkup_cleaning",
+                    "typical": 219,
+                    "low": 162,
+                    "high": 309,
+                    "unit": "per visit",
+                    "currency": "AUD",
+                    "source_title": "CHOICE - Dental treatments: how much do they cost?",
+                    "source_url": "https://www.choice.com.au/health-and-body/dentists-and-dental-care/dental-treatment/articles/dental-fees",
+                    "source_date": "2023-03",
+                    "notes": "National average for periodic check-up (exam, scale and clean, fluoride; ADA items 012, 114, 121) from ADA 2022 fee survey."
+                },
+                {
+                    "key": "dental_implant",
+                    "typical": 5650,
+                    "low": 4000,
+                    "high": 7300,
+                    "unit": "per visit",
+                    "currency": "AUD",
+                    "source_title": "Dentist Cost Australia - whatsthedamage.com.au",
+                    "source_url": "https://whatsthedamage.com.au/dentist-cost/",
+                    "source_date": "2026-11",
+                    "notes": "Midpoint of range; single implant all inclusive (scan, post, abutment, crown), grafts extra; page cites ADA fee survey and clinic price lists."
+                },
+                {
+                    "key": "physiotherapy_session",
+                    "typical": 95,
+                    "low": 70,
+                    "high": 120,
+                    "unit": "per session",
+                    "currency": "AUD",
+                    "source_title": "How much does Physiotherapy cost in Australia - Back In Motion",
+                    "source_url": "https://backinmotion.com.au/blog/article/how-much-does-physiotherapy-cost-in-australia",
+                    "source_date": "2025-11",
+                    "notes": "Midpoint of range for a standard follow-up consult; initial consult $90-150; published by a physio clinic network."
+                },
+                {
+                    "key": "psychology_session",
+                    "typical": 330,
+                    "low": null,
+                    "high": null,
+                    "unit": "per session",
+                    "currency": "AUD",
+                    "source_title": "APS - What it costs: private practice services",
+                    "source_url": "https://psychology.org.au/psychology/about-psychology/what-it-costs/private-practice-services",
+                    "source_date": "2026",
+                    "notes": "APS National Schedule of Suggested Fees 2026-2027 for a standard 46-60 min consult; a suggested fee, not a measured average."
+                },
+                {
+                    "key": "private_gp_consultation",
+                    "typical": 82,
+                    "low": null,
+                    "high": null,
+                    "unit": "per visit",
+                    "currency": "AUD",
+                    "source_title": "RACGP Health of the Nation 2025 - Cost of care",
+                    "source_url": "https://www.racgp.org.au/health-of-the-nation-2025/chapter-1-trends-in-general-practice-care/cost-of-care",
+                    "source_date": "2025",
+                    "notes": "Average fee for a standard 6-20 min (Level B) consult incl. MBS rebate of $42.85, gap about $39; RACGP survey Apr/May 2025."
+                },
+                {
+                    "key": "eye_test",
+                    "typical": 65,
+                    "low": 60,
+                    "high": 70,
+                    "unit": "per visit",
+                    "currency": "AUD",
+                    "source_title": "How much is an eye test? - HealthPartners",
+                    "source_url": "https://www.healthpartners.com.au/health/how-much-is-an-eye-test",
+                    "source_date": "2022-11",
+                    "notes": "Midpoint of range for an initial optometrist consult without Medicare or insurance; many optometrists bulk bill (no charge). Verified 2026-11-27: Price without Medicare or private cover; eligible patients are commonly bulk billed (no charge). Posted Nov 2022, so dated."
+                },
+                {
+                    "key": "glasses_single_vision",
+                    "missing": true,
+                    "notes": "Only retailer starting prices found (CHOICE 2018: from $39-$99 by chain); no typical or average price source."
+                },
+                {
+                    "key": "vet_consultation",
+                    "typical": 100,
+                    "low": 50,
+                    "high": 150,
+                    "unit": "per visit",
+                    "currency": "AUD",
+                    "source_title": "How much does a vet consultation cost? - Localsearch",
+                    "source_url": "https://localsearch.com.au/guides/vets/vet-consultation-cost",
+                    "source_date": "2023-03",
+                    "notes": "Standard consultation average; range is the page's range for an initial consult; rough guide, no stated data source. Verified 2026-11-27: Rough estimate with no stated data source; last updated 20 March 2023."
+                },
+                {
+                    "key": "womens_haircut",
+                    "typical": 90,
+                    "low": 55,
+                    "high": 135,
+                    "unit": "per visit",
+                    "currency": "AUD",
+                    "source_title": "Cost of Living in Australia - Numbeo",
+                    "source_url": "https://www.numbeo.com/cost-of-living/country_result.jsp?country=Australia",
+                    "source_date": "2026-11",
+                    "notes": "Crowdsourced national average for women's wash and basic cut (blow dry not specified)."
+                },
+                {
+                    "key": "mens_haircut",
+                    "typical": 47,
+                    "low": 35,
+                    "high": 65,
+                    "unit": "per visit",
+                    "currency": "AUD",
+                    "source_title": "Cost of Living in Australia - Numbeo",
+                    "source_url": "https://www.numbeo.com/cost-of-living/country_result.jsp?country=Australia",
+                    "source_date": "2026-11",
+                    "notes": "Crowdsourced national average for a men's haircut at a standard barbershop."
+                },
+                {
+                    "key": "gel_manicure",
+                    "typical": 90,
+                    "low": 60,
+                    "high": 120,
+                    "unit": "per visit",
+                    "currency": "AUD",
+                    "source_title": "How much does a manicure cost? - Airtasker",
+                    "source_url": "https://www.airtasker.com/au/costs/manicure/manicure-cost",
+                    "source_date": "2026-05",
+                    "notes": "Midpoint of range for standard gel nails; national price guide. Verified 2026-11-27: 'Gel nails' (with separate in-fill pricing) are gel extensions; the gel-polish manicure is the Shellac row. Airtasker task prices, updated 19 May 2026; may run above typical salon prices."
+                },
+                {
+                    "key": "massage_60min",
+                    "missing": true,
+                    "notes": "Oneflare/Airtasker massage guide redirects to a dead page and Bark blocked access; no 60 min price page could be opened."
+                },
+                {
+                    "key": "botox_one_area",
+                    "missing": true,
+                    "notes": "No neutral current source. CHOICE anti-wrinkle article (forehead 90-300 AUD) is last updated 2017-03, too old; iSelect blocked; remaining results were clinic or medical tourism sites."
+                },
+                {
+                    "key": "gym_membership_month",
+                    "typical": 77,
+                    "low": null,
+                    "high": null,
+                    "unit": "per month",
+                    "currency": "AUD",
+                    "source_title": "Gym habits and average spend revealed - Canstar",
+                    "source_url": "https://www.canstar.com.au/finance-news/gym-habits-and-average-spend-revealed/",
+                    "source_date": "2026-01",
+                    "notes": "Average monthly membership spend from a Canstar survey of 1,300+ gym-goers, national."
+                },
+                {
+                    "key": "personal_training_session",
+                    "typical": 70,
+                    "low": 15,
+                    "high": 130,
+                    "unit": "per session",
+                    "currency": "AUD",
+                    "source_title": "How much does a personal trainer cost? - Airtasker",
+                    "source_url": "https://www.airtasker.com/au/costs/personal-training/personal-trainer-cost/",
+                    "source_date": "2025-03",
+                    "notes": "Median per session; low end includes group sessions, one-on-one $30-130."
+                },
+                {
+                    "key": "restaurant_spend_per_diner",
+                    "typical": 25,
+                    "low": 17,
+                    "high": 45,
+                    "unit": "per person",
+                    "currency": "AUD",
+                    "source_title": "Cost of Living in Australia - Numbeo",
+                    "source_url": "https://www.numbeo.com/cost-of-living/country_result.jsp?country=Australia",
+                    "source_date": "2026-11",
+                    "notes": "Crowdsourced national average for a meal at an inexpensive restaurant, one person."
+                },
+                {
+                    "key": "plumber_callout",
+                    "typical": 120,
+                    "low": 60,
+                    "high": 150,
+                    "unit": "per visit",
+                    "currency": "AUD",
+                    "source_title": "Plumber call-out fee Australia - whatsthedamage.com.au",
+                    "source_url": "https://whatsthedamage.com.au/homeowner-hub/plumber-callout-fee-australia/",
+                    "source_date": "2026-11",
+                    "notes": "National typical call-out fee incl. GST, covers travel plus first 15-30 min."
+                },
+                {
+                    "key": "electrician_hour",
+                    "typical": 100,
+                    "low": 80,
+                    "high": 150,
+                    "unit": "per hour",
+                    "currency": "AUD",
+                    "source_title": "Electrician Cost Australia - whatsthedamage.com.au",
+                    "source_url": "https://whatsthedamage.com.au/electrician-cost/",
+                    "source_date": "2026-11",
+                    "notes": "National typical business-hours residential rate, call-out ($50-150) extra."
+                },
+                {
+                    "key": "locksmith_lockout",
+                    "typical": 180,
+                    "low": 120,
+                    "high": 300,
+                    "unit": "per visit",
+                    "currency": "AUD",
+                    "source_title": "Locksmith Cost Australia 2026 - whatsthedamage.com.au",
+                    "source_url": "https://whatsthedamage.com.au/locksmith-cost/",
+                    "source_date": "2026-11",
+                    "notes": "National typical business-hours lockout; after-hours emergency lockout typical $280 ($200-500)."
+                },
+                {
+                    "key": "car_service",
+                    "typical": 345,
+                    "low": 140,
+                    "high": 550,
+                    "unit": "per visit",
+                    "currency": "AUD",
+                    "source_title": "How much does a car service cost? - Airtasker",
+                    "source_url": "https://www.airtasker.com/au/costs/car-servicing/car-service-cost/",
+                    "source_date": "2026-01",
+                    "notes": "National average across basic and logbook services, all makes."
+                },
+                {
+                    "key": "home_cleaning_hour",
+                    "typical": 55,
+                    "low": 35,
+                    "high": 80,
+                    "unit": "per hour",
+                    "currency": "AUD",
+                    "source_title": "House Cleaning Cost Australia - whatsthedamage.com.au",
+                    "source_url": "https://whatsthedamage.com.au/house-cleaning-cost/",
+                    "source_date": "2026-11",
+                    "notes": "National typical hourly rate for regular house cleaning."
+                },
+                {
+                    "key": "lawyer_initial_consultation",
+                    "typical": 290,
+                    "low": 0,
+                    "high": 580,
+                    "unit": "per session",
+                    "currency": "AUD",
+                    "source_title": "Family Lawyer Cost (What's the Damage)",
+                    "source_url": "https://www.whatsthedamage.com.au/family-lawyer-cost/",
+                    "source_date": "2026-11",
+                    "notes": "Midpoint of range; family lawyer initial consultation, ex GST; many firms offer a free or reduced first appointment; estimates from public cost guides and marketplaces"
+                },
+                {
+                    "key": "accountant_month_small_business",
+                    "typical": 500,
+                    "low": 250,
+                    "high": 750,
+                    "unit": "per month",
+                    "currency": "AUD",
+                    "source_title": "Bookkeeper Cost Australia - whatsthedamage.com.au",
+                    "source_url": "https://whatsthedamage.com.au/bookkeeper-cost/",
+                    "source_date": "2026-11",
+                    "notes": "Midpoint of range; monthly bookkeeping package for a micro business or sole trader, ex GST."
+                },
+                {
+                    "key": "wedding_dj",
+                    "typical": 1400,
+                    "low": 1200,
+                    "high": 1900,
+                    "unit": "per event",
+                    "currency": "AUD",
+                    "source_title": "How much does a wedding DJ cost? - Airtasker",
+                    "source_url": "https://airtasker.com/au/costs/wedding-dj/wedding-dj-cost",
+                    "source_date": "2023-12",
+                    "notes": "National median from the page's price guide; article text says average $1,200-1,800."
+                },
+                {
+                    "key": "wedding_photographer",
+                    "typical": 3567,
+                    "low": null,
+                    "high": null,
+                    "unit": "per event",
+                    "currency": "AUD",
+                    "source_title": "How much does a wedding photographer cost? - Easy Weddings",
+                    "source_url": "https://www.easyweddings.com.au/articles/whats-the-average-cost-of-a-wedding-photographer",
+                    "source_date": "2026-02",
+                    "notes": "National average from Easy Weddings annual survey; state averages $2,579 (TAS) to $3,865 (NSW)."
+                },
+                {
+                    "key": "driving_lesson",
+                    "typical": 82.22,
+                    "low": null,
+                    "high": null,
+                    "unit": "per lesson",
+                    "currency": "AUD",
+                    "source_title": "The Ultimate Guide to Driving Lesson Costs in Australia - EzLicence",
+                    "source_url": "https://www.ezlicence.com.au/ultimate-guide-to-driving-lesson-costs-in-australia",
+                    "source_date": "2026-11",
+                    "notes": "National average per 1 hour lesson incl. GST from EzLicence bookings Nov 2025-Oct 2026; NT not covered."
+                }
+            ]
+        },
+        {
+            "country": "CR",
+            "country_name": "Costa Rica",
+            "currency": "CRC",
+            "rows": [
+                {
+                    "key": "dental_checkup_cleaning",
+                    "missing": true,
+                    "notes": "No official tariff found; only clinic directory listings (whatclinic, in EUR) and an expat guide that blocks reading."
+                },
+                {
+                    "key": "dental_implant",
+                    "typical": 1200,
+                    "low": 850,
+                    "high": 2000,
+                    "unit": "per visit",
+                    "currency": "USD",
+                    "source_title": "Costa Rica Dental Tourism Cost - Real Dental Costs",
+                    "source_url": "https://realdentalcosts.com/en/dental-costs/costa-rica-dental-tourism-cost/",
+                    "source_date": "2026-08",
+                    "notes": "Source prices in USD; single titanium implant plus crown, editorial estimate from clinic list prices aimed at dental tourists."
+                },
+                {
+                    "key": "physiotherapy_session",
+                    "missing": true,
+                    "notes": "No Colegio de Terapeutas tariff or price article found."
+                },
+                {
+                    "key": "psychology_session",
+                    "typical": 37500,
+                    "low": 30000,
+                    "high": 45000,
+                    "unit": "per session",
+                    "currency": "CRC",
+                    "source_title": "Esperar medio ano por una consulta psicologica: la realidad en la CCSS - Teletica",
+                    "source_url": "https://www.teletica.com/calle-7/esperar-medio-ano-por-una-consulta-psicologica-la-realidad-en-la-ccss_414478",
+                    "source_date": "2026-07",
+                    "notes": "Midpoint of range; low is the Colegio de Psicologia legal minimum tariff, high is the top private price cited."
+                },
+                {
+                    "key": "private_gp_consultation",
+                    "missing": true,
+                    "notes": "No current source: INEC tracks only the price change (+4.24% Mar 2025); an insurer page (CRC 28,000) is undated; Colegio minimum tariff (2014) too old."
+                },
+                {
+                    "key": "eye_test",
+                    "missing": true,
+                    "notes": "Only the regulated minimum found: CRC 5,200 per exam (Teletica, 2026-01); a floor, and some chains test free, so no typical price."
+                },
+                {
+                    "key": "glasses_single_vision",
+                    "missing": true,
+                    "notes": "Glasses prices are unregulated; only chain promotions found, no typical price."
+                },
+                {
+                    "key": "vet_consultation",
+                    "typical": 52545,
+                    "low": 23730,
+                    "high": 81360,
+                    "unit": "per visit",
+                    "currency": "CRC",
+                    "source_title": "Diputada del PLN propone crear nuevo impuesto para financiar clinicas veterinarias estatales - Delfino",
+                    "source_url": "https://delfino.cr/2025/08/diputada-del-pln-propone-crear-nuevo-impuesto-para-financiar-clinicas-veterinarias-estatales",
+                    "source_date": "2025-08",
+                    "notes": "Midpoint of range; consultation only, range from bill 25.141 statement of reasons, no independent survey. Verified 2026-11-27: Range comes from the statement of reasons of bill 25.141 (Aug 2025), not an independent survey; typical is the midpoint; excludes specialised treatment."
+                },
+                {
+                    "key": "womens_haircut",
+                    "typical": 19500,
+                    "low": 10000,
+                    "high": 22600,
+                    "unit": "per visit",
+                    "currency": "CRC",
+                    "source_title": "Cost of Living in Costa Rica - Numbeo",
+                    "source_url": "https://www.numbeo.com/cost-of-living/country_result.jsp?country=Costa+Rica",
+                    "source_date": "2026-11",
+                    "notes": "Crowdsourced national average for women's wash and basic cut (blow dry not specified)."
+                },
+                {
+                    "key": "mens_haircut",
+                    "typical": 7000,
+                    "low": 5000,
+                    "high": 11000,
+                    "unit": "per visit",
+                    "currency": "CRC",
+                    "source_title": "Cost of Living in Costa Rica - Numbeo",
+                    "source_url": "https://www.numbeo.com/cost-of-living/country_result.jsp?country=Costa+Rica",
+                    "source_date": "2026-11",
+                    "notes": "Crowdsourced national average for a men's haircut at a standard barbershop."
+                },
+                {
+                    "key": "gel_manicure",
+                    "missing": true,
+                    "notes": "Only individual booking-platform listings found (CRC 12,000-17,000), not a typical price."
+                },
+                {
+                    "key": "massage_60min",
+                    "missing": true,
+                    "notes": "Only individual listings found (50 min relaxing massage CRC 28,250 in San Jose), not a typical price."
+                },
+                {
+                    "key": "botox_one_area",
+                    "missing": true,
+                    "notes": "No source opened; web search budget exhausted."
+                },
+                {
+                    "key": "gym_membership_month",
+                    "typical": 28093,
+                    "low": 17000,
+                    "high": 55486,
+                    "unit": "per month",
+                    "currency": "CRC",
+                    "source_title": "Cost of Living in Costa Rica - Numbeo",
+                    "source_url": "https://www.numbeo.com/cost-of-living/country_result.jsp?country=Costa+Rica",
+                    "source_date": "2026-11",
+                    "notes": "Crowdsourced national average monthly fitness club fee, one adult (page shows 28,093.01; high 55,485.90)."
+                },
+                {
+                    "key": "personal_training_session",
+                    "missing": true,
+                    "notes": "No source opened; web search budget exhausted."
+                },
+                {
+                    "key": "restaurant_spend_per_diner",
+                    "typical": 5163,
+                    "low": 3500,
+                    "high": 9741,
+                    "unit": "per person",
+                    "currency": "CRC",
+                    "source_title": "Cost of Living in Costa Rica - Numbeo",
+                    "source_url": "https://www.numbeo.com/cost-of-living/country_result.jsp?country=Costa+Rica",
+                    "source_date": "2026-11",
+                    "notes": "Crowdsourced national average meal at an inexpensive restaurant, one person (page shows 5,163.32)."
+                },
+                {
+                    "key": "plumber_callout",
+                    "missing": true,
+                    "notes": "Only wage data found, no service price source."
+                },
+                {
+                    "key": "electrician_hour",
+                    "missing": true,
+                    "notes": "Only wage data and the legal minimum daily wage found, no service price source."
+                },
+                {
+                    "key": "locksmith_lockout",
+                    "missing": true,
+                    "notes": "No source opened; web search budget exhausted."
+                },
+                {
+                    "key": "car_service",
+                    "missing": true,
+                    "notes": "No source opened; web search budget exhausted."
+                },
+                {
+                    "key": "home_cleaning_hour",
+                    "typical": 2500,
+                    "low": 2500,
+                    "high": 4670,
+                    "unit": "per hour",
+                    "currency": "CRC",
+                    "source_title": "Cost of Living in Costa Rica - Numbeo",
+                    "source_url": "https://www.numbeo.com/cost-of-living/country_result.jsp?country=Costa+Rica",
+                    "source_date": "2026-11",
+                    "notes": "Crowdsourced national average for household cleaning service per hour; small sample likely."
+                },
+                {
+                    "key": "lawyer_initial_consultation",
+                    "typical": 102548,
+                    "low": null,
+                    "high": null,
+                    "unit": "per hour",
+                    "currency": "CRC",
+                    "source_title": "Honorarios de Abogados y Notarios en Costa Rica - Bufete de Costa Rica",
+                    "source_url": "https://bufetedecostarica.com/honorarios-de-abogados-y-notarios-en-costa-rica",
+                    "source_date": "2026-04",
+                    "notes": "Legal minimum, not a market average: Colegio de Abogados arancel hora profesional CRC 90,750 (Decreto 41457-JP reformed by 41930-JP) plus 13% IVA; restated by a law firm page updated April 2026."
+                },
+                {
+                    "key": "accountant_month_small_business",
+                    "missing": true,
+                    "notes": "No source opened; web search budget exhausted."
+                },
+                {
+                    "key": "wedding_dj",
+                    "missing": true,
+                    "notes": "Only all-inclusive venue packages found, no separate DJ price."
+                },
+                {
+                    "key": "wedding_photographer",
+                    "missing": true,
+                    "notes": "Only all-inclusive venue packages (photographer included) found, no separate photographer price."
+                },
+                {
+                    "key": "driving_lesson",
+                    "missing": true,
+                    "notes": "Only a 2023 El Financiero range (CRC 78,000-234,000) that is a course package, not per lesson."
+                }
+            ]
+        }
+    ]
+}

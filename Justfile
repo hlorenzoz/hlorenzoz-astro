@@ -128,3 +128,8 @@ dossier *locales:
 # manual out-of-band deploy: build ./dist and `wrangler deploy`.
 deploy:
     bun run deploy
+
+# Print the assistant's "Reference prices by business and country" knowledge base document
+# (rendered from docs/assistant-kb/reference-prices.json) for upload to ElevenLabs.
+assistant-kb:
+    node scripts/reference-prices-kb.mjs
