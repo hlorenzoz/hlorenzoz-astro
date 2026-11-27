@@ -1276,6 +1276,27 @@
         "Fase 1: llms.txt con El coste de esperar, saludo traducido, widget con overrides, variables dinamicas y herramienta show_cost_of_waiting.",
         "Fase 2: configuracion del agente (prompt, base de conocimiento con auto-sync, herramientas, allowlist, evaluacion, pruebas)."
       ]
+    },
+    {
+      "id": "#T0060",
+      "estado": "pendiente",
+      "prioridad": "baja",
+      "tipo": "funcionalidad",
+      "titulo": "Corregir el test de ElevenLabs de horarios en la zona horaria del visitante (Toronto)",
+      "anotada": "2026-11-27",
+      "origen": "usuario",
+      "depende": [
+        "#T0059"
+      ],
+      "notas": [
+        "Test \"Offers times in the visitor's time zone\" (carpeta \"hlorenzoz assistant / Booking\"): falla con todos los modelos por \"Parameter path 'query_params.start' not found\"; antes fallo con la ruta 'start'. Es un defecto del test, no del agente.",
+        "La llamada real a get_available_slots envia params_as_json {start, end} y tool_details.query_params {eventTypeId, start, end}. Probar otra ruta del parametro o convertirlo en simulacion con tool_mock_config (todas las herramientas simuladas, raise_error) y comprobar start en la condicion.",
+        "Ejecutarlo requiere creditos de ElevenLabs (la cuenta llego al limite el 2026-11-27; se renueva el 2026-12-04)."
+      ],
+      "descripcion": [
+        "Que el test compruebe que, para un visitante con visitor_timezone America/Toronto que pide manana por la manana, get_available_slots busca en la manana de Toronto (aprox. 11:00 a 17:00 UTC) y no en la de Madrid.",
+        "Hecha cuando el test pasa con el modelo en produccion (claude-haiku-5-5) y la ruta usada queda anotada en docs/assistant-agent-evaluation.md."
+      ]
     }
   ]
 }
