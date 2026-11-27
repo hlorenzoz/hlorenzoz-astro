@@ -386,7 +386,7 @@ export function servicePage({
     const service: JsonLdObject = {
         '@type': 'Service',
         '@id': serviceId,
-        name,
+        name: serviceType ?? name,
         description,
         url,
         serviceType: serviceType ?? name,

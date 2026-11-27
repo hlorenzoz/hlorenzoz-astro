@@ -18,7 +18,7 @@ import { describe, it, expect } from 'vitest';
 import { defineContentPage, MAX_AUTHORED_TITLE } from '@/lib/service-page';
 import { absoluteUrl } from '@/lib/site-config';
 
-import { hubContentPages, serviceContentPagesByKey, type LocaleContentPages } from '@/src/pages/[locale]/services/_service-content';
+import { hubContentPages, LOCALE_MESSAGES, serviceContentPagesByKey, type LocaleContentPages } from '@/src/pages/[locale]/services/_service-content';
 import { serviceKeyFromSlug } from '@/lib/pricing';
 
 const hub = { contentPages: hubContentPages };
@@ -122,6 +122,18 @@ describe.each(SERVICES)('service page: services/$slug', ({ slug, mod }) => {
         expect(node(g, 'Service')).toBeDefined();
         expect(node(g, 'BreadcrumbList')).toBeDefined();
         expect(node(g, 'FAQPage')).toBeDefined();
+    });
+
+    it('names the Service node after the service, not after the hero headline, per locale', () => {
+        // Rich Results Test showed "Every call answered, day and night" as the Service name:
+        // the headline belongs to the WebPage, the Service is "AI Voice Receptionist".
+        for (const locale of ['en', 'es'] as const) {
+            const s = LOCALE_MESSAGES[locale].services[serviceKeyFromSlug(slug)];
+            const g = mod.contentPages[locale]!.schema(locale, T) as Graph;
+            expect(node(g, 'Service')?.name).toBe(s.name);
+            expect(node(g, 'Service')?.serviceType).toBe(s.name);
+            expect(node(g, 'WebPage')?.name).toBe(s.hero.title);
+        }
     });
 
     it('emits no offers on the Service node', () => {

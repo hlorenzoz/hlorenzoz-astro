@@ -69,6 +69,7 @@ function serviceContentPages(key: ServiceKey): LocaleContentPages {
             title: s.meta.title,
             description: s.meta.description,
             name: s.hero.title,
+            serviceType: s.name,
             faq: resolveFaq(s.faq.items, copyTokens(localeInfo(locale).intl)),
         });
     };

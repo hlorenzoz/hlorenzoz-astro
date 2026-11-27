@@ -149,6 +149,12 @@ export interface CategoryPageConfig extends ContentPageBase {
 /** A Core 30 service page: one per individual GBP service. */
 export interface ServicePageConfig extends ContentPageBase {
     kind: 'service';
+    /**
+     * The service's own name ("AI Voice Receptionist"), for the Service node's
+     * `name` and `serviceType`. `name` is the page headline, which belongs to
+     * the WebPage. Defaults to `name`.
+     */
+    serviceType?: string;
     /** Cities or regions the service covers. */
     areaServed?: string[];
 }
@@ -498,6 +504,7 @@ function buildSchema(
         name,
         description: cfg.description,
         url,
+        serviceType: 'serviceType' in cfg ? cfg.serviceType : undefined,
         areaServed: cfg.areaServed,
         crumbs,
         // The supporting posts beneath this service. A service page that lists
