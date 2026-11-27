@@ -132,7 +132,7 @@ prices). The previous version stays in the agent's version history in ElevenLabs
 
 | Setting | Value |
 | :--- | :--- |
-| LLM | unchanged, `gemini-3.1-flash-lite` (a switch waits for the rerun on the final prompt) |
+| LLM | `claude-haiku-5-5`, reasoning effort none (switched 2026-11-27, see below) |
 | Prompt | `docs/assistant-agent-prompt.md` |
 | Tools | get_available_slots, reserve_slot, create_booking, navigate_to_contact, show_cost_of_waiting (`tool_1701m8e9g7saepva0dyhgqbvcwgd`), calculate_cost_of_waiting (`tool_5601m8ebyn31fjqtsag90ve7szja`); reschedule_booking, get_user_bookings and cancel_booking removed from the agent (records kept) |
 | Knowledge base | "hlorenzoz.com llms.txt" (`ZPvdoeWEk7Fo3s04Hjz3`, URL, daily sync) and "Reference prices by business and country" (`CEHMB280I2L2Ots9LjQ7`, text rendered by `just assistant-kb` from `docs/assistant-kb/reference-prices.json`) |
@@ -150,3 +150,32 @@ Checked in a real chat on the local site against the live agent:
 - A London physio clinic missing 2 patients a day, no figure of its own: the UK reference of 65 GBP a session, then 130 GBP
   a day, 650 a week, 2817 a month and 33800 a year, said to be a market average. It did not name the source; the prompt
   now asks for it explicitly.
+
+## Final prompt and model switch (2026-11-27)
+
+A real chat showed the agent announcing "sería el siguiente:", calling calculate_cost_of_waiting and then replying as if
+the visitor could see the tool result. The prompt now says the visitor never sees tool results and must get every
+figure in one reply; it also maps each market's time zones to the country, keeps the OCU example for Spain or an unknown
+market, never uses one country's price for another, calculates at once with a labelled market average, and handles zero
+customers. Three simulations cover the figures case (the visitor's exact question, cleaning plus implant, a root canal).
+
+Estimate tests (13, final prompt, one run each):
+
+| Model | Passed | USD | Failed |
+| :--- | :--- | :--- | :--- |
+| claude-haiku-5-5 | 12/13 | 0.54 | asked about the business before giving the dental example |
+| claude-sonnet-5-5 | 12/13 | 2.73 | retracted the UK source |
+| gemini-3.5-flash | 11/13 | 1.34 | invented a Costa Rica botox price; framing of the OCU example |
+| gemini-3.1-flash-lite | 10/13 | 0.62 | invented a Costa Rica botox price; Spanish price for a Toronto visitor; framing of the OCU example |
+
+The rest of the suite (49 non simulation tests) on the final prompt: claude-haiku-5-5 45/49 (two questions in one reply,
+no figures in the next reply of the calm arithmetic test, booking explanation missing "15 minutes, no obligation", and the
+known parameter path defect of the Toronto slots test); gemini-3.1-flash-lite 46/49 (the same test defect, no warning about
+a changed bank account, did not use the visitor's calculator figures). Comparable total 57/62 against 56/62, and only the
+Gemini models invented prices, so the live agent was switched to claude-haiku-5-5 (reasoning effort none). Its context
+limit is 100k tokens against about 1M for Gemini, ample for a 13k character prompt plus knowledge base results.
+
+Not verified: the 19 simulations of the full run (booking flows and figures) did not run for either model, because the
+ElevenLabs account ran out of credits (Starter plan, 90000 of 90000 used, no auto top up, reset on 2026-12-04 at 17:02
+UTC). While at the limit the live agent refuses sessions ("The AI agent you are trying to reach is not available"), so
+the site assistant shows its error message until credits return.
